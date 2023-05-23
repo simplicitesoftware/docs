@@ -1,0 +1,16 @@
+[
+  {
+    "code": "lvl1",
+    "translation": {
+      "ENU": "Level 1",
+      "FRA": "Niveau 1"
+    }
+  },
+  {
+    "code": "lvl2",
+    "translation": {
+      "ENU": "Level 2",
+      "FRA": "Niveau 2"
+    } 
+  }
+]

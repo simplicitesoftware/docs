@@ -1,0 +1,12 @@
+{
+    "tags": ["lvl2"],
+    "FRA": {
+        "title": "Carte d'emplacement",
+        "description": ""
+    },
+     "ENU": {
+        "title": "Placemap",
+        "description": ""
+    },
+    "published": true
+}

@@ -1,0 +1,16 @@
+{
+  "tags": ["lvl1"],
+  "FRA": {
+      "title": "Styles",
+      "description": ""
+  },
+  "ENU": {
+      "title": "Styles",
+      "description": ""
+  },
+  "levels":[
+    {
+      "rank":"DESIGNER-1"
+    }
+  ]
+}

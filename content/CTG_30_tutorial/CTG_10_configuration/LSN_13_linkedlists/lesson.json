@@ -1,0 +1,12 @@
+{
+    "display": "LINEAR",
+    "tags": ["lvl2"],
+    "FRA": {
+        "title": "Listes liées",
+        "description": ""
+    },
+    "ENU": {
+        "title": "Linked lists",
+        "description": ""
+    }
+  }
