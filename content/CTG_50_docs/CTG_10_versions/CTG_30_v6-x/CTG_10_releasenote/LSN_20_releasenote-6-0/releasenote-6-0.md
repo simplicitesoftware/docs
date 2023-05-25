@@ -428,6 +428,10 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 - Maintains current scroll-y of object form/list
 
+- Object Fields can now be added to an Object's template in bulk
+
+![](template_bulk_add.png)
+
 <h2 id="wip">Work in progress</h2>
 
 - Action priority low/normal/high config => async or crontab

@@ -411,3 +411,4 @@ Scratch pad
 <h3 id="version-5.3.4">5.3.4 (UNRELEASED)</h3>
 
 - Backported distances tool methods in `Tool`
+- View editor allows to remove the chart option
