@@ -165,7 +165,7 @@ MyAdapter.process = function() {
 };
 
 MyAdapter.postProcess = function() {
-	// Inhibitate output to avoid useless XML import
+	// inhibit output to avoid useless XML import
 	this.setOutputStream(null);	
 };
 ```
@@ -203,9 +203,22 @@ A line based adapter is provided as an abstract class to be overridden `com.simp
 The methods to implement are in this case (current grant is available using the getGrant() method).:
 
 ```java
-public String preProcess(}
-public String postProcess()
-public String processLine(long lineNumber, String line)
+public String preProcess() {
+	// open the default XML flow
+	super.preProcess();
+}
+
+public String processLine(long lineNumber, String line) {
+	// return the converted values to XML data
+	// or return null but process line here
+}
+
+public String postProcess() {
+	// close the default XML flow
+	super.postProcess();
+	// or inhibit output to avoid useless XML import
+	//setOutputStream(null);	
+}
 ```
 
 <h3 id="linebased">CSV line-based adapters</h3>
@@ -214,9 +227,22 @@ A line based adapter specialized for CSV data is also provided as an abstract cl
 The methods to implement are in this case:
 
 ```java
-public String preProcess(}
-public String postProcess()
-public String processLine(long lineNumber, String[] values)
+public String preProcess() {
+	// open the default XML flow
+	super.preProcess();
+}
+
+public String processLine(long lineNumber, String[] values) {
+	// return the converted values to XML data
+	// or return null but process values here
+}
+
+public String postProcess() {
+	// close the default XML flow
+	super.postProcess();
+	// or inhibit output to avoid useless XML import
+	//setOutputStream(null);	
+}
 ```
 
 <h3 id="xmlparser">XML parser adapters</h3>

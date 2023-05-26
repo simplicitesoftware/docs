@@ -412,3 +412,4 @@ Scratch pad
 
 - Backported distances tool methods in `Tool`
 - View editor allows to remove the chart option
+- Backported `isExportTimestamp` and `setExportTimestamp` to allow timestamp export in CSV

@@ -345,6 +345,8 @@ public List<String> fieldCompletion(String input, String query, String context) 
 	
 ![](obf_join.png)
 
+- Added `isExportTimestamp` and `setExportTimestamp` to allow timestamp export in CSV
+
 
 <h2 id="uichanges">UI changes</h2>
 
