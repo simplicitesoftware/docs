@@ -408,8 +408,15 @@ Scratch pad
 - Explicit warning when /events is requested over HTTP
 - Disabled by default the JWT nonce checking for OpenIDConnect auth provider (as some providers does not ebnable it by default)
 
-<h3 id="version-5.3.4">5.3.4 (UNRELEASED)</h3>
+<h3 id="version-5.3.4">5.3.4 (2023-06-03)</h3>
 
 - Backported distances tool methods in `Tool`
-- View editor allows to remove the chart option
+- Fixed view editor not allowing to remove the chart option
 - Backported `isExportTimestamp` and `setExportTimestamp` to allow timestamp export in CSV
+- Fixed check of user existence before trying to load it (avoid useless errors in the logs)
+- Fixed adapter loading "empty" XML (without `<object>` blocks)
+- Fixed do not export `sys_value2` in module to keep overridden value on target platform
+
+<h3 id="version-5.3.5">5.3.5 (UNRELEASED)</h3>
+
+- Nothing so far...

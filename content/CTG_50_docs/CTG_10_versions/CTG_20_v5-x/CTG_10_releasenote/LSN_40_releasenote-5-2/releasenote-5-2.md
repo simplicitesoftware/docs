@@ -791,6 +791,14 @@ This means this mechanism requires a proper modules' version management.
 - Backported JWT nonce checking for OpenIDConnect auth providers
 - Backported distances tool methods in `Tool`
 
-<h3 id="version-5.2.41">5.2.41 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.41">5.2.41 (2023-06-01) **maintenance revision**</h3>
+
+- Fixed view editor not allowing to remove the chart option
+- Fixed check of user existence before trying to load it (avoid useless errors in the logs)
+- Fixed adapter loading "empty" XML (without `<object>` blocks)
+- Fixed merge container
+- Fixed do not export `sys_value2` in module to keep overridden value on target platform
+
+<h3 id="version-5.2.42">5.2.42 (UNRELEASED) **maintenance revision**</h3>
 
 - Nothing so far...
