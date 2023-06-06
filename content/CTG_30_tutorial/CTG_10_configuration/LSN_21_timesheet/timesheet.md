@@ -2,17 +2,17 @@ Feuille de temps - Timesheet
 ====================
 
 Les feuilles de temps ou Timesheet sont paramétrables depuis le Menu **Interface / Feuille de temps**
-Les feuilles de temps ou Timesheet permettent de saisir une donnée (quantité, nombre de jours ...etc) sur un objet métier sur une période donnée.  
+Elles permettent de saisir jusqu'à 3 données données (quantité, nombre de jours ...etc) sur un objet métier sur une période donnée.  
 Le paramétrage se construit sur un objet métier qui est une relation N,N entre 2 objets avec des dates.
 Le cas d'usage adressé est le suivi des affectations de charges, la réservation de ressources...etc.
 
-Le paramétrage consiste à désigner l'objet, saisir les foreign keys de l'objet puis définir les champs date portant sur la période, et le champ de saisie 1, 2.
+Le paramétrage consiste à désigner l'objet, saisir les foreign keys de l'objet puis définir les champs date portant sur la période, et le champ de saisie 1, 2, 3.
 
-Une fois le paramétrage effectué, un bouton **Génerer** permet de créer l'objet qui peremet de stocker les données siaisies.
+Une fois le paramétrage effectué, un bouton **Génerer** permet de créer l'objet qui va stocker les données saisies.
 
 La table timesheet contient  :
 - tsh_month et tsh_year : le mois et l'année
-- tsh_totalA, tsh_total2... suivant le nombre d'attributs de saisie dans le timesheet
+- tsh_total1, tsh_total2... suivant le nombre d'attributs de saisie dans le timesheet
 - tsh_parent_id qui identifie l'objet d'affectation lié au timesheet. Ceci permet de faire une jointure avec les ressources de l'affectation.
 
 La feuille de temps utilise une instance particulière de l'objet.
@@ -28,6 +28,6 @@ Faire une feuille de temps pour la saisie des temps pendant une période donnée
 - Créer l'objet `TrnOrderSimpleUser` représentant l'affectation d'un utilisateur à une commande composé de ses attributs propres suivants :
 	- Date de début
 	- Date de fin
-- Créer un attribut de type décimal sans l'associer à un objet existant. L'utiliser uniquement comme champ de saisie dans le timesheet.  
+- Créer un attribut de type entier sans l'associer à un objet existant. L'utiliser uniquement comme champ de saisie dans le timesheet.  
 - Paramétrer votre feuille de temps `TrnTimeSheetAffect` puis  
-- vider le cache pour voir l'icône apparaître sur la liste des commandes.
+- vider le cache pour voir l'icône apparaître sur le formulaire de la commande ou sur le formulaire de l'utilisateur.

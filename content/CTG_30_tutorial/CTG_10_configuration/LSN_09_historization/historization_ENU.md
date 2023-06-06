@@ -10,7 +10,7 @@ The change log allows you to log all activities done on the object (who, what ch
 - make sure that the system parameter `LOG_ACTIVITY` is enabled ("database": true), which is the default.
 - check the "Data History: Change log" option in the business object settings.
 
-<div class="error">Currently, it is necessary to manually create a function on the "RedoLog" system object to give access to change-logs to end users.</div>
+<div class="error">Currently, it is necessary to manually create a function on the "RedoLog" system object to give access to change-logs to end users.Be sure to remove module filters to add this function.</div>
 
 History table
 ---------------------------
@@ -32,7 +32,7 @@ Exercise: Tracking changes to the order
 
  check the "Data History: Change log" option in the order settings
 - give users access to the RedoLog object
-- remove module visibility to access the RedoLog object
+- remove module visibility to access the RedoLog object (Delete module filter and show all)  
 - copy the `RedoLog-RD` function to create a read-only `RedoLog-R` function **in the Training module**
 - associate the group `TRN_SUPERADMIN` to this function
 - clear the cache and check that you have access to the change log

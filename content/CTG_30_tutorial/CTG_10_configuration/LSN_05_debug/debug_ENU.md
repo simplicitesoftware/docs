@@ -36,8 +36,8 @@ To diagnose a bug, the two main strategies are :
 
 Wether it's due to a problem with the configuration, specific queries or other reasons, one may suspect an error in the construction of the SQL queries. To test the queries:
 - if an SQL query fails it will most likely be in the logs
-- if it is not a failure but a poorly constructed query that returns no results, it may be useful to enable the `LOG_SQL_USER` system parameter (Administration > System Parameter) to force all queries to be written to the logs. Be sure to disable this option once the query is retrieved, as this mode is very verbose and will quickly saturate the space dedicated to logs
-- test the query via the DBAccess tool (scope "Operations" > Home > Actions > Database Access or direct access via the URL '/ui/ext/DBAccess')
+- if it is not a failure but a poorly constructed query that returns no results, it may be useful to enable the `LOG_SQL_USER` system parameter (Configuration > System Parameter) to force all queries to be written to the logs. Be sure to disable this option once the query is retrieved, as this mode is very verbose and will quickly saturate the space dedicated to logs
+- test the query via the DBAccess tool (scope "Platform operation" > Home > Actions > Database Access or direct access via the URL '/ui/ext/DBAccess')
 
 Exercise : model completion
 ====================

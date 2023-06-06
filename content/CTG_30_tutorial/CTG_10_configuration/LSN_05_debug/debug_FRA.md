@@ -35,8 +35,8 @@ Pour poser un diagnostic sur une anomalie, les deux stratégies principales sont
 
 Parfois, que ce soit par un problème de paramétrage, des requêtes spécifiques ou n autres raisons, on peut suspecter une erreur ou un problème de construction des requêtes SQL. Pour tester les requêtes:
 - si une requête SQL échoue elle sera selon toute vraisemblance dans les logs
-- si ce n'est pas un échec mais une requête par exemple mal construite qui ne retourne aucun résultat, il peut être utile d'activer le paramètre système `LOG_SQL_USER` (Administration > Paramètre Système) pour forcer l'écriture de toutes les requêtes dans les logs. Veiller à désactiver cette option une fois la requête récupérée, car ce mode est très verbeux et va saturer rapidement l'espace dédié aux logs.
-- tester la requête via l'outil DBAccess (scope "Opérations" > Home > Actions > Database Access ou accès direct via l'URL `/ui/ext/DBAccess`)
+- si ce n'est pas un échec mais une requête par exemple mal construite qui ne retourne aucun résultat, il peut être utile d'activer le paramètre système `LOG_SQL_USER` (Configuration > Paramètre Système) pour forcer l'écriture de toutes les requêtes dans les logs. Veiller à désactiver cette option une fois la requête récupérée, car ce mode est très verbeux et va saturer rapidement l'espace dédié aux logs.
+- tester la requête via l'outil DBAccess (scope "Platformoperation" > Home > Actions > Database access ou accès direct via l'URL `/ui/ext/DBAccess` ou via le raccourci DB Access)
 
 Exercice : enrichissement du modèle
 ====================
