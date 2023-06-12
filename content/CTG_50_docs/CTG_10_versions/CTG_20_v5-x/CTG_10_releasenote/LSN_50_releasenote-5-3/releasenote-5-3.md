@@ -406,7 +406,7 @@ Scratch pad
 - Fixed print template with empty `getSelectedIds` in case of separate browser window/tab
 - Fixed duplicated transition buttons on embedded list
 - Explicit warning when /events is requested over HTTP
-- Disabled by default the JWT nonce checking for OpenIDConnect auth provider (as some providers does not ebnable it by default)
+- Disabled by default the JWT nonce checking for OpenIDConnect auth provider (as some providers does not enable it by default)
 
 <h3 id="version-5.3.4">5.3.4 (2023-06-03)</h3>
 
@@ -419,4 +419,6 @@ Scratch pad
 
 <h3 id="version-5.3.5">5.3.5 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Fixed tooltip of action with HTML content
+- Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
+- Fixed keep old values of inlined form (link 1,1) in case of error
