@@ -3,8 +3,7 @@ Security guidelines
 
 This document give some guidelines on how to improve security of your applications based on the Simplicit&eacute;&reg; platform.
 
-Platform upgrades{#upgrades}
-----------------------------
+<h2 id="upgrades">Platform upgrades</h2>
 
 The platform regularly receive upgrades that potentially include security related fixes.
 The details of the fixes/changes are available in the release notes.

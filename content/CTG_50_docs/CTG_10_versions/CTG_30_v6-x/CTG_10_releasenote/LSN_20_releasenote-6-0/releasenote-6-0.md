@@ -366,7 +366,7 @@ public List<String> fieldCompletion(String input, String query, String context) 
 
 Example:
 
-```javascipt
+```javascript
 // Resource "CLASS" of object A
 Simplicite.UI.BusinessObjects.A = class extends Simplicite.UI.BusinessObject {
 	constructor(app, name, inst) {

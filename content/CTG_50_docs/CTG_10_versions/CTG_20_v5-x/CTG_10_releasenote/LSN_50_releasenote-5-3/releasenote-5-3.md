@@ -422,3 +422,4 @@ Scratch pad
 - Fixed tooltip of action with HTML content
 - Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
 - Fixed keep old values of inlined form (link 1,1) in case of error
+- Fixed template editor from inherited object without template (SimpleUser)
