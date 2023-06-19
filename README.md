@@ -1,4 +1,4 @@
-TRAINING CONTENT
+Training content
 ====================
 
 This is the repository for the content feeding https://docs2.simplicite.io
@@ -74,7 +74,7 @@ You can specify the language of your content (lessons, images and videos) by add
 }
 ```
 
-Like categories, the *published* attribute is not mandatory and is by default set to true. Also it is not mandatory to specify every language configuration.
+Like categories, the *published* attribute is not mandatory and is by default set to true. Also, it is not mandatory to specify every language configuration.
 
 
 
