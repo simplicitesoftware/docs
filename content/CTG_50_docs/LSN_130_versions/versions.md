@@ -97,29 +97,29 @@ A long term maintenance branch **only** receives critical fixes.
 
 ### Maintenance timeline table
 
-| Major/minor | Maintenance branch                                           | Maintenance end date                             |
-|-------------|--------------------------------------------------------------|--------------------------------------------------|
-| _minor_     | _`5.4` [release notes](../5/releasenote/releasenote-5.4.md)_ | _Alpha (development)_                            |
-| _minor_     | `5.3` [release notes](../5/releasenote/releasenote-5.3.md)   | **Current release**                              |
-| minor       | `5.2` [release notes](../5/releasenote/releasenote-5.2.md)   | _Short term_                                     |
-| minor       | `5.1` [release notes](../5/releasenote/releasenote-5.1.md)   | _Expired short term_ (since October 31th, 2022)  |
-| minor       | `5.0` [release notes](../5/releasenote/releasenote-5.0.md)   | _Expired short term_ (since September 30th, 2021 |
-| major       | `4.0` [release notes](/lesson/docs/versions/index)           | _Long term_ (till January 15th, 2024)            |
-| major       | `3.2` [release notes](/lesson/docs/versions/index)           | _Expired long term_                              |
-| major       | `3.1` [release notes](/lesson/docs/versions/index)           | _Expired long term_                              |
-| major       | `3.0` [release notes](/lesson/docs/versions/index)           | _Expired long term_                              |
+| Major/minor | Maintenance branch                                                      | Maintenance end date                            |
+|-------------|-------------------------------------------------------------------------|-------------------------------------------------|
+| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Development (alpha stage)                      |
+| minor       | `5.3` [release notes](00-versions/5.x/releasenote/releasenote-5.3.md) | **Current release**                            |
+| minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Short term (till September 30th, 2023)         |
+| minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)  |
+| minor       | `5.0` [release notes](00-versions/5.x/releasenote/releasenote-5.0.md) | Expired short term (since September 30th, 2021 |
+| major       | `4.0` [release notes](/lesson/docs/versions/index)           | Long term_ (till January 15th, 2024)           |
+| major       | `3.2` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
+| major       | `3.1` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
+| major       | `3.0` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
 
 <h3 id="gitbranchesanddockertags">Instance templates Git branches and Docker images tags table</h3>
 
-| Version                   | Instance templates<br/>Git branches | Docker images tags                                                              |
-|:-------------------------:|-------------------------------------|---------------------------------------------------------------------------------|
-| _5.4 (alpha)_             | _`master[-light]`_                  | _`5-alpha[-light]`_                                                             |
-| **5.3** (current release) | `release[-light]`                   | `5.3[-light]`, `5.3.x` (*)                                                      |
-| 5.2                       | `5.2[-light]`                       | `5.2[-light]`, `5.2.x`                                                          |
-| 5.1                       | `5.1[-light]`                       | `5.1[-light]`, `5.1.x`                                                          |
-| 5.0                       | `5.0[-light]`                       | `5.0[-light]`, `5.1.x`                                                          |
-| 4.0                       | `4.0[-light]`                       | `4.0[-light]` (*)                                                               |
-| 3.x                       | `3.x`                               | `3.x`                                                                           |
+| Version                   | Instance templates<br/>Git branches | Docker images tags                                |
+|:-------------------------:|-------------------------------------|---------------------------------------------------|
+| 6.0 (alpha)               | `6.0[-light]`                   | `6-alpha[-light]`                            |
+| **5.3** (current release) | `release[-light]`              | `5[-light]`, `5.3[-light]`, `5.3.x` (*)  |
+| 5.2                       | `5.2[-light]`                   | `5.2[-light]`, `5.2.x`                      |
+| 5.1                       | `5.1[-light]`                   | `5.1[-light]`, `5.1.x`                      |
+| 5.0                       | `5.0[-light]`                   | `5.0[-light]`, `5.1.x`                      |
+| 4.0                       | `4.0[-light]`                   | `4.0[-light]`                                 |
+| 3.x                       | `3.x`                              | `3.x`                                           |
 
 
 In **bold** the ones you should be using.

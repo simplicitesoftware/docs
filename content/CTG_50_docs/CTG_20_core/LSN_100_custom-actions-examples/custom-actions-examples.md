@@ -265,7 +265,7 @@ javascript:return obj.getName().myCustomAction(obj.getInstanceName(), obj.getRow
 Asynchronous action launched by the UI with tracking
 -------------------------
 
-Since 5.4 the method signature can get a new parameter to implement the tracking:
+Since 6.0 the method signature can get a new parameter to implement the tracking:
 
 ```java
 public String myAction(Action action, AsyncTracker tracker) {

@@ -37,17 +37,24 @@ import com.simplicite.util.ObjectField;
  * Unit tests example
  */
 public class MyTests {
+
+	public Grant getGrant() {
+		// Using the system is dangerous
+		return Grant.getSystemAdmin();
+	}
+	
 	@Test
 	public void testMyActionOfMyObject() {
 		try {
-			ObjectDB obj = Grant.getSystemAdmin().getTmpObject("MyObject");
+			ObjectDB obj = getGrant().getTmpObject("MyObject");
 			obj.setValues(new JSONObject().put("myCode", "MYCODEVALUE"));
 			ObjectField f = prd.getField("myOtherField");
 			String res = obj.invokeAction("myAction");
 			assertEquals(res, "Something");
 			assertEquals(f.getValue(), "Something else");
 			// Etc.
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			fail(e.getMessage());
 		}
 	}
@@ -55,7 +62,20 @@ public class MyTests {
 ```
 
 In such unit tests classes you can use any of the configurable items. By default you can get them by using the
-system admin grant singleton (`Grant.getSystemAdmin()`) otherwise you need to instanciate a grant specifically.
+system admin grant singleton (`Grant.getSystemAdmin()`) otherwise you need to instantiate a grant specifically:
+
+```java
+private Grant m_grant = null;
+public Grant getGrant() {
+	// Load grant once
+	if (m_grant==null) {
+		m_grant = new Grant();
+		// the login must be a declared user with responsibilities to access objects used in the test
+		m_grant.init("mytestlogin", "myTestSessionId", Globals.ENDPOINT_UI, true, null, Globals.getInterfaceType(), null, null);
+	}
+	return m_grant;
+}
+```
 
 You should also use dedicated datasets to get reproductible tests.
 

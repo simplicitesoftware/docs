@@ -471,7 +471,12 @@ MyObject.initSearch = function() {
 
 The `initRefSelect` hook is called before a reference lookup popup is displayed.
 
-It allows to set field filters for example, etc. just before the popup page is displayed.
+It allows to set field filters or search-spec just before the popup page is displayed:
+- the parent object is set to get contextual information
+- `this.getParentObjectRefField`: useful to know from which foreign key the list is called from UI
+- `parent.getOldValue`: contains DB value of parent field
+- `parent.getValue`: contains UI current value of parent field
+- useful to filter reference pickers with current parent data
 
 Example:
 
@@ -480,21 +485,22 @@ Example:
 ```java
 @Override
 public void initRefSelect(ObjectDB parent) {
-	if ("MyParentObject".equals(parent.getName())) {
-		getField("objField1").setFilter("is null or <1000");
+	if (parent!=null
+	&& "MyParentObject".equals(parent.getName()) // one parent context
+	&& "myForeignKey".equals(getParentObjectRefField())) // thru one foreign key
+	{
+		// DB value of a parent field
+		String dbValue = parent.getOldValue("myParentField1");
+		// current UI value of a parent field (available since 5.3)
+		String uiValue = parent.getValue("myParentField1");
+		// set a filter to search records without parent or matching with parent DB or current UI value
+		getField("objField1").setFilter("is null or ='+Tool.toSQL(uiValue)+' or ='+Tool.toSQL(dbValue)+'");
 	}
 }
 ```
 
-**Rhino**
+The `initDataMapSelect` hook has the same behavior to get referenced data by values.
 
-```javascript
-MyObject.initRefSelect = function(parent) {
-	if (parent.getName() == "MyParentObject") {
-		this.getField("objField1").setFilter("is null or <1000");
-	}
-};
-```
 
 <h3 id="initaction">Action preparation hooks</h3>
 

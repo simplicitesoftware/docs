@@ -369,8 +369,8 @@ _nota_
 | isExtended                   | show/hide fields on search form                                         | false                                      |
 | position                     | current position of search: 'column', 'popup' or 'docked'               |                                            |
 | minified                     | is parent list minified?                                                | false                                      |
-| dockable                     | is dockable near the list? (5.4)                                        | true                                       |
-| pinable                      | is pinable on column fields?  (5.4)                                     | false                                      |
+| dockable                     | is dockable near the list? (6.0+)                                       | true                                       |
+| pinable                      | is pinable on column fields?  (6.0)                                     | false                                      |
 | inst                         | optional instance name                                                  |                                            |
 
 ### Simplicite.UI.Globals.summary
@@ -651,7 +651,7 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 <h3 id="business-objects-hooks">Business object hooks</h3>
 
 To add specific behaviors, the designer must add a JS resource 
-- From version 5.4: named `CLASS` to override the default implementation
+- From version 6.0: named `CLASS` to override the default implementation
 - or named `SCRIPT` to register the object in the global `Simplicite.UI.hooks`.
 
 The hook will be called once by each object instance (the_ajax, panel_ajax...).
@@ -726,7 +726,7 @@ The hook will be called once by each object instance (the_ajax, panel_ajax...).
 })(window.$ui);
 ```
 
-#### `CLASS` hooks (version 5.4 only)
+#### `CLASS` hooks (versions 6.0+ only)
 
 1) In the object definition, designer can use the action **Add resources** to generate a `CLASS` skeleton and one empty `STYLES`.
 

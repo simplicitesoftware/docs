@@ -188,7 +188,7 @@ MyObject.postSelect = function(rowId, copy) {
 
 > **Note**: an encrypted field using this method cannot be searchable except of exact values (by encrypting the search filter in the `preSearch` hook)
 
-Since version 5.4, you can use the hook `fieldEncryptDB`
+Since version 6.0, you can use the hook `fieldEncryptDB`
 - To be called automatically on form, list (edit list...), search 
 - but also in more UI context: crosstab, redolog...
 

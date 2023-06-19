@@ -1,7 +1,7 @@
 Version 5.3.x release note
 ==========================
 
-> **Note**: This release note corresponds to the current minor release.
+> **Note**: This release note corresponds to the current minor release. This minor version is the last 5.x minor version.
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 
@@ -423,3 +423,4 @@ Scratch pad
 - Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
 - Fixed keep old values of inlined form (link 1,1) in case of error
 - Fixed template editor from inherited object without template (SimpleUser)
+- Backported "proximity" search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
