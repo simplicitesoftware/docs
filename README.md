@@ -6,8 +6,6 @@ This is the repository for the content feeding https://docs2.simplicite.io
 Documentation format guidelines [](#guidelines)
 ---------------------------
 
----
-
 ## Category
 
 **Folder name:** CTG_*&lt;order>*_*&lt;category-code>*
@@ -38,8 +36,6 @@ Documentation format guidelines [](#guidelines)
 The *published* attribute is optionnal. It's by default set to *true*.
 
 It is not mandatory to specify every language configuration. For example, if your content does not have a translation in french and in english, you can get rid of the *FRA* and *ENU* attributes. 
-
----
 
 ## Lesson
 
