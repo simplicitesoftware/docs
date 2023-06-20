@@ -417,10 +417,15 @@ Scratch pad
 - Fixed adapter loading "empty" XML (without `<object>` blocks)
 - Fixed do not export `sys_value2` in module to keep overridden value on target platform
 
-<h3 id="version-5.3.5">5.3.5 (UNRELEASED)</h3>
+<h3 id="version-5.3.5">5.3.5 (2023-06-19)</h3>
 
 - Fixed tooltip of action with HTML content
 - Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
 - Fixed keep old values of inlined form (link 1,1) in case of error
 - Fixed template editor from inherited object without template (SimpleUser)
-- Backported "proximity" search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
+- Backported experimental proximity search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
+- Fixed preview PDF document on confirm action
+
+<h3 id="version-5.3.6">5.3.6 (UNRELEASED)</h3>
+
+- Nothing so far...

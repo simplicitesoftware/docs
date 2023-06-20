@@ -21,7 +21,7 @@ Simple or advanced filters can be used in all search features:
 
 - Search pages of the generic web UI (for non assisted search fields)
 - Data access interfaces (that can be used as extrenal data source in office software like Microsoft Office&reg;)
-- Web services (XML/SOAP and JSON/REST)
+- Web services (JSON/REST and legacy XML/SOAP)
 - Raw data services
 
 Advanced search syntax
@@ -52,7 +52,7 @@ Date or datetime interval search syntax is `YYYY-MM-DD[ hh:mm:ss];YYYY-MM-DD[ hh
 
 Alternatively you can use search filters named `dmin__<field name>` or `dmax__<field name>`
 
-### Porximity search on geographical coordinates fields
+### Proximity search on geographical coordinates fields
 
 As of version 5.3, geographical coordinates fields allows "proximity" search using syntax: `<latitude>;<longitude>~<distance with unit, e.g. 100mi, 10km, ...>`.
 
