@@ -801,4 +801,4 @@ This means this mechanism requires a proper modules' version management.
 
 <h3 id="version-5.2.42">5.2.42 (UNRELEASED) **maintenance revision**</h3>
 
-- Nothing so far...
+- Fixed cron workers to wait for job thread die

@@ -497,7 +497,7 @@ openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
 
 You can obtain a free **signed** certificate from the **LetsEncrypt** service, there are some steps to go thru:
 
-1) Add this to the HTTP server config in `nginx.conf` (befor the `location / {...}` block):
+1) Add this to the HTTP server config in `nginx.conf` (before the `location / {...}` block):
 
 ```nginx
 (...)

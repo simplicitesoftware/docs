@@ -114,3 +114,7 @@ Version 4.0 patchlevel 25 release note
 - Fixed constraint with Create/Update/delete impact on object
 - Fix partial clear cache when deleting a user's group
 - Fix UI `change` handler on bigdecimal field
+
+Unreleased yet
+
+- Fixed cron workers to wait for job thread die
