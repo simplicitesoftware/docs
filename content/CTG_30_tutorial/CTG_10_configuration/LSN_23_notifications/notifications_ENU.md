@@ -22,7 +22,7 @@ Users have the option to subscribe or unsubscribe from the notifications they re
     - **WEBPUSH_PRIVATE_KEY** : <generated VAPID private key>
     - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
 
-For more information on the VAPID RFC : [VAPID RFC](https://datatracker.ietf.org/doc/rfc8292/)
+For more information on the VAPID RFC : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
 **Recipients** can be :
 * User : a named user of the platform

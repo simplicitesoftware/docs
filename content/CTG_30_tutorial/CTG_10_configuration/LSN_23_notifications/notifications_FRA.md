@@ -22,7 +22,7 @@ Les **canaux de diffusion** sont les suivants :
     - **WEBPUSH_PRIVATE_KEY** : <clé privée VAPID générée>
     - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
 
-Pour plus d'informations sur la norme VAPID : [VAPID RFC](https://datatracker.ietf.org/doc/rfc8292/)
+Pour plus d'informations sur la norme VAPID : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
 **Les destinataires** peuvent être :
 * Utilisateur : un utilisateur nommé de la plateforme
