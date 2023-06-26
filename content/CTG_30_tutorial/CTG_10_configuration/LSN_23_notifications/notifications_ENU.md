@@ -16,6 +16,13 @@ The channels :
 * Internal : The counter of a bell icon visible in the platform's header is updated with each new notification. Notifications are stored in a system table
 * Mail : An email is sent to the recipients of the notification
 * Specific : Invokes a method of the business object linked to the notification
+* Web Push : Sends a push notification to the user's browser. This channel requires a set of system parameters :
+    - **WEBPUSH** : `yes`
+    - **WEBPUSH_VAPID_KEY** : <generated VAPID public key>
+    - **WEBPUSH_PRIVATE_KEY** : <generated VAPID private key>
+    - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
+
+For more information on the VAPID RFC : https://datatracker.ietf.org/doc/rfc8292/
 
 Recipients can be :
 * User : a named user of the platform

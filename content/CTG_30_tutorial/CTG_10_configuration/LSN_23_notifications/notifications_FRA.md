@@ -16,6 +16,14 @@ Les canaux de diffusion sont les suivants :
 * Interne : Le compteur d'une icône de cloche visible dnas le header de la plateforme est mis à jour à chaque nouvelle notification. Les notifications sont stockées dans une table systeme
 * Mail : Un email est envoyé aux destinataires de la notification
 * Specific : Invoque une méthode de l'objet métier concerné par la notification
+* Web Push : Envoie une notification push au navigateur. Ce canal nécessite un certain nombre de paramètres systèmes :
+    - **WEBPUSH** : `yes`
+    - **WEBPUSH_VAPID_KEY** : <clé publique VAPID générée>
+    - **WEBPUSH_PRIVATE_KEY** : <clé privée VAPID générée>
+    - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
+
+Pour plus d'informations sur la norme VAPID : https://datatracker.ietf.org/doc/rfc8292/
+
 
 Les destinataires peuvent être :
 * Utilisateur : un utilisateur nommé de la plateforme
