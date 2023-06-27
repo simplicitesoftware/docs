@@ -16,7 +16,7 @@ Users have the option to subscribe or unsubscribe from the notifications they re
 * Internal : The counter of a bell icon visible in the platform's header is updated with each new notification. Notifications are stored in a system table
 * Mail : An email is sent to the recipients of the notification
 * Specific : Invokes a method of the business object linked to the notification
-* Web Push : Sends a push notification to the user's browser. This channel requires a set of system parameters :
+* Web Push *(only available in Simplicité v6 and above)*: Sends a push notification to the user's browser. This channel requires a set of system parameters :
     - **WEBPUSH** : `yes`
     - **WEBPUSH_VAPID_KEY** : <generated VAPID public key>
     - **WEBPUSH_PRIVATE_KEY** : <generated VAPID private key>
