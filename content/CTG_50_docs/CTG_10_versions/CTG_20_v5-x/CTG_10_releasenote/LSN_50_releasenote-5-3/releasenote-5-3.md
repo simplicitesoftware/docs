@@ -426,6 +426,13 @@ Scratch pad
 - Backported experimental proximity search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
 - Fixed preview PDF document on confirm action
 
-<h3 id="version-5.3.6">5.3.6 (UNRELEASED)</h3>
+<h3 id="version-5.3.6">5.3.6 (2023-06-22)</h3>
 
 - Fixed cron workers to wait for job thread die
+- Backported feature to display bookmarks in a specific div with `$ui.displayBookmarks($('#myEmbeddedDiv'))`
+- Improved nonce management for internal auth provider
+- Export record to Excel with `searchExport` on child/panel objects to call hooks pre/postExport
+
+<h3 id="version-5.3.7">5.3.7 (UNRELEASED)</h3>
+
+- Nothing so far

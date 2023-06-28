@@ -16,9 +16,10 @@ Documentation
 
 ### **Maintenance** version<br/>(`release[-light]` branches of `template-4.0` Git repo / `4.0*` Docker images)
 
-- <a href="./javadoc/" target="_blank">Java API JavaDocs</a>
-- <a href="./jsdoc/Simplicite.html" target="_blank">Javascript API JSDocs</a>
-- <a href="./site/" target="_blank">Maven site</a>
-- Dependencies audit report for <a href="./dependency-check-report.html" target="_blank">full</a> or <a href="./dependency-check-report-light.html" target="_blank">light</a> variants
-- <a href="./java-dependencies.html" target="_blank">Raw Java dependencies list</a>
-- <a href="./js-dependencies.html" target="_blank">Raw Javascript dependencies list</a>
+- <a href="https://platform.simplicite.io/4.0/javadoc/" target="_blank">Java API JavaDocs</a>
+- <a href="https://platform.simplicite.io/4.0/jsdoc/Simplicite.html" target="_blank">Javascript API JSDocs</a>
+- <a href="https://platform.simplicite.io/4.0/site/" target="_blank">Maven site</a>
+- Dependencies audit report for <a href="https://platform.simplicite.io/4.0/dependency-check-report.html" target="_blank">full</a>
+  or <a href="https://platform.simplicite.io/4.0/dependency-check-report-light.html" target="_blank">light</a> variants
+- <a href="https://platform.simplicite.io/4.0/java-dependencies.html" target="_blank">Raw Java dependencies list</a>
+- <a href="https://platform.simplicite.io/4.0/js-dependencies.html" target="_blank">Raw Javascript dependencies list</a>

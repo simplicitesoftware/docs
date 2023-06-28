@@ -592,7 +592,7 @@ Some system parameters might not be available on previous version or default val
 
 **Default value**
 
-	If there is no value, you will be redirected to up to date online Javadoc: ../../3.2/javadoc/
+	If there is no value, you will be redirected to up to date online Javadoc: https://platform.simplicite.io/x.y/javadoc/
 	
 **Description**
 
@@ -602,7 +602,7 @@ Some system parameters might not be available on previous version or default val
 
 **Default value**
 
-	If there is no value, you will be redirected to up to date online JSDoc: ../../3.2/jsdoc/
+	If there is no value, you will be redirected to up to date online JSDoc: https://platform.simplicite.io/x.y/jsdoc/
 	
 **Description**
 

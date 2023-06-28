@@ -799,6 +799,11 @@ This means this mechanism requires a proper modules' version management.
 - Fixed merge container
 - Fixed do not export `sys_value2` in module to keep overridden value on target platform
 
-<h3 id="version-5.2.42">5.2.42 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.42">5.2.42 (2023-06-22) **maintenance revision**</h3>
 
 - Fixed cron workers to wait for job thread die
+- Backported improvements on nonce management for internal auth provider
+
+<h3 id="version-5.2.43">5.2.43 (UNRELEASED) **maintenance revision**</h3>
+
+- Nothing so far...
