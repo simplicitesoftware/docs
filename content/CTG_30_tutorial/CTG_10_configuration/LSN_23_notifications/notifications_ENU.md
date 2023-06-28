@@ -12,12 +12,19 @@ Recipients can be concerned by all of the notification's channels or be set up i
 
 Users have the option to subscribe or unsubscribe from the notifications they receive (via the *Subscriptions* button on their notification list).
 
-The channels :
+**The channels** :
 * Internal : The counter of a bell icon visible in the platform's header is updated with each new notification. Notifications are stored in a system table
 * Mail : An email is sent to the recipients of the notification
 * Specific : Invokes a method of the business object linked to the notification
+* Web Push *(only available in Simplicité v6 and above)*: Sends a push notification to the user's browser. This channel requires a set of system parameters :
+    - **WEBPUSH** : `yes`
+    - **WEBPUSH_VAPID_KEY** : <generated VAPID public key>
+    - **WEBPUSH_PRIVATE_KEY** : <generated VAPID private key>
+    - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
 
-Recipients can be :
+For more information on the VAPID RFC : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
+
+**Recipients** can be :
 * User : a named user of the platform
 * Group : a group of users
 * SQL : the result of an SQL query
@@ -39,7 +46,7 @@ Create an **internal** notification that alerts users in the **TRN_ADMIN** group
 3. Content configuration:
 * Language : **English**
 * Module : **Training**
-* Subject : *empty* (corresponds to the subject of an email)
+* Subject : *empty* (corresponds to the subject of an email or the title of a Web Push notification)
 * Content: `The [VALUE:trnOrdNumber] order has been validated`.
 
 4. Configuration of the recipients : 

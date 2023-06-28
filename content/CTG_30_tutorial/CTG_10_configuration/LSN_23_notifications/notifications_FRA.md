@@ -12,12 +12,19 @@ Les destinataires de la notification peuvent être concernés par tous ses canau
 
 Les utilisateurs de plateforme ont la possibilité de s'abonner ou se désabonner des notifications dont ils sont destinataires.
 
-Les canaux de diffusion sont les suivants :
+Les **canaux de diffusion** sont les suivants :
 * Interne : Le compteur d'une icône de cloche visible dnas le header de la plateforme est mis à jour à chaque nouvelle notification. Les notifications sont stockées dans une table systeme
 * Mail : Un email est envoyé aux destinataires de la notification
 * Specific : Invoque une méthode de l'objet métier concerné par la notification
+* Web Push *(uniquement disponible dans Simplicité v6 et ultérieures)* : Envoie une notification push au navigateur. Ce canal nécessite un certain nombre de paramètres systèmes :
+    - **WEBPUSH** : `yes`
+    - **WEBPUSH_VAPID_KEY** : <clé publique VAPID générée>
+    - **WEBPUSH_PRIVATE_KEY** : <clé privée VAPID générée>
+    - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
 
-Les destinataires peuvent être :
+Pour plus d'informations sur la norme VAPID : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
+
+**Les destinataires** peuvent être :
 * Utilisateur : un utilisateur nommé de la plateforme
 * Groupe : un groupe d'utilisateurs
 * SQL : le résultat d'une requête SQL
@@ -39,7 +46,7 @@ Créer une notification **interne** qui alerte les utilisateurs du groupe **TRN_
 3. Configuration du contenu :
 * Langue : **Français**
 * Module : **Training**
-* Sujet : *vide* (correspond à l'objet d'un mail)
+* Sujet : *vide* (correspond à l'objet d'un mail ou au titre d'une notification Web Push)
 * Contenu : `La commande [VALUE:trnOrdNumber] a été validée`
 
 4. Configuration des destinataires : 
