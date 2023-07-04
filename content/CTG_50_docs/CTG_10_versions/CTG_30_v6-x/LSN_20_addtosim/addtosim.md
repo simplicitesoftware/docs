@@ -1,4 +1,4 @@
-![Simplicit&eacute; Software](../logos/logo250.png)
+![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250.png)
 * * *
 
 Add version 6 to an existing SIM server

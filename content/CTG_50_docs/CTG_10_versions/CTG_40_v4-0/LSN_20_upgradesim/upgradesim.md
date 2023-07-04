@@ -1,6 +1,3 @@
-![Simplicit&eacute; Software](../logos/logo250.png)
-* * *
-
 Upgrade an existing SIM server to use only the **release** branches
 ===================================================================
 
