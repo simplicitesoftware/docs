@@ -433,7 +433,7 @@ Scratch pad
 - Improved nonce management for internal auth provider
 - Export record to Excel with `searchExport` on child/panel objects to call hooks pre/postExport
 
-<h3 id="version-5.3.7">5.3.7 (UNRELEASED)</h3>
+<h3 id="version-5.3.7">5.3.7 (2023-07-05)</h3>
 
 - Fixed display text-formatted messages returned by the hooks
 - Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
@@ -446,5 +446,8 @@ Scratch pad
 - Added a "show password" button on the logon page (to be enabled using the `USE_SHOW_PASSWORD` system param)
 - Improved websocket inhibition on client side (avoid useless server-side errors)
 - Added cron table status in the health check
+- Improved proximity search
 
+<h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
 
+- Nothing so far...
