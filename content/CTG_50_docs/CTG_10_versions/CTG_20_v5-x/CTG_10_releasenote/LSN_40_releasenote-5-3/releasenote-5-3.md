@@ -442,12 +442,17 @@ Scratch pad
 - Restored basic auth from I/O form
 - Fixed restore update metadata in case of delete error on UI
 - Close form: stop auto-scroll to last scrollTop when user has already scrolled
-- No pillbox rendering of link in default bottom panel
 - Added a "show password" button on the logon page (to be enabled using the `USE_SHOW_PASSWORD` system param)
 - Improved websocket inhibition on client side (avoid useless server-side errors)
 - Added cron table status in the health check
 - Improved proximity search
+- Improved pushlog thru websocket to users with `USE_WEBSOCKET_LOG`
 
 <h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
+- Backported no pillbox rendering of link in default bottom panel
+- **Compatibility breaking change**: the platform hook `customStartPage` now throws exception.
+  If you have implemented this hook you need to add `throws Excepiton` to the method declaraton.
+- Backported new platform hook `customAuthPage` to implement a custom authentication page/redirect
+

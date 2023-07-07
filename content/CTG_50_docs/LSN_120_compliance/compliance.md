@@ -104,11 +104,11 @@ An application server with Websocket 1.1+ support is highly recommended for Simp
 | ![](https://platform.simplicite.io/logos/logo.svg) | MySQL/MariaDB | PostgreSQL | Oracle   | SQLServer |
 |:--------------------------------------------------:|---------------|------------|----------|-----------|
 | **6.x** (dev)                                      | 8+            | 11+        | 12c+     | 2019+     |
-| **5.x**                                            | 5.7+          | 10+        | 12c+     | 2019+     |
-| **4.0**                                            | 5.5+          | 9.2+       | 12c+     | 2016+     |
-| Legacy **3.2**                                     | 5.1+          | 8+         | 11g+     | 2012+     |
-| Legacy **3.1**                                     | 5.1+          | 8+         | 11g+     | 2012+     |
-| Legacy **3.0**                                     | 5.1+          | 8+         | 10g+     | 2008+     |
+| **5.x**                                            | 5.7+          | 11+        | 12c+     | 2019+     |
+| **4.0**                                            | 5.5+          | 10++       | 12c+     | 2016+     |
+| Legacy **3.2**                                     | 5.1+          | 9+         | 11g+     | 2012+     |
+| Legacy **3.1**                                     | 5.1+          | 9+         | 11g+     | 2012+     |
+| Legacy **3.0**                                     | 5.1+          | 9+         | 10g+     | 2008+     |
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
