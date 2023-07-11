@@ -12,7 +12,7 @@ The authentication providers are to be configured as the `AUTH_PROVIDERS` system
 	{ "type": "internal", "name": "simplicite", "visible": false },
 	{ "type": "oauth2", "name": "google", "label": "Sign in with Google OAuth2 IdP", "sync": true, "client_id": "<my client ID>", "client_secret": "<my client secret>" },
 	{ "type": "saml", "name": "google", "label": "Sign in with Google SAML IdP", "sync": true }
-	{ "type": "ldap", "name": "openldap" }
+	{ "type": "ldap", "name": "openldap", visible: [ "http://localhost:8080"] }
 ]
 ```
 
@@ -47,8 +47,8 @@ The JSON settings include the common attributes:
 
 The other settings depends on the provider's type, please refer to the following document for details:
 
-- [OAuth2](/lesson/docs/authentication/tomcat-oauth2) settings
-- [SAML](/lesson/docs/authentication/tomcat-saml) settings
+- [OAuth2](/resource/docs/authentication/tomcat-oauth2) settings
+- [SAML](/resource/docs/authentication/tomcat-saml) settings
 
 <h3 id="troubleshooting">Troubleshooting</h3>
 

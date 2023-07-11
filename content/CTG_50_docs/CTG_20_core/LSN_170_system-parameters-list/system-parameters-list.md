@@ -586,7 +586,7 @@ Some system parameters might not be available on previous version or default val
 **Description**
 
 	Default parameters for used for HTML editor fields (using TinyMCE).
-	See [specific html editor page](/lesson/docs/ui/html-editor-params)
+	See [specific html editor page](/resource/docs/ui/html-editor-params)
 
 ### `JAVADOC_LOCATION`
 
@@ -1132,8 +1132,18 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Add "I forgot my password" on logon page (on local OAUTH2 only)
+	Add "I forgot my password" on logon page (on the internal auth provider only)
 	and use alert `UserForgotPassword` to send the change request validation to user
+
+### `USE_SHOW_PWD`
+
+**Default value**
+
+	no
+
+**Description**
+
+	Add "Show password" on logon page (on the internal auth provider only)
 
 ### `USE_FULLTEXT_INDEXES`
 

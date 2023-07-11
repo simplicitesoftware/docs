@@ -1,1 +1,1 @@
-This document has been moved to [this document](/lesson/docs/authentication/tomcat-saml)
+This document has been moved to [this document](/resource/docs/authentication/tomcat-saml)

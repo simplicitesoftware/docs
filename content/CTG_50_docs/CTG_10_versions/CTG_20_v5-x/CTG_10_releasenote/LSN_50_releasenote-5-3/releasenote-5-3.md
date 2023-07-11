@@ -433,6 +433,30 @@ Scratch pad
 - Improved nonce management for internal auth provider
 - Export record to Excel with `searchExport` on child/panel objects to call hooks pre/postExport
 
-<h3 id="version-5.3.7">5.3.7 (UNRELEASED)</h3>
+<h3 id="version-5.3.7">5.3.7 (2023-07-05)</h3>
 
-- Nothing so far
+- Fixed display text-formatted messages returned by the hooks
+- Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
+  (`true/false` values are still taken into account)
+- Added new LESS variables for scrollbar styles
+- Restored basic auth from I/O form
+- Fixed restore update metadata in case of delete error on UI
+- Close form: stop auto-scroll to last scrollTop when user has already scrolled
+- Added a "show password" button on the logon page (to be enabled using the `USE_SHOW_PASSWORD` system param)
+- Improved websocket inhibition on client side (avoid useless server-side errors)
+- Added cron table status in the health check
+- Improved proximity search
+- Improved pushlog thru websocket to users with `USE_WEBSOCKET_LOG`
+
+<h3 id="version-5.3.8">5.3.8 (2023-07-10)</h3>
+
+- Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
+- Backported no pillbox rendering of link in default bottom panel
+- Backported new platform hook `customAuthPage` to implement a custom authentication page/redirect
+- Fixed datetime and color pickers overflow over small list (search by column and edit list)
+- Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
+- Fixed position of completion dropdown upon responsive table
+
+<h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
+
+- Nothing so far...

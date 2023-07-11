@@ -4,7 +4,7 @@ Simplicit&eacute; projects and platform Git Repositories
 This document describe how to use **projects** and **platform** Git repositories.
 
 > **Note**: starting with version 3.2 the configuration modules can be exposed as Git repositories (managed by the Simplicit&eacute; instance itself).
-> This document **does not** deal of this feature. Please refer to [this document](/lesson/docs/integration/git-repositories) instead.
+> This document **does not** deal of this feature. Please refer to [this document](/resource/docs/integration/git-repositories) instead.
 
 Prerequisites
 -------------
@@ -82,7 +82,7 @@ All platform packages repositories are **read-only**.
 4. Setup the project using `ant setup` ANT task
 3. If needed adjust manually the resulting build and properties files in your project
 
-See [project package and ANT tasks document](/lesson/docs/misc/project-package-and-ant-tasks) for details on how to proceed with installation/deployement of your project.
+See [project package and ANT tasks document](/resource/docs/misc/project-package-and-ant-tasks) for details on how to proceed with installation/deployement of your project.
 
 ### Instance template packages usage
 
@@ -91,5 +91,5 @@ The instances templates packages usage is straigtforward: it contains a preinsta
 You just need to clone the desired **instance template** package from `https://<username>[:<password>]@platform.git.simplicite.io/template-<x.y>.git`,
 copy the content of the `app` in your Tomcat's `webapps` folder and start Tomcat.
 
-> **Note**: the instance templates are used by our [instance manager](/lesson/docs/misc/manager) and by our [Docker container](/lesson/docs/operation/docker)
-> and other PaaS containers ([Bluemix](/lesson/docs/misc/cloudfoundry-bluemix), [Pivotal](/lesson/docs/misc/cloudfoundry-pivotal), [Heroku](/lesson/docs/operation/heroku), [OpenShift](/lesson/docs/operation/openshift), ...)
+> **Note**: the instance templates are used by our [instance manager](/resource/docs/misc/manager) and by our [Docker container](/resource/docs/operation/docker)
+> and other PaaS containers ([Bluemix](/resource/docs/misc/cloudfoundry-bluemix), [Pivotal](/resource/docs/misc/cloudfoundry-pivotal), [Heroku](/resource/docs/operation/heroku), [OpenShift](/resource/docs/operation/openshift), ...)

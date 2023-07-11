@@ -11,7 +11,7 @@ Remote debugging
 When using our standard images you can (re)start your container with JPDA enabled by adding
 `-e JPDA=true -p <port, e.g. 8000 or 12345>:8000` to your `docker run` command.
 
-See [this document](/lesson/docs/operation/docker) for details.
+See [this document](/resource/docs/operation/docker) for details.
 
 <h3 id="sim">Simplicit&eacute;&reg; Instances Manager (SIM)</h3>
 

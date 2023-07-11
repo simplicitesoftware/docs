@@ -13,7 +13,7 @@ Simply add the Keycloak provider as follow:
 	"type": "oauth2",
 	"label": "Sign in with Keycloak OAuth2 IdP",
 	"sync": true,
-	"visible": true,
+	"visible": <true|false|<array of URLs>>,
 	"client_id": "<my client ID>",
 	"client_secret": "<my client secret>",
 	"authorize_url": "https://<host:port>/auth/realms/<myrealm>/protocol/openid-connect/auth",

@@ -11,8 +11,8 @@ Documentation
 -------------
 
 - [Release notes](./releasenote/)
-- [Upgrading note](/lesson/docs/versions/upgrading)
-- [Instructions to upgrade an existing SIM server](/lesson/docs/versions/upgradesim) to use only the `release[-light]` branches
+- [Upgrading note](/resource/docs/versions/upgrading)
+- [Instructions to upgrade an existing SIM server](/resource/docs/versions/upgradesim) to use only the `release[-light]` branches
 
 ### **Maintenance** version<br/>(`release[-light]` branches of `template-4.0` Git repo / `4.0*` Docker images)
 

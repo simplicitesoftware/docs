@@ -43,7 +43,7 @@ This example is based on the **client side** Google Calendar API.
 
 ### Google Calendar API
 
-You should have activate Google Oauth2 authentication to use it. See [Tomcat OAuth2 authentification](/lesson/docs/authentication/tomcat-oauth2)
+You should have activate Google Oauth2 authentication to use it. See [Tomcat OAuth2 authentification](/resource/docs/authentication/tomcat-oauth2)
 
 See [https://developers.google.com/google-apps/calendar](https://developers.google.com/google-apps/calendar/) for details.
 
@@ -104,7 +104,7 @@ Calendar = function(g) {
 
 #### Code snippet using a business object
 
-You can now use the previsous script on a business object hook and create an event. See [business object hooks code examples](/lesson/docs/core/businessobject-code-hooks)
+You can now use the previsous script on a business object hook and create an event. See [business object hooks code examples](/resource/docs/core/businessobject-code-hooks)
 
 Example of a business object where event are created on google calendar. Date has to be on RFC3339 format. Simplicite provide method to change date to this specific format.
 
@@ -299,7 +299,7 @@ ExternalEmail = function(g) {
 
 #### Code snippet using a business Object
 
-You can now use the previsous script on a business object hook and send an email. See [business object hooks code examples](/lesson/docs/core/businessobject-code-hooks)
+You can now use the previsous script on a business object hook and send an email. See [business object hooks code examples](/resource/docs/core/businessobject-code-hooks)
 
 ```javascript
 var e = new ExternalEmail(this.getGrant());

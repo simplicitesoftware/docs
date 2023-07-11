@@ -804,6 +804,15 @@ This means this mechanism requires a proper modules' version management.
 - Fixed cron workers to wait for job thread die
 - Backported improvements on nonce management for internal auth provider
 
-<h3 id="version-5.2.43">5.2.43 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.43">5.2.43 (2023-07-04) **maintenance revision**</h3>
 
-- Nothing so far...
+- Fixed display text-forlatted messages returned by the hooks
+- Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
+  (`true/false` values are still taken into account)
+- Restored basic auth from I/O form
+- Added new LESS variables for scrollbar styles
+
+<h3 id="version-5.2.44">5.2.44 (UNRELEASED) **maintenance revision**</h3>
+
+- Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
+- Fixed position of completion dropdown upon responsive table

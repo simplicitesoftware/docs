@@ -16,7 +16,7 @@ Note that other mechanisms exists to add some business logic to your business ob
 - state transitions expressions
 - etc.
 
-See [this document](/lesson/docs/core/expressions) for details on expressions.
+See [this document](/resource/docs/core/expressions) for details on expressions.
 
 Hooks are very powerful as you can write any needed code, but you need to be careful on the choice of the hook to put your logic in.
 The choice depends on the nature of the considered business logic:
@@ -40,8 +40,8 @@ The choice depends on the nature of the considered business logic:
 > - Rhino: `a == b`, Java: `a.equals(b)`
 > - Rhino: `a != b`, Java: `!a.equals(b)`
 
-Some very common and useful code examples are given in the [basic code examples](/lesson/docs/core/basic-code-examples) document.
-<!-- and some more unusual examples are given [advanced code examples](/lesson/docs/core/advanced-code-examples) document.-->
+Some very common and useful code examples are given in the [basic code examples](/resource/docs/core/basic-code-examples) document.
+<!-- and some more unusual examples are given [advanced code examples](/resource/docs/core/advanced-code-examples) document.-->
 
 <h2 id="definitionhooks">Object definition and right-related hooks</h2>
 
@@ -178,7 +178,7 @@ MyObject.isActionEnable(row, action) {
 };
 ```
 
-See [this document](/lesson/docs/core/custom-actions-examples) for details on how to implement custom actions.
+See [this document](/resource/docs/core/custom-actions-examples) for details on how to implement custom actions.
 
 <h3 id="isprintemplateenable">Publication processing right enabling/disabling hook</h3>
 
@@ -209,7 +209,7 @@ MyObject.isPrintTemplateEnable(row, printtmpl) {
 };
 ```
 
-See [this document](/lesson/docs/core/publication-examples) for details on how to implement publications.
+See [this document](/resource/docs/core/publication-examples) for details on how to implement publications.
 
 <h3 id="isstatetransitionenable">State transitions hook</h3>
 

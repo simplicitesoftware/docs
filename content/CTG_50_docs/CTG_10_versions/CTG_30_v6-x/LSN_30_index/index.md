@@ -10,7 +10,7 @@ Documentation
 -------------
 
 - [Release notes](./releasenote/)
-<!-- - [Instructions to add to an existing SIM server](/lesson/docs/versions/addtosim) -->
+<!-- - [Instructions to add to an existing SIM server](/resource/docs/versions/addtosim) -->
 
 ### **Development** version 6.0 <br/>(`development[-light]` branches of `template-6` Git repo / `6-alpha*` Docker images)
 
