@@ -43,6 +43,11 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 - And `tsl_id` and `tsl_type` are not used anymore.
 - The related legacy field `obo_delspec` is now hidden and deprecated
 
+### Compatibility breaking changes
+
+- Tthe platform hook `customStartPage` now throws exceptions.
+  If you have implemented this hook you need to add `throws Excepiton` to the method declaraton.
+
 <h2 id="changes">Core changes</h2>
 
 - New hook to limit user's access to menu item 
