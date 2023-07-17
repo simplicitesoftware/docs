@@ -448,11 +448,15 @@ Scratch pad
 - Improved proximity search
 - Improved pushlog thru websocket to users with `USE_WEBSOCKET_LOG`
 
-<h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
+<h3 id="version-5.3.8">5.3.8 (2023-07-10)</h3>
 
 - Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
 - Backported no pillbox rendering of link in default bottom panel
-- **Compatibility breaking change**: the platform hook `customStartPage` now throws exception.
-  If you have implemented this hook you need to add `throws Excepiton` to the method declaraton.
 - Backported new platform hook `customAuthPage` to implement a custom authentication page/redirect
+- Fixed datetime and color pickers overflow over small list (search by column and edit list)
+- Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
+- Fixed position of completion dropdown upon responsive table
 
+<h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
+
+- Nothing so far...
