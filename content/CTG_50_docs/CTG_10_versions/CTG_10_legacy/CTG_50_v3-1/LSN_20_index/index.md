@@ -11,7 +11,7 @@ Documentation
 -------------
 
 - [Release notes](./releasenote/)
-- [Upgrading note](/lesson/docs/versions/upgrading)
+- [Upgrading note](/resource/docs/versions/upgrading)
 
 ### **Legacy** version<br/>(`master` branch of `template-3.1` Git repo / `3.1` Docker image)
 

@@ -442,7 +442,11 @@ Scratch pad
 - Restored basic auth from I/O form
 - Fixed restore update metadata in case of delete error on UI
 - Close form: stop auto-scroll to last scrollTop when user has already scrolled
+<<<<<<< HEAD:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_40_releasenote-5-3/releasenote-5-3.md
 - Added a "show password" button on the logon page (to be enabled using the `USE_SHOW_PASSWORD` system param)
+=======
+- Added a "show password" button on the logon page (to be enabled using the `USE_SHOW_PWD` system param)
+>>>>>>> rec:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_50_releasenote-5-3/releasenote-5-3.md
 - Improved websocket inhibition on client side (avoid useless server-side errors)
 - Added cron table status in the health check
 - Improved proximity search
@@ -452,6 +456,7 @@ Scratch pad
 
 - Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
 - Backported no pillbox rendering of link in default bottom panel
+<<<<<<< HEAD:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_40_releasenote-5-3/releasenote-5-3.md
 - Backported new platform hook `customAuthPage` to implement a custom authentication page/redirect
 - Fixed datetime and color pickers overflow over small list (search by column and edit list)
 - Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
@@ -460,3 +465,14 @@ Scratch pad
 <h3 id="version-5.3.8">5.3.8 (UNRELEASED)</h3>
 
 - Nothing so far...
+=======
+- Backported new **experimental** platform hook `customAuthPage` to implement a custom authentication page/redirect
+- Fixed datetime and color pickers overflow over small list (search by column and edit list)
+- Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on the `fieldCompletion` hook
+- Fixed position of completion dropdown upon responsive table
+
+<h3 id="version-5.3.9">5.3.9 (UNRELEASED)</h3>
+
+- Fixed signature pad distribution to `signature_pad.umd.min.js` instead of `signature_pad.min.js`
+- Backported improvements/simplification on the `customAuthPage` platform hook
+>>>>>>> rec:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_50_releasenote-5-3/releasenote-5-3.md

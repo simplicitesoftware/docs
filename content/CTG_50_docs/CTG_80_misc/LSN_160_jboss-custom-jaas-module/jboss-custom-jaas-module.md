@@ -1,1 +1,1 @@
-This document has been moved to [this document](/lesson/docs/authentication/jboss-custom-jaas-module)
+This document has been moved to [this document](/resource/docs/authentication/jboss-custom-jaas-module)

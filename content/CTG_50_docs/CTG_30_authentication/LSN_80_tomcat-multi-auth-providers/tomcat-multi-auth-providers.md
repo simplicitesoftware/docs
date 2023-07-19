@@ -47,8 +47,8 @@ The JSON settings include the common attributes:
 
 The other settings depends on the provider's type, please refer to the following document for details:
 
-- [OAuth2](/lesson/docs/authentication/tomcat-oauth2) settings
-- [SAML](/lesson/docs/authentication/tomcat-saml) settings
+- [OAuth2](/resource/docs/authentication/tomcat-oauth2) settings
+- [SAML](/resource/docs/authentication/tomcat-saml) settings
 
 <h3 id="troubleshooting">Troubleshooting</h3>
 

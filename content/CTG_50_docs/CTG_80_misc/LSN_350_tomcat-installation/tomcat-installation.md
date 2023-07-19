@@ -1,1 +1,1 @@
-This document has been moved to [this document](/lesson/docs/operation/tomcat-installation-linux)
+This document has been moved to [this document](/resource/docs/operation/tomcat-installation-linux)

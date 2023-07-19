@@ -9,7 +9,7 @@ Changes
 - Column and table names are now checked against a list of SQL reserved words
 - Added simplified date interval search filters syntax for REST/JSON services e.g. `"myDateField": "2016-01-01,2016-12-31"`
 - Added new grant hook `GrantHooks.customAuth(request, response)` that can be used to handle a custom authentication mechanism (custom SSO, ...)
-  see. [this document](/lesson/docs/authentication/tomcat-customauth) for details
+  see. [this document](/resource/docs/authentication/tomcat-customauth) for details
 - Flash&reg; charts marked as deprecated and outdate, this means this feature will be fully removed in next version
 - Light and dark background-friendly loading GIFs
 - Added new grant hook `downloadDocument` called after document download checks are done (either using generic UI document URL or raw document service URL,

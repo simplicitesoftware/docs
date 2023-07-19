@@ -814,5 +814,11 @@ This means this mechanism requires a proper modules' version management.
 
 <h3 id="version-5.2.44">5.2.44 (UNRELEASED) **maintenance revision**</h3>
 
+<<<<<<< HEAD:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_50_releasenote-5-2/releasenote-5-2.md
 - Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
+=======
+- Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on `fieldCompletion` hook
+- Fixed position of completion dropdown upon responsive table
+- Improved robustness on module name changes
+>>>>>>> rec:content/CTG_50_docs/CTG_10_versions/CTG_20_v5-x/CTG_10_releasenote/LSN_40_releasenote-5-2/releasenote-5-2.md
