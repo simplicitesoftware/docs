@@ -91,5 +91,5 @@ The instances templates packages usage is straigtforward: it contains a preinsta
 You just need to clone the desired **instance template** package from `https://<username>[:<password>]@platform.git.simplicite.io/template-<x.y>.git`,
 copy the content of the `app` in your Tomcat's `webapps` folder and start Tomcat.
 
-> **Note**: the instance templates are used by our [instance manager](/resource/docs/misc/manager) and by our [Docker container](/resource/docs/operation/docker)
+> **Note**: the instance templates are used by our [instance manager](https:/resource/docs/misc/manager) and by our [Docker container](/resource/docs/operation/docker)
 > and other PaaS containers ([Bluemix](/resource/docs/misc/cloudfoundry-bluemix), [Pivotal](/resource/docs/misc/cloudfoundry-pivotal), [Heroku](/resource/docs/operation/heroku), [OpenShift](/resource/docs/operation/openshift), ...)

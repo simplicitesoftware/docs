@@ -147,6 +147,8 @@ Example:
 	}
 ```
 
+As of version 5, it is possible to proceed with additional JWT token processing using `jwt_*` settings described bellow.
+
 API endpoint authentication
 ---------------------------
 
@@ -160,6 +162,7 @@ JWT token validation is enabled by adding the following attributes:
 - `jwt_issuer`, **required**: JWT token issuer
 - `jwt_secret`, **optional**: JWT token signature secret
 - `jwt_claims_mappings`, **optional**:": JWT token's payload claims mappings (e.g. `{ "login": "preferred_username" }`)
+- `jwt_check_nonce`, **optional**:": Check JWT token's nonce, defaults to `false`
 
 ### Token info URL validation
 

@@ -88,7 +88,7 @@ The documents of this section provide details on various deployments/configurati
 
 ### Managed cloud instances servers
 
-- [Instances manager usage](/resource/docs/misc/manager)
+- [Instances manager usage](https:/resource/docs/misc/manager)
 
 ### Other PaaS-based deployments
 

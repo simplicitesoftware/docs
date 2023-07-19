@@ -1,1 +1,1 @@
-This document has been moved to [this document](/resource/docs/misc/manager)
+This document has been moved to [this document](https:/resource/docs/misc/manager)
