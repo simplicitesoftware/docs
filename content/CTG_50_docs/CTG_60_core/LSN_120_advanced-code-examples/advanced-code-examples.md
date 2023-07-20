@@ -1,7 +1,7 @@
 Advanced code examples
 ======================
 
-Please refer to [basic code examples](/resource/docs/core/basic-code-examples) document for naming conventions and logging strategies. 
+Please refer to [basic code examples](/lesson/docs/core/basic-code-examples) document for naming conventions and logging strategies. 
 
 These advanced examples are given using the server-side **Rhino** scripting language.
 

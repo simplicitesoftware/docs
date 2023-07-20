@@ -8,13 +8,13 @@ Changes
 
 ### Mail service settings as system parameter
 
-It is now possible to configure mail service using the `MAIL_SERVICE` system parameter, check [this document](/resource/docs/misc/email-howto) for details.
+It is now possible to configure mail service using the `MAIL_SERVICE` system parameter, check [this document](/lesson/docs/misc/email-howto) for details.
 
 <div id='datasources'/>
 
 ### Additional datasources as system parameters
 
-When using Apache Tomcat, it is now possible to configure additional datasource using system parameters, check [this document](/resource/docs/misc/datasources-howto) for details.
+When using Apache Tomcat, it is now possible to configure additional datasource using system parameters, check [this document](/lesson/docs/misc/datasources-howto) for details.
 
 <div id='ean'/>
 

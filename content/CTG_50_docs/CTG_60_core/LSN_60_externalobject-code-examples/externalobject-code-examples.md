@@ -9,7 +9,7 @@ By extension it can also be used to generate other type of files such as a PDF d
 But this is not a typical use of external objects as there are other mechanisms for generating such contents (e.g. publication templates).
 
 As of **version 3.1** external objects can also be used to provide custom web services (typically JSON/REST web services) on the API endpoint.
-Please refer to [this document](/resource/docs/integration/custom-services) for details.
+Please refer to [this document](/lesson/docs/integration/custom-services) for details.
 
 > **Note**:
 >
@@ -35,7 +35,7 @@ The content of an external page is produced by the `display` method of its serve
 > and/or for versions 3.x and 4.0 **legacy UI** (still available for backward compatibility).
 >
 > For the 4.0 **responsive UI**'s single page custom components the implementation pattern is different,
-> please refer to the dedicated section below [Responsive UI pattern](/resource/docs/core/externalobject-code-examples#responsive).
+> please refer to the dedicated section below [Responsive UI pattern](/lesson/docs/core/externalobject-code-examples#responsive).
 
 #### Legacy UI
 
@@ -157,7 +157,7 @@ The responsive UI requires a Javascript statement (even empty like above) to be 
 
 > **Note** If you return a plain string it will be rendered as a **legacy page** (displayed in an iframe for backward compatiblity).
 
-See [this section](/resource/docs/core/externalobject-code-examples#responsive) for other examples dedicated to the responsive UI.
+See [this section](/lesson/docs/core/externalobject-code-examples#responsive) for other examples dedicated to the responsive UI.
 
 <h2 id="usingresources">Using resources and custom HTML/JavaScript/CSS</h2>
 
@@ -272,7 +272,7 @@ As indicated above, the Ajax APIs JavaScripts are included by default in the **s
 * using dedicated APIs of the web helper classes in **non standard** pages, e.g. using `wp.appendAjax()`
 where `wp` is an instance of a sub class of `com.simplicite.webapp.web.WebPage`
 
-The usage of the Ajax APIs itself is described in details in another [document](/resource/docs/apis/ajax-api). Here is just a simple **standard** page example:
+The usage of the Ajax APIs itself is described in details in another [document](/lesson/docs/apis/ajax-api). Here is just a simple **standard** page example:
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -285,7 +285,7 @@ MyExtObj.display = function(params) {
 
 Decorated standard pages includes the UI tools by default (non standard page need to include it explicitly, e.g. using `wp.appendUITools()` where `wp` is an instance of a sub class of `com.simplicite.webapp.web.WebPage`).
 
-The usage of the UI tools APIs itself is described in details in another [document](/resource/docs/core/ui-tools-code-examples). Here is just a simple **standard** page example:
+The usage of the UI tools APIs itself is described in details in another [document](/lesson/docs/core/ui-tools-code-examples). Here is just a simple **standard** page example:
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -293,7 +293,7 @@ MyExtObj.display = function(params) {
 };
 ```
 
-> **Warning**: these legacy UI tools are not available in the responsive UI, see [this document](/resource/docs/ui/responsive)
+> **Warning**: these legacy UI tools are not available in the responsive UI, see [this document](/lesson/docs/ui/responsive)
 > for details on the responsive UI Javascript API.
 
 ### jQPlot&reg; charts
@@ -632,7 +632,7 @@ which renders as:
 {"hello":"world"}
 ```
 
-> **Note** for a more coprehensive description on how to write custom webservices please refer to [this document](/resource/docs/integration/custom-services)
+> **Note** for a more coprehensive description on how to write custom webservices please refer to [this document](/lesson/docs/integration/custom-services)
 
 <h2 id="responsive">Responsive UI pattern</h2>
 

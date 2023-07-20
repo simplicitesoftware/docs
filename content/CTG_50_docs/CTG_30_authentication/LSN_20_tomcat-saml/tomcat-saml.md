@@ -24,7 +24,7 @@ Then declare your SAML authentication provider in the `AUTH_PROVIDERS` system pa
 ]
 ```
 
-See [this document](/resource/docs/authentication/tomcat-multi-auth-providers) for details on how to configure authentication providers.
+See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for details on how to configure authentication providers.
 
 > **Warning**: Before doing these changes, **make sure** that you will still be able to login with a user having at least a responsibility on the `ADMIN` group.
 
@@ -40,7 +40,7 @@ If you configure several SAML apps you **must** choose a unique entity ID for ea
 <h2 id="settings">Application settings</h2>
 
 > Note: this section is **depprecated** as of version 4.0.P23 for which the authentication providers configuration is done using the `AUTH_PROVIDERS` JSON system parameters.
-> See [this document](/resource/docs/authentication/tomcat-multi-auth-providers) for details.
+> See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for details.
 
 Add the IDP settings of your Google SAML app as system parameters:
 

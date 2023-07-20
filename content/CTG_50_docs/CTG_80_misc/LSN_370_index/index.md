@@ -1,1 +1,1 @@
-Please refer to [main documentation index](/resource/docs/versions/index)
+Please refer to [main documentation index](/lesson/docs/versions/index)

@@ -247,7 +247,7 @@ javascript:debugger; alert("param=" + app.sysparams.MY_PARAM + " value=" + obj.g
 - New global template of list rendering:
 	- To show the count of records and the current page number in both title and footer
 	- To allow new placement of default footer buttons, navbar...
-	- See `Simplicite.UI.Globals.list.template` [here](https:/resource/docs/ui/responsive).
+	- See `Simplicite.UI.Globals.list.template` [here](https:/lesson/docs/ui/responsive).
 
 ![](listcount.png)
 

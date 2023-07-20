@@ -1,1 +1,1 @@
-This document has been moved to [this document](/resource/docs/operation/cloudfoundry)
+This document has been moved to [this document](/lesson/docs/operation/cloudfoundry)

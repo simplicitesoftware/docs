@@ -39,7 +39,7 @@ The following forced MIME types are now available for print templates:
 
 A new publication template has been added on ALM test case so as to publish the test case as a Markdown archive.
 
-The publicattion result is a ZIP archive containing a main `/resource/docs/versions/index` file referencing screen shots images files of the test case steps.
+The publicattion result is a ZIP archive containing a main `/lesson/docs/versions/index` file referencing screen shots images files of the test case steps.
 
 ### Enhanced Bootstrap&reg; web page template
 

@@ -51,7 +51,7 @@ These implementation patterns are to be considered **deprecated**, their usage i
 * Using any of the legacy JavaScript functions and variables not in the `Simplicite` namespace is strongly discouraged
 * Developping custom pages/components with the legacy UI patterns: the responsive UI pattern for developping custom page/components is very different from the legacy UI patterns,
   the legacy UI will be removed in the future, so a refactoring of such custom components is **strongly encouraged**,
-  see [this document](/resource/docs/core/externalobject-code-examples#responsive) for details.
+  see [this document](/lesson/docs/core/externalobject-code-examples#responsive) for details.
 
 > **Warning**: The legacy UI is scheduled to be removed in release **P25**, you now need to consider refactoring **all** code/components dedicated to this legacy UI
 
@@ -60,7 +60,7 @@ These implementation patterns are to be considered **deprecated**, their usage i
 The version 4.0 includes a complete refactoring of the legacy UI URL patterns.
 
 > **Note**: With the responsive UI manipulating URLs does not make sense anymore, you need to use the client-side UI APIs,
-> see [this document](/resource/docs/ui/responsive) for details.
+> see [this document](/lesson/docs/ui/responsive) for details.
 
 ### Prerequisites
 

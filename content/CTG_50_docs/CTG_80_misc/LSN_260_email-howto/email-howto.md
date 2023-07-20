@@ -97,4 +97,4 @@ When this parameter is not set (or set to `default`), the `mail.from` is used.
 Use an external service like Mailchimp, MailJet or Sendwithus
 -------------------------------------------------------------
 
-See [Third party apis](/resource/docs/core/third-party-apis-examples) page.
+See [Third party apis](/lesson/docs/core/third-party-apis-examples) page.

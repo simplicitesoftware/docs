@@ -7,7 +7,7 @@ Core changes
 - Improved index search for HSQLDB (`and` operator is used by default for multiple words, words can be prefixed by `+` to use `or` operator instead)
 - Improved Git repository management tool
 - All responsibilities, even the one marked inactive, are taken into account for I/O grants (this prevents side effects of UI scopes on I/O grants)
-- Added generic OpenIDConnect OAuth2 provider framework (see [this document](/resource/docs/authentication/tomcat-oauth2) for details)
+- Added generic OpenIDConnect OAuth2 provider framework (see [this document](/lesson/docs/authentication/tomcat-oauth2) for details)
 - The `com.simplicite.webapp.GrantWeb` class is now deprecated, all implementation have been moved moved to `com.simplicite.util.Grant` class
 - Added case-insensitive search support for PostgreSQL using non SQL99 operator `ilike`
 - Load `STYLES` and `SCRIPT` resources of inherited objects

@@ -4,29 +4,29 @@ Version 3.1 patchlevel 09 release note
 Table of Contents
 -----------------
 
-* [Password encoding defaults to MD5/HEX for Tomcat](/resource/docs/versions/releasenote-patchlevel-09#password)
-* [Enhanced meta object data in JSON webservices](/resource/docs/versions/releasenote-patchlevel-09#json)
-* [Additional publication template MIME types](/resource/docs/versions/releasenote-patchlevel-09#mime)
-* [Test case publication as markdown archive](/resource/docs/versions/releasenote-patchlevel-09#test)
-* [Enhanced Bootstrap® web page template](/resource/docs/versions/releasenote-patchlevel-09#bootstrap)
-* [Support for HTTP method override for REST services](/resource/docs/versions/releasenote-patchlevel-09#rest)
-* [Refactored mobile web UI](/resource/docs/versions/releasenote-patchlevel-09#mobile)
-* [Timeout on AJAX API](/resource/docs/versions/releasenote-patchlevel-09#timeout)
-* [SQL monitoring](/resource/docs/versions/releasenote-patchlevel-09#monitoring)
-* [Clustering](/resource/docs/versions/releasenote-patchlevel-09#clustering)
-* [Debug hook calls and SQL queries](/resource/docs/versions/releasenote-patchlevel-09#debug)
-* [Prune DB logs](/resource/docs/versions/releasenote-patchlevel-09#prune)
-* [Lucene tools deprecated](/resource/docs/versions/releasenote-patchlevel-09#lucene)
-* [New HTTPS call APIs](/resource/docs/versions/releasenote-patchlevel-09#apicall)
-* [New API web services endpoints](/resource/docs/versions/releasenote-patchlevel-09#endpoints)
-* [Remote data sources](/resource/docs/versions/releasenote-patchlevel-09#remote)
-* [Description of configuration items as Markdown](/resource/docs/versions/releasenote-patchlevel-09#markdown)
-* [Refactored content and resources JSPs as servlets](/resource/docs/versions/releasenote-patchlevel-09#servlet)
-* [Module from URL](/resource/docs/versions/releasenote-patchlevel-09#moduleurl)
-* [Module deletion](/resource/docs/versions/releasenote-patchlevel-09#moduledeletion)
-* [System objects protection](/resource/docs/versions/releasenote-patchlevel-09#protection)
-* [PDF publication header and footer as resource](/resource/docs/versions/releasenote-patchlevel-09#pdf)
-* [Fixes](/resource/docs/versions/releasenote-patchlevel-09#fixes)
+* [Password encoding defaults to MD5/HEX for Tomcat](/lesson/docs/versions/releasenote-patchlevel-09#password)
+* [Enhanced meta object data in JSON webservices](/lesson/docs/versions/releasenote-patchlevel-09#json)
+* [Additional publication template MIME types](/lesson/docs/versions/releasenote-patchlevel-09#mime)
+* [Test case publication as markdown archive](/lesson/docs/versions/releasenote-patchlevel-09#test)
+* [Enhanced Bootstrap® web page template](/lesson/docs/versions/releasenote-patchlevel-09#bootstrap)
+* [Support for HTTP method override for REST services](/lesson/docs/versions/releasenote-patchlevel-09#rest)
+* [Refactored mobile web UI](/lesson/docs/versions/releasenote-patchlevel-09#mobile)
+* [Timeout on AJAX API](/lesson/docs/versions/releasenote-patchlevel-09#timeout)
+* [SQL monitoring](/lesson/docs/versions/releasenote-patchlevel-09#monitoring)
+* [Clustering](/lesson/docs/versions/releasenote-patchlevel-09#clustering)
+* [Debug hook calls and SQL queries](/lesson/docs/versions/releasenote-patchlevel-09#debug)
+* [Prune DB logs](/lesson/docs/versions/releasenote-patchlevel-09#prune)
+* [Lucene tools deprecated](/lesson/docs/versions/releasenote-patchlevel-09#lucene)
+* [New HTTPS call APIs](/lesson/docs/versions/releasenote-patchlevel-09#apicall)
+* [New API web services endpoints](/lesson/docs/versions/releasenote-patchlevel-09#endpoints)
+* [Remote data sources](/lesson/docs/versions/releasenote-patchlevel-09#remote)
+* [Description of configuration items as Markdown](/lesson/docs/versions/releasenote-patchlevel-09#markdown)
+* [Refactored content and resources JSPs as servlets](/lesson/docs/versions/releasenote-patchlevel-09#servlet)
+* [Module from URL](/lesson/docs/versions/releasenote-patchlevel-09#moduleurl)
+* [Module deletion](/lesson/docs/versions/releasenote-patchlevel-09#moduledeletion)
+* [System objects protection](/lesson/docs/versions/releasenote-patchlevel-09#protection)
+* [PDF publication header and footer as resource](/lesson/docs/versions/releasenote-patchlevel-09#pdf)
+* [Fixes](/lesson/docs/versions/releasenote-patchlevel-09#fixes)
 
 Changes
 -------
@@ -80,7 +80,7 @@ _Note: this feature has been back ported to the 3.0 maintenance branch._
 
 A new publication template has been added on ALM test case so as to publish the test case as a Markdown archive.
 
-The publication result is a ZIP archive containing a main `/resource/docs/versions/index` file referencing screen shots images files of the test case steps.
+The publication result is a ZIP archive containing a main `/lesson/docs/versions/index` file referencing screen shots images files of the test case steps.
 
 _Note: this feature has been back ported to the 3.0 maintenance branch._
 

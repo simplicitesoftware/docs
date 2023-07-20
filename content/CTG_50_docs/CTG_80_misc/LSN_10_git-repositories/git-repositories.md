@@ -1,1 +1,1 @@
-This document has been moved [here](/resource/docs/misc/projects-git-repositories)
+This document has been moved [here](/lesson/docs/misc/projects-git-repositories)

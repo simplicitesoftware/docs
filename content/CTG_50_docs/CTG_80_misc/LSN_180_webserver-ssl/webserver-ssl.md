@@ -110,7 +110,7 @@ For the above examples, the typical `curl` call would be something like:
 
 ### Using client certificate authentication on Simplicit&eacute; side
 
-See [this document](/resource/docs/authentication/tomcat-customauth) for details on how to use client certificate on Simplicit&eacute; side;
+See [this document](/lesson/docs/authentication/tomcat-customauth) for details on how to use client certificate on Simplicit&eacute; side;
 
 <h2 id="letsencrypt">Using LetsEncrypt&reg; service</h2>
 

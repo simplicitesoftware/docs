@@ -1,139 +1,303 @@
 [
   {
-    "sourceUrl": "/4.0/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-05.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-05"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-01.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-01"
+    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-01.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-01"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-02.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-02"
+    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-04.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-04"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-03.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-03"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-01.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-01"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-04.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-04"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-05.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-05"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-05.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-05"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-04.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-04"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-06.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-06"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-07.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-07"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-07.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-07"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-03.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-03"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-08.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-08"
+    "sourceUrl": "/3.2/releasenote/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-09.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-09"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-02.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-02"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-10.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-10"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-06.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-06"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-11.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-11"
+    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-03.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-03"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-12.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-12"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-09.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-09"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-13.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-13"
+    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-08.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-08"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-14.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-14"
+    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-02.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-02"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-15.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-15"
+    "sourceUrl": "/legacy/3.2/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-16.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-16"
+    "sourceUrl": "/legacy/3.2/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-17.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-17"
+    "sourceUrl": "/legacy/2.7/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-18.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-18"
+    "sourceUrl": "/legacy/2.7/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-19.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-19"
+    "sourceUrl": "/legacy/2.6.2/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-20.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-20"
+    "sourceUrl": "/legacy/2.6.2/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-21.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-21"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-35.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-35"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-22.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-22"
+    "sourceUrl": "/3.0/releasenote/releasenote.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-23.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-23"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-25.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-25"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-24.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-24"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-31.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-31"
   },
   {
-    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-25.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-25"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-21.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-21"
   },
   {
-    "sourceUrl": "/00-versions/4.0/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-30.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-30"
   },
   {
-    "sourceUrl": "/00-versions/4.0/upgradesim.md",
-    "destinationUrl": "/resource/docs/versions/upgradesim"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-20.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-20"
   },
   {
-    "sourceUrl": "/00-versions/4.0/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-34.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-34"
   },
   {
-    "sourceUrl": "/5.x/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-24.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-24"
   },
   {
-    "sourceUrl": "/5.x/releasenote/releasenote-5.0.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-5.0"
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-33.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-33"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-17.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-17"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-23.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-23"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-27.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-27"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-36.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-36"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-26.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-26"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-32.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-32"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-22.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-22"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-29.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-29"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-19.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-19"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-18.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-18"
+  },
+  {
+    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-28.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-28"
+  },
+  {
+    "sourceUrl": "/legacy/3.0/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
+  },
+  {
+    "sourceUrl": "/legacy/3.0/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-11.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-11"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-10.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-10"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-01.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-01"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-11.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-11"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-05.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-05"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-04.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-04"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-14.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-14"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-10.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-10"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-07.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-07"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-09.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-09"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-03.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-03"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-13.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-13"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-02.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-02"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-12.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-12"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-06.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-06"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-08.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-08"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-07.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-07"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-09.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-09"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-08.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-08"
+  },
+  {
+    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-12.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-12"
+  },
+  {
+    "sourceUrl": "/legacy/3.1/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
+  },
+  {
+    "sourceUrl": "/legacy/3.1/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
+  },
+  {
+    "sourceUrl": "/legacy/2.6.0/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
+  },
+  {
+    "sourceUrl": "/legacy/2.6.1/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
     "sourceUrl": "/5.x/releasenote/releasenote-5.1.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-5.1"
+    "destinationUrl": "/lesson/docs/versions/releasenote-5.1"
   },
   {
-    "sourceUrl": "/5.x/releasenote/releasenote-5.2.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-5.2"
+    "sourceUrl": "/5.x/releasenote/releasenote-5.0.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-5.0"
+  },
+  {
+    "sourceUrl": "/5.x/releasenote/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
     "sourceUrl": "/5.x/releasenote/releasenote-5.3.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-5.3"
+    "destinationUrl": "/lesson/docs/versions/releasenote-5.3"
   },
   {
     "sourceUrl": "/5.x/releasenote/releasenote-5.2.md",
@@ -141,311 +305,143 @@
   },
   {
     "sourceUrl": "/00-versions/5.x/addtosim.md",
-    "destinationUrl": "/resource/docs/versions/addtosim"
+    "destinationUrl": "/lesson/docs/versions/addtosim"
   },
   {
     "sourceUrl": "/00-versions/5.x/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
     "sourceUrl": "/6.x/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
     "sourceUrl": "/6.x/releasenote/releasenote-6.0.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-6.0"
+    "destinationUrl": "/lesson/docs/versions/releasenote-6.0"
   },
   {
     "sourceUrl": "/00-versions/6.x/addtosim.md",
-    "destinationUrl": "/resource/docs/versions/addtosim"
+    "destinationUrl": "/lesson/docs/versions/addtosim"
   },
   {
     "sourceUrl": "/00-versions/6.x/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/legacy/2.6.0/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-05.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-05"
   },
   {
-    "sourceUrl": "/legacy/2.6.1/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-15.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-15"
   },
   {
-    "sourceUrl": "/legacy/2.6.2/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-21.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-21"
   },
   {
-    "sourceUrl": "/legacy/2.6.2/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-01.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-01"
   },
   {
-    "sourceUrl": "/legacy/2.7/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-25.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-25"
   },
   {
-    "sourceUrl": "/legacy/2.7/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-11.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-11"
   },
   {
-    "sourceUrl": "/3.0/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-24.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-24"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-17.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-17"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-10.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-10"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-18.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-18"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-04.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-04"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-19.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-19"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-14.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-14"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-20.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-20"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-20.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-20"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-21.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-21"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-09.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-09"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-22.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-22"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-19.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-19"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-23.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-23"
+    "sourceUrl": "/4.0/releasenote/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-24.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-24"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-08.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-08"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-25.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-25"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-18.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-18"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-26.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-26"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-03.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-03"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-27.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-27"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-13.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-13"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-28.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-28"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-07.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-07"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-29.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-29"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-17.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-17"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-30.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-30"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-23.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-23"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-31.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-31"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-06.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-06"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-32.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-32"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-16.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-16"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-33.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-33"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-22.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-22"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-34.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-34"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-02.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-02"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-35.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-35"
+    "sourceUrl": "/4.0/releasenote/releasenote-patchlevel-12.md",
+    "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-12"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote-maintenance-36.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-36"
+    "sourceUrl": "/00-versions/4.0/upgradesim.md",
+    "destinationUrl": "/lesson/docs/versions/upgradesim"
   },
   {
-    "sourceUrl": "/3.0/releasenote/releasenote.md",
-    "destinationUrl": "/resource/docs/versions/releasenote"
+    "sourceUrl": "/00-versions/4.0/index.md",
+    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
-    "sourceUrl": "/legacy/3.0/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
-  },
-  {
-    "sourceUrl": "/legacy/3.0/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-01.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-01"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-02.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-02"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-03.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-03"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-04.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-04"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-05.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-05"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-06.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-06"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-07.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-07"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-08.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-08"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-09.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-09"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-10.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-10"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-11.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-11"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-12.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-12"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-13.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-13"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-maintenance-14.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-14"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-07.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-07"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-08.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-08"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-09.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-09"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-10.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-10"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-11.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-11"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote-patchlevel-12.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-12"
-  },
-  {
-    "sourceUrl": "/3.1/releasenote/releasenote.md",
-    "destinationUrl": "/resource/docs/versions/releasenote"
-  },
-  {
-    "sourceUrl": "/legacy/3.1/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
-  },
-  {
-    "sourceUrl": "/legacy/3.1/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-01.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-01"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-02.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-02"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-03.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-03"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-04.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-04"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-05.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-05"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-06.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-06"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-07.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-07"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-08.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-08"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-maintenance-09.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-maintenance-09"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-01.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-01"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-02.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-02"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-03.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-03"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-04.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-04"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-05.md",
-    "destinationUrl": "/resource/docs/versions/releasenote-patchlevel-05"
-  },
-  {
-    "sourceUrl": "/legacy/3.2/index.md",
-    "destinationUrl": "/resource/docs/versions/index"
-  },
-  {
-    "sourceUrl": "/legacy/3.2/upgrading.md",
-    "destinationUrl": "/resource/docs/versions/upgrading"
+    "sourceUrl": "/00-versions/4.0/upgrading.md",
+    "destinationUrl": "/lesson/docs/versions/upgrading"
   },
   {
     "sourceUrl": "/documentation/03-apis/ajax-api.md",
@@ -593,478 +589,334 @@
   },
   {
     "sourceUrl": "/documentation/01-core/basic-code-examples.md",
-    "destinationUrl": "/resource/docs/core/basic-code-examples"
+    "destinationUrl": "/lesson/docs/core/basic-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/expressions.md",
-    "destinationUrl": "/resource/docs/core/expressions"
+    "destinationUrl": "/lesson/docs/core/expressions"
   },
   {
     "sourceUrl": "/documentation/01-core/businessobject-code-hooks.md",
-    "destinationUrl": "/resource/docs/core/businessobject-code-hooks"
+    "destinationUrl": "/lesson/docs/core/businessobject-code-hooks"
   },
   {
     "sourceUrl": "/documentation/01-core/businessworkflow-code-hooks.md",
-    "destinationUrl": "/resource/docs/core/businessworkflow-code-hooks"
+    "destinationUrl": "/lesson/docs/core/businessworkflow-code-hooks"
   },
   {
     "sourceUrl": "/documentation/01-core/grant-code-hooks.md",
-    "destinationUrl": "/resource/docs/core/grant-code-hooks"
+    "destinationUrl": "/lesson/docs/core/grant-code-hooks"
   },
   {
     "sourceUrl": "/documentation/01-core/externalobject-code-examples.md",
-    "destinationUrl": "/resource/docs/core/externalobject-code-examples"
+    "destinationUrl": "/lesson/docs/core/externalobject-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/disposition-code-examples.md",
-    "destinationUrl": "/resource/docs/core/disposition-code-examples"
+    "destinationUrl": "/lesson/docs/core/disposition-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/adapter-code-examples.md",
-    "destinationUrl": "/resource/docs/core/adapter-code-examples"
+    "destinationUrl": "/lesson/docs/core/adapter-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/publication-examples.md",
-    "destinationUrl": "/resource/docs/core/publication-examples"
+    "destinationUrl": "/lesson/docs/core/publication-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/custom-actions-examples.md",
-    "destinationUrl": "/resource/docs/core/custom-actions-examples"
+    "destinationUrl": "/lesson/docs/core/custom-actions-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/documents-code-examples.md",
-    "destinationUrl": "/resource/docs/core/documents-code-examples"
+    "destinationUrl": "/lesson/docs/core/documents-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/advanced-code-examples.md",
-    "destinationUrl": "/resource/docs/core/advanced-code-examples"
+    "destinationUrl": "/lesson/docs/core/advanced-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/javascript-code-examples.md",
-    "destinationUrl": "/resource/docs/core/javascript-code-examples"
+    "destinationUrl": "/lesson/docs/core/javascript-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/ui-tools-code-examples.md",
-    "destinationUrl": "/resource/docs/core/ui-tools-code-examples"
+    "destinationUrl": "/lesson/docs/core/ui-tools-code-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/modeler-code-hooks.md",
-    "destinationUrl": "/resource/docs/core/modeler-code-hooks"
+    "destinationUrl": "/lesson/docs/core/modeler-code-hooks"
   },
   {
     "sourceUrl": "/documentation/01-core/third-party-apis-examples.md",
-    "destinationUrl": "/resource/docs/core/third-party-apis-examples"
+    "destinationUrl": "/lesson/docs/core/third-party-apis-examples"
   },
   {
     "sourceUrl": "/documentation/01-core/system-parameters-list.md",
-    "destinationUrl": "/resource/docs/core/system-parameters-list"
+    "destinationUrl": "/lesson/docs/core/system-parameters-list"
   },
   {
     "sourceUrl": "/documentation/01-core/crontab.md",
-    "destinationUrl": "/resource/docs/core/crontab"
+    "destinationUrl": "/lesson/docs/core/crontab"
   },
   {
     "sourceUrl": "/documentation/01-core/unit-testing.md",
-    "destinationUrl": "/resource/docs/core/unit-testing"
+    "destinationUrl": "/lesson/docs/core/unit-testing"
   },
   {
     "sourceUrl": "/documentation/01-core/index.md",
-    "destinationUrl": "/resource/docs/core/index"
+    "destinationUrl": "/lesson/docs/core/index"
   },
   {
     "sourceUrl": "/documentation/01-core/modeler-code-hooks-legacy.md",
-    "destinationUrl": "/resource/docs/core/modeler-code-hooks-legacy"
+    "destinationUrl": "/lesson/docs/core/modeler-code-hooks-legacy"
   },
   {
     "sourceUrl": "/documentation/02-integration/io-commandline.md",
-    "destinationUrl": "/resource/docs/integration/io-commandline"
+    "destinationUrl": "/lesson/docs/integration/io-commandline"
   },
   {
     "sourceUrl": "/documentation/02-integration/git-repositories.md",
-    "destinationUrl": "/resource/docs/integration/git-repositories"
+    "destinationUrl": "/lesson/docs/integration/git-repositories"
   },
   {
     "sourceUrl": "/documentation/02-integration/rest-services.md",
-    "destinationUrl": "/resource/docs/integration/rest-services"
+    "destinationUrl": "/lesson/docs/integration/rest-services"
   },
   {
     "sourceUrl": "/documentation/02-integration/soap-services.md",
-    "destinationUrl": "/resource/docs/integration/soap-services"
+    "destinationUrl": "/lesson/docs/integration/soap-services"
   },
   {
     "sourceUrl": "/documentation/02-integration/raw-services.md",
-    "destinationUrl": "/resource/docs/integration/raw-services"
+    "destinationUrl": "/lesson/docs/integration/raw-services"
   },
   {
     "sourceUrl": "/documentation/02-integration/custom-services.md",
-    "destinationUrl": "/resource/docs/integration/custom-services"
+    "destinationUrl": "/lesson/docs/integration/custom-services"
   },
   {
     "sourceUrl": "/documentation/02-integration/index.md",
-    "destinationUrl": "/resource/docs/integration/index"
+    "destinationUrl": "/lesson/docs/integration/index"
   },
   {
     "sourceUrl": "/documentation/02-integration/services-auth.md",
-    "destinationUrl": "/resource/docs/integration/services-auth"
+    "destinationUrl": "/lesson/docs/integration/services-auth"
   },
   {
     "sourceUrl": "/documentation/02-integration/standard-formats.md",
-    "destinationUrl": "/resource/docs/integration/standard-formats"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/ajax-api.md",
-    "destinationUrl": "/resource/docs/apis/ajax-api"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/nodejs-api.md",
-    "destinationUrl": "/resource/docs/apis/nodejs-api"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/nodered-nodes.md",
-    "destinationUrl": "/resource/docs/apis/nodered-nodes"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/android-api.md",
-    "destinationUrl": "/resource/docs/apis/android-api"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/gwt-api.md",
-    "destinationUrl": "/resource/docs/apis/gwt-api"
-  },
-  {
-    "sourceUrl": "/documentation/03-apis/index.md",
-    "destinationUrl": "/resource/docs/apis/index"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/basic-usage.md",
-    "destinationUrl": "/resource/docs/ui/basic-usage"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/search-syntax.md",
-    "destinationUrl": "/resource/docs/ui/search-syntax"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/form-templates.md",
-    "destinationUrl": "/resource/docs/ui/form-templates"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/html-editor-params.md",
-    "destinationUrl": "/resource/docs/ui/html-editor-params"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/install-licensekey.md",
-    "destinationUrl": "/resource/docs/ui/install-licensekey"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/responsive.md",
-    "destinationUrl": "/resource/docs/ui/responsive"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/index.md",
-    "destinationUrl": "/resource/docs/ui/index"
-  },
-  {
-    "sourceUrl": "/documentation/05-remote/simplicite.md",
-    "destinationUrl": "/resource/docs/remote/simplicite"
-  },
-  {
-    "sourceUrl": "/documentation/05-remote/ldap.md",
-    "destinationUrl": "/resource/docs/remote/ldap"
-  },
-  {
-    "sourceUrl": "/documentation/05-remote/salesforce.md",
-    "destinationUrl": "/resource/docs/remote/salesforce"
-  },
-  {
-    "sourceUrl": "/documentation/05-remote/opendatasoft.md",
-    "destinationUrl": "/resource/docs/remote/opendatasoft"
-  },
-  {
-    "sourceUrl": "/documentation/05-remote/index.md",
-    "destinationUrl": "/resource/docs/remote/index"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/docker.md",
-    "destinationUrl": "/resource/docs/operation/docker"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/kubernetes.md",
-    "destinationUrl": "/resource/docs/operation/kubernetes"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/cloudfoundry.md",
-    "destinationUrl": "/resource/docs/operation/cloudfoundry"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/heroku.md",
-    "destinationUrl": "/resource/docs/operation/heroku"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/openshift.md",
-    "destinationUrl": "/resource/docs/operation/openshift"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/aws-elasticbeanstalk.md",
-    "destinationUrl": "/resource/docs/operation/aws-elasticbeanstalk"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/tomcat-installation-linux.md",
-    "destinationUrl": "/resource/docs/operation/tomcat-installation-linux"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/tomcat-installation-windows.md",
-    "destinationUrl": "/resource/docs/operation/tomcat-installation-windows"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/tomee.md",
-    "destinationUrl": "/resource/docs/operation/tomee"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/tomcat-operation.md",
-    "destinationUrl": "/resource/docs/operation/tomcat-operation"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/docker-tutorial.md",
-    "destinationUrl": "/resource/docs/operation/docker-tutorial"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/index.md",
-    "destinationUrl": "/resource/docs/operation/index"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/wildfly.md",
-    "destinationUrl": "/resource/docs/operation/wildfly"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-oauth2.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-oauth2"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-saml.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-saml"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-ldap.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-ldap"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-customauth.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-customauth"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/jboss-custom-jaas-module.md",
-    "destinationUrl": "/resource/docs/authentication/jboss-custom-jaas-module"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/keycloak.md",
-    "destinationUrl": "/resource/docs/authentication/keycloak"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-apisession.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-apisession"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/index.md",
-    "destinationUrl": "/resource/docs/authentication/index"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/internal-auth.md",
-    "destinationUrl": "/resource/docs/authentication/internal-auth"
-  },
-  {
-    "sourceUrl": "/documentation/91-authentication/tomcat-multi-auth-providers.md",
-    "destinationUrl": "/resource/docs/authentication/tomcat-multi-auth-providers"
+    "destinationUrl": "/lesson/docs/integration/standard-formats"
   },
   {
     "sourceUrl": "/documentation/99-misc/git-repositories.md",
-    "destinationUrl": "/resource/docs/misc/git-repositories"
+    "destinationUrl": "/lesson/docs/misc/git-repositories"
   },
   {
     "sourceUrl": "/documentation/99-misc/docker.md",
-    "destinationUrl": "/resource/docs/misc/docker"
+    "destinationUrl": "/lesson/docs/misc/docker"
   },
   {
     "sourceUrl": "/documentation/99-misc/manager.md",
-    "destinationUrl": "/resource/docs/misc/manager"
+    "destinationUrl": "/lesson/docs/misc/manager"
   },
   {
     "sourceUrl": "/documentation/99-misc/heroku.md",
-    "destinationUrl": "/resource/docs/misc/heroku"
+    "destinationUrl": "/lesson/docs/misc/heroku"
   },
   {
     "sourceUrl": "/documentation/99-misc/openshift.md",
-    "destinationUrl": "/resource/docs/misc/openshift"
+    "destinationUrl": "/lesson/docs/misc/openshift"
   },
   {
     "sourceUrl": "/documentation/99-misc/aws-elasticbeanstalk.md",
-    "destinationUrl": "/resource/docs/misc/aws-elasticbeanstalk"
+    "destinationUrl": "/lesson/docs/misc/aws-elasticbeanstalk"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-installation-windows.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-installation-windows"
+    "destinationUrl": "/lesson/docs/misc/tomcat-installation-windows"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomee.md",
-    "destinationUrl": "/resource/docs/misc/tomee"
+    "destinationUrl": "/lesson/docs/misc/tomee"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-operation.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-operation"
+    "destinationUrl": "/lesson/docs/misc/tomcat-operation"
   },
   {
     "sourceUrl": "/documentation/99-misc/sonarqube.md",
-    "destinationUrl": "/resource/docs/misc/sonarqube"
+    "destinationUrl": "/lesson/docs/misc/sonarqube"
   },
   {
     "sourceUrl": "/documentation/99-misc/cordova.md",
-    "destinationUrl": "/resource/docs/misc/cordova"
+    "destinationUrl": "/lesson/docs/misc/cordova"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-oauth2.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-oauth2"
+    "destinationUrl": "/lesson/docs/misc/tomcat-oauth2"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-saml.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-saml"
+    "destinationUrl": "/lesson/docs/misc/tomcat-saml"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-customauth.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-customauth"
+    "destinationUrl": "/lesson/docs/misc/tomcat-customauth"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-customrealms.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-customrealms"
+    "destinationUrl": "/lesson/docs/misc/tomcat-customrealms"
   },
   {
     "sourceUrl": "/documentation/99-misc/jboss-custom-jaas-module.md",
-    "destinationUrl": "/resource/docs/misc/jboss-custom-jaas-module"
+    "destinationUrl": "/lesson/docs/misc/jboss-custom-jaas-module"
   },
   {
     "sourceUrl": "/documentation/99-misc/root-deploy.md",
-    "destinationUrl": "/resource/docs/misc/root-deploy"
+    "destinationUrl": "/lesson/docs/misc/root-deploy"
   },
   {
     "sourceUrl": "/documentation/99-misc/webserver-ssl.md",
-    "destinationUrl": "/resource/docs/misc/webserver-ssl"
+    "destinationUrl": "/lesson/docs/misc/webserver-ssl"
   },
   {
     "sourceUrl": "/documentation/99-misc/java-ssl.md",
-    "destinationUrl": "/resource/docs/misc/java-ssl"
+    "destinationUrl": "/lesson/docs/misc/java-ssl"
   },
   {
     "sourceUrl": "/documentation/99-misc/load-balancing.md",
-    "destinationUrl": "/resource/docs/misc/load-balancing"
+    "destinationUrl": "/lesson/docs/misc/load-balancing"
   },
   {
     "sourceUrl": "/documentation/99-misc/appservers-slimming.md",
-    "destinationUrl": "/resource/docs/misc/appservers-slimming"
+    "destinationUrl": "/lesson/docs/misc/appservers-slimming"
   },
   {
     "sourceUrl": "/documentation/99-misc/databases-howto.md",
-    "destinationUrl": "/resource/docs/misc/databases-howto"
+    "destinationUrl": "/lesson/docs/misc/databases-howto"
   },
   {
     "sourceUrl": "/documentation/99-misc/utf8-howto.md",
-    "destinationUrl": "/resource/docs/misc/howto/utf8-howto"
+    "destinationUrl": "/lesson/docs/misc/howto/utf8-howto"
   },
   {
     "sourceUrl": "/documentation/99-misc/logging.md",
-    "destinationUrl": "/resource/docs/misc/logging"
+    "destinationUrl": "/lesson/docs/misc/logging"
   },
   {
     "sourceUrl": "/documentation/99-misc/datasources-howto.md",
-    "destinationUrl": "/resource/docs/misc/datasources-howto"
+    "destinationUrl": "/lesson/docs/misc/datasources-howto"
   },
   {
     "sourceUrl": "/documentation/99-misc/email-howto.md",
-    "destinationUrl": "/resource/docs/misc/email-howto"
+    "destinationUrl": "/lesson/docs/misc/email-howto"
   },
   {
     "sourceUrl": "/documentation/99-misc/tomcat-apisession.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-apisession"
+    "destinationUrl": "/lesson/docs/misc/tomcat-apisession"
   },
   {
     "sourceUrl": "/documentation/99-misc/project-package-and-ant-tasks.md",
-    "destinationUrl": "/resource/docs/misc/project-package-and-ant-tasks"
+    "destinationUrl": "/lesson/docs/misc/project-package-and-ant-tasks"
   },
   {
     "sourceUrl": "/documentation/99-misc/remote-debug.md",
-    "destinationUrl": "/resource/docs/misc/remote-debug"
+    "destinationUrl": "/lesson/docs/misc/remote-debug"
   },
   {
     "sourceUrl": "/documentation/99-misc/jconsole.md",
-    "destinationUrl": "/resource/docs/misc/jconsole"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/cloudfoundry-bluemix.md",
-    "destinationUrl": "/resource/docs/misc/cloudfoundry-bluemix"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/cloudfoundry-pivotal.md",
-    "destinationUrl": "/resource/docs/misc/cloudfoundry-pivotal"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/excel.md",
-    "destinationUrl": "/resource/docs/misc/excel"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/index.md",
-    "destinationUrl": "/resource/docs/misc/index"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/instances-manager.md",
-    "destinationUrl": "/resource/docs/misc/instances-manager"
-  },
-  {
-    "sourceUrl": "/documentation/99-misc/projects-git-repositories.md",
-    "destinationUrl": "/resource/docs/misc/projects-git-repositories"
+    "destinationUrl": "/lesson/docs/misc/jconsole"
   },
   {
     "sourceUrl": "/documentation/99-misc/sandboxes-manager.md",
-    "destinationUrl": "/resource/docs/misc/sandboxes-manager"
+    "destinationUrl": "/lesson/docs/misc/sandboxes-manager"
   },
   {
-    "sourceUrl": "/documentation/99-misc/tomcat-installation.md",
-    "destinationUrl": "/resource/docs/misc/tomcat-installation"
+    "sourceUrl": "/documentation/99-misc/projects-git-repositories.md",
+    "destinationUrl": "/lesson/docs/misc/projects-git-repositories"
   },
   {
     "sourceUrl": "/documentation/99-misc/wildfly.md",
-    "destinationUrl": "/resource/docs/misc/wildfly"
+    "destinationUrl": "/lesson/docs/misc/wildfly"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/cloudfoundry-pivotal.md",
+    "destinationUrl": "/lesson/docs/misc/cloudfoundry-pivotal"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/tomcat-installation.md",
+    "destinationUrl": "/lesson/docs/misc/tomcat-installation"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/instances-manager.md",
+    "destinationUrl": "/lesson/docs/misc/instances-manager"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/index.md",
+    "destinationUrl": "/lesson/docs/misc/index"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/excel.md",
+    "destinationUrl": "/lesson/docs/misc/excel"
+  },
+  {
+    "sourceUrl": "/documentation/99-misc/cloudfoundry-bluemix.md",
+    "destinationUrl": "/lesson/docs/misc/cloudfoundry-bluemix"
+  },
+  {
+    "sourceUrl": "/documentation/05-remote/simplicite.md",
+    "destinationUrl": "/lesson/docs/remote/simplicite"
+  },
+  {
+    "sourceUrl": "/documentation/05-remote/ldap.md",
+    "destinationUrl": "/lesson/docs/remote/ldap"
+  },
+  {
+    "sourceUrl": "/documentation/05-remote/salesforce.md",
+    "destinationUrl": "/lesson/docs/remote/salesforce"
+  },
+  {
+    "sourceUrl": "/documentation/05-remote/opendatasoft.md",
+    "destinationUrl": "/lesson/docs/remote/opendatasoft"
+  },
+  {
+    "sourceUrl": "/documentation/05-remote/index.md",
+    "destinationUrl": "/lesson/docs/remote/index"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/architecture.md",
-    "destinationUrl": "/resource/docs/architecture"
+    "destinationUrl": "/lesson/docs/architecture"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/security.md",
-    "destinationUrl": "/resource/docs/security"
+    "destinationUrl": "/lesson/docs/security"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/compliance.md",
-    "destinationUrl": "/resource/docs/compliance"
+    "destinationUrl": "/lesson/docs/compliance"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/versions.md",
-    "destinationUrl": "/resource/docs/versions"
+    "destinationUrl": "/lesson/docs/versions"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/faq.md",
-    "destinationUrl": "/resource/docs/faq"
-  },
-  {
-    "sourceUrl": "/docs.simplicite.io/documentation/gdpr.md",
-    "destinationUrl": "/resource/docs/gdpr"
-  },
-  {
-    "sourceUrl": "/docs.simplicite.io/documentation/index.md",
-    "destinationUrl": "/resource/docs/index"
+    "destinationUrl": "/lesson/docs/faq"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/quality.md",
-    "destinationUrl": "/resource/docs/quality"
+    "destinationUrl": "/lesson/docs/quality"
   },
   {
     "sourceUrl": "/docs.simplicite.io/documentation/roadmap.md",
-    "destinationUrl": "/resource/docs/roadmap"
+    "destinationUrl": "/lesson/docs/roadmap"
+  },
+  {
+    "sourceUrl": "/docs.simplicite.io/documentation/index.md",
+    "destinationUrl": "/lesson/docs/index"
+  },
+  {
+    "sourceUrl": "/docs.simplicite.io/documentation/gdpr.md",
+    "destinationUrl": "/lesson/docs/gdpr"
   }
 ]

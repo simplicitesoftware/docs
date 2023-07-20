@@ -104,10 +104,10 @@ A long term maintenance branch **only** receives critical fixes.
 | minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Short term (till September 30th, 2023)         |
 | minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)  |
 | minor       | `5.0` [release notes](00-versions/5.x/releasenote/releasenote-5.0.md) | Expired short term (since September 30th, 2021 |
-| major       | `4.0` [release notes](/resource/docs/versions/index)           | Long term_ (till January 15th, 2024)           |
-| major       | `3.2` [release notes](/resource/docs/versions/index)           | Expired long term                              |
-| major       | `3.1` [release notes](/resource/docs/versions/index)           | Expired long term                              |
-| major       | `3.0` [release notes](/resource/docs/versions/index)           | Expired long term                              |
+| major       | `4.0` [release notes](/lesson/docs/versions/index)           | Long term_ (till January 15th, 2024)           |
+| major       | `3.2` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
+| major       | `3.1` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
+| major       | `3.0` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
 
 <h3 id="gitbranchesanddockertags">Instance templates Git branches and Docker images tags table</h3>
 

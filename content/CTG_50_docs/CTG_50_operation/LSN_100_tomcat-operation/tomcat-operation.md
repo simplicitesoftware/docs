@@ -5,7 +5,7 @@ This document applies to a legacy deployment on a Linux OS of the RedHat family 
 It can easily be transposed to other technical platforms.
 
 > **Note**: Some pieces of information are also applicable - unless otherwise specified - when using our **Docker images**.
-> For more details on Docker images-based deployments please refer to [this document](/resource/docs/operation/docker) 
+> For more details on Docker images-based deployments please refer to [this document](/lesson/docs/operation/docker) 
 
 <h2 id="restarting">Services restarting</h2>
 
@@ -82,7 +82,7 @@ Some application log events are recording a significant amount of logs entries i
 **Make sure to purge this table on a regular basis:**
 
 - through the interface : _Operation_ &gt; _Logs_ &gt; and use the _Delete list_ list action
-- through the I/O `PURGELOGS` service (accessible through the `/io` endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+- through the I/O `PURGELOGS` service (accessible through the `/io` endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 
 ### Import supervisions
 
@@ -100,7 +100,7 @@ They are thus consuming a significant amount of storage.
 **Make sure to purge these records on a regulrar basis:**
 
 - through the user interface : _Operation_ &gt; _Import supervisor_ and use the _Purge_ list action
-- through the I/O `PURGESUPERVISION` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+- through the I/O `PURGESUPERVISION` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 
 ### Asynchronous jobs records
 
@@ -109,7 +109,7 @@ Any job launched asynchronously by the internal crontable result in a job superv
 **Make sure to purge these records on a regulrar basis:**
 
 - through the user interface : _Operation_ &gt; _Asynchronous jobs_ and use the _Delete jobs_ list action
-- through the I/O `PURGEJOBS` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+- through the I/O `PURGEJOBS` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 
 ### Temporary and exported files
 
@@ -118,7 +118,7 @@ In your code you may use temporary or export directories/files that you may not 
 **Make sure to empty these directories/files on a regular basis:**
 
 - through the I/O `PURGETEMPFILES` service and the `PURGEEXPORTS` service
-  (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+  (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 - by manual deletion directly on the file system
 
 ### Recycle bin
@@ -127,7 +127,7 @@ Removed attached document are not physically deleted, they are simply moved to a
 
 **Make sure to empty this directory on a regular basis:**
 
-- through the I/O `PURGERECYCLEBIN` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+- through the I/O `PURGERECYCLEBIN` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 - by manual deletion directly on the file system
 
 ### Out of sync documents
@@ -137,7 +137,7 @@ Some document processing in your code may result in inconsitencies between the d
 **Make sure to resynchronise documents on a regular basis:**
 
 - through the user interface : _Document_ &gt; _Synchronize documents_ list action
-- through the I/O `SYNCDOCS` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/resource/docs/integration/io-commandline))
+- through the I/O `SYNCDOCS` service (accessible through the I/O (`/io`) endpoint or the API (`/api`) endpoint, cf [IO command-line doc](/lesson/docs/integration/io-commandline))
 
 <h2 id="saving">Save and restore</h2>
 
@@ -288,5 +288,5 @@ The Tomcat server **must** be updated regularly, depending on the way it has bee
 
 > **Note** this chapter is not applicable when using our Docker images. When using such images the Simplicit&eacute;&reg; platform is always up-to-date in the latest images.
 
-The Simplicité&reg; platform **must** be updated regularly, at least on its maintenance branch (see [versions](/resource/docs/versions)),
+The Simplicité&reg; platform **must** be updated regularly, at least on its maintenance branch (see [versions](/lesson/docs/versions)),
 depending on the way it has been installed the processus may vary.

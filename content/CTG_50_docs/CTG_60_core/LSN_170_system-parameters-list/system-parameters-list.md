@@ -586,7 +586,7 @@ Some system parameters might not be available on previous version or default val
 **Description**
 
 	Default parameters for used for HTML editor fields (using TinyMCE).
-	See [specific html editor page](/resource/docs/ui/html-editor-params)
+	See [specific html editor page](/lesson/docs/ui/html-editor-params)
 
 ### `JAVADOC_LOCATION`
 

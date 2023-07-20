@@ -36,7 +36,7 @@ Mobile
 ------
 
 - New tools based on Google Firebase to send notification to mobile devices and browsers
-- Build your hybrid application for Androïd&reg; and iOS&reg; [here](/resource/docs/misc/cordova)
+- Build your hybrid application for Androïd&reg; and iOS&reg; [here](/lesson/docs/misc/cordova)
 
 Fixes
 -----

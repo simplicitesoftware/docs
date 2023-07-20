@@ -27,8 +27,8 @@ These hooks are located in the singleton shared code named `GrantHooks` that can
 
 The `customAuth` (version 3.2+), `parseAuth` (version 3.0+) and `postAuth` (version 4.0+) can be used to implement/customize authentication flows.
 
-Check [this document about custom authentication](/resource/docs/authentication/tomcat-customauth), [this document about OAuth2 authentication](/resource/docs/authentication/tomcat-oauth2)
-or [this document about SAML authentication](/resource/docs/authentication/tomcat-saml) for details.
+Check [this document about custom authentication](/lesson/docs/authentication/tomcat-customauth), [this document about OAuth2 authentication](/lesson/docs/authentication/tomcat-oauth2)
+or [this document about SAML authentication](/lesson/docs/authentication/tomcat-saml) for details.
 
 <h2 id="startpagehook">Start page hook</h2>
 

@@ -6,13 +6,13 @@ Changes
 
 ### Mail service settings as system parameter
 
-It is now possible to configure mail service using the `MAIL_SERVICE` system parameter, check [this document](/resource/docs/misc/email-howto) for details.
+It is now possible to configure mail service using the `MAIL_SERVICE` system parameter, check [this document](/lesson/docs/misc/email-howto) for details.
 
 _Note: this feature has been back ported to the 3.1 maintenance branch._
 
 ### Additional datasources as system parameters
 
-When using Apache Tomcat, it is now possible to configure additional datasource using system parameters, check [this document](/resource/docs/misc/datasources-howto) for details.
+When using Apache Tomcat, it is now possible to configure additional datasource using system parameters, check [this document](/lesson/docs/misc/datasources-howto) for details.
 
 _Note: this feature has been back ported to the 3.1 maintenance branch._
 
@@ -52,7 +52,7 @@ We also provide 2 new system params :
 * OAUTH2_FRONT_PAGE : Url of France Connect service to use after oauth2 login
 * OAUTH2_LOGOUT_REDIRECT : Url to logout from FranceConnect provider
 
-For more information, please see [OAuth2 configuration on Apache Tomcat&reg; documentation](/resource/docs/authentication/tomcat-oauth2) documentation.
+For more information, please see [OAuth2 configuration on Apache Tomcat&reg; documentation](/lesson/docs/authentication/tomcat-oauth2) documentation.
 
 Fixes
 -----

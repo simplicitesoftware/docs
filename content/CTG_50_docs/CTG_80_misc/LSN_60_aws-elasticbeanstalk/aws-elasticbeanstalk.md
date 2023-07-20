@@ -1,1 +1,1 @@
-This document has been moved to [this document](/resource/docs/operation/aws-elasticbeanstalk)
+This document has been moved to [this document](/lesson/docs/operation/aws-elasticbeanstalk)

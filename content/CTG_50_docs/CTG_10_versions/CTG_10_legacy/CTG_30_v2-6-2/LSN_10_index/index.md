@@ -11,4 +11,4 @@ Documentation
 -------------
 
 - [Release note](./releasenote.pdf)
-- [Upgrading note](/resource/docs/versions/upgrading)
+- [Upgrading note](/lesson/docs/versions/upgrading)

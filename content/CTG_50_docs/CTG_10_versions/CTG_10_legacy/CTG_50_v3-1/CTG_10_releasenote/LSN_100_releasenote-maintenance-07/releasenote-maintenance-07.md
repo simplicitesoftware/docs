@@ -11,7 +11,7 @@ Changes
 - Added `_indexsearch` action to business object REST services  and `indexsarch` function is AJAX API in order to be able to search using the object's indexed fields
 - Increased default websocket logs length from 256 to 1024
 - Added raw data services for public `/raw/*` and for UI `/jsp/raw/*`
-- Added SAML authentication (see [this document](/resource/docs/authentication/tomcat-saml) for details)
+- Added SAML authentication (see [this document](/lesson/docs/authentication/tomcat-saml) for details)
 - Added session info (usable for keep alive requests) on REST APIs: `/api/rest?session=true`
 - Added OAuth2 "password grant" style response from API login when using `?_oauth2=true`
 - Persistent API user tokens when system parameter `USE_USER_TOKENS` is set to `yes`

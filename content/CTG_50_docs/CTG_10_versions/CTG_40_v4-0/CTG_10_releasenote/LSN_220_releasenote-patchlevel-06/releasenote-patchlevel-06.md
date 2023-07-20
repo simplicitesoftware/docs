@@ -36,7 +36,7 @@ Changes
   The `Grant.T()` function has now a variant with  boolean argument if you want to get the plural value
 - It is also now possible to set the plural object translation using the pipe `|` separator (e.g. `Order|Orders`). The plural translation defaults to singular translation if absent.
   A new API allows to access to the plural translation `ObjectCore.getPluralDisplay()`. The plural translation is used in the menu entries an on the search and list titles. 
-- Added a new `EncryptionTool` class for basic field value encryption (see [this document](/resource/docs/core/advanced-code-examples) for details)
+- Added a new `EncryptionTool` class for basic field value encryption (see [this document](/lesson/docs/core/advanced-code-examples) for details)
 - Refactored user's initial password and reset password strategy (now an intial password and reset password is a random string that if forced to be changed at next login)
 - Added Social+Follower screens on the responsive UI
 - Added a constraint `effect` as a multi-valued field:

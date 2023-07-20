@@ -21,7 +21,7 @@ To configure a **Rhino** or a **Java** adapter, the processing type has to be se
 In **Rhino** scripts the `this` variable is set to the current instance of `com.simplicite.util.integration.SimpleScriptedAdapter` before calling the adapter script.
 Using explicit `this` is mandatory in **Rhino** (in Java it could be implicit).
 
-The following additional packages are included by default (see [this document](/resource/docs/core/basic-code-examples) for the list of packages included by default in all **Rhino** scripts).
+The following additional packages are included by default (see [this document](/lesson/docs/core/basic-code-examples) for the list of packages included by default in all **Rhino** scripts).
 
 ```plaintext
 java.io

@@ -5,17 +5,17 @@ Version 3.2 release notes
 > The maintenance release M09 will be the **FINAL** maintenance release for this version,
 > no further maintenance releases are scheduled.
 
-- [P01 release note](/resource/docs/versions/releasenote-patchlevel-01)
-- [P2 release note](/resource/docs/versions/releasenote-patchlevel-02)
-- [P03 release note](/resource/docs/versions/releasenote-patchlevel-03)
-- [P04 release note](/resource/docs/versions/releasenote-patchlevel-04)
-- [P05 release note](/resource/docs/versions/releasenote-patchlevel-05)
-- [M01 release note](/resource/docs/versions/releasenote-maintenance-01)
-- [M02 release note](/resource/docs/versions/releasenote-maintenance-02)
-- [M03 release note](/resource/docs/versions/releasenote-maintenance-03)
-- [M04 release note](/resource/docs/versions/releasenote-maintenance-04)
-- [M05 release note](/resource/docs/versions/releasenote-maintenance-05)
-- [M06 release note](/resource/docs/versions/releasenote-maintenance-06)
-- [M07 release note](/resource/docs/versions/releasenote-maintenance-07)
-- [M08 release note](/resource/docs/versions/releasenote-maintenance-08)
-- [Final M09 release note](/resource/docs/versions/releasenote-maintenance-09) **DRAFT**
+- [P01 release note](/lesson/docs/versions/releasenote-patchlevel-01)
+- [P2 release note](/lesson/docs/versions/releasenote-patchlevel-02)
+- [P03 release note](/lesson/docs/versions/releasenote-patchlevel-03)
+- [P04 release note](/lesson/docs/versions/releasenote-patchlevel-04)
+- [P05 release note](/lesson/docs/versions/releasenote-patchlevel-05)
+- [M01 release note](/lesson/docs/versions/releasenote-maintenance-01)
+- [M02 release note](/lesson/docs/versions/releasenote-maintenance-02)
+- [M03 release note](/lesson/docs/versions/releasenote-maintenance-03)
+- [M04 release note](/lesson/docs/versions/releasenote-maintenance-04)
+- [M05 release note](/lesson/docs/versions/releasenote-maintenance-05)
+- [M06 release note](/lesson/docs/versions/releasenote-maintenance-06)
+- [M07 release note](/lesson/docs/versions/releasenote-maintenance-07)
+- [M08 release note](/lesson/docs/versions/releasenote-maintenance-08)
+- [Final M09 release note](/lesson/docs/versions/releasenote-maintenance-09) **DRAFT**

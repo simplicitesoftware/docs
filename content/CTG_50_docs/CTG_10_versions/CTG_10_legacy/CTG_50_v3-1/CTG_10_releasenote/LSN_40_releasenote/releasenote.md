@@ -6,29 +6,29 @@ Version 3.1 prior to patchlevel 07 release note
 Table of Contents
 -----------------
 
-* [OAuth2 authentication](/resource/docs/versions/releasenote#OAuth2)
-* [Command line interface](/resource/docs/versions/releasenote#curl)
-* [URL import](/resource/docs/versions/releasenote#urlimport)
-* [Auto-completion](/resource/docs/versions/releasenote#autocompletion)
-* [Scripts editor](/resource/docs/versions/releasenote#scripteditor)
-* [CronJob meta-object](/resource/docs/versions/releasenote#cron)
-* [Merge object](/resource/docs/versions/releasenote#merge)
-* [Module diff](/resource/docs/versions/releasenote#modulediff)
-* [New icons](/resource/docs/versions/releasenote#icons)
-* [Common UI wrapper](/resource/docs/versions/releasenote#uiwrapper)
-* [Simple document search](/resource/docs/versions/releasenote#simpledocumentsearch)
-* [PDFTool](/resource/docs/versions/releasenote#pdftool)
-* [Content max-age](/resource/docs/versions/releasenote#contentmaxage)
-* [Core cache](/resource/docs/versions/releasenote#corecache)
-* [User profile access](/resource/docs/versions/releasenote#profileaccess)
-* [Script SQL type](/resource/docs/versions/releasenote#scriptsql)
-* [Social feature](/resource/docs/versions/releasenote#social)
-* [Markdown rendering and preview (also for HTML rendering)](/resource/docs/versions/releasenote#markdown)
-* [extInput and fieldChanged](/resource/docs/versions/releasenote#extinput)
-* [Access to User unique Id](/resource/docs/versions/releasenote#uniqueid)
-* [Deletion on Meta-object](/resource/docs/versions/releasenote#deletion)
-* [Resources cascade copy](/resource/docs/versions/releasenote#cascade)
-* [Fixes](/resource/docs/versions/releasenote#fixes)
+* [OAuth2 authentication](/lesson/docs/versions/releasenote#OAuth2)
+* [Command line interface](/lesson/docs/versions/releasenote#curl)
+* [URL import](/lesson/docs/versions/releasenote#urlimport)
+* [Auto-completion](/lesson/docs/versions/releasenote#autocompletion)
+* [Scripts editor](/lesson/docs/versions/releasenote#scripteditor)
+* [CronJob meta-object](/lesson/docs/versions/releasenote#cron)
+* [Merge object](/lesson/docs/versions/releasenote#merge)
+* [Module diff](/lesson/docs/versions/releasenote#modulediff)
+* [New icons](/lesson/docs/versions/releasenote#icons)
+* [Common UI wrapper](/lesson/docs/versions/releasenote#uiwrapper)
+* [Simple document search](/lesson/docs/versions/releasenote#simpledocumentsearch)
+* [PDFTool](/lesson/docs/versions/releasenote#pdftool)
+* [Content max-age](/lesson/docs/versions/releasenote#contentmaxage)
+* [Core cache](/lesson/docs/versions/releasenote#corecache)
+* [User profile access](/lesson/docs/versions/releasenote#profileaccess)
+* [Script SQL type](/lesson/docs/versions/releasenote#scriptsql)
+* [Social feature](/lesson/docs/versions/releasenote#social)
+* [Markdown rendering and preview (also for HTML rendering)](/lesson/docs/versions/releasenote#markdown)
+* [extInput and fieldChanged](/lesson/docs/versions/releasenote#extinput)
+* [Access to User unique Id](/lesson/docs/versions/releasenote#uniqueid)
+* [Deletion on Meta-object](/lesson/docs/versions/releasenote#deletion)
+* [Resources cascade copy](/lesson/docs/versions/releasenote#cascade)
+* [Fixes](/lesson/docs/versions/releasenote#fixes)
 
 Changes
 -------
@@ -37,7 +37,7 @@ Changes
 
 ### OAuth2 authentication ###
 
-When using Apache Tomcat, it is now possible to authenticate using Google OAuth2. The configuration is described in [this document](/resource/docs/authentication/tomcat-oauth2).
+When using Apache Tomcat, it is now possible to authenticate using Google OAuth2. The configuration is described in [this document](/lesson/docs/authentication/tomcat-oauth2).
 
 The principles applies also to other OAuth2 based services.
 
@@ -47,7 +47,7 @@ _Note: this feature has been back ported to the 3.0 maintenance branch._
 
 ### Command line interface ###
 
-It is now possible to use the `curl` tool (or any other similar HTTP client command line tool) to process administrative tasks. The usage of `curl` is describe in [this document](/resource/docs/integration/io-commandline).
+It is now possible to use the `curl` tool (or any other similar HTTP client command line tool) to process administrative tasks. The usage of `curl` is describe in [this document](/lesson/docs/integration/io-commandline).
 
 _Note: this feature has been back ported to the 3.0 maintenance branch._
 

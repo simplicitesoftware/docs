@@ -1,1 +1,1 @@
-This document has been moved to [this document](/resource/docs/authentication/tomcat-apisession)
+This document has been moved to [this document](/lesson/docs/authentication/tomcat-apisession)

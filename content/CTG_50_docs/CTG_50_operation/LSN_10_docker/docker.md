@@ -5,7 +5,7 @@ Simplicit&eacute;&reg; instances can easily be deployed on the Docker engine.
 
 This document gives you extended information on how to use/configure such Docker-based deployments, including in advanced cases.
 
-A simplified **[tutorial](/resource/docs/operation/docker-tutorial)** is also available for a **step by step** procedure in the usual case.
+A simplified **[tutorial](/lesson/docs/operation/docker-tutorial)** is also available for a **step by step** procedure in the usual case.
 
 <h2 id="prerequistes">Prerequisites</h2>
 
@@ -745,7 +745,7 @@ sudo docker-compose up [-d]
 > ```
 >
 > In the above example the server certificate's keystore file as located as `/etc/ssl/myapp.jks` on the host machine and
-> its password is `mypassword`. See [this document](/resource/docs/misc/java-ssl) to learn how to build such a keystore file.
+> its password is `mypassword`. See [this document](/lesson/docs/misc/java-ssl) to learn how to build such a keystore file.
 
 <h3 id="dockercompose-mysql">MySQL/MariaDB</h3>
 
@@ -886,7 +886,7 @@ is **always** the right thing to do before **any** container upgrade (Simplicit√
 
 <h2 id="kubernetes">Run on a Kubernetes cluster</h2>
 
-See [this document](/resource/docs/operation/kubernetes).
+See [this document](/lesson/docs/operation/kubernetes).
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
