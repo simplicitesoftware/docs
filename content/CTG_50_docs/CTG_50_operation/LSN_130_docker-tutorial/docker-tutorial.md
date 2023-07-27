@@ -79,7 +79,7 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
 ```
 
-### Optional useful packages
+### Optional: Install other useful packages
 
 This step is not required but provides various useful tools and aliases on your host.
 
@@ -116,7 +116,7 @@ EOF
 . .bashrc
 ```
 
-### Optional database clients packages
+### Optional: Install database clients packages
 
 This step is not required if you don't plan to connect to the deployed databases from your host.
 
@@ -364,7 +364,7 @@ To update the images (after stopping the containers(s)):
 sudo docker-compose pull
 ```
 
-[<h2 id="nginx">Optional] Add an SSL-enabled NGINX reverse proxy</h2>
+<h2 id="nginx">Optional: Add an SSL-enabled NGINX reverse proxy</h2>
 
 To add an NGINX reverse proxy to expose your instances **over SSL** do the following changes
 to the `docker-compose.yml` file:

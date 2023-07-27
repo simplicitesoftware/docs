@@ -457,7 +457,14 @@ Scratch pad
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on the `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
 
-<h3 id="version-5.3.9">5.3.9 (UNRELEASED)</h3>
+<h3 id="version-5.3.9">5.3.9 (2023-07-21)</h3>
 
 - Fixed signature pad distribution to `signature_pad.umd.min.js` instead of `signature_pad.min.js`
 - Backported improvements/simplification on the `customAuthPage` platform hook
+- Backported some robustness fixes (e.g. upon module name chaneg)
+
+<h3 id="version-5.3.10">5.3.10 (UNRELEASED)</h3>
+
+- Fixed NPE after logout with LDAP-only authentication
+- Fixed health check JSON format
+

@@ -817,3 +817,5 @@ This means this mechanism requires a proper modules' version management.
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
 - Improved robustness on module name changes
+- Fixed NPE after logout with LDAP-only authentication
+- Fixed health check JSON format
