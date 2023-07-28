@@ -769,7 +769,7 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.38">5.2.38 (2023-04-20)</h3>
 
 - Fixed initialize fields of 0,1 link with inlined form
-- Backported unaccentued index search support
+- Backported unaccentued index search support (system param `USE_UNACCENTUATED_INDEX` , **note**: changing its value requires re-indexing)
 - Fixed no tree depth=0 in case of meta-object link
 - Fixed check on meta object links to remote objects
 - Improved `JSONTool.jsonMetaObject` with field lists

@@ -1074,7 +1074,17 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/norFlag to activate completion feature
+	yes/no Flag to activate the completion feature
+
+### `USE_UNACCENTUATED_INDEX`
+
+**Default value**
+
+	no
+
+**Description**
+
+	yes/no Flag to activate the unaccentuated index search feature
 
 ### `USE_DOC_GRANT`
 
@@ -1084,7 +1094,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate document rights management
+	yes/no Flag to activate the document rights management
 
 ### `USE_DOC_INDEX`
 
@@ -1094,7 +1104,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate document indexation management
+	yes/no Flag to activate the document indexation management
 
 ### `USE_DOMAIN_HOMES`
 
