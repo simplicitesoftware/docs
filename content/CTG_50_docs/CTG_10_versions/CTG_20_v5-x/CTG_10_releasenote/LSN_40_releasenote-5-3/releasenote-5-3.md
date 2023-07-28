@@ -463,8 +463,8 @@ Scratch pad
 - Backported improvements/simplification on the `customAuthPage` platform hook
 - Backported some robustness fixes (e.g. upon module name chaneg)
 
-<h3 id="version-5.3.10">5.3.10 (UNRELEASED)</h3>
+<h3 id="version-5.3.10">5.3.10 (2023-07-28)</h3>
 
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
-
+- Improved OpenAPI schema methods
