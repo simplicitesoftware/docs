@@ -127,7 +127,7 @@ The prebuilt images are configured to exposes the following ports for different 
 - Tomcat AJP port `8009` to be exposed thru an HTTP/HTTPS reverse proxy (Apache), this requires an additionalc `-e` flag (see below)
 - Tomcat admin port `8005` for starting/stopping Tomcat from outside of the container (not supposed to be used)
 - Tomcat JPDA port `8000` for remote debugging Tomcat (Tomcat is started with the `jpda` keyword), this requires an additional `-e` flag (see below)
-- Tomcat JMX port `8555` for connecting a JMX monitoring tool on Tomcat (Tomcat is started with additional JVM options), this requires an additional `-e` flag (see below)
+- Tomcat JMX port `1099` for connecting a JMX monitoring tool on Tomcat (Tomcat is started with additional JVM options) and `1098` for RMI communication, this requires an additional `-e` flag (see below)
 
 > **Warning**: If you expose the HTTP port `8080` thru an HTTPS reverse proxy endpoint
 > or if you expose the secure HTTPS port thru an HTTP reverse proxy endpoint
@@ -264,7 +264,7 @@ It is possible to start Tomcat in remote debug (JPDA) mode (e.g. useful in devel
 You can enable JMX services:
 
 - Enable/disable JMX services: `-e JMX=<true|false, defaults to false>`
-- Expose the JMX port: ` -p [127.0.0.1:]<JMX port, e.g. 8555>:8555]`
+- Expose the JMX port: ` -p [127.0.0.1:]<JMX port, e.g. 1099>:1099]`
 
 <h3 id="gzip">Enable GZIP compression</h3>
 
