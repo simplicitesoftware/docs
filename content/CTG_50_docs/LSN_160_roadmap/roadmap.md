@@ -7,3 +7,4 @@ Roadmap
 - 2015: **version 3.2** is a technical improvement of the 3.1 version (refactored server cache, improved scalability, improved PaaS deployments, ...)
 - 2016: **Version 4.0** removed deprecated features, discontinued support for old plaforms, refactored URL schemes, auto install/update for full PaaS deployments, UI-oriented API and new generic responsive UI, ...
 - 2020: **Version 5** technical upgrade and functional improvements of the version 4.0.
+- 2023: **Version 6** technical upgrade and functional improvements of the version 5.
