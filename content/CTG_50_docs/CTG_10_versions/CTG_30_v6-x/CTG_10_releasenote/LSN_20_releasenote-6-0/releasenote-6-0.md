@@ -43,6 +43,11 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 - And `tsl_id` and `tsl_type` are not used anymore.
 - The related legacy field `obo_delspec` is now hidden and deprecated
 
+### Compatibility breaking changes
+
+- Tthe platform hook `customStartPage` now throws exceptions.
+  If you have implemented this hook you need to add `throws Excepiton` to the method declaraton.
+
 <h2 id="changes">Core changes</h2>
 
 - New hook to limit user's access to menu item 
@@ -347,6 +352,55 @@ public List<String> fieldCompletion(String input, String query, String context) 
 
 - Added `isExportTimestamp` and `setExportTimestamp` to allow timestamp export in CSV
 
+- Robustness of hook calls:
+	- Prevents infinite loop/stack overflow, ex: doing a save() in the postSave on a same instance
+	- Tracks hook duration: log a warning after 2s by default
+	- Allows to trace hooks and action method calls (in/out and time)
+	- New log event `HOOK` at level INFO by default
+	- New hooks `hookBegin`, `hookEnd`, `methodBegin`, `methodEnd` to customize behavior:
+
+```java
+@Override
+public void postLoad() {
+	// no trace (the default)
+	traceHooks(false, false);
+	// trace only implemented hooks (during test)
+	traceHooks(true, true);
+	// trace all hooks (verbose only for training)
+	traceHooks(true, false);
+}
+
+@Override
+protected void hookBegin(String hook, int maxTime, int maxStack) throws HookException {
+	// postUpdate may be long because of ...
+	if ("postUpdate".equals(hook))
+		maxTime = 10000; // warning after 10s in ms
+
+	// default duration is 2s by default
+	// default stack is set 20 to stop infinite calls loop => HookException 
+	super.hookBegin(hook, maxTime, maxStack);
+}
+
+@Override
+protected long hookEnd(String hook) {
+	long time = super.hookEnd(hook);
+	// do something if postUpdate is too long
+	if (time>10000 && "postUpdate".equals(hook)) {
+		// notify the supervisor...
+	}
+	return time;
+}
+
+// Same for Action method
+@Override
+protected void methodBegin(String method, int maxTime, int maxStack) throws HookException {
+	super.methodBegin(method, maxTime, maxStack);
+}
+@Override
+protected long methodEnd(String method) {
+	return super.methodEnd(method);
+}
+```
 
 <h2 id="uichanges">UI changes</h2>
 

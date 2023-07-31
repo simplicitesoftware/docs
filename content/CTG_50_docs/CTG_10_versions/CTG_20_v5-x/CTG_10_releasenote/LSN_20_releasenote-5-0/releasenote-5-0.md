@@ -1012,3 +1012,7 @@ See above
 <h3 id="version-5.0.67">5.0.67 (2022-09-30) **post-maintenance revision**</h3>
 
 - Security fixes
+
+<h3 id="version-5.0.68">5.0.68 (UNRELEASED) **post-maintenance revision**</h3>
+
+- Robustness fixes

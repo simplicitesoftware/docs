@@ -99,15 +99,15 @@ A long term maintenance branch **only** receives critical fixes.
 
 | Major/minor | Maintenance branch                                                      | Maintenance end date                            |
 |-------------|-------------------------------------------------------------------------|-------------------------------------------------|
-| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Development (alpha stage)                      |
-| minor       | `5.3` [release notes](00-versions/5.x/releasenote/releasenote-5.3.md) | **Current release**                            |
-| minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Short term (till September 30th, 2023)         |
-| minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)  |
-| minor       | `5.0` [release notes](00-versions/5.x/releasenote/releasenote-5.0.md) | Expired short term (since September 30th, 2021 |
-| major       | `4.0` [release notes](/lesson/docs/versions/index)           | Long term_ (till January 15th, 2024)           |
-| major       | `3.2` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
-| major       | `3.1` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
-| major       | `3.0` [release notes](/lesson/docs/versions/index)           | Expired long term                              |
+| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Development (alpha stage)                       |
+| minor       | `5.3` [release notes](00-versions/5.x/releasenote/releasenote-5.3.md) | **Current release**                             |
+| minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Short term (till September 30th, 2023)          |
+| minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)   |
+| minor       | `5.0` [release notes](00-versions/5.x/releasenote/releasenote-5.0.md) | Expired short term (since September 30th, 2021) |
+| major       | `4.0` [release notes](/lesson/docs/versions/index)           | Long term (till January 15th, 2024)             |
+| major       | `3.2` [release notes](/lesson/docs/versions/index)           | Expired long term                               |
+| major       | `3.1` [release notes](/lesson/docs/versions/index)           | Expired long term                               |
+| major       | `3.0` [release notes](/lesson/docs/versions/index)           | Expired long term                               |
 
 <h3 id="gitbranchesanddockertags">Instance templates Git branches and Docker images tags table</h3>
 

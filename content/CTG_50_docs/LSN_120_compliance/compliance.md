@@ -57,14 +57,14 @@ It is also possible to deploy Simplicit&eacute;&reg; platform on **PaaS** buildp
 
 The following table only indicates the **LTS (Long Term Support)** JVM versions.
 
-| ![](../../logos/logo.svg) | JVM 1.8 | JVM 11       | JVM 17   |
-|:-------------------------:|---------|--------------|----------|
-| **6.x** (dev)             | no      | yes (1)      | **yes**  |
-| **5.x**                   | no      | **yes**      | **yes**  |
-| **4.0**                   | no (2)  | **yes**      | **yes**  |
-| Legacy **3.2**            | **yes** | yes (1)      | yes (1)  |
-| Legacy **3.1**            | **yes** | yes (1)      | yes (1)  |
-| Legacy **3.0**            | **yes** | no           | no       |
+| ![](https://platform.simplicite.io/logos/logo.svg) | JVM 1.8 | JVM 11       | JVM 17   |
+|:--------------------------------------------------:|---------|--------------|----------|
+| **6.x** (dev)                                      | no      | yes (1)      | **yes**  |
+| **5.x**                                            | no      | **yes**      | **yes**  |
+| **4.0**                                            | no (2)  | **yes**      | **yes**  |
+| Legacy **3.2**                                     | **yes** | yes (1)      | yes (1)  |
+| Legacy **3.1**                                     | **yes** | yes (1)      | yes (1)  |
+| Legacy **3.0**                                     | **yes** | no           | no       |
 
 1. Not tested and not supported but should work.
 2. Due to optional dependencies that are compiled for the JVM 11, the platform version 4.0+ **requires** a JVM &gt;= 11.
@@ -78,14 +78,14 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 
 <h3 id="appservers">Application servers</h3>
 
-| ![](../../logos/logo.svg) | JEE Web profile (1) | Webapp |
-|:-------------------------:|---------------------|--------|
-| **6.x** (dev)             | JakartaEE 10        | 6.0    |
-| **5.x**                   | JEE 8               | 4.0    |
-| **4.0**                   | JEE 8               | 4.0    |
-| Legacy **3.2**            | JEE 7               | 3.1    |
-| Legacy **3.1**            | JEE 6               | 3.1    |
-| Legacy **3.0**            | J2EE 1.4            | 2.5    |
+| ![](https://platform.simplicite.io/logos/logo.svg) | JEE Web profile (1) | Webapp |
+|:--------------------------------------------------:|---------------------|--------|
+| **6.x** (dev)                                      | JakartaEE 10        | 6.0    |
+| **5.x**                                            | JEE 8               | 4.0    |
+| **4.0**                                            | JEE 8               | 4.0    |
+| Legacy **3.2**                                     | JEE 7               | 3.1    |
+| Legacy **3.1**                                     | JEE 6               | 3.1    |
+| Legacy **3.0**                                     | J2EE 1.4            | 2.5    |
 
 1. Web profile by default but full profile is also possible
 
@@ -101,14 +101,14 @@ An application server with Websocket 1.1+ support is highly recommended for Simp
 
 <h2 id="databases">Databases</h2>
 
-| ![](../../logos/logo.svg) | MySQL/MariaDB | PostgreSQL | Oracle   | SQLServer |
-|:-------------------------:|---------------|------------|----------|-----------|
-| **6.x** (dev)             | 8+            | 11+        | 12c+     | 2019+     |
-| **5.x**                   | 5.7+          | 10+        | 12c+     | 2019+     |
-| **4.0**                   | 5.5+          | 9.2+       | 12c+     | 2016+     |
-| Legacy **3.2**            | 5.1+          | 8+         | 11g+     | 2012+     |
-| Legacy **3.1**            | 5.1+          | 8+         | 11g+     | 2012+     |
-| Legacy **3.0**            | 5.1+          | 8+         | 10g+     | 2008+     |
+| ![](https://platform.simplicite.io/logos/logo.svg) | MySQL/MariaDB | PostgreSQL | Oracle   | SQLServer |
+|:--------------------------------------------------:|---------------|------------|----------|-----------|
+| **6.x** (dev)                                      | 8+            | 11+        | 12c+     | 2019+     |
+| **5.x**                                            | 5.7+          | 11+        | 12c+     | 2019+     |
+| **4.0**                                            | 5.5+          | 10++       | 12c+     | 2016+     |
+| Legacy **3.2**                                     | 5.1+          | 9+         | 11g+     | 2012+     |
+| Legacy **3.1**                                     | 5.1+          | 9+         | 11g+     | 2012+     |
+| Legacy **3.0**                                     | 5.1+          | 9+         | 10g+     | 2008+     |
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
@@ -116,14 +116,14 @@ An application server with Websocket 1.1+ support is highly recommended for Simp
 
 <h2 id="browsers">Web browsers</h2>
 
-| ![](../../logos/logo.svg) | Edge (1) |Firefox (1) | Chrome (1) | Safari (1) | IE11    |
-|:-------------------------:|----------|------------|------------|------------|---------|
-| **6.x** (dev)             | yes      | yes        | yes        | yes        | no      |
-| **5.x**                   | yes      | yes        | yes        | yes        | no      |
-| **4.0**                   | yes      | yes        | yes        | yes        | yes (2) |
-| Legacy **3.2**            | yes      | yes        | yes        | yes        | yes     |
-| Legacy **3.1**            | yes      | yes        | yes        | yes        | yes     |
-| Legacy **3.0**            | yes      | yes        | yes        | yes        | yes     |
+| ![](https://platform.simplicite.io/logos/logo.svg) | Edge (1) |Firefox (1) | Chrome (1) | Safari (1) | IE11    |
+|:--------------------------------------------------:|----------|------------|------------|------------|---------|
+| **6.x** (dev)                                      | yes      | yes        | yes        | yes        | no      |
+| **5.x**                                            | yes      | yes        | yes        | yes        | no      |
+| **4.0**                                            | yes      | yes        | yes        | yes        | yes (2) |
+| Legacy **3.2**                                     | yes      | yes        | yes        | yes        | yes     |
+| Legacy **3.1**                                     | yes      | yes        | yes        | yes        | yes     |
+| Legacy **3.0**                                     | yes      | yes        | yes        | yes        | yes     |
 
 1. Up to date version only (recent previous versions are not supported but should work)
 2. Not recommended, not tested and not supported. Use at your own risks. You may experience poor performances and/or visual/functional issues.

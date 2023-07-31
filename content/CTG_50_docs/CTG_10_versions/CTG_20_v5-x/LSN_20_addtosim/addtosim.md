@@ -1,6 +1,3 @@
-![Simplicit&eacute; Software](../logos/logo250.png)
-* * *
-
 Add version 5 to an existing SIM server
 =======================================
 
