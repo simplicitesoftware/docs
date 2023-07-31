@@ -1013,6 +1013,6 @@ See above
 
 - Security fixes
 
-<h3 id="version-5.0.68">5.0.68 (UNRELEASED) **post-maintenance revision**</h3>
+<h3 id="version-5.0.68">5.0.68 (2023-07-28) **post-maintenance revision**</h3>
 
 - Robustness fixes

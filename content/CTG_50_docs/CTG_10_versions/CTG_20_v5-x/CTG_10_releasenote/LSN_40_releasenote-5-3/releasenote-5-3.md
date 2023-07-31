@@ -468,3 +468,7 @@ Scratch pad
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
 - Improved OpenAPI schema methods
+
+<h3 id="version-5.3.11">5.3.11 (UNRELEASED)</h3>
+
+- Nothing so far...
