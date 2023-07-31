@@ -2,15 +2,14 @@ Version 6.x
 ===========
 
 > **Warning**: this is the **NEXT** major version of the Simplicité platform.
-> It is in early **ALPHA** development stage.
+> It is currently in early **ALPHA** development stage.
 > <br/>It is only made available for **EARLY PREVIEW** purposes.
-> <br/><span style="color: red;">**Don't use it** in development or production.</span>
+> <br/><span style="color: red;">**Don't use it** for development, testing or production.</span>
 
 Documentation
 -------------
 
 - [Release notes](./releasenote/)
-<!-- - [Instructions to add to an existing SIM server](/lesson/docs/versions/addtosim) -->
 
 ### **Development** version 6.0 <br/>(`development[-light]` branches of `template-6` Git repo / `6-alpha*` Docker images)
 
