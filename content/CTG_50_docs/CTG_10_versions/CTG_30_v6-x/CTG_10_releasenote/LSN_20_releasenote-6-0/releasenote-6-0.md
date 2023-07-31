@@ -45,8 +45,8 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 
 ### Compatibility breaking changes
 
-- Tthe platform hook `customStartPage` now throws exceptions.
-  If you have implemented this hook you need to add `throws Excepiton` to the method declaraton.
+- The platform hook `customStartPage` now throws exceptions.
+  If you have implemented this hook you need to add `throws Exception` to the method declaraton.
 
 <h2 id="changes">Core changes</h2>
 

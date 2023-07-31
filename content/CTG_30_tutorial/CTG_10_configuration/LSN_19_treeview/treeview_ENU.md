@@ -57,7 +57,7 @@ The order of a child node should be either a single number for the root node, or
     - `1-2` : second child object
     - etc.
 
-**You cannot have more tha one root node**
+**You cannot have more than one root node**
 
 Exercise
 ====================
