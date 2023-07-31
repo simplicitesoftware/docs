@@ -1,4 +1,4 @@
-Processus métier - workflow
+# Processus métier - workflow
 
 Un workflow est un assistant (suite d'écrans) destiné à assister l'utilisateur lors d'un processus spécifique.
 Le workflow peut être défini dans le menu Processus métier/Processus métier.
