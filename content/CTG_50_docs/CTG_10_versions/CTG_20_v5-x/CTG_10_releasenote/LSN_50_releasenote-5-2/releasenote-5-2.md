@@ -812,7 +812,7 @@ This means this mechanism requires a proper modules' version management.
 - Restored basic auth from I/O form
 - Added new LESS variables for scrollbar styles
 
-<h3 id="version-5.2.44">5.2.44 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.44">5.2.44 (2023-07-28) **maintenance revision**</h3>
 
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
