@@ -201,12 +201,11 @@ The changes are describedbeloww (the new URL patterns are given for information 
 | /jsp/ALL_xsd.jsp                                              | /ui/soap?xsd=true                       | n/a                            |
 | Legacy webservices gateway webapp URLs                        | /api/\*                                 | n/a                            |
 
-> **Notes**: 
->
-> * Some of theses changes were already done in previous versions (typically 3.1 and 3.2) and the main `HTMLTool` methods already exists
->   in these previous versions. You can start anticipating these changes even if you are using a previous version.
-> * Any relative reference to a old JSP page located in the `/jsp/` folder **must** now be done using an absolute reference (e.g. `/jsp/SYS_work.jsp`)
->   but, better, should be refactored using the `HTMLTool` class methods decribed above
+> **Note**: Some of theses changes were already done in previous versions (typically 3.1 and 3.2) and the main `HTMLTool` methods already exists
+> in these previous versions. You can start anticipating these changes even if you are using a previous version.
+
+> **Note**: Any relative reference to a old JSP page located in the `/jsp/` folder **must** now be done using an absolute reference (e.g. `/jsp/SYS_work.jsp`)
+> but, better, should be refactored using the `HTMLTool` class methods decribed above
 
 Dispositions
 ------------
