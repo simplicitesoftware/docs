@@ -209,23 +209,12 @@ sudo docker run\
 ```
 
 > **Note** If you plan to use a database server **running on the host machine** you need to get the appropriate IP address to pass as `DB_HOST` environment variable
-> (using `127.0.0.1` will **not** work unless you use `--net=host` which only makes sense in particular cases).
->
-> To get this adress run the following command:
->
-> ```bash
-> ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'
-> ```
->
-> The result is usually `172.17.0.1` but it may vary.
->
+> (using `127.0.0.1` will **not** work unless you use `--net=host` which only makes sense in particular cases).<br/>
+> To get this adress run the following command: `ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+'`,
+> the result is usually `172.17.0.1` but it may vary.<br/>
 > Also **make sure** your database is configured to **allow connections** on this IP and its port
 > and that the firewall considers the `docker0` interface as trusted, this can be ensured by:
->
-> ```bash
-> sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
-> sudo firewall-cmd --reload
-> ```
+> `sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0 && sudo firewall-cmd --reload`
 
 The `DOC_DIR` system parameter should be set by default to `BLOB` for external databases (this means documents are stored in the database as BLOBs).
 
@@ -716,8 +705,7 @@ Start the containers by:
 sudo docker-compose up [-d]
 ```
 
-> **Note**: if you want to enable SSL you need to add items in the service's ports, environment and volumes sections:
->
+> **Note**: if you want to enable SSL you need to add items in the service's ports, environment and volumes sections:<br/>
 > ```yaml
 > version: "3"
 > services:
@@ -743,7 +731,6 @@ sudo docker-compose up [-d]
 >   <myapp>-dbdoc:
 >   <myapp>-git:
 > ```
->
 > In the above example the server certificate's keystore file as located as `/etc/ssl/myapp.jks` on the host machine and
 > its password is `mypassword`. See [this document](/lesson/docs/misc/java-ssl) to learn how to build such a keystore file.
 
