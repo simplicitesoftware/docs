@@ -133,7 +133,7 @@ than on the server side (e.g. services credentials, passwords, ...)
 
 <h3 id="filtering">Business object filtering</h3>
 
-If you have a business object with dynamic filtering rules (e.g. implemented in the `postLoad` hook based on rules on user's responsibilities and/or business obejct instance name),
+If you have a business object with dynamic filtering rules (e.g. implemented in the `postLoad` hook based on rules on user's responsibilities and/or business object instance name),
 you **should** set `1=2` as default static filtering rule. As a metter of fact, if for any reason you code is not working well it will result in giving no access to any data instead of
 giving access to all data.
 

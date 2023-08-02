@@ -7,7 +7,7 @@ scripts, workflow scripts, external object scripts, ...
 For more details on **Rhino** sscripting you can check [the Mozilla Rhino documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino/Documentation)
 
 > **Note**:<br/>
-> In Rhino scripts the `this` variable correspond to the contextual item (business object, workflow, external obejct, ...) itself,
+> In Rhino scripts the `this` variable correspond to the contextual item (business object, workflow, external object, ...) itself,
 > it must be **explicitly** used (it can't be implicit like in Java code).<br/>
 > The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.<br/>
 > Some examples are provided both in Rhino and Java so as you can see the syntax differences.<br/>
