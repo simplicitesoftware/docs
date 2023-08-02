@@ -6,14 +6,18 @@ scripts, workflow scripts, external object scripts, ...
 
 For more details on **Rhino** sscripting you can check [the Mozilla Rhino documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino/Documentation)
 
-> **Note**:<br/>
+> **Note**:
+>
 > In Rhino scripts the `this` variable correspond to the contextual item (business object, workflow, external object, ...) itself,
-> it must be **explicitly** used (it can't be implicit like in Java code).<br/>
-> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.<br/>
-> Some examples are provided both in Rhino and Java so as you can see the syntax differences.<br/>
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:<br/>
-> Rhino: `a == b`, Java: `a.equals(b)`<br/>
-> Rhino: `a != b`, Java: `!a.equals(b)`
+> it must be **explicitly** used (it can't be implicit like in Java code).
+>
+> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
+> Some examples are provided both in Rhino and Java so as you can see the syntax differences.
+>
+> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
+>
+> - Rhino: `a == b`, Java: `a.equals(b)`
+> - Rhino: `a != b`, Java: `!a.equals(b)`
 
 <h2 id="namingconventions">Naming conventions</h2>
 
