@@ -3,6 +3,8 @@ Tomcat API session management
 
 An optional valve is provided to avoid API callers to take care of server session.
 
+> **Warning**: this applies only to versions 5.0 and 5.1
+
 Webapp settings
 ---------------
 
