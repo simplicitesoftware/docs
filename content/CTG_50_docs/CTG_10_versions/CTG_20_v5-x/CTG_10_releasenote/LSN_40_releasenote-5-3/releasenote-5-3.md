@@ -471,4 +471,5 @@ Scratch pad
 
 <h3 id="version-5.3.11">5.3.11 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Fixed missing URI filtering for `/health.json`
+- Improved synchronization on API grant loading
