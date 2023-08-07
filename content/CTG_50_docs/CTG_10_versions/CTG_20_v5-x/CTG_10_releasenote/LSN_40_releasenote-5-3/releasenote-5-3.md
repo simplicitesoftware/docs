@@ -469,7 +469,13 @@ Scratch pad
 - Fixed health check JSON format
 - Improved OpenAPI schema methods
 
-<h3 id="version-5.3.11">5.3.11 (UNRELEASED)</h3>
+<h3 id="version-5.3.11">5.3.11 (2023-08-08)</h3>
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
+- Added `pre/postClearCache` platform hooks
+
+<h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
+
+- Nothing so far...
+
