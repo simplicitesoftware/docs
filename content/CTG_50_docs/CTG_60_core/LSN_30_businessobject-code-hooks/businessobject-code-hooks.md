@@ -621,7 +621,19 @@ The `preSelect` and `postSelect` hooks are called before/after selecting the obj
 They can be used to implement some business rules to set some field values for example.  
 
 Example:
+**Java**
 
+```java
+@Override
+public void preSelect(String rowId, boolean copy) {
+	// If the data is selected for a copy set a field with particular value 
+	if (copy)
+		getField("objField1").setValue("value");
+	super.preSelect(rowId, copy);
+}
+```
+
+**Rhino**
 ```javascript
 MyObject.preSelect = function(rowId, copy) {
 	// If the data is selected for a copy set a field with particular value 
