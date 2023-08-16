@@ -43,6 +43,29 @@ For instance it can be used to:
 - Change some activities definition
 
 Example:
+**Java**
+
+```Java
+@Override
+public void postInstantiate(Grant g) {
+	// Get the instance used by the process
+	ObjectDB o = g.getProcessObject("MyObject");
+	// Extend the form by default
+	o.setMoreOnForm(false);
+
+	// Show/Hide some fields
+	o.getField("myField").setVisibility(ObjectField.VIS_HIDDEN);
+	o.getField("myOtherField").setVisibility(ObjectField.VIS_BOTH);
+	
+	// Limit the search to employees
+	if (g.hasResponsibility("EMPLOYEE"))
+		o.setDefaultSearchSpec("(t.amount > 1000 and t.enabled='1')");
+	
+	super.postInstantiate(g);
+}
+```
+
+**Rhino**
 ```javascript
 MyProcess.postInstantiate = function(grant) {  
 
@@ -67,6 +90,27 @@ The `preActivate`/ `postActivate` hook are called before/after the process is ac
 Activate a process auto-validate the `BEGIN` activity and returns the first user activity.
 
 Example:
+**Java**
+
+```Java
+@Override
+public Message preActivate() {
+	// Activity definition (Data, Translation...)
+	Activity a = getActivity("ACTIVITY_CODE");  
+	AppLog.info("activity = " + a.toString(),getGrant());
+	// Activity instance in this process
+	ActivityFile context = getContext(a);
+	AppLog.info("context = " + context.toString(),getGrant());
+	// Force a filter on a search
+	context.setDataFile("Filter", "cliType", "someValue");
+	// Force a value on a form
+	context.setDataFile("Field", "cliType", "someValue");
+	//...
+	return super.preActivate();
+}
+```
+
+**Rhino**
 ```javascript
 MyProcess.preActivate = function() {  
 	// Activity definition (Data, Translation...)
@@ -93,12 +137,37 @@ The lock means that only one user is allowed to validate the activity, the hooks
 - postLock: can change the activity context before UI displaying
 
 Example:
+**Java**
+
+```Java
+@Override
+public Message preLock(ActivityFile context) {
+	// Access denied to big amount for simple employee
+	String amount = context.getDataValue("Field", "demAmount");
+	if (!Tool.isEmpty(amount) && Integer.parseInt(amount)>10000 && getGrant().hasResponsibility("EMPLOYEE")) {
+		Message m = new Message();
+		m.raiseError("ERR_BIG_AMOUNT_DENIED");
+		return m;
+	}
+	return super.preLock(context);
+}
+@Override
+public void postLock(ActivityFile context) {
+	// Force a value
+	if (context.getActivity().getStep().equals("STEP-1"))
+		context.setDataFile("Field", "cliType", "someValue");
+	super.postLock(context);
+}
+```
+
+**Rhino**
+
 ```javascript
 MyProcess.preLock = function(context) {
 	// Access denied to big amount for simple employee
 	var a = this.getActivity("STEP-DEMAND");
 	var amount = this.getContext(a).getDataValue("Field", "demAmount");
-	if (amount && parseInt(amount)>10000 && this.getGrant().hasResponibility("EMPLOYEE")) {
+	if (amount && parseInt(amount)>10000 && this.getGrant().hasResponsibility("EMPLOYEE")) {
 		var m = new Message();
 		m.raiseError("ERR_BIG_AMOUNT_DENIED");
 		return m;
@@ -120,6 +189,35 @@ Allows to add business rules before/after the activity is validated (on UI `next
 - Check the fields and return errors
 
 Example:
+
+**Java**
+
+```Java
+@Override
+public Message preValidate(ActivityFile context) {
+	// At the client step
+	String step = context.getActivity().getStep();  
+	if (step=="STEP-CLIENT") {  
+		// Check if the name is set
+		String name = context.getDataValue("Field", "cliName");  
+		if (Tool.isEmpty(name)) {
+			Message m = new Message();
+			m.raiseError("ERR_CLIENT_NAME");
+			return m;
+		}
+		// Change the activity result if the address is empty
+		String adresseId = context.getDataValue("Field", "cliAdresseFK");  
+		if (Tool.isEmpty(adresseId)) {  
+			AppLog.info("empty address", getGrant());
+			// EmptyAddress is set in a transition condition
+			context.setDataFile("Return", "Code", "EmptyAddress");  
+		}  
+	} 
+		return super.preValidate(context);
+}
+```
+
+**Rhino**
 ```javascript
 MyProcess.preValidate = function(context) {  
 	// At the client step
@@ -188,6 +286,25 @@ The `preCancel`/`postCancel` hook are called  when the activity is canceled.
 Allows to add specific business rules (before/after) in the case the activity is canceled.  
 
 Example:
+
+**Java**
+
+```Java
+@Override
+public Message preCancel(ActivityFile context) {
+	String step = context.getActivity().getStep();  
+	// Billing step is canceled ?
+	if ("STEP-BILLING".equals(step)) {
+		// Force the status of the demand step
+		Activity a = getActivity("STEP-DEMAND");
+		getContext(a).setDataFile("Field", "demStatus", "UNPAID");
+	}
+	return super.preCancel(context);
+}
+```
+
+**Rhino**
+
 ```javascript
 MyProcess.preCancel = function(context) {  
 	var step = context.getActivity().getStep();  
@@ -205,6 +322,24 @@ MyProcess.preCancel = function(context) {
 The `preUnlock`/ `postUnlock` hook is called when the activity is unlocked by user.
 
 Example:
+**Java**
+
+```Java
+@Override
+public Message preUnlock(ActivityFile context) {
+	String step = context.getActivity().getStep();  
+	if ("STEP-DEMAND".equals(step)) {
+		// Reset fields
+		context.setDataFile("Field", "demAmount", "");
+		context.setDataFile("Field", "demNote", "");
+	}
+	return super.preUnlock(context);
+}
+
+```
+
+**Rhino**
+
 ```javascript
 MyProcess.preUnlock = function(context) {  
 	var step = context.getActivity().getStep();  
@@ -221,6 +356,30 @@ MyProcess.preUnlock = function(context) {
 The `preTerminate`/ `postTerminate` hooks is called when the process is terminated = END activity is reached.
 
 Example:
+
+**Java**
+
+```Java
+@Override
+public void postTerminate() {
+	// Client ID
+	Activity a = this.getActivity("STEP-CLIENT");
+	String clientId = this.getContext(a).getDataValue("Field", "row_id");
+	ObjectDB cli = this.getGrant().getProcessObject("MyClient");
+	if (cli.select(clientId)) {
+		// Invoke a scripted action to send email
+		try {
+			cli.invokeAction("sendEmailToClient");
+		} catch (ActionException e) {
+			AppLog.error(e, getGrant());
+		}
+	}
+	super.postTerminate();
+}
+```
+
+**Rhino**
+
 ```javascript
 MyProcess.postTerminate = function() {  
 	// Client ID
