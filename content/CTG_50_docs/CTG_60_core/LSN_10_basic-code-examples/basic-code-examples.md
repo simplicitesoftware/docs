@@ -431,6 +431,8 @@ for (EnumItem item : o.getField("myField").getList().getAllItems()) {
 
 <h3 id="emails">Sending emails</h3>
 
+#### Rhino script
+
 ```javascript
 try {
 	var mailer = new Mail(this.getGrant());
@@ -444,6 +446,17 @@ try {
 }
 ```
 
+#### Java
+
+```java
+	Mail mailer= new Mail(getGrant());
+	mailer.send(
+		"from@mydomain.com",
+		"to@mydomain.com", 
+		"Subject",
+		"<html><body>Hello World !</body></html>"
+	);
+```
 > **Note**: There are several variants of the `Mail.send` method offering the possibility to add attachments, etc.
 
 <h3 id="zip">ZIP files</h3>
