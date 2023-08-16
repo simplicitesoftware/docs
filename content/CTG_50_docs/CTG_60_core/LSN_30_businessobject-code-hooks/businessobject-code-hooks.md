@@ -1237,17 +1237,7 @@ MyObject.getUserKeyLabel = function(row) {
 
 It is possible to set style (for instance a CSS class) on a field based on business logic:
 
-**Java**
 
-```Java
-@Override
-public String getStyle(ObjectField f, String[] row) {
-	String style;
-	if (f.getName().equals("myField"))
-		style = this.getFieldValue("myOtherField").equals("V1") ? "greenbg" : "redbg";
-	return style;
-}
-```
 
 **Rhino**:
 
@@ -1318,7 +1308,15 @@ If a `MyObject` business object is historized, there is an additional business o
 A new record is created each time one of the common fields of `MyObject` and `MyObjectHistoric` is changed.
 
 To access the historic records of a given record you can use:
-
+**Java**
+```Java
+ObjectDB h = this.getGrant().getTmpObject(getHistoricName()); // Get historic object
+h.resetFilters();
+h.getField("row_ref_id").setFilter(this.getRowId()); // Filter on current row ID
+h.getField("row_idx").setOrder(-1); // Reverse order on history index
+h.search(false);
+```
+**Rhino**
 ```javascript
 var h = this.getGrant().getTmpObject(this.getHistoricName()); // Get historic object
 h.resetFilters();
