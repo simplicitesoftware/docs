@@ -465,6 +465,8 @@ try {
 
 This simple example unzips a ZIP file read from a public URL and unzip it to a temporary folder for processing files:
 
+#### Rhino script
+
 ```javascript
 	var destDir = new File(this.getGrant().getTmpDir() + "/mydata." + System.currentTimeMillis());
 try {
@@ -478,9 +480,25 @@ try {
 }
 ```
 
+#### Java
+```java
+public void readZip(File zipFile){
+	File destDir = new File(this.getGrant().getTmpDir() + "/mydata." + System.currentTimeMillis());
+	try {
+		ZIPTool.extract(zipFile, destDir);
+		// Do something with files of file contents located in destDir, e.g. using FileTool methods
+	} catch (IOException e) {
+		AppLog.error(e, getGrant());
+	} finally {
+		FileTool.deleteFileOrDir(destDir);
+	}
+}
+```
 #### Write ZIP file
 
 This simple example zips a list of text files and return the ZIP file as a byte array:
+
+#### Rhino script
 
 ```javascript
 try {
@@ -495,6 +513,23 @@ try {
 catch (e)
 {
 	console.log(e.message);
+}
+```
+
+#### Java
+```java
+public byte[] writeZip() {
+	try {
+		Map<String,byte[]>  files = new HashMap<>();
+		var data = "Hello world";
+		files.put("test1.txt", (data + " 1").getBytes());
+		files.put("test2.txt", (data + " 2").getBytes());
+		files.put("testN.txt", (data + " N").getBytes());
+		return ZIPTool.build(files);
+	} catch (IOException e) {
+		AppLog.error(e,getGrant());
+		return new byte[0];
+	}
 }
 ```
 
