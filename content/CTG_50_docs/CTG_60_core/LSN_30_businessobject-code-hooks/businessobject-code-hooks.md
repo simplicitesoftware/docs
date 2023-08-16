@@ -731,6 +731,33 @@ or just to prevent saving in some particular cases, etc.
 
 Example:
 
+**Java**
+
+```Java
+@Override
+public String postSave() {
+	// Update a data of a linked object after
+	if (getOldStatus() == "VALIDATED" && getStatus() == "DELIVERED") {
+		ObjectDB obj = getGrant().getTmpObject("MyLinkedObject");
+		synchronized(obj){
+			obj.getLock();
+			obj.select(getField("objMyLinkedObjectMyObjectId").getValue());
+			obj.getField("otherObjField1").setValue("value");
+			try {
+				new BusinessObjectTool(obj)/* or obj.getTool() in version 5+ */.validateAndSave();
+			} catch (SaveException|ValidateException e) {
+				AppLog.error(e, getGrant());
+			}
+			
+		}
+		
+	}
+	return super.postSave();
+}
+```
+
+**Rhino**
+
 ```javascript
 MyObject.postSave = function() {
 	// Update a data of a linked object after
