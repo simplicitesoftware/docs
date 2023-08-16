@@ -1061,6 +1061,17 @@ The `postAlert` hook can be used to implement some business logic just after sen
 
 Example:
 
+**Java**
+
+```Java
+@Override
+public String postAlert(Alert a) {
+	getField("objField4").setValue("Mail sent !");
+	return super.postAlert(a);
+}
+```
+
+**Rhino**
 ```javascript
 MyObject.postAlert = function(alert) {
 	this.getField("objField4").setValue("Mail sent !");
