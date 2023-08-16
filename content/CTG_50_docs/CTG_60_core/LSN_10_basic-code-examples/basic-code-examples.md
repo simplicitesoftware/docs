@@ -77,11 +77,26 @@ console.warning("Hello world !"); // Warning level message
 console.error("Hello world !");   // Error level message
 console.fatal("Hello world !");   // Fatal level message
 ```
+#### Java
 
+```java
+AppLog.debug("Hello world !",getGrant());   // Debug level message
+AppLog.info("Hello world !",getGrant());    // Info level message
+// e is type java.lang.Throwable
+AppLog.warning(e,getGrant()); // Warning level message
+AppLog.error(e,getGrant());   // Error level message
+AppLog.fatal(e,getGrant());   // Fatal level message
+```
 It is also possible to link a message to an explicit log code:
+### Rhino script
 
 ```javascript
 console.log("Hello world !", "MYLOGCODE_001");
+```
+#### Java
+
+```java
+AppLog.log("MYLOGCODE_001","Hello world !" ,getGrant());
 ```
 
 Note that if the log code is omitted the `log` method is the equivalent to the default `info`method.
