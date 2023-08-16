@@ -666,7 +666,18 @@ Post delete hook can be used to implement some business rules after the object i
 > **Note**: Cascade deletion of child object is not supposed to be coded as this behavior is configurable at link level.
 
 Example 1:
+**Java**
 
+```Java
+@Override
+	public String preCreate() {
+		// Get a system param sequence next value
+		this.setFieldValue("objRefField", "REF"+this.getGrant().getNextSystemParamValue("MYSEQUENCEPARAM"));
+		return super.preCreate();
+	}
+```
+
+**Rhino**
 ```javascript
 MyObject.preCreate = function() {	
 	// Get a system param sequence next value
@@ -679,6 +690,21 @@ MyObject.preCreate = function() {
 
 Example 2:
 
+**Java**
+
+```Java
+@Override
+	public String preCreate() {
+		// Generate a unique number use as an id. For example an Order number for a Client.
+		ObjectField client = this.getField("orderClientId");  // foreign key
+		ObjectField number = this.getField("orderNumber");
+		String n = this.getGrant().getNextValueForColumnWhere(this.getTable(), number.getColumn(), client.getColumn()+" = "+client.getValue());
+		number.setValue(n); 	
+		return super.preCreate();
+	}
+```
+
+**Rhino**
 ```javascript
 MyOrder.preCreate = function() {	
 	// Generate a unique number use as an id. For example an Order number for a Client.
