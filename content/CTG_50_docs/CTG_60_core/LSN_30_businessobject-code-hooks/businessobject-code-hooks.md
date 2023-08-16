@@ -1237,6 +1237,18 @@ MyObject.getUserKeyLabel = function(row) {
 
 It is possible to set style (for instance a CSS class) on a field based on business logic:
 
+**Java**
+
+```Java
+@Override
+public String getStyle(ObjectField f, String[] row) {
+	String style;
+	if (f.getName().equals("myField"))
+		style = this.getFieldValue("myOtherField").equals("V1") ? "greenbg" : "redbg";
+	return style;
+}
+```
+
 **Rhino**:
 
 ```javascript
