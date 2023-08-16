@@ -912,6 +912,26 @@ The `preImport` and `postImport` hooks are called before/after a data is importe
 These hooks are called to add specific behaviors before/after an import.
 
 Examples:
+**Java**
+
+```Java
+@Override
+	public String preImport() {
+		if (getFieldValue("objField1").equals("value 1")) {
+			setFieldValue("objField2", "value 2");
+			setFieldValue("objField3", "value 3");
+		}
+		return super.preImport();
+	}
+	@Override
+	public String postImport() {
+		// Send an alert if a null value is imported 
+		Alert a = getAlert("MYALERT", Alert.TYPE_INFO);
+		if (!Tool.isEmpty(a) && getField("objField1").isEmpty())
+			a.send(this);	
+		return super.postImport();
+	}
+```
 
 **Rhino**
 
