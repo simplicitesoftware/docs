@@ -46,22 +46,39 @@ com.simplicite.webapp.tools
 
 It is possible to include a whole additional packages by:
 
+#### Rhino script
+
 ```plaintext
 importPackage(Packages.<java package name (e.g. org.apache.commons.lang3)>);
 ```
-
+#### Java
+```plaintext
+import <java class name (e.g. org.apache.commons.lang3)>.*;
+```
 or a single additional class by:
-
+#### Rhino script
 ```plaintext
 importClass(Packages.<java class name (e.g. org.apache.commons.lang3.StringUtils)>);
 ```
-
+#### Java
+```plaintext
+import <java class name (e.g. org.apache.commons.lang3.StringUtils)>;
+```
 Example:
+
+#### Rhino script
 
 ```javascript
 importClass(Packages.org.apache.commons.lang3.StringUtils);
 console.log(StringUtils.isNumeric("hello world")); // false
 console.log(StringUtils.isNumeric("123")); // true
+```
+#### Java
+
+```java
+import org.apache.commons.lang3.StringUtils;
+AppLog.info(StringUtils.isNumeric("hello world"),getGrant()); // false
+AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 ```
 
 <h2 id="logging">Logging</h2>
@@ -105,6 +122,8 @@ The messages are actually displayed depending on the log appenders configuration
 
 It is possible to set custom target log codes for default log methods using:
 
+#### Rhino script
+
 ```javascript
 console.setDebugCode("MYLOGCODE_000");   // Otherwise the default DEBUG code is used 
 console.setInfoCode("MYLOGCODE_001");    // Otherwise the default INFO code is used 
@@ -117,6 +136,7 @@ console.setFatalCode("MYLOGCODE_004");   // Otherwise the default FATAL code is 
 
 Designers can activate the hooks tracer during the development phase. 
 At the top of the object script add the following code:
+#### Rhino script
 
 ```javascript
 // Trace object hooks
