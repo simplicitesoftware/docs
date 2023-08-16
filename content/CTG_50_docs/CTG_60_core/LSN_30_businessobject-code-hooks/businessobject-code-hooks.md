@@ -1150,7 +1150,33 @@ It is possible to add code during the predefined search creation:
 - `preSavePredefinedSearch`: useful to prevent creation or update, or change filters before save
 - `postSavePredefinedSearch`: for cascading operations
 - `getPredefinedSearches`: override predefined searches accessibility
+**Java**
+```Java
+@Override
+	public String preSavePredefinedSearch(PredefinedSearch ps) {
+		// stop creation
+		if (ps.getId() == "0" && ps.getName("0")=="something reserved")
+			return "ERROR";
+		return null; // ok
+	}
+	@Override
+	public List<PredefinedSearch> getPredefinedSearches() {
+		// all public + privates
+		List<PredefinedSearch> list = getGrant().getPredefinedSearch("MyObject");
+		int i =0;
+		for (PredefinedSearch ps: list) {
+			// remove ungranted searches
+			if (ps.getName(ps.getId())=="something reserved") {
+				list.remove(i);
+			}else{
+				i++;
+			}
+		}
+		return list;
+	}
+```
 
+**Rhino**
 ```javascript
 MyObject.preSavePredefinedSearch = function(ps) {
 	// stop creation
