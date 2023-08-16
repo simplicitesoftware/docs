@@ -743,7 +743,28 @@ Pre search hook is called to add specific filters or order the result: list, piv
 Post search hook is called after search to add specific code for instance to evaluate simple calculated fields, reorder or remove records.
 
 Examples:
+**Java**
 
+```Java
+@Override
+public void preSearch() {
+	getField("objField1").setFilter("is null or <1000");
+	getField("objField2").setOrder(1);
+	getField("objField3").setOrder(-2);
+	super.preSearch();
+}
+@Override
+public List<String[]> postSearch(List<String[]> rows) {
+	int fieldIndex = getFieldIndex("objField1");
+	int i=0;
+	for(String[] row: rows){
+		row[i] = "Value #" + i;	
+		i++;
+	}
+	return super.postSearch(rows);
+	
+}
+```
 ```javascript
 MyObject.preSearch = function() {
 	this.getField("objField1").setFilter("is null or <1000");
