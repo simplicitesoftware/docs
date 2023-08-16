@@ -1082,6 +1082,41 @@ MyObject.postAlert = function(alert) {
 
 It is possible to send one alert from any other hook and to add specific attachments:
 
+**Java**
+
+```Java
+@Override
+public String postSave() {
+	Grant g = getGrant();
+	// Get the alert definition (with subject, body, recipients... or null if the alert is disabled)
+	Alert alert = getAlert("MyAlert", Alert.TYPE_INFO);
+	if (!Tool.isEmpty(alert)) {
+		// Add attachments from a child object with a document field
+		List<DocumentDB> att = new ArrayList();
+		ObjectDB a = g.getTmpObject("MyObjectAttachment");
+		synchronized(a){
+			a.getLock();
+			a.resetFilters();
+			a.setFieldFilter("MyObject_FK", getRowId());
+			for (String[] row : a.search()) {
+				a.setValues(row);
+				DocumentDB doc = a.getField("MyDocField").getDocument(g);
+				if (!Tool.isEmpty(doc)) {
+					AppLog.info("debug attach: "+doc.toString(), g);
+					att.add(doc);
+				}
+			}
+		}
+		
+		// Send with custom attachments
+		alert.send(this, att);
+	}
+	return super.postSave();
+}
+```
+
+**Rhino**
+
 ```javascript
 MyObject.postSave = function() {
 	var g = this.getGrant();

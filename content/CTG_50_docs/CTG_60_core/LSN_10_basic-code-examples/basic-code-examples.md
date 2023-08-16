@@ -541,7 +541,7 @@ catch (e)
 public byte[] writeZip() {
 	try {
 		Map<String,byte[]>  files = new HashMap<>();
-		var data = "Hello world";
+		String data = "Hello world";
 		files.put("test1.txt", (data + " 1").getBytes());
 		files.put("test2.txt", (data + " 2").getBytes());
 		files.put("testN.txt", (data + " N").getBytes());
