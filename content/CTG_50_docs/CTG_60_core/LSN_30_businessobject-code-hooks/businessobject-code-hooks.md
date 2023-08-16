@@ -1030,7 +1030,22 @@ The `preAlert` and `postAlert` hooks are called before/after the alert is sendin
 The `preAlert` hook can be used to change the alert just before sending (change the core message and/or add specific recipients).
 
 Example:
+**Java**
 
+```Java
+@Override
+public String preAlert(Alert a) {
+	if (a!=null) {
+		a.setSubject("ENU", "Dear [bill_last_name]");
+		a.setContent("ENU", "Your bill of [bill_amount] ...");
+		a.addRecipient("john@domain.com", Alert.RECIP_TO);
+		a.addRecipient(getGrant().getEmail(), Alert.RECIP_CC);
+	}
+	return super.preAlert(a);
+}
+```
+
+**Rhino**
 ```javascript
 MyObject.preAlert = function(alert) {
 	if (alert!=null) {
