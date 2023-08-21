@@ -820,7 +820,7 @@ This means this mechanism requires a proper modules' version management.
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
 
-<h3 id="version-5.2.45">5.2.45 (2023-0-08) **maintenance revision**</h3>
+<h3 id="version-5.2.45">5.2.45 (2023-08-08) **maintenance revision**</h3>
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
