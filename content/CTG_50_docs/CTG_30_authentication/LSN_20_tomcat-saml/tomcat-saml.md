@@ -118,3 +118,23 @@ GrantHooks.parseAuth = function(sys, info) {
 	return auth.replaceFirst("@" + domain, "");
 };
 ```
+**Java**
+```Java
+@Override
+public String parseAuth(Grant sys, SessionInfo info) {
+    // Check if the account is in authorized domain
+	String domain = sys.getParameter("MY_GOOGLE_DOMAIN", "simplicite.fr");
+
+	// Auth string from session info after SAML authentication (e.g. username@simplicite.fr)
+	String auth = info.getLogin();
+
+	// Reject auth string not on domain
+	if (!auth.matches("^.*@" + domain + "$")) {
+		console.error("Invalid domain for account = " + auth);
+		return null;
+	}
+
+	// Remove domain part from the auth string to get a plain username login
+	return auth.replaceFirst("@" + domain, "");
+}
+```
