@@ -27,6 +27,7 @@ Server side script
 In the example, the server side script just builds the static parts of the disposition page
 (including the main div which will be used by the client side script):
 
+**Rhino**
 ```javascript
 MyDisp.display = function(params) {
 	var g = this.getGrant();
@@ -54,12 +55,43 @@ MyDisp.display = function(params) {
 	return wp.toString();
 };
 ```
+**Java**
+```Java
+import com.simplicite.webapp.HTMLPage;
+import com.simplicite.webapp.web.BootstrapWebPage;
+@Override
+public String display(Parameters params) {
+	Grant g = getGrant();
+	BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), g.getParameter("WINDOW_TITLE", "Simplicit&eacute;&reg;"));
+	wp.appendAjax();
+	wp.appendJSInclude(HTMLPage.getResourceJSURL(g, "SCRIPT")); // Include a client side JavaScript
+	wp.appendCSSInclude(HTMLPage.getResourceCSSURL(g, "STYLES")); // Include a custom stylesheet
+	wp.setFavicon(HTMLPage.getResourceIconURL(g, "FAVICON"));
+	wp.setReady("mydisp(\"" + wp.getRoot() + "\");");
+	
+	LinkedHashMap sm = new LinkedHashMap();
+	sm.put("submenu1", "My sub menu 1");
+	sm.put("submenu2", "My sub menu 2");
+	LinkedHashMap m = new LinkedHashMap();
+	m.put("menu1", "My menu 1");
+	m.put("menu2", wp.subMenu("menu2", "My menu 2", sm));
+	m.put("quit", "<span class=\"glyphicon glyphicon-off\"></span> " + g.T("QUIT"));
+	wp.setMenu("home", "<img src=\"" + HTMLPage.getResourceImageURL(g, "LOGO") + "\" style=\"margin: 5px;\"/>", m, false, true, true);
+	
+	wp.appendHTML("<div id=\"main\"></div>");
+	
+	wp.appendHTML("<div id=\"footer\">&copy; Simplicit&eacute; Software</div>");
+	
+	return wp.toString();
+}
+```
 
 As of version **3.1 MAINTENANCE 08**, the `displayPublic`, `displayPublicHome`, `displayHome`, `displayLogon` and `displayLogout`
 functions can be used on the same principle to override the public main page, public home page, authenticated home page, logon page and logout page when needed.
 
 For instance to override the default logon script with a Bootstrap&reg; page, you can implement the `displayLogon` function as:
 
+**Rhino**
 ```javascript
 MyDisp.displayLogon = function(params) {
 	var g = this.getGrant();
@@ -76,6 +108,27 @@ MyDisp.displayLogon = function(params) {
 	return wp.toString();
 };
 ```
+**Java**
+```Java
+import com.simplicite.webapp.HTMLPage;
+import com.simplicite.webapp.web.BootstrapWebPage;
+@Override
+public String display(Parameters params) {
+	Grant g = getGrant();
+
+	BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), g.getParameter("WINDOW_TITLE", "Simplicit&eacute;&reg;"));
+	
+	wp.appendJSInclude(HTMLPage.getResourceJSURL(g, "SCRIPT"));
+	wp.appendCSSInclude(HTMLPage.getResourceCSSURL(g, "STYLES"));
+	wp.setFavicon(HTMLPage.getResourceIconURL(g, "FAVICON"));
+	
+	wp.append(HTMLPage.getResourceHTMLContent(g, "LOGON"));
+	wp.setReady("loaded();");
+	
+	return wp.toString();
+}
+```
+
 
 The disposition `LOGON` HTML resource being:
 
