@@ -477,5 +477,4 @@ Scratch pad
 
 <h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
 
-- Nothing so far...
-
+- Fixed list export with columns preference of selected predefined search

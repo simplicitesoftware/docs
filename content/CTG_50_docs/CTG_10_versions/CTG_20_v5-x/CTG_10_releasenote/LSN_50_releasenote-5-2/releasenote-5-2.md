@@ -824,3 +824,7 @@ This means this mechanism requires a proper modules' version management.
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
+
+<h3 id="version-5.2.46">5.2.46 (UNRELEASED) **maintenance revision**</h3>
+
+- Fixed list export with columns preference of selected predefined search
