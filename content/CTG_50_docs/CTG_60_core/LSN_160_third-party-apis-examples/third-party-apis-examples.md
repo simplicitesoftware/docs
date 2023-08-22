@@ -101,13 +101,83 @@ Calendar = function(g) {
 	return { insert: insert, update: update, del: del};
 };
 ```
+**Java**
+```Java
+import java.io.IOException;
+import java.util.*;
+import org.json.JSONObject;
+import com.simplicite.util.*;
+import com.simplicite.util.tools.*;
 
+public class Calendar implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
+	Grant grant;
+	String calId;
+	String endpoint;
+	String token;
+	public Calendar(Grant g){
+		grant = g;
+		calId = grant.getParameter("GOOGLE_CALENDAR_ID","");
+		endpoint = "https://www.googleapis.com/calendar/v3/calendars/";
+		// For 3.x versions
+		//token = new JSONObject(grant.getParameter("GOOGLE_TOKEN", "{}")).optString("access_token", "");
+		// For version 4.0+
+		token = g.getSessionInfo().getToken();
+		return;
+	}
+	public JSONObject insert(JSONObject data) {
+		try {
+			HashMap<String,String> headers = new HashMap();
+			headers.put("Authorization", "Bearer " + token);
+			headers.put("Content-type", HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON, "UTF-8")); // Explicitly set content type as UTF-8-encoded application/json (not needed in version 4.0 if req is a JSONObject/JSONArray)
+			String url = endpoint + calId + "/events";		
+			String res = Tool.readUrl(url, null, null, data, headers,"UTF-8");
+			return new JSONObject(res);
+		} catch (IOException e) {
+			AppLog.error(e, grant);
+		} // Must use UTF-8 encoding
+		return new JSONObject();
+		
+	}
+	public JSONObject update(String eventId, String req) {
+		String res="";
+		try {
+			HashMap<String,String> headers = new HashMap();
+			headers.put("Authorization", "Bearer " + token);
+			headers.put("Content-type", HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON, "UTF-8")); // Explicitly set content type as UTF-8-encoded application/json (not needed in version 4.0 if req is a JSONObject/JSONArray)
+			headers.put("X-HTTP-Method-Override","PUT");
+			String url = endpoint + calId + "/events/" + eventId;
+		
+			res = Tool.readUrl(url, null, null, req, headers,"UTF-8"); // Must use UTF-8 encoding
+		} catch (IOException e) {
+			AppLog.error(e, grant);
+		}
+		return new JSONObject(res);
+	}
+	public JSONObject del(String eventId) {
+		HashMap<String,String> headers = new HashMap();
+		headers.put("Authorization", "Bearer " + token);
+		headers.put("Content-type", HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON, "UTF-8")); // Explicitly set content type as UTF-8-encoded application/json (not needed in version 4.0 if req is a JSONObject/JSONArray)
+		headers.put("X-HTTP-Method-Override","DELETE");
+
+		String url = endpoint + calId + "/events/" + eventId;
+		String res="";
+		try {
+			res = Tool.readUrl(url, null, null, "", headers,"UTF-8");// Must use UTF-8 encoding
+		} catch (IOException e) {
+			AppLog.error(e, grant);
+		} 
+		return new JSONObject(res);
+	}
+	
+}
+```
 #### Code snippet using a business object
 
 You can now use the previsous script on a business object hook and create an event. See [business object hooks code examples](/lesson/docs/core/businessobject-code-hooks)
 
 Example of a business object where event are created on google calendar. Date has to be on RFC3339 format. Simplicite provide method to change date to this specific format.
-
+**Rhino**
 ```javascript
 MyBusinessObject.preCreate = function() {
 	var c = new Calendar(this.getGrant());
@@ -125,6 +195,26 @@ MyBusinessObject.preCreate = function() {
 };
 ```
 
+**Java**
+```Java
+@Override
+public String preCreate() {
+	Calendar c = new Calendar(getGrant());
+	JSONObject data = new JSONObject();
+	data.put("summary",getFieldValue("title"));
+	// Format date to RFC3339
+	data.put("start", new JSONObject().put("dateTime",Tool.dateTimeToRFC3339(getFieldValue("startDatetime"))).put("timeZone","Europe/Paris"));
+	data.put("end", new JSONObject().put("dateTime",Tool.dateTimeToRFC3339(getFieldValue("endDatetime"))).put("timeZone","Europe/Paris"));
+	data.put("guestsCanInviteOthers", false);
+	data.put("guestsCanSeeOtherGuests", false);
+	JSONObject res = c.insert(data);
+	String id = res.getString("id");
+	// Keep eventId for next call (update or delete)
+	getField("eventId").setValue(id);
+	return super.preCreate();
+}
+```
+
 <h2 id="geocoding">Geocoding</h2>
 
 ### Google Maps
@@ -137,6 +227,13 @@ if (a.hasChanged())
 	this.setFieldValue("myCoords", GMapTool.geocodeOne(a.getValue().replace("\n", ", ")));
 ```
 
+**Java**
+```Java
+	ObjectField a = getField("myAddress");
+	GMapTool gT=new GMapTool(getGrant());
+	if (a.hasChanged())
+		setFieldValue("myCoords", gT.geocodeOne(a.getValue().replace("\n", ", ")));
+```
 > **Note**: to debug response from the API you can use the `DCORESV001` log event code
 
 <h2 id="tranlation">Translation</h2>
@@ -150,7 +247,16 @@ var l = this.getField("myFrenchLabel");
 if (l.hasChanged())
 	this.setFieldValue("myEnglishLabel", GoogleAPITool.translate(this.getGrant(), l.getValue(), "fr", "en"));
 ```
-
+**Java**
+```Java
+try {
+	ObjectField l = getField("myFrenchLabel");
+	if (l.hasChanged())
+			setFieldValue("myEnglishLabel", GoogleAPITool.translate(getGrant(), l.getValue(), "fr", "en"));
+} catch (Exception e) {
+	AppLog.error(e, getGrant());
+}
+```
 > **Note**: to debug response from the API you can use the `DCORESV001` log event code
 
 <h2 id="sms">SMS</h2>
@@ -188,6 +294,25 @@ function sendSMS(phone, message) {
 		console.error(e.javaException ? e.javaException.getMessage() : e);
 	}
 };
+```
+**Java**
+```Java
+public void sendSMS(Object phone,Object message) {
+	try {
+		JSONObject params = new JSONObject(Grant.getSystemAdmin().getParameter("SMSENVOI_CONFIG", "{}"));
+		String url = params.getString("url");
+		String email = params.getString("email");
+		String apikey = params.getString("apikey");
+		String res;
+		res = Tool.readUrl(url, null, null, "email=" + HTTPTool.encode(email) + "&apikey=" + apikey + "&message[type]=sms&message[subtype]=PREMIUM&message[recipients]=" + HTTPTool.encode(phone) + "&message[content]=" + HTTPTool.encode(message), null, Globals.getPlatformEncoding());
+		AppLog.info("Response: " + res,grant);
+		JSONObject r = new JSONObject(res);
+		int id = r.getInt("message_id");
+		AppLog.info("SMS Id:" + id,grant);
+	} catch (IOException e) {
+			AppLog.error(e, grant);
+	}
+}
 ```
 
 Where the `SMSENVOI_CONFIG` system parameter has the following JSON value:
@@ -228,6 +353,29 @@ function(to, template, data, files) {
 		console.error(e.javaException ? e.javaException.getMessage() : e);
 	}
 };
+```
+**Java**
+```Java
+public JSONObject sendMail(String to,String template,JSONObject data,JSONArray files) {
+	String res="";
+	try {
+		JSONObject config = new JSONObject(Grant.getSystemAdmin().getParameter("SENDWITHUS_CONFIG", "{}"));
+		String endpoint = config.optString("endpoint");
+		String apikey = config.optString("apikey");
+		String locale = config.optString("locale");
+	
+		JSONObject req = new JSONObject();
+		req.put("recipient", new JSONObject().put("address", to));
+		req.put("locale", locale);
+		if (!Tool.isEmpty(data)) req.put("template_data", data);
+		if (!Tool.isEmpty(files)) req.put("files", files);
+		res = Tool.readUrl(endpoint, apikey, "", req, null);
+	} catch (IOException e) {
+		AppLog.error(e, grant);
+	}
+	AppLog.info("Response: " + res, grant);
+	return new JSONObject(res);
+}
 ```
 
 Where the `SENDWITHUS_CONFIG` system parameter has the following JSON value:
@@ -297,6 +445,50 @@ ExternalEmail = function(g) {
 };
 ```
 
+**Java**
+```Java
+public class ExternalEmail implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
+	Grant grant=new Grant();
+	JSONObject config= new JSONObject();
+	String provider;
+	String endpoint;
+	String apipublickey;
+	String apiprivatekey;
+	JSONObject templates=new JSONObject();
+	public ExternalEmail(Grant g){
+		grant=g;
+		config = new JSONObject(grant.getParameter("EXTERNAL_EMAIL_CONFIG", "{}"));
+		provider = config.optString("provider");
+		endpoint = config.optString("endpoint");
+		apipublickey = config.optString("apipublickey");
+		apiprivatekey = config.optString("apiprivatekey");
+		templates = config.optJSONObject("templates");
+
+	}
+	// Send email using a template created on service side.
+	// template is a string and data is a JSONObject
+	public JSONObject send(String template,JSONObject data){
+		HashMap<String,String> headers = new HashMap<>();
+		headers.put("Content-Type", HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON, "UTF-8")); // Explicitly set content type as UTF-8-encoded application/json (not needed in version 4.0)
+
+		String tmpl = templates.optString(template);
+
+		JSONObject req = data;
+		req.put("MJ-TemplateID", tmpl);
+
+		String res="";
+		try {
+			res = Tool.readUrl(endpoint, apipublickey, apiprivatekey, req, headers, "UTF-8"); // Must use UTF-8 encoding
+		} catch (java.io.IOException e) {
+			AppLog.error(e, grant);
+		}
+		return new JSONObject(res);
+	}
+	
+}
+```
+
 #### Code snippet using a business Object
 
 You can now use the previsous script on a business object hook and send an email. See [business object hooks code examples](/lesson/docs/core/businessobject-code-hooks)
@@ -320,6 +512,26 @@ vars.put("firstname", this.getFieldValue("firstname"));
 data.put("Vars", vars);
 
 var res = e.send("registration", data);
+```
+**Java**
+```Java
+ExternalEmail e = new ExternalEmail(getGrant());
+JSONObject data = new JSONObject();
+data.put("FromEmail", "contact@simplicite.fr");
+data.put("FromName", "Simplicite Software");
+data.put("Subject", "Bonjour");
+
+// To be used with transactionnal email
+data.put("MJ-TemplateLanguage", true);
+JSONArray recipients = new JSONArray();
+recipients.put(new JSONObject().put("Email", getFieldValue("email")));
+data.put("Recipients", recipients);
+
+// Vars define on your template to be replace with
+JSONObject vars = new JSONObject();
+vars.put("firstname", getFieldValue("firstname"));
+data.put("Vars", vars)
+JSONObject res = e.send("registration", data);
 ```
 
 <h2 id="currencies">Currency rates</h2>
@@ -351,6 +563,26 @@ MyCurrency.getRates = function(base, currencies) {
 	}
 }
 ```
+**Java**
+```Java
+public void getRates(String base, String[] currencies) {
+	try{
+		String res = Tool.readUrl("http://api.fixer.io/latest?base=" + base + (Tool.isEmpty(currencies) ? "": "&symbols=" + String.join("",currencies) ));
+		AppLog.info("Response: " + res,getGrant());
+		JSONObject rates = new JSONObject(res).getJSONObject("rates");
+		BusinessObjectTool ot = new BusinessObjectTool(this); // or getTool() in version 5+
+		resetFilters();
+		getField("curCurrency1").setFilter(base);
+		for (String[]row :ot.search() ) {
+			setValues(row, true);
+			setFieldValue("curRate", rates.optDouble(this.getFieldValue("curCurrency2"), 0));
+			ot.validateAndSave();
+		}
+	}catch(IOException | ValidateException | SaveException | SearchException e){
+		AppLog.error(e, getGrant());
+	}
+}
+```
 
 Typical usage would be `MyCurrency.getRates.call(this, "EUR", ["USD", "GBP"]);`.
 
@@ -373,7 +605,7 @@ for use with the following stotages: AWS S3, OpenStack Swift, Google cloud stora
 
 The `com.simplicite.util.tools.CloudStorage` class wrapper makes it easy to read/write files
 from/to the above cloud storages. Example:
-
+**Java**
 ```java
 // (...)
 import java.util.Date;
