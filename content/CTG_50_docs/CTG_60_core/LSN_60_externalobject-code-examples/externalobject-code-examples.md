@@ -220,18 +220,18 @@ MyExtObj.display = function(params) {
 
 ```java
 @Override
-	public Object display(Parameters params) {
-		appendCSSInclude("http://url/of/a/file.css");
-		String[] urls ={"http://url/of/a/file1.css", "http://url/of/a/file2.css"};
-		appendCSSIncludes(urls);
-		appendJSInclude("http://url/of/a/file.js");	
-		String[] urlsJS ={"http://url/of/a/file1.js", "http://url/of/a/file2.js" };
-		appendJSIncludes(urlsJS);
-		
-		return "<p>Hello world !</p>"
-			+ HTMLTool.jsBlock("console.log('Hello again !');")
-			+ HTMLTool.cssBlock("p { color: red; }");
-	}
+public Object display(Parameters params) {
+	appendCSSInclude("http://url/of/a/file.css");
+	String[] urls ={"http://url/of/a/file1.css", "http://url/of/a/file2.css"};
+	appendCSSIncludes(urls);
+	appendJSInclude("http://url/of/a/file.js");	
+	String[] urlsJS ={"http://url/of/a/file1.js", "http://url/of/a/file2.js" };
+	appendJSIncludes(urlsJS);
+	
+	return "<p>Hello world !</p>"
+		+ HTMLTool.jsBlock("console.log('Hello again !');")
+		+ HTMLTool.cssBlock("p { color: red; }");
+}
 ```
 
 The `com.simplicite.util.tools.HTMLTool` helper class provides methods that can be used to get the URLs
