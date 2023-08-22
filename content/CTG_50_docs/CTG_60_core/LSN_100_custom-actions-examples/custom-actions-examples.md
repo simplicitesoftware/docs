@@ -163,7 +163,7 @@ MyObject.postSave = function() {
 
 Java
 
-```
+```java
 public String postSave() {
 	HashMap<String,String> params = (HashMap<String,String>)geObjectParameter("ActionFields");
 	String myActionField = params!=null ? params.get("myActionField") : null;
