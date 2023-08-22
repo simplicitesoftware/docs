@@ -61,6 +61,21 @@ GrantHooks.customAuth = function(req, res) {
 	}
 }
 ```
+**Java**
+```Java
+@Override
+public String customAuth(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String dn = request.getHeader("X-SSL-Client-S-DN");
+	if (!Tool.isEmpty(dn))
+	{
+		AppLog.info("Client certificate DN = " + dn,null);
+		String cn = Tool.extractItemFromDN(dn, "cn", null);
+		AppLog.info("Client certificate CN = " + cn,null);
+		return cn;
+	}
+    return super.customAuth(request, response);
+}
+```
 
 Compatibility with OAuth2/SAML/LDAP/Crowd
 -----------------------------------------
