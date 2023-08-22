@@ -281,6 +281,70 @@ GrantHooks.preLoadGrant = function(g) {
 	}	
 };
 ```
+**Java**
+```Java
+@Override
+public String parseAuth(Grant sys, SessionInfo info) {
+    if (AuthTool.useOAuth2()) {
+		// Example of domain verification
+		String domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
+        String auth = info.getProvider();
+		if (!Tool.isEmpty(domain)) {
+            AppLog.info("OAuth2 account = " + auth, sys);
+			if (Tool.isEmpty(auth) || !auth.matches("^.*@" + domain + "$")) {
+				AppLog.info("OAuth2 error: Invalid domain for " + auth, sys);
+				return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
+			}
+			AppLog.info("OAuth2 valid domain for " + auth + " = " + domain, sys);
+		}
+		/* //and/or
+		// Example of user verification
+		String uid = Grant.getSystemAdmin().simpleQuery("select row_id from m_user where usr_login = '" + auth + "' and usr_active = '1'");
+		if (Tool.isEmpty(uid)) {
+			AppLog.info("OAuth2 error: No active user for " + auth, sys);
+			return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
+		}
+		AppLog.info("OAuth2 active user ID for " + auth + " = " + uid, sys);
+		 */
+	}
+    return super.parseAuth(sys, info);
+}
+@Override
+public void preLoadGrant(Grant g) {
+    if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
+        // Example of business logic to create users on the fly
+			try {
+                // Create user if not exists
+                ObjectDB usr = Grant.getSystemAdmin().getTmpObject("User");
+                usr.setRowId(ObjectField.DEFAULT_ROW_ID);
+                usr.resetValues(true);
+                usr.setStatus(Grant.USER_ACTIVE);
+                usr.getField("usr_login").setValue(g.getLogin());
+                new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
+                    
+                // Get module in which user has been created (default module for users)
+                String module = usr.getFieldValue("row_module_id.mdl_name");
+                AppLog.info("OAuth2 user " + g.getLogin() + " created in module " + module,g);
+                // Force a random password to avoid the change password popup
+            
+                usr.invokeMethod("resetPassword", null, null);
+            
+
+                // Add responsibilities on designated groups
+                String[] groups = { "MYAPP_GROUP1", "MYAPP_GROUP2"};
+                for(String group : groups){
+                    Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
+                    AppLog.info("Added user " + group + " responsibility for OAuth2 user " + g.getLogin(),g);
+                }
+            } catch (MethodException | CreateException | ValidateException e) {
+                AppLog.error(e, g);
+            }
+			
+		
+	}	
+    super.preLoadGrant(g);
+}
+```
 
 <h2 id="customzingloginscreen">Customizing the login screen</h2>
 
