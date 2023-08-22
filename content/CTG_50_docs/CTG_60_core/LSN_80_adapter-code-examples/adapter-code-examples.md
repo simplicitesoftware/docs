@@ -387,9 +387,41 @@ MyExternalObject.display = function(params) {
 };
 ```
 
+**Java**
+```Java
+public String form(Parameters params){
+	String form = "uploadform";
+	int tab = 1;
+	String h = HTMLTool.openSimpleMultipartForm(form, params.getLocation());
+	h += "<table class=\"workform\" style=\"width: 100%;\">";
+	h += "<tr><td class=\"workfieldname\"><div class=\"workfieldname\">" + getGrant().T("UPLOAD") + "</div></td>";
+	h += "<td class=\"workfield\"><div class=\"workfield\">";
+	h += HTMLTool.fileInput(form, "file", 80, tab++) + "&nbsp;";
+	h += HTMLTool.submit(form, "ok", getGrant().T("OK"), null, "buttonaction", tab++);
+	h += "</div></td></tr></table>";
+	h += HTMLTool.closeForm(form);
+	return h;
+}
+@Override
+public String display(Parameters params) {
+	Grant g = getGrant();
+	if (params.getMethod() == "GET") {
+		return form(params);
+	} else {
+		String m = "";
+		try {
+			DocParam file = params.getDocument("file");
+			if (Tool.isEmpty(file.getData())) throw new Exception("No data");
+			Message res = new Integration().importADP(g, "MyAdapter", new ByteArrayInputStream(file.getData()), file.getPath(), null);
+			m += "<div class=\"workinfo\">Your file has been uploaded!</div>";
+			m += "<pre class=\"mono\" style=\"max-height: 300px; overflow: auto;\">" +"\n" + res.getResultLog() + "</pre>";
+		} catch(Exception e) {
+			m += "<div class=\"workerror\">" + e.getMessage() + "</div>";
+		}
+		return m + form(params);
+	}
+} 
+```
 Instead of a file upload input, you can adapt this example to use a `<textarea>` to provide input data.
-
-The above **Rhino** example can easily be transposed to **Java**.
-
 
 > **Note**: this custom page only offers a subset of the features available out of the box in the more complex _XML import_ page of the generic UI.
