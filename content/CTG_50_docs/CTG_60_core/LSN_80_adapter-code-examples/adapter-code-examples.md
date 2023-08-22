@@ -45,7 +45,7 @@ In these **Rhino** scripts:
 
 #### Example using conversion to standard Simplicit&eacute;&reg; XML
 
-Ths example is a simple CSV adapter (named `MyAdapter`) used for loading system parameters using XML integration APIs
+This example is a simple CSV adapter (named `MyAdapter`) used for loading system parameters using XML integration APIs
 
 The expected input format is `<system parameter name>;<system parameter value>[;<module name>]`,
 module is not mandatory in case of update.
