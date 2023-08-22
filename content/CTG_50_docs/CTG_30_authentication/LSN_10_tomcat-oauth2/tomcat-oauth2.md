@@ -288,7 +288,7 @@ public String parseAuth(Grant sys, SessionInfo info) {
     if (AuthTool.useOAuth2()) {
 		// Example of domain verification
 		String domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
-        String auth = info.getProvider();
+        String auth = info.getLogin();
 		if (!Tool.isEmpty(domain)) {
             AppLog.info("OAuth2 account = " + auth, sys);
 			if (Tool.isEmpty(auth) || !auth.matches("^.*@" + domain + "$")) {
