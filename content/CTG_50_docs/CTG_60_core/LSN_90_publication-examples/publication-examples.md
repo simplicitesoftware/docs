@@ -90,7 +90,7 @@ to the `PUBLIC` group, so as the publication template.
 <h3 id="textcontent">Custom method for text content</h3>
 
 The example below is for a simple printable HTML content:
-
+**Rhino**
 ```javascript
 MyObject.myPublicationMethod = function(pt) {
 	try {
@@ -106,13 +106,26 @@ MyObject.myPublicationMethod = function(pt) {
 	}
 };
 ```
+**Java**
+```Java
+public String myPublicationMethod (PrintTemplate pt) {
+	String t = getFieldValue("myTitleField");
+	String out = HTMLTool.openSimplePage(t, null, null);
+	out += HTMLTool.cssBlock("@media print { @page { size: portrait A4; margin: 0; }");
+	out += "<h1>" + pt.getLabel() + ": " + t + "</h1>";
+	out += "<p>" + getFieldValue("myHTMLContentField") + "</p>";
+	out += HTMLTool.closePage();
+	return out;
+	
+}
+```
 
 > For **text** contents the return type of method **must** be `String`
 
 <h3 id="binarycontent">Custom method for binary content</h3>
 
 The example below is for a simple PDF content using the iText&reg; library and its wrapper tool (publication template MIME type must be set to PDF):
-
+**Rhino**
 ```javascript
 importPackage(Packages.com.lowagie.text);
 
@@ -128,8 +141,24 @@ MyObject.myPublicationMethod = function(pt) {
 	}
 };
 ```
+**Java**
+```Java
+public byte[] myPublicationMethod (PrintTemplate pt) {
+	ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+	try {
+		Document pdf = PDFTool.open(out);
+		pdf.add(new Phrase(getFieldValue("myTextContentField")));
+		PDFTool.close(pdf);
+	} catch (DocumentException e) {
+		AppLog.error(e, getGrant());
+	}
+	return out.toByteArray();
+	
+}
+```
 The example below is for a simple Microsoft Excel&reg; content using the Apache POI&reg; library and its wrapper tool (publication template MIME type must be set to XLS):
 
+**Rhino**
 ```javascript
 MyObject.myPublicationMethod = function(pt) {
 	try {
@@ -146,9 +175,26 @@ MyObject.myPublicationMethod = function(pt) {
 	}
 };
 ```
+**Java**
+```Java
+public byte[] myPublicationMethod (PrintTemplate pt) {
+	try {
+		ExcelTool xls = new ExcelTool(); 
+		Sheet s = xls.addSheet(getLabel());
+		Row r = xls.addRow(s,0);
+		r.createCell(0).setCellValue(getFieldValue("myLabelField"));
+		r.createCell(1).setCellValue(getField("myValueField").getDouble());
+		
+			return xls.generateToByteArray();
+	} catch (IOException e) {
+		AppLog.error(e, getGrant());
+	}
+	return null;
+}
+```
 
 The example below is for a simple Microsoft Word&reg; content using the Docx4j&reg; library (publication template MIME type must be set to DOCX):
-
+**Rhino**
 ```javascript
 importPackage(Packages.org.docx4j.openpackaging.packages);
 importPackage(Packages.org.docx4j.openpackaging.parts.WordprocessingML);
@@ -168,6 +214,22 @@ MyObject.myPublicationMethod = function(pt) {
 };
 ```
 
+**Java**
+```Java
+public byte[] myPublicationMethod (PrintTemplate pt) {
+	ByteArrayOutputStream res = new java.io.ByteArrayOutputStream();
+	try {
+		WordprocessingMLPackage pkg = WordprocessingMLPackage.createPackage();
+		MainDocumentPart doc = pkg.getMainDocumentPart();
+		doc.addStyledParagraphOfText("Title", getDisplay());
+		doc.addParagraphOfText(getFieldValue("myTextField"));
+		pkg.save(res);
+	}catch(Docx4JException e){
+		AppLog.error(e, getGrant());
+	}
+	return res.toByteArray();
+}
+```
 > For **binary** contents the return type of method **must** be `byte[]`
 
 <h2 id="multiplerecords">Multiple records (list) publication</h2>
@@ -176,15 +238,30 @@ For list publications you must handle the list of explictly selected records **a
 
 Example:
 
+**Rhino**
 ```javascript
 var rows = new ArrayList();
 var ids = this.getSelectedIds();
 if (!Tool.isEmpty(ids)) {
 	for (int k = 0; k < ids.size(); k++) {
-		if (select(ids.get(k)))
+		if (select(ids.get(k))){
 			rows.add(getValues());
 		} else {
 			rows = this.search(false);
+		}
+	}
+}
+```
+**Java**
+```Java
+List<String[]> rows = new ArrayList();
+List<String> ids = getSelectedIds();
+if (!Tool.isEmpty(ids)) {
+	for (int k = 0; k < ids.size(); k++) {
+		if (select(ids.get(k))){
+			rows.add(getValues());
+		}else {
+			rows = search(false);
 		}
 	}
 }
