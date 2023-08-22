@@ -39,8 +39,17 @@ The content of an external page is produced by the `display` method of its serve
 
 #### Legacy UI
 
-Let's configure a basic external object called `MyExtObj` and set the following server side Rhino script:
+Let's configure a basic external object called `MyExtObj` and set the following server side script:
+**Java**
 
+```java
+@Override
+public Object display(Parameters params) {
+	return "<h1>Hello world !</h1>";
+}
+```
+
+**Rhino**
 ```javascript
 MyExtObj.display = function(params) {
 	return "<h1>Hello world !</h1>";
@@ -66,11 +75,22 @@ To do so, the page includes all core JavaScript and CSS:
 If you just want to generate only a plain HTML content (e.g. to be embedded inside another page)
 you need to set it explicitly as **non decorated** (meaning not using the default UI page framework):
 
+**Rhino**
+
 ```javascript
 MyExtObj.display = function(params) {
 	this.setDecoration(false); // Just a plain page
 	return "<h1>Hello world !</h1>";
 };
+```
+**Java**
+
+```java
+@Override
+public Object display(Parameters params) {
+	setDecoration(false); // Just a plain page
+	return "<h1>Hello world !</h1>";
+}
 ```
 
 Then the plain page will render like this:
@@ -94,6 +114,8 @@ If you want to generate a full custom HTML page, one of the following web helper
 
 E.g. of a simple jQuery&reg; page:
 
+**Rhino**
+
 ```javascript
 MyExtObj.display = function(params) {
 	this.setDecoration(false);
@@ -103,6 +125,19 @@ MyExtObj.display = function(params) {
 	return wp.toString();
 };
 ```
+**Java**
+
+```java
+@Override
+public Object display(Parameters params) {
+	setDecoration(false); // Just a plain page
+	JQueryWebPage wp = new JQueryWebPage(params.getRoot(), this.getDisplay());
+	wp.setReady("$('#hello').append('Hello world !');");
+	wp.appendHTML("<h1 id=\"hello\"></h1>");
+	return wp.toString();
+}
+```
+
 
 The output is visually the same as above but the generated HTML is now:
 
@@ -168,6 +203,8 @@ If resources are associated to an external object, they are automatically proces
 
 On **standard** standalone pages (in the 3.x web UI or 4.0 **legacy** web UI), several methods allows to add custom JavaScript/CSS includes or fragments when required:
 
+**Rhino**
+
 ```javascript
 MyExtObj.display = function(params) {
 	this.appendCSSInclude("http://url/of/a/file.css");
@@ -178,6 +215,23 @@ MyExtObj.display = function(params) {
 		+ HTMLTool.jsBlock("console.log('Hello again !');")
 		+ HTMLTool.cssBlock("p { color: red; }");
 };
+```
+**Java**
+
+```java
+@Override
+	public Object display(Parameters params) {
+		appendCSSInclude("http://url/of/a/file.css");
+		String[] urls ={"http://url/of/a/file1.css", "http://url/of/a/file2.css"};
+		appendCSSIncludes(urls);
+		appendJSInclude("http://url/of/a/file.js");	
+		String[] urlsJS ={"http://url/of/a/file1.js", "http://url/of/a/file2.js" };
+		appendJSIncludes(urlsJS);
+		
+		return "<p>Hello world !</p>"
+			+ HTMLTool.jsBlock("console.log('Hello again !');")
+			+ HTMLTool.cssBlock("p { color: red; }");
+	}
 ```
 
 The `com.simplicite.util.tools.HTMLTool` helper class provides methods that can be used to get the URLs
@@ -220,6 +274,8 @@ This can be used, for instance, by self links and self form submissions.
 For example you can write a traditional form posted to server
 (you should really consider using the Ajax APIs instead of doing this kind of things ;-):
 
+**Rhino**
+
 ```javascript
 MyExtObj.display = function(params) {
 	var name = params.getParameter("myname", "");
@@ -230,6 +286,19 @@ MyExtObj.display = function(params) {
 		+ "</form>"
 };
 ```
+**Java**
+```Java
+@Override
+	public Object display(Parameters params) {
+		String name = params.getParameter("myname", "");
+		if (!Tool.isEmpty(name)) return "Hello " + name + " !";
+		return "<form action=\"" + params.getLocation() + "\" method=\"post\">"
+			+ "Your name: <input type=\"text\" name=\"myname\"/>"
+			+ "<input type=\"submit\"/>"
+			+ "</form>";
+	}
+```
+
 
 When used inside the generic web UI authenticated zone with navigation (i.e. by adding the URL parameter `nav=add` 
 to the page URL), you can get the previous page URL by calling `params.getBackLocation()`. This can be used,
@@ -274,11 +343,22 @@ where `wp` is an instance of a sub class of `com.simplicite.webapp.web.WebPage`
 
 The usage of the Ajax APIs itself is described in details in another [document](/lesson/docs/apis/ajax-api). Here is just a simple **standard** page example:
 
+**Rhino**
+
 ```javascript
 MyExtObj.display = function(params) {
 	return "<div id=\"hello\"></div>"
 		+ HTMLTool.jsBlock("new Simplicite.Ajax().getGrant(function(g) { $('#hello').append('Hello ' + g.login); });");
 };
+```
+
+**Java**
+```Java
+@Override
+public Object display(Parameters params) {
+	setHTML("<div id=\"hello\"></div>");
+	return javascript("new Simplicite.Ajax().getGrant(function(g) { $('#hello').append('Hello ' + g.login); });");
+}
 ```
 
 ### Legacy UI tools (deprecated)
@@ -766,15 +846,27 @@ Same as above
 Not needed in this case
 
 #### Server-side script
-
+**Rhino**
 ```javascript
 MyExtObject.display = function(params) {
 	this.addMustache();
 	var data = new JSONObject()
 		.put("greetings", "Hello")
 		.put("name", "Bob");
-	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + ");");
+	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
 };
+```
+
+**Java**
+```Java
+@Override
+public Object display(Parameters params) {
+	addMustache();
+	JSONObject data = new JSONObject()
+		.put("greetings", "Hello")
+		.put("name", "Bob");
+	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
+} 
 ```
 
 ### Submitting and returning dynamic data
@@ -811,7 +903,7 @@ var MyExtObject = (function() {
 ```
 
 #### Server-side script
-
+**Rhino**
 ```javascript
 MyExtObject.display = function(params) {
 	if (params.isPost()) {
@@ -822,4 +914,17 @@ MyExtObject.display = function(params) {
 	}
 	return this.javascript(this.getName().".init(" + params.toJSON() + ");");
 };
+```
+**Java**
+```Java
+@Override
+public Object display(Parameters params) {
+	if (params.isPost()) {
+		setJSONMIMEType();
+		return new JSONObject()
+			.put("greetings", "Hello")
+			.put("name", params.getParameter("name").trim());
+	}
+	return javascript(getName()+".init(" + params.toJSON() + ");");
+} 
 ```
