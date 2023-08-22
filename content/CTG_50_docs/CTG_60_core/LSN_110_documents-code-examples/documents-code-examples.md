@@ -159,7 +159,7 @@ var bytes = xls.generateToByteArray();
 
 **Java**
 
-```javascript
+```java
 import com.simplicite.util.tools.ExcelPOITool;
 
 (...)
