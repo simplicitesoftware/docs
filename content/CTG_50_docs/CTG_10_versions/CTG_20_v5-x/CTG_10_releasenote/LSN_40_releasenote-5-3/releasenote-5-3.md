@@ -478,3 +478,4 @@ Scratch pad
 <h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
 
 - Fixed list export with columns preference of selected predefined search
+- Added field isExportable on CSV export
