@@ -479,3 +479,4 @@ Scratch pad
 
 - Fixed list export with columns preference of selected predefined search
 - Added field isExportable on CSV export
+- Fixed module JSON compare with meta-object
