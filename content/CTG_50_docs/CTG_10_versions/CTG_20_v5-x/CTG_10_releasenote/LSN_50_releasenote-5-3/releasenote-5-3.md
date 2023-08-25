@@ -475,9 +475,13 @@ Scratch pad
 - Improved synchronization on API grant loading
 - Added `pre/postClearCache` platform hooks
 
-<h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
+<h3 id="version-5.3.12">5.3.12 (2023-08-23)</h3>
 
 - Fixed list export with columns preference of selected predefined search
 - Added field isExportable on CSV export
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
+
+<h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
+
+- nothing so far
