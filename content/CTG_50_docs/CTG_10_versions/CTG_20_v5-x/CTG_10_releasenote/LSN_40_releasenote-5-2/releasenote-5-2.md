@@ -834,4 +834,4 @@ This means this mechanism requires a proper modules' version management.
 
 <h3 id="version-5.2.47">5.2.47 (UNRELEASED) **maintenance revision**</h3>
 
-- nothing so far
+- Fixed columns size of `m_field_hist`

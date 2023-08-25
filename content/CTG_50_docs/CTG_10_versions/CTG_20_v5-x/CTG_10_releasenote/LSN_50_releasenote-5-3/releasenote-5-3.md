@@ -484,4 +484,4 @@ Scratch pad
 
 <h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
 
-- nothing so far
+- Fixed columns size of `m_field_hist`
