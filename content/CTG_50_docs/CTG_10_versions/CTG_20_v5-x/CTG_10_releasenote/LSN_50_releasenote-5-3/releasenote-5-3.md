@@ -485,3 +485,4 @@ Scratch pad
 <h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
 
 - Fixed columns size of `m_field_hist`
+- Added Web Content Accessibility from WCAG 2.1 to generic UI

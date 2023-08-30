@@ -488,9 +488,17 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 ![](template_bulk_add.png)
 
+- Added Web Content Accessibility from WCAG 2.1:
+	- More aria-label, tabindex, focus-visible...
+	- New keys fast-pass:
+		- `CTRL-H` : back to the home page
+		- `CTRL-F` : global searchbox
+		- `CTRL-M` : focus the first menu item
+		- `CTRL-L` : focus the first list row
+	- Mostly backported in v5.3
+
 <h2 id="wip">Work in progress</h2>
 
-- Action priority low/normal/high config => async or crontab
-- Permalink on crosstab, agenda, ...
-- Dashboard: editable end-user views
+- Accessibility WCAG 2.1 / RGAA
 - Application DIFF per module
+- Dashboard: editable end-user views
