@@ -486,3 +486,4 @@ Scratch pad
 
 - Fixed columns size of `m_field_hist`
 - Added Web Content Accessibility from WCAG 2.1 to generic UI
+- Removed confusing search by columns in case of list edition
