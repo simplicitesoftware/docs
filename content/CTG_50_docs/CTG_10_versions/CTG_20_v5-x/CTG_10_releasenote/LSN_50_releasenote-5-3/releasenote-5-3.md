@@ -482,6 +482,8 @@ Scratch pad
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
 
-<h3 id="version-5.3.12">5.3.12 (UNRELEASED)</h3>
+<h3 id="version-5.3.13">5.3.13 (UNRELEASED)</h3>
 
 - Fixed columns size of `m_field_hist`
+- Added Web Content Accessibility from WCAG 2.1 to generic UI
+- Removed confusing search by columns in case of list edition
