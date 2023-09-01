@@ -254,6 +254,35 @@ Example:
 - Delete the created object or return an error
 - Cancel the abandon
 
+**Java**
+
+```Java
+@Override
+public Message preAbandon() {
+	// Rewrite the Forward of the last activity
+	String url = HTMLTool.getListURL("objDemand", "the_objDemand", null);
+	ActivityFile end = getContext(getEnd());
+	if (!Tool.isEmpty(end)) end.setDataFile("Forward", "Page", url);
+	// Delete the created object during the workflow
+	String id = this.getContext(this.getActivity("MY-STEP-CREATE")).getDataValue("Field", "row_id");
+	if (Tool.isEmpty(id) && !id.equals(ObjectField.DEFAULT_ROW_ID)) {
+		ObjectDB o = this.getGrant().getTmpObject("objDemand");
+		o.resetFilters();
+		if (o.select(id)) o.del();
+	}
+	
+	// Return a Message to cancel the abandon ?
+	if (someRule) {
+		Message m = new Message();
+		m.raiseError("MY_ERROR");
+		return m;
+	}
+	return super.preAbandon();// continue
+}
+```
+
+**Rhino**
+
 ```javascript
 MyProcess.preAbandon = function() {
 
@@ -279,6 +308,7 @@ MyProcess.preAbandon = function() {
 	return null; // continue
 };
 ```
+
 
 ### Pre/Post cancel hook  
 
