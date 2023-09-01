@@ -45,7 +45,7 @@ please [contact us](mailto:contact@simplicitesoftware.com) to get access to this
 - Pull the Simplicit&eacute;&reg; Docker **server** image from the appropriate registry: `docker pull registry.simplicite.io/server:<tag>`
 and build a new child image adding the application package of the instance template (in the `app` folder of the instance template).
 
-> **Note**: if your server has no access to DockerHub you can still get the image manually by saving it on a server
+> **Note**: if your server has no access to internet you can still get the image manually by saving it on a server
 > which has access (`docker save registry.simplicite.io/<server|platform:<tag>> > simplicite-<server|platform>[-<tag>].tar`), then transfer it
 > to yor target server, then load it on this server's local docker images registry (`docker load < simplicite-<server|platform>[-<tag>].tar`)
 
