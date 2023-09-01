@@ -409,11 +409,38 @@ obj.search(true, maxRowsPerPage, (rows) -> {
 	});
 ```
 
+<h3 id="filtering">Filtering</h3>
+
+The setSearchSpec is a method that allows you to set an SQL where clause on your business object.
+
+For example , users can only read, update the data they have created
+users can only view or modify the data to which they are assigned...etc
+
+If it's a static filter that never changes, use the postLoad hook to define your search spec.   
+The object's table alias is t.   
+The alias of the related object table is t_<logical name technical key>.   
+
+#### Java
+
+```java
+	@Override   
+	public void postLoad() {   
+		if (getGrant().hasResponsibility(USER_GROUP))   
+			 setSearchSpec("t.column1='abc' or t.column2>123");    
+	}
+
+	@Override   
+	public void postLoad() {   
+		if (getGrant().hasResponsibility(USER_GROUP))   
+			 setSearchSpec(getSearchSpec() + " and exists(select 1 FROM table1 where t_userAssignedId.row_id=" + getGrant().getUserId());    
+	}
+``` 
+
 <h3 id="enum">Using enumerations fields' code/values</h3>
 
 Enumeration fields are particular because they refer a list of value which consist of a list of **code** and **value**.
 
-- The **code** is the actual value of the field (the one to manipulate with `set/getValues`, `set/getFeilter`, etc).
+- The **code** is the actual value of the field (the one to manipulate with `set/getValues`, `set/getFilter`, etc).
 - The **value** is only the displayable label translated in the language of the current user
 
 You should thus never use the **values** but only the **codes** in your code.
