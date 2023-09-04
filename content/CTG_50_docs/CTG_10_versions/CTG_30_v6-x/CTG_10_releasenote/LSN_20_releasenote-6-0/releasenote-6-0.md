@@ -11,7 +11,7 @@ Deprecated objects:
 	- `ShortCutGroup`
 	- `PrintTemplateGroup`
 	- `CrosstabGroup`
-	- `ContraintGroup`
+	- `ConstraintGroup`
 	- `ModelTemplateGroup`
 	- `Function` for `Domain` and `ObjectExternal`
 
@@ -27,7 +27,7 @@ All previous rights are migrated automatically to the new `Permission` object wi
 
 - All synchronous Ajax calls are deprecated for a while, and no more supported by the UI components.
 
-### Meta-object virtual iink based on `row_metaobject_id`
+### Meta-object virtual link based on `row_metaobject_id`
 
 The internal additional field `row_metaobject_id` has been removed, the meta-object field support the link itself (thru a refSearchSpec):
 	- it allows several meta-object fields on a same object (previous versions only support one meta-object per object)
@@ -60,7 +60,7 @@ public boolean isMenuItemEnabled(Grant g, MenuItem item,
 ```
 
 - Unified new business object `Permission` 
-	- to replace old granted groups of `Shortcut`, `Crosstab`, `PrintTemplate`, `ContraintGroup`, `ModelTemplateGroup`
+	- to replace old granted groups of `Shortcut`, `Crosstab`, `PrintTemplate`, `ConstraintGroup`, `ModelTemplateGroup`
 	- new feature to authorize or restrict groups for `PlaceMap`, `TreeView`, `Search`, `Agenda` and `Timesheet`
 	- use `Permission` to grant `External object` and `Domain` (Function is now dedicated to business objects only)
 
@@ -280,7 +280,7 @@ getField("myObjectField").setFilter("User:12");
 - **Permalink** to expose user-friendly URL:
 	- designer can set a permalink to override technical deeplink or tiny URL (without internal row_id)
 	- a permalink uses a kebab-case syntax and is wrapped thru the new servlet `/ui/l/<permalink URI>`
-	- the authent mecanism is respected before accessing the permalink if the user is not yet connected
+	- the authent mechanism is respected before accessing the permalink if the user is not yet connected
 	- currently supported on: 
 		- `View`: direct access to a view or dashboard, ex: `/orders/sales-overview`
 		- `Preset search`: direct access to a filtered/sorted object, ex: `/orders/list-of-last-pending-status`
@@ -415,7 +415,7 @@ protected long methodEnd(String method) {
 	- Use the `CLASS` resource by object to define new hooks
 	- New hooks support inheritance logic
 	- Older hooks are used for compatibility reason (from `SCRIPT` resource) but do not support inheritance
-	- `Simplicite.UI.BusinessObject` extends `Simplicite.Ajax.BusinessObject`: means that default Ajax function can be overrided on front (search, get, update...)
+	- `Simplicite.UI.BusinessObject` extends `Simplicite.Ajax.BusinessObject`: means that default Ajax function can be overriden on front (search, get, update...)
 	- See the jsdoc of `Simplicite.UI.BusinessObject` to get the list of new hooks
 
 Example:
