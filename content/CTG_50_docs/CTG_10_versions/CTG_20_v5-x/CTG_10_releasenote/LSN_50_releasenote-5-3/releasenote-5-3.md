@@ -81,7 +81,7 @@ Old adapters to import legacy settings thru `quick param` (V3 tooling) has been 
 - Using an older webapp on an upgraded database is now causing a **FATAL** error that prevents platform
   to start up (this is to avoid unexpected side effects in this non supported case)
 - New dedicated panel instance to merge links `Grant.getMergePanelObject` (against UI panel rules)
-- Functional key property can be overrided in object field definition
+- Functional key property can be overriden in object field definition
 - Bulk associate action added automatically in inherited links
 - Associate a Bookshelf to any document field to specify accepted MIME types
 - Simplify DocMIME functional key
@@ -101,7 +101,7 @@ Old adapters to import legacy settings thru `quick param` (V3 tooling) has been 
 
 - Added **experimental** platform annotations in the `com.simplicite.util.annotations` package
   these annotations have only "informative" function at that stage
-  (using them also avoid false prositive messages in some cases of code analysis)
+  (using them also avoid false positive messages in some cases of code analysis)
   except for the `RESTServiceExternalObject` helper class which processes the `@RESTService*` annotations for building the OpenAPI/Swagger schema
   in the `openapi` hook default implementation/
 
@@ -279,7 +279,7 @@ obj.get(rowId)
 	- caller must trigger a 'ui.resize' to (re)build the dropdown menu when the bar is visible or the container has been resized
 	- bring hidden item to first or last visible tab
 	- caller can bind a 'ui.bar.click' on bar
-	- Usage in a tabs with overflow:
+	- Usage in a tabs with overflow: 
 
 ```javascript
 let tabs = $ui.view.tools.tabs({
@@ -461,7 +461,7 @@ Scratch pad
 
 - Fixed signature pad distribution to `signature_pad.umd.min.js` instead of `signature_pad.min.js`
 - Backported improvements/simplification on the `customAuthPage` platform hook
-- Backported some robustness fixes (e.g. upon module name chaneg)
+- Backported some robustness fixes (e.g. upon module name change)
 
 <h3 id="version-5.3.10">5.3.10 (2023-07-28)</h3>
 
@@ -487,3 +487,4 @@ Scratch pad
 - Fixed columns size of `m_field_hist`
 - Added Web Content Accessibility from WCAG 2.1 to generic UI
 - Removed confusing search by columns in case of list edition
+- Fixed export on filtered crosstabs
