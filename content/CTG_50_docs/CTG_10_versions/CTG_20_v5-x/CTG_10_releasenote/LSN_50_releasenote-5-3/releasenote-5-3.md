@@ -488,3 +488,4 @@ Scratch pad
 - Added Web Content Accessibility from WCAG 2.1 to generic UI
 - Removed confusing search by columns in case of list edition
 - Fixed export on filtered crosstabs
+- Fixed regression on SAML provider retrieval
