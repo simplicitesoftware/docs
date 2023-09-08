@@ -13,17 +13,12 @@ The choice depends on the nature of the considered business logic.
 
 > **Note**:
 >
-> Some of the examples below are only given using the **Rhino** scripting language.
+> Some of the examples below are given using the **Rhino** scripting language.
 > In such Rhino scripts the `this` variable correspond to the business process itself,
 > it must be **explicitly** used (it can't be implicit like in Java code).
 
 > The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
 > Some examples are provided both in Rhino and Java so as you can see the syntax differences.
->
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
->
-> - Rhino: `a == b`, Java: `a.equals(b)`
-> - Rhino: `a != b`, Java: `!a.equals(b)`
 
 
 Process definition and right-related hooks
@@ -111,6 +106,7 @@ public Message preActivate() {
 ```
 
 **Rhino**
+
 ```javascript
 MyProcess.preActivate = function() {  
 	// Activity definition (Data, Translation...)
@@ -218,6 +214,7 @@ public Message preValidate(ActivityFile context) {
 ```
 
 **Rhino**
+
 ```javascript
 MyProcess.preValidate = function(context) {  
 	// At the client step
@@ -423,4 +420,3 @@ MyProcess.postTerminate = function() {
 };
 ```
 
-<!-- **TO BE COMPLETED** -->
