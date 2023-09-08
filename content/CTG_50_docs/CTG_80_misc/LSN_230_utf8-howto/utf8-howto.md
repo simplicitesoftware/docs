@@ -63,13 +63,17 @@ character_set_server=utf8
 
 This can also be set at the database level by:
 
-	CREATE DATABASE <database name> DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;;
+	CREATE DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
 
 This can be also done after creation by:
 
-	ALTER DATABASE <database name> DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+	ALTER DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
 
-> **Note**: If the database was loaded before its character set is set to UTF-8 you **must** reload it or convert explicitly all tables (see below)
+In both case defining an explicit collation is not mandatory (the value above is the default value for `uft8` chraracter set).
+
+> **Note 1**: for using modern characters such as emoticons, you must use `utf8mb4` character set instead of `uft8`
+
+> **Note 2**: If the database was loaded before its character set is set to UTF-8 you **must** reload it or convert explicitly all tables (see below)
 
 When using the setup package, the `db-mysql.properties` must be adjusted for setting UTF-8 support in the JDBC URL of the datasource,
 this means the JDBC URL must contains the `&amp;characterEncoding=utf8&amp;characterResultSets=utf8` options).
