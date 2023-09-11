@@ -220,8 +220,10 @@ The Rhino script **example** below checks and removes the domain part of the acc
 and creates/updates the corresponding application user (with responsibilities on `MYAPP_GROUP1` and `MYAPP_GROUP2` groups
 on the fly in `pre/postLoadGrant`.
 
+**Rhino**
+
 ```javascript
-GrantHooks.parseAuth = function(g, auth) {
+PlatformHooks.parseAuth = function(g, auth) {
 	if (Globals.useOAuth2()) {
 		// Example of domain verification
 		var domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
@@ -247,7 +249,7 @@ GrantHooks.parseAuth = function(g, auth) {
 	return auth;
 };
 
-GrantHooks.preLoadGrant = function(g) {
+PlatformHooks.preLoadGrant = function(g) {
 	if (Globals.useOAuth2()) {
 		// Example of business logic to create users on the fly
 		if (!Grant.exists(g.getLogin(), false)) {
