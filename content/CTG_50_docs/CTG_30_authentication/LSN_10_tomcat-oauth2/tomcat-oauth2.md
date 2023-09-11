@@ -251,9 +251,10 @@ GrantHooks.preLoadGrant = function(g) {
 	if (Globals.useOAuth2()) {
 		// Example of business logic to create users on the fly
 		if (!Grant.exists(g.getLogin(), false)) {
+			var usr;
 			try {
 				// Create user if not exists
-				var usr = Grant.getSystemAdmin().getTmpObject("User");
+				usr = Grant.getSystemAdmin().getIsolatedObject("User");
 				usr.setRowId(ObjectField.DEFAULT_ROW_ID);
 				usr.resetValues(true);
 				usr.setStatus(Grant.USER_ACTIVE);
@@ -276,6 +277,8 @@ GrantHooks.preLoadGrant = function(g) {
 				}
 			} catch (e) {
 				console.error(e.javaException ? e.javaException.getMessage() : e);
+			} finally {
+				usr.destroy();
 			}
 		}
 	}	
@@ -316,9 +319,10 @@ public String parseAuth(Grant sys, SessionInfo info) {
 public void preLoadGrant(Grant g) {
 	if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
 		// Example of business logic to create users on the fly
+		ObjectDB usr = null;
 		try {
 			// Create user if not exists
-			ObjectDB usr = Grant.getSystemAdmin().getTmpObject("User");
+			usr = Grant.getSystemAdmin().getIsolatedObject("User");
 			usr.setRowId(ObjectField.DEFAULT_ROW_ID);
 			usr.resetValues(true);
 			usr.setStatus(Grant.USER_ACTIVE);
@@ -340,6 +344,8 @@ public void preLoadGrant(Grant g) {
 			}
 		} catch (MethodException | CreateException | ValidateException e) {
 			AppLog.error(e, g);
+		} finally {
+			if (usr != null) usr.destroy();
 		}
 	}
 	super.preLoadGrant(g);
