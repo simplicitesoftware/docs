@@ -14,11 +14,11 @@ Configure a business process "Screen worflow"
 
 ### Create a business process 
 
-Name: unique name required
-Code: internal code required
-Type: Screen workflow
-Source code: any java class which modify default behaviour
-Module: application module
+Name: unique name required  
+Code: internal code required  
+Type: Screen workflow  
+Source code: any java class which modify default behaviour  
+Module: application module  
 
 When the process is created 2 activities are generated: Begin and End.
 If these two activities did not exist or were removed, they must be created manually.
@@ -32,9 +32,9 @@ Save without exit.
 
 Go to Permission process tab to add rights to the process:
 
-Read only: ability to view activities
-Instantiation: possibility to start the process
-Cancel process: possibility to stop the process
+Read only: ability to view activities  
+Instantiation: possibility to start the process  
+Cancel process: possibility to stop the process  
 
 
 ### Put a process in a domain
