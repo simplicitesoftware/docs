@@ -2,8 +2,11 @@
 custom authentication page or redirect
 =======================================
 > **Note**: This document only applies to **version 5.3.9** and above.
+
+> **Warning**: This auth bypasses some of the simplicité security. You are responsible for the security of this page. You should pay attention to the various vulnerabilities of a login page (such as sql injection, XSS, Brute Force Attack, Improper Error Handling ...) and password security.
+
 <h2 id="webappsettings">Webapp settings</h2>
-Then declare your custom authentication provider in the `AUTH_PROVIDERS` system parameter, e.g.:
+Declare your custom authentication provider in the `AUTH_PROVIDERS` system parameter, e.g.:
 
 ```json
 [
@@ -17,10 +20,13 @@ Then declare your custom authentication provider in the `AUTH_PROVIDERS` system 
 ]
 ```
 
-See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for details on how to configure authentication providers.ving at least a responsibility on the ADMIN group.
+See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for details on how to configure authentication providers.
+> **Warning**: Before making these changes, make sure that you will still be able to login with a user having at least a responsibility on the ADMIN group.
+
 <h3 id="granthooks">Grant hooks</h3>
-Then you can implement 's  `GrantHooks``customAuthPage method`to redirect to external page or to return custom html page, and `customAuth method` to interpret the return of the custom auth page.
-The **example** below uses the mustache model of `XXX_CUSTOM_LOG` resource for the auth page.
+
+Then you can implement `GrantHooks`'s `customAuthPage method` to redirect to external login page or to return custom html page, and `customAuth method` to interpret the return of the custom auth page.
+The **example** below uses the mustache model of `XXX_CUSTOM_LOG` resource for the auth page. 
 
 ```Java
     @Override
@@ -28,7 +34,7 @@ The **example** below uses the mustache model of `XXX_CUSTOM_LOG` resource for t
 		Grant g=Grant.getSystemAdmin();
         
         
-        // Get the authentication provider from the request.
+        // Get the authentication provider of the request.
 		JSONObject provider = AuthTool.getAuthProvider(request);
 		
 		if (provider != null && "XXX_external_auth".equals(provider.getString("name"))) {
@@ -68,7 +74,7 @@ The **example** below uses the mustache model of `XXX_CUSTOM_LOG` resource for t
             //use toSafeHTML to avoid SQL injection
 			List<String> userAdmin = GroupDB.getUsers("ADMIN",null,null);
 			if(Grant.exists(login, false) && userAdmin.contains(login)){
-                //prohibits the use of custom authentication for  admin users
+                //prohibits the use of custom authentication for admin users
 				return  "ERROR: Admin can't use this auth page";
 			}
 			
@@ -103,4 +109,3 @@ The **example** below uses the mustache model of `XXX_CUSTOM_LOG` resource for t
 </body>
 ```
 
-> **Warning**: This auth bypasses some of the simplicité security. You are responsible for the security of this page. You should pay attention to the various vulnerabilities of a login page (such as sql injection, XSS, Brute Force Attack, Improper Error Handling ...) and password security.
