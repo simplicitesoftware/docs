@@ -1,1 +1,1 @@
-This document has been moved to [this document](https:/lesson/docs/misc/manager)
+This document has been moved to [this document](https://platform.simplicite.io/manager.md)
