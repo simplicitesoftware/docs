@@ -216,9 +216,9 @@ see Microsoft LiveID documentation for the values of the possible scopes, if you
 
 If needed you can implement additional business logic in the `GrantHooks` Java class or Rhino script.
 
-The Rhino script **example** below checks and removes the domain part of the account name in `parseAuth`
+The following **example** checks and removes the domain part of the account name in the `parseAuth` hook
 and creates/updates the corresponding application user (with responsibilities on `MYAPP_GROUP1` and `MYAPP_GROUP2` groups
-on the fly in `pre/postLoadGrant`.
+on the fly in the `preLoadGrant` hook:
 
 **Rhino**
 
