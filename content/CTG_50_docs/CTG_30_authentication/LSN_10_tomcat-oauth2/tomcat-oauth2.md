@@ -281,16 +281,18 @@ GrantHooks.preLoadGrant = function(g) {
 	}	
 };
 ```
+
 **Java**
+
 ```Java
 @Override
 public String parseAuth(Grant sys, SessionInfo info) {
-    if (AuthTool.useOAuth2()) {
+	if (AuthTool.useOAuth2()) {
 		// Example of domain verification
 		String domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
-        String auth = info.getLogin();
+		String auth = info.getLogin();
 		if (!Tool.isEmpty(domain)) {
-            AppLog.info("OAuth2 account = " + auth, sys);
+			AppLog.info("OAuth2 account = " + auth, sys);
 			if (Tool.isEmpty(auth) || !auth.matches("^.*@" + domain + "$")) {
 				AppLog.info("OAuth2 error: Invalid domain for " + auth, sys);
 				return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
@@ -305,44 +307,42 @@ public String parseAuth(Grant sys, SessionInfo info) {
 			return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
 		}
 		AppLog.info("OAuth2 active user ID for " + auth + " = " + uid, sys);
-		 */
+		*/
 	}
-    return super.parseAuth(sys, info);
+	return super.parseAuth(sys, info);
 }
+
 @Override
 public void preLoadGrant(Grant g) {
-    if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
-        // Example of business logic to create users on the fly
-			try {
-                // Create user if not exists
-                ObjectDB usr = Grant.getSystemAdmin().getTmpObject("User");
-                usr.setRowId(ObjectField.DEFAULT_ROW_ID);
-                usr.resetValues(true);
-                usr.setStatus(Grant.USER_ACTIVE);
-                usr.getField("usr_login").setValue(g.getLogin());
-                new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
-                    
-                // Get module in which user has been created (default module for users)
-                String module = usr.getFieldValue("row_module_id.mdl_name");
-                AppLog.info("OAuth2 user " + g.getLogin() + " created in module " + module,g);
-                // Force a random password to avoid the change password popup
-            
-                usr.invokeMethod("resetPassword", null, null);
-            
+	if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
+		// Example of business logic to create users on the fly
+		try {
+			// Create user if not exists
+			ObjectDB usr = Grant.getSystemAdmin().getTmpObject("User");
+			usr.setRowId(ObjectField.DEFAULT_ROW_ID);
+			usr.resetValues(true);
+			usr.setStatus(Grant.USER_ACTIVE);
+			usr.getField("usr_login").setValue(g.getLogin());
+			new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
 
-                // Add responsibilities on designated groups
-                String[] groups = { "MYAPP_GROUP1", "MYAPP_GROUP2"};
-                for(String group : groups){
-                    Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
-                    AppLog.info("Added user " + group + " responsibility for OAuth2 user " + g.getLogin(),g);
-                }
-            } catch (MethodException | CreateException | ValidateException e) {
-                AppLog.error(e, g);
-            }
-			
-		
-	}	
-    super.preLoadGrant(g);
+			// Get module in which user has been created (default module for users)
+			String module = usr.getFieldValue("row_module_id.mdl_name");
+			AppLog.info("OAuth2 user " + g.getLogin() + " created in module " + module,g);
+			// Force a random password to avoid the change password popup
+	
+			usr.invokeMethod("resetPassword", null, null);
+
+			// Add responsibilities on designated groups
+			String[] groups = { "MYAPP_GROUP1", "MYAPP_GROUP2"};
+			for(String group : groups){
+				Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
+				AppLog.info("Added user " + group + " responsibility for OAuth2 user " + g.getLogin(),g);
+			}
+		} catch (MethodException | CreateException | ValidateException e) {
+			AppLog.error(e, g);
+		}
+	}
+	super.preLoadGrant(g);
 }
 ```
 

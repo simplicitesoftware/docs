@@ -1,15 +1,15 @@
-Grant/Platform hooks
-====================
+Platform hooks
+==============
 
 This document describes the hooks that can be implemented to put some **additional** business logic at user session level.
 
 > **Important**: As of version 5.0, static grant hooks are **deprecated**, they are replaced by the platform hooks singleton with same methods.
-> This document describes `GrantHooks` implementation examples but it can be directly transposed to `PlatformHooks`.
+> This document describes `PlatformHooks` implementation examples but it can be directly transposed to legacy `GrantHooks`.
 
 None of these hooks **needs** to be implemented. You can implement one or several of these hooks if you want to apply out some
 dynamic business logic that goes beyond what can be configured.
 
-These hooks are located in the singleton shared code named `GrantHooks` that can be implemented either in the server-side **Rhino** scripting language or in **Java**.
+These hooks are located in the singleton shared code named `PlatformHooks` that can be implemented either in the server-side **Rhino** scripting language or in **Java**.
 
 > **Note**:
 >
@@ -47,19 +47,23 @@ The `preLoadGrant` is called **before** actually loading the user rights (at tha
 
 Example:
 
+**Rhino**
+
 ```javascript
-GrantHooks.preLoadGrant(g) {
+PlatformHooks.preLoadGrant(g) {
 	var login = g.getLogin();
 	// e.g. load custom responsibilities and user profile
 }
 ```
+
 **Java**
+
 ```Java
 @Override
 public void preLoadGrant(Grant g) {
-    String login = g.getLogin();
-	//TODO e.g. load custom responsibilities and user profile
-    super.preLoadGrant(g);
+	String login = g.getLogin();
+	// e.g. load custom responsibilities and user profile
+	super.preLoadGrant(g);
 }
 ```
 
@@ -67,19 +71,23 @@ The `postLoadGrant` is called **after** the user rights are loaded (responsibili
 
 Example:
 
+**Rhino**
+
 ```javascript
-GrantHooks.postLoadGrant(g) {
+PlatformHooks.postLoadGrant(g) {
 	console.log("Hello " + g.getFirstName() + "!");
 	// e.g. add custom rights...
 }
 ```
+
 **Java**
+
 ```Java
 @Override
 public void postLoadGrant(Grant g) {
-    AppLog.info("Hello " + g.getFirstName() + "!",g);
-	//TODO e.g. add custom rights...
-    super.postLoadGrant(g);
+	AppLog.info("Hello " + g.getFirstName() + "!",g);
+	// e.g. add custom rights...
+	super.postLoadGrant(g);
 }
 ```
 
@@ -93,15 +101,19 @@ It is called for each granted menu item for considered user.
 
 Example:
 
+**Rhino**
+
 ```javascript
-GrantHooks.isMenuEnable(g, domain, item) {
+PlatformHooks.isMenuEnable(g, domain, item) {
 	// Example to hide to group SIMPLE_USER the Product in the Marketing domain.
 	if (g.hasResponsibility("SIMPLE_USER") && domain=="DomainMarketing" && item=="Product")
 		return false;
 	return true;
 }
 ```
+
 **Java**
+
 ```Java
 @Override
 public boolean isMenuEnable(Grant g, String domain, String item) {
@@ -118,8 +130,10 @@ These hooks change the result of a fulltext search. The `rows` argument is a `Ve
 
 Example:
 
+**Rhino**
+
 ```javascript
-GrantHooks.postSearchIndex = function(g, rows) {
+PlatformHooks.postSearchIndex = function(g, rows) {
 	// Access to the default result
 	for (var i=0; rows && i<rows.size(); i++) {
 		var item = rows.get(i);
@@ -146,14 +160,15 @@ GrantHooks.postSearchIndex = function(g, rows) {
 	return rows;
 }
 ```
+
 **Java**
+
 ```Java
 @Override
 public List<SearchItem> postSearchIndex(Grant g, List<SearchItem> rows) {
-    // Access to the default result
+	// Access to the default result
 	for (SearchItem item : rows) {
-
-		//TODO Change anything to display here...
+		// Change anything to display here...
 		AppLog.info("score "+item.score,g);   // Optional scoring
 		AppLog.info("object "+item.object,g); // Optional object name
 		AppLog.info("row_id "+item.row_id,g); // Optional row_id
@@ -161,10 +176,10 @@ public List<SearchItem> postSearchIndex(Grant g, List<SearchItem> rows) {
 		AppLog.info("ukey "+item.ukey,g); // Default user key to display
 		AppLog.info("data "+item.data,g); // Default payload or summary to display
 		if (!Tool.isEmpty(item.values)) {
-			//TODO Optional object values as a List of String
+			// Optional object values as a List of String
 		}	
 	}
-	
+
 	// Sample to add an item on top
 	SearchItem item = new SearchItem();
 	item.score = "1000";
@@ -181,21 +196,25 @@ public List<SearchItem> postSearchIndex(Grant g, List<SearchItem> rows) {
 
 This hook is called when a password change is attempted, it can be used to implement custom rules for password fomat validation:
 
+**Rhino**
+
 ```javascript
-GrantHooks.validatePassword = function(g, pwd) {
-	if (pwd.indexOf("_") < 0) return "A good password must include an underscore!";
+PlatformHooks.validatePassword = function(g, pwd) {
+	if (pwd.indexOf("_") < 0)
+		return "A good password must include an underscore!";
 };
 ```
+
 **Java**
+
 ```Java
 @Override
 public List<String> validatePassword(Grant g, String pwd) {
-    List<String> msgs = new ArrayList<>();
-    if (pwd.indexOf("_") < 0){
-        msgs.add(Message.formatError("ERR_SYN_CASE_SUGGESTION", "A good password must include an underscore!", null));
-        return msgs;
-    }
-    return super.validatePassword(g, pwd);
+	List<String> msgs = super.validatePassword(g, pwd);
+	if (msgs==null) msgs = new ArrayList<String>();
+	if (pwd.indexOf("_") < 0)
+		msgs.add(Message.formatError("ERR_SYN_CASE_SUGGESTION", "A good password must include an underscore!", null));
+	return msgs;
 }
 ```
 
@@ -211,17 +230,21 @@ The error(s) returned by the above hooks are **added** to the default error mess
 
 This hook is called when an explicit or implicit logout occurs (it is called just before the session is dropped)
 
+**Rhino**
+
 ```javascript
-GrantHooks.logout = function(g) {
+PlatformHooks.logout = function(g) {
 	console.log("Bye bye " + g.getLogin() + "!");
 };
 ```
+
 **Java**
+
 ```Java
 @Override
 public void logout(Grant g) {
-    AppLog.info("Bye bye " + g.getLogin() + "!", g);
-    super.logout(g);
+	AppLog.info("Bye bye " + g.getLogin() + "!", g);
+	super.logout(g);
 }
 ```
 
@@ -229,19 +252,22 @@ public void logout(Grant g) {
 
 This hook is called when a document download has been requested and has been successfully checked (versions 3.2+):
 
+**Rhino**
+
 ```javascript
-GrantHooks.downloadDocument = function(g, doc) {
+PlatformHooks.downloadDocument = function(g, doc) {
 	if (doc.getObjectRef() == "MyObject")
 		console.log("The doc " + doc.getId() + " from object " + doc.getObjectRef() + " has been downloaded by " + g.getLogin());
 };
 ```
+
 **Java**
+
 ```Java
 @Override
 public void downloadDocument(Grant g, DocumentDB doc) {
-    if ("MyObject".equals(doc.getObjectRef()))
-		AppLog.info("The doc " + doc.getId() + " from object " + doc.getObjectRef() + " has been downloaded by " + g.getLogin(),g);
-
-    super.downloadDocument(g, doc);
+	if ("MyObject".equals(doc.getObjectRef()))
+		AppLog.info("The doc " + doc.getId() + " from object " + doc.getObjectRef() + " has been downloaded by " + g.getLogin(), g);
+	super.downloadDocument(g, doc);
 }
 ```
