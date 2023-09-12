@@ -835,3 +835,5 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.47">5.2.47 (UNRELEASED) **maintenance revision**</h3>
 
 - Fixed columns size of `m_field_hist`
+- Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
+- Improved `CSVTool` robustness

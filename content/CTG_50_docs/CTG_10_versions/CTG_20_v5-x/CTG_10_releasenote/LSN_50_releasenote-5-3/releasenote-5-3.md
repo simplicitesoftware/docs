@@ -492,4 +492,5 @@ Scratch pad
 
 <h3 id="version-5.3.14">5.3.14 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
+- Improved `CSVTool` robustness
