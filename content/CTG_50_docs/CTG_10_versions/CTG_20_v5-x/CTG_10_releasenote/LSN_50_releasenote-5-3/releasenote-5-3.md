@@ -495,3 +495,4 @@ Scratch pad
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
 - Fixed workflow with conditional activity
+- Added optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
