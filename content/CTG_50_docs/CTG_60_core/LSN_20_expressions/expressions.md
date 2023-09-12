@@ -176,7 +176,7 @@ It is possible to write complex expressions by using self calling functions such
 
 ```javascript
 (function() {
-	var res = "";
+    var res = "";
     // Do some complex stuff with res
     return res;
 })();

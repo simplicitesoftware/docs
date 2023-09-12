@@ -117,8 +117,8 @@ PlatformHooks.isMenuEnable(g, domain, item) {
 ```Java
 @Override
 public boolean isMenuEnable(Grant g, String domain, String item) {
-    // Example to hide to group SIMPLE_USER the Product in the Marketing domain.
-    return !(g.hasResponsibility("SIMPLE_USER") && "DomainMarketing".equals(domain) && "Product".equals(item));
+	// Example to hide to group SIMPLE_USER the Product in the Marketing domain.
+	return !(g.hasResponsibility("SIMPLE_USER") && "DomainMarketing".equals(domain) && "Product".equals(item));
 }
 ```
 

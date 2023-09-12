@@ -122,7 +122,7 @@ GrantHooks.parseAuth = function(sys, info) {
 ```Java
 @Override
 public String parseAuth(Grant sys, SessionInfo info) {
-    // Check if the account is in authorized domain
+	// Check if the account is in authorized domain
 	String domain = sys.getParameter("MY_GOOGLE_DOMAIN", "simplicite.fr");
 
 	// Auth string from session info after SAML authentication (e.g. username@simplicite.fr)

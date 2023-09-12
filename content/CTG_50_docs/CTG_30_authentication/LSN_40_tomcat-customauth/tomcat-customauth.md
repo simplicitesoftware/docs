@@ -65,7 +65,7 @@ GrantHooks.customAuth = function(req, res) {
 ```Java
 @Override
 public String customAuth(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    String dn = request.getHeader("X-SSL-Client-S-DN");
+	String dn = request.getHeader("X-SSL-Client-S-DN");
 	if (!Tool.isEmpty(dn))
 	{
 		AppLog.info("Client certificate DN = " + dn,null);
@@ -73,7 +73,7 @@ public String customAuth(HttpServletRequest request, HttpServletResponse respons
 		AppLog.info("Client certificate CN = " + cn,null);
 		return cn;
 	}
-    return super.customAuth(request, response);
+	return super.customAuth(request, response);
 }
 ```
 

@@ -678,7 +678,7 @@ The hook will be called once by each object instance (the_ajax, panel_ajax...).
 				p.form.onload = function(ctn, obj, params) {
 					// Alert on big amount
 					var amount = ui.getUIField(ctn, obj, "myAmount"),
-					    check = ui.getUIField(ctn, obj, "myCheck");
+					check = ui.getUIField(ctn, obj, "myCheck");
 					if (parseInt(amount.ui.val()) > 5000) {
 						// Simple alert
 						ui.alert(app.T("MESSAGE_TO_CHECK_THE_AMOUNT"));

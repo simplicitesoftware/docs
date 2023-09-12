@@ -729,9 +729,9 @@ Some system parameters might not be available on previous version or default val
 **Description**
 
 	{
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' apis.google.com *.gstatic.com *.googleapis.com; 	style-src 'self' 'unsafe-inline' *.gstatic.com *.googleapis.com; img-src 'self' data: *.gstatic.com *.googleapis.com *.simplicite.io github.com 	raw.githubusercontent.com sonarcloud.io; font-src 'self' data: *.gstatic.com *.googleapis.com; connect-src 'self' *.gstatic.com *.googleapis.com; 	frame-src 'self' *.google.com;",
-    "X-Frame-Options": "SAMEORIGIN",
-    "X-XSS-Protection": "1; mode=block"
+	"Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' apis.google.com *.gstatic.com *.googleapis.com; 	style-src 'self' 'unsafe-inline' *.gstatic.com *.googleapis.com; img-src 'self' data: *.gstatic.com *.googleapis.com *.simplicite.io github.com 	raw.githubusercontent.com sonarcloud.io; font-src 'self' data: *.gstatic.com *.googleapis.com; connect-src 'self' *.gstatic.com *.googleapis.com; 	frame-src 'self' *.google.com;",
+	"X-Frame-Options": "SAMEORIGIN",
+	"X-XSS-Protection": "1; mode=block"
 	}
 
 ### `HTTPCALL_TIMEOUT`
@@ -1539,8 +1539,8 @@ Some system parameters might not be available on previous version or default val
 
 	Optional custom URI mappings, e.g.
 	[
-    { "source": "^/v1(.+)$", "destination": "/api/ext/MyAPIv1$1" },
-    { "source": "^/site$",   "destination": "/ext/MyWebSiteSite" }
+	{ "source": "^/v1(.+)$", "destination": "/api/ext/MyAPIv1$1" },
+	{ "source": "^/site$",   "destination": "/ext/MyWebSiteSite" }
 	]
 
 ### `USE_ABOUT`

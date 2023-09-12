@@ -15,7 +15,7 @@ Declare your custom authentication provider in the `AUTH_PROVIDERS` system param
 		"type": "custom",
 		"label": "External authentication"
 	},
-    { "name": "simplicite", "type": "internal" }
+	{ "name": "simplicite", "type": "internal" }
 	(...)
 ]
 ```
@@ -29,52 +29,50 @@ Then you can implement `PlatformHooks`'s `customAuthPage method` to redirect to 
 The **example** below uses the mustache template of `XXX_CUSTOM_LOG` resource for the auth page. 
 
 ```Java
-    @Override
+	@Override
 	public void customAuthPage(HttpServletRequest request, HttpServletResponse response, String error) throws Exception {
 		Grant g=Grant.getSystemAdmin();
-        
-        
-        // Get the authentication provider of the request.
+		// Get the authentication provider of the request.
 		JSONObject provider = AuthTool.getAuthProvider(request);
 		
 		if (provider != null && "XXX_external_auth".equals(provider.getString("name"))) {
-            // If the provider is our custom auth "XXX_external_auth"...
+			// If the provider is our custom auth "XXX_external_auth"...
 
-            // Create a JSON object to store data for template.
-		    JSONObject HTMLdata = new JSONObject()
-                .put("style",HTMLTool.getResourceCSSContent(g,"OAUTH2_STYLES"))
-                .put("Title","Title")
-                .put("isError",!Tool.isEmpty(error))
-                .put("error",Grant.getPublic().T(Tool.toHTML(error)))
-                .put("path",Globals.WEB_CUSTOMAUTH_PATH )
-                .put("provider",provider.getString("name") );
+			// Create a JSON object to store data for template.
+			JSONObject HTMLdata = new JSONObject()
+				.put("style",HTMLTool.getResourceCSSContent(g,"OAUTH2_STYLES"))
+				.put("Title","Title")
+				.put("isError",!Tool.isEmpty(error))
+				.put("error",Grant.getPublic().T(Tool.toHTML(error)))
+				.put("path",Globals.WEB_CUSTOMAUTH_PATH )
+				.put("provider",provider.getString("name") );
 			
 			try (PrintWriter out = response.getWriter()) {
-                // Use MustacheTool to apply a custom HTML template
-                // and write the result to the response.
+				// Use MustacheTool to apply a custom HTML template
+				// and write the result to the response.
 				out.println(MustacheTool.apply(HTMLTool.getResourceHTMLContent(g, "XXX_CUSTOM_LOG"), HTMLdata));
 			}
 		} else{
 			super.customAuthPage(request, response, error);
-        }
+		}
 	}
 
-    @Override
+	@Override
 	public String customAuth(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		JSONObject provider = AuthTool.getAuthProvider(request);
 		Grant g=Grant.getSystemAdmin();
 		if (provider != null && "XXX_external_auth".equals(provider.getString("name"))) {
-            // If the provider is our custom auth "XXX_external_auth"...
+			// If the provider is our custom auth "XXX_external_auth"...
 			String login = ServletTool.getParamValue(request, "login", null);
 			if(login == null)
-                // if empty login do nothing
+			// if empty login do nothing
 				return super.customAuth(request, response);
 			login = HTMLTool.toSafeHTML​(login);
 			String password = HTMLTool.toSafeHTML(ServletTool.getParamValue(request, "password", null));
-            //use toSafeHTML to avoid SQL injection
+			//use toSafeHTML to avoid SQL injection
 			List<String> userAdmin = GroupDB.getUsers("ADMIN",null,null);
 			if(Grant.exists(login, false) && userAdmin.contains(login)){
-                //prohibits the use of custom authentication for admin users
+				//prohibits the use of custom authentication for admin users
 				return  "ERROR: Admin can't use this auth page";
 			}
 			
@@ -84,28 +82,28 @@ The **example** below uses the mustache template of `XXX_CUSTOM_LOG` resource fo
 			return login;
 		} else{
 			return super.customAuth(request, response);
-        }
+		}
 	}
 ```
 Example of **XXX_CUSTOM_LOG**:
 ```html
 <head>
-    <title>{{Title}}</title>
-    <style>
-        {{style}}
-    </style>
+	<title>{{Title}}</title>
+	<style>
+		{{style}}
+	</style>
 </head>
 <body spellcheck="true" cz-shortcut-listen="true">
-    <div id="auth-main" class="auth-signin" style="text-align: center;">
-    <div class="cadre">
-        {{#isError}}<p><strong>Erreur: {{{error}}}</strong></p>{{/isError}}
-        <form class="auth-signin" id="auth-signin-form" method="post" action="{{path}}?_provider={{provider}}">
-            <input type="text" name="login" id="auth-signin-login" placeholder="login" value="">
-            <input type="password" name="password" id="auth-signin-password" placeholder="password" value="">
-            
-            <input type="submit" class="auth-signin-submit" value="connexion">
-        </form>
-    </div>
+	<div id="auth-main" class="auth-signin" style="text-align: center;">
+	<div class="cadre">
+	{{#isError}}<p><strong>Erreur: {{{error}}}</strong></p>{{/isError}}
+		<form class="auth-signin" id="auth-signin-form" method="post" action="{{path}}?_provider={{provider}}">
+			<input type="text" name="login" id="auth-signin-login" placeholder="login" value="">
+			<input type="password" name="password" id="auth-signin-password" placeholder="password" value="">
+
+			<input type="submit" class="auth-signin-submit" value="connexion">
+		</form>
+	</div>
 </body>
 ```
 
