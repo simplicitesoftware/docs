@@ -494,3 +494,4 @@ Scratch pad
 
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
+- Fixed workflow with conditional activity
