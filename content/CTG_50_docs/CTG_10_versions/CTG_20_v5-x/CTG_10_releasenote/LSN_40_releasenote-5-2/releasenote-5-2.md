@@ -832,7 +832,7 @@ This means this mechanism requires a proper modules' version management.
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
 
-<h3 id="version-5.2.47">5.2.47 (2023-09-12) **maintenance revision**</h3>
+<h3 id="version-5.2.47">5.2.47 (2023-09-13) **maintenance revision**</h3>
 
 - Fixed columns size of `m_field_hist`
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
