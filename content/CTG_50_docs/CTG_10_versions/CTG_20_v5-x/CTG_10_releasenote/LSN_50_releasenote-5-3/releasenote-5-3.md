@@ -497,3 +497,4 @@ Scratch pad
 - Fixed workflow with conditional activity
 - Added optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
 - Fixed effective date in case of data import thru adapter
+- Allows action confirmation with several same referenced fields
