@@ -498,3 +498,8 @@ Scratch pad
 - Added optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
 - Fixed effective date in case of data import thru adapter
 - Allows action confirmation with several same referenced fields
+
+<h3 id="version-5.3.15">5.3.15 (UNRELEASED)</h3>
+
+- The "About" shortcut is now explicitly granted (by default to designers & operators profiles)
+
