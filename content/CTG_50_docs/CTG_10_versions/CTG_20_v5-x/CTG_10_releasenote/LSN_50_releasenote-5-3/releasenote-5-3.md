@@ -502,4 +502,4 @@ Scratch pad
 <h3 id="version-5.3.15">5.3.15 (UNRELEASED)</h3>
 
 - The "About" shortcut is now explicitly granted (by default to designers & operators profiles)
-
+- Apply foreign key Search-Spec from inherited objects

@@ -838,3 +838,7 @@ This means this mechanism requires a proper modules' version management.
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
 - Backported optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
+
+<h3 id="version-5.2.48">5.2.48 (UNRELEASED) **maintenance revision**</h3>
+
+- Apply foreign key Search-Spec from inherited objects
