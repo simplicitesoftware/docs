@@ -490,7 +490,7 @@ Scratch pad
 - Fixed export on filtered crosstabs
 - Fixed regression on SAML provider retrieval
 
-<h3 id="version-5.3.14">5.3.14 (UNRELEASED)</h3>
+<h3 id="version-5.3.14">5.3.14 (2023-09-14)</h3>
 
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
