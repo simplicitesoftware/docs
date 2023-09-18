@@ -841,4 +841,5 @@ This means this mechanism requires a proper modules' version management.
 
 <h3 id="version-5.2.48">5.2.48 (UNRELEASED) **maintenance revision**</h3>
 
-- Apply foreign key Search-Spec from inherited objects
+- Apply foreign key search spec from inherited objects
+- Fixed missing support for Git remote username/password passed as environment variables or JVM properties
