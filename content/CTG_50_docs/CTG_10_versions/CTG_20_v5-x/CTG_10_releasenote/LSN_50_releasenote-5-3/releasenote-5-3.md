@@ -506,3 +506,5 @@ Scratch pad
 - Apply foreign key search spec from inherited objects
 - Fixed missing support for Git remote username/password passed as environment variables or JVM properties
 - Backported new service objects' hook: `indexsearchService`
+- Fixed populateReference of search-by column 
+- Added common accessibility from WCAG 2.1
