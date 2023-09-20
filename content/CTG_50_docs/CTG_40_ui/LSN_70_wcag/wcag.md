@@ -150,4 +150,8 @@ Some designer access:
 - `ALT-X` : open the script/code editor
 
 
-To be continued...
+<h2 id="refdocs">Documentation</h2>
+
+- W3C: https://www.w3.org/TR/WCAG21
+- French WCAG 2.1: https://www.w3.org/Translations/WCAG21-fr
+- French RGAA 4 from DINUM: https://accessibilite.numerique.gouv.fr
