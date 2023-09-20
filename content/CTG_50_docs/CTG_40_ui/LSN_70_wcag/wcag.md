@@ -43,9 +43,8 @@ The main region contains the current activity (list, form, pivot table, screen-f
 ### Excluded regions
 
 Complex widgets are not accessible because of massive mouse usage thru drag&drop.
-- the SVG modeler 
+- the SVG diagram to edit business models
 - the template editor to design object form/area/fields
-
 They are optional and dedicated to designer.
 
 <h2 id="basics">Basics</h2>
@@ -55,14 +54,52 @@ They are optional and dedicated to designer.
 Each unreadable action or feature (icon, image, div...) have an explicit description:
 - in a simple `title` (ex: "home" on the logo image)
 - or a bootstrap `tooltip` for rich HTML help (ex: field help)
-- or a `aria-label` (ex: on a close icon without title)
+- or a `aria-label` (ex: close icon without explicit title)
 
-### clickable elements
+### Clickable and focusable elements
 
 Elements with user interaction are mostly:
-- focusable by design: `<a href>` and `<button type="button">`: for use in your component designs 
-- or with a `tabindex` and a handler on the keydown `ENTER` (ex: a `<tr>` in a `<table>`)
+- focusable by design: `<a href>` and `<button type="button">`: for use in all component designs 
+- or with an explicit `tabindex="0"` and a handler on the keydown `ENTER` (ex: to open the `<tr>` in a `<table>`)
 
+Example: 
+
+```javascript
+$('.my-element-class').attr({
+	tabindex: 0,
+	role: "button",
+	"aria-label": "description"
+})
+.on("click", function(e) {
+	e.stopPropagation();
+	// do something...
+})
+.on("keydown", function(e) {
+	if (e.which==$ui.KEYS.ENTER) {
+		e.preventDefault();
+		$(this).trigger("click");
+	}
+});
+```
+
+Primary focusable elements are identified with the class '.js-focusable', the first visible one is focused by default on page landing:
+- form-control such as input, select, textarea...
+- list rows and search-by filters
+
+CSS styles by default:
+- `:focus`: outline the element when focused, not required for all elements (ex: button prefers `:hover` to be highlighted)
+- `:focus-visible`: outline the element when focused thru keyboard, required for accessibility to identify the focus (no hover, no pointer)
+
+Example:
+
+```css
+.my-element-class {
+	cursor: pointer; /* mouse usage */
+}
+.my-element-class:focus-visible {
+	outline: solid .0625rem #fff; /* mouse free usage */
+}
+```
 
 <h2 id="keyboard">Keyboard accessibility</h2>
 
@@ -73,10 +110,11 @@ Globals:
 - `SHIFT` + `TAB` focus the previous element in the DOM order
 - `ESC` to close by priority: focused field or rich editor, all modal dialogs and the current form (back in navigation when nothing is focused)
 
-- `CTRL-H` : displays the home page
-- `CTRL-M` : focus the main menu
-- `CTRL-F` : focus the global search in header
-- `CTRL-L` : focus the first list
+- `CTRL-H` : displays the **Home** page
+- `CTRL-M` : focus the main **Menu** last selection or first item
+- `CTRL-F` : focus the **Finder**, global search in header
+- `CTRL-L` : focus the first visible **List**
+- `ALT-N` : focus the **Next** visible area/list (first `.js-focusable` of area)
 
 Horizontal navigation after a search:
 - `SHIFT-LEFT` : goto previous record (on object form) or page (on object list)
@@ -101,7 +139,7 @@ Vertical navigation in a page of list:
 
 ### Shortcuts
 
-Shortcuts can define more keys access.
+Shortcuts can define more access-keys.
 
 Some designer access:
 - `ALT-I` : XML import page
