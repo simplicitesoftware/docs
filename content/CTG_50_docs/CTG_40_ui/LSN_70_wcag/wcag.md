@@ -155,3 +155,19 @@ Some designer access:
 - W3C: https://www.w3.org/TR/WCAG21
 - French WCAG 2.1: https://www.w3.org/Translations/WCAG21-fr
 - French RGAA 4 from DINUM: https://accessibilite.numerique.gouv.fr
+
+<h2 id="tools">Web accessibility testing</h2>
+
+W3C evaluating
+https://www.w3.org/WAI/test-evaluate
+
+Chrome plugin to inspect pages (AXE devtools)
+https://www.deque.com/axe/devtools
+https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd
+
+Audit kit for French requirements
+https://accessibilite.numerique.gouv.fr/ressources/kit-audit
+
+ARA checks from 25 to 106 rules
+https://ara.numerique.gouv.fr
+
