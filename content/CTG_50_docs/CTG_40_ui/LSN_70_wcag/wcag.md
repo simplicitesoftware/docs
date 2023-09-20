@@ -94,7 +94,10 @@ Example:
 
 ```css
 .my-element-class {
-	cursor: pointer; /* mouse usage */
+	cursor: pointer;
+}
+.my-element-class:hover {
+	outline: solid .0625rem #fff; /* mouse usage */
 }
 .my-element-class:focus-visible {
 	outline: solid .0625rem #fff; /* mouse free usage */
