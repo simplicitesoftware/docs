@@ -843,3 +843,4 @@ This means this mechanism requires a proper modules' version management.
 
 - Apply foreign key search spec from inherited objects
 - Fixed missing support for Git remote username/password passed as environment variables or JVM properties
+- Backported `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages

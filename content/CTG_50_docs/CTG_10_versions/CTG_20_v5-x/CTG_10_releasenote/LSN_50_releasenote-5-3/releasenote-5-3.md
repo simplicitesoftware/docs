@@ -508,3 +508,4 @@ Scratch pad
 - Backported new service objects' hook: `indexsearchService`
 - Fixed populateReference of search-by column 
 - Added common accessibility from WCAG 2.1
+- Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
