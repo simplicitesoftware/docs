@@ -45,7 +45,8 @@ The main region contains the current activity (list, form, pivot table, screen-f
 Complex widgets are not accessible because of massive mouse usage thru drag&drop.
 - the SVG diagram to edit business models
 - the template editor to design object form/area/fields
-They are optional and dedicated to designer.
+
+They are optional and dedicated to designers.
 
 <h2 id="basics">Basics</h2>
 
@@ -97,10 +98,10 @@ Example:
 	cursor: pointer;
 }
 .my-element-class:hover {
-	outline: solid .0625rem #fff; /* mouse usage */
+	outline: solid .0625rem #fff; /* hover = mouse usage */
 }
 .my-element-class:focus-visible {
-	outline: solid .0625rem #fff; /* mouse free usage */
+	outline: solid .0625rem #fff; /* tab key = mouse free usage */
 }
 ```
 
@@ -111,7 +112,11 @@ Example:
 Globals:
 - `TAB` focus the next element in the DOM order
 - `SHIFT` + `TAB` focus the previous element in the DOM order
-- `ESC` to close by priority: focused field or rich editor, all modal dialogs and the current form (back in navigation when nothing is focused)
+- `ESC` to close by priority:
+	- focused field or rich editor
+	- all modal dialogs 
+	- the current form
+	- and go back in navigation when nothing is focused
 
 - `ALT-H` : displays the **Home** page
 - `ALT-M` : focus the main **Menu** last selection or first item
