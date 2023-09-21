@@ -10,6 +10,20 @@ The core UI supports common accessibility with 4 regions:
 - One main menu on the left side
 - One main area (work zone)
 
+### One-page site
+
+Global page settings:
+- user's language to choose the related voice of page reader
+- `viewport` can scale to 500%: zoom the full window with finger pinch
+- `font-size` style can scale all `rem` components: inbound zoom from 50% to 200%
+
+```html
+<html lang="fr" style="font-size: 120%">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+...
+```
+
 ### Header
 
 The `header` region contains several permanent actions:
@@ -19,7 +33,7 @@ The `header` region contains several permanent actions:
 - Icon buttons to access granted actions (user's filters, diagrams, module filtering, notifications...)
 - Undo/Redo buttons
 - Dropdown button with the current application scope
-- Dropdown button of User profile, current language, and zoom preference
+- Dropdown button of User profile, current language, and zoom preference (`rem` from 50% to 200%)
 - Shortcuts as plain buttons or in a dropdown menu
 
 ### Footer
