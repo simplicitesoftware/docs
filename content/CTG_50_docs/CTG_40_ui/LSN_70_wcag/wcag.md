@@ -113,10 +113,10 @@ Globals:
 - `SHIFT` + `TAB` focus the previous element in the DOM order
 - `ESC` to close by priority: focused field or rich editor, all modal dialogs and the current form (back in navigation when nothing is focused)
 
-- `CTRL-H` : displays the **Home** page
-- `CTRL-M` : focus the main **Menu** last selection or first item
-- `CTRL-F` : focus the **Finder**, global search in header
-- `CTRL-L` : focus the first visible **List**
+- `ALT-H` : displays the **Home** page
+- `ALT-M` : focus the main **Menu** last selection or first item
+- `ALT-F` : focus the **Finder**, global search in header
+- `ALT-L` : focus the first visible **List**
 - `ALT-N` : focus the **Next** visible area/list (first `.js-focusable` of area)
 
 Horizontal navigation after a search:
@@ -152,22 +152,22 @@ Some designer access:
 
 <h2 id="refdocs">Documentation</h2>
 
-- W3C: https://www.w3.org/TR/WCAG21
-- French WCAG 2.1: https://www.w3.org/Translations/WCAG21-fr
-- French RGAA 4 from DINUM: https://accessibilite.numerique.gouv.fr
+- [WCAG21 from w3c.org](https://www.w3.org/TR/WCAG21)
+- [French WCAG 2.1](https://www.w3.org/Translations/WCAG21-fr)
+- [French RGAA 4 from DINUM](https://accessibilite.numerique.gouv.fr)
 
 <h2 id="tools">Web accessibility testing</h2>
 
 W3C evaluating
-https://www.w3.org/WAI/test-evaluate
+[w3c.org test-evaluate](https://www.w3.org/WAI/test-evaluate)
 
-Chrome plugin to inspect pages (AXE devtools)
-https://www.deque.com/axe/devtools
-https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd
+Chrome plugin to inspect pages
+[AXE devtools](https://www.deque.com/axe/devtools)
+[AXE devtools chrome plugin](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
 Audit kit for French requirements
-https://accessibilite.numerique.gouv.fr/ressources/kit-audit
+[kit-audit](https://accessibilite.numerique.gouv.fr/ressources/kit-audit)
 
 ARA checks from 25 to 106 rules
-https://ara.numerique.gouv.fr
+[ARA testing](https://ara.numerique.gouv.fr)
 
