@@ -839,8 +839,12 @@ This means this mechanism requires a proper modules' version management.
 - Improved `CSVTool` robustness
 - Backported optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
 
-<h3 id="version-5.2.48">5.2.48 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.48">5.2.48 (2023-09-21) **maintenance revision**</h3>
 
 - Apply foreign key search spec from inherited objects
 - Fixed missing support for Git remote username/password passed as environment variables or JVM properties
 - Backported `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
+
+<h3 id="version-5.2.49">5.2.49 (UNRELEASED) **maintenance revision**</h3>
+
+- Nothing so far...
