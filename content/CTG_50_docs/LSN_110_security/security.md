@@ -119,6 +119,10 @@ If you only use it from a limited set of origins you **should** filter the acces
 
 > **Note**: this 3rd party components list is anyway public on the document website.
 
+You **may** also consider disabling the inclusion of the `manifest.json` to the pages of the generic UI using the `USE_MANIFEST` system parameter.
+As a matter of fact, due to the absence of the session ID cookie by some web browser when downloading this manifest file, the session ID is passed
+in the URL which makes it more visible than as a cookie (e.g; in an access log).
+
 <h2 id="application">Securing your application's configuration and custom code</h2>
 
 <h3 id="publicrights">Public rights</h3>
