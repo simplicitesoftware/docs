@@ -1804,6 +1804,16 @@ Some system parameters might not be available on previous version or default val
 
 	Add "Show password" on logon page (on the internal auth provider only)
 
+### `USE_MANIFEST`
+
+**Default value**
+
+	yes
+
+**Description**
+
+	Generate the `manifest.json` for the generic UI pages
+
 ### `USE_SOCIAL_ACTIVITIES`
 
 **Default value**
