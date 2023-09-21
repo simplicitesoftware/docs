@@ -1005,14 +1005,14 @@ See above
 - Fixed search for export
 - Fixed errors on edit list with group-by
 
-<h3 id="version-5.0.66">5.0.66 (2022-09-24) **post-maintenance revision**</h3>
+<h3 id="version-5.0.66">5.0.66 (2022-09-24) - post-maintenance revision</h3>
 
 - Security fixes
 
-<h3 id="version-5.0.67">5.0.67 (2022-09-30) **post-maintenance revision**</h3>
+<h3 id="version-5.0.67">5.0.67 (2022-09-30) - post-maintenance revision</h3>
 
 - Security fixes
 
-<h3 id="version-5.0.68">5.0.68 (2023-07-28) **post-maintenance revision**</h3>
+<h3 id="version-5.0.68">5.0.68 (2023-07-28) post-maintenance revision</h3>
 
 - Robustness fixes
