@@ -97,7 +97,7 @@ $('.my-element-class').attr({
 });
 ```
 
-Primary focusable elements are identified with the class '.js-focusable', the first visible one is focused by default on page landing:
+Primary focusable elements are identified with the class `.js-focusable`, the first visible one is focused by default on page landing:
 - form-control such as input, select, textarea...
 - list rows and search-by filters
 
@@ -111,11 +111,13 @@ Example:
 .my-element-class {
 	cursor: pointer;
 }
+/* hover = mouse usage */
 .my-element-class:hover {
-	outline: solid .0625rem #fff; /* hover = mouse usage */
+	outline: solid .0625rem #fff;
 }
+/* tab key = mouse free usage */
 .my-element-class:focus-visible {
-	outline: solid .0625rem #fff; /* tab key = mouse free usage */
+	outline: solid .0625rem #fff;
 }
 ```
 
