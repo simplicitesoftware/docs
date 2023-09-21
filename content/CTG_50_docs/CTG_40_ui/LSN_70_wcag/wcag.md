@@ -158,16 +158,16 @@ Some designer access:
 
 <h2 id="tools">Web accessibility testing</h2>
 
-W3C evaluating
-[w3c.org test-evaluate](https://www.w3.org/WAI/test-evaluate)
+- W3C evaluating
+  [w3c.org test-evaluate](https://www.w3.org/WAI/test-evaluate)
 
-Chrome plugin to inspect pages
-[AXE devtools](https://www.deque.com/axe/devtools)
-[AXE devtools chrome plugin](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+- Chrome plugin to inspect pages
+  - [AXE devtools](https://www.deque.com/axe/devtools)
+  - [AXE devtools chrome plugin](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
-Audit kit for French requirements
-[kit-audit](https://accessibilite.numerique.gouv.fr/ressources/kit-audit)
+- Audit kit for French requirements
+  [kit-audit](https://accessibilite.numerique.gouv.fr/ressources/kit-audit)
 
-ARA checks from 25 to 106 rules
-[ARA testing](https://ara.numerique.gouv.fr)
+- ARA checks from 25 to 106 rules
+  [ARA testing](https://ara.numerique.gouv.fr)
 
