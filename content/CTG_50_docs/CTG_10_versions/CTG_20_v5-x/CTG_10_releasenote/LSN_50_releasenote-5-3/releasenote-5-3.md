@@ -500,7 +500,7 @@ Scratch pad
 - Allows action confirmation with several same referenced fields
 - Backported new service objects' hook: `pingService`
 
-<h3 id="version-5.3.15">5.3.15 (UNRELEASED)</h3>
+<h3 id="version-5.3.15">5.3.15 (2023-09-22)</h3>
 
 - The "About" shortcut is now explicitly granted (by default to designers & operators profiles)
 - Apply foreign key search spec from inherited objects
@@ -509,3 +509,7 @@ Scratch pad
 - Fixed populateReference of search-by column 
 - Added common accessibility from WCAG 2.1
 - Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
+
+<h3 id="version-5.3.15">5.3.15 (UNRELEASED)</h3>
+
+- Nothing so far...
