@@ -123,9 +123,10 @@ Example:
 
 <h2 id="keyboard">Keyboard accessibility</h2>
 
-### Keys
+### Access keys
 
-Globals:
+#### Globals
+
 - `TAB` focus the next element in the DOM order
 - `SHIFT` + `TAB` focus the previous element in the DOM order
 - `ESC` to close by priority:
@@ -136,9 +137,19 @@ Globals:
 
 - `ALT-H` : displays the **Home** page
 - `ALT-M` : focus the main **Menu** last selection or first item
+- `ALT-W` : **Wide** screen by toggling the menu 
 - `ALT-F` : focus the **Finder**, global search in header
 - `ALT-L` : focus the first visible **List**
 - `ALT-N` : focus the **Next** visible area/list (first `.js-focusable` of area)
+
+#### Menu accessibility
+
+- `ALT-M` : focus the main **Menu** last selection or first item
+- `RIGHT` and `LEFT`: open/close a domain or a sub-menu
+- `UP` and `DOWN`: previous/next menu item (same as `TAB` or `SHIFT` + `TAB`)
+- `ENTER` : to execute/open the item, list or view, launch one business process...
+
+#### Lists and forms
 
 Horizontal navigation after a search:
 - `SHIFT-LEFT` : goto previous record (on object form) or page (on object list)
