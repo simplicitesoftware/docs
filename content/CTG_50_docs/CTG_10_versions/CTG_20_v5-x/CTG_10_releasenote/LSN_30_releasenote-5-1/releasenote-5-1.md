@@ -697,6 +697,6 @@ See above
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.63">5.1.62 (2023-09-26) - post-maintenance revision</h3>
+<h3 id="version-5.1.63">5.1.63 (2023-09-26) - post-maintenance revision</h3>
 
 - Security improvements
