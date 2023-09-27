@@ -510,6 +510,6 @@ Scratch pad
 - Added common accessibility from WCAG 2.1
 - Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
 
-<h3 id="version-5.3.15">5.3.15 (UNRELEASED)</h3>
+<h3 id="version-5.3.16">5.3.16 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Backported support for font resources in generic UI themes
