@@ -515,3 +515,5 @@ Scratch pad
 - Backported support for font resources in generic UI themes
 - Fixed populateReference of search dialog (lookup button)
 - Backported menu accessibility thru `ALT+M` + arrow-keys + `ENTER`
+- Backported `ALT-W` wide screen = toggle the main menu
+
