@@ -513,3 +513,5 @@ Scratch pad
 <h3 id="version-5.3.16">5.3.16 (UNRELEASED)</h3>
 
 - Backported support for font resources in generic UI themes
+- Fixed populateReference of search dialog (lookup button)
+- Backported menu accessibility thru `ALT+M` + arrow-keys + `ENTER`
