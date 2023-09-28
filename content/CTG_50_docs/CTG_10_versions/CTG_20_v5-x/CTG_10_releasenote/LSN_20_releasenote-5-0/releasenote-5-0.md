@@ -1016,3 +1016,7 @@ See above
 <h3 id="version-5.0.68">5.0.68 (2023-07-28) post-maintenance revision</h3>
 
 - Robustness fixes
+
+<h3 id="version-5.0.69">5.0.69 (2023-09-28) post-maintenance revision</h3>
+
+- Security fixes
