@@ -32,8 +32,9 @@ And a second authentication factor **should** be enabled: standard TOTP via emai
 
 > **Note**: When possible, using an external authentication mechanism is always a better and more secure approach than using loally stored password even with a second authetication factor.
 
-In particular the `designer` user's password **must** be hard to guess (this is also applicable to any user granted with advanced rights).
-Alternatively the `designer` user can be deactivated (but this may complexify delivery processes).
+In particular the `designer` user's password **must** be hard to guess (this is also applicable to any user granted with advanced rights) and changed regularly.
+Enforcing a second authentification factor (2FA) **should** also be considered. Ideally using an authentication application (e.g. Google or Microsoft Authenticator)
+Alternatively the `designer` user can be deactivated, at least when not used (but this may complexify delivery processes).
 
 <h3 id="uiendpoint">UI endpoint</h3>
 
@@ -189,7 +190,7 @@ Use built-in (see the Data Encryption part in [code examples](/lesson/docs/core/
 
 <h3 id="internalauth">Internal authentication</h3>
 
-If you use the internal authentication you should consider securing it by adding a second authentication factor (2FA/MFA) and/or by implementing custom rules (e.g.: disabling a login
+If you use the internal authentication you **should** consider securing it by adding a second authentication factor (2FA) and/or by implementing custom rules (e.g.: disabling a login
 after a certain amount of erroneous password entry or enforcing appropriate password validation rules). See [this document](/lesson/docs/authentication/internal-auth) for details.
 
 You **should** also use the appropriate password hashing algorithm by setting the `HASH_PASSWORD` system parameter (note that changing this algorithm will require that all your users
