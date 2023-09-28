@@ -34,7 +34,7 @@ And a second authentication factor **should** be enabled: standard TOTP via emai
 
 In particular the `designer` user's password **must** be hard to guess (this is also applicable to any user granted with advanced rights) and changed regularly.
 Enforcing a second authentification factor (2FA) **should** also be considered. Ideally using an authentication application (e.g. Google or Microsoft Authenticator)
-Alternatively the `designer` user can be deactivated, at least when not used (but this may complexify delivery processes).
+Alternatively the `designer` user can be deactivated (or only some of its rights), at least when not used (but this may complexify delivery processes).
 
 <h3 id="uiendpoint">UI endpoint</h3>
 
@@ -255,7 +255,7 @@ in particular:
 - Database access: to do so you can deactivate or delete the grants on the `DBAccess/DBDocAccess` external objects' function
 - Logs viewer page: to do so you can deactivate or delete the grants on the `LogAccess` external object's function
 - Logs forwarded to the browser's console, this can be inhibited by setting the `USE_WEBSOCKETS_LOGS` to '`no`for all users
-  (by default this system parameter is only enabled for the `designer`user)
+  (by default this system parameter is only enabled for the `designer` user)
 
 You can also simply delete these external objects, but don't do it if you want to keep the possibility to use these tools for punctual maintenance/investigation activities.
 
