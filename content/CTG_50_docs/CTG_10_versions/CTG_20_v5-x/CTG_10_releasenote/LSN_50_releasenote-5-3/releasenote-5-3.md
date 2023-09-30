@@ -510,10 +510,19 @@ Scratch pad
 - Added common accessibility from WCAG 2.1
 - Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
 
-<h3 id="version-5.3.16">5.3.16 (UNRELEASED)</h3>
+<h3 id="version-5.3.16">5.3.16 (2023-09-30)</h3>
 
 - Backported support for font resources in generic UI themes
-- Fixed populateReference of search dialog (lookup button)
+- Backported security fix on XML import
+- Fixed populate reference of search dialog (lookup button)
 - Backported menu accessibility thru `ALT+M` + arrow-keys + `ENTER`
 - Backported `ALT-W` wide screen = toggle the main menu
+- Added optional `MANIFEST_SETTINGS` system parameter to override some of the `manifest.json` attributs
+- Included client-side Javascript QRCode/barcode scanner lib
+- A session-level public grant is now only created if a session exists, otherwise the public singleton is used
+- The public user is now configured by default to use object pooling on the API endpoint
+- Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system paramters
 
+<h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
+
+- Nothing so far...

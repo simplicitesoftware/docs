@@ -700,3 +700,7 @@ See above
 <h3 id="version-5.1.63">5.1.63 (2023-09-26) - post-maintenance revision</h3>
 
 - Security improvements
+
+<h3 id="version-5.1.64">5.1.64 (2023-09-30) - post-maintenance revision</h3>
+
+- Security fixes

@@ -845,6 +845,7 @@ This means this mechanism requires a proper modules' version management.
 - Fixed missing support for Git remote username/password passed as environment variables or JVM properties
 - Backported `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
 
-<h3 id="version-5.2.49">5.2.49 (UNRELEASED) - maintenance revision</h3>
+<h3 id="version-5.2.49">5.2.49 (2023-09-30) - final maintenance revision</h3>
 
-- Nothing so far...
+- Backported security fix on XML import
+- 10 min cache on the `manifest.json` file
