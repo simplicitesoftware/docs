@@ -1,7 +1,7 @@
 Version 5.2.x release note
 ==========================
 
-> **Warning**: This minor version 5.2 is now in short term maintenance phase. Please consider upgrading to the current minor version.
+> **Warning**: This minor version 5.2 is **not** maintained anymore, make sure you upgrade to the current minor version.
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 
