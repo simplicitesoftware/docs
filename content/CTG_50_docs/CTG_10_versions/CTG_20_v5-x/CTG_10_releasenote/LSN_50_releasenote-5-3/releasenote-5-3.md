@@ -527,4 +527,4 @@ Scratch pad
 
 - Backported `Tool.diffYear` method
 - Backported security fixes
-- Fixed various focus issues on the UI
+- Fixed focus on form with several edit-lists and y-scroll position
