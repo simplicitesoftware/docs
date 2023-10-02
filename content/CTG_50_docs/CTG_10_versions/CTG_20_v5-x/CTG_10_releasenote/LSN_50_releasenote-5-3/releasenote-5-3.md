@@ -526,3 +526,4 @@ Scratch pad
 <h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
 
 - Fixed focus on form with several edit-lists and y-scroll position
+- Fixed referenced field default label in case of plural syntax in object label
