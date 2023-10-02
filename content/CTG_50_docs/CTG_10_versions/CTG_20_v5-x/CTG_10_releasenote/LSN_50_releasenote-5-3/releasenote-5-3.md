@@ -525,4 +525,4 @@ Scratch pad
 
 <h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Fixed focus on form with several edit-lists and y-scroll position
