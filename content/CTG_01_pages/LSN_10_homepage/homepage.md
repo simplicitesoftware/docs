@@ -21,6 +21,7 @@
 </style>
 <div id="homepage">
 	<div class="grid">
+    HELLO WORLD
 		<div class="grid-col">
 			<h2 id="what-youll-find-here">What you'll find here</h2>
 			<p>Simplicité is a low-code platform and this is its documentation. This site targets developers using the platform and aspires to be your single entrypoint to the Simplicité experience. If you just want to take a glimpse at the technology, please refer to the video demo of the platform <a href="https://simplicite.fr/demo-video-plateforme/">available on our commercial website</a>.</p>
