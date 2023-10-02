@@ -3,5 +3,6 @@
     "ANY": {
         "title": "License",
         "description": ""
-    }
+    },
+    "page": true
 }

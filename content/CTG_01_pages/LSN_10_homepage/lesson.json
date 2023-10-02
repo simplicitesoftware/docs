@@ -3,5 +3,6 @@
     "ANY": {
         "title": "Homepage",
         "description": ""
-    }
+    },
+    "page": true
 }
