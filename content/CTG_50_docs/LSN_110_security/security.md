@@ -3,6 +3,8 @@ Security guidelines
 
 This document give some guidelines on how to improve security of your applications based on the Simplicit&eacute;&reg; platform.
 
+> **Note**: Some recommandations are not necessarily applicable/relevant in every particular cases, you must adapt them to your context.
+
 <h2 id="upgrades">Platform upgrades</h2>
 
 The platform regularly receive upgrades that potentially include security related fixes.
@@ -32,8 +34,9 @@ And a second authentication factor **should** be enabled: standard TOTP via emai
 
 > **Note**: When possible, using an external authentication mechanism is always a better and more secure approach than using loally stored password even with a second authetication factor.
 
-In particular the `designer` user's password **must** be hard to guess (this is also applicable to any user granted with advanced rights).
-Alternatively the `designer` user can be deactivated (but this may complexify delivery processes).
+In particular the `designer` user's password **must** be hard to guess (this is also applicable to any user granted with advanced rights) and changed regularly.
+Enforcing a second authentification factor (2FA) **should** also be considered. Ideally using an authentication application (e.g. Google or Microsoft Authenticator)
+Alternatively the `designer` user can be deactivated (or only some of its rights), at least when not used (but this may complexify delivery processes).
 
 <h3 id="uiendpoint">UI endpoint</h3>
 
@@ -119,6 +122,10 @@ If you only use it from a limited set of origins you **should** filter the acces
 
 > **Note**: this 3rd party components list is anyway public on the document website.
 
+You **may** also consider disabling the inclusion of the `manifest.json` to the pages of the generic UI using the `USE_MANIFEST` system parameter.
+As a matter of fact, due to the absence of the session ID cookie by some web browser when downloading this manifest file, the session ID is passed
+in the URL which makes it more visible than as a cookie (e.g; in an access log).
+
 <h2 id="application">Securing your application's configuration and custom code</h2>
 
 <h3 id="publicrights">Public rights</h3>
@@ -185,7 +192,7 @@ Use built-in (see the Data Encryption part in [code examples](/lesson/docs/core/
 
 <h3 id="internalauth">Internal authentication</h3>
 
-If you use the internal authentication you should consider securing it by adding a second authentication factor (2FA/MFA) and/or by implementing custom rules (e.g.: disabling a login
+If you use the internal authentication you **should** consider securing it by adding a second authentication factor (2FA) and/or by implementing custom rules (e.g.: disabling a login
 after a certain amount of erroneous password entry or enforcing appropriate password validation rules). See [this document](/lesson/docs/authentication/internal-auth) for details.
 
 You **should** also use the appropriate password hashing algorithm by setting the `HASH_PASSWORD` system parameter (note that changing this algorithm will require that all your users
@@ -250,7 +257,7 @@ in particular:
 - Database access: to do so you can deactivate or delete the grants on the `DBAccess/DBDocAccess` external objects' function
 - Logs viewer page: to do so you can deactivate or delete the grants on the `LogAccess` external object's function
 - Logs forwarded to the browser's console, this can be inhibited by setting the `USE_WEBSOCKETS_LOGS` to '`no`for all users
-  (by default this system parameter is only enabled for the `designer`user)
+  (by default this system parameter is only enabled for the `designer` user)
 
 You can also simply delete these external objects, but don't do it if you want to keep the possibility to use these tools for punctual maintenance/investigation activities.
 

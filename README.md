@@ -1,7 +1,9 @@
 Training content
 ====================
 
-This is the repository for the content feeding https://docs2.simplicite.io
+This is the repository for the content feeding :
+- **main branch** -> https://docs2.simplicite.io
+- **rec branch** -> https://docs2rec.simplicite.io
 
 Documentation format guidelines [](#guidelines)
 ---------------------------

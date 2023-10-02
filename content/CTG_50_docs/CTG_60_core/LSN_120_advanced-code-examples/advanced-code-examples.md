@@ -166,16 +166,16 @@ GrantHooks.postLoadGrant = function(grant) {
 ```Java
 @Override
 public void postLoadGrant(Grant g) {
-    try {
-        String login = g.getLogin();
-        String employeeId = g.simpleQuery("select ... query depending on login ...");
-        g.setParameter("MYAPP_EMP_ID", Tool.isEmpty(employeeId)?"unknown" : employeeId);
-        String empPhone = Tool.readUrl("http://...external REST service...");
-        g.setParameter("MYAPP_EMP_PHONE", empPhone);
-    } catch (IOException e) {
-        AppLog.error(e, g);
-    }
-    super.postLoadGrant(g);
+	try {
+		String login = g.getLogin();
+		String employeeId = g.simpleQuery("select ... query depending on login ...");
+		g.setParameter("MYAPP_EMP_ID", Tool.isEmpty(employeeId)?"unknown" : employeeId);
+		String empPhone = Tool.readUrl("http://...external REST service...");
+		g.setParameter("MYAPP_EMP_PHONE", empPhone);
+	} catch (IOException e) {
+		AppLog.error(e, g);
+	}
+	super.postLoadGrant(g);
 }
 ```
 ### Booby traps:

@@ -216,12 +216,14 @@ see Microsoft LiveID documentation for the values of the possible scopes, if you
 
 If needed you can implement additional business logic in the `GrantHooks` Java class or Rhino script.
 
-The Rhino script **example** below checks and removes the domain part of the account name in `parseAuth`
+The following **example** checks and removes the domain part of the account name in the `parseAuth` hook
 and creates/updates the corresponding application user (with responsibilities on `MYAPP_GROUP1` and `MYAPP_GROUP2` groups
-on the fly in `pre/postLoadGrant`.
+on the fly in the `preLoadGrant` hook:
+
+**Rhino**
 
 ```javascript
-GrantHooks.parseAuth = function(g, auth) {
+PlatformHooks.parseAuth = function(g, auth) {
 	if (Globals.useOAuth2()) {
 		// Example of domain verification
 		var domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
@@ -247,13 +249,14 @@ GrantHooks.parseAuth = function(g, auth) {
 	return auth;
 };
 
-GrantHooks.preLoadGrant = function(g) {
+PlatformHooks.preLoadGrant = function(g) {
 	if (Globals.useOAuth2()) {
 		// Example of business logic to create users on the fly
 		if (!Grant.exists(g.getLogin(), false)) {
+			var usr;
 			try {
 				// Create user if not exists
-				var usr = Grant.getSystemAdmin().getTmpObject("User");
+				usr = Grant.getSystemAdmin().getIsolatedObject("User");
 				usr.setRowId(ObjectField.DEFAULT_ROW_ID);
 				usr.resetValues(true);
 				usr.setStatus(Grant.USER_ACTIVE);
@@ -276,21 +279,25 @@ GrantHooks.preLoadGrant = function(g) {
 				}
 			} catch (e) {
 				console.error(e.javaException ? e.javaException.getMessage() : e);
+			} finally {
+				usr.destroy();
 			}
 		}
 	}	
 };
 ```
+
 **Java**
+
 ```Java
 @Override
 public String parseAuth(Grant sys, SessionInfo info) {
-    if (AuthTool.useOAuth2()) {
+	if (AuthTool.useOAuth2()) {
 		// Example of domain verification
 		String domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
-        String auth = info.getLogin();
+		String auth = info.getLogin();
 		if (!Tool.isEmpty(domain)) {
-            AppLog.info("OAuth2 account = " + auth, sys);
+			AppLog.info("OAuth2 account = " + auth, sys);
 			if (Tool.isEmpty(auth) || !auth.matches("^.*@" + domain + "$")) {
 				AppLog.info("OAuth2 error: Invalid domain for " + auth, sys);
 				return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
@@ -305,44 +312,45 @@ public String parseAuth(Grant sys, SessionInfo info) {
 			return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
 		}
 		AppLog.info("OAuth2 active user ID for " + auth + " = " + uid, sys);
-		 */
+		*/
 	}
-    return super.parseAuth(sys, info);
+	return super.parseAuth(sys, info);
 }
+
 @Override
 public void preLoadGrant(Grant g) {
-    if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
-        // Example of business logic to create users on the fly
-			try {
-                // Create user if not exists
-                ObjectDB usr = Grant.getSystemAdmin().getTmpObject("User");
-                usr.setRowId(ObjectField.DEFAULT_ROW_ID);
-                usr.resetValues(true);
-                usr.setStatus(Grant.USER_ACTIVE);
-                usr.getField("usr_login").setValue(g.getLogin());
-                new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
-                    
-                // Get module in which user has been created (default module for users)
-                String module = usr.getFieldValue("row_module_id.mdl_name");
-                AppLog.info("OAuth2 user " + g.getLogin() + " created in module " + module,g);
-                // Force a random password to avoid the change password popup
-            
-                usr.invokeMethod("resetPassword", null, null);
-            
+	if (AuthTool.useOAuth2() &&  (!Grant.exists(g.getLogin(), false))){
+		// Example of business logic to create users on the fly
+		ObjectDB usr = null;
+		try {
+			// Create user if not exists
+			usr = Grant.getSystemAdmin().getIsolatedObject("User");
+			usr.setRowId(ObjectField.DEFAULT_ROW_ID);
+			usr.resetValues(true);
+			usr.setStatus(Grant.USER_ACTIVE);
+			usr.getField("usr_login").setValue(g.getLogin());
+			new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
 
-                // Add responsibilities on designated groups
-                String[] groups = { "MYAPP_GROUP1", "MYAPP_GROUP2"};
-                for(String group : groups){
-                    Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
-                    AppLog.info("Added user " + group + " responsibility for OAuth2 user " + g.getLogin(),g);
-                }
-            } catch (MethodException | CreateException | ValidateException e) {
-                AppLog.error(e, g);
-            }
-			
-		
-	}	
-    super.preLoadGrant(g);
+			// Get module in which user has been created (default module for users)
+			String module = usr.getFieldValue("row_module_id.mdl_name");
+			AppLog.info("OAuth2 user " + g.getLogin() + " created in module " + module,g);
+			// Force a random password to avoid the change password popup
+	
+			usr.invokeMethod("resetPassword", null, null);
+
+			// Add responsibilities on designated groups
+			String[] groups = { "MYAPP_GROUP1", "MYAPP_GROUP2"};
+			for(String group : groups){
+				Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
+				AppLog.info("Added user " + group + " responsibility for OAuth2 user " + g.getLogin(),g);
+			}
+		} catch (MethodException | CreateException | ValidateException e) {
+			AppLog.error(e, g);
+		} finally {
+			if (usr != null) usr.destroy();
+		}
+	}
+	super.preLoadGrant(g);
 }
 ```
 

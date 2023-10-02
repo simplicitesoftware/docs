@@ -123,9 +123,9 @@ ModelBusinessObject is a template to edit the internal objects in a diagram (as 
 ```javascript
 // Called when node is loaded
 onLoadNode: function(node) {
-    // Content Field
+	// Content Field
 	var c = node.contents[2];
-    var item;
+	var item;
 	for (var i=0; c.items && i<c.items.length; i++) {
 		item = c.items[i];
 		if (!item.data) continue;
@@ -276,13 +276,13 @@ onAddContent: function(node,template) {
 	if (node.object=="ObjectInternal" && template.name=="Field") {
 		openInFrame(getTop().frame_work, "ext/SystemAddField?row_id="+node.id+"&modeldiv="+this.div, "QUIT_SAVE");
 	}
-    // Add a function
-    else if (node.object=="ObjectInternal" && template.name=="BusinessFunction") {
+	// Add a function
+	else if (node.object=="ObjectInternal" && template.name=="BusinessFunction") {
 		var p = "&modelnode="+node.object+";"+node.id+";"+template.name+"&modeldiv="+this.div;
-        p += "&"+template.refField+"="+node.id; // reference
-        p += "&fct_name="+node.data.obo_name+"-"+"R"; // name
+		p += "&"+template.refField+"="+node.id; // reference
+		p += "&fct_name="+node.data.obo_name+"-"+"R"; // name
 		openInFrame(getTop().frame_work, "ALL_form.jsp?action=new&nav=new&row_id=0&object="+template.object + p, "QUIT_SAVE");
-    }
+	}
 },
 onCreateLink: function(from,to,template) {
 	// Add a link screen flow

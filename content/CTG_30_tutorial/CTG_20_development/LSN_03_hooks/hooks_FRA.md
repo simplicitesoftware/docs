@@ -32,11 +32,11 @@ Pour ce faire :
 ```
 @Override
 public List<String> postValidate() {
-    List<String> msgs = new ArrayList<String>();
-    if (getField("appOrdQuantity").getInt(0) <= 0){
-        msgs.add(Message.formatError("APP_ERR_QUANTITY", null, "appOrdQuantity"));
-    }
-    return msgs;
+	List<String> msgs = new ArrayList<String>();
+	if (getField("appOrdQuantity").getInt(0) <= 0){
+		msgs.add(Message.formatError("APP_ERR_QUANTITY", null, "appOrdQuantity"));
+	}
+	return msgs;
 }
 ```
 

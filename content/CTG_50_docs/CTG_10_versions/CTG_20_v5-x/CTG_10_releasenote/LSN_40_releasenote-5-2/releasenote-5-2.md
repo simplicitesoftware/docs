@@ -1,7 +1,7 @@
 Version 5.2.x release note
 ==========================
 
-> **Warning**: This minor version 5.2 is now in short term maintenance phase. Please consider upgrading to the current minor version.
+> **Warning**: This minor version 5.2 is **not** maintained anymore, make sure you upgrade to the current minor version.
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 
@@ -775,7 +775,7 @@ This means this mechanism requires a proper modules' version management.
 - Improved `JSONTool.jsonMetaObject` with field lists
 - Improved translation routing to object/domain translation
 
-<h3 id="version-5.2.39">5.2.39 (2023-05-02) **maintenance revision**</h3>
+<h3 id="version-5.2.39">5.2.39 (2023-05-02) - maintenance revision</h3>
 
 - Backported support for JVM properties (`remote.git.username/password`) or environment variables (`REMOTE_GIT_USERNAME/PASSWORD`)
   to define a default value for modules' Git settings
@@ -784,14 +784,14 @@ This means this mechanism requires a proper modules' version management.
 - Fixed SQL-injection vulnerabilities and increased robustness
 - Improved error responses on the API endpoint
 
-<h3 id="version-5.2.40">5.2.40 (2023-05-16) **maintenance revision**</h3>
+<h3 id="version-5.2.40">5.2.40 (2023-05-16) - maintenance revision</h3>
 
 - Fixed `hasChanged` on big decimal during `form.onload`
 - Backported improvements on N-N relationships pillboxes
 - Backported JWT nonce checking for OpenIDConnect auth providers
 - Backported distances tool methods in `Tool`
 
-<h3 id="version-5.2.41">5.2.41 (2023-06-01) **maintenance revision**</h3>
+<h3 id="version-5.2.41">5.2.41 (2023-06-01) - maintenance revision</h3>
 
 - Fixed view editor not allowing to remove the chart option
 - Fixed check of user existence before trying to load it (avoid useless errors in the logs)
@@ -799,12 +799,12 @@ This means this mechanism requires a proper modules' version management.
 - Fixed merge container
 - Fixed do not export `sys_value2` in module to keep overridden value on target platform
 
-<h3 id="version-5.2.42">5.2.42 (2023-06-22) **maintenance revision**</h3>
+<h3 id="version-5.2.42">5.2.42 (2023-06-22) - maintenance revision</h3>
 
 - Fixed cron workers to wait for job thread die
 - Backported improvements on nonce management for internal auth provider
 
-<h3 id="version-5.2.43">5.2.43 (2023-07-04) **maintenance revision**</h3>
+<h3 id="version-5.2.43">5.2.43 (2023-07-04) - maintenance revision</h3>
 
 - Fixed display text-forlatted messages returned by the hooks
 - Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
@@ -812,7 +812,7 @@ This means this mechanism requires a proper modules' version management.
 - Restored basic auth from I/O form
 - Added new LESS variables for scrollbar styles
 
-<h3 id="version-5.2.44">5.2.44 (2023-07-28) **maintenance revision**</h3>
+<h3 id="version-5.2.44">5.2.44 (2023-07-28) - maintenance revision</h3>
 
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
@@ -820,18 +820,32 @@ This means this mechanism requires a proper modules' version management.
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
 
-<h3 id="version-5.2.45">5.2.45 (2023-08-08) **maintenance revision**</h3>
+<h3 id="version-5.2.45">5.2.45 (2023-08-08) - maintenance revision</h3>
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
 
-<h3 id="version-5.2.46">5.2.46 (2023-08-25) **maintenance revision**</h3>
+<h3 id="version-5.2.46">5.2.46 (2023-08-25) - maintenance revision</h3>
 
 - Fixed list export with columns preference of selected predefined search
 - Added field isExportable on CSV export
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
 
-<h3 id="version-5.2.47">5.2.47 (UNRELEASED) **maintenance revision**</h3>
+<h3 id="version-5.2.47">5.2.47 (2023-09-13) - maintenance revision</h3>
 
 - Fixed columns size of `m_field_hist`
+- Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
+- Improved `CSVTool` robustness
+- Backported optional `_display` parameter on GET (search/select) mapped REST services to return displayable values instead of raw values
+
+<h3 id="version-5.2.48">5.2.48 (2023-09-22) - maintenance revision</h3>
+
+- Apply foreign key search spec from inherited objects
+- Fixed missing support for Git remote username/password passed as environment variables or JVM properties
+- Backported `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
+
+<h3 id="version-5.2.49">5.2.49 (2023-09-30) - final maintenance revision</h3>
+
+- Backported security fix on XML import
+- 10 min cache on the `manifest.json` file

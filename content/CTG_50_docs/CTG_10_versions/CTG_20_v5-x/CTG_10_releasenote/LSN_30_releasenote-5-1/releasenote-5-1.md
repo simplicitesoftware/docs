@@ -576,22 +576,22 @@ See above
 - Fixed timesheet and `Tool.diffDate` rounding issue
 - Improved `populateForeignKey` with ambiguous fields
 
-<h3 id="version-5.1.42">5.1.42 (2022-04-28) **maintenance revision**</h3>
+<h3 id="version-5.1.42">5.1.42 (2022-04-28) - maintenance revision</h3>
 
 - Backported: added `Parameters.setHeader` (only relevant for unit testing)
 - Backported: SQL script I/O service is now restricted to system admin users and operators
 - Improved user session information
 
-<h3 id="version-5.1.43">5.1.43 (2022-04-30) **maintenance revision**</h3>
+<h3 id="version-5.1.43">5.1.43 (2022-04-30) - maintenance revision</h3>
 
 - Fixed `ObjectField.isEmpty` for multi-documents rendering
 
-<h3 id="version-5.1.44">5.1.44 (2022-05-11) **maintenance revision**</h3>
+<h3 id="version-5.1.44">5.1.44 (2022-05-11) - maintenance revision</h3>
 
 - Allowed update thru transition buttons even if the status field is read-only
 - Fixed single menu with closed sub-domain
 
-<h3 id="version-5.1.45">5.1.45 (2022-05-26) **maintenance revision**</h3>
+<h3 id="version-5.1.45">5.1.45 (2022-05-26) - maintenance revision</h3>
 
 - Fixed 'update all' without selected field
 - Fixed completion of object with specific 'select'
@@ -601,53 +601,53 @@ See above
 - Fixed contextual help on delete confirmation popup
 - Fixed concurrent access issue on remote Simplicité objets
 
-<h3 id="version-5.1.46">5.1.46 (2022-06-05) **maintenance revision**</h3>
+<h3 id="version-5.1.46">5.1.46 (2022-06-05) - maintenance revision</h3>
 
 - Fixed/improved some Ace editor snippets
 - Backported **experimental** platform annotations `com.simplicite.util.annotations`
 - Fixed `Grant.getLang_ISO_639_1(lang)`
 - No reformatting of invalid date entries 
 
-<h3 id="version-5.1.47">5.1.47 (2022-07-09) **maintenance revision**</h3>
+<h3 id="version-5.1.47">5.1.47 (2022-07-09) - maintenance revision</h3>
 
 - Rebind save handlers after creation to apply rules from `initUpdate` (e.g. `setSaveAndClose`)
 - Backported: Document local dir as secondary fallback in all cases
 - Backported: Paginated search helper methods in `BusinessObjectTool`
 - Backported: `USE_IO` and `USE_GIT` system parameters checked vs database value instead of cache value
 
-<h3 id="version-5.1.48">5.1.48 (2022-07-23) **maintenance revision**</h3>
+<h3 id="version-5.1.48">5.1.48 (2022-07-23) - maintenance revision</h3>
 
 - Fixed `queryWithHead` with limit (the `limit` argument was not taken into account)
 - Backported optimizations: on session creation (avoid global sync on `UserToken` system object) and on business object historization object
 - Fixed broken social post history
 - Fixed initial model import issue
 
-<h3 id="version-5.1.49">5.1.49 (2022-09-07) **maintenance revision**</h3>
+<h3 id="version-5.1.49">5.1.49 (2022-09-07) - maintenance revision</h3>
 
 - Backported change on `DROP/CREATE` order for database indexes
 - Backported multi-modal backdrop with closer `z-index`
 
-<h3 id="version-5.1.50">5.1.50 (2022-09-24) **maintenance revision**</h3>
+<h3 id="version-5.1.50">5.1.50 (2022-09-24) - maintenance revision</h3>
 
 - Backported improvements on the register form
 - Fixed unsplit screen with maximized part
 - Security fix on the I/O page for UI
 
-<h3 id="version-5.1.51">5.1.51 (2022-10-07) **post-maintenance revision**</h3>
+<h3 id="version-5.1.51">5.1.51 (2022-10-07) - post-maintenance revision</h3>
 
 - Fixed `populateForeignKey` in the case of multi-level search of objects
 - Backported hard removal of potential `<script>` tags in social post messages and news tite and description
 - Backported `CronManager.lock` robustness to re-affect the `CRON_LOCK`
 - Fixed XSS vulnerability on URL fields on lists
 
-<h3 id="version-5.1.52">5.1.52 (2022-10-13) **post-maintenance revision**</h3>
+<h3 id="version-5.1.52">5.1.52 (2022-10-13) - post-maintenance revision</h3>
 
 - Fixed disposition Java code default snippet
 - Backported date/datetime interval syntax (`<min date>;<max date>`) for mapped APIs
 - Fixed standard agenda when forcing FullCalendar to v5
 - Fixed `initRefSelect` parent context on edit-list
 
-<h3 id="version-5.1.53">5.1.53 (2022-10-21) **post-maintenance revision**</h3>
+<h3 id="version-5.1.53">5.1.53 (2022-10-21) - post-maintenance revision</h3>
 
 - Backported up-to-date version check in the _About_ page
 - Backported improvements on `MustacheTool`
@@ -657,7 +657,7 @@ See above
 - Fixed `initRefSelect` parent context on edit-list
 - Fixed export with user preferences
 
-<h3 id="version-5.1.54">5.1.54 (2022-10-28) **post-maintenance revision**</h3>
+<h3 id="version-5.1.54">5.1.54 (2022-10-28) - post-maintenance revision</h3>
 
 - Fixed export with user preferences
 - Removed caching on the `USE_API_TESTER` system parameter + caching improvement on the `USE_API` system parameter
@@ -665,30 +665,42 @@ See above
 - Backported: Rebuild automatically and asynchronously after a module import all objects DB indexes (UK+FKs) + data full-text indexes rebuilding (`m_index` table)
 - Robustness fix for module imports using Git when adding/deleting arbitrary files in the `others` directory
 
-<h3 id="version-5.1.55">5.1.55 (2022-12-09) **post-maintenance revision**</h3>
+<h3 id="version-5.1.55">5.1.55 (2022-12-09) - post-maintenance revision</h3>
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.56">5.1.56 (2023-02-09) **post-maintenance revision**</h3>
+<h3 id="version-5.1.56">5.1.56 (2023-02-09) - post-maintenance revision</h3>
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.57">5.1.57 (2023-02-22) **post-maintenance revision**</h3>
+<h3 id="version-5.1.57">5.1.57 (2023-02-22) - post-maintenance revision</h3>
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.58">5.1.58 (2023-03-12) **post-maintenance revision**</h3>
+<h3 id="version-5.1.58">5.1.58 (2023-03-12) - post-maintenance revision</h3>
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.59">5.1.59 (2023-03-24) **post-maintenance revision**</h3>
+<h3 id="version-5.1.59">5.1.59 (2023-03-24) - post-maintenance revision</h3>
 
 - Performance improvements
 
-<h3 id="version-5.1.60">5.1.60 (2023-05-05) **post-maintenance revision**</h3>
+<h3 id="version-5.1.60">5.1.60 (2023-05-05) - post-maintenance revision</h3>
 
 - Security and robustness fixes
 
-<h3 id="version-5.1.61">5.1.61 (2023-07-28) **post-maintenance revision**</h3>
+<h3 id="version-5.1.61">5.1.61 (2023-07-28) - post-maintenance revision</h3>
 
 - Robustness fixes
+
+<h3 id="version-5.1.62">5.1.62 (2023-09-13) - post-maintenance revision</h3>
+
+- Security and robustness fixes
+
+<h3 id="version-5.1.63">5.1.63 (2023-09-26) - post-maintenance revision</h3>
+
+- Security improvements
+
+<h3 id="version-5.1.64">5.1.64 (2023-09-30) - post-maintenance revision</h3>
+
+- Security fixes
