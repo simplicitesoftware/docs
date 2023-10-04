@@ -116,3 +116,5 @@ Version 4.0 patchlevel 25 release note
 - Fix UI `change` handler on bigdecimal field
 - Fixed cron workers to wait for job thread die
 - Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
+
+- Fixed constraints on edit-list add row
