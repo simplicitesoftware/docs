@@ -517,17 +517,17 @@ Scratch pad
 - Fixed populate reference of search dialog (lookup button)
 - Backported menu accessibility thru `ALT+M` + arrow-keys + `ENTER`
 - Backported `ALT-W` wide screen = toggle the main menu
-- Added optional `MANIFEST_SETTINGS` system parameter to override some of the `manifest.json` attributs
+- Added optional `MANIFEST_SETTINGS` system parameter to override some of the `manifest.json` attributes
 - Included client-side Javascript QRCode/barcode scanner lib
 - A session-level public grant is now only created if a session exists, otherwise the public singleton is used
 - The public user is now configured by default to use object pooling on the API endpoint
-- Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system paramters
+- Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system parameters
 
 <h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
 
 - Backported `Tool.diffYear` method
 - Backported security fixes
-- Fixed focus on form with several edit-lists and y-scroll position
+- Fixed focus on form with several edit-lists and y-scroll positions
 - Fixed referenced field default label in case of plural syntax in object label
 - Backported possibility to pass auth providers' settings as environment variables
   (e.g. `OAUTH2_CLIENT_SECRET_MYPROVIDER` for the client secret of an OAuth2/OpenIDConnect provider named `myprovider`)
