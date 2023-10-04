@@ -117,4 +117,6 @@ Version 4.0 patchlevel 25 release note
 - Fixed cron workers to wait for job thread die
 - Added context CONTEXT_UPDATE or CONTEXT_SEARCH on `fieldCompletion` hook
 
+coming soon
+
 - Fixed constraints on edit-list add row
