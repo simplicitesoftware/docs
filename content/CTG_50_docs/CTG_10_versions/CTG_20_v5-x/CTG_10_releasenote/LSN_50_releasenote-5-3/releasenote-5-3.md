@@ -531,3 +531,5 @@ Scratch pad
 - Fixed referenced field default label in case of plural syntax in object label
 - Backported possibility to pass auth providers' settings as environment variables
   (e.g. `OAUTH2_CLIENT_SECRET_MYPROVIDER` for the client secret of an OAuth2/OpenIDConnect provider named `myprovider`)
+- Fixed constraints on edit-list add row
+- Missing ARIA roles on form options dropdown
