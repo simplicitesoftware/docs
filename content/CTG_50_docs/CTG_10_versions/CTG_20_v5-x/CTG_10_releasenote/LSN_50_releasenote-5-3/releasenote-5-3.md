@@ -533,3 +533,4 @@ Scratch pad
   (e.g. `OAUTH2_CLIENT_SECRET_MYPROVIDER` for the client secret of an OAuth2/OpenIDConnect provider named `myprovider`)
 - Fixed constraints on edit-list add row
 - Missing ARIA roles on form options dropdown
+- Fixed confirm action with updatable fields from object
