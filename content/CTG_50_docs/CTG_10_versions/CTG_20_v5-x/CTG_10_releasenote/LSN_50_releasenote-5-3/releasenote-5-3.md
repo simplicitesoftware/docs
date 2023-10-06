@@ -523,7 +523,7 @@ Scratch pad
 - The public user is now configured by default to use object pooling on the API endpoint
 - Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system parameters
 
-<h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
+<h3 id="version-5.3.17">5.3.17 (2023-10-06)</h3>
 
 - Backported `Tool.diffYear` method
 - Backported security fixes
@@ -534,3 +534,7 @@ Scratch pad
 - Fixed constraints on edit-list add row
 - Missing ARIA roles on form options dropdown
 - Fixed confirm action with updatable fields from object
+
+<h3 id="version-5.3.18">5.3.18 (UNRELEASED)</h3>
+
+- Nothing so far...
