@@ -537,4 +537,4 @@ Scratch pad
 
 <h3 id="version-5.3.18">5.3.18 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Fixed focus on field error when the container is in a hidden tab or a collapsed area
