@@ -543,3 +543,4 @@ Scratch pad
 - Improved service objects' action hook. Added service objects' print hook. In both cases, if the hook is not implemented
   it fallbacks to standard action/publication mechanisms.
 - Fixed `addNotepad` to prepend new note to old value
+- Fixed `Undo` per browser tabId
