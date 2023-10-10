@@ -540,3 +540,5 @@ Scratch pad
 - Fixed focus on field error when the container is in a hidden tab or a collapsed area
 - Fixed `ALTER TABLE ` syntax in the SQL system patches
 - Backported JSHint-based Javascript code checking in the UI editor
+- Improved service objects' action hook. Added service objects' print hook. In both cases, if the hook is not implemented
+  it fallbacks to standard action/publication mechanisms.
