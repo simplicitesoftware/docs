@@ -783,6 +783,7 @@ This means this mechanism requires a proper modules' version management.
 - Fixed UI `change` handler on bigdecimal field
 - Fixed SQL-injection vulnerabilities and increased robustness
 - Improved error responses on the API endpoint
+- Backported support for HTTP header `Accept: application/json` on the API login and logout endpoints
 
 <h3 id="version-5.2.40">5.2.40 (2023-05-16) - maintenance revision</h3>
 

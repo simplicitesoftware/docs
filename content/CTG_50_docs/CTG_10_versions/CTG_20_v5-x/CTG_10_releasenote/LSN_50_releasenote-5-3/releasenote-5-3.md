@@ -370,6 +370,7 @@ Scratch pad
 - Modeler of business objects can show/hide referenced fields
 - Optimized list export to POI/CSV/PDF/ZIP without a long Ajax request
 - Support tree rendering in panel with a reflexive child object
+- Support for HTTP header `Accept: application/json` on the API login and logout endpoints
 
 - Supports Number/Date formats
 	- per language: see the List `FORMAT/NUM` and `FORMAT/DATE`
