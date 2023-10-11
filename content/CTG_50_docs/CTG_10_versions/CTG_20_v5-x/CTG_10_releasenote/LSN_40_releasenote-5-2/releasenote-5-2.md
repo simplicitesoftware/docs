@@ -851,6 +851,6 @@ This means this mechanism requires a proper modules' version management.
 - Backported security fix on XML import
 - 10 min cache on the `manifest.json` file
 
-<h3 id="version-5.2.50">5.2.49 (2023-10-06) - post maintenance revision</h3>
+<h3 id="version-5.2.50">5.2.50 (2023-10-06) - post maintenance revision</h3>
 
 - Security fixes
