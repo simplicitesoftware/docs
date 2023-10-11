@@ -545,3 +545,4 @@ Scratch pad
   it fallbacks to standard action/publication mechanisms.
 - Fixed `addNotepad` to prepend new note to old value
 - Backported JWT claims added in the session info attributes as `token_claim_<claim name>`
+- Backported QRCode/barcode scanner rendering for text fields

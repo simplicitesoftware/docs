@@ -488,6 +488,10 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 ![](template_bulk_add.png)
 
+- Added new QRCode/barcode scanner rendering for short text and URL fields:
+
+![](qrcodescan.png)
+
 - Added Web Content Accessibility from WCAG 2.1
 	- More aria-label, tabindex, focus-visible...
 	- New access keys for mouse free users
