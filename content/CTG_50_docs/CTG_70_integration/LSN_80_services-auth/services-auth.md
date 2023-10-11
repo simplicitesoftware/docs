@@ -30,7 +30,8 @@ The default response is the access token as plain text.
 If the optional parameter `redirect_uri=<redirect URI>` is set, the access token `<token>` is added to this URI as the `access_token` GET parameter
 and the response is an HTTP redirect to this URI.
 
-As of version 3.1 MAINTENANCE 01 it is possible to get a JSON formatted response by setting the optional parameter `?_json=true` (or `_output=json`):
+As of version 3.1 MAINTENANCE 01 it is possible to get a JSON formatted response by setting the optional parameter `?_json=true` (or `_output=json`) or `?format=json`.
+As of version 5.2 the same is obtained by setting the `Accept` header to `application/json`:
 
 ```json
 {
@@ -54,6 +55,7 @@ Note that in this case you **must** use HTTPS.
 	"scope": null
 }
 ```
+
 
 In any cases the access token`<token>` is to be used for subsequent calls (see below).
 
