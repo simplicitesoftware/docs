@@ -31,7 +31,7 @@ If the optional parameter `redirect_uri=<redirect URI>` is set, the access token
 and the response is an HTTP redirect to this URI.
 
 As of version 3.1 MAINTENANCE 01 it is possible to get a JSON formatted response by setting the optional parameter `?_json=true` (or `_output=json`) or `?format=json`.
-As of version 5.2 the same is obtained by setting the `Accept` header to `application/json`:
+As of version 5.2.39 the same is obtained by setting the `Accept` header to `application/json`:
 
 ```json
 {
