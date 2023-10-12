@@ -402,6 +402,14 @@ protected long methodEnd(String method) {
 }
 ```
 
+- Assisted DBDOC migration to import/export BLOBs
+	- launched from the Documents list
+	- async process with UI progression
+
+![](dbdocmig.png)
+
+![](dbdocmig2.png)
+
 <h2 id="uichanges">UI changes</h2>
 
 - The modeler can display the Meta-object Links
