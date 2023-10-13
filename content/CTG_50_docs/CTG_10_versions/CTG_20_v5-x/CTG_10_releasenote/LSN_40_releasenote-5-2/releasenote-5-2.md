@@ -849,8 +849,12 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.49">5.2.49 (2023-09-30) - final maintenance revision</h3>
 
 - Backported security fix on XML import
-- 10 min cache on the `manifest.json` file
+- Backported 10 min cache on the `manifest.json` file
 
 <h3 id="version-5.2.50">5.2.50 (2023-10-06) - post maintenance revision</h3>
 
-- Security fixes
+- Backported security fixes
+- Fixed service objects' action hook fallback to standard action mechanism
+- Fixed `ALTER TABLE ` syntax in the SQL system patches
+- Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
+- Fixed document/image field reset after server-side error
