@@ -854,7 +854,10 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.50">5.2.50 (2023-10-06) - post maintenance revision</h3>
 
 - Backported security fixes
+
+<h3 id="version-5.2.51">5.2.51 (2023-10-14) - post maintenance revision</h3>
+
 - Fixed service objects' action hook fallback to standard action mechanism
-- Fixed `ALTER TABLE ` syntax in the SQL system patches
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
 - Fixed document/image field reset after server-side error

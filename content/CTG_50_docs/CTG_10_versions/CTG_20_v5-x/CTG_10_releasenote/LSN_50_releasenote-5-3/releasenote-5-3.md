@@ -536,10 +536,10 @@ Scratch pad
 - Missing ARIA roles on form options dropdown
 - Fixed confirm action with updatable fields from object
 
-<h3 id="version-5.3.18">5.3.18 (UNRELEASED)</h3>
+<h3 id="version-5.3.18">5.3.18 (2023-10-14)</h3>
 
 - Fixed focus on field error when the container is in a hidden tab or a collapsed area
-- Fixed `ALTER TABLE ` syntax in the SQL system patches
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Backported JSHint-based Javascript code checking in the UI editor
 - Fixed service objects' action hook fallback to standard action invocation and added service objects' print hook.
   In both cases, if the hook is not implemented it fallbacks to standard action/publication mechanisms.

@@ -704,3 +704,9 @@ See above
 <h3 id="version-5.1.64">5.1.64 (2023-09-30) - post-maintenance revision</h3>
 
 - Security fixes
+
+<h3 id="version-5.1.65">5.1.65 (2023-10-14) - post-maintenance revision</h3>
+
+- Security fixes
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
+- Fixed service objects' action hook fallback to standard action mechanism
