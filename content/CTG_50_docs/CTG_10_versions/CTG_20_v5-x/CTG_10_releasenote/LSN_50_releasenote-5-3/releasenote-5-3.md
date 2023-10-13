@@ -546,3 +546,6 @@ Scratch pad
 - Fixed `addNotepad` to prepend new note to old value
 - Backported JWT claims added in the session info attributes as `token_claim_<claim name>`
 - Backported QRCode/barcode scanner rendering for text fields
+- Backported extended syntax for field type server-side validation: can now be a fully qualified static method class name
+- Backported EAN13 and EAN8 field type with server-side validation
+- Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited

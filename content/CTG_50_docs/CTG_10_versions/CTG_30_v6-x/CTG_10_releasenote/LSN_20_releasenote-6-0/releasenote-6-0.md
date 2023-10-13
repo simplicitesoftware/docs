@@ -500,6 +500,9 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 ![](qrcodescan.png)
 
+- Extended syntax for field type server-side validation: can now be a fully qualified static method class name
+- Added EAN13 and EAN8 field type with server-side validation
+
 - Added Web Content Accessibility from WCAG 2.1
 	- More aria-label, tabindex, focus-visible...
 	- New access keys for mouse free users
