@@ -536,13 +536,13 @@ Scratch pad
 - Missing ARIA roles on form options dropdown
 - Fixed confirm action with updatable fields from object
 
-<h3 id="version-5.3.18">5.3.18 (UNRELEASED)</h3>
+<h3 id="version-5.3.18">5.3.18 (2023-10-14)</h3>
 
 - Fixed focus on field error when the container is in a hidden tab or a collapsed area
-- Fixed `ALTER TABLE ` syntax in the SQL system patches
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Backported JSHint-based Javascript code checking in the UI editor
-- Improved service objects' action hook. Added service objects' print hook. In both cases, if the hook is not implemented
-  it fallbacks to standard action/publication mechanisms.
+- Fixed service objects' action hook fallback to standard action invocation and added service objects' print hook.
+  In both cases, if the hook is not implemented it fallbacks to standard action/publication mechanisms.
 - Fixed `addNotepad` to prepend new note to old value
 - Backported JWT claims added in the session info attributes as `token_claim_<claim name>`
 - Backported QRCode/barcode scanner rendering for text fields
@@ -550,3 +550,4 @@ Scratch pad
 - Backported EAN13 and EAN8 field type with server-side validation
 - Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
 - Backported UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
+- Fixed document/image field reset after server-side error
