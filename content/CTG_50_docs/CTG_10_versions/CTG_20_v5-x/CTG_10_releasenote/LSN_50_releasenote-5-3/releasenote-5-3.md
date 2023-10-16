@@ -551,3 +551,11 @@ Scratch pad
 - Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
 - Backported UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
 - Fixed document/image field reset after server-side error
+
+<h3 id="version-5.3.19">5.3.19 (2023-10-16)</h3>
+
+- Fixed major regression on number fields with value > 1000.
+
+<h3 id="version-5.3.20">5.3.18 (2023-10-14)</h3>
+
+- Nothing so far...
