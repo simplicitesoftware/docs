@@ -1,40 +1,23 @@
-Linked lists
+Listes liées
 ====================
 
-Definition
----------------------------
+L'objet liste liée permet de changer dynamiquement les valeurs possibles d'un champ énuméré selon la valeur d'un autre champ énuméré.
 
-Linking lists allows to dynamically change the possible values in a list (the **sub list**) according to the selected value of another list (the **main list**).
+Plutôt que de définir plusieurs attributs de type énuméré et de conditionner leur visibilité par rapport à la valeur d'un autre attribut, on préfèrera paramétrer une liste liée.
 
-![Linked lists](linkedlists.png)
+Ce mécanisme est présent au niveau du socle Simplicité. Le fait de pouvoir présenter différents **Type de recherches** pour un attribut selon le **Type d'attribut** est rendu possible grâce à une liste liée.
 
-Configuration
----------------------------
+Le paramétrage se fait ainsi :
+- Sélection d'un attribut de type énuméré portant la liste de valeurs conditionnantes
+- Sélection du code de liste qui va conditionner
+- Sélection de l'attribut cible qui va porter les différentes listes de valeurs
+- Sélection de la liste de valeurs qui va être visible dans l'attribut cible
 
-1. create a main list (simple enum field), with the main options (for ex. `A, B`)
-2. create a sub list (simple enum fied), with all the possible options (for ex. `A1, A2, B1, B2`)
-3. in the "List of Values" menu, and copy the sublist to create as many list as there are main options (for ex. SUBLIST_A, SUBLIST_B), and remove the list codes that are not relevant for this sublist
-4. in the "Linked List" menu, create one entry per option, associating each main option to its sub list
 
-Available examples
----------------------------
+Exercice
+====================
 
-- Simplicité engine : **Field**
-    - Type => Rendering
-    - Type => Search enabled
-- Demo app : **Contact**
-    - Type => Subtype
-
-Exercise
----------------------------
-
-Create a linked list on `TrnOrder` :
-
-- Main List "Shipping type" 
-    1. Letter
-    2. Package
-- Sublist "Shipping subtype"
-    1. Green Letter
-    2. Letter with AC
-    3. Package 24h
-    4. Package 1 week
+- Créez un attribut de type énuméré `Type d'expédition` dans l'objet `TrnOrder` avec les valeurs `Lettre | Colis`
+- Créez un attribut de type énuméré `Sous-type d'expédition` dans l'objet `TrnOrder` avec les valeurs `Lettre verte | Lettre avec AC`
+- Créez une liste de valeurs `TRNORDEXPEDSOUSTYPECOLIS` avec les valeurs `Colis 24h | Colis 1 semaine`
+- Créez l'objet liste liée qui affiche la liste de valeurs `TRNORDEXPEDSOUSTYPECOLIS` dans le champ `Sous-type d'expédition` de l'objet `TrnOrder` si le type d'expédition est `Colis`
