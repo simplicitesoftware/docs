@@ -554,7 +554,7 @@ Scratch pad
 
 <h3 id="version-5.3.19">5.3.19 (2023-10-16)</h3>
 
-- Fixed major regression on number fields with value > 1000
+- Fixed major regression on number fields with value > 1000.
 
 <h3 id="version-5.3.20">5.3.18 (2023-10-14)</h3>
 
