@@ -33,4 +33,4 @@ Exercice
     - via les styles d'attributs pour le fond (afin d'utiliser les classes CSS)
     - via les items de liste pour les icônes
 
-*Pour éviter les fautes de frappe lors de la saisie de noms d'attributs ou de codes de liste, il est conseillé d'utiliser la fonction "copier" du modeler*
+*Pour éviter les fautes de frappe lors de la saisie de noms d'attributs ou de codes de liste, il est conseillé d'utiliser la fonction "copier" du modeleur*
