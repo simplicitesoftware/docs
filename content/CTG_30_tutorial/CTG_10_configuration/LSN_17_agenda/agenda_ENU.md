@@ -6,7 +6,7 @@ Simplicité uses the opensource plugin <a href="https://fullcalendar.io/" target
 For information about the version and libraries used, see the **FULLCALENDAR_LIBS** and **FULLCALENDAR_VERSION** system settings.
 V3,V4 and V5 versions of FullCalendar are integrated. 
 
-The calendar uses a particular instance of the object.
+The calendar uses a particular instance of the object.  
 The **initAgenda** hook is used to override the standard calendar behaviour.
 
 

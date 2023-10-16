@@ -7,7 +7,7 @@ Simplicité utilise les plugins gratuits <a href="https://fullcalendar.io/" targ
 Pour en savoir plus sur la version et librairies utilisées consultez les paramètres systèmes **FULLCALENDAR_LIBS** et **FULLCALENDAR_VERSION**.
 Les 3 versions V3,V4 et V5 de FullCalendar sont intégrées. 
 
-L'agenda utilise une instance particulière de l'objet.
+L'agenda utilise une instance particulière de l'objet.  
 Le hook **initAgenda** permet de surcharger le comportement standard de l'agenda.
 
 
