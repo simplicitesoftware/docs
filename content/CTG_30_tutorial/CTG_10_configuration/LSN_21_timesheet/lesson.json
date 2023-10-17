@@ -1,8 +1,9 @@
 {
     "tags": ["lvl2"],
+    "display":"LINEAR",
     "ANY": {
         "title": "Timesheet",
         "description": ""
     },
-    "published": false
+    "published": true
   }
