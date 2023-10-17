@@ -370,6 +370,7 @@ Scratch pad
 - Modeler of business objects can show/hide referenced fields
 - Optimized list export to POI/CSV/PDF/ZIP without a long Ajax request
 - Support tree rendering in panel with a reflexive child object
+- Support for HTTP header `Accept: application/json` on the API login and logout endpoints
 
 - Supports Number/Date formats
 	- per language: see the List `FORMAT/NUM` and `FORMAT/DATE`
@@ -517,12 +518,44 @@ Scratch pad
 - Fixed populate reference of search dialog (lookup button)
 - Backported menu accessibility thru `ALT+M` + arrow-keys + `ENTER`
 - Backported `ALT-W` wide screen = toggle the main menu
-- Added optional `MANIFEST_SETTINGS` system parameter to override some of the `manifest.json` attributs
+- Added optional `MANIFEST_SETTINGS` system parameter to override some of the `manifest.json` attributes
 - Included client-side Javascript QRCode/barcode scanner lib
 - A session-level public grant is now only created if a session exists, otherwise the public singleton is used
 - The public user is now configured by default to use object pooling on the API endpoint
-- Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system paramters
+- Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system parameters
 
-<h3 id="version-5.3.17">5.3.17 (UNRELEASED)</h3>
+<h3 id="version-5.3.17">5.3.17 (2023-10-06)</h3>
 
-- Fixed focus on form with several edit-lists and y-scroll position
+- Backported `Tool.diffYear` method
+- Backported security fixes
+- Fixed focus on form with several edit-lists and y-scroll positions
+- Fixed referenced field default label in case of plural syntax in object label
+- Backported possibility to pass auth providers' settings as environment variables
+  (e.g. `OAUTH2_CLIENT_SECRET_MYPROVIDER` for the client secret of an OAuth2/OpenIDConnect provider named `myprovider`)
+- Fixed constraints on edit-list add row
+- Missing ARIA roles on form options dropdown
+- Fixed confirm action with updatable fields from object
+
+<h3 id="version-5.3.18">5.3.18 (2023-10-14)</h3>
+
+- Fixed focus on field error when the container is in a hidden tab or a collapsed area
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
+- Backported JSHint-based Javascript code checking in the UI editor
+- Fixed service objects' action hook fallback to standard action invocation and added service objects' print hook.
+  In both cases, if the hook is not implemented it fallbacks to standard action/publication mechanisms.
+- Fixed `addNotepad` to prepend new note to old value
+- Backported JWT claims added in the session info attributes as `token_claim_<claim name>`
+- Backported QRCode/barcode scanner rendering for text fields
+- Backported extended syntax for field type server-side validation: can now be a fully qualified static method class name
+- Backported EAN13 and EAN8 field type with server-side validation
+- Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
+- Backported UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
+- Fixed document/image field reset after server-side error
+
+<h3 id="version-5.3.19">5.3.19 (2023-10-16)</h3>
+
+- Fixed major regression on number fields with value > 1000.
+
+<h3 id="version-5.3.20">5.3.18 (2023-10-14)</h3>
+
+- Nothing so far...
