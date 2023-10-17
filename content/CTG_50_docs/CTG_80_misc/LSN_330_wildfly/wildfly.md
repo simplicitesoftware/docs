@@ -1,1 +1,0 @@
-This document has been moved to [this document](/lesson/docs/operation/wildfly)
