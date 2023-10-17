@@ -1,7 +1,12 @@
 {
     "tags": ["lvl2"],
     "display":"LINEAR",
-    "ANY": {
+    "tags": ["lvl2"],
+    "FRA": {
+        "title": "Feuille de temps",
+        "description": ""
+    },
+    "ENU": {
         "title": "Timesheet",
         "description": ""
     },
