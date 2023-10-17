@@ -88,14 +88,14 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 | Legacy **3.0**                                     | J2EE 1.4            | 2.5    |
 
 1. Web profile by default but full profile is also possible
-2. This is the target when this version will be released, however at that stage some third party libs are not yet compliant with JakartaEE
+2. Compliance with JakartaEE 10 is the target when this version will be released.
+However, at that stage, some third party libs are not yet compliant.
+In the meantime the compliance of Simplicité 6.x is still JEE 8.
 
-The implementation we recommend are:
+The webapp implementation we recommend are:
 
-* **Webapp 6.0**: Apache Tomcat&reg; 10.0.x
+* **Webapp 6.0**: Apache Tomcat&reg; 10.1.x
 * **Webapp 4.0**: Apache Tomcat&reg; 9.0.x
-
-An application server with Websocket 1.1+ support is highly recommended for Simplicit&eacute;&reg; versions 3.0 and above.
 
 > **Note**: Whichever application server version you use, you **MUST** use its  **up-to-date maintenance release**. 
 > Only these up-to-date releases are tested and supported.
