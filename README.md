@@ -74,6 +74,11 @@ You can specify the language of your content (lessons, images and videos) by add
 
 Like categories, the *published* attribute is not mandatory and is by default set to true. Also, it is not mandatory to specify every language configuration.
 
+The display attribute has two possibilities that changes the way lessons are displayed on the front end:
+
+- **LINEAR**: displays the lesson in a clear and simple linear way.
+- **TUTO**: displays the lesson + a carousel for its images + a video player.
+
 
 
 
