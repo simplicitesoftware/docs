@@ -558,4 +558,4 @@ Scratch pad
 
 <h3 id="version-5.3.20">5.3.18 (2023-10-14)</h3>
 
-- Nothing so far...
+- Fix bookmark dialog accessibility
