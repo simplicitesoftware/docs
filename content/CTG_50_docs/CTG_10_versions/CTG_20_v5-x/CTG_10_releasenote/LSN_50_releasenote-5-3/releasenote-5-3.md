@@ -558,4 +558,5 @@ Scratch pad
 
 <h3 id="version-5.3.20">5.3.20 (UNRELEASED)</h3>
 
-- Fix bookmark dialog accessibility
+- Fixed bookmark dialog accessibility + `ALT-B` accesskey
+- Fixed list export to Excel on docker with mounted volumes
