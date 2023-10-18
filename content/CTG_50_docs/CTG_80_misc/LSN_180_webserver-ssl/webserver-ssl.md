@@ -75,7 +75,7 @@ server {
 }
 ```
 
-> **Note** With NGNIX it is not possible to configure client certificate authentication per location
+> **Note**: With NGNIX it is not possible to configure client certificate authentication per location
 
 ### Apache configuration example
 
@@ -123,7 +123,7 @@ Generate initial certficates:
 
 	sudo certbot certonly --webroot -w <document root, e.g. /var/www/html> -d <server name, e.g. www.example.com>
 
-> **Note** the CertBot tool needs to have **HTTP** access to the `/.well-known/` URI where the validation files are generated
+> **Note**: the CertBot tool needs to have **HTTP** access to the `/.well-known/` URI where the validation files are generated
 
 The certificates are generated in `/etc/letsencrypt/live/<server name>/` they need to be configured
 

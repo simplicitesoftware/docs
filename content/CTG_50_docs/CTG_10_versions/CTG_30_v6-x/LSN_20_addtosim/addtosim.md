@@ -59,7 +59,7 @@ do
 done
 ```
 
-> **Note** in the above steps you may not require all variants of version 6, adapt the commands/scripts accordingly
+> **Note**: in the above steps you may not require all variants of version 6, adapt the commands/scripts accordingly
 
 Make it executable:
 

@@ -39,7 +39,7 @@ The JSON settings include the common attributes:
   (e.g.: `?_provider=internal:simplicite` in the above example where internal authentication provider is not visible)
 - `sync` (optional): synchronize data from the authentication provider user info endpoint (if applicable for the considered authentication provider)
 
-> **Note** : You can also customize/add a custom logo for a given provider on the provider choice page by configuring
+> **Note**: : You can also customize/add a custom logo for a given provider on the provider choice page by configuring
 > an SVG image resource named `<type (in uppercase)>_SIGNIN_<name (in uppercase)>` (e.g. `LDAP_SIGNIN_MYOPENLDAP`).
 > As of version 5 it is also possible to configure a `image` setting.
 

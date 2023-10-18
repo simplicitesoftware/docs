@@ -289,4 +289,4 @@ A web page is available to build and test requests to these generic REST API:
 
 	http[s]://<host[:<port>]>/myapp/api/tester
 
-> **Note** This page can be inhibited in production by using the `USE_API_TESTER` system parameter to `no`.
+> **Note**: This page can be inhibited in production by using the `USE_API_TESTER` system parameter to `no`.

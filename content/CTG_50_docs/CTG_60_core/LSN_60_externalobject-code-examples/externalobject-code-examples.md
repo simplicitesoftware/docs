@@ -190,7 +190,7 @@ The responsive UI requires a Javascript statement (even empty like above) to be 
 
 ![](externalobject-code-examples-3.png)
 
-> **Note** If you return a plain string it will be rendered as a **legacy page** (displayed in an iframe for backward compatiblity).
+> **Note**: If you return a plain string it will be rendered as a **legacy page** (displayed in an iframe for backward compatiblity).
 
 See [this section](/lesson/docs/core/externalobject-code-examples#responsive) for other examples dedicated to the responsive UI.
 
@@ -712,7 +712,7 @@ which renders as:
 {"hello":"world"}
 ```
 
-> **Note** for a more coprehensive description on how to write custom webservices please refer to [this document](/lesson/docs/integration/custom-services)
+> **Note**: for a more coprehensive description on how to write custom webservices please refer to [this document](/lesson/docs/integration/custom-services)
 
 <h2 id="responsive">Responsive UI pattern</h2>
 
