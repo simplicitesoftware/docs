@@ -861,3 +861,8 @@ This means this mechanism requires a proper modules' version management.
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
 - Fixed document/image field reset after server-side error
+
+<h3 id="version-5.2.52">5.2.52 (2023-10-18) - post maintenance revision</h3>
+
+- Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
+

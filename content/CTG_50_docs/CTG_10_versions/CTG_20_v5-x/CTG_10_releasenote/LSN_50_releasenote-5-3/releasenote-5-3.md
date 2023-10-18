@@ -559,4 +559,4 @@ Scratch pad
 <h3 id="version-5.3.20">5.3.20 (UNRELEASED)</h3>
 
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
-- Fixed asynchronous export to Excel/PDF on docker with mounted volumes
+- Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
