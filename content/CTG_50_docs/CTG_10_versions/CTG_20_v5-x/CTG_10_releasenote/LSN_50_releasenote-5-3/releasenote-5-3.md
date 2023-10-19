@@ -561,3 +561,5 @@ Scratch pad
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
 - Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
 - Updated `org.json` and `log4j` thirdparty libs
+- Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
+
