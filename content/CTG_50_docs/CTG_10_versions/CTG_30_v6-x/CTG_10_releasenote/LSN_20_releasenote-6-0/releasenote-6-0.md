@@ -505,6 +505,8 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 - UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
 
+- Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
+
 - Added Web Content Accessibility from WCAG 2.1
 	- More aria-label, tabindex, focus-visible...
 	- New access keys for mouse free users
