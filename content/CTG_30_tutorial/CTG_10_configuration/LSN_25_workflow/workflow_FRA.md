@@ -1,6 +1,7 @@
-# Processus métier - workflow
+Processus métier - workflow
+====================
 
-Un workflow est un assistant (suite d'écrans) destiné à assister l'utilisateur lors d'un processus spécifique.
+Un workflow est un assistant (suite d'écrans) destiné à assister l'utilisateur lors d'un processus spécifique.  
 Le workflow peut être défini dans le menu Processus métier/Processus métier.
 Le workflow est paramétré par :
     Type : Suite d'écrants ou tâche humaine
@@ -13,8 +14,6 @@ Si ces deux activités n'existaient pas ou ont été supprimées, elles doivent 
 Les activités peuvent être configurées dans le modeleur en créant un diagramme spécifique avec le modèle ModelProcess.
 Les activités ont des données qui permettent de personnaliser le comportement du workflow.
 ## Droit d'accès
-The workflow should be granted to group in Process permission to be used.
-Each activitys has its own permission to set up in activity permission.
 Un workflow doit être associé au groupe dans le menu "Droit d'accès processus" pour être utilisé.
 Chaque activité a ses propres droits d'accès à configurer dans "Droit d'accès d'activité".
 
@@ -32,7 +31,7 @@ Ajouter le processus au domaine.
 Ajoutez 4 activités et reliez-les :
 * Activité pour sélectionner le client qui fait la commande
 * Activité de sélection du fournisseur
-* Activité pour sélectionner le produit en stock. Dois être filtré par fournisseur sélectionné avant.
+* Activité pour sélectionner le produit en stock. Doit être filtré par fournisseur sélectionné avant.
 * Activité pour créer la commande avec prédéfinit les options présélectionnées
 Abiliter les droits d'accès.
 
@@ -55,11 +54,10 @@ Mettre en place une alerte à l'utilisateur si le fournisseur choisi n'a pas de 
     @Override
 	public void postValidate(ActivityFile context) {
 		AppLog.info("DEBUG contex:"+context.toJSONObject(), getGrant());
-		var step = context.getActivity().getStep();
-		if(step.equals("TRNORDC-020")){
-			ObjectDB prd = this.getGrant().getTmpObject("TrnProduct");
-			synchronized(prd){
-				prd.getLock();
+		String step = context.getActivity().getStep();
+		if("TRNORDC-020".equals(step)){
+			ObjectDB prd = getGrant().getTmpObject("TrnProduct");
+			synchronized(prd.getLock()){
 				prd.setFieldFilter("trnProdSupId",context.getDataValue("Field", "row_id"));
 				prd.setFieldFilter("trnProdState", "STOCK");
 				List<String[]> rows = prd.search();
