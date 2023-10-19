@@ -8,5 +8,6 @@
         "title": "Model template",
         "description": ""
     },
-    "published": false
+    "published": true,
+    "display":true
 }
