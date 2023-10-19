@@ -8,6 +8,6 @@
         "title": "Notifications",
         "description": ""
     },
-    "published": false,
+    "published": true,
     "display" : "LINEAR"
 }
