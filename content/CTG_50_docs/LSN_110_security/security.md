@@ -289,7 +289,7 @@ The server infrastucture command line access **should** always use SSH (ideally 
 - The JVM, database server, JDBC driver and Java application server **must** be kept up-to-date.
 - The Simplicit&eacute;&reg; updates **must** be applied as soon as they are made available 
 
-> **Note** the warranty is void on a non up-to-date platform, keeping your Simplicit&eacute;&reg; platform up-to-date is not just **recommended** it is **mandatory**.
+> **Note**: the warranty is void on a non up-to-date platform, keeping your Simplicit&eacute;&reg; platform up-to-date is not just **recommended** it is **mandatory**.
 
 <h2 id="docker">Securing Docker-based deployments</h2>
 

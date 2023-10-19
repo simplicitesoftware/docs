@@ -208,7 +208,7 @@ sudo docker run\
 	registry.simplicite.io/platform[:tag]
 ```
 
-> **Note** If you plan to use a database server **running on the host machine** you need to get the appropriate IP address to pass as `DB_HOST` environment variable
+> **Note**: If you plan to use a database server **running on the host machine** you need to get the appropriate IP address to pass as `DB_HOST` environment variable
 > (using `127.0.0.1` will **not** work unless you use `--net=host` which only makes sense in particular cases).
 >
 > To get this adress run the following command:
@@ -328,7 +328,7 @@ You can have CORS enforced at Tomcat level:
 - Set CORS origins: `-e CORS_ORIGINS=<origin URLs, defaults to *>`
 - Enable/disable CORS "with credentials": `-e CORS_CREDENTIALS=<true|false, defaults to true>`
 
-> **Warning** if you set "with credentials" to `true` you **must** set explicit origins, any origin (`*`) is not permitted by CORS specifications in this case.
+> **Warning**: if you set "with credentials" to `true` you **must** set explicit origins, any origin (`*`) is not permitted by CORS specifications in this case.
 
 <h3 id="websockets">Disable websockets</h3>
 

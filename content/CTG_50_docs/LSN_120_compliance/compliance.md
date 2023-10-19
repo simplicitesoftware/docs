@@ -57,19 +57,19 @@ It is also possible to deploy Simplicit&eacute;&reg; platform on **PaaS** buildp
 
 The following table only indicates the **LTS (Long Term Support)** JVM versions.
 
-| ![](https://platform.simplicite.io/logos/logo.svg) | JVM 1.8 | JVM 11       | JVM 17   |
-|:--------------------------------------------------:|---------|--------------|----------|
-| **6.x** (dev)                                      | no      | yes (1)      | **yes**  |
-| **5.x**                                            | no      | **yes**      | **yes**  |
-| **4.0**                                            | no (2)  | **yes**      | **yes**  |
-| Legacy **3.2**                                     | **yes** | yes (1)      | yes (1)  |
-| Legacy **3.1**                                     | **yes** | yes (1)      | yes (1)  |
-| Legacy **3.0**                                     | **yes** | no           | no       |
+| ![](https://platform.simplicite.io/logos/logo.svg) | JVM 1.8 | JVM 11       | JVM 17   | JVM 21   |
+|:--------------------------------------------------:|---------|--------------|----------|----------|
+| **6.x** (dev)                                      | no      | yes (1)      | yes (1)  | **yes**  |
+| **5.x**                                            | no      | yes (1)      | **yes**  | yes (1)  |
+| **4.0**                                            | no (2)  | yes (1)      | **yes**  | yes (1)  |
+| Legacy **3.2**                                     | **yes** | yes (1)      | yes (1)  | yes (1)  |
+| Legacy **3.1**                                     | **yes** | yes (1)      | yes (1)  | yes (1)  |
+| Legacy **3.0**                                     | **yes** | no           | no       | no       |
 
 1. Not tested and not supported but should work.
 2. Due to optional dependencies that are compiled for the JVM 11, the platform version 4.0+ **requires** a JVM &gt;= 11.
-However if you don't use these optional dependencies you can **theoretically** still run the 4.0 platform on a **JDK** 1.8
-(_NB: for this legacy version 1.8 a JDK is required, not a JRE_) but it is **discouraged**.
+However these optional dependencies are not part of the "light" variant of the 4.0 platform, so it could still run on a **JDK** 1.8 but it is **discouraged**.
+(_NB: for this legacy version 1.8 a JDK is required, not a JRE_)
 
 In **bold** the recommended choice for considered Simplicit&eacute;&reg; version.
 
@@ -80,7 +80,7 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 
 | ![](https://platform.simplicite.io/logos/logo.svg) | JEE Web profile (1) | Webapp |
 |:--------------------------------------------------:|---------------------|--------|
-| **6.x** (dev)                                      | JakartaEE 10        | 6.0    |
+| **6.x** (dev)                                      | JakartaEE 10 (2)    | 6.0    |
 | **5.x**                                            | JEE 8               | 4.0    |
 | **4.0**                                            | JEE 8               | 4.0    |
 | Legacy **3.2**                                     | JEE 7               | 3.1    |
@@ -88,13 +88,14 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 | Legacy **3.0**                                     | J2EE 1.4            | 2.5    |
 
 1. Web profile by default but full profile is also possible
+2. Compliance with JakartaEE 10 is the target when this version will be released.
+However, at that stage, some third party libs are not yet compliant.
+In the meantime the compliance of Simplicité 6.x is still JEE 8.
 
-The implementation we recommend are:
+The webapp implementation we recommend are:
 
-* **Webapp 6.0**: Apache Tomcat&reg; 10.0.x
+* **Webapp 6.0**: Apache Tomcat&reg; 10.1.x
 * **Webapp 4.0**: Apache Tomcat&reg; 9.0.x
-
-An application server with Websocket 1.1+ support is highly recommended for Simplicit&eacute;&reg; versions 3.0 and above.
 
 > **Note**: Whichever application server version you use, you **MUST** use its  **up-to-date maintenance release**. 
 > Only these up-to-date releases are tested and supported.

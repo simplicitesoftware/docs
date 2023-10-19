@@ -138,6 +138,7 @@ Example:
 - `ALT-H` : displays the **Home** page
 - `ALT-M` : focus the main **Menu** last selection or first item
 - `ALT-W` : **Wide** screen by toggling the menu 
+- `ALT-B` : opens the **Bookmarks** dialog 
 - `ALT-F` : focus the **Finder**, global search in header
 - `ALT-L` : focus the first visible **List**
 - `ALT-N` : focus the **Next** visible area/list (first `.js-focusable` of area)
