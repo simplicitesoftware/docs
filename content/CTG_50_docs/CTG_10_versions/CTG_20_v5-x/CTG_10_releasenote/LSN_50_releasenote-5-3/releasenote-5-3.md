@@ -556,7 +556,7 @@ Scratch pad
 
 - Fixed major regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
 
-<h3 id="version-5.3.20">5.3.20 (UNRELEASED)</h3>
+<h3 id="version-5.3.20">5.3.20 (2023-10-20)</h3>
 
 - Added `numeric` and `search` input modes (not input type) when relevant
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
@@ -565,4 +565,8 @@ Scratch pad
 - Fixed dual add bookmark
 - Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
 - Backported removal of HTML formatting in simple title tootips
+- Disabled, by default, export on `DataSet` object to avoid misusage
 
+<h3 id="version-5.3.21">5.3.21 (UNRELEASED)</h3>
+
+- Nothing so far...
