@@ -554,12 +554,15 @@ Scratch pad
 
 <h3 id="version-5.3.19">5.3.19 (2023-10-16)</h3>
 
-- Fixed major regression on number fields with value > 1000 (input type=number has been removed)
+- Fixed major regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
 
 <h3 id="version-5.3.20">5.3.20 (UNRELEASED)</h3>
 
+- Added `numeric` and `search` input modes (not input type) when relevant
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
 - Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
 - Updated `org.json` and `log4j` thirdparty libs
+- Fixed dual add bookmark
 - Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
+- Backported removal of HTML formatting in simple title tootips
 

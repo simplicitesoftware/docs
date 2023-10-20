@@ -507,6 +507,9 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 - Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
 
+- Added a minimalistic duplicates detection action on business objects (e.g. useful after changing the functional key fields)
+![](duplicates-detection.png)
+
 - Added Web Content Accessibility from WCAG 2.1
 	- More aria-label, tabindex, focus-visible...
 	- New access keys for mouse free users
