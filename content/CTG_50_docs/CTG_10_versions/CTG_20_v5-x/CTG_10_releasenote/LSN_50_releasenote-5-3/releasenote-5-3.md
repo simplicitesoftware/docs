@@ -570,3 +570,4 @@ Scratch pad
 <h3 id="version-5.3.21">5.3.21 (UNRELEASED)</h3>
 
 - Removed partial clear cache during module deletion
+- Fixed `textarea.autosize` resize in hidden tab
