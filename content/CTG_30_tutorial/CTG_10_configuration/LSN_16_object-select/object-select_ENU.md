@@ -1,14 +1,16 @@
 Select object
 ====================
 
-A "select" object is a Simplicité object whose table content is based on the result of an SQL query. 
-It allows you to generate a "select" SQL query and display the result in a list. 
-This list, like the standard object lists, will be paginated.
-It will be necessary to associate as many fields to the select object as columns returned by the select query.
-The query is defined in the postLoad of the object using **setSearchSpec("select...")**.
+A "select" object is a Simplicity object whose table content is based on the result of an SQL query.   
+The name of its table will be **select**.  
+It is used to generate an SQL query of the select type and to obtain a result in a list. 
+Like standard object lists, this list will be paginated.
+You will need to associate as many attributes with the select object as there are columns returned by the select query.
+You can define your query directly in the business object settings in the **Filter** or   
+the query is defined in the object's postLoad using **setSearchSpec("select...")**.
 The select object is of course read-only for all user profiles.
 
-<div class="warning">Warning, a select object should not have timestamp fields. (Setting the object :Timestamp=None)</div>
+<div class="warning">Warning, a select object must not have any timestamp attributes. (Object settings: Timestamp=None) or the query must include the attributes</div>
 
 
 Exercise

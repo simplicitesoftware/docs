@@ -1390,8 +1390,27 @@ Vegetable.getTargetObject = function(rowId, row) {
 
 This mechanism can also be used to do redirection between objects that don't have a father-child relationship.
 
+<h3 id="metaobjlink">Meta-object link</h3>
 
-<!-- TO BE COMPLETED -->
+Useful to indicate with inherited object have to be displayed in a panel of a parent object within a meta-object link.
+
+```java
+/**
+ * Hook to substitute the targeted object of a meta-object link.
+ * The method is static to be called during loading without instantiating the object.
+ * @param g user rights
+ * @param object object name (default target)
+ * @param field meta-object field name
+ * @param parent parent object name
+ * @return The object itself or one of its inherited object linked thru the meta-object field to parent
+ */
+public static String getTargetMetaObject(Grant g, String object, String field, String parent) {
+	// Show only carrots when parent is a carrot farmer
+	if ("Vegetable".equals(object) && "CarrotFarmer".equals(parent) && "myMetaObjectField".equals(field))
+		return "Carrot";
+	return object;
+}
+```
 
 <h2 id="inheritance">Inheritance</h2>
 

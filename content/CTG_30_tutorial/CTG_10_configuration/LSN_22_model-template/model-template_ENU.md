@@ -1,7 +1,7 @@
 Template Model  
 ====================
 
-Template models can be configured from the Menu **Modeler / Model template**. 
+Template models can be configured from the Menu **Modeler/Model template**. 
 They allow you to create specific templates for a business model use, for example a template allowing you to create orders via the modeler.  
 
 The settings consist of designating a Name and a Type of template. 

@@ -24,7 +24,7 @@ Make sure to use the `org.apache.tomcat.jdbc.pool` connection pool implementatio
 
 This is **required** because default Apache DBCP2 connection pool implementation is not deployed by default on AWS Elastic Beanstalk&reg; Tomcat environments.
 
-> **Note** you can't use an ephemeral instance using an embedded HSQLDB database because it is not compliant with `org.apache.tomcat.jdbc.pool` connection pool implementation.
+> **Note**: you can't use an ephemeral instance using an embedded HSQLDB database because it is not compliant with `org.apache.tomcat.jdbc.pool` connection pool implementation.
 
 <h2 id="provision">Provision a Elastic Beanstalk&reg; environment</h2>
 

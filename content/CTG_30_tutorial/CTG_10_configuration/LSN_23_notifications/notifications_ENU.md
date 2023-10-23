@@ -1,7 +1,7 @@
 Notifications
 ====================
 
-Notifications are configured in **Social > Notifications > Configuration**
+Notifications are configured in **Social/Notifications/Configuration** V5 version **Interaction utilisateur/Notifications/Configuration** V6 version.  
 They allow to alert a users when an event occurs.
 
 Notifications are linked to a business object, they are triggered by an action (create, update, delete) and depending on an optional condition.

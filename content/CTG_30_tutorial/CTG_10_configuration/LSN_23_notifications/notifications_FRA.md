@@ -1,21 +1,21 @@
 Notifications
 ====================
 
-Les notifications sont paramétrables dans **Social > Notification > Configuration** 
+Les notifications sont paramétrables dans **Social/Notifications/Configuration** en V5 **Interaction utilisateur/Notifications/Configuration** en V6.  
 Elles servent à paramétrer des alertes pour les utilisateurs de la plateforme lorsqu'un évènement se produit.
 
 Les notifiations sont associées à un objet métier (objet qui va porter l'évènement), elles sont déclenchées selon une action (création, modification ou suppression) et une condition d'éxécution (facultative). 
 
-Une notification peut être diffusée sur plusieurs canaux et être adressée à plusieurs destinataires. Son contenu est défini par langue et peut être surchargé pour un canal et/ou destinatire particulier. 
+Une notification peut être diffusée sur plusieurs canaux et être adressée à plusieurs destinataires. Son contenu est défini par langue et peut être surchargé pour un canal et/ou destinataire particulier. 
 
 Les destinataires de la notification peuvent être concernés par tous ses canaux ou être paramétrès individuellement pour une gestion plus fine par destinataire. 
 
-Les utilisateurs de plateforme ont la possibilité de s'abonner ou se désabonner des notifications dont ils sont destinataires.
+Les utilisateurs métiers ont la possibilité de s'abonner ou se désabonner des notifications dont ils sont destinataires.
 
 Les **canaux de diffusion** sont les suivants :
-* Interne : Le compteur d'une icône de cloche visible dnas le header de la plateforme est mis à jour à chaque nouvelle notification. Les notifications sont stockées dans une table systeme
-* Mail : Un email est envoyé aux destinataires de la notification
-* Specific : Invoque une méthode de l'objet métier concerné par la notification
+* Interne : Le compteur d'une icône de cloche visible dnas le header de la plateforme est mis à jour à chaque nouvelle notification. Les notifications sont stockées dans une table système des notifications  
+* Mail : Un email est envoyé aux destinataires de la notification  
+* Spécifique : Invoque une méthode de l'objet métier concerné par la notification
 * Web Push *(uniquement disponible dans Simplicité v6 et ultérieures)* : Envoie une notification push au navigateur. Ce canal nécessite un certain nombre de paramètres systèmes :
     - **WEBPUSH** : `yes`
     - **WEBPUSH_VAPID_KEY** : <clé publique VAPID générée>

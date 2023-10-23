@@ -5,8 +5,9 @@
         "description": ""
     },
     "ENU": {
-        "title": "Object select",
+        "title": "Select object",
         "description": ""
     },
-    "published": false
+    "display":"LINEAR",
+    "published": true
   }

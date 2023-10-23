@@ -402,6 +402,14 @@ protected long methodEnd(String method) {
 }
 ```
 
+- Assisted DBDOC migration to import/export BLOBs
+	- launched from the Documents list
+	- async process with UI progression
+
+![](dbdocmig.png)
+
+![](dbdocmig2.png)
+
 <h2 id="uichanges">UI changes</h2>
 
 - The modeler can display the Meta-object Links
@@ -487,6 +495,20 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 - Object Fields can now be added to an Object's template in bulk
 
 ![](template_bulk_add.png)
+
+- Added new QRCode/barcode scanner rendering for short text and URL fields:
+
+![](qrcodescan.png)
+
+- Extended syntax for field type server-side validation: can now be a fully qualified static method class name
+- Added EAN13 and EAN8 field type with server-side validation
+
+- UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
+
+- Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
+
+- Added a minimalistic duplicates detection action on business objects (e.g. useful after changing the functional key fields)
+![](duplicates-detection.png)
 
 - Added Web Content Accessibility from WCAG 2.1
 	- More aria-label, tabindex, focus-visible...

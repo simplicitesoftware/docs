@@ -783,6 +783,7 @@ This means this mechanism requires a proper modules' version management.
 - Fixed UI `change` handler on bigdecimal field
 - Fixed SQL-injection vulnerabilities and increased robustness
 - Improved error responses on the API endpoint
+- Backported support for HTTP header `Accept: application/json` on the API login and logout endpoints
 
 <h3 id="version-5.2.40">5.2.40 (2023-05-16) - maintenance revision</h3>
 
@@ -848,8 +849,20 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.49">5.2.49 (2023-09-30) - final maintenance revision</h3>
 
 - Backported security fix on XML import
-- 10 min cache on the `manifest.json` file
+- Backported 10 min cache on the `manifest.json` file
 
-<h3 id="version-5.2.50">5.2.49 (2023-10-06) - post maintenance revision</h3>
+<h3 id="version-5.2.50">5.2.50 (2023-10-06) - post maintenance revision</h3>
 
-- Security fixes
+- Backported security fixes
+
+<h3 id="version-5.2.51">5.2.51 (2023-10-14) - post maintenance revision</h3>
+
+- Fixed service objects' action hook fallback to standard action mechanism
+- Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
+- Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
+- Fixed document/image field reset after server-side error
+
+<h3 id="version-5.2.52">5.2.52 (2023-10-18) - post maintenance revision</h3>
+
+- Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
+

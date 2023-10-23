@@ -1,5 +1,5 @@
 {
-    "display": "LINEAR",
+    "display": "TUTO",
     "tags": ["lvl2"],
     "FRA": {
         "title": "Listes liées",
@@ -8,6 +8,5 @@
     "ENU": {
         "title": "Linked lists",
         "description": ""
-    },
-    "published": false
+    }    
   }

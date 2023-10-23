@@ -9,7 +9,7 @@ It can easily be transposed to other technical platforms.
 
 <h2 id="restarting">Services restarting</h2>
 
-> **Note** this chapter is not applicable when using Docker our images.
+> **Note**: this chapter is not applicable when using Docker our images.
 
 When required the involved services may need to be stopped in the following order:
 
@@ -251,7 +251,7 @@ If both page/service does not return response or returns a HTTP status different
 
 <h2 id="systemupdates">System updates</h2>
 
-> **Note** this chapter is not applicable when using our Docker images. When using such images the system is always up-to-date in the latest images.
+> **Note**: this chapter is not applicable when using our Docker images. When using such images the system is always up-to-date in the latest images.
 
 System updates **must** be applied regularly, especially in case of critical security updates.
 
@@ -280,13 +280,13 @@ To clean up old kernels you can do:
 
 <h2 id="tomcatupdates">Tomcat updates</h2>
 
-> **Note** this chapter is not applicable when using our Docker images. When using such images Tomcat is always up-to-date in the latest images.
+> **Note**: this chapter is not applicable when using our Docker images. When using such images Tomcat is always up-to-date in the latest images.
 
 The Tomcat server **must** be updated regularly, depending on the way it has been installed the processus may vary.
 
 <h2 id="platformupdates">Platform updates</h2>
 
-> **Note** this chapter is not applicable when using our Docker images. When using such images the Simplicit&eacute;&reg; platform is always up-to-date in the latest images.
+> **Note**: this chapter is not applicable when using our Docker images. When using such images the Simplicit&eacute;&reg; platform is always up-to-date in the latest images.
 
 The Simplicité&reg; platform **must** be updated regularly, at least on its maintenance branch (see [versions](/lesson/docs/versions)),
 depending on the way it has been installed the processus may vary.
