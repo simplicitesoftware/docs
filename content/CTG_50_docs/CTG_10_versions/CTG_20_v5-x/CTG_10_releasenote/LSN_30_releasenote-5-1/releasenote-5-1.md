@@ -710,3 +710,7 @@ See above
 - Security fixes
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Fixed service objects' action hook fallback to standard action mechanism
+
+<h3 id="version-5.1.66">5.1.66 (UNRELEASED) - post-maintenance revision</h3>
+
+- Backported security fix on document servlet
