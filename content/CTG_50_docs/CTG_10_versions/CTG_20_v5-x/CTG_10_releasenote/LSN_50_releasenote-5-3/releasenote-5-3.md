@@ -572,3 +572,5 @@ Scratch pad
 - Removed partial clear cache during module deletion
 - Fixed `textarea.autosize` resize in hidden tab
 - Backported security fix on document servlet
+- Inhibited timesheet Gantt options (not backported from V6)
+
