@@ -573,3 +573,4 @@ Scratch pad
 - Fixed `textarea.autosize` resize in hidden tab
 - Backported security fix on document servlet
 - Backported fix on detection of configuration items deletion when pushing an "exploded" format module's Git repository
+- Inhibited timesheet Gantt options (not backported from V6)
