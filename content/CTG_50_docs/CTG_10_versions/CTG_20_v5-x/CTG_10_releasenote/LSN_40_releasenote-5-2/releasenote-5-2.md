@@ -866,3 +866,6 @@ This means this mechanism requires a proper modules' version management.
 
 - Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
 
+<h3 id="version-5.2.53">5.2.53 (UNRELEASED) - post maintenance revision</h3>
+
+- Backported security fix on document servlet
