@@ -20,5 +20,5 @@ The list of hooks is described [here](/lesson/docs/core/modeler-code-hooks).
 Exercise
 ====================
 
-Make a template to allow orders to be entered via modeleler
+Make a template to allow orders to be entered via modeler
 (An order is a link between a product and a customer)

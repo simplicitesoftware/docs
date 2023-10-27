@@ -20,7 +20,7 @@ La liste des hooks est décrite [ici](/lesson/docs/core/modeler-code-hooks).
 Exercice
 ====================
 
-Faire un modèle template afin de permettre la saisie des commandes via modeleler
+Faire un modèle template afin de permettre la saisie des commandes via modeler
 (Une commande est un lien entre un produit et un client)
 
 
