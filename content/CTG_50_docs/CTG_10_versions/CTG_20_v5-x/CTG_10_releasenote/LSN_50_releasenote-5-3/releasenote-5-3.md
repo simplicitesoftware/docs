@@ -575,3 +575,4 @@ Scratch pad
 - Backported fix on detection of configuration items deletion when pushing an "exploded" format module's Git repository
 - Inhibited timesheet Gantt options (not backported from V6)
 - Fixed full XML export with pagination and filters
+- Tabs keeps the scrolltop before unloading the current tab
