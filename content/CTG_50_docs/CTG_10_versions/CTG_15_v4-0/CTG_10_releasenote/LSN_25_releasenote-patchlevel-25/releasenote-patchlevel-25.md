@@ -120,3 +120,4 @@ Version 4.0 patchlevel 25 release note
 coming soon
 
 - Fixed constraints on edit-list add row
+- Fixed full XML export with pagination and filters

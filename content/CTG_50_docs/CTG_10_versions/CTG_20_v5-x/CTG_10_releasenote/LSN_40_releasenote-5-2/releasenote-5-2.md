@@ -869,3 +869,4 @@ This means this mechanism requires a proper modules' version management.
 <h3 id="version-5.2.53">5.2.53 (UNRELEASED) - post maintenance revision</h3>
 
 - Backported security fix on document servlet
+- Fixed full XML export with pagination and filters

@@ -714,3 +714,4 @@ See above
 <h3 id="version-5.1.66">5.1.66 (UNRELEASED) - post-maintenance revision</h3>
 
 - Backported security fix on document servlet
+- Fixed full XML export with pagination and filters
