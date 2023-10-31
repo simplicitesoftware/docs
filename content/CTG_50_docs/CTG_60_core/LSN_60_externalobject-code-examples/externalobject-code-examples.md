@@ -60,7 +60,7 @@ Note that the `display` method is created in the `MyExtObj` namespace that corre
 
 Once granted and made available from a main menu entry or a shortcut for instance, the page will render like this:
 
-![](externalobject-code-examples-1.png)
+![](externalobject-code-examples-3.png)
 
 You can see that, by default, the page uses the standard UI page framework (title, navigation bar, ...).
 To do so, the page includes all core JavaScript and CSS:
@@ -95,7 +95,7 @@ public Object display(Parameters params) {
 
 Then the plain page will render like this:
 
-![](externalobject-code-examples-2.png)
+![](externalobject-code-examples-4.png)
 
 No script or HTML header is included, only what is explicitly added in the `display` method is generated,
 so in that case the generated HTML is:

@@ -574,6 +574,9 @@ Scratch pad
 - Backported security fix on document servlet
 - Backported fix on detection of configuration items deletion when pushing an "exploded" format module's Git repository
 - Inhibited timesheet Gantt options (not backported from V6)
+- Fixed full XML export with pagination and filters
+- Tabs keeps the scrolltop before unloading the current tab
+- Fixed ghostly actions `addlist` | `listedit` | `listupsert`
 
 <h3 id="version-5.3.22">5.3.22 (UNRELEASED)</h3>
 
