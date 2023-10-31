@@ -567,10 +567,15 @@ Scratch pad
 - Backported removal of HTML formatting in simple title tootips
 - Disabled, by default, export on `DataSet` object to avoid misusage
 
-<h3 id="version-5.3.21">5.3.21 (UNRELEASED)</h3>
+<h3 id="version-5.3.21">5.3.21 (2023-10-31)</h3>
 
 - Removed partial clear cache during module deletion
 - Fixed `textarea.autosize` resize in hidden tab
 - Backported security fix on document servlet
 - Backported fix on detection of configuration items deletion when pushing an "exploded" format module's Git repository
 - Inhibited timesheet Gantt options (not backported from V6)
+
+<h3 id="version-5.3.22">5.3.22 (UNRELEASED)</h3>
+
+- Nothing so far...
+
