@@ -576,4 +576,4 @@ Scratch pad
 - Inhibited timesheet Gantt options (not backported from V6)
 - Fixed full XML export with pagination and filters
 - Tabs keeps the scrolltop before unloading the current tab
-- Fixed ghostly actions `addlit` | `listedit` | `listupsert`
+- Fixed ghostly actions `addlist` | `listedit` | `listupsert`
