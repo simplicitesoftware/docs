@@ -857,11 +857,14 @@ This means this mechanism requires a proper modules' version management.
 
 <h3 id="version-5.2.51">5.2.51 (2023-10-14) - post maintenance revision</h3>
 
-- Fixed service objects' action hook fallback to standard action mechanism
+- Backported fix on service objects' action hook fallback to standard action mechanism
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
-- Fixed inhibition of left/right navigation swipe on the UI forms when the form is being edited
-- Fixed document/image field reset after server-side error
+- Backported fix on inhibition of left/right navigation swipe on the UI forms when the form is being edited
+- Backported fix on document/image field reset after server-side error
 
+<h3 id="version-5.2.52">5.1.52 (2023-10-31) - post-maintenance revision</h3>
+
+- Backported security fix on document servlet
 <h3 id="version-5.2.52">5.2.52 (2023-10-18) - post maintenance revision</h3>
 
 - Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)

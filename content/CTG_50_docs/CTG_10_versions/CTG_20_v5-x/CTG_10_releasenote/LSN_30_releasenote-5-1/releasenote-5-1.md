@@ -635,17 +635,17 @@ See above
 
 <h3 id="version-5.1.51">5.1.51 (2022-10-07) - post-maintenance revision</h3>
 
-- Fixed `populateForeignKey` in the case of multi-level search of objects
+- Backported fix on `populateForeignKey` in the case of multi-level search of objects
 - Backported hard removal of potential `<script>` tags in social post messages and news tite and description
 - Backported `CronManager.lock` robustness to re-affect the `CRON_LOCK`
-- Fixed XSS vulnerability on URL fields on lists
+- Backported XSS vulnerability fix on URL fields on lists
 
 <h3 id="version-5.1.52">5.1.52 (2022-10-13) - post-maintenance revision</h3>
 
-- Fixed disposition Java code default snippet
+- Backported fix on disposition Java code default snippet
 - Backported date/datetime interval syntax (`<min date>;<max date>`) for mapped APIs
-- Fixed standard agenda when forcing FullCalendar to v5
-- Fixed `initRefSelect` parent context on edit-list
+- Backported fix on standard agenda when forcing FullCalendar to v5
+- Backported fix on `initRefSelect` parent context on edit-list
 
 <h3 id="version-5.1.53">5.1.53 (2022-10-21) - post-maintenance revision</h3>
 
@@ -653,65 +653,69 @@ See above
 - Backported improvements on `MustacheTool`
 - Backported improvements on the devinfo API (used by external IDEs)
 - Backported smarter `setFilderDateMin/Max` for datetimes (now adds the hour part if missing)
-- Fixed unique context message on UI
-- Fixed `initRefSelect` parent context on edit-list
-- Fixed export with user preferences
+- Backported fix on unique context message on UI
+- Backported fix on `initRefSelect` parent context on edit-list
+- Backported fix on export with user preferences
 
 <h3 id="version-5.1.54">5.1.54 (2022-10-28) - post-maintenance revision</h3>
 
-- Fixed export with user preferences
+- Backported fox on export with user preferences
 - Removed caching on the `USE_API_TESTER` system parameter + caching improvement on the `USE_API` system parameter
-- Fixed save inlined 0,1 link to be done on the main instance (not the panel for stateful reason)
-- Backported: Rebuild automatically and asynchronously after a module import all objects DB indexes (UK+FKs) + data full-text indexes rebuilding (`m_index` table)
-- Robustness fix for module imports using Git when adding/deleting arbitrary files in the `others` directory
+- Backported fix on save inlined 0,1 link to be done on the main instance (not the panel for stateful reason)
+- Backported feature to rebuild automatically and asynchronously after a module import all objects DB indexes (UK+FKs) + data full-text indexes rebuilding (`m_index` table)
+- Backported robustness fix for module imports using Git when adding/deleting arbitrary files in the `others` directory
 
 <h3 id="version-5.1.55">5.1.55 (2022-12-09) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Backported security and robustness fixes
 
 <h3 id="version-5.1.56">5.1.56 (2023-02-09) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Backported security and robustness fixes
 
 <h3 id="version-5.1.57">5.1.57 (2023-02-22) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Bsckported security and robustness fixes
 
 <h3 id="version-5.1.58">5.1.58 (2023-03-12) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Backported ecurity and robustness fixes
 
 <h3 id="version-5.1.59">5.1.59 (2023-03-24) - post-maintenance revision</h3>
 
-- Performance improvements
+- Backported performance improvements
 
 <h3 id="version-5.1.60">5.1.60 (2023-05-05) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Backported security and robustness fixes
 
 <h3 id="version-5.1.61">5.1.61 (2023-07-28) - post-maintenance revision</h3>
 
-- Robustness fixes
+- Backported robustness fixes
 
 <h3 id="version-5.1.62">5.1.62 (2023-09-13) - post-maintenance revision</h3>
 
-- Security and robustness fixes
+- Backported security and robustness fixes
 
 <h3 id="version-5.1.63">5.1.63 (2023-09-26) - post-maintenance revision</h3>
 
-- Security improvements
+- Backported security improvements
 
 <h3 id="version-5.1.64">5.1.64 (2023-09-30) - post-maintenance revision</h3>
 
-- Security fixes
+- Backported security fixes
 
 <h3 id="version-5.1.65">5.1.65 (2023-10-14) - post-maintenance revision</h3>
 
-- Security fixes
+- Backported security fixes
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
-- Fixed service objects' action hook fallback to standard action mechanism
+- Backported fix on service objects' action hook fallback to standard action mechanism
 
 <h3 id="version-5.1.66">5.1.66 (UNRELEASED) - post-maintenance revision</h3>
 
 - Backported security fix on document servlet
 - Fixed full XML export with pagination and filters
+
+<h3 id="version-5.1.66">5.1.66 (2023-10-31) - post-maintenance revision</h3>
+
+- Backported security fix on document servlet
