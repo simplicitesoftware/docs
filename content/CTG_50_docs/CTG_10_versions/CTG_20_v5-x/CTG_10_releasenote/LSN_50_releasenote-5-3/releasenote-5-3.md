@@ -580,5 +580,4 @@ Scratch pad
 
 <h3 id="version-5.3.22">5.3.22 (UNRELEASED)</h3>
 
-- Nothing so far...
-
+- Fixed resize issue on embedded external objects
