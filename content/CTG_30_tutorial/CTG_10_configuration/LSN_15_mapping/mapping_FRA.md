@@ -9,9 +9,9 @@ Dans quel cas utilise t'on un mapping ?
 - Lorsque l'on souhaite effectuer une copie par valeur
 - Pour afficher une liste de valeurs sans devoir persister les données de la liste dans la base (appel de service par exemple)
 
-Un mapping de type Entrant permet de filtrer l'objet mappé avec la valeur de l'attribut source. 
-Un mapping Sortant permet de valoriser l'attribut mappé avec la valeur de l'attribut source. 
-Un mapping Entrant/Sortant est à paramétrer lorsque la valeur entrante de filtre est également la valeur à copier. 
+Un mapping de type Entrant permet de filtrer l'objet mappé avec la valeur de l'attribut source.  
+Un mapping Sortant permet de valoriser l'attribut mappé avec la valeur de l'attribut source.  
+Un mapping Entrant/Sortant est à paramétrer lorsque la valeur entrante de filtre est également la valeur à copier.  
 
 Le mapping utilise une instance particulière de l'objet.
 Le hook **initDataMapSelect** permet de surcharger le comportement standard du Datamap.
