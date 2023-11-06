@@ -9,6 +9,10 @@ Dans quel cas utilise t'on un mapping ?
 - Lorsque l'on souhaite effectuer une copie par valeur
 - Pour afficher une liste de valeurs sans devoir persister les données de la liste dans la base (appel de service par exemple)
 
+Un mapping de type Entrant permet de filtrer l'objet mappé avec la valeur de l'attribut source. 
+Un mapping Sortant permet de valoriser l'attribut mappé avec la valeur de l'attribut source. 
+Un mapping Entrant/Sortant est à paramétrer lorsque la valeur entrante de filtre est également la valeur à copier. 
+
 Le mapping utilise une instance particulière de l'objet.
 Le hook **initDataMapSelect** permet de surcharger le comportement standard du Datamap.
 
@@ -19,4 +23,4 @@ Exercice
 - Allez dans l'AppStore et installez le module ISO Countries ainsi que son dataset
 - Créer un attribut `trnCliCountry` dans l'objet `TrnClient`
 - Créer un mapping `TRNCOUNTRYDM` qui mappe l'attribut source `trnCliCountry` avec l'attribut `isoCtyName` de l'objet ISOCountry de type `Out` (Sortant)  
-- Vérifier le résultat sur le formulaire du client et dans la base de données
+- Vérifier le résultat sur le formulaire du client et dans la basyepe de données

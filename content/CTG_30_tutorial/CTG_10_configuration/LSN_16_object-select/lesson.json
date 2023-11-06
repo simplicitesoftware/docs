@@ -1,10 +1,10 @@
 {
     "tags": ["lvl2"],
-    "FRA": {
+    "ENU": {
         "title": "Object select",
         "description": ""
     },
-    "ENU": {
+    "FRA": {
         "title": "Select object",
         "description": ""
     },
