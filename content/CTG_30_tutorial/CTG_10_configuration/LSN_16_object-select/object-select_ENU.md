@@ -1,7 +1,7 @@
 Select object
 ====================
 
-A "select" object is a Simplicity object whose table content is based on the result of an SQL query.   
+A "select" object is a object whose table content is based on the result of an SQL query.   
 The name of its table will be **select**.  
 It is used to generate an SQL query of the select type and to obtain a result in a list. 
 Like standard object lists, this list will be paginated.

@@ -1,7 +1,7 @@
 Service object
 ====================
 
-A "service" object is a Simplicity object whose data is based on a service call.   
+A "service" object is a object whose data is based on a service call.   
 The name of its table will be **service**.  
 
 It is used to make a service call in order to obtain data without storing it in the Simplicity database.  
