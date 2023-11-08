@@ -1,10 +1,10 @@
 {
     "tags": ["lvl2"],
-    "FRA": {
+    "ENU": {
         "title": "Shared code",
         "description": ""
     },
-    "ENU": {
+    "FRA": {
         "title": "Code partagé",
         "description": ""
     },
