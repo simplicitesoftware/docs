@@ -1,4 +1,4 @@
-Virutal links
+Virtual links
 ==================
 
 A virtual link enables you to access a business object's data without having to go though the model.
