@@ -1,7 +1,7 @@
 Code partagé
 ====================
 
-Les codes partagés  (menu V5**Configuration/Code partagé**,menu V6**Objet métier/Utilisation code partagé**)permettent de  créer de code utilisable depuis différents objets.  
+Les codes partagés (menu V5 **Configuration/Code partagé**,menu V6 **Objet métier/Utilisation code partagé**)permettent de  créer de code utilisable depuis différents objets.  
 
 Ils ont différentes utilisations, notamment:  
 * Permettre de créer de nouvelles classes Java et donc créer des outils spécifiques.  

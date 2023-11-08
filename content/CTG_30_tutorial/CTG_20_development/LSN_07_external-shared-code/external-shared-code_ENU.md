@@ -1,6 +1,6 @@
 Shared code
 ====================
-Shared codes (menu V5**Configuration/Shared code**, menu V6**Business objects/Shared code usage**) can be used to create code that can be used by different objects.  
+Shared codes (V5 menu **Configuration/Shared code**,V6 menu **Business objects/Shared code usage**) can be used to create code that can be used by different objects.  
 
 They have various uses, including  
 * To create new Java classes and therefore create specific tools.  
