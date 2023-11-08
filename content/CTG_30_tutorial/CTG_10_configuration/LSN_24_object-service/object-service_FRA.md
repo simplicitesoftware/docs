@@ -13,7 +13,7 @@ Sa classe hérite de **com.simplicite.util.ObjectService**.
 
 Les hooks à implémeter sont **loadServiceConfig**,**countService()**, **searchService**, **selectService**, **createService**, **updateService**,**deleteService**.
 
-<div class="information">The service-opendata, service-salesforce, service-ldap, service-rest and service-servicenow objects are special cases of service objects integrated into the platform (the named hooks have been implemented. All you need to do is set the configuration in the object's filter or implement the loadServiceConfig hook.</div>
+<div class="information">Les objets service-opendata, service-salesforce, service-ldap, service-rest et service-servicenow sont des cas particuliers d'objets de service intégrés dans la plateforme (les hooks nommés ont été implémentés). Il suffit de définir la configuration dans le filtre de l'objet ou d'implémenter le hook loadServiceConfig.</div>
 
 
 Exercice

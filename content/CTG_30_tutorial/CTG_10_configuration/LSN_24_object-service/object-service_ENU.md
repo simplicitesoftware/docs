@@ -1,4 +1,4 @@
-Select object
+Service object
 ====================
 
 A "service" object is a Simplicity object whose data is based on a service call.   
@@ -13,7 +13,7 @@ Its class inherits from **com.simplicite.util.ObjectService**.
 
 The hooks to be implemented are **loadServiceConfig**,**countService()**, **searchService**, **selectService**, **createService**, **updateService**,**deleteService**.  
 
-<div class="warning">Warning, a select object must not have any timestamp attributes. (Object settings: Timestamp=None) or the query must include the attributes</div>
+<div class="information">The service-opendata, service-salesforce, service-ldap, service-rest and service-servicenow objects are special cases of service objects integrated into the platform (the named hooks have been implemented). All you need to do is set the configuration in the object's filter or implement the loadServiceConfig hook.</div>
 
 
 Exercise
