@@ -19,7 +19,7 @@ Les hooks à implémeter sont **loadServiceConfig**,**countService()**, **search
 Exercice
 ====================
 
-- Create a service object to display codes and region names using the https://geo.api.gouv.fr/decoupage-administratif/regions#regions-list service.  
+- Créez un objet de service pour afficher les codes et les noms de régions à l'aide du service https://geo.api.gouv.fr/decoupage-administratif/regions#regions-list.  
 
-The base is a dataset that provides all the codes and region names without pagination.  
-Implement the hooks used to list and display the data in a form.  
+La base est un ensemble de données qui fournit tous les codes et noms de régions sans pagination.  
+Implémentez les crochets utilisés pour lister et afficher les données dans un formulaire.

@@ -19,6 +19,9 @@ The hooks to be implemented are **loadServiceConfig**,**countService()**, **sear
 Exercise
 ====================
 
-- Create a select object to display all the addresses, postal codes, cities and countries of the customers in the `trn_client` table who have placed more than 10 orders.
+- Create a service object to display codes and region names using the https://geo.api.gouv.fr/decoupage-administratif/regions#regions-list service.  
+
+The base is a dataset that provides all the codes and region names without pagination.  
+Implement the hooks used to list and display the data in a form.  
 
 
