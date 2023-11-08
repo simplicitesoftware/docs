@@ -24,4 +24,6 @@ Exercise
 The base is a dataset that provides all the codes and region names without pagination.  
 Implement the hooks used to list and display the data in a form.  
 
-
+Take things further : Paginated list
+---------------------------
+* Make the list paginated.
