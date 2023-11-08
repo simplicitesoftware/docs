@@ -1,11 +1,11 @@
 {
     "tags": ["lvl2"],
     "ENU": {
-        "title": "Object select",
+        "title": "Select object",
         "description": ""
     },
     "FRA": {
-        "title": "Select object",
+        "title": "Objet Select",
         "description": ""
     },
     "display":"LINEAR",
