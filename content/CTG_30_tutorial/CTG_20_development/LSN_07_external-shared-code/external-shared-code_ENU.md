@@ -1,9 +1,13 @@
-# Shared code
-Shared codes (menu Configuration/Shared code) can be used for create specifique code usable in some object.
-They can have many utilisation:
-* Create  Java class like a specific tool.
-* Add personilized behavior for a simplicité class like athentication
-* Code some unit testing.
-* Create general Sql code.
-## Exercise
+Shared code
+====================
+Shared codes (menu V5**Configuration/Shared code**, menu V6**Business objects/Shared code usage**) can be used to create code that can be used by different objects.  
+
+They have various uses, including  
+* To create new Java classes and therefore create specific tools.  
+* Completing the behaviour of certain base classes (classes inheriting from ObjectDB), in particular the PlatformHooks authentication class.  
+* Set up unit tests  
+* Create specific SQL codes for data recovery, for example.  
+
+Exercise
+====================
 Set up a unit testing for "increase stock"
