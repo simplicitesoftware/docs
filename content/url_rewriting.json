@@ -1,5 +1,9 @@
 [
   {
+    "sourceUrl": "/lesson/docs/versions",
+    "destinationUrl": "/lesson/versions"
+  },
+  {
     "sourceUrl": "/3.2/releasenote/releasenote-patchlevel-05.md",
     "destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-05"
   },
@@ -30,10 +34,6 @@
   {
     "sourceUrl": "/3.2/releasenote/releasenote-maintenance-03.md",
     "destinationUrl": "/lesson/docs/versions/releasenote-maintenance-03"
-  },
-  {
-    "sourceUrl": "/3.2/releasenote/index.md",
-    "destinationUrl": "/lesson/docs/versions/index"
   },
   {
     "sourceUrl": "/3.2/releasenote/releasenote-maintenance-02.md",
@@ -504,10 +504,6 @@
     "destinationUrl": "/lesson/docs/authentication/internal-auth"
   },
   {
-    "sourceUrl": "/documentation/91-authentication/index.md",
-    "destinationUrl": "/lesson/docs/authentication/index"
-  },
-  {
     "sourceUrl": "/documentation/04-ui/basic-usage.md",
     "destinationUrl": "/lesson/docs/ui/basic-usage"
   },
@@ -530,10 +526,6 @@
   {
     "sourceUrl": "/documentation/04-ui/responsive.md",
     "destinationUrl": "/lesson/docs/ui/responsive"
-  },
-  {
-    "sourceUrl": "/documentation/04-ui/index.md",
-    "destinationUrl": "/lesson/docs/ui/index"
   },
   {
     "sourceUrl": "/documentation/90-operation/docker.md",
@@ -578,10 +570,6 @@
   {
     "sourceUrl": "/documentation/90-operation/wildfly.md",
     "destinationUrl": "/lesson/docs/operation/wildfly"
-  },
-  {
-    "sourceUrl": "/documentation/90-operation/index.md",
-    "destinationUrl": "/lesson/docs/operation/index"
   },
   {
     "sourceUrl": "/documentation/90-operation/docker-tutorial.md",
@@ -664,10 +652,6 @@
     "destinationUrl": "/lesson/docs/core/unit-testing"
   },
   {
-    "sourceUrl": "/documentation/01-core/index.md",
-    "destinationUrl": "/lesson/docs/core/index"
-  },
-  {
     "sourceUrl": "/documentation/01-core/modeler-code-hooks-legacy.md",
     "destinationUrl": "/lesson/docs/core/modeler-code-hooks-legacy"
   },
@@ -694,10 +678,6 @@
   {
     "sourceUrl": "/documentation/02-integration/custom-services.md",
     "destinationUrl": "/lesson/docs/integration/custom-services"
-  },
-  {
-    "sourceUrl": "/documentation/02-integration/index.md",
-    "destinationUrl": "/lesson/docs/integration/index"
   },
   {
     "sourceUrl": "/documentation/02-integration/services-auth.md",
@@ -852,10 +832,6 @@
     "destinationUrl": "/lesson/docs/misc/instances-manager"
   },
   {
-    "sourceUrl": "/documentation/99-misc/index.md",
-    "destinationUrl": "/lesson/docs/misc/index"
-  },
-  {
     "sourceUrl": "/documentation/99-misc/excel.md",
     "destinationUrl": "/lesson/docs/misc/excel"
   },
@@ -880,43 +856,39 @@
     "destinationUrl": "/lesson/docs/remote/opendatasoft"
   },
   {
-    "sourceUrl": "/documentation/05-remote/index.md",
-    "destinationUrl": "/lesson/docs/remote/index"
-  },
-  {
-    "sourceUrl": "/docs.simplicite.io/documentation/architecture.md",
+    "sourceUrl": "/documentation/architecture.md",
     "destinationUrl": "/lesson/docs/architecture"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/security.md",
+    "sourceUrl": "/documentation/security.md",
     "destinationUrl": "/lesson/docs/security"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/compliance.md",
+    "sourceUrl": "/documentation/compliance.md",
     "destinationUrl": "/lesson/docs/compliance"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/versions.md",
+    "sourceUrl": "/documentation/versions.md",
     "destinationUrl": "/lesson/docs/versions"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/faq.md",
+    "sourceUrl": "/documentation/faq.md",
     "destinationUrl": "/lesson/docs/faq"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/quality.md",
+    "sourceUrl": "/documentation/quality.md",
     "destinationUrl": "/lesson/docs/quality"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/roadmap.md",
+    "sourceUrl": "/documentation/roadmap.md",
     "destinationUrl": "/lesson/docs/roadmap"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/index.md",
+    "sourceUrl": "/documentation/index.md",
     "destinationUrl": "/lesson/docs/index"
   },
   {
-    "sourceUrl": "/docs.simplicite.io/documentation/gdpr.md",
+    "sourceUrl": "/documentation/gdpr.md",
     "destinationUrl": "/lesson/docs/gdpr"
   }
 ]
