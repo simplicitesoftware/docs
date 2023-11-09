@@ -26,4 +26,5 @@ Implement the hooks used to list and display the data in a form.
 
 Take things further : Paginated list
 ---------------------------
-* Make the list paginated.
+* Make the list paginated.  
+* Add a relationship between regions and suppliers to determine the regions supplied by suppliers.

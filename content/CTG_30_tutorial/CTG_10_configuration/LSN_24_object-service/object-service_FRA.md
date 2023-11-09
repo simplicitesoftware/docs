@@ -27,3 +27,4 @@ Implémentez les crochets utilisés pour lister et afficher les données dans un
 Pour approfondir : Liste paginée
 ---------------------------
 * Faire en sorte que la liste soit paginée.  
+* Ajouter une relation entre régions et Fournisseurs pour déterminer les régions livrées par les fournisseurs.  
