@@ -22,7 +22,7 @@ Exercice
 - Créer un objet de service pour afficher les codes et les noms de régions à l'aide du service https://geo.api.gouv.fr/decoupage-administratif/regions#regions-list.  
 
 La base est un ensemble de données qui fournit tous les codes et noms de régions sans pagination.  
-Implémentez les crochets utilisés pour lister et afficher les données dans un formulaire.
+Implémentez les hooks utilisés pour lister et afficher les données dans un formulaire.
 
 Pour approfondir : Liste paginée
 ---------------------------
