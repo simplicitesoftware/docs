@@ -583,4 +583,5 @@ Scratch pad
 - Fixed resize issue on embedded external objects
 - Fixed internal server error when trying to connect as inactive or unknown user
 - Fixed tabs scroll-y on firefox
-- Allowed overriding `StaticSiteExternalObject.diplay()`
+- Allowed overriding `StaticSiteExternalObject.display()`
+- Fixed no transitions on list row when `isUpdateEnable` is false
