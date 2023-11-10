@@ -1,5 +1,73 @@
 [
   {
+    "sourceUrl": "/lesson/docs/misc/sandboxes-manager",
+    "destinationUrl": "/lesson/docs/misc/manager"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-operation",
+    "destinationUrl": "/lesson/docs/operation/tomcat-operation"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomee",
+    "destinationUrl": "/lesson/docs/operation/tomee"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-installation-windows",
+    "destinationUrl": "/lesson/docs/operation/tomcat-installation-windows"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/aws-elasticbeanstalk",
+    "destinationUrl": "/lesson/docs/operation/aws-elasticbeanstalk"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/heroku",
+    "destinationUrl": "/lesson/docs/operation/heroku"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/cloudfoundry-bluemix",
+    "destinationUrl": "/lesson/docs/operation/cloudfoundry"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/instances-manager",
+    "destinationUrl": "/lesson/docs/misc/manager"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-installation",
+    "destinationUrl": "/lesson/docs/operation/tomcat-installation-linux"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/cloudfoundry-pivotal",
+    "destinationUrl": "/lesson/docs/operation/cloudfoundry"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/wildfly",
+    "destinationUrl": "/lesson/docs/operation/wildfly"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-apisession",
+    "destinationUrl": "/lesson/docs/authentication/tomcat-apisession"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/docker",
+    "destinationUrl": "/lesson/docs/operation/docker"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/jboss-custom-jaas-module",
+    "destinationUrl": "/lesson/docs/authentication/jboss-custom-jaas-module"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-saml",
+    "destinationUrl": "/lesson/docs/authentication/tomcat-saml"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-customauth",
+    "destinationUrl": "/lesson/docs/authentication/tomcat-customauth"
+  },
+  {
+    "sourceUrl": "/lesson/docs/misc/tomcat-oauth2",
+    "destinationUrl": "/lesson/docs/authentication/tomcat-oauth2"
+  },
+  {
     "sourceUrl": "/lesson/docs/versions",
     "destinationUrl": "/lesson/versions"
   },

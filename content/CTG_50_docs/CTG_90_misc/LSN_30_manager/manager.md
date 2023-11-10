@@ -1,1 +1,1 @@
-This document has been moved to [this document](https://platform.simplicite.io/manager.md)
+This document has been moved to [https://platform.simplicite.io/manager.md](https://platform.simplicite.io/manager.md)
