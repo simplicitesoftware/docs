@@ -125,8 +125,6 @@ Mobile
 - [SAML configuration on Apache Tomcat&reg;](/lesson/docs/authentication/tomcat-saml)
 - [LDAP configuration on Apache Tomcat&reg;](/lesson/docs/authentication/tomcat-ldap)
 - [Custom applicative authentication on Apache Tomcat&reg;](/lesson/docs/authentication/tomcat-customauth)
-<!-- - [Custom realm-based authentication on Apache Tomcat&reg;](/lesson/docs/misc/tomcat-customrealms) -->
-- [Custom JAAS-based authentication on JBoss&reg; application server](/lesson/docs/authentication/jboss-custom-jaas-module)
 - [Keycloak OAuth2 configuration and users synchronization](/lesson/docs/authentication/keycloak)
 
 <h2 id="misc">Miscellaneous</h2>
