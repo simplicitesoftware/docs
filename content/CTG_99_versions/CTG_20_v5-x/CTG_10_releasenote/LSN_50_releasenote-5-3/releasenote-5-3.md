@@ -586,6 +586,7 @@ Scratch pad
 - Allowed overriding `StaticSiteExternalObject`'s `getPath` (as well as `display` for even more specific custom needs)
 - Fixed regression on module's PDF dcumentation generation
 - Fixed partial version number in UI JS bundle's URL
+- Fixed no transitions on list row when `isUpdateEnable` is false
 
 <h3 id="version-5.3.23">5.3.23 (UNRELEASED)</h3>
 

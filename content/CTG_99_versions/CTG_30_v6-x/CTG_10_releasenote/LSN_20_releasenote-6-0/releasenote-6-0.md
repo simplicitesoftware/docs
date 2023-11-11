@@ -516,6 +516,12 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 	- Mostly backported in v5.3
 	- [Documentation](https://docs.simplicite.io/lesson/docs/ui/wcag)
 
+- Added searchbar on menu (set `MENU_SEARCHABLE` system parameter to `yes` / `no` to display / hide) :
+
+	![Menu Searchbar](menu-searchbar.png)
+	
+
+
 <h2 id="wip">Work in progress</h2>
 
 - Accessibility WCAG 2.1 / RGAA
