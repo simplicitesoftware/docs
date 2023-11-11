@@ -582,5 +582,11 @@ Scratch pad
 
 - Fixed resize issue on embedded external objects
 - Fixed internal server error when trying to connect as inactive or unknown user
-- Fixed tabs scroll-y on firefox
-- Allowed overriding `StaticSiteExternalObject.diplay()`
+- Fixed tabs scroll-y issues on Firefox
+- Allowed overriding `StaticSiteExternalObject`'s `getPath` (as well as `display` for even more specific custom needs)
+- Fixed regression on module's PDF dcumentation generation
+- Fixed partial version number in UI JS bundle's URL
+
+<h3 id="version-5.3.23">5.3.23 (UNRELEASED)</h3>
+
+- Nothing so far...
