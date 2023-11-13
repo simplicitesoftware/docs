@@ -98,7 +98,7 @@ As of version 5.2.32:
 > **Note**: By default the OIDC OAuth2 implementation uses by default the `openid` and `profile` scopes when calling user info endpoint.
 > Only **additional** scopes need to be configured using the `OAUTH2_SCOPES` system parameter or`scopes` attribute in `AUTH_PROVIDERS`if needed.
 > If for some **very specific** reasons you need other default scopes, you can use the `OAUTH2_DEFAULT_SCOPES` system parameter  or `default_scopes` attribute in `AUTH_PROVIDERS`.
-> In both cases the syntax for myltiple scopes is space-separated.
+> In both cases the syntax for multiple scopes is space-separated.
 
 By default, the relevant user info fields defined by the OIDC standards are used to update corresponding user field (e.g. `given_name` for first name, `family_name`, etc.).
 As for any OAuth2 provider it is possible to do a custom parsing of user info response in the `postLoadGrant` grant hook as described above.
