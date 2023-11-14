@@ -62,4 +62,4 @@ Exercice
     - Fournisseur <-1:N- Produit
     - Produit <-1:N- Commande
     - Client <-1:N- Commande
-- Éditer le formulaire de la commande comme présenté sur [cette image](#IMG_CLICK_formation_029.png) et utiliser l'option dédiée pour ramener un nouveau champ d'un objet référencé ( Bouton "+" sur le template editor > Nom de l'objet référencé > )
+- Éditer le formulaire de la commande comme et utiliser l'option dédiée pour ramener un nouveau champ d'un objet référencé ( Bouton "+" sur le template editor > Nom de l'objet référencé > )

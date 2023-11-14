@@ -64,4 +64,4 @@ Exercise
     - Supplier <-1:N- Product
     - Product <-1:N- Order
     - Customer <-1:N- Order
-- Edit the order form as shown in [this image](#IMG_CLICK_formation_029.png) and use the dedicated option to join a new field of a referenced object ("+" button on the template editor > Name of referenced object > )
+- Edit the order form  and use the dedicated option to join a new field of a referenced object ("+" button on the template editor > Name of referenced object > )
