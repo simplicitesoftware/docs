@@ -421,11 +421,11 @@ When the duration is too long the query has to be analyzed with an external CLI 
 
 The `m_document` table contains all documents attached to document fields. It can store the documents in 2 ways thru the system parameter `DOC_DIR`:
 
-- In database
+- **BLOB**: in the database
 	- `DOC_DIR` = `BLOB`
 	- `DOC_LOCAL_DIR` = path to fallback directory
 	- Saving the database will also save all documents
-- In a local/mounted file system
+- **DBDOC**: in a local/mounted file system
 	- `DOC_DIR` = the (relative) path to the documents directory
 	- You **must** backup this directory and the database at the same time.
 
