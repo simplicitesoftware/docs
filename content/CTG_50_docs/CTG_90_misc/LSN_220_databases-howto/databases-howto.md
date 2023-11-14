@@ -436,10 +436,10 @@ Example to migrate the documents to BLOB:
 ![](docs.png)
 ![](migconfirm.png)
 
-The migration is irreversible in case of error (not enough disk, partition size...):
+The migration is irreversible in case of error (not enough disk to write files, partition size of m_document...):
 - It is imperative to first save the database and the documents for a possible rollback.
-- It is long async process running depending on the quantity of documents.
-- It is strongly recommended to disable all UI/API access during the migration (if user uses documents).
+- It is a long async process running depending on the quantity of documents, a test may be done first on a copy of instance.
+- It is strongly recommended to disable all UI/API access during the migration (if users use documents).
 - It can be stopped/launched several times: each document is migrated once, the process restarts at the last migrated document.
 - When all documents are migrated, the `DOC_DIR` is updated to the final value.
 
