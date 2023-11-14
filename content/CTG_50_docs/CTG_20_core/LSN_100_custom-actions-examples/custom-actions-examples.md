@@ -99,11 +99,10 @@ Now V5 syntax supports `ObjectField` directly to manipulate value or document:
 
 ```java
 public String myAction(Action action) {
-	String lang = getGrant().getLang();
 	// String field (text, date...)
-	String param = action.getConfirmField(lang, "myStringField").getValue();
+	String param = action.getConfirmField("myStringField").getValue();
 	// Document field
-	ObjectField myDocField = action.getConfirmField(lang, "myDocField");
+	ObjectField myDocField = action.getConfirmField("myDocField");
 	DocumentDB doc = myDocField!=null ? myDocField.getDocument() : null;
 	AppLog.info(getClass(), "myAction", "DOCUMENT " + doc, getGrant());
 	if (doc!=null) {
@@ -177,13 +176,12 @@ public String postSave() {
 
 ```java
 public String postSave() {
-	String lang = getGrant().getLang();
 	// Save has been called from a transition ?
 	FieldStateTransition tran = getCurrentTransition();
 	Action action = tran!=null ? tran.getAction() : null;
 	if (action!=null) {
-		String param = action.getConfirmField(lang, "myField").getValue();
-		DocumentDB doc = action.getConfirmField(lang, "myDocField").getDocument();
+		String param = action.getConfirmField("myField").getValue();
+		DocumentDB doc = action.getConfirmField("myDocField").getDocument();
 		File file = doc!=null ? doc.getUploadFile() : null;
 		...
 	}
@@ -196,8 +194,8 @@ The Action fields can also been accessed in the callback `method` of transition 
 ```java
 public String myTransitionCallback(Action action) {
 	if (action!=null) {
-		String param = action.getConfirmField(lang, "myField").getValue();
-		DocumentDB doc = action.getConfirmField(lang, "myDocField").getDocument();
+		String param = action.getConfirmField("myField").getValue();
+		DocumentDB doc = action.getConfirmField("myDocField").getDocument();
 		File file = doc!=null ? doc.getUploadFile() : null;
 		// ...
 		// Return a message to UI

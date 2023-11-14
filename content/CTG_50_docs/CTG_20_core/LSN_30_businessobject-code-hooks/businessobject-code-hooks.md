@@ -513,7 +513,7 @@ Exemple:
 ```java
 @Override
 public void initAction(Action action) {
-	ObjectField f = action.getConfirmField(getGrant().getLang(), "myFieldName");
+	ObjectField f = action.getConfirmField("myFieldName");
 	f.setDefaultValue("aValue");
 	f.setRequired(true);
 }
@@ -523,7 +523,7 @@ public void initAction(Action action) {
 
 ```javascript
 MyObject.initAction = function(action) {
-	var f = action.getConfirmField(this.getGrant().getLang(), "myFieldName");
+	var f = action.getConfirmField("myFieldName");
 	f.setDefaultValue("aValue");
 	f.setRequired(true);
 };

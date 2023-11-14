@@ -232,9 +232,8 @@ public String isMergeEnable(List<String> ids) {
 
 ```java
 public String myAction(Action action) {
-	String lang = getGrant().getLang();
-	String param = action.getConfirmField(lang, "myStringField").getValue();
-	ObjectField myDocField = action.getConfirmField(lang, "myDocField");
+	String param = action.getConfirmField("myStringField").getValue();
+	ObjectField myDocField = action.getConfirmField("myDocField");
 	DocumentDB doc = myDocField.getDocument();
 	AppLog.info(getClass(), "myAction", "DOCUMENT " + doc, getGrant());
 	if (doc!=null) {
