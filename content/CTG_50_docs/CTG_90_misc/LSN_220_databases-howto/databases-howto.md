@@ -343,10 +343,10 @@ The default database contains all tables needed by the runtime. System tables ar
 They must be accessed thru the UI or API to be updated.
 
 Some important tables:
-- `m_system`: contains platform settings
+- `m_system`: contains global platform settings
 - `m_user` and `m_resp`: contains users and responsibilities
 - `m_document`: contains all the documents attached to document fields
-- `m_log`: contains all persisants application events and metrics
+- `m_log`: contains all persistent application log events and metrics
 - `m_session`: contains all active sessions
 
 ### Generated schema
