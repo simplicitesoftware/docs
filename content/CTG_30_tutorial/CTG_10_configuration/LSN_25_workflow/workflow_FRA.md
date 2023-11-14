@@ -53,7 +53,7 @@ Utiliser `[DEFAULT]` pour configurer le lien par défaut.
 
 ### Exercice
 Afficher un message à l'utilisateur si le fournisseur choisi n'a pas de produit en stock en utilisant le hook preValidate.
-
+```java
 	@Override
 	public Message preValidate(ActivityFile context) {
 		Message m = new Message();
@@ -75,7 +75,7 @@ Afficher un message à l'utilisateur si le fournisseur choisi n'a pas de produit
 		}
 		return super.preValidate(context);
 	}
-
+```
 
 ## Transition d'activité
 Vous pouvez ajouter des transitions entre les activités avec une action spécifique (bouton).
