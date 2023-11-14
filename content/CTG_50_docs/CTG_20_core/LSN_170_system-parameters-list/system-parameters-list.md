@@ -379,6 +379,9 @@ Some system parameters might not be available on previous version or default val
 	- An **absolute** local path (e.g. `/var/dbdoc` on Linux or `D:/dbdoc` on windows)
 	- `BLOB` to store documents in the database (in this case a local document directory needs to be configured in the `DOC_LOCAL_DIR` for fallback strategy)
 
+
+[See database how-to to manage DB documents](/lesson/docs/misc/databases-howto)
+
 ### `DOC_LOCAL_DIR`
 
 **Default value**
