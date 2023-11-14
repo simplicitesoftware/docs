@@ -374,10 +374,15 @@ Designer can add other indexes to optimize certain complex/specific queries:
 
 ### Business model upgrade
 
-The engine generates the `ALTER` of tables and columns with the name/type/length is updated during module import.
+The engine generates the `ALTER` of tables and columns when the name/type/length are updated during a module import.
 It replaces also the indexes and foreign-keys.
-- But the queries can be in error due to DB limitation or incoherent data (ex: alter a varchar column to date, the new User-Key is non unique in table...).
+- The queries can be in error due to DB limitation or incoherent data, for examples:
+	- altering a varchar column to date or integer is forbidden
+	- or the data contains mismatching data
+	- the new User-Key is non unique with existing records in table
+	- the index is limited to a certain size...
 - The designer must analyze the logs after installation to fix the DB/data errors before re-ALTERing.
+- Or contact the support for unsolvable problem or ask for advice.
 
 The engine **never** `DROP` a table or a column even if the business object/field is deleted
 - For rollback reasons in case of error
@@ -406,5 +411,7 @@ The monitoring keeps in mind the top 10 long-queries:
 
 ![](top10.png)
 
-When the duration is too long the query has to be analyzed with an external CLI to `EXPLAIN PLAN`.
-Indexes can be added has described above with a SQL shared script.
+When the duration is too long the query has to be analyzed with an external CLI to `EXPLAIN PLAN`:
+- Some queries may be long (full scan) but called once to load data in cache.
+- For the others, indexes can be added has described above with a SQL shared script.
+
