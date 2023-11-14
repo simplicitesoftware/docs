@@ -346,6 +346,8 @@ Some important tables:
 - `m_system`: contains global platform settings
 - `m_user` and `m_resp`: contains users and responsibilities
 - `m_document`: contains all the documents attached to document fields
+	- This table will be huge when `DOC_DIR=BLOB` (see below)
+	- Otherwise the table only contains the path to the `dbdoc` directory
 - `m_log`: contains all persistent application log events and metrics
 - `m_session`: contains all sessions
 
@@ -414,4 +416,30 @@ The monitoring keeps in mind the top 10 long-queries:
 When the duration is too long the query has to be analyzed with an external CLI to `EXPLAIN PLAN`:
 - Some queries may be long (full scan) but called once to load data in cache.
 - For the others, indexes can be added has described above with a SQL shared script.
+
+### Documents storage and migration
+
+The `m_document` table contains all documents attached to document fields. It can store the documents in 2 ways thru the system parameter `DOC_DIR`:
+
+- In database
+	- `DOC_DIR` = `BLOB`
+	- `DOC_LOCAL_DIR` = path to fallback directory
+	- Saving the database will also save all documents
+- In a local/mounted file system
+	- `DOC_DIR` = the (relative) path to the documents directory
+	- You **must** backup this directory and the database at the same time.
+
+Since V6, it is possible to migrate easily from/to `BLOB` using the UI actions.
+
+Example to migrate the documents to BLOB:
+
+![](docs.png)
+![](migconfirm.png)
+
+The migration is irreversible in case of error (not enough disk, partition size...):
+- It is imperative to first save the database and the documents for a possible rollback.
+- It is long async process running depending on the quantity of documents.
+- It is strongly recommended to disable all UI/API access during the migration (if user uses documents).
+- It can be stopped/launched several times: each document is migrated once, the process restarts at the last migrated document.
+- When all documents are migrated, the `DOC_DIR` is updated to the final value.
 
