@@ -1,5 +1,6 @@
 Business processes - workflow
 ====================
+![workflow screenshot](workflow.png)
 
 A process (sequence of screens) is a wizard designed to assist the user during a specific process.   
 The process can be defined in the **Business Process/Business Process** menu.  
