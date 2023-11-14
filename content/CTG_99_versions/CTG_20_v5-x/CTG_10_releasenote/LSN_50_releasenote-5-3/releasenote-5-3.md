@@ -590,4 +590,6 @@ Scratch pad
 
 <h3 id="version-5.3.23">5.3.23 (UNRELEASED)</h3>
 
-- Nothing so far...
+- Generate DB index on meta-object field
+- Backported one external object instance per browser tab in a same session with the URL parameter `_tabId`
+- Fixed monitoring to apply some search filters
