@@ -386,15 +386,15 @@ It replaces also the indexes and foreign-keys.
 - The designer must analyze the logs after installation to fix the DB/data errors before re-ALTERing.
 - Or contact the support for unsolvable problem or ask for advice.
 
-The engine **never** `DROP` a table or a column even if the business object/field is deleted
+The engine **never** `DROP`s a table or a column even if the business object/field is deleted
 - For rollback reasons in case of error
 - After a successful migration, the designer/DBA have to drop the deprecated table/column
 
 The platform can not migrate the data automatically in case of complex model refactoring.
 Designer have to build and apply SQL patches to update data, for examples:
 - changing a column to complex type (ex: deprecated column varchar to a new date column)
-- changing a 0,N relationship to a N,N table: all links have to be moved/inserted in the N,N
-- splitting one object in 2 objects...
+- changing a 0,N relationship to a N,N table: all references have to be moved/inserted in the N,N
+- splitting one big object/table in many objects/tables...
 
 
 ### Performances
@@ -403,9 +403,9 @@ To analyze the DB performances and the long queries, you can use the **Operation
 
 With 3 charts to explains:
 
-- SQL count: count queries (select and update) in time
-- SQL times: queries/second and time/query in time
-- JDBC pool size: monitors the connection pool to the database in time
+- `SQL count`: count queries (select and update) in time
+- `SQL times`: queries/second and time/query in time
+- `JDBC pool size`: monitors the connection pool to the database in time
 
 ![](dbmon.png)
 
