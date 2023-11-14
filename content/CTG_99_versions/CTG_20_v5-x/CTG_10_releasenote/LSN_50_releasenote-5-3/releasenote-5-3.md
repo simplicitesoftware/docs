@@ -578,10 +578,16 @@ Scratch pad
 - Tabs keeps the scrolltop before unloading the current tab
 - Fixed ghostly actions `addlist` | `listedit` | `listupsert`
 
-<h3 id="version-5.3.22">5.3.22 (UNRELEASED)</h3>
+<h3 id="version-5.3.22">5.3.22 (2023-11-13)</h3>
 
 - Fixed resize issue on embedded external objects
 - Fixed internal server error when trying to connect as inactive or unknown user
-- Fixed tabs scroll-y on firefox
-- Allowed overriding `StaticSiteExternalObject.display()`
+- Fixed tabs scroll-y issues on Firefox
+- Allowed overriding `StaticSiteExternalObject`'s `getPath` (as well as `display` for even more specific custom needs)
+- Fixed regression on module's PDF dcumentation generation
+- Fixed partial version number in UI JS bundle's URL
 - Fixed no transitions on list row when `isUpdateEnable` is false
+
+<h3 id="version-5.3.23">5.3.23 (UNRELEASED)</h3>
+
+- Nothing so far...

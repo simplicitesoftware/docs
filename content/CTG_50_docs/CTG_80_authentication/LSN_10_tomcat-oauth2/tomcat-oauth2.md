@@ -45,10 +45,14 @@ Ex:
 	{ "name": "google", "type": "oauth2", "sync": true },
 	{ "name": "microsoft", "type": "oauth2", "sync": false },
 	{ "name": "linkedin", "type": "oauth2", "sync": false },
+	{ "name": "franceconnect", "type": "oauth2" },
 	{ "name": "myoidc", "type": "oauth2", "label": "Sign in with your private IdP", "sync": true }
 	(...)
 ]
 ```
+
+> **Note**: for historical reasons the names `google`, `microsoft`, `linkedin` and `franceconnect` are **reserved** as they correspond to dedicated connectors.
+> To use the **generic** OpenIDConnect connector you must use another name (such as the `myoidc` of the above example).
 
 All OAuth2/OpenIDConnect providers requires at least the following system parameters or attributes:
 
@@ -92,7 +96,9 @@ As of version 5.2.32:
 - `OAUTH2_NON_SSL_URLS_ALLOWED <provider name>` or `non_ssl_urls_allowed` attribute in `AUTH_PROVIDERS`, **optional** to allow using non SSL URLs (Note that this does not comply with OAuth2/OpenIDConnect standards, it should never be used unless you absolutly need it)
 
 > **Note**: By default the OIDC OAuth2 implementation uses by default the `openid` and `profile` scopes when calling user info endpoint.
-> Only additional and/or custom scopes need to be configured using the `OAUTH2_SCOPES` system parameter  or `scopes` attribute in `AUTH_PROVIDERS`if needed.
+> Only **additional** scopes need to be configured using the `OAUTH2_SCOPES` system parameter or`scopes` attribute in `AUTH_PROVIDERS`if needed.
+> If for some **very specific** reasons you need other default scopes, you can use the `OAUTH2_DEFAULT_SCOPES` system parameter  or `default_scopes` attribute in `AUTH_PROVIDERS`.
+> In both cases the syntax for multiple scopes is space-separated.
 
 By default, the relevant user info fields defined by the OIDC standards are used to update corresponding user field (e.g. `given_name` for first name, `family_name`, etc.).
 As for any OAuth2 provider it is possible to do a custom parsing of user info response in the `postLoadGrant` grant hook as described above.
@@ -185,7 +191,8 @@ see Google documentation for the values of the possible scopes, if you have seve
 In `AUTH_PROVIDERS` just add Google settings as follow, for example to add consent to access User's drive files:
 
 ```json
-{ "name": "google",
+{
+  "name": "google",
   "type": "oauth2",
   "label": "Sign in with Google",
   "client_id": "xxxxx.apps.googleusercontent.com",
