@@ -518,12 +518,8 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 - Added searchbar on menu (set `MENU_SEARCHABLE` system parameter to `yes` / `no` to display / hide) :
 
-	![Menu Searchbar](menu-searchbar.png)
-	
+![Menu Searchbar](menu-searchbar.png)
 
-
-<h2 id="wip">Work in progress</h2>
-
-- Accessibility WCAG 2.1 / RGAA
-- Application DIFF per module
-- Dashboard: editable end-user views
+- Updated Search item on view:
+	- Allows to define the item without a predefined search, only with the object name
+	- `Home` instance of object can display its predefined-search bar in header (as the main instance)
