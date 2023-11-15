@@ -392,20 +392,20 @@ The engine **never** `DROP`s a table or a column even if the business object/fie
 
 The platform can not migrate the data automatically in case of complex model refactoring.
 Designer have to build and apply SQL patches to update data, for examples:
-- changing a column to complex type (ex: deprecated column varchar to a new date column)
+- changing a column to more complex type (ex: deprecated column varchar to a new date column)
 - changing a 0,N relationship to a N,N table: all references have to be moved/inserted in the N,N
-- splitting one big object/table in many objects/tables...
+- splitting one big object/table in several objects/tables...
 
 
-### Performances
+### DB Performances
 
 To analyze the DB performances and the long queries, you can use the **Operation/Monitoring/Data** tab.
 
-With 3 charts to monitor:
+It offers 3 charts to monitor and detect common saturations:
 
-- `SQL count` : count queries (select and update) in time
-- `SQL times` : queries/second and time/query in time
-- `JDBC pool size` : monitors the connection pool to the database in time
+- `SQL count` : counts the queries `select` and `update` in time
+- `SQL times` : tracks the fluidity of access, queries/second and time/query in time
+- `JDBC pool size` : monitors the connections pool to the database in time
 
 ![](dbmon.png)
 
@@ -419,15 +419,16 @@ When the duration is too long the query has to be analyzed with an external CLI 
 
 ### Documents storage and migration
 
-The `m_document` table contains all documents attached to document fields. It can store the documents in 2 ways thru the system parameter `DOC_DIR`:
+The `m_document` table contains all files attached to document's fields.
+It can store the documents in 2 ways thru the system parameter `DOC_DIR`:
 
-- **BLOB** in the database
+- Way **BLOB** in the database
 	- `DOC_DIR` = `BLOB`
 	- `DOC_LOCAL_DIR` = path to fallback directory
 	- Saving the database will also save all documents
-- **DBDOC** in a local/mounted file system
+- Way **DBDOC** in a local/mounted file system
 	- `DOC_DIR` = the (relative) path to the documents directory
-	- You **must** backup this directory and the database at the same time.
+	- this external directory and the database **must** be backed-up at the same time to ensure data consistency.
 
 Since V6, it is possible to migrate easily from/to `BLOB` using the UI actions.
 
