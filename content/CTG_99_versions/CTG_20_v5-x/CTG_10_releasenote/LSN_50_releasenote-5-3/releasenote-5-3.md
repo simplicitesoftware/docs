@@ -594,4 +594,5 @@ Scratch pad
 - Backported one external object instance per browser tab in a same session with the URL parameter `_tabId`
 - Fixed monitoring to apply some search filters
 - Fixed bootstrap `formGroupSearch` to display fixed filter
-- Fixed auto-scroll of inlined 0,1 link in a tab
+- Auto-scroll management of inlined 0,1 link in a tab
+- More reliable PNG image generation on modeler after a `requestAnimationFrame`
