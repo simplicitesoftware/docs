@@ -596,3 +596,4 @@ Scratch pad
 - Fixed bootstrap `formGroupSearch` to display fixed filter
 - Auto-scroll management of inlined 0,1 link in a tab
 - More reliable PNG image generation on modeler after a `requestAnimationFrame`
+- Fixed group-by list with duplicate records in some cases of pagination
