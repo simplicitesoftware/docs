@@ -41,7 +41,7 @@ All previous rights are migrated automatically to the new `Permission` object wi
 
 ### Ajax
 
-- All synchronous Ajax calls are deprecated for a while, and no more supported by the UI components.
+- All synchronous Ajax calls have been deprecated for a while, they are now no more supported by the UI components.
 
 ### Meta-object virtual link based on `row_metaobject_id`
 
