@@ -48,6 +48,12 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 - The platform hook `customStartPage` now throws exceptions.
   If you have implemented this hook you need to add `throws Exception` to the method declaraton.
 
+### Docker images' base OS
+
+The default Docker images for thi major version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions). 
+
+Any customization of our images specific to CentOS 7 should be checked and refactored if needed.
+
 <h2 id="changes">Core changes</h2>
 
 - New hook to limit user's access to menu item 
