@@ -7,14 +7,17 @@ See [this document](/lesson/docs/versions) for details on the platform's version
 
 <h3 id="upgrades">Dependencies upgrade policy</h3>
 
-Except in case of a critical vulnerability, the third party components are only upgraded on the `master` branch (development = alpha).
+Except in case of a critical ("zero-day") vulnerability which may be actually exploited in the context of Simplicité,
+the third party components are **only** upgraded on the `master` branch (development = alpha).
 
-By default, the `prerelease` (beta) and `release` branches (and the legacy maintenance versions) keep their dependencies
-as they were at the time the `master` branch was pushed on these branches.
+By default, the `prerelease` (beta) and `release` branches (and the legacy maintenance versions branches) keep their dependencies
+**as they were** at the time the `master` branch was pushed on these branches.
+
+On the `master` branch:
 
 - The up-to date check is done at least once a week.
-- By default all newer version of the components are upgraded as soon as they are available.
-  However, in general, only the released components are upgraded, the release candidate, beta or alpha versions of the components are ignored.
+- All newer version of the components are upgraded as soon as they are available.
+  However, in general, only the stable released components are upgraded, the unstable release candidate, beta or alpha versions of the components are ignored.
 
 #### Java dependencies
 
