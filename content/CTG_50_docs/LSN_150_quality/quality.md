@@ -82,8 +82,8 @@ All fixes are transposed to all branches, including the long term maintenance br
 <h2 id="docker">Docker images</h2>
 
 The "server" images `registry.simplicite.io/server`, from which the "platform" images `registry.simplicite.io/platform` are built, are rebuilt on a regular basis,
-at least once a week, using the up-to-date official base images of various OS flavors (CentOS/AlmaLinux/AlpineLinux/...).
+in general for each new platform revision, using the up-to-date official base images of various OS flavors (CentOS/AlmaLinux/AlpineLinux/...).
 
-The "platform" images `registry.simplicite.io/platform` are rebuilt each time a platform uppgrade (revision, minor or major version) is made available on the considered branch.
+The "platform" images `registry.simplicite.io/platform` are rebuilt each time a platform upgrade (revision, minor or major version) is made available on the considered branch.
 
 See this [GitHub repository](https://github.com/simplicitesoftware/docker) for more details on the way the various variants of images are built.
