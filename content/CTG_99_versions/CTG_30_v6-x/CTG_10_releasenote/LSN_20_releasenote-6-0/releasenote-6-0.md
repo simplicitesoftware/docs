@@ -5,6 +5,22 @@ Version 6.0 release note
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 
+### JVM compliance
+
+The target JVM compliance level for version 6 is 17 (LTS) even if it is still compiled with a JDK 11.
+
+The platform is thus supposed to be on any JVM >= 17 (LTS or not) and should not be run on any older JVM anymore.
+
+If you are using our Docker images (see bellow) you can safely use JVM 17 level syntax and features in your Java code
+as we won't provide images with a JVM older than 17.
+
+### Docker images' base OS
+
+The Docker images for version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions).
+The JVM variants are 17 (LTS) and 21 (LTS). 
+
+Any customization of our images specific to CentOS 7 (or to an older JVM) should thus be checked and refactored if needed.
+
 ### Deprecated repository objects
 
 Deprecated objects:
@@ -43,16 +59,10 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 - And `tsl_id` and `tsl_type` are not used anymore.
 - The related legacy field `obo_delspec` is now hidden and deprecated
 
-### Compatibility breaking changes
+### Other compatibility breaking changes
 
 - The platform hook `customStartPage` now throws exceptions.
   If you have implemented this hook you need to add `throws Exception` to the method declaraton.
-
-### Docker images' base OS
-
-The default Docker images for thi major version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions). 
-
-Any customization of our images specific to CentOS 7 should be checked and refactored if needed.
 
 <h2 id="changes">Core changes</h2>
 
