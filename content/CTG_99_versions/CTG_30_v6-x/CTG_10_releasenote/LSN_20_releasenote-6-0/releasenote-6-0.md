@@ -14,10 +14,12 @@ The platform is thus supposed to be on any JVM >= 17 (LTS or not) and should not
 If you are using our Docker images (see bellow) you can safely use JVM 17 level syntax and features in your Java code
 as we won't provide images with a JVM older than 17.
 
-### Docker images' base OS
+### Docker images
 
-The Docker images for version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions).
-The JVM variants are 17 (LTS) and 21 (LTS). 
+The Docker images for version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions' images).
+The JVM variants are only the **recent** Java LTS versions: 17 and 21.
+
+By default they are also using the `simplicite` user (vs `root` for previous major versions' images).
 
 Any customization of our images specific to CentOS 7 (or to an older JVM) should thus be checked and refactored if needed.
 
