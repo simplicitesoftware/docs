@@ -97,14 +97,20 @@ test
 Special blocks
 ====================
 
-<div class="info">Info div</div>
-<div class="success">Success div</div>
-<div class="warning">Warning div</div>
-<div class="error">Error div</div>
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
 
-[bloc-info]
-Parsed
-[/bloc-info]
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
 
 Collapsable
 ====================

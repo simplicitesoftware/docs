@@ -597,3 +597,4 @@ Scratch pad
 - Auto-scroll management of inlined 0,1 link in a tab
 - More reliable PNG image generation on modeler after a `requestAnimationFrame`
 - Fixed group-by list with duplicate records in some cases of pagination
+- Fixed Oracle warning: too many parse errors / error=918 with some JDBC drivers
