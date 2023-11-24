@@ -3,7 +3,7 @@ Version 5.3.x release note
 
 > **Note**: This release note corresponds to the current minor release. This minor version is the last 5.x minor version.
 
-<h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
+## <span id="compatbreakingchanges">Compatibility breaking changes</span>
 
 ### <span id="bootstrap-version">Bootstrap V5</span>
 
@@ -72,7 +72,7 @@ You can revert to Tomcat's default by setting it to `unset` in the `CookieProces
 Old adapters to import legacy settings thru `quick param` (V3 tooling) has been removed, and related code is deprecated.
 
 
-<h2 id="changes">Core changes</h2>
+## <span id="changes">Core changes</span>
 
 - Added accessors `Grant.getResource` to find Resources by code, type and/or target object name
 - Added `MailTool.convertImages` to replace in email all HTML inlined images `<img src="data:image/png;base64,..."/>` with attachments and `<img src="cid:..."/>`
@@ -199,7 +199,7 @@ return Message.formatCallToAction("MYCODE", "What is the best option?", Message.
 
 ![](import_lky.png)
 
-<h2 id="uichanges">UI changes</h2>
+## <span id="uichanges">UI changess</span>
 
 - UI extended controllers has been moved to `scripts/ui/tools`:
 	- they are not included in the core packaging `ui-bundle.js`
@@ -380,7 +380,7 @@ Scratch pad
 
 - State transitions are accessible on list rows when the action has `type = Form + Rows`
 
-<h2 id="postrelease">Post-release</h2>
+## <span id="postrelease">Post-release</span>
 
 ### <span id="version-5.3.0">5.3.0 (2023-04-24)</span>
 
