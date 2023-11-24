@@ -16,12 +16,12 @@ as we won't provide images with a JVM older than 17.
 
 ### Docker images
 
-The Docker images for version 6 are built on an AlmaLinux 8 OS base (vs a CentOS 7 OS base for previous major versions' images).
-The JVM variants are only the **recent** Java LTS versions: 17 and 21.
+The Docker images for version 6 are built on an **AlmaLinux 9** OS base (vs a legacy CentOS 7 OS base for previous major versions' images).
+The JVM variants are only for the **recent** Java LTS versions: 17 and 21 (default).
 
-By default they are also using the `simplicite` user (vs `root` for previous major versions' images).
+By default they are also using the plain `simplicite` user (vs the privileged `root` user for previous major versions' images).
 
-Any customization of our images specific to CentOS 7 (or to an older JVM) should thus be checked and refactored if needed.
+Any customization of our images should thus be verified and refactored if needed.
 
 ### Deprecated repository objects
 
