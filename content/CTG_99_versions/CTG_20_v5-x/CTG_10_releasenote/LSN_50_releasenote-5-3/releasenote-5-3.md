@@ -5,7 +5,7 @@ Version 5.3.x release note
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 
-<h3 id="bootstrap-version">Bootstrap V5</h3>
+### <span id="bootstrap-version">Bootstrap V5</span>
 
 - Bootstrap V4 is still the default renderer in release V5.x
 - Bootstrap V5 `BOOTSTRAP_VERSION = 5` is supported since release V5.3 and will be the default at major release V6
@@ -13,24 +13,24 @@ Version 5.3.x release note
 - `jQuery` is still supported to wrap constructor/events (but Bootstrap 5 uses pure javascript)
 - Migration doc for specific front: https://getbootstrap.com/docs/5.1/migration
 
-<h3 id="ecmascript">ECMAScript</h3>
+### <span id="ecmascript">ECMAScript</span>
 
 - This version uses common ES6/7 features (const, let, lambda, promise, async/await...)
 - IE11 is not supported anymore by all UI components
 
-<h3 id="chartjs-version">ChartJS version 3</h3>
+### <span id="chartjs-version">ChartJS version 3</span>
 
 - `Chart.js` has been upgraded to V3 but V2 will be supported in all release V5
 - Set the parameter `CHARTJS_VERSION` to specify the version 2 or 3
 - The location of the chartjs libs has changed to `scripts/chartjs/v2` and `scripts/chartjs/v3`
 - Migration guide for your specific charts: https://www.chartjs.org/docs/latest/getting-started/v3-migration.html
 
-<h3 id="marked-version">Marked version 4</h3>
+### <span id="marked-version">Marked version 4</span>
 
 - `Marked` Javascript lib has been upgraded from version 3.x.y to version 4.x.y
 - If you use it in your custom JS code you need to upgrade calls like `marked(...)` to `marked.parse(...)`
 
-<h3 id="fullcalendar-version">FullCalendar version 5</h3>
+### <span id="fullcalendar-version">FullCalendar version 5</span>
 
 - FullCalendar version 3 is now **deprecated** and will be removed in the next minor release (you can still use version 3 but you now **must**
   consider migrating your custom code to version 5 or at least version 4, see bellow)
@@ -39,12 +39,12 @@ Version 5.3.x release note
 
 To upgrade your specific code see https://fullcalendar.io/docs/upgrading-from-v3 or https://fullcalendar.io/docs/upgrading-from-v4
 
-<h3 id="excel-export">Export to XLSX</h3>
+### <span id="excel-export">Export to XLSX</span>
 
 - The data export to XLSX format is now only implemented with Apache POI
 - The legacy HTML format is deprecated/hidden by default, and will be removed in the next minor release
 
-<h3 id="vue">Vue.js</h3>
+### <span id="vue">Vue.js</span>
 
 The embedded Vue.js JS lib has been upgraded from version 2 to version 3. If you are using this lib in some of your custom components
 you **must** refactor their code according to the [Vue 3 migration guide](https://v3-migration.vuejs.org/).
@@ -382,17 +382,17 @@ Scratch pad
 
 <h2 id="postrelease">Post-release</h2>
 
-<h3 id="version-5.3.0">5.3.0 (2023-04-24)</h3>
+### <span id="version-5.3.0">5.3.0 (2023-04-24)</span>
 
 - Initial release for minor version 5.3. See above for details.
 
-<h3 id="version-5.3.1">5.3.1 (2023-05-02)</h3>
+### <span id="version-5.3.1">5.3.1 (2023-05-02)</span>
 
 - Fixed "more" button with user's preference on list
 - Fixed SQL-injection vulnerabilities and increased robustness
 - Improved error responses on the API endpoint
 
-<h3 id="version-5.3.2">5.3.2 (2023-05-09)</h3>
+### <span id="version-5.3.2">5.3.2 (2023-05-09)</span>
 
 - Improved N-N relationships pillboxes
 - Improved reflexive relationships treeviews
@@ -401,7 +401,7 @@ Scratch pad
 - Improved JWT nonce checking for OpenIDConnect auth providers
 - Added nonce support for internal authentication
 
-<h3 id="version-5.3.3">5.3.3 (2023-05-15)</h3>
+### <span id="version-5.3.3">5.3.3 (2023-05-15)</span>
 
 - Fixed `hasChanged` on big decimal during `form.onload`
 - Fixed print template with empty `getSelectedIds` in case of separate browser window/tab
@@ -409,7 +409,7 @@ Scratch pad
 - Explicit warning when /events is requested over HTTP
 - Disabled by default the JWT nonce checking for OpenIDConnect auth provider (as some providers does not enable it by default)
 
-<h3 id="version-5.3.4">5.3.4 (2023-06-03)</h3>
+### <span id="version-5.3.4">5.3.4 (2023-06-03)</span>
 
 - Backported distances tool methods in `Tool`
 - Fixed view editor not allowing to remove the chart option
@@ -418,7 +418,7 @@ Scratch pad
 - Fixed adapter loading "empty" XML (without `<object>` blocks)
 - Fixed do not export `sys_value2` in module to keep overridden value on target platform
 
-<h3 id="version-5.3.5">5.3.5 (2023-06-19)</h3>
+### <span id="version-5.3.5">5.3.5 (2023-06-19)</span>
 
 - Fixed tooltip of action with HTML content
 - Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
@@ -427,14 +427,14 @@ Scratch pad
 - Backported experimental proximity search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
 - Fixed preview PDF document on confirm action
 
-<h3 id="version-5.3.6">5.3.6 (2023-06-22)</h3>
+### <span id="version-5.3.6">5.3.6 (2023-06-22)</span>
 
 - Fixed cron workers to wait for job thread die
 - Backported feature to display bookmarks in a specific div with `$ui.displayBookmarks($('#myEmbeddedDiv'))`
 - Improved nonce management for internal auth provider
 - Export record to Excel with `searchExport` on child/panel objects to call hooks pre/postExport
 
-<h3 id="version-5.3.7">5.3.7 (2023-07-05)</h3>
+### <span id="version-5.3.7">5.3.7 (2023-07-05)</span>
 
 - Fixed display text-formatted messages returned by the hooks
 - Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
@@ -449,7 +449,7 @@ Scratch pad
 - Improved proximity search
 - Improved pushlog thru websocket to users with `USE_WEBSOCKET_LOG`
 
-<h3 id="version-5.3.8">5.3.8 (2023-07-10)</h3>
+### <span id="version-5.3.8">5.3.8 (2023-07-10)</span>
 
 - Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
 - Backported no pillbox rendering of link in default bottom panel
@@ -458,32 +458,32 @@ Scratch pad
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on the `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
 
-<h3 id="version-5.3.9">5.3.9 (2023-07-21)</h3>
+### <span id="version-5.3.9">5.3.9 (2023-07-21)</span>
 
 - Fixed signature pad distribution to `signature_pad.umd.min.js` instead of `signature_pad.min.js`
 - Backported improvements/simplification on the `customAuthPage` platform hook
 - Backported some robustness fixes (e.g. upon module name change)
 
-<h3 id="version-5.3.10">5.3.10 (2023-07-28)</h3>
+### <span id="version-5.3.10">5.3.10 (2023-07-28)</span>
 
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
 - Improved OpenAPI schema methods
 
-<h3 id="version-5.3.11">5.3.11 (2023-08-08)</h3>
+### <span id="version-5.3.11">5.3.11 (2023-08-08)</span>
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
 - Added `pre/postClearCache` platform hooks
 
-<h3 id="version-5.3.12">5.3.12 (2023-08-25)</h3>
+### <span id="version-5.3.12">5.3.12 (2023-08-25)</span>
 
 - Fixed list export with columns preference of selected predefined search
 - Added field isExportable on CSV export
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
 
-<h3 id="version-5.3.13">5.3.13 (2023-09-08)</h3>
+### <span id="version-5.3.13">5.3.13 (2023-09-08)</span>
 
 - Fixed columns size of `m_field_hist`
 - Added Web Content Accessibility from WCAG 2.1 to generic UI
@@ -491,7 +491,7 @@ Scratch pad
 - Fixed export on filtered crosstabs
 - Fixed regression on SAML provider retrieval
 
-<h3 id="version-5.3.14">5.3.14 (2023-09-14)</h3>
+### <span id="version-5.3.14">5.3.14 (2023-09-14)</span>
 
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
@@ -501,7 +501,7 @@ Scratch pad
 - Allows action confirmation with several same referenced fields
 - Backported new service objects' hook: `pingService`
 
-<h3 id="version-5.3.15">5.3.15 (2023-09-22)</h3>
+### <span id="version-5.3.15">5.3.15 (2023-09-22)</span>
 
 - The "About" shortcut is now explicitly granted (by default to designers & operators profiles)
 - Apply foreign key search spec from inherited objects
@@ -511,7 +511,7 @@ Scratch pad
 - Added common accessibility from WCAG 2.1
 - Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
 
-<h3 id="version-5.3.16">5.3.16 (2023-09-30)</h3>
+### <span id="version-5.3.16">5.3.16 (2023-09-30)</span>
 
 - Backported support for font resources in generic UI themes
 - Backported security fix on XML import
@@ -524,7 +524,7 @@ Scratch pad
 - The public user is now configured by default to use object pooling on the API endpoint
 - Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system parameters
 
-<h3 id="version-5.3.17">5.3.17 (2023-10-06)</h3>
+### <span id="version-5.3.17">5.3.17 (2023-10-06)</span>
 
 - Backported `Tool.diffYear` method
 - Backported security fixes
@@ -536,7 +536,7 @@ Scratch pad
 - Missing ARIA roles on form options dropdown
 - Fixed confirm action with updatable fields from object
 
-<h3 id="version-5.3.18">5.3.18 (2023-10-14)</h3>
+### <span id="version-5.3.18">5.3.18 (2023-10-14)</span>
 
 - Fixed focus on field error when the container is in a hidden tab or a collapsed area
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
@@ -552,11 +552,11 @@ Scratch pad
 - Backported UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
 - Fixed document/image field reset after server-side error
 
-<h3 id="version-5.3.19">5.3.19 (2023-10-16)</h3>
+### <span id="version-5.3.19">5.3.19 (2023-10-16)</span>
 
 - Fixed major regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
 
-<h3 id="version-5.3.20">5.3.20 (2023-10-20)</h3>
+### <span id="version-5.3.20">5.3.20 (2023-10-20)</span>
 
 - Added `numeric` and `search` input modes (not input type) when relevant
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
@@ -567,7 +567,7 @@ Scratch pad
 - Backported removal of HTML formatting in simple title tootips
 - Disabled, by default, export on `DataSet` object to avoid misusage
 
-<h3 id="version-5.3.21">5.3.21 (2023-10-31)</h3>
+### <span id="version-5.3.21">5.3.21 (2023-10-31)</span>
 
 - Removed partial clear cache during module deletion
 - Fixed `textarea.autosize` resize in hidden tab
@@ -578,7 +578,7 @@ Scratch pad
 - Tabs keeps the scrolltop before unloading the current tab
 - Fixed ghostly actions `addlist` | `listedit` | `listupsert`
 
-<h3 id="version-5.3.22">5.3.22 (2023-11-13)</h3>
+### <span id="version-5.3.22">5.3.22 (2023-11-13)</span>
 
 - Fixed resize issue on embedded external objects
 - Fixed internal server error when trying to connect as inactive or unknown user
@@ -588,7 +588,7 @@ Scratch pad
 - Fixed partial version number in UI JS bundle's URL
 - Fixed no transitions on list row when `isUpdateEnable` is false
 
-<h3 id="version-5.3.23">5.3.23 (UNRELEASED)</h3>
+### <span id="version-5.3.23">5.3.23 (2023-11-24)</span>
 
 - Generate DB index on meta-object field
 - Backported one external object instance per browser tab in a same session with the URL parameter `_tabId`
@@ -598,3 +598,8 @@ Scratch pad
 - More reliable PNG image generation on modeler after a `requestAnimationFrame`
 - Fixed group-by list with duplicate records in some cases of pagination
 - Fixed Oracle warning: too many parse errors / error=918 with some JDBC drivers
+- Excluded non Java modules from project POMs
+
+### <span id="version-5.3.24">5.3.24 (UNRELEASED)</span>
+
+- Nothing so far...
