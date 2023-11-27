@@ -602,4 +602,4 @@ Scratch pad
 
 ### <span id="version-5.3.24">5.3.24 (UNRELEASED)</span>
 
-- Nothing so far...
+- Fixed confirm dialog of action to trigger a change on referenced fields
