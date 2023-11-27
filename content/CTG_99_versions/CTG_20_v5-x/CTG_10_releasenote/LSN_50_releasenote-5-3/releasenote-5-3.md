@@ -603,3 +603,4 @@ Scratch pad
 ### <span id="version-5.3.24">5.3.24 (UNRELEASED)</span>
 
 - Fixed confirm dialog of action to trigger a change on referenced fields
+- Fixed `Enter` key not selecting element in completion dropdown
