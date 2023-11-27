@@ -534,10 +534,15 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 	- Mostly backported in v5.3
 	- [Documentation](https://docs.simplicite.io/lesson/docs/ui/wcag)
 
-- Added searchbar on menu (set `MENU_SEARCHABLE` system parameter to `yes` / `no` to display / hide) :
+- Added search bar on menu (set `MENU_SEARCHABLE` system parameter to `yes` / `no` to display / hide) :
 
 ![Menu Searchbar](menu-searchbar.png)
 
 - Updated Search item on view:
 	- Allows to define the item without a predefined search, only with the object name
 	- `Home` instance of object can display its predefined-search bar in header (as the main instance)
+
+- Added search bar on object forms:
+	- Allows to focus and highlight a field in the object's form
+	- Displayed on all objects by default
+	- Is configured with the "Search on form" configuration field
