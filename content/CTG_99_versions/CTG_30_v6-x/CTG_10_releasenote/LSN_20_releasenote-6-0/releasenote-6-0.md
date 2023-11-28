@@ -66,6 +66,9 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 - The platform hook `customStartPage` now throws exceptions.
   If you have implemented this hook you need to add `throws Exception` to the method declaraton.
 
+- The group `APP_DESIGNER` has been removed, the system only uses `ADMIN` or `DESIGNER`
+
+
 <h2 id="changes">Core changes</h2>
 
 - New hook to limit user's access to menu item 
