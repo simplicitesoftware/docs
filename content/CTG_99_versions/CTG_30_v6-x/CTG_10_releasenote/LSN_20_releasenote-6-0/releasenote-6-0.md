@@ -64,7 +64,7 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 ### Other compatibility breaking changes
 
 - The platform hook `customStartPage` now throws exceptions.
-  If you have implemented this hook you need to add `throws Exception` to the method declaraton.
+  If you have implemented this hook you need to add `throws Exception` to the method declaration.
 
 - The group `APP_DESIGNER` has been removed, the system only uses `ADMIN` or `DESIGNER`
 
