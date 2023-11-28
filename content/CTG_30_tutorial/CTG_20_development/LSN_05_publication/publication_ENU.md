@@ -37,6 +37,8 @@ Create an excel publication on the `TrnSupplier` object which exports the list o
 - write the method to generate the desired excel in the supplier's script:
 
 ```java
+import org.apache.poi.ss.usermodel.Sheet; 
+[...]
 public byte[] pubExcel(PrintTemplate pt){
 	//Simple Example of SQL query
 	String sqlQuery = "select trn_prd_reference, trn_prd_name, trn_prd_stock, trn_prd_price from trn_product where trn_prd_sup_id="+getRowId();
@@ -45,7 +47,7 @@ public byte[] pubExcel(PrintTemplate pt){
 	pt.setFilename(pt.getFilename().replace("[trnSupName]", getFieldValue("trnSupName")));
 	try{
 		ExcelTool xls = new ExcelTool(true);
-		Sheet sheet = xls.newSheet("Simple sheet");
+		Sheet sheet = xls.addSheet("Simple sheet");
 		int line = 0;
 
 		// use Grant.query to retrieve a List<String[]> containing the results from the query
