@@ -604,3 +604,5 @@ Scratch pad
 
 - Fixed confirm dialog of action to trigger a change on referenced fields
 - Fixed `Enter` key not selecting element in completion dropdown
+- Fixed bug preventing multiple Confirms on action confrim dialog when backend errors occured
+
