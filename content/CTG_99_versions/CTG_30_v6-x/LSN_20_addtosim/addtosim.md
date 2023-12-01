@@ -1,8 +1,8 @@
 ![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250.png)
 * * *
 
-Add version 6 to an existing SIM server
-=======================================
+Add versions 6.x to an existing SIM server
+==========================================
 
 Login as user `simplicite`.
 
@@ -16,15 +16,15 @@ Clone the version 6 template Git repository:
 
 > **Warning**: make sure to change `_your_Git_username_` and `_your_Git_password_` by your own Git credentials
 
-Create the version 6 variants (release and prerelease) in the SIM database:
+Create the version 6.x minor versions in the SIM database:
 
-	sql "insert into versions values ('6',  '1970-01-01 00:00:00')"
-	sql "insert into versions values ('6p', '1970-01-01 00:00:00')"
+	sql "insert into versions values ('6.0', '1970-01-01 00:00:00')"
+	sql "insert into versions values ('6.1', '1970-01-01 00:00:00')"
 
 And optionnaly their "light" variants:
 
-	sql "insert into versions values ('6l',  '1970-01-01 00:00:00')"
-	sql "insert into versions values ('6pl', '1970-01-01 00:00:00')"
+	sql "insert into versions values ('6.0l', '1970-01-01 00:00:00')"
+	sql "insert into versions values ('6.1l', '1970-01-01 00:00:00')"
 
 Add the post receive hook for the template:
 
@@ -36,12 +36,11 @@ With following content:
 #!/bin/sh
 
 gitversion=6
-for branch in release release-light prerelease prerelease-light
+for branch in 6.0 6.1
+# or for branch in 6.0 6.0-light 6.1 6.1-light
 do
 	version=$gitversion
-	[ $branch = 'release-light' ] && version=${version}l
-	[ $branch = 'prerelease' ] && version=${version}p
-	[ $branch = 'prerelease-light' ] && version=${version}pl
+	[ $branch = '6.0-light' -o $branch = '6.1-light' ] && version=${version}l
 	echo "Updating version $version template (branch $branch)..."
 	rm -fr /var/simplicite/template-$version
 	mkdir /var/simplicite/template-$version
@@ -73,16 +72,17 @@ Edit the post receive hook for the instance manager:
 
 	vi apps.git/hooks/post-receive
 
-with following content:
+with following content (keep the previous versions' parts if needed):
 
 ```bash
 #!/bin/sh
 
 echo "Updating instances manager..."
 sudo su simplicite -c "git --work-tree=/var/simplicite/apps --git-dir=/var/simplicite/git/apps.git checkout -f master"
-for v in l p pl
+for v in 6.0 6.1
+# or for v in 6.0 6.0-light 6.1 6.1-light
 do
-	cat /var/simplicite/apps/bin/version-6.sh | sed "s/template-6/template-6$v/g" > /var/simplicite/apps/bin/version-6$v.sh
+	cat /var/simplicite/apps/bin/version-6.sh | sed "s/template-6/template-$v/g" > /var/simplicite/apps/bin/version-$v.sh
 done
 sudo chmod +x /var/simplicite/apps/bin/*.sh
 sudo su simplicite -c "touch /var/simplicite/logs/apps.log"

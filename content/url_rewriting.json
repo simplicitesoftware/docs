@@ -96,6 +96,7 @@
   {"sourceUrl": "/00-versions/5.x/index.md","destinationUrl": "/lesson/docs/versions/index"},
   {"sourceUrl": "/6.x/releasenote/index.md","destinationUrl": "/lesson/docs/versions/index"},
   {"sourceUrl": "/6.x/releasenote/releasenote-6.0.md","destinationUrl": "/lesson/docs/versions/releasenote-6.0"},
+  {"sourceUrl": "/6.x/releasenote/releasenote-6.1.md","destinationUrl": "/lesson/docs/versions/releasenote-6.1"},
   {"sourceUrl": "/00-versions/6.x/addtosim.md","destinationUrl": "/lesson/docs/versions/addtosim"},
   {"sourceUrl": "/00-versions/6.x/index.md","destinationUrl": "/lesson/docs/versions/index"},
   {"sourceUrl": "/4.0/releasenote/releasenote-patchlevel-05.md","destinationUrl": "/lesson/docs/versions/releasenote-patchlevel-05"},
