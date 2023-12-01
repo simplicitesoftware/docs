@@ -606,5 +606,5 @@ Scratch pad
 - Fixed `Enter` key not selecting element in completion dropdown
 - Fixed bug preventing multiple Confirms on action confirm dialog when backend errors occurred
 - Fixed form reloading when canceling an action after a change with auto-save
-
+- Fixed screenflow's usage informations with loop on activities
 
