@@ -608,3 +608,4 @@ Scratch pad
 - Fixed form reloading when canceling an action after a change with auto-save
 - Fixed screenflow's usage informations with loop on activities
 - Fixed redrawing an empty document field thru a constraint of visibility
+- Fixed `Tool.shiftDaysNoWeekEnds` with negative days
