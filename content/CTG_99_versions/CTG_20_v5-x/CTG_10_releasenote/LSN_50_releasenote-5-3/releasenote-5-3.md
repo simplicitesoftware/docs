@@ -610,4 +610,4 @@ Scratch pad
 - Fixed redrawing an empty document field thru a constraint of visibility
 - Support `Tool.shiftDaysNoWeekEnds` with negative days
 - Support notepad with TXT rendering in the confirm dialog
-
+- Fixed filtering a list with several codes on a linked list
