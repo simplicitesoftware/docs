@@ -606,8 +606,9 @@ Scratch pad
 - Fixed `Enter` key not selecting element in completion dropdown
 - Fixed bug preventing multiple Confirms on action confirm dialog when backend errors occurred
 - Fixed form reloading when canceling an action after a change with auto-save
-- Fixed screenflow's usage informations with loop on activities
+- Fixed screenflow's usage information with loop on activities
 - Fixed redrawing an empty document field thru a constraint of visibility
 - Support `Tool.shiftDaysNoWeekEnds` with negative days
 - Support notepad with TXT rendering in the confirm dialog
+- Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overriden
 - Fixed filtering a list with several codes on a linked list
