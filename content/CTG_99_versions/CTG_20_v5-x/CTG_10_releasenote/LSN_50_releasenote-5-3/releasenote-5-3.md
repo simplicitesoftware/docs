@@ -600,7 +600,7 @@ Scratch pad
 - Fixed Oracle warning: too many parse errors / error=918 with some JDBC drivers
 - Excluded non Java modules from project POMs
 
-### <span id="version-5.3.24">5.3.24 (UNRELEASED)</span>
+### <span id="version-5.3.24">5.3.24 (2023-12-07)</span>
 
 - Fixed confirm dialog of action to trigger a change on referenced fields
 - Fixed `Enter` key not selecting element in completion dropdown
@@ -612,3 +612,7 @@ Scratch pad
 - Support notepad with TXT rendering in the confirm dialog
 - Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overriden
 - Fixed filtering a list with several codes on a linked list
+
+### <span id="version-5.3.25">5.3.25 (UNRELEASED)</span>
+
+- Nothing so far...
