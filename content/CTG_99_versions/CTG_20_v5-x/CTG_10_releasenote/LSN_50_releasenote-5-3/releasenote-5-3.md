@@ -554,7 +554,7 @@ Scratch pad
 
 ### <span id="version-5.3.19">5.3.19 (2023-10-16)</span>
 
-- Fixed major regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
+- Fixed regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
 
 ### <span id="version-5.3.20">5.3.20 (2023-10-20)</span>
 
