@@ -1,7 +1,7 @@
 Version 6.0 release note
 ========================
 
-> **Warning**: This release note corresponds to a testing **BETA** stage platform, it will still be regulary amended
+> **Warning**: This release note corresponds to a testing **BETA** stage platform, it will still be regularly amended
 
 <h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
 

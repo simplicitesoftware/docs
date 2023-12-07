@@ -560,11 +560,11 @@ Scratch pad
 
 - Added `numeric` and `search` input modes (not input type) when relevant
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
-- Fixed asynchronous exports when done accross mounted volumes (e.g. in some Docker deployments)
-- Updated `org.json` and `log4j` thirdparty libs
+- Fixed asynchronous exports when done across mounted volumes (e.g. in some Docker deployments)
+- Updated `org.json` and `log4j` third-party libs
 - Fixed dual add bookmark
 - Renamed webapp manifest from `manifest.json` to `simplicite.webmanifest`
-- Backported removal of HTML formatting in simple title tootips
+- Backported removal of HTML formatting in simple title tooltips
 - Disabled, by default, export on `DataSet` object to avoid misusage
 
 ### <span id="version-5.3.21">5.3.21 (2023-10-31)</span>
@@ -584,7 +584,7 @@ Scratch pad
 - Fixed internal server error when trying to connect as inactive or unknown user
 - Fixed tabs scroll-y issues on Firefox
 - Allowed overriding `StaticSiteExternalObject`'s `getPath` (as well as `display` for even more specific custom needs)
-- Fixed regression on module's PDF dcumentation generation
+- Fixed regression on module's PDF documentation generation
 - Fixed partial version number in UI JS bundle's URL
 - Fixed no transitions on list row when `isUpdateEnable` is false
 
