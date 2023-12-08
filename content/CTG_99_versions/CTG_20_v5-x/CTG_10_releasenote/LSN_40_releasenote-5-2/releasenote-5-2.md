@@ -862,7 +862,7 @@ This means this mechanism requires a proper modules' version management.
 - Backported fix on inhibition of left/right navigation swipe on the UI forms when the form is being edited
 - Backported fix on document/image field reset after server-side error
 
-<h3 id="version-5.2.52">5.1.52 (2023-10-31) - post-maintenance revision</h3>
+<h3 id="version-5.2.52">5.2.52 (2023-10-31) - post-maintenance revision</h3>
 
 - Backported security fix on document servlet
 <h3 id="version-5.2.52">5.2.52 (2023-10-18) - post maintenance revision</h3>
