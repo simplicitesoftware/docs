@@ -1344,8 +1344,18 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to show the navbar
+	yes/no Flag to show the navigation bar
 
+### `SHOW_SEARCHBOX`
+
+**Default value**
+
+	yes
+
+**Description**
+
+	yes/no Flag to show the indexed search box
+	
 ### `SLACK_SERVICE`
 
 **Default value**

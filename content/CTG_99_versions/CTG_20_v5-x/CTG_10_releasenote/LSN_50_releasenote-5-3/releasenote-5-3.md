@@ -616,3 +616,4 @@ Scratch pad
 ### <span id="version-5.3.25">5.3.25 (UNRELEASED)</span>
 
 - Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
+- Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
