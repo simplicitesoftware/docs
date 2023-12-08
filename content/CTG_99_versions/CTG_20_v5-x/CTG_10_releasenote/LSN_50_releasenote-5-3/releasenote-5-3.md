@@ -615,4 +615,4 @@ Scratch pad
 
 ### <span id="version-5.3.25">5.3.25 (UNRELEASED)</span>
 
-- Nothing so far...
+- Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
