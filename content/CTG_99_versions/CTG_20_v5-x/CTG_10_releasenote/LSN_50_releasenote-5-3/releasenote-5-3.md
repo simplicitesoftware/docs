@@ -617,3 +617,4 @@ Scratch pad
 
 - Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
 - Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
+- Dropped deprecated index on sys_value `m_system_idx1`
