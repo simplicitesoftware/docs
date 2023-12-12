@@ -3,7 +3,8 @@ Version 6.0 release note
 
 > **Warning**: This release note corresponds to a testing **BETA** stage platform, it will still be regularly amended
 
-<h2 id="compatbreakingchanges">Compatibility breaking changes</h2>
+Compatibility breaking changes <span id="compatbreakingchanges"></span>
+-----------------------------------------------------------------------
 
 ### JVM compliance
 
@@ -68,8 +69,11 @@ The internal additional field `row_metaobject_id` has been removed, the meta-obj
 
 - The group `APP_DESIGNER` has been removed, the system only uses `ADMIN` or `DESIGNER`
 
+- The `BarcodeTool`, `QRCodeTool` (and the new `DatamatrixTool`) takes now a resolution in DPI instead
+  of a size argument for their image generation methods.
 
-<h2 id="changes">Core changes</h2>
+Core changes <span id="changes"></span>
+---------------------------------------
 
 - New hook to limit user's access to menu item 
 	- `isMenuItemEnabled` with more parameters to limit access for status, enum or activity
@@ -431,7 +435,8 @@ protected long methodEnd(String method) {
 
 ![](dbdocmig2.png)
 
-<h2 id="uichanges">UI changes</h2>
+UI changes <span id="uichanges"></span>
+---------------------------------------
 
 - The modeler can display the Meta-object Links
 	- designer must specify which target objects will be drawn
