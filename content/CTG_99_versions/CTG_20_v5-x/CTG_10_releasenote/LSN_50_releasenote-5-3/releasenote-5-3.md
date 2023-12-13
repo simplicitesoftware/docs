@@ -581,6 +581,7 @@ Post-release <span id="postrelease"></span>
 - Fixed full XML export with pagination and filters
 - Tabs keeps the scrolltop before unloading the current tab
 - Fixed ghostly actions `addlist` | `listedit` | `listupsert`
+- Fixed Notification recipients not exported in XML export
 
 ### <span id="version-5.3.22">5.3.22 (2023-11-13)</span>
 
@@ -622,3 +623,4 @@ Post-release <span id="postrelease"></span>
 - Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
 - Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
 - Dropped deprecated index on sys_value `m_system_idx1`
+- Fixed Notification recipients not exported in module export
