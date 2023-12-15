@@ -75,7 +75,8 @@ public void postLoad() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.postLoad= function() {
@@ -84,6 +85,8 @@ MyObject.postLoad= function() {
 		this.setDefaultSearchSpec(this.getStatusField().getColumn() + " = 'VALIDATED'");
 };
 ```
+
+</details>
 
 <h3 id="isopencreatecopyupdatedeleteenable">Access rights enabling/disabling hooks</h3>
 
