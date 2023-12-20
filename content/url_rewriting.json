@@ -7,7 +7,7 @@
   {"sourceUrl": "/lesson/docs/integration/custom-services","destinationUrl": "/lesson/docs/integration/webservices/custom-services"},
   {"sourceUrl": "/lesson/docs/integration/services-auth","destinationUrl": "/lesson/docs/integration/webservices/services-auth"},
   {"sourceUrl": "/lesson/docs/integration/standard-formats","destinationUrl": "/lesson/docs/integration/webservices/standard-formats"},
-  {"sourceUrl": "/lesson/docs/apis","destinationUrl": "/lesson/docs/integration/apis"},
+  {"sourceUrl": "/lesson/docs/apis","destinationUrl": "/lesson/docs/integration/librairies"},
   {"sourceUrl": "/lesson/docs/remote","destinationUrl": "/lesson/docs/integration/remote"},
   {"sourceUrl": "/lesson/docs/in-out","destinationUrl": "/lesson/docs/integration/in-out"},
   {"sourceUrl": "/lesson/docs/misc/sandboxes-manager","destinationUrl": "/lesson/docs/misc/manager"},
