@@ -1,7 +1,11 @@
 PDF Publications
 ====================
 
+> There are many ways of generating PDFs, please [read this post for an overview](https://community.simplicite.io/t/pdf-publication/2159/3)
+
 The example below is for a simple PDF content using the iText&reg; library and its wrapper tool (publication template MIME type must be set to PDF):
+
+> For **binary** contents the return type of method **must** be `byte[]`
 
 ```Java
 public byte[] myPublicationMethod (PrintTemplate pt) {
