@@ -1,4 +1,5 @@
 [
+  {"sourceUrl": "/lesson/docs/core/publication-examples","destinationUrl": "/lesson/docs/integration/publications/publications"},
   {"sourceUrl": "/lesson/docs/core/adapter-code-examples","destinationUrl": "/lesson/docs/integration/adapters/adapters"},
   {"sourceUrl": "/lesson/docs/integration/io-commandline","destinationUrl": "/lesson/docs/integration/webservices/io-commandline"},
   {"sourceUrl": "/lesson/docs/integration/git-repositories","destinationUrl": "/lesson/docs/integration/webservices/git-repositories"},
