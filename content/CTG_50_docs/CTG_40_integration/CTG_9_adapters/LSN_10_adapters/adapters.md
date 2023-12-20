@@ -68,9 +68,7 @@ Most of the time, the standard XML/JSON structure is not the needed format, so y
 
 Often, these custom adpaters leverage Simplicité's parsing mechanisms by inheriting one of the internal classes, all in the `com.simplicite.util.integration` package :
 
-<details>
-<summary>Click to see internal class structure</summary>
-<pre>
+```
 - SimpleAdapter
     - LineBasedAdapter
         - CSVLineBasedAdapter
@@ -85,8 +83,7 @@ Often, these custom adpaters leverage Simplicité's parsing mechanisms by inheri
         - CellBasedXLSXAdapter
     - SimpleSQLAdapter
         - SQLAdapter
-</pre>
-</details>
+```
 
 To create a new adapter, go to Operation > Adapter > Create. Once created (and the Java code written):
 
@@ -99,7 +96,7 @@ To create a new adapter, go to Operation > Adapter > Create. Once created (and t
      * the native XML reader logs
   * an error file, if the XML import fails
 
-The following example transforms presents a [basic CSV->XML Adapter](/lesson/docs/integration/adapters/csv-to-xml)
+The canonical example is this lesson: [basic CSV->XML Adapter](/lesson/docs/integration/adapters/csv-to-xml)
 
 
 ## Direct Adapters
@@ -108,9 +105,9 @@ There are cases where you don't want to generate the intermediate XML. Think abo
 
 > `customStructuredData` ---> `customAdapter()` ---> DB
 
-These adapter **can leverage the same helper classes refered before: https://docs.simplicite.io/documentation/01-core/adapter-code-examples.md**
+These adapters can leverage the same helper classes mentioned before.
 
-A concise example is available here: https://community.simplicite.io/t/csv-adapter-example/2110
+The canonical example is this lesson: [direct CSV->DB Adapter](/lesson/docs/integration/adapters/csv)
 
 ## Stock CSV Adapter
 
