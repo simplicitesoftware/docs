@@ -15,11 +15,9 @@ An adapter is a Simplicité tool which aims at processing incoming data, general
 
 There are many ways of importing data into a Simplicité App. Let's get en overview and settle the pro's and con's.
 
-## 1 - Adapters
+## XML Adapters
 
-### 1.1 - XML Adapters
-
-#### 1.1.1 - Standard XML import
+### Standard XML import
 As we know, **the mother tongue of Simplicité is XML**. As a reminder, here is the simplified general XML structure:
 
 <details>
@@ -50,7 +48,7 @@ In this most basic case the import looks like this:
 
 One good thing is that with this native reader this **data travels through all the normal validations pipes and Java hooks that you configured for your object**. It's just as if you copied it on the forms and hit "save", if the data is not valid, you'll get an error.
 
-#### 1.1.2- Stock XML adapters
+### Stock XML adapters
 
 Adapters are called the way they are called because historically they were concieved as functions that would transform a specific kind of structured data (for example JSON) to the Simplicité-XML format:
 
@@ -62,7 +60,7 @@ Simplicité comes bundled with some "stock adapters". They are **structurally id
 - ZIP adapter (files are bundled with the XML instead of being inlined into it as base64)
 - CSV adapter (deprecated)
 
-#### 1.1.3 - Custom XML Adapters
+### Custom XML Adapters
 
 Most of the time, the standard XML/JSON structure is not the needed format, so you need to write your own adapter:
 
@@ -104,7 +102,7 @@ To create a new adapter, go to Operation > Adapter > Create. Once created (and t
 The following example transforms presents a [basic CSV->XML Adapter](/lesson/docs/integration/adapters/csv-to-xml)
 
 
-### 1.2 - Direct Adapters
+## Direct Adapters
 
 There are cases where you don't want to generate the intermediate XML. Think about very large imports, that would clutter the import supervisor object with huge XML files, and might pose memory problems. In these cases, we can use direct adapters, for which the usage is the same, but the way of processing the data is different:
 
@@ -114,13 +112,14 @@ These adapter **can leverage the same helper classes refered before: https://doc
 
 A concise example is available here: https://community.simplicite.io/t/csv-adapter-example/2110
 
-### 1.3 - Stock CSV Adapter
+## Stock CSV Adapter
 
 A special case is the new Stock CSV Importer, that will offer an admin-friendly interface to import CSV files and apply some mappings and transformations to the data. It's still limited to one object per CSV but has two modes : direct (CSV=>DB) or indirect (CSV=>XML=>DB)
 
 ![CSV import](csv_import.png)
 
-## 2 - Custom Import Objects
+Custom Import Objects
+====================
 
 In cases where...
 - you don't need/don't want to clutter the Import Supervisor, 
