@@ -5,6 +5,8 @@ This page serves as a summary of all different methods to :
 - import or use external data (**data in**)
 - export or expose internal data (**data out**)
 
+![schema](schema.jpg)
+
 Data in
 ---------------------------
 
