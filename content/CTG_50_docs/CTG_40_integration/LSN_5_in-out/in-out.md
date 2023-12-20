@@ -19,19 +19,11 @@ In a non-specific manner, it is possible to retrieve a file from an object / act
 #### Adapters 
 
 An adapter is a tool that "adapts" the data from a file to the business data model. It typically reads a file (CSV, Excel, etc) line by line to integrate the data, or transform it in Simplicité's formalized XML format. Its advantages compared to a custom import is that Adapter provide additional tools and services : 
-- helper Adapter classes for various formats : CSV, JSON, XML, etc  (cf [Package com.simplicite.util.integration](https://platform.simplicite.io/current/javadoc/com/simplicite/util/integration/package-summary.html))
+- helper Adapter classes for various formats : CSV, JSON, XML, etc 
 - pre-built mechanism for line-by-line logging
 - import supervision object with logs and stats
 
-To date, the most usefull resource for this is the [CSV Adapter Tip&Trick](https://community.simplicite.io/t/csv-adapter-example/2110), which can be adapted to other type of formats.
-
-#### Built-in adapters
-
-There is a built-in CSV adapter with options like field mapping and tranformations. Its main limitation is that, by not understanding a specific business model, it is designed to import data for one business object at a time.
-
-![csv_adapter](csv_adapter.jpg)
-
-The other adapters are based on Simplicité's XML formalization and its JSON and YAML counterparts. It's pretty complete and that's how full datasets are imported, but are too complex for non technical profiles. As a Simplicité developer, it's very usefull to know how to use this XML format that allows for complex updates to the data.
+There are built-in adapters for standard Simplicité formats, but you'll generally need to build your own adapters for your custom formats. [Read the full adapter documentation here](/lesson/docs/integration/adapters/adapters)
 
 ### Using data
 
