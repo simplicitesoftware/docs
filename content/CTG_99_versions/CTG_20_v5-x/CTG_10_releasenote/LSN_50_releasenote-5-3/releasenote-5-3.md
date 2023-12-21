@@ -618,9 +618,10 @@ Post-release <span id="postrelease"></span>
 - Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overriden
 - Fixed filtering a list with several codes on a linked list
 
-### <span id="version-5.3.25">5.3.25 (UNRELEASED)</span>
+### 5.3.25 (UNRELEASED) <span id="version-5.3.25"></span>
 
 - Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
 - Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
 - Dropped deprecated index on sys_value `m_system_idx1`
 - Fixed Notification recipients not exported in module export
+- Backported REST annotation improvements and `success` method for custom REST services
