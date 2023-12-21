@@ -1,4 +1,4 @@
-Tomcat OAuth2 authentication
+OAuth2 Authentication
 ============================
 
 <h2 id="providers">Providers</h2>

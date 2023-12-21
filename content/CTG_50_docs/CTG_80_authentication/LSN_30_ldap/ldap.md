@@ -1,4 +1,4 @@
-Tomcat LDAP authentication
+LDAP authentication
 ==========================
 
 The example below is given for an example LDAP schema but it can be easily

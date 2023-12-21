@@ -1,4 +1,9 @@
 [
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-multi-auth-providers","destinationUrl": "/lesson/docs/authentication/multi-auth-providers"},
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-customauth","destinationUrl": "/lesson/docs/authentication/customauth"},
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-ldap","destinationUrl": "/lesson/docs/authentication/ldap"},
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-saml","destinationUrl": "/lesson/docs/authentication/saml"},
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-oauth2","destinationUrl": "/lesson/docs/authentication/oauth2"},
   {"sourceUrl": "/lesson/docs/core/publication-examples","destinationUrl": "/lesson/docs/integration/publications/publications"},
   {"sourceUrl": "/lesson/docs/core/adapter-code-examples","destinationUrl": "/lesson/docs/integration/adapters/adapters"},
   {"sourceUrl": "/lesson/docs/integration/io-commandline","destinationUrl": "/lesson/docs/integration/webservices/io-commandline"},

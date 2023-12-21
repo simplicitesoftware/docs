@@ -1,4 +1,4 @@
-Tomcat SAML authentication
+SAML Authentication
 ==========================
 
 The example below is given for **Google** SAML Identity Provider (IdP) provider but this can be
