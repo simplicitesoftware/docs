@@ -624,4 +624,4 @@ Post-release <span id="postrelease"></span>
 - Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
 - Dropped deprecated index on sys_value `m_system_idx1`
 - Fixed Notification recipients not exported in module export
-- Backported REST annotation improvements and `success` method for custom REST services
+- Backported REST annotation improvements/fixes and `success` method for custom REST services
