@@ -27,7 +27,7 @@ Check the you are on the **“Simplicité Administrator”** scope
 </details>
 
 
-### 3) Access the `Licence Key` Object
+### 3) Access the **Licence Key** Object
 
 - Go to Operations > License key
 
