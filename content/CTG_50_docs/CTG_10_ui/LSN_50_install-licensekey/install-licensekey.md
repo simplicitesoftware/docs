@@ -1,48 +1,50 @@
 License key installation
 ========================
 
-Different ways are available to install a license key.
+Licence keys are delivered to you as XML files that must be imported in your instance. The import can be done :
+- through the UI, 
+- by calling a webservice
 
 Using the generic web UI
 ------------------------
 
-### Using the _XML import_ page
+> This manual is generic for Simplicité instances, always refer to your app's instructions first.
 
-- Connect to the generic web UI as `designer`, 
-- Click on the _XML import_ shortcut,
-- Upload your license key file (e.g. `license.xml`) or simply copy/paste the XML of the license key directly in the text area
-- Click on the _Import_ button
+### 1) Connect to your app
 
-![](install-licensekey.png)
+You should connect as the `designer` super-user (*or any user that has rights on the `LicenceKey` meta-object*)
 
-### Using the _License key_ business object
+### 2) Use the right scope 
 
-- Connect to the generic web UI as `designer`, 
-- Click on main menu: _Operation_ > _License key_,
-- Create or update the license key record manually
-- Or upload the license key file from the list button _Import license key_
+Check the you are on the **“Simplicité Administrator”** scope
+> Sometimes, **if the licence is expired, the scope selector might not be accessible!!!** In this case, the trick is to use the adress bar to change scope, by adding `/ui?scope=Home` to your app’s URL.
+
+<details>
+<summary>See image</summary>
+
+![Scope](scope.png)
+
+</details>
+
+
+### 3) Access the `Licence Key` Object
+
+- Go to Operations > License key
+
+![key](key.jpg)
+
+### 5) Delete old key
+
+- delete the old key (see image in #4)
+
 
 Using a generic service
 -----------------------
 
-Call a service interface: I/O (preferred) or API
-to create or update the license key record (see [integration interfaces](../02-integration/) for details).
+Call a service interface: I/O (preferred) or API to create or update the license key record (see [integration interfaces](/lesson/docs/integration/webservices/io-commandline) for details).
 
 Example using the I/O service interface:
 
-```text
+```bash
 curl -u designer:mydesignerpassword --form service=xmlimport --form file=@/my/path/to/license.xml http(s)//myhost[:myport][/mycontextroot]/io
-
-```
-
-Using a server side ANT task
-----------------------------
-
-> **Note**: this is only applicable to legacy deployments in which you are using the instance template.
-> You need to have the [Apache Ant](https://ant.apache.org/) tool installed.
-
-In the root folder of the instance template, run the following command:
-
-```text
-ant [-Dservice.url=http(s)//myhost[:myport][/mycontextroot]/io] -Dfile=/my/path/to/license.xml xmlimport
 ```
