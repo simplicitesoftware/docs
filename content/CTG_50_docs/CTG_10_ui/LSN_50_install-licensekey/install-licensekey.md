@@ -33,9 +33,9 @@ Check the you are on the **“Simplicité Administrator”** scope
 
 ![key](key.jpg)
 
-### 5) Delete old key
+### 4) Delete old key
 
-- delete the old key (see image in #4)
+- delete the old key (see image in #3)
 
 
 Using a generic service
