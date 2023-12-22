@@ -386,17 +386,17 @@ Scratch pad
 Post-release <span id="postrelease"></span>
 -------------------------------------------
 
-### <span id="version-5.3.0">5.3.0 (2023-04-24)</span>
+### 5.3.0 (2023-04-24) <span id="version-5.3.0"></span>
 
 - Initial release for minor version 5.3. See above for details.
 
-### <span id="version-5.3.1">5.3.1 (2023-05-02)</span>
+### 5.3.1 (2023-05-02) <span id="version-5.3.1"></span>
 
 - Fixed "more" button with user's preference on list
 - Fixed SQL-injection vulnerabilities and increased robustness
 - Improved error responses on the API endpoint
 
-### <span id="version-5.3.2">5.3.2 (2023-05-09)</span>
+### 5.3.2 (2023-05-09) <span id="version-5.3.2"></span>
 
 - Improved N-N relationships pillboxes
 - Improved reflexive relationships treeviews
@@ -405,7 +405,7 @@ Post-release <span id="postrelease"></span>
 - Improved JWT nonce checking for OpenIDConnect auth providers
 - Added nonce support for internal authentication
 
-### <span id="version-5.3.3">5.3.3 (2023-05-15)</span>
+### 5.3.3 (2023-05-15) <span id="version-5.3.3"></span>
 
 - Fixed `hasChanged` on big decimal during `form.onload`
 - Fixed print template with empty `getSelectedIds` in case of separate browser window/tab
@@ -413,7 +413,7 @@ Post-release <span id="postrelease"></span>
 - Explicit warning when /events is requested over HTTP
 - Disabled by default the JWT nonce checking for OpenIDConnect auth provider (as some providers does not enable it by default)
 
-### <span id="version-5.3.4">5.3.4 (2023-06-03)</span>
+### 5.3.4 (2023-06-03) <span id="version-5.3.4"></span>
 
 - Backported distances tool methods in `Tool`
 - Fixed view editor not allowing to remove the chart option
@@ -422,7 +422,7 @@ Post-release <span id="postrelease"></span>
 - Fixed adapter loading "empty" XML (without `<object>` blocks)
 - Fixed do not export `sys_value2` in module to keep overridden value on target platform
 
-### <span id="version-5.3.5">5.3.5 (2023-06-19)</span>
+### 5.3.5 (2023-06-19) <span id="version-5.3.5"></span>
 
 - Fixed tooltip of action with HTML content
 - Fixed `callProcedure` syntax for PostgreSQL `{call <procedure...>}`
@@ -431,14 +431,14 @@ Post-release <span id="postrelease"></span>
 - Backported experimental proximity search syntax (`<latitude>;<longitude>[~<distance with unit, e.g. 100mi or 10km>]) for geographical coordinates fields
 - Fixed preview PDF document on confirm action
 
-### <span id="version-5.3.6">5.3.6 (2023-06-22)</span>
+### 5.3.6 (2023-06-22) <span id="version-5.3.6"></span>
 
 - Fixed cron workers to wait for job thread die
 - Backported feature to display bookmarks in a specific div with `$ui.displayBookmarks($('#myEmbeddedDiv'))`
 - Improved nonce management for internal auth provider
 - Export record to Excel with `searchExport` on child/panel objects to call hooks pre/postExport
 
-### <span id="version-5.3.7">5.3.7 (2023-07-05)</span>
+### 5.3.7 (2023-07-05) <span id="version-5.3.7"></span>
 
 - Fixed display text-formatted messages returned by the hooks
 - Backported extension of the `visible` flag in `AUTH_PROVIDERS`, it is now possible to specify a list of URLs on which the provider will be visible
@@ -453,7 +453,7 @@ Post-release <span id="postrelease"></span>
 - Improved proximity search
 - Improved pushlog thru websocket to users with `USE_WEBSOCKET_LOG`
 
-### <span id="version-5.3.8">5.3.8 (2023-07-10)</span>
+### 5.3.8 (2023-07-10) <span id="version-5.3.8"></span>
 
 - Backported new hook `onDrawCaption(caption, display)` on diagram SVG 
 - Backported no pillbox rendering of link in default bottom panel
@@ -462,32 +462,32 @@ Post-release <span id="postrelease"></span>
 - Added context `CONTEXT_UPDATE` or `CONTEXT_SEARCH` on the `fieldCompletion` hook
 - Fixed position of completion dropdown upon responsive table
 
-### <span id="version-5.3.9">5.3.9 (2023-07-21)</span>
+### 5.3.9 (2023-07-21) <span id="version-5.3.9"></span>
 
 - Fixed signature pad distribution to `signature_pad.umd.min.js` instead of `signature_pad.min.js`
 - Backported improvements/simplification on the `customAuthPage` platform hook
 - Backported some robustness fixes (e.g. upon module name change)
 
-### <span id="version-5.3.10">5.3.10 (2023-07-28)</span>
+### 5.3.10 (2023-07-28) <span id="version-5.3.10"></span>
 
 - Fixed NPE after logout with LDAP-only authentication
 - Fixed health check JSON format
 - Improved OpenAPI schema methods
 
-### <span id="version-5.3.11">5.3.11 (2023-08-08)</span>
+### 5.3.11 (2023-08-08) <span id="version-5.3.11"></span>
 
 - Fixed missing URI filtering for `/health.json`
 - Improved synchronization on API grant loading
 - Added `pre/postClearCache` platform hooks
 
-### <span id="version-5.3.12">5.3.12 (2023-08-25)</span>
+### 5.3.12 (2023-08-25) <span id="version-5.3.12"></span>
 
 - Fixed list export with columns preference of selected predefined search
 - Added field isExportable on CSV export
 - Fixed module JSON compare with meta-object
 - Fixed `remote.git.username` loading
 
-### <span id="version-5.3.13">5.3.13 (2023-09-08)</span>
+### 5.3.13 (2023-09-08) <span id="version-5.3.13"></span>
 
 - Fixed columns size of `m_field_hist`
 - Added Web Content Accessibility from WCAG 2.1 to generic UI
@@ -495,7 +495,7 @@ Post-release <span id="postrelease"></span>
 - Fixed export on filtered crosstabs
 - Fixed regression on SAML provider retrieval
 
-### <span id="version-5.3.14">5.3.14 (2023-09-14)</span>
+### 5.3.14 (2023-09-14) <span id="version-5.3.14"></span>
 
 - Moved user status checking to re-allow creation in the `preLoadGrant` platform hook
 - Improved `CSVTool` robustness
@@ -505,7 +505,7 @@ Post-release <span id="postrelease"></span>
 - Allows action confirmation with several same referenced fields
 - Backported new service objects' hook: `pingService`
 
-### <span id="version-5.3.15">5.3.15 (2023-09-22)</span>
+### 5.3.15 (2023-09-22) <span id="version-5.3.15"></span>
 
 - The "About" shortcut is now explicitly granted (by default to designers & operators profiles)
 - Apply foreign key search spec from inherited objects
@@ -515,7 +515,7 @@ Post-release <span id="postrelease"></span>
 - Added common accessibility from WCAG 2.1
 - Added `USE_MANIFEST` flag to enable/disable the `manifest.json` for the UI pages
 
-### <span id="version-5.3.16">5.3.16 (2023-09-30)</span>
+### 5.3.16 (2023-09-30) <span id="version-5.3.16"></span>
 
 - Backported support for font resources in generic UI themes
 - Backported security fix on XML import
@@ -528,7 +528,7 @@ Post-release <span id="postrelease"></span>
 - The public user is now configured by default to use object pooling on the API endpoint
 - Backported configurable safe lists to clean news/social posts contents using the `WEBNEWS_HTML_SAFELIST` and `SOCIAL_HTML_SAFELIST`system parameters
 
-### <span id="version-5.3.17">5.3.17 (2023-10-06)</span>
+### 5.3.17 (2023-10-06) <span id="version-5.3.17"></span>
 
 - Backported `Tool.diffYear` method
 - Backported security fixes
@@ -540,7 +540,7 @@ Post-release <span id="postrelease"></span>
 - Missing ARIA roles on form options dropdown
 - Fixed confirm action with updatable fields from object
 
-### <span id="version-5.3.18">5.3.18 (2023-10-14)</span>
+### 5.3.18 (2023-10-14) <span id="version-5.3.18"></span>
 
 - Fixed focus on field error when the container is in a hidden tab or a collapsed area
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
@@ -556,11 +556,11 @@ Post-release <span id="postrelease"></span>
 - Backported UI form's HTML text input type are now set to `number`, `tel`, `email` or `url` instead of plain `text` depending on corresponding configured field type
 - Fixed document/image field reset after server-side error
 
-### <span id="version-5.3.19">5.3.19 (2023-10-16)</span>
+### 5.3.19 (2023-10-16) <span id="version-5.3.19"></span>
 
 - Fixed regression on number fields with value > 1000 (input type `number` added in previous revision has been removed)
 
-### <span id="version-5.3.20">5.3.20 (2023-10-20)</span>
+### 5.3.20 (2023-10-20) <span id="version-5.3.20"></span>
 
 - Added `numeric` and `search` input modes (not input type) when relevant
 - Fixed bookmark dialog accessibility + `ALT-B` accesskey
@@ -571,7 +571,7 @@ Post-release <span id="postrelease"></span>
 - Backported removal of HTML formatting in simple title tooltips
 - Disabled, by default, export on `DataSet` object to avoid misusage
 
-### <span id="version-5.3.21">5.3.21 (2023-10-31)</span>
+### 5.3.21 (2023-10-31) <span id="version-5.3.21"></span>
 
 - Removed partial clear cache during module deletion
 - Fixed `textarea.autosize` resize in hidden tab
@@ -583,7 +583,7 @@ Post-release <span id="postrelease"></span>
 - Fixed ghostly actions `addlist` | `listedit` | `listupsert`
 - Fixed Notification recipients not exported in XML export
 
-### <span id="version-5.3.22">5.3.22 (2023-11-13)</span>
+### 5.3.22 (2023-11-13) <span id="version-5.3.22"></span>
 
 - Fixed resize issue on embedded external objects
 - Fixed internal server error when trying to connect as inactive or unknown user
@@ -593,7 +593,7 @@ Post-release <span id="postrelease"></span>
 - Fixed partial version number in UI JS bundle's URL
 - Fixed no transitions on list row when `isUpdateEnable` is false
 
-### <span id="version-5.3.23">5.3.23 (2023-11-24)</span>
+### 5.3.23 (2023-11-24) <span id="version-5.3.23"></span>
 
 - Generate DB index on meta-object field
 - Backported one external object instance per browser tab in a same session with the URL parameter `_tabId`
@@ -605,7 +605,7 @@ Post-release <span id="postrelease"></span>
 - Fixed Oracle warning: too many parse errors / error=918 with some JDBC drivers
 - Excluded non Java modules from project POMs
 
-### <span id="version-5.3.24">5.3.24 (2023-12-07)</span>
+### 5.3.24 (2023-12-07) <span id="version-5.3.24"></span>
 
 - Fixed confirm dialog of action to trigger a change on referenced fields
 - Fixed `Enter` key not selecting element in completion dropdown
@@ -618,10 +618,14 @@ Post-release <span id="postrelease"></span>
 - Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overriden
 - Fixed filtering a list with several codes on a linked list
 
-### 5.3.25 (UNRELEASED) <span id="version-5.3.25"></span>
+### 5.3.25 (2023-12-22) <span id="version-5.3.25"></span>
 
 - Prevented technical system objects (adapters, ...) to appear in plain user's indexed search results
 - Backported `SHOW_SEARCHBOX` system param and fixed `SHOW_NAVIGATOR`support
 - Dropped deprecated index on sys_value `m_system_idx1`
 - Fixed Notification recipients not exported in module export
 - Backported REST annotation improvements/fixes and `success` method for custom REST services
+
+### 5.3.26 (UNRELEASED) <span id="version-5.3.26"></span>
+
+- Nothing so far...
