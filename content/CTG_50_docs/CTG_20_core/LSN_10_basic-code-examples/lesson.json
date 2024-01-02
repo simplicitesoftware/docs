@@ -1,4 +1,6 @@
 {
   "display": "LINEAR",
-  "ANY": {"title": "Basic code examples"}
+  "ANY": {
+    "title": "Basic code examples"
+  }
 }
