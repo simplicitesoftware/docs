@@ -1,12 +1,7 @@
 Business objects hooks
 ======================
 
-This document describes the business object hooks that can be implemented to put some **additional** business logic
-to your business objects.
-
-None of these hooks **needs** to be implemented, simple business objects can only rely on configuration.
-
-You **need** to implement one or several of these hooks if you want to apply out some dynamic business logic that goes beyond what can be configured.
+This document describes the business object hooks that can be implemented to put some additional business logic to your business objects. They are not mandatory, as simple business objects can rely on configuration only, but **hooks are needed to apply dynamic business logic that goes beyond what can be configured**.
 
 Note that other mechanisms exists to add some business logic to your business objects using advanced configuration such as:
 
@@ -47,7 +42,7 @@ Some very common and useful code examples are given in the [basic code examples]
 
 <h3 id="postload">Post load hook</h3>
 
-The `postLoad` hook is called **once** when the object definition is loaded.
+The `postLoad` hook is called **once**, when the object definition is loaded.
 It can therefore be used to modify the **static** object definition.
 
 By static we mean the definition settings that will remain the same all along
@@ -60,11 +55,9 @@ For instance it can be used to:
   name (e.g. the instance used by webservices - name is prefixed by `api_` - may hide or make non updatable one field
   which is visible or updatble to UI users)
 
-> **Warning**: you should **never** trigger an object loading within a `postLoad`, this may result in an uncatchable stack overflow **fatal** error for your instance
+> **Warning**: you should never trigger an object loading within a `postLoad`, this may result in an uncatchable stack overflow fatal error for your instance
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -94,14 +87,12 @@ The `isOpenEnable`, `isCreateEnable`, `isCopyEnable`, `isUpdateEnable` and `isDe
 allow to dynamically enable/disable open, create, copy, update, delete rights on the object.
 
 They are called for each record (except for `isCreateEnable`). The `row` parameter passed to these hooks is the
-current record for which the hook is called.  
+current record for which the hook is called.
 
 These hooks do not allow to override the granted rights of the users,
 they just allow to **restrict** these rights depending on more complex business rules.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -126,7 +117,8 @@ public boolean isDeleteEnable(String[] row) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.isCreateEnable = function() {  
@@ -147,6 +139,10 @@ MyObject.isDeleteEnable = function(row) {
 };
 ```
 
+</details>
+
+
+
 <h3 id="isactionenable">Custom action processing right enabling/disabling hook</h3>
 
 The `isActionEnable` hook has a similar use as above right hooks but for custom actions.
@@ -156,9 +152,7 @@ It can be called either globally (`row` is null in this case) for global actions
 As above, this hook does not allow to override the granted rights of the users on custom actions,
 it just allow to **restrict** the right depending on more complex business rules.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -170,7 +164,8 @@ public boolean isActionEnable(String[] row, String action) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.isActionEnable(row, action) {
@@ -181,15 +176,15 @@ MyObject.isActionEnable(row, action) {
 };
 ```
 
-See [this document](/lesson/docs/core/custom-actions-examples) for details on how to implement custom actions.
+</details>
+
+> See [this document](/lesson/docs/core/custom-actions-examples) for details on how to implement custom actions.
 
 <h3 id="isprintemplateenable">Publication processing right enabling/disabling hook</h3>
 
 The `isPrintTemplateEnable` hook has a similar use as above right hooks but for publications.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -201,7 +196,8 @@ public boolean isPrintTemplateEnable(String[] row, String printTemplateName) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.isPrintTemplateEnable(row, printtmpl) {
@@ -212,7 +208,9 @@ MyObject.isPrintTemplateEnable(row, printtmpl) {
 };
 ```
 
-See [this document](/lesson/docs/core/publication-examples) for details on how to implement publications.
+</details>
+
+> See [this document](/lesson/docs/core/publication-examples) for details on how to implement publications.
 
 <h3 id="isstatetransitionenable">State transitions hook</h3>
 
@@ -220,9 +218,7 @@ The `isStateTransitionEnable` hook allows to dynamically enable/disable a state 
 
 This hook is called when building the list of possible state transition. It may be useful to implement specific state transition condition rules.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -234,7 +230,8 @@ public boolean isStateTransitionEnable(String fromStatus, String toStatus) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.isStateTransitionEnable = function(fromStatus, toStatus) {
@@ -245,48 +242,14 @@ MyObject.isStateTransitionEnable = function(fromStatus, toStatus) {
 };
 ```
 
-<!--
-#### Current states transition
+</details>
 
-The current transition can be tested during the save process on UI:
-
-```javascript
-MyObject.postSave = function() {
-	var tran = this.getCurrentTransition();
-	if (tran && tran.getName() == "Transition-A-B-1") {
-		// do something
-	}
-	else if (tran && tran.getName() == "Transition-A-B-2") {
-		// do something else
-	}
-};
-```
-
-Set the current transition to determine the callback in case of on several granted transitions from A to B:
-
-```javascript
-MyObject.foo = function() {
-	// save a transition from A to B
-	if (this.getFieldValue("myStatus") == "A") {
-		this.setFieldValue("myStatus", "B");
-		// Use the callback of transition-A-B-2 (and not transition-A-B-1)
-		this.setCurrentTransition("Transition-A-B-2");
-		this.save();
-	}
-}
-```
-
-If the granted transition from A to B is unique, the current transition is not required,
-by default Simplicite will use the first granted transition from A to B.
--->
 
 <h3 id="canreference">Panel objects hook</h3>
 
 The `canReference` hook allows to show/hide linked objects' panels based on custom business rules.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -296,7 +259,8 @@ public boolean canReference(String objectName, String fieldName) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.canReference = function(objectName, fieldName) {
@@ -305,13 +269,14 @@ MyObject.canReference = function(objectName, fieldName) {
 };
 ```
 
+</details>
+
+
 <h3 id="canupdateall">Bulk update hook</h3>
 
 The `canUpdateAll` hook allows to dynamically enable/disable the bulk update feature.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -321,7 +286,8 @@ public boolean canUpdateAll(ObjectField fieldName) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.canUpdateAll = function(fieldName) {
@@ -330,14 +296,14 @@ MyObject.canUpdateAll = function(fieldName) {
 };
 ```
 
+</details>
+
 <h3 id="ishistoric">Data history hook</h3>
 
 The `isHistoric` hook allows to dynamically restrict the standard historization. By default, this method return true when the business object has been designed with the historic property.
 Above, the data bulk update is allowed to user who does not belong to MYGROUP.  
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -347,7 +313,8 @@ public boolean isHistoric() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.isHistoric = function() {
@@ -355,6 +322,8 @@ MyObject.isHistoric = function() {
 	return this.getStatus() != this.getOldStatus();
 };
 ```
+
+</details>
 
 <h2 id="datapreparationhooks">Data preparation hooks</h2>
 
@@ -375,9 +344,7 @@ The `initCreate`, `initCopy`, `initUpdate` and `initDelete` hooks are called eac
 
 They allow to define the properties of attributes, hide, initialize them, put them in read-only, etc. just before the form is displayed.
 
-Examples:
-
-**Java**
+**Examples:**
 
 ```java
 @Override
@@ -398,7 +365,8 @@ public void initDelete() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.initCreate = function() {
@@ -416,15 +384,15 @@ MyObject.initCopy = function() {
 };
 ```
 
+</details>
+
 <h3 id="initlist">List preparation hook</h3>
 
 The `initList` hook is called each time a list is displayed.
 
 It allows to define the properties of attributes, hide, initialize them, put them in read-only, etc. just before the list is displayed.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -434,7 +402,8 @@ public void initList(ObjectDB parent) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.initList = function(parent) {
@@ -443,15 +412,15 @@ MyObject.initList = function(parent) {
 };
 ```
 
+</details>
+
 <h3 id="initsearch">Search preparation hook</h3>
 
 The `initSearch` hook is called before a search form is displayed.
 
 It allows to set field filters for example, etc. just before the search page is displayed.
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -461,7 +430,8 @@ public void initSearch() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.initSearch = function() {
@@ -469,6 +439,8 @@ MyObject.initSearch = function() {
 	this.getField("objLogin").setFilter(this.getGrant().getLogin());	
 };
 ```
+
+</details>
 
 <h3 id="initrefselect">Reference lookup preparation hook</h3>
 
@@ -481,9 +453,7 @@ It allows to set field filters or search-spec just before the popup page is disp
 - `parent.getValue`: contains UI current value of parent field
 - useful to filter reference pickers with current parent data
 
-Example:
-
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -509,9 +479,7 @@ The `initDataMapSelect` hook has the same behavior to get referenced data by val
 
 When action has confirm fields this hook allows to prepare them before rendering.
 
-Exemple:
-
-**Java**
+**Exemple:**
 
 ```java
 @Override
@@ -522,7 +490,8 @@ public void initAction(Action action) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.initAction = function(action) {
@@ -531,6 +500,10 @@ MyObject.initAction = function(action) {
 	f.setRequired(true);
 };
 ```
+
+</details>
+
+
 
 <h3 id="otherinit">Other preparation hooks</h3>
 
@@ -558,9 +531,7 @@ field default value before validation or checking a validated value against a mo
 Information, warning and/or error messages may be returned (only one message or several).  
 Only error message(s) prevents the actual saving of the record.  
 
-Examples:
-
-**Java**
+**Examples:**
 
 ```java
 @Override
@@ -583,7 +554,11 @@ public List<String> postValidate() {
 }
 ```
 
-**Rhino**
+In the above example, the error messages code (`ERR_TEST`) corresponds to a static text
+configured in the `TEXT` list.
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.preValidate = function() {
@@ -605,9 +580,6 @@ MyObject.postValidate = function() {
 };
 ```
 
-In the above example, the error messages code (`ERR_TEST`) corresponds to a static text
-configured in the `TEXT` list.
-
 Note that `pre/postValidate` hooks implemented in **Rhino** can also return only a single message instead of a list like in the above examples:
 
 ```javascript
@@ -617,14 +589,16 @@ MyObject.preValidate = function() {
 };
 ```
 
+</details>
+
+
 <h3 id="prepostselecthooks">Pre and post selection hooks</h3>
 
 The `preSelect` and `postSelect` hooks are called before/after selecting the object data (in a list they are called for each list items). 
 
 They can be used to implement some business rules to set some field values for example.  
 
-Example:
-**Java**
+**Example:**
 
 ```java
 @Override
@@ -636,7 +610,9 @@ public void preSelect(String rowId, boolean copy) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.preSelect = function(rowId, copy) {
 	// If the data is selected for a copy set a field with particular value 
@@ -644,6 +620,9 @@ MyObject.preSelect = function(rowId, copy) {
 		this.getField("objField1").setValue("value");
 };
 ```
+
+</details>
+
 
 <h3 id="prepostcreateundatedeletehooks">Pre and post creation, update, deletion hooks</h3>
 
@@ -668,8 +647,7 @@ Post delete hook can be used to implement some business rules after the object i
 
 > **Note**: Cascade deletion of child object is not supposed to be coded as this behavior is configurable at link level.
 
-Example 1:
-**Java**
+**Example 1:**
 
 ```Java
 @Override
@@ -680,7 +658,9 @@ Example 1:
 	}
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.preCreate = function() {	
 	// Get a system param sequence next value
@@ -688,12 +668,13 @@ MyObject.preCreate = function() {
 };
 ```
 
+</details>
+
+
 > **Note**: for this simple case, the same result could be obtained using te following default value expression of the `objRefField` field:
 > `[EXPR:"REF"+[GRANT].getNextSystemParamValue("MYSEQUENCEPARAM")]`
 
-Example 2:
-
-**Java**
+**Example 2:**
 
 ```Java
 @Override
@@ -707,7 +688,9 @@ Example 2:
 	}
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyOrder.preCreate = function() {	
 	// Generate a unique number use as an id. For example an Order number for a Client.
@@ -717,6 +700,8 @@ MyOrder.preCreate = function() {
 	number.setValue(n); 	
 };
 ```
+
+</details>
 
 > **Note**: to generate unique codes based on the **row ID** the right approach is to configure a default value expression on your field with an expression like
 > `[EXPR:Tool.format("ABC-%05d", Long.valueOf([ROWID]))]` (in this example the field gets `ABC-00123` as value at the creation of a record with row ID `123`)
@@ -732,9 +717,7 @@ In all cases, the `postSave` hook is called after a `postUpdate` or `postCreate`
 These hooks can be used to implement some business rules to set some field values (that needs to be done after validation)
 or just to prevent saving in some particular cases, etc.  
 
-Example:
-
-**Java**
+**Example:**
 
 ```Java
 @Override
@@ -759,7 +742,8 @@ public String postSave() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.postSave = function() {
@@ -777,6 +761,8 @@ MyObject.postSave = function() {
 };
 ```
 
+</details>
+
 `postSave`, `postCreate` and `postUpdate` can also return a redirect or a javascript statement.
 The javascript override the default behavior and have to reload the form or redirect somewhere.
 
@@ -785,7 +771,6 @@ The javascript override the default behavior and have to reload the form or redi
 String url = HTMLTool.getFormURL("User", null, "1", "nav=add");
 return HTMLTool.redirectStatement(url);
 ```
-
 or
 
 ```java
@@ -801,7 +786,6 @@ String js =
 return HTMLTool.javascriptStatement(js);
 ```
 
-
 <h3 id="prepostsearchhooks">Pre and post search hooks</h3>
 
 The `preSearch` and `postSearch` hooks are called before/after searching the object data: before/after the search core method is called.  
@@ -810,8 +794,7 @@ Pre search hook is called to add specific filters or order the result: list, piv
 
 Post search hook is called after search to add specific code for instance to evaluate simple calculated fields, reorder or remove records.
 
-Examples:
-**Java**
+**Examples:**
 
 ```Java
 @Override
@@ -833,6 +816,10 @@ public List<String[]> postSearch(List<String[]> rows) {
 	
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.preSearch = function() {
 	this.getField("objField1").setFilter("is null or <1000");
@@ -849,6 +836,9 @@ MyObject.postSearch = function(rows) {
 	return rows;
 };
 ```
+
+</details>
+
 
 ### Post deletion with message or redirect statement
 
@@ -874,9 +864,7 @@ The `preUpdateAll`, `postUpdateAll`, `preDeleteAll` and `postDeleteAll` hooks ar
 
 These hooks are called to add specific behaviors before/after a bulk update/delete.
 
-Example:
-
-**Java**:
+**Example:**
 
 ```java
 @Override
@@ -893,7 +881,8 @@ public String preUpdateAll(Parameters params) {
 };
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.preUpdateAll = function(params) {
@@ -908,14 +897,15 @@ MyObject.preUpdateAll = function(params) {
 };
 ```
 
+</details>
+
 <h3 id="importhooks">Import hooks</h3>
 
 The `preImport` and `postImport` hooks are called before/after a data is imported.
 
 These hooks are called to add specific behaviors before/after an import.
 
-Examples:
-**Java**
+**Examples:**
 
 ```Java
 @Override
@@ -936,7 +926,8 @@ Examples:
 	}
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.preImport = function() {
@@ -954,6 +945,8 @@ MyObject.postImport = function() {
 };
 ```
 
+</details>
+
 <h3 id="exporthooks">Export hooks</h3>
 
 The `isExportAllowed` hook is called before exporting data to deny or confirm the export.
@@ -962,9 +955,7 @@ The `isExportAllowed` hook is called before exporting data to deny or confirm th
 - returns an error: do not export data with a message
 - returns null: export is allowed
 
-Examples:
-
-**Java**
+**Examples:**
 
 ```java
 @Override
@@ -988,9 +979,7 @@ The `preExport` and `postExport` hooks are called before/after data export.
 - `preExport`: to force some field filters
 - `postExport`: to change some values, remove or add records.
 
-Examples:
-
-**Java**
+**Examples:**
 
 ```java
 @Override
@@ -1012,9 +1001,7 @@ public List<String[]> postExport(List<String[]> rows) {
 
 The `getExportFileName` hook is called to force the exported filename on client side.
 
-Examples:
-
-**Java**
+**Examples:**
 
 ```java
 @Override
@@ -1032,8 +1019,7 @@ The `preAlert` and `postAlert` hooks are called before/after the alert is sendin
 
 The `preAlert` hook can be used to change the alert just before sending (change the core message and/or add specific recipients).
 
-Example:
-**Java**
+**Example:**
 
 ```Java
 @Override
@@ -1048,7 +1034,9 @@ public String preAlert(Alert a) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.preAlert = function(alert) {
 	if (alert!=null) {
@@ -1060,11 +1048,11 @@ MyObject.preAlert = function(alert) {
 };
 ```
 
+</details>
+
 The `postAlert` hook can be used to implement some business logic just after sending.
 
-Example:
-
-**Java**
+**Example:**
 
 ```Java
 @Override
@@ -1074,18 +1062,21 @@ public String postAlert(Alert a) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.postAlert = function(alert) {
 	this.getField("objField4").setValue("Mail sent !");
 };
 ```
 
+</details>
+
+
 <h4 id="sendalert">Send alert with custom attachments</h4>
 
 It is possible to send one alert from any other hook and to add specific attachments:
-
-**Java**
 
 ```Java
 @Override
@@ -1118,7 +1109,8 @@ public String postSave() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.postSave = function() {
@@ -1146,6 +1138,10 @@ MyObject.postSave = function() {
 }
 ```
 
+</details>
+
+
+
 <h3 id="predefinedsearchhooks">Predefined searches hooks</h3>
 
 It is possible to add code during the predefined search creation:
@@ -1153,7 +1149,7 @@ It is possible to add code during the predefined search creation:
 - `preSavePredefinedSearch`: useful to prevent creation or update, or change filters before save
 - `postSavePredefinedSearch`: for cascading operations
 - `getPredefinedSearches`: override predefined searches accessibility
-**Java**
+
 ```Java
 @Override
 	public String preSavePredefinedSearch(PredefinedSearch ps) {
@@ -1179,7 +1175,9 @@ It is possible to add code during the predefined search creation:
 	}
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyObject.preSavePredefinedSearch = function(ps) {
 	// stop creation
@@ -1202,6 +1200,7 @@ MyObject.getPredefinedSearches() {
 };
 ```
 
+</details>
 
 <h2 id="otherhooks">Other hooks</h2>
 
@@ -1209,9 +1208,7 @@ MyObject.getPredefinedSearches() {
 
 The `getUserKeyLabel` hook can be used to override a business object record's default "short" label (the one which is displayed on form titles, on indexed search results, on treeviews, ...)
 
-Example:
-
-**Java**:
+**Example:**
 
 ```java
 @Override
@@ -1223,7 +1220,8 @@ public String getUserKeyLabel(String[] row) {
 }
 ```
 
-**Rhino**:
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.getUserKeyLabel = function(row) {
@@ -1235,6 +1233,8 @@ MyObject.getUserKeyLabel = function(row) {
 		return row[this.getFieldIndex("myListLabelField")];
 }
 ```
+
+</details>
 
 <h3 id="stylehook">Style hook</h3>
 
@@ -1274,22 +1274,7 @@ public String getStyle(ObjectField field, String[] row) {
 
 As of version `3.2 MAINTENANCE06` the `getHelp` and `getCtxHelp` hooks can be use to dynamically create/update main help and contextual helps:
 
-**Rhino**
-
-```javascript
-MyObject.getHelp = function() {
-	if (this.getGrant().hasResponsibility("MYGROUP"))
-		return "This is a custom main help";
-};
-MyObject.getCtxHelp = function(ctx) {
-	if (this.getGrant().hasResponsibility("MYGROUP") && ctx == ObjectCtxHelp.CTXHELP_UPDATE)
-		return "This is a custom contextual help";
-};
-```
-
-**Java**
-
-```javascript
+```java
 @Override
 public String getHelp() {
 	if (getGrant().hasResponsibility("MYGROUP"))
@@ -1304,6 +1289,22 @@ public String getCtxHelp(String context) {
 };
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.getHelp = function() {
+	if (this.getGrant().hasResponsibility("MYGROUP"))
+		return "This is a custom main help";
+};
+MyObject.getCtxHelp = function(ctx) {
+	if (this.getGrant().hasResponsibility("MYGROUP") && ctx == ObjectCtxHelp.CTXHELP_UPDATE)
+		return "This is a custom contextual help";
+};
+```
+
+</details>
+
 <h3 id="usinghistory">Using history</h3>
 
 If a `MyObject` business object is historized, there is an additional business object names `MyObjectHistoric` that stores the values of each record.
@@ -1311,7 +1312,7 @@ If a `MyObject` business object is historized, there is an additional business o
 A new record is created each time one of the common fields of `MyObject` and `MyObjectHistoric` is changed.
 
 To access the historic records of a given record you can use:
-**Java**
+
 ```Java
 ObjectDB h = this.getGrant().getTmpObject(getHistoricName()); // Get historic object
 h.resetFilters();
@@ -1319,7 +1320,10 @@ h.getField("row_ref_id").setFilter(this.getRowId()); // Filter on current row ID
 h.getField("row_idx").setOrder(-1); // Reverse order on history index
 h.search(false);
 ```
-**Rhino**
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 var h = this.getGrant().getTmpObject(this.getHistoricName()); // Get historic object
 h.resetFilters();
@@ -1328,15 +1332,16 @@ h.getField("row_idx").setOrder(-1); // Reverse order on history index
 h.search(false);
 (...)
 ```
+
+</details>
+
  
 <h3 id="redirections">Redirection</h3>
  
 It is possible to open a given "abstract" father object (e.g. `Vegetable`) record
 as its corresponding specialized child object (e.g. `Carrot` or `Cabbage`) record by implementing a father-child redirect hook.
  
-Example:
-
-Java 
+**Example:**
 
 ```java
 @Override
@@ -1362,7 +1367,8 @@ public String[] getTargetObject(String rowId, String[] row) {
 };
 ```
 
-Rhino javascript
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 Vegetable.getTargetObject = function(rowId, row) {
@@ -1390,6 +1396,8 @@ Vegetable.getTargetObject = function(rowId, row) {
 	return t;
 };
 ```
+
+</details>
 
 This mechanism can also be used to do redirection between objects that don't have a father-child relationship.
 
@@ -1421,7 +1429,7 @@ Let's say you have a `MyChildObject` that inherits from `MyFatherObject` you can
 from the child object's code by using the `MyFatherObject.<hook name>.call(this, <hook arguments>)` syntax (the `.call(this, ` part
 make the call to be done for the child object's scope).
 
-Example:
+**Example:**
 
 ```javascript
 MyChildObject.postCreate = function() {
