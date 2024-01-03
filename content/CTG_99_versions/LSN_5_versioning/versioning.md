@@ -99,7 +99,8 @@ A long term maintenance branch **only** receives critical fixes.
 
 | Major/minor | Maintenance branch                                                      | Maintenance end date                                      |
 |-------------|-------------------------------------------------------------------------|------------------------------------------------------------|
-| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Development (alpha stage)                                      |
+| major       | `6.1` [release notes](00-versions/6.x/releasenote/releasenote-6.1.md) | Development (alpha stage)                                      |
+| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Testing (beta stage)                                           |
 | last minor  | `5.3` [release notes](00-versions/5.x/releasenote/releasenote-5.3.md) | **Current release** Long term (till January 2027 at least (*)) |
 | minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Expired short term (since September 30th, 2023)                |
 | minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)                  |
@@ -113,7 +114,8 @@ A long term maintenance branch **only** receives critical fixes.
 
 | Version                   | Instance templates<br/>Git branches | Docker images tags                                |
 |:-------------------------:|-------------------------------------|---------------------------------------------------|
-| 6.0 (alpha)               | `6.0[-light]`                   | `6-alpha[-light]`                            |
+| 6.1 (alpha)               | `6.1[-light]`                   | `6-alpha[-light]`                            |
+| 6.0 (beta)                | `6.0[-light]`                   | `6-beta[-light]`                            |
 | **5.3** (current release) | `release[-light]`              | `5[-light]`, `5.3[-light]`, `5.3.x` (*)  |
 | 5.2                       | `5.2[-light]`                   | `5.2[-light]`, `5.2.x`                      |
 | 5.1                       | `5.1[-light]`                   | `5.1[-light]`, `5.1.x`                      |
