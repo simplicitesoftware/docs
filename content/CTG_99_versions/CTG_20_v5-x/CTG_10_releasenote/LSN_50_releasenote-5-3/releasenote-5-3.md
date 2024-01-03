@@ -628,4 +628,4 @@ Post-release <span id="postrelease"></span>
 
 ### 5.3.26 (UNRELEASED) <span id="version-5.3.26"></span>
 
-- Nothing so far...
+- Fixed UI merge instance
