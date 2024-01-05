@@ -629,3 +629,7 @@ Post-release <span id="postrelease"></span>
 ### 5.3.26 (UNRELEASED) <span id="version-5.3.26"></span>
 
 - Fixed UI merge instance
+- Backported `setFieldValue` with file argument
+- Fiexe panel objects columns visibility when `USE_OBJECT_PREFS=no`
+- Forced default `ANY`language for news
+
