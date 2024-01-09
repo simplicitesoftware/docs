@@ -52,7 +52,11 @@ Date or datetime interval search syntax is `YYYY-MM-DD[ hh:mm:ss];YYYY-MM-DD[ hh
 
 Alternatively you can use search filters named `dmin__<field name>` or `dmax__<field name>`
 
-### Proximity search on geographical coordinates fields
+### Geographical search
 
-As of version 5.3, geographical coordinates fields allows "proximity" search using syntax: `<latitude>;<longitude>~<distance with unit, e.g. 100mi, 10km, ...>`.
+As of version 5.3, geographical **coordinates fields** allows proximity search using syntax: 
+
+```
+<latitude>;<longitude>~<distance with unit, e.g. 100mi, 10km, ...>
+```
 
