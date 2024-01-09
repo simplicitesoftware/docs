@@ -3,7 +3,7 @@ Roadmap
 
 For feature requests, please post in [the dedicated category in our forum](https://community.simplicite.io/c/feature-request/46)
 
-![Roadmap](roadmap.png.jpg)
+![Roadmap](roadmap.png)
 
 <details>
 <summary>History</summary>
