@@ -49,12 +49,13 @@ All previous rights are migrated automatically to the new `Permission` object wi
 ### Meta-object virtual link based on `row_metaobject_id`
 
 The internal additional field `row_metaobject_id` has been removed, the meta-object field support the link itself (thru a refSearchSpec):
-	- it allows several meta-object fields on a same object (previous versions only support one meta-object per object)
-	- the related Link is named `<child object>;<meta-object field name>` instead of `<object>;row_metaobject_id>`
-	- inlined panel in template has to be refactored with the new link name:
-		- from `<div class="area" data-area="MyPanelObject;row_metaobject_id>"></div>"`
-		- to `<div class="area" data-area="MyPanelObject;myMetaObjectField>"></div>"`
-	- the syntax is now more consistent with foreign-keys
+
+- it allows several meta-object fields on a same object (previous versions only support one meta-object per object)
+- the related Link is named `<child object>;<meta-object field name>` instead of `<object>;row_metaobject_id>`
+- inlined panel in template has to be refactored with the new link name:
+	- from `<div class="area" data-area="MyPanelObject;row_metaobject_id>"></div>"`
+	- to `<div class="area" data-area="MyPanelObject;myMetaObjectField>"></div>"`
+- the syntax is now more consistent with foreign-keys
 
 ### Translation refactored
 
