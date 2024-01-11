@@ -24,6 +24,8 @@ Users have the option to subscribe or unsubscribe from the notifications they re
 
 For more information on the VAPID RFC : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
+Online VAPID KEY generator : https://vapidkeys.com/
+
 **Recipients** can be :
 * User : a named user of the platform
 * Group : a group of users
@@ -51,7 +53,7 @@ Create an **internal notification** that alerts users in the `TRN_ADMIN` group w
     * Type: **Group**
     * Group: **TRN_ADMIN**
 5. Synchronise notification recipients
-    * Click on the **Synchronise Recipients** action available on the list of notifications
+    * Click on the **Synchronise Recipients** action available on the list of notifications. This action allows to generate a subscription for each one of the Notification's recipients.
 6. Add the **NOTI_READER** group to the **TRN_ADMIN** Profile
 7. Clear the cache
 

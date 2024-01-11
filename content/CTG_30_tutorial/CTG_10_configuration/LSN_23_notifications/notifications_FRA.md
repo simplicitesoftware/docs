@@ -24,6 +24,8 @@ Les **canaux de diffusion** sont les suivants :
 
 Pour plus d'informations sur la norme VAPID : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
+Générateur de clé VAPID : https://vapidkeys.com/
+
 **Les destinataires** peuvent être :
 * Utilisateur : un utilisateur nommé de la plateforme
 * Groupe : un groupe d'utilisateurs
@@ -34,28 +36,28 @@ Exercice
 
 Créer une notification **interne** qui alerte les utilisateurs du groupe **TRN_ADMIN** lors la **validation** d'une **commande** :
 1. Configuration de la notification :
-* Nom : **TrnOrderValidated**
-* Action : **Mise à jour**
-* Module : **Training**
-* Objet métier : **TrnOrder**
-* Expression : `[OLDVALUE:trnOrdStatus] == 'P' && [VALUE:trnOrdStatus] == 'V'` *attention les codes correspondants aux status peuvent être différents selon votre paramétrage* 
+    * Nom : **TrnOrderValidated**
+    * Action : **Mise à jour**
+    * Module : **Training**
+    * Objet métier : **TrnOrder**
+    * Expression : `[OLDVALUE:trnOrdStatus] == 'P' && [VALUE:trnOrdStatus] == 'V'` *attention les codes correspondants aux status peuvent être différents selon votre paramétrage* 
 
 2. Configuration des canaux de diffusion :
-* Associer le canal **Interne**
+    * Associer le canal **Interne**
 
 3. Configuration du contenu :
-* Langue : **Français**
-* Module : **Training**
-* Sujet : *vide* (correspond à l'objet d'un mail ou au titre d'une notification Web Push)
-* Contenu : `La commande [VALUE:trnOrdNumber] a été validée`
+    * Langue : **Français**
+    * Module : **Training**
+    * Sujet : *vide* (correspond à l'objet d'un mail ou au titre d'une notification Web Push)
+    * Contenu : `La commande [VALUE:trnOrdNumber] a été validée`
 
 4. Configuration des destinataires : 
-* Ordre : **10**
-* Type : **Groupe**
-* Groupe : **TRN_ADMIN**
+    * Ordre : **10**
+    * Type : **Groupe**
+    * Groupe : **TRN_ADMIN**
 
 5. Synchroniser les destinataires des notifications
-* Cliquer sur l'action de liste **Synchroniser les destinataires**
+    * Cliquer sur l'action de liste **Synchroniser les destinataires**. Cette action permet de créer un abonnement pour chaque destinataire des notifications.
 
 6. Ajouter le groupe **NOTI_READER** au Profil de **TRN_ADMIN**
 
