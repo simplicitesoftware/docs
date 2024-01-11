@@ -60,3 +60,18 @@ As of version 5.3, geographical **coordinates fields** allows proximity search u
 <latitude>;<longitude>~<distance with unit, e.g. 100mi, 10km, ...>
 ```
 
+### Meta-object search
+
+As of v6.0, meta-objects are indexed with their functional key and are searchable with the following syntax : `<object name>#<user key filter>`
+
+```java
+// All users with 'martin' in the name
+getField("myObjectField").setFilter("User#%martin%");
+// All indexed objects with user-key starting with '12345'
+getField("myObjectField").setFilter("%#12345%");
+// Explicit User with row_id = 12
+getField("myObjectField").setFilter("User:12");
+```
+
+![](filter_obj.png)
+
