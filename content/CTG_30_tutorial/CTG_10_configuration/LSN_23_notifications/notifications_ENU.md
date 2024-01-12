@@ -1,35 +1,55 @@
 Notifications
 ====================
 
-Notifications are configured in **Social/Notifications/Configuration** V5 version **Interaction utilisateur/Notifications/Configuration** V6 version.  
-They allow to alert users when an event occurs.
+Notifications allow to alert users when an event occurs and are configured in :
+- `v5` **Social/Notifications/Configuration** 
+- `v6` **Interaction utilisateur/Notifications/Configuration** 
 
-Notifications are linked to a business object, they are triggered by an action (create, update, delete) and can optionally have an execution condition in the form of an [expression](/lesson/docs/core/expressions).
+## Notifications
 
-A notification can be sent through multiple broadcast channels and sent to multiple recipients. Its content is defined by language and can be overriden for a particular channel and/or recipient. 
+They :
+- are linked to a business object, 
+- are triggered by an action (create, update, delete) 
+- can optionally have an execution condition in the form of an [expression](/lesson/docs/core/expressions).
+- can be sent :
+    - through multiple broadcast channels 
+    - to multiple recipients
+- its content is defined by language and can be overriden for a particular channel and/or recipient. 
 
 Recipients can be concerned by all of the notification's channels or be set up individually for a more precise configuration per recipient. 
 
-Users have the option to subscribe or unsubscribe from the notifications they receive (via the *Subscriptions* button on their notification list).
+Users have the option to **subscribe** or **unsubscribe** from the notifications they receive (via the *Subscriptions* button on their notification list).
 
-**The channels** :
-* Internal : The counter of a bell icon visible in the platform's header is updated with each new notification. Notifications are stored in a system table
-* Mail : An email is sent to the recipients of the notification
-* Specific : Invokes a method of the business object linked to the notification
-* Web Push *(Simplicité v6.0+)*: Sends a push notification to the user's browser. This channel requires a set of system parameters :
-    - **WEBPUSH** : `yes`
-    - **WEBPUSH_VAPID_KEY** : <generated VAPID public key>
-    - **WEBPUSH_VAPID_PRIVATE_KEY** : <generated VAPID private key>
-    - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
+## Recepients
 
-For more information on the VAPID RFC : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
+They can be:
+- User : a named user of the platform
+- Group : a group of users
+- SQL : the result of an SQL query
 
-Online VAPID KEY generator : [https://www.attheminute.com/vapid-key-generator](https://www.attheminute.com/vapid-key-generator)
+## Channels
 
-**Recipients** can be :
-* User : a named user of the platform
-* Group : a group of users
-* SQL : the result of an SQL query
+The following channels are available:
+- **Internal** : The counter of a bell icon visible in the platform's header is updated with each new notification. Notifications are stored in a system table
+- **Mail** : An email is sent to the recipients of the notification
+- **Specific** : Invokes a method of the business object linked to the notification
+- **Web Push** *(Simplicité v6.0+)*: Sends a push notification to the user's browser. 
+
+### Web push
+
+Read more about the Push API on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and the [VAPID RFC](https://datatracker.ietf.org/doc/rfc8292/)
+
+Web push notification require a set of system parameters :
+- `WEBPUSH`**` : `yes`
+- `WEBPUSH_VAPID_KEY` : <generated VAPID public key>
+- `WEBPUSH_VAPID_PRIVATE_KEY` : <generated VAPID private key>
+- `WEBPUSH_VAPID_MAILTO` : `mailto:<contact-email>`
+
+To generate VAPID keys, you can use the [web-push tool](https://www.npmjs.com/package/web-push) or an [online generator](https://www.attheminute.com/vapid-key-generator)
+
+```bash
+npx web-push generate-vapid-keys
+```
 
 Exercise
 ====================
