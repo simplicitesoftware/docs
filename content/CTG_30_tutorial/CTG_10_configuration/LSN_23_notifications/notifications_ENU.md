@@ -42,9 +42,9 @@ The following channels are available:
 Read more about the Push API on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and the [VAPID RFC](https://datatracker.ietf.org/doc/rfc8292/)
 
 Web push notification require a set of system parameters :
-- `WEBPUSH`**` : `yes`
-- `WEBPUSH_VAPID_KEY` : <generated VAPID public key>
-- `WEBPUSH_VAPID_PRIVATE_KEY` : <generated VAPID private key>
+- `WEBPUSH` : `yes`
+- `WEBPUSH_VAPID_KEY` : generated VAPID public key
+- `WEBPUSH_VAPID_PRIVATE_KEY` : generated VAPID private key
 - `WEBPUSH_VAPID_MAILTO` : `mailto:<contact-email>`
 
 To generate VAPID keys, you can use the [web-push tool](https://www.npmjs.com/package/web-push) or an [online generator](https://www.attheminute.com/vapid-key-generator)
