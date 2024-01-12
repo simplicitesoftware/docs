@@ -24,7 +24,7 @@ Users have the option to subscribe or unsubscribe from the notifications they re
 
 For more information on the VAPID RFC : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
-Online VAPID KEY generator : https://vapidkeys.com/
+Online VAPID KEY generator : [https://www.attheminute.com/vapid-key-generator](https://www.attheminute.com/vapid-key-generator)
 
 **Recipients** can be :
 * User : a named user of the platform

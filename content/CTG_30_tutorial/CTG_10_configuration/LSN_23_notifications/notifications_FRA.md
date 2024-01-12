@@ -24,7 +24,7 @@ Les **canaux de diffusion** sont les suivants :
 
 Pour plus d'informations sur la norme VAPID : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
 
-Générateur de clé VAPID : https://vapidkeys.com/
+Générateur de clé VAPID : [https://www.attheminute.com/vapid-key-generator](https://www.attheminute.com/vapid-key-generator)
 
 **Les destinataires** peuvent être :
 * Utilisateur : un utilisateur nommé de la plateforme
