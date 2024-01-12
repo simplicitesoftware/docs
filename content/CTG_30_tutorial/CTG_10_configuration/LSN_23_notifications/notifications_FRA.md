@@ -19,7 +19,7 @@ Les **canaux de diffusion** sont les suivants :
 * Web Push *(uniquement disponible dans Simplicité v6 et ultérieures)* : Envoie une notification push au navigateur. Ce canal nécessite un certain nombre de paramètres systèmes :
     - **WEBPUSH** : `yes`
     - **WEBPUSH_VAPID_KEY** : <clé publique VAPID générée>
-    - **WEBPUSH_PRIVATE_KEY** : <clé privée VAPID générée>
+    - **WEBPUSH_VAPID_PRIVATE_KEY** : <clé privée VAPID générée>
     - **WEBPUSH_VAPID_MAILTO** : `mailto:<contact-email>`
 
 Pour plus d'informations sur la norme VAPID : <a href="https://datatracker.ietf.org/doc/rfc8292/" target="_blank">VAPID RFC</a>
