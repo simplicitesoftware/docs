@@ -84,11 +84,11 @@ Upgrading to the next major version is **recommended** as no further functional 
 |---------|----------------------------------------|-----------------|-------------------|----------------------|
 | `6.1`   | ⚠️ Alpha (Development / Nightly build) | Standard        | ?                 | ?                    |
 | `6.0`   | ⚠️ Beta (Testing stage)                | Standard        | ?                 | ?                    |
-| `5.3`   | ** ✅ Current release**                 | Long-term (LTS) | April 24, 2023    | ~ January 2027       |
+| `5.3`   | ✅ **Current release**                 | Long-term (LTS) | April 24, 2023    | ~ January 2027       |
 | `5.2`   | ❌ Expired !                            | Standard        | April 20, 2022    | September 30th, 2023 |
 | `5.1`   | ❌ Expired !                            | Standard        | September 1, 2021 | October 31th, 2022   |
 | `5.0`   | ❌ Expired !                            | Standard        | January 11, 2021  | September 30th, 2021 |
-| `4.0`   | ** ☑️ Maintained**                     | Long-term (LTS) | ?                 | January 15th, 2024   |
+| `4.0`   | ☑️ **Maintained**                     | Long-term (LTS) | ?                 | January 15th, 2024   |
 | `3.x`   | ❌ Expired !                            | Long-term (LTS) | ?                 | ?                    |
 
 (*) the official major version 5 long term maintenance end date will be announced when major version 6 is officially released (schedulled for January 2024).
