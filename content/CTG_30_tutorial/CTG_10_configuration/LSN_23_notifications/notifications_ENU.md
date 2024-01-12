@@ -18,14 +18,14 @@ They :
 
 Recipients can be concerned by all of the notification's channels or be set up individually for a more precise configuration per recipient. 
 
-Users have the option to **subscribe** or **unsubscribe** from the notifications they receive (via the *Subscriptions* button on their notification list).
-
 ## Recepients
 
 They can be:
 - User : a named user of the platform
 - Group : a group of users
 - SQL : the result of an SQL query
+
+If the notification is not mandatory, recipients have the option to **subscribe** or **unsubscribe** from the notifications they receive (via the *Subscriptions* button on their notification list).
 
 ## Channels
 
@@ -34,6 +34,8 @@ The following channels are available:
 - **Mail** : An email is sent to the recipients of the notification
 - **Specific** : Invokes a method of the business object linked to the notification
 - **Web Push** *(Simplicité v6.0+)*: Sends a push notification to the user's browser. 
+
+> *By default, notifications are sent through all configured channels to all configured recepients, but optionally, a channel can be limited to some of the configured recipients.*
 
 ### Web push
 
