@@ -1,4 +1,4 @@
-Compliance tables
+Compatibility tables
 =================
 
 This document gives a non exhaustive list of architectures and infrastructure components the Simplicit&eacute;&reg; platform is compliant with.
