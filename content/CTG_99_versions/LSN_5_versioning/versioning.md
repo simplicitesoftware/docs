@@ -76,9 +76,24 @@ The configuration remains fully compatible vs previous major version except that
 Upgrading to the next major version is **recommended** as no further functional changes will be done on the previous major version
 (see bellow for the **long term maintenance** strategy of major versions).
 
-<h2 id="maintenance">Maintenance</h2>
+## Maintenance
 
-<h3 id="shorttermmaintenance">Short term maintenance for minor versions</h3>
+### Maintenance timeline table
+
+| Version | Maintenance State                      | Support type    | Release date      | Maintenance end date |
+|---------|----------------------------------------|-----------------|-------------------|----------------------|
+| `6.1`   | ⚠️ Alpha (Development / Nightly build) | Standard        | ?                 | ?                    |
+| `6.0`   | ⚠️ Beta (Testing stage)                | Standard        | ?                 | ?                    |
+| `5.3`   | ** ✅ Current release**                 | Long-term (LTS) | April 24, 2023    | ~ January 2027       |
+| `5.2`   | ❌ Expired !                            | Standard        | April 20, 2022    | September 30th, 2023 |
+| `5.1`   | ❌ Expired !                            | Standard        | September 1, 2021 | October 31th, 2022   |
+| `5.0`   | ❌ Expired !                            | Standard        | January 11, 2021  | September 30th, 2021 |
+| `4.0`   | ** ☑️ Maintained**                     | Long-term (LTS) | ?                 | January 15th, 2024   |
+| `3.x`   | ❌ Expired !                            | Long-term (LTS) | ?                 | ?                    |
+
+(*) the official major version 5 long term maintenance end date will be announced when major version 6 is officially released (schedulled for January 2024).
+
+#### Short term maintenance
 
 As of major version 5 each non final **minor version** becomes a **short term maintenance** branch which is forked from the `release` branch prior to releasing a new minor version.
 
@@ -87,7 +102,7 @@ In some particular cases the short term maintenance period can be extended.
 
 A short term maintenance branch **only** receives critical fixes.
 
-<h3 id="longtermmaintenance">Long term maintenance for major versions</h3>
+#### Long term maintenance
 
 Each **major version** becomes a **long term maintenance** branch which is forked from the `release` branch prior to releasing a new major version.
 
@@ -95,22 +110,7 @@ The duration for the long term maintenance period is **3 years** after a new maj
 
 A long term maintenance branch **only** receives critical fixes.
 
-### Maintenance timeline table
-
-| Major/minor | Maintenance branch                                                      | Maintenance end date                                      |
-|-------------|-------------------------------------------------------------------------|------------------------------------------------------------|
-| major       | `6.1` [release notes](00-versions/6.x/releasenote/releasenote-6.1.md) | Development (alpha stage)                                      |
-| major       | `6.0` [release notes](00-versions/6.x/releasenote/releasenote-6.0.md) | Testing (beta stage)                                           |
-| last minor  | `5.3` [release notes](00-versions/5.x/releasenote/releasenote-5.3.md) | **Current release** Long term (till January 2027 at least (*)) |
-| minor       | `5.2` [release notes](00-versions/5.x/releasenote/releasenote-5.2.md) | Expired short term (since September 30th, 2023)                |
-| minor       | `5.1` [release notes](00-versions/5.x/releasenote/releasenote-5.1.md) | Expired short term (since October 31th, 2022)                  |
-| major       | `5.0` [release notes](00-versions/5.x/releasenote/releasenote-5.0.md) | Expired short term (since September 30th, 2021)                |
-| major       | `4.0` [release notes](/lesson/docs/versions/index)                    | Long term (till January 15th, 2024)                            |
-| major       | `3.x` [release notes](/lesson/docs/versions/index)                    | Expired long term                                              |
-
-(*) the official major version 5 long term maintenance end date will be announced when major version 6 is officially released (schedulled for January 2024).
-
-<h3 id="gitbranchesanddockertags">Instance templates Git branches and Docker images tags table</h3>
+### Git branches and Docker images tags
 
 | Version                   | Instance templates<br/>Git branches | Docker images tags                                |
 |:-------------------------:|-------------------------------------|---------------------------------------------------|
