@@ -1,12 +1,12 @@
 Version 3.2 release notes
 =========================
 
-> **Warning**: The long term maintenance on this version is now close to its end.
-> The maintenance release M09 will be the **FINAL** maintenance release for this version,
+> **Warning**: The long term maintenance on this version is now ended.
+> The maintenance release M09 is the **FINAL** maintenance release for this version,
 > no further maintenance releases are scheduled.
 
 - [P01 release note](/lesson/docs/versions/releasenote-patchlevel-01)
-- [P2 release note](/lesson/docs/versions/releasenote-patchlevel-02)
+- [P02 release note](/lesson/docs/versions/releasenote-patchlevel-02)
 - [P03 release note](/lesson/docs/versions/releasenote-patchlevel-03)
 - [P04 release note](/lesson/docs/versions/releasenote-patchlevel-04)
 - [P05 release note](/lesson/docs/versions/releasenote-patchlevel-05)
@@ -18,4 +18,4 @@ Version 3.2 release notes
 - [M06 release note](/lesson/docs/versions/releasenote-maintenance-06)
 - [M07 release note](/lesson/docs/versions/releasenote-maintenance-07)
 - [M08 release note](/lesson/docs/versions/releasenote-maintenance-08)
-- [Final M09 release note](/lesson/docs/versions/releasenote-maintenance-09) **DRAFT**
+- [Final M09 release note](/lesson/docs/versions/releasenote-maintenance-09)

@@ -1,7 +1,9 @@
 Version 4.0 patchlevel 25 release note
 ======================================
 
-> This patch level is a **long term maintenance** patch level
+> **Warning**: The long term maintenance on this version is now ended.
+> The maintenance release P25 is the **FINAL** maintenance release for this version,
+> no further maintenance releases are scheduled.
 
 <h2 id="backported">Backported features</h2>
 
