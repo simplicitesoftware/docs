@@ -40,7 +40,7 @@ All previous rights are migrated automatically to the new `Permission` object wi
 
 ### Hooks Rhino deprecation
 
-- `Rhino` engine is now only used to implement calculated fields, simple expressions or constraints.
+- `Rhino` engine is now only used to implement calculated fields, simple expressions or back-end constraints.
 - **Rhino scripts are no longer allowed to implement hooks** of internal/external objects, business processes, dispositions and adapters.
 
 Upgrade will not be permitted if your modules still contain Rhino scripts instead of Java classes:
