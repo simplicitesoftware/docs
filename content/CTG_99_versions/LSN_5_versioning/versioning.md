@@ -80,16 +80,17 @@ Upgrading to the next major version is **recommended** as no further functional 
 
 ### Maintenance timeline table
 
-| Version | Maintenance State                      | Support type    | Release date      | Maintenance end date |
-|---------|----------------------------------------|-----------------|-------------------|----------------------|
-| `6.1`   | ⚠️ Alpha (Development / Nightly build) | Standard        | Not yet defined   | Not yetbdefined      |
-| `6.0`   | ⚠️ Beta (Testing stage)                | Standard        | January 2024 (to be confirmed)) | Not yet defined |
-| `5.3`   | ✅ **Current release**                 | Long-term (LTS) | April 24, 2023    | ~ January 2027       |
-| `5.2`   | ❌ Expired !                           | Standard        | April 20, 2022    | September 30th, 2023 |
-| `5.1`   | ❌ Expired !                           | Standard        | September 1, 2021 | October 31th, 2022   |
-| `5.0`   | ❌ Expired !                           | Standard        | January 11, 2021  | September 30th, 2021 |
-| `4.0`   | ❌ Expired !                           | Long-term (LTS) | April 2018        | January 15th, 2024   |
-| `3.x`   | ❌ Expired !                           | Long-term (LTS) | 2014 (for 3.0)    | July 3rd, 2020       |
+| Version | Maintenance State                       | Support type    | Release date                     | Maintenance end date             |
+|---------|-----------------------------------------|-----------------|----------------------------------|----------------------------------|
+| `6.1`   | ⚠️ Alpha (Development / Nightly build)   | Standard        | *To be determined*               | *To be determined*               |
+| `6.0`   | ⚠️ Beta (Testing stage)                  | Standard        | *January 2024 (to be confirmed)* | *To be determined*               |
+| `5.3`   | ✅ **Current release**                  | Long-term (LTS) | April 24, 2023                   | *January 2027 (to be confirmed)* |
+| `5.2`   | ❌ Expired !                            | Standard        | April 20, 2022                   | September 30th, 2023             |
+| `5.1`   | ❌ Expired !                            | Standard        | September 1, 2021                | October 31th, 2022               |
+| `5.0`   | ❌ Expired !                            | Standard        | January 11, 2021                 | September 30th, 2021             |
+| `4.0`   | ❌ Expired !                            | Long-term (LTS) | April 2018                       | January 15th, 2024               |
+| `3.x`   | ❌ Expired !                            | Long-term (LTS) | 2014 (for 3.0)                   | July 3rd, 2020                   |
+
 
 (*) the official major version 5 long term maintenance end date will be announced when major version 6 is officially released (schedulled for January 2024).
 
