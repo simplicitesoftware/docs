@@ -566,3 +566,9 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 	- Allows to focus and highlight a field in the object's form
 	- Displayed on all objects by default
 	- Is configured with the "Search on form" configuration field
+
+- New action on module to manage `ALTER DB history` and delivery
+	- To keep selected oldvalues during module export of renamed fields/colums and objects/tables, and to be applied to other instances during module import
+	- To remove histories when module has delivered everywhere
+
+![](alterdb.png)
