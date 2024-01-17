@@ -637,3 +637,4 @@ Post-release <span id="postrelease"></span>
 ### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
 
 - Remove invalid file characters from Model's name on save
+- Improved generation of function name when module has no prefix
