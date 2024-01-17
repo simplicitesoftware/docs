@@ -626,7 +626,7 @@ Post-release <span id="postrelease"></span>
 - Fixed Notification recipients not exported in module export
 - Backported REST annotation improvements/fixes and `success` method for custom REST services
 
-### 5.3.26 (UNRELEASED) <span id="version-5.3.26"></span>
+### 5.3.26 (2024-01-17) <span id="version-5.3.26"></span>
 
 - Fixed UI merge instance
 - Backported `setFieldValue` with file argument
@@ -634,3 +634,6 @@ Post-release <span id="postrelease"></span>
 - Forced default `ANY`language for news
 - Fixed `PATCH` method call for custom REST services
 
+### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
+
+- Nothing so far...
