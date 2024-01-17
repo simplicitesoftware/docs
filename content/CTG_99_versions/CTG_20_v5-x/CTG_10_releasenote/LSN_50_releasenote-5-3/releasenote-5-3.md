@@ -630,10 +630,10 @@ Post-release <span id="postrelease"></span>
 
 - Fixed UI merge instance
 - Backported `setFieldValue` with file argument
-- Fixde panel objects columns visibility when `USE_OBJECT_PREFS=no`
+- Fixed panel objects columns visibility when `USE_OBJECT_PREFS=no`
 - Forced default `ANY`language for news
 - Fixed `PATCH` method call for custom REST services
 
 ### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
 
-- Remove invalid file characters from Model name on save
+- Remove invalid file characters from Model's name on save
