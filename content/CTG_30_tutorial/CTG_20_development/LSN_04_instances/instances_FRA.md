@@ -10,7 +10,7 @@ Pour déterminer le comportement d'un objet, à la différence d'une application
 Lorque l'objet, héritant de `ObjectDB` est manipulé dans le code comme à la leçon précédente, c'est l'une de ces instances qui est utilisée. Attention, si une seule instance de l'objet était utilisée, cela voudrait dire qu'en faisant une recherche sur l'objet dans le code (cf ci-dessous) pour modifier programmatiquement un ensemble d'objets, l'utilisateur naviguant ensuite sur l'objet, verrait cette recherche positionnée sans qu'il l'ait lui-même effectuée!
 
 ```java
-this.setFieldFilter("trnPrdName", "Supercomputer");
+setFieldFilter("trnPrdName", "Supercomputer");
 List<String[]> results = this.search();
 ```
 
@@ -34,7 +34,7 @@ En conséquence, lorsqu'on utilise une instance dans les script, il faut garder 
 // chargement d'une instance temporaire
 ObjectDB product = getGrant().getTmpObject("TrnProduct");
 // bloc synchronized pour empêcher l'utilisation concurrente de cette instance par un autre thread
-synchronized(product){
+synchronized(product.getLock){
     // vidage des potentielles recherches déjà présentes sur l'instance en mémoire
     product.resetFilters();
     // posistionnement d'un filtre;
@@ -77,25 +77,33 @@ public void increaseStock(){
 <div class="info">NB: sur la slide correspondant à cet exercice, une autre approche est utilisée</div>
 
 ```java
-@Override
-public String postUpdate() {
-    if(this.getOldStatus().equals("ENC") && this.getStatus().equals("VAL")){
-        ObjectDB prd = this.getGrant().getTmpObject("AppProduct");
-        synchronized(prd){
-            // select = chargement dans l'instance des valeurs en base à partir d'une clef technique (id)
-            prd.select(this.getFieldValue("appOrdProductId"));
-            // lecture de la quantité commandée sur l'instance courante et du stock du produit sur l'instance chargée
-            int orderedQuantity = this.getField("appOrdQuantity").getInt(0);
-            int stock = prd.getField("appPrdStock").getInt(0);
-            // modification du stock sur l'instance chargée
-            prd.getField("appPrdStock").setValue(stock-orderedQuantity);
-            // écriture des données de l'instance chargée dans la BDD
-            prd.save();
-        }
-    }
-
-    return null;
-}
+	@Override
+	public String postUpdate() {
+		Grant g = getGrant();
+		String objname="TrnProduct";
+		boolean[] oldcrud = g.changeAccess(objname, true, true, true, false);
+		ObjectDB prd = g.getTmpObject(objname);
+		if("PENDING".equals(getOldStatus()) && "VALIDATED".equals(getStatus())){
+	    	try{	        
+		        synchronized(prd.getLock()){
+		            // select = chargement dans l'instance des valeurs en base à partir d'une clef technique (id)
+		            prd.select(getFieldValue("trnOrdProId"));
+		            // lecture de la quantité commandée sur l'instance courante et du stock du produit sur l'instance chargée
+		            int orderedQuantity = getField("trnOrdQuantity").getInt(0);
+		            int stock = prd.getField("trnProStock").getInt(0);
+		            // modification du stock sur l'instance chargée
+		            prd.getField("trnProStock").setValue(stock-orderedQuantity);
+		            // écriture des données de l'instance chargée dans la BDD
+		            prd.getTool().validateAndSave();
+		        }
+		    } catch (Exception e) {
+				AppLog.error(e.getMessage(), e, g);
+			} finally {
+				g.changeAccess(objname, oldcrud); 
+			}   
+	    }
+	    return super.postUpdate();
+	}
 ```
 
 ### Vérification
