@@ -77,33 +77,33 @@ public void increaseStock(){
 <div class="info">NB: sur la slide correspondant à cet exercice, une autre approche est utilisée</div>
 
 ```java
-	@Override
-	public String postUpdate() {
-		Grant g = getGrant();
-		String objname="TrnProduct";
-		boolean[] oldcrud = g.changeAccess(objname, true, true, true, false);
-		ObjectDB prd = g.getTmpObject(objname);
-		if("PENDING".equals(getOldStatus()) && "VALIDATED".equals(getStatus())){
-	    	try{	        
-		        synchronized(prd.getLock()){
-		            // select = chargement dans l'instance des valeurs en base à partir d'une clef technique (id)
-		            prd.select(getFieldValue("trnOrdProId"));
-		            // lecture de la quantité commandée sur l'instance courante et du stock du produit sur l'instance chargée
-		            int orderedQuantity = getField("trnOrdQuantity").getInt(0);
-		            int stock = prd.getField("trnProStock").getInt(0);
-		            // modification du stock sur l'instance chargée
-		            prd.getField("trnProStock").setValue(stock-orderedQuantity);
-		            // écriture des données de l'instance chargée dans la BDD
-		            prd.getTool().validateAndSave();
-		        }
-		    } catch (Exception e) {
+@Override
+public String postUpdate() {
+	Grant g = getGrant();
+	String objname="TrnProduct";
+	boolean[] oldcrud = g.changeAccess(objname, true, true, true, false);
+	ObjectDB prd = g.getTmpObject(objname);
+	if("PENDING".equals(getOldStatus()) && "VALIDATED".equals(getStatus())){
+	   try{	        
+		   synchronized(prd.getLock()){
+		       // select = chargement dans l'instance des valeurs en base à partir d'une clef technique (id)
+		       prd.select(getFieldValue("trnOrdProId"));
+		       // lecture de la quantité commandée sur l'instance courante et du stock du produit sur l'instance chargée
+		        int orderedQuantity = getField("trnOrdQuantity").getInt(0);
+		        int stock = prd.getField("trnProStock").getInt(0);
+		        // modification du stock sur l'instance chargée
+		        prd.getField("trnProStock").setValue(stock-orderedQuantity);
+		        // écriture des données de l'instance chargée dans la BDD
+		        prd.getTool().validateAndSave();
+		     }
+		    }catch (Exception e) {
 				AppLog.error(e.getMessage(), e, g);
-			} finally {
+			}finally {
 				g.changeAccess(objname, oldcrud); 
 			}   
-	    }
-	    return super.postUpdate();
-	}
+	 }
+	 return super.postUpdate();
+}
 ```
 
 ### Vérification
