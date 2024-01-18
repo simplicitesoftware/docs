@@ -38,6 +38,17 @@ All previous rights are migrated automatically to the new `Permission` object wi
 - After migration your modules will have to be reexported to use the Permission object.
 - Next release will delete deprecated objects, they are only hidden is this release.
 
+### Hooks Rhino deprecation
+
+- `Rhino` engine is now only used to implement calculated fields, simple expressions or back-end constraints.
+- **Rhino scripts are no longer allowed to implement hooks** of internal/external objects, business processes, dispositions and adapters.
+
+Upgrade will not be permitted if your modules still contain Rhino scripts instead of Java classes:
+- Java uses compiled code = faster execution
+- Native support of inheritance and overriding of methods
+- Remote debug in usual IDE
+- JUnit, more documented...
+
 ### Hooks deprecation
 
 - `PlatformHooks.isMenuEnable` has to be refactored to `isMenuItemEnabled` with more parameters.
@@ -555,3 +566,9 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 	- Allows to focus and highlight a field in the object's form
 	- Displayed on all objects by default
 	- Is configured with the "Search on form" configuration field
+
+- New action on module to manage `ALTER DB history` and oldvalues delivery:
+	- To keep selected oldvalues during module export of renamed fields/columns and objects/tables, and to be applied to other instances during module import
+	- To remove other histories when module has been delivered everywhere
+
+![](alterdb.png)

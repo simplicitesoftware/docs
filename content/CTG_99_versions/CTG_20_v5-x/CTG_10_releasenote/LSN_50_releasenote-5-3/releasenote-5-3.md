@@ -609,13 +609,13 @@ Post-release <span id="postrelease"></span>
 
 - Fixed confirm dialog of action to trigger a change on referenced fields
 - Fixed `Enter` key not selecting element in completion dropdown
-- Fixed bug preventing multiple Confirms on action confirm dialog when backend errors occurred
+- Fixed bug preventing multiple Confirms on action confirm dialog when back-end errors occurred
 - Fixed form reloading when canceling an action after a change with auto-save
 - Fixed screenflow's usage information with loop on activities
 - Fixed redrawing an empty document field thru a constraint of visibility
 - Support `Tool.shiftDaysNoWeekEnds` with negative days
 - Support notepad with TXT rendering in the confirm dialog
-- Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overriden
+- Fixed inline objects toggle behavior when `isCreateEnable` and `isDeleteEnable` hooks are overridden
 - Fixed filtering a list with several codes on a linked list
 
 ### 5.3.25 (2023-12-22) <span id="version-5.3.25"></span>
@@ -626,10 +626,16 @@ Post-release <span id="postrelease"></span>
 - Fixed Notification recipients not exported in module export
 - Backported REST annotation improvements/fixes and `success` method for custom REST services
 
-### 5.3.26 (UNRELEASED) <span id="version-5.3.26"></span>
+### 5.3.26 (2024-01-17) <span id="version-5.3.26"></span>
 
 - Fixed UI merge instance
 - Backported `setFieldValue` with file argument
-- Fiexe panel objects columns visibility when `USE_OBJECT_PREFS=no`
-- Forced default `ANY`language for news
+- Fixed panel objects columns visibility when `USE_OBJECT_PREFS=no`
+- Forced default `ANY` language for news
+- Fixed `PATCH` method call for custom REST services
+- Remove invalid file characters from Model's name on save
+- Improved generation of function name when module has no prefix
 
+### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
+
+- Nothing so far...
