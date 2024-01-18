@@ -11,8 +11,8 @@ For instance, to view a supplier's clients list, we will provide a filter for th
 
 ```sql
 t.row_id in (select c.row_id from trn_client c
-left join trn_command o on o.trn_cmd_cli_id = c.row_id
-left join trn_product p on o.trn_cmd_prod_id = p.row_id
+left join trn_order o on o.trn_ord_cli_id = c.row_id
+left join trn_product p on o.trn_ord_prod_id = p.row_id
 left join trn_supplier s on p.trn_prod_sup_id = s.row_id
 where s.row_id = [row_id]
 )
@@ -23,7 +23,7 @@ We start off our parsing of the model by selecting the orders of the clients, we
 
 Exercise
 =================
-- Create a field with no physical column and add it to the **Product** object with **Supplier** as linked object. This will create a link between both objectS.
+- Create a field with no physical column and add it to the **Client** object with **Supplier** as linked object. This will create a link between both objectS.
 - Fill in the filter on the link that allows to view the list of a supplier's products that are linked to a sent order.
 
 

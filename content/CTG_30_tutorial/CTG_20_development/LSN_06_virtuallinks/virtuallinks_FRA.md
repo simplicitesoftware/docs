@@ -11,8 +11,8 @@ Par exemple, pour consulter la liste des clients d'un fournisseur on renseignera
 
 ```sql
 t.row_id in (select c.row_id from trn_client c
-left join trn_command o on o.trn_cmd_cli_id = c.row_id
-left join trn_product p on o.trn_cmd_prod_id = p.row_id
+left join trn_order o on o.trn_ord_cli_id = c.row_id
+left join trn_product p on o.trn_ord_prod_id = p.row_id
 left join trn_supplier s on p.trn_prod_sup_id = s.row_id
 where s.row_id = [row_id]
 )
@@ -23,7 +23,7 @@ On effectue donc un parcours du modèle en sélectionnant d'abord les commandes 
 
 Exercice
 =================
-- Créer un attribut sans colonne physique et l'associer à l'objet **Produit** en spécifiant l'objet lié **Fournisseur**. Cette action va créer la relation entre vos deux objets.
+- Créer un attribut sans colonne physique et l'associer à l'objet **Client** en spécifiant l'objet lié **Fournisseur**. Cette action va créer la relation entre vos deux objets.
 - Renseignez un filtre sur la relation permettant de consulter la liste des produits d'un fournisseur ayant fait l'objet d'une commande expédiée.
 
 
