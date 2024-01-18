@@ -638,4 +638,4 @@ Post-release <span id="postrelease"></span>
 
 ### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
 
-- Preserves hidden links on master during merge (and redologs)
+- Preserves hidden links on master during merge (hidden panel, denied linked object, redologs...)
