@@ -84,23 +84,23 @@ public String postUpdate() {
 	boolean[] oldcrud = g.changeAccess(objname, true, true, true, false);
 	ObjectDB prd = g.getTmpObject(objname);
 	if("PENDING".equals(getOldStatus()) && "VALIDATED".equals(getStatus())){
-	   try{	        
-		   synchronized(prd.getLock()){
-            	// select = load into the instance the values in the database corresponding to a technical key (id)
-	           prd.select(getFieldValue("trnOrdProId"));
-            	// read the quantity ordered on the current instance and the stock of the product on the loaded instance
-	           int orderedQuantity = getField("trnOrdQuantity").getInt(0);
-    	        int stock = prd.getField("appPrdStock").getInt(0);
-       	     	// change the stock quantity of the loaded instance
-            	prd.getField("trnProStock").setValue(stock-orderedQuantity);
-            	// write the instances data into the database
-            	prd.getTool().validateAndSave();
-		    }
-		   } catch (Exception e) {
-				AppLog.error(e.getMessage(), e, g);
-			} finally {
-				g.changeAccess(objname, oldcrud); 
-			}   
+		try{	        
+			synchronized(prd.getLock()){
+				// select = load into the instance the values in the database corresponding to a technical key (id)
+				prd.select(getFieldValue("trnOrdProId"));
+				// read the quantity ordered on the current instance and the stock of the product on the loaded instance
+				int orderedQuantity = getField("trnOrdQuantity").getInt(0);
+				int stock = prd.getField("appPrdStock").getInt(0);
+				// change the stock quantity of the loaded instance
+				prd.getField("trnProStock").setValue(stock-orderedQuantity);
+				// write the instances data into the database
+				prd.getTool().validateAndSave();
+			}
+		} catch (Exception e) {
+			AppLog.error(e.getMessage(), e, g);
+		} finally {
+			g.changeAccess(objname, oldcrud); 
+		}   
 	}
 	return super.postUpdate();
 }
