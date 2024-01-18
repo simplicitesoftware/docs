@@ -1,84 +1,7 @@
 Versioning
 ===========
 
-<h2 id="branches">Branches</h2>
-
-The Simplicité platform is available on 3 active branches:
-
-- The `release` branch which contains the current **stable** version of the platform.
-- The `prerelease` branch which contains a potentially unstable **beta** or a **release candidate** of the next version of the platform.
-- The `master` branch which contains the usually unstable current **development** (also called **alpha**) version of the platform.
-
-The usage of these branches is as follows:
-
-- The `release` branch is the **only** one to be used in **production**
-- The `prerelease` branch should **only** be used for testing or validation purposes of the next version.
-- The `master` branch should **never** be used except for very ponctual testing purposes.
-
-Maintained previous minor and major versions have also dedicated branches (see bellow).
-
-<h2 id="versions">Version numbers</h2>
-
-Each version is identified with:
-
-- a **major version number** (e.g. `5`)
-- a **minor version version number** previously known as the "patch level" (e.g. `P02`)
-- a revision
-
-The minor version number is suffixed:
-
-- by `a` (for "**A**lpha") on the `master` branch (e.g. `P04a`),
-- by eiher `b` (for "**B**eta") or `c` (for "release **C**andidate) on the `prerelease` branch (e.g. `P03b`),
-- no suffix on the `release` branch.
-
-As of **major version 5** the "official" **full version number** is noted `m.p.r` where:
-
-- `m` is the **major version number** (e.g. `5`)
-- `p` is the numeric value of the **minor version number** (e.g. `2` for minor version `P02`)
-- `r` is an incremental **revision** number increased each time a set of changes/fixes is pushed on the `release` branch.
-
-> **Note**:
->
-> - On the `prerelease` branch `r` is always `0` and suffixed by `-beta`
-> - On the `master` branch `r` is always `0` and suffixed by `-alpha`.
-
-<h2 id="releaseprocess">Release process</h2>
-
-The **functional changes** (e.g. new features, refactored features, etc.) are **only** done on the `master` branch.
-Some isolated minor features may also be backported to the `prerelease` and `release` branches.
-
-Fixes are applied on **all** branches:
-
-- Any fix on the `master` branch (critical, major or minor)
-- Only major and critical fixes on the `prerelease` branch (only critical fixes during release candidate phase)
-- Only critical fixes on the `release` branch
-
-![](versions.png)
-
-The usual delay between two release versions is between 3 and 6 months.
-
-In the meantime the released version is amended by **revisions** which contains only fixes.
-The delay between two revisions is variable (from few days to several weeks) because it depends on the identified defects
-and other required fixes (e.g. vulnerable third party libs upgrades).
-
-<h2 id="upgradepolicies">Upgrade policies</h2>
-
-Each **revision** of the `release` branch **should** be upgraded as soon as made available (it may contain critical security fixes).
-Upgrading to the next revision is **mandatory** and has absolutely **no impact** on your business application's configuraton or custom code.
-
-A **minor version** is just a slightly more impacting revision which **may** require some minor refactoring of "atypical" custom code (e.g. custom code that is not using the Simplicité Java API).
-The configuration remains fully compatible vs previous minor version.
-Upgrading to the next minor version is **required** because, once release a new minor version, the previous minor version is only maintained during a short period
-(see bellow for the **short term maintenance** strategy of minor versions)
-
-A** major version** includes significant compatibility-breaking changes, including on the platform's technical components, that **will** requires impact analysis and potential refactoring on your custom code.
-The configuration remains fully compatible vs previous major version except that some configuration concepts can become outdated.
-Upgrading to the next major version is **recommended** as no further functional changes will be done on the previous major version
-(see bellow for the **long term maintenance** strategy of major versions).
-
-## Maintenance
-
-### Maintenance timeline table
+## Versions
 
 | Version | Maintenance State                      | Support type        | Release date                     | Maintenance end date             | Docker tag                          | Template branch   |
 |---------|----------------------------------------|---------------------|----------------------------------|----------------------------------|-------------------------------------|-------------------|
@@ -91,40 +14,54 @@ Upgrading to the next major version is **recommended** as no further functional 
 | `4.0`   | ❌ Expired !                            | Long-term (LTS)     | April 2018                       | January 15th, 2024               | `4.0[-light]`                       | `4.0[-light]`     |
 | `3.x`   | ❌ Expired !                            | Long-term (LTS)     | 2014 (for 3.0)                   | July 3rd, 2020                   | `3.x`                               | `3.x`             |
 
+Some intechangeable terms:
+- **Current release**: release, lastest version, latest stable
+- **Beta**: pre-release, test
+- **Alpha**: developement version, master
 
-(*) the official major version 5 long term maintenance end date will be announced when major version 6 is officially released (schedulled for January 2024).
+The [platform site](https://platform.simplicite.io) contains generated technical docs for all versions:
+- Java & JS docs
+- Java & JS dependecies list
+- CVE Audit report
 
-#### Short term maintenance
+The [compatibility page](/lesson/docs/compatibility) maintains a list of compatible options to chose from when running Simplicité: OS, Database, Browser, etc.
 
-As of major version 5 each non final **minor version** becomes a **short term maintenance** branch which is forked from the `release` branch prior to releasing a new minor version.
+### Versioning strategy
 
-The minimal duration for the short term maintenance period is **6 months** after a new minor version is released.
-In some particular cases the short term maintenance period can be extended.
+Simplicité follows a flavour of **semantic versioning**. 
 
-A short term maintenance branch **only** receives critical fixes.
+A `major.minor.revision` (eg. `5.3.25`) numbering system is used where:
+- the `major` number is incremented when **new features whith major breaking changes** are added to the platform
+- the `minor` number is incremented when **new features** without major breaking changes are added to the platform
+- the `revision` number is incremented when **improvements and fixes without any breaking change**
 
-#### Long term maintenance
+Unreleased (alpha and beta) version's numbers can be subject to change if major breaking changes are introduced in the platform (for example, planned version `5.4` was never released and became version `6.0` instead).
 
-Each **major version** becomes a **long term maintenance** branch which is forked from the `release` branch prior to releasing a new major version.
+### Maintenance strategy
 
-The duration for the long term maintenance period is **3 years** after a new major version is released.
+1. When a new minor version is released, the last minor version (n-1) gets a **Standard maintenance period (>= 6 months)**
+2. When a new major version is released, the last minor version (n-1) gets a **Long Term Support (LTS) maintenance period (>= 3 years)**
+3. Thus, some parameters of version `n` are definitively fixed once version `n+1` is released:
+    - **support type**: if `n+1` becomes major, then `n` becomes LTS. 
+    - **maintenance end date**: depends on the release date of `n+1` and if it falls under the major/minor category 
 
-A long term maintenance branch **only** receives critical fixes.
+**NB:** Major breaking changes are anticipated way ahead on the roadmap, so when a new major version in the workings it is announced with plenty of time ahead.
 
-### Git branches and Docker images tags
+> **Fixes associated to security risks are landed on all maintained versions as soon as possible**
 
-| Version                   | Instance templates<br/>Git branches | Docker images tags                      |
-|:-------------------------:|-------------------------------------|-----------------------------------------|
-| 6.1 (alpha)               | `6.1[-light]`                       | `6-alpha[-light]`                       |
-| 6.0 (beta)                | `6.0[-light]`                       | `6-beta[-light]`                        |
-| **5.3** (current release) | `release[-light]`                   | `5[-light]`, `5.3[-light]`, `5.3.x` (*) |
-| 5.2                       | `5.2[-light]`                       | `5.2[-light]`, `5.2.x`                  |
-| 5.1                       | `5.1[-light]`                       | `5.1[-light]`, `5.1.x`                  |
-| 5.0                       | `5.0[-light]`                       | `5.0[-light]`, `5.1.x`                  |
-| 4.0                       | `4.0[-light]`                       | `4.0[-light]`                           |
-| 3.x                       | `3.x`                               | `3.x`                                   |
+> **Once a version is released, it only recieves critical fixes**. There are exceptions to this rule for the latest release where easily backportable and backward-compatible features are sometimes included.
 
+## Upgrade requirements
 
-In **bold** the ones you should be using.
+Maintainers of a Simplicité application have the duty of keeping the platform up-to-date which is **at the very least on the last revision of a maintained version**. 
 
-(*) The use of the "latest" Docker images tags (e.g. `latest`, `5-latest`, `5`) is discouraged unless you are willing to be always pointing to the latest minor release.
+Not upgrading the platform is associated to numerous risks:
+- Security: due to known CVEs (bugs) on the platform or any of its dependencies
+- Version freezing: usually, the more commits between two versions, the more complex the upgrade
+- Support difficulties and latency: although flexible, our team officially only offers support on up-to-date platforms (mainly to rule out the responsibility of known bugs, and facilitate case reproduction)
+
+| Upgrade type | Priority | Planning and testing | Justification |
+|---|---|---|---|
+| revision | Upgrade ASAP | None | May contain critical fixes, should have no impact on the app. |
+| minor | Plan upgrade | Low | If you can do a minor upgrade, it means your version is in standard maintenance period, which has a lifespan of ~6months. A **minor version** is just a slightly more impacting revision which **may** require some minor refactoring of "atypical" custom code (e.g. custom code that is not using the Simplicité Java API). The configuration remains fully compatible vs previous minor version. |
+| major | Put it on your roadmap | Medium | A **major version** includes significant compatibility-breaking changes, including on the platform's technical components, that **will** require impact analysis and potential refactoring on your custom code. The configuration remains fully compatible vs previous major version except that some configuration concepts can become outdated. Upgrading to the next major version is **recommended** as no further functional changes will be done on the previous major version |
