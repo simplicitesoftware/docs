@@ -1,6 +1,8 @@
 Node-RED tooling
 =============
 
+## About Node-RED
+
 [Node-RED](http://nodered.org) is a low-code, flow-based programming tool for wiring together hardware devices, APIs, and online services.
 
 <details>
@@ -22,9 +24,9 @@ Bad use cases:
 
 </details>
 
---------
+## Library
 
-Simplicité's contribution library is available on [this GitHub repository](https://github.com/simplicitesoftware/nodered-nodes). It is presently a proof of concept with three nodes:
+Simplicité's library of nodes is available on [this GitHub repository](https://github.com/simplicitesoftware/nodered-nodes). It is presently a proof of concept with three nodes:
 - **simplicite-config:** configure the connection to the Simplicité instance
 - **simplicite-session:** triggers authentication to fetch auth token
 - **simplicite-object:** CRUD operations on Simplicité Business Objects
