@@ -4,7 +4,7 @@ Node-RED tooling
 [Node-RED](http://nodered.org) is a low-code, flow-based programming tool for wiring together hardware devices, APIs, and online services.
 
 <details>
-<summary>Good / Bad use cases</summary>
+<summary>Use cases examples for Node-RED</summary>
 
 Good use cases:
 
@@ -21,6 +21,8 @@ Bad use cases:
 - Mission-critical systems: Node-RED is not recommended for use in mission-critical systems where high availability and fault-tolerance are required, as it is built on top of JavaScript and Node.js, which are not designed for high availability.
 
 </details>
+
+--------
 
 Simplicité's contribution library is available on [this GitHub repository](https://github.com/simplicitesoftware/nodered-nodes). It is presently a proof of concept with three nodes:
 - **simplicite-config:** configure the connection to the Simplicité instance
