@@ -195,42 +195,73 @@ public String myAction(Action action, AsyncTracker tracker) {
 }
 ```
 
-- Synchronous action with **tracking** of one internal asynchronous Job
+- Synchronous action with **tracking** of one internal asynchronous Job, and `tracker.addFile` example
 
 ```java
-/** Synchronous action launched by the UI with internal asynchronous Job */
-public String myAction(Action action, AsyncTracker tracker) {
-	// Already running ?
-	if (tracker.isRunning())
-		return null;
-	tracker.start();
+package com.simplicite.objects.MyModule;
+
+import java.util.*;
+
+import com.simplicite.util.*;
+import com.simplicite.util.exceptions.*;
+import com.simplicite.util.tools.*;
+import com.simplicite.util.engine.JobQueue;
+import com.simplicite.util.engine.Platform;
+import java.io.File;
+
+public class MyObject extends ObjectDB {
+	private static final long serialVersionUID = 1L;
+	private static final int STEPS = 10;
+	
+	/** Synchronous action launched by the UI with internal asynchronous Job */
+	public String myAction(Action action, AsyncTracker tracker) {
+		// Already running ?
+		if (tracker.isRunning())
+			return null;
 			
-	JobQueue.push("myJob", new Runnable() {
-		@Override
-		public void run() {
-			try {
-				tracker.add("MyAction has started");
-				tracker.push("Job 1");
-				// ...
-				tracker.message("doing something in job 1");
-				// ...
-				tracker.pop("job 1 done");
-				// ...
+		// init tracker
+		tracker.setProgress(0);
+		tracker.setMinifiable(true);
+		tracker.start();
+		
+		JobQueue.push("myJob", new Runnable() {
+			@Override
+			public void run() {
+				try {
+					tracker.add("myAction has started");
+					
+					for(int i=1; i<=STEPS; i++){
+						tracker.push("Job "+i);
+						tracker.message("Sleep 1 second in job "+i);
+						Thread.sleep(1000);
+						tracker.pop("Job "+i+" done");
+						tracker.setProgress(100*i/STEPS);
+					}
+					
+					tracker.addFile("Download file", getExampleContentFileUrl());
+				}
+				catch (InterruptedException e) {
+					tracker.message("Interrupted");
+					Thread.currentThread().interrupt();
+				}
+				catch (Exception e) {
+					// Assign the error on current task
+					tracker.error(e.getMessage());
+				}
+				finally {
+					tracker.stop();
+				}
 			}
-			catch (InterruptedException e) {
-				tracker.message("Interrupted");
-				Thread.currentThread().interrupt();
-			}
-			catch (Exception e) {
-				// Assign the error on current task
-				tracker.error(e.getMessage());
-			}
-			finally {
-				tracker.stop();
-			}
-		}
-	});
-	return null; // UI will displays a dialog with the tracking data
+		});
+		return null; // UI will displays a dialog with the tracking data
+	}
+	
+	private static String getExampleContentFileUrl() throws Exception{
+		File f = FileTool.getRandomFile(Platform.getContentDir() + "/tmp", "async-file", "txt");
+		if(!FileTool.writeFile(f, "File content"))
+			throw new Exception("could not write file");
+		return HTMLTool.getContentURL(f);
+	}
 }
 ```
 
