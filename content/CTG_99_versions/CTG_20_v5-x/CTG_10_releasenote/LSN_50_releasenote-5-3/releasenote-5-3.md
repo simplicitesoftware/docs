@@ -640,4 +640,4 @@ Post-release <span id="postrelease"></span>
 
 - Preserves hidden links on master during merge (hidden panel, denied linked object, redologs...)
 - Implements the copy cascade of hidden links
-
+- Fixed UI instance of target-object after a creation of inherited object
