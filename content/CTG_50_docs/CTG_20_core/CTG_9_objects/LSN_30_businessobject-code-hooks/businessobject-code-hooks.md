@@ -1346,12 +1346,23 @@ as its corresponding specialized child object (e.g. `Carrot` or `Cabbage`) recor
 ```java
 @Override
 public String[] getTargetObject(String rowId, String[] row) {
-	if (isCopied())
-		rowId = getCopyId(); // Propagate the copy Id (not "0")
+
+	// prevent redirect in template editor or XML import
+	if (editTemplateUsage() || isBatchInstance())
+		return null;
+
+	// Propagate the copy Id (not "0")
+    if (isCopied())
+		rowId = getCopyId();
+	// No redirection at creation
 	else if (rowId.equals(ObjectField.DEFAULT_ROW_ID))
-		return null; // No redirection at creation
+		return null;
+
+	// select the record if not in memory
 	if (row==null && select(rowId))
 		row = getValues();
+
+	// target object name
 	String target = null;
 	if (row!=null) {
 		String type = getFieldValue("vegetableType"), row);
@@ -1360,9 +1371,11 @@ public String[] getTargetObject(String rowId, String[] row) {
 		else if (type.equals("CABBAGE"))
 			target = "Cabbage";
 	}
+	// Unknown target = no redirection
 	if (target==null)
-		return null; // Unknown type, no redirection
+		return null;
 
+	// Main instance of target object
 	return new String[] { target, "the_ajax_" + target, rowId };
 };
 ```
