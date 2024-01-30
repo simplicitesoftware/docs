@@ -3,16 +3,16 @@ Versioning
 
 ## Versions
 
-| Version | Maintenance State                      | Support type        | Release date                     | Maintenance end date             | Docker tag                          | Template branch   |
-|---------|----------------------------------------|---------------------|----------------------------------|----------------------------------|-------------------------------------|-------------------|
-| `6.1`   | ⚠️ Alpha                                | Standard            | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`| `6.1[-light]`  |
-| `6.0`   | ⚠️ Beta                                 | Standard            | *January 2024 (<abbr title="To Be Confirmed">TBC</abbr>)* | *<abbr title="To Be Determined">TBD</abbr>*   | `6-beta[-light]`       | `6.0[-light]`     |
-| `5.3`   | ✅ **Current release**                 | **Long-term (LTS)** | April 24, 2023                   | *January 2027 (<abbr title="To Be Confirmed">TBC</abbr>)* | `5[-light]`, `5.3[-light]`, `5.3.x` | `release[-light]` |
-| `5.2`   | ❌ Expired !                           | Standard            | April 20, 2022                   | September 30th, 2023             | `5.2[-light]`, `5.2.x`              | `5.2[-light]`     |
-| `5.1`   | ❌ Expired !                           | Standard            | September 1, 2021                | October 31th, 2022               | `5.1[-light]`, `5.1.x`              | `5.1[-light]`     |
-| `5.0`   | ❌ Expired !                           | Standard            | January 11, 2021                 | September 30th, 2021             | `5.0[-light]`, `5.0.x`              | `5.0[-light]`     |
-| `4.0`   | ❌ Expired !                           | Long-term (LTS)     | April 2018                       | January 15th, 2024               | `4.0[-light]`                       | `4.0[-light]`     |
-| `3.x`   | ❌ Expired !                           | Long-term (LTS)     | 2014 (for 3.0)                   | July 3rd, 2020                   | `3.x`                               | `3.x`             |
+| Version | Maintenance State          | Support type        | Release date         | Maintenance end date  | Docker images tags                  | Template branch |
+|---------|----------------------------|---------------------|----------------------|-----------------------|-------------------------------------|-----------------|
+| `6.1`   | ⚠️ Alpha                   | Not applicable      | Not yet defined      | Not yet defined       | `6-alpha[-light]`                   | `6.1[-light]`   |
+| `6.0`   | ✅ **Current release**     | Standard            | *January 31st, 2024* | Not yet defined       | `6[-light]`, `6.0[-light]`, `6.0.x` | `6.0[-light]`   |
+| `5.3`   | ✅ **Maintenance release** | **Long-term (LTS)** | April 24th, 2023     | *January 31st, 2027*  | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`   |
+| `5.2`   | ❌ Expired!                | Short term          | April 20th, 2022     | September 30th, 2023  | `5.2[-light]`, `5.2.x`              | `5.2[-light]`   |
+| `5.1`   | ❌ Expired!                | Short term          | September 1st, 2021  | October 31st, 2022    | `5.1[-light]`, `5.1.x`              | `5.1[-light]`   |
+| `5.0`   | ❌ Expired!                | Short term          | January 11th, 2021   | September 30th, 2021  | `5.0[-light]`, `5.0.x`              | `5.0[-light]`   |
+| `4.0`   | ❌ Expired!                | Long-term (LTS)     | April 2018           | January 15th, 2024    | `4.0[-light]`                       | `4.0[-light]`   |
+| `3.x`   | ❌ Expired!                | Long-term (LTS)     | 2014 (for 3.0)       | July 3rd, 2020        | `3.x`                               | `3.x`           |
 
 Some intechangeable terms:
 - **Current release**: release, lastest version, latest stable
