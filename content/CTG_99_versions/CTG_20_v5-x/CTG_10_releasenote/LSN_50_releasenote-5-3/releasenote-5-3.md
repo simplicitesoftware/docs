@@ -1,7 +1,7 @@
 Version 5.3.x release note
 ==========================
 
-> **Note**: This release note corresponds to the current minor release. This minor version is the last 5.x minor version.
+> **Note**: This release note corresponds to the current minor release. This minor version is the last 5.x minor version and is now in its **long term maintenance** period.
 
 Compatibility breaking changes <span id="compatbreakingchanges"></span>
 -----------------------------------------------------------------------
@@ -636,8 +636,13 @@ Post-release <span id="postrelease"></span>
 - Remove invalid file characters from Model's name on save
 - Improved generation of function name when module has no prefix
 
-### 5.3.27 (UNRELEASED) <span id="version-5.3.27"></span>
+### 5.3.27 (2024-01-31) - maintenance revision<span id="version-5.3.27"></span>
 
 - Preserves hidden links on master during merge (hidden panel, denied linked object, redologs...)
 - Implements the copy cascade of hidden links
 - Fixed UI instance of target-object after a creation of inherited object
+- Fixed initial Git clone on module for specified branch
+
+### 5.3.28 (UNRELEASED) - maintenance revision <span id="version-5.3.28"></span>
+
+- Nothing so far...
