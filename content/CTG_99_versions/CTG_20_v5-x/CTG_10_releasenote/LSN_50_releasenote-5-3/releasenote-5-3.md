@@ -1,7 +1,7 @@
 Version 5.3.x release note
 ==========================
 
-> **Note**: This release note corresponds to the current minor release. This minor version is the last 5.x minor version and is now in its **long term maintenance** period.
+> **Note**: This minor version is the last 5.x minor version and is now in its **long term maintenance** period.
 
 Compatibility breaking changes <span id="compatbreakingchanges"></span>
 -----------------------------------------------------------------------

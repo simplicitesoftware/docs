@@ -1,6 +1,8 @@
 Version 6.0 release note
 ========================
 
+> **Note**: This release note corresponds to the current minor release.
+
 Compatibility breaking changes <span id="compatbreakingchanges"></span>
 -----------------------------------------------------------------------
 
@@ -601,3 +603,11 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 	- To remove other histories when module has been delivered everywhere
 
 ![](alterdb.png)
+
+### 6.0.0 (2024-01-31) <span id="version-6.0.0"></span>
+
+- Initial release for minor version 6.0. See above for details.
+
+### 6.0.1 (UNRELEASED) <span id="version-6.0.1"></span>
+
+- Nothing so far...
