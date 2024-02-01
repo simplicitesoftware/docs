@@ -1,4 +1,12 @@
 [
+  {"sourceUrl": "/lesson/versions/v6-x/releasenote/releasenote-6-0","destinationUrl": "/lesson/versions/release-notes/v6-0"},
+  {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-3","destinationUrl": "/lesson/versions/release-notes/v5-3"},
+  {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-2","destinationUrl": "/lesson/versions/release-notes/v5-2"},
+  {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-1","destinationUrl": "/lesson/versions/release-notes/v5-1"},
+  {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-0","destinationUrl": "/lesson/versions/release-notes/v5-0"},
+  {"sourceUrl": "/lesson/versions/v6-x/addtosim","destinationUrl": "/lesson/versions/add-to-sim/v6"},
+  {"sourceUrl": "/lesson/versions/v5-x/addtosim","destinationUrl": "/lesson/versions/add-to-sim/v5"},
+  {"sourceUrl": "/lesson/versions/v4-0","destinationUrl": "/lesson/versions/legacy/v4-0"},
   {"sourceUrl": "/lesson/docs/compliance","destinationUrl": "/lesson/docs/compatibility"},
   {"sourceUrl": "/lesson/docs/roadmap","destinationUrl": "/lesson/versions/roadmap"},
   {"sourceUrl": "/lesson/docs/core/businessobject-code-hooks","destinationUrl": "/lesson/docs/core/objects/businessobject-code-hooks"},
