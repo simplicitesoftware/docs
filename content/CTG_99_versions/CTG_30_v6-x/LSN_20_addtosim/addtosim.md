@@ -114,7 +114,7 @@ Create/migrate version 5 instances
 
 You should now be able to create version 6 instances, e.g.:
 
-	sim add mynewinstance 6.0
+	sim add <new instnace name> 6.0
 
 **Optionally** you can switch your existing 5 instances to version 6, e.g.:
 
