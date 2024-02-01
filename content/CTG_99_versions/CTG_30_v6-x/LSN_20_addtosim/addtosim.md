@@ -102,33 +102,37 @@ At that stage you should have the version 6 templates availables in the `/var/si
 And a call to `sim versions` should display version 6 templates with their latest revision dates, e.g.:
 
 ```text
-> sim version
+> sim versions
 (...)
-6p    2023-05-04 18:22:00
-6pl   2023-05-04 18:23:00
-6r    2023-05-04 18:24:00
-6rl   2023-05-04 18:25:00
+6.0   2024-01-31 12:35:00
+6.1   2024-02-01 13:58:42
 (...)
 ```
 
 Create/migrate version 5 instances
 ----------------------------------
 
-You should now be able to create version 6 instances:
+You should now be able to create version 6 instances, e.g.:
 
-	sim add mynewinstance 6[l|p|pl]
+	sim add mynewinstance 6.0
 
-**Optionally** you can switch your existing 5 instances to version 6 with:
+**Optionally** you can switch your existing 5 instances to version 6, e.g.:
 
-	sql "update instances set version='6' where <condition>"
-	sql "update instances set version='6l' where <condition>"
-	sql "update instances set version='6p' where <condition>"
-	sql "update instances set version='6pl' where <condition>"
+	sim setversion <instance name> 6.0
 
-Where `<condition>` can be `version='5[l[p|pl]` or `name in ('myoldinstance1', 'myoldinstance1', ...)`, etc.
+or for more selective cases:
+
+	sql "update instances set version='6.0' where <condition>"
+
+Where `<condition>` can be, for instance, `version='5[l[p|pl]` or `name in ('myoldinstance1', 'myoldinstance1', ...)`, etc.
 
 Then force an upgrade on all switched instances:
 
 	for i in `sim ls 5[l|p|pl] | awk '{print $1}`; do echo sim up $i; done
 
-Note that switching from version 5 to version 6 is **irreversible**.
+Note that :
+
+- switching from version 5 to version 6 is **irreversible**
+- switching from version 5 to version 6 is **impossible** if the version 5 is **not up-to date** on the latest version 5 revision
+
+
