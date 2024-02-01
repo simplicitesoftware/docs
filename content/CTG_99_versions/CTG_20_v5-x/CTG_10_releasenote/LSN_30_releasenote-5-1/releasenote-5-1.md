@@ -711,11 +711,7 @@ See above
 - Fixed `ALTER TABLE ` syntax in the SQLServer SQL system patches
 - Backported fix on service objects' action hook fallback to standard action mechanism
 
-<h3 id="version-5.1.66">5.1.66 (UNRELEASED) - post-maintenance revision</h3>
-
-- Backported security fix on document servlet
-- Fixed full XML export with pagination and filters
-
 <h3 id="version-5.1.66">5.1.66 (2023-10-31) - post-maintenance revision</h3>
 
 - Backported security fix on document servlet
+- Fixed full XML export with pagination and filters

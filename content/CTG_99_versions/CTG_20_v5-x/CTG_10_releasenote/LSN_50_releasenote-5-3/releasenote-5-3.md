@@ -642,6 +642,7 @@ Post-release <span id="postrelease"></span>
 - Implements the copy cascade of hidden links
 - Fixed UI instance of target-object after a creation of inherited object
 - Fixed initial Git clone on module for specified branch
+- Fixed module reference list filtering on object creation 
 
 ### 5.3.28 (UNRELEASED) - maintenance revision <span id="version-5.3.28"></span>
 
