@@ -612,5 +612,3 @@ Simplicite.UI.BusinessObjects.A2 = class extends Simplicite.UI.BusinessObjects.A
 
 - Fixed patches
 - Added some missing logos/icons
-
-
