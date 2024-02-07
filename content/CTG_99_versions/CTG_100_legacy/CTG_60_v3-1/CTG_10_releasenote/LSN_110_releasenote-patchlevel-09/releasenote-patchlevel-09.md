@@ -80,7 +80,7 @@ _Note: this feature has been back ported to the 3.0 maintenance branch._
 
 A new publication template has been added on ALM test case so as to publish the test case as a Markdown archive.
 
-The publication result is a ZIP archive containing a main `/lesson/docs/versions/index` file referencing screen shots images files of the test case steps.
+The publication result is a ZIP archive containing a main `index.md` file referencing screen shots images files of the test case steps.
 
 _Note: this feature has been back ported to the 3.0 maintenance branch._
 
