@@ -177,6 +177,52 @@ Token validation using token info URL is enabled by adding the following attribu
 - `tokeninfo_url`, **required**: Token info URL
 - `tokeninfo_mappings`, **optional**: Token info result mappings (e.g. `{ "login": "preferred_username" }`)
 
+### Custom token validation
+
+Token validation using the `getAuthTokenInfo` hook in `PlatformHooks`.
+
+With the following provider added to `AUTH_PROVIDERS` :
+```JSON
+"name": "my_custom_provider", "type":"oauth2", "visible":false,
+	"tokeninfo_mappings" : {
+		"login": "my_mapped_login", 
+		"expiry": "my_mapped_expiry",
+		"valid": "my_mapped_valid"
+	}
+```
+The following example performs an HTTP call to get the token info :
+```java
+@Override
+public String getAuthTokenInfo(String token) {
+	
+	String url = "validation.url"
+	
+	String[] headers = new String[] {
+		"Content-Length: 157",
+		"Content-Type: application/x-www-form-urlencoded"
+	};
+
+	Map<String, String> p = new HashMap<>();
+	p.put("client_id", "my_client_id");
+	p.put("client_secret", "my_client_secret");
+	p.put("token", token);
+	
+	try {
+		String res = Tool.readUrl(url, null, null, "POST", p, headers, "UTF-8");
+		// ...
+		// handle result
+		// ...
+		return res; // containing the mapped attributes login, expiry, valid
+
+	}
+	catch (Exception e) {
+		AppLog.error(e, null);
+		return null;
+	}
+}
+```
+
+
 <h2 id="google">Google provider</h2>
 
 Register a new client ID on the [Google Developers Console](https://console.developers.google.com) for the application:
