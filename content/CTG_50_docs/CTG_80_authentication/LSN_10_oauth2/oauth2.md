@@ -183,12 +183,14 @@ Token validation using the `getAuthTokenInfo` hook in `PlatformHooks`.
 
 With the following provider added to `AUTH_PROVIDERS` :
 ```JSON
-"name": "my_custom_provider", "type":"oauth2", "visible":false,
+{
+	"name":"my_custom_provider", "type":"oauth2", "visible":false,
 	"tokeninfo_mappings" : {
 		"login": "my_mapped_login", 
 		"expiry": "my_mapped_expiry",
 		"valid": "my_mapped_valid"
 	}
+}
 ```
 The following example performs an HTTP call to get the token info :
 ```java
