@@ -45,7 +45,7 @@ To find out which version Simplicité uses please refer to [this](https://platfo
 - DOCUSIGN_PUBLIC_KEY : Docusign public Key to connect API.      
 
   
-Configuring credentials and librairies 
+Configuring DocLegal 
 ----------------------------------------
 
 The Simplicit&eacute;&reg; business object that manages DocuSign service calls for documents to be signed is **DocLegal** (Document menu/Legal documents).
