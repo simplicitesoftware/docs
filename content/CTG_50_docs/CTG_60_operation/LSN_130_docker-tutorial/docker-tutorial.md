@@ -53,7 +53,7 @@ sudo dnf -y install firewalld && sudo dnf clean all
 ```
 
 > **Note**: > Depending on the version of Docker that you use and if your host is running **CentOS 8/AlmaLinux/RockyLinux** you may encounter issues with Docker networking vs firewall rules.
-> In such a case, you can try changing the default firewall backend to iptables in `/etc/firewalld/firewalld.conf`: replace `FirewallBackend=nftables` by `FirewallBackend=iptables`.
+> In such a case, you can try changing the default firewall backend to iptables in `/etc/firewalld/firewalld.conf` (replace `FirewallBackend=nftables` by `FirewallBackend=iptables`).
 > Note that some recent host kernels do not support iptables anymore, don't try this in this case.
 
 ```bash
