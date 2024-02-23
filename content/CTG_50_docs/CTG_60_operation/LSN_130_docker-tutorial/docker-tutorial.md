@@ -52,9 +52,9 @@ Install and enable firewall  on **CentOS 8/AlmaLinux/RockyLinux**:
 sudo dnf -y install firewalld && sudo dnf clean all
 ```
 
-> **Important**: Change the default backend to iptables in `/etc/firewalld/firewalld.conf`:
-> replace `FirewallBackend=nftables` by `FirewallBackend=iptables`.
-> This is **required** at that stage  because **CentOS 8/AlmaLinux/RockyLinux** default backend (nftables) is not yet compatible with Docker networking
+> **Note**:
+> Depending on the version of Docker that you use and if your host is running **CentOS 8/AlmaLinux/RockyLinux** you may encounter issues with Docker networking vs firewall rules.
+> In such a case try changing the default backend to iptables in `/etc/firewalld/firewalld.conf`: replace `FirewallBackend=nftables` by `FirewallBackend=iptables`.
 
 ```bash
 sudo systemctl enable firewalld
