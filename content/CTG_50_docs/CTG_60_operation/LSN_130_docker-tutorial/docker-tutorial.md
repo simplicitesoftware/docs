@@ -170,9 +170,10 @@ sudo docker --version
 sudo systemctl status docker
 ```
 
-> **Note**: by default Docker is allowed to change the firewall rules to open exposed ports. 
+> **Note**:
+> By default Docker is allowed to change the firewall rules to open exposed ports. 
 > To disable this default behavior you need to edit `/usr/lib/systemd/system/docker.service` cartridge file
-> and add `--iptables=false` to the `ExecStart` command.
+> and add `--iptables=false` (or similar if using `nftables`) to the `ExecStart` command.
 
 Sign-in to **our private Docker registry**:
 
@@ -180,7 +181,8 @@ Sign-in to **our private Docker registry**:
 sudo docker login https://registry.simplicite.io
 ```
 
-> **Note**: The images' prefix is `registry.simplicite.io/` (e.g. `registry.simplicite.io/platform:5-x`).
+> **Note**:
+> The images' prefix is `registry.simplicite.io/` (e.g. `registry.simplicite.io/platform:5-x`).
 
 To test if everything works fine you can try starting a Tomcat-only ephemeral container with:
 
@@ -188,10 +190,7 @@ To test if everything works fine you can try starting a Tomcat-only ephemeral co
 sudo docker run -it --rm -p 80:8080 registry.simplicite.io/server:<tag>
 ```
 
-Where `<tag>` is one of the available tags. E.g. `5-latest` = `5` or `4.0-latest` = `4.0`, etc.
-
-> **Note**: the `latest` tag corresponds to the latest **released** version,
-> to avoid any ambiguity you **should** rather use the explicit `<4.0|5>-<alpha|beta|latest>[-light]` tags.
+Where `<tag>` is one of the available tags. E.g. `6-latest` = `6` or `5-latest` = `5`, etc.
 
 ### Docker compose
 
