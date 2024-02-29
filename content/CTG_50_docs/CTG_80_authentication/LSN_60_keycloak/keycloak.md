@@ -30,7 +30,8 @@ Simply add the Keycloak provider as follow:
 		"myparam":   { "param": "APP_MYPARAM" },
 		"title":     { "field": "usr_title", "transform": { "M.":"MR", "Mme":"MRS", "Mlle":"MS" } },
 		"unit":      { "field": "myUserUnit", "param": "APP_USER_UNIT" },
-		"groups":    [ "realm.roles", "groups" ]
+		"groups":    [ "realm.roles", "groups", "group.name" ],
+		"whitelist": [ "GROUP1", "GROUP2", "MYPREFIX_*", "MYAPP_*" ]
 	}
 }
 ```
@@ -40,7 +41,13 @@ V5 `userinfo_mappings`has features to map simple fields:
 - `field`: optional to set a User field with the userinfo value
 - `transform`: optional to change the value with a simple mapped value
 - `param`: optional to add a user's system parameter
-- `groups` : optional list of paths to specify where the user's responsibilities are listed
+- `groups`: optional list of paths to specify where the user's responsibilities are listed
+- `whitelist`: optional list of allowed groups (to exclude all other groups from user-info), syntax supports the wildcard `*`
+
+For instance, `"groups": [ "realm.roles", "groups", "group.name" ]` means that userinfo contains:
+- path within objects: `"realms": { "roles": [ "PROFILE1", "PROFILE2" ] }`
+- array of groups `"groups": [ "GROUP1", "GROUP2" ]`
+- or a single name `"group": { name: "GROUP3" }`
  
 The `groups` mapping rule indicates a list of path in the userinfo containing a group or a list of groups to add to user's responsibilities.
 When this `groups` rule is specified, the user synchronization thru API will not be used, so the userinfo must contains all the granted groups on each logon.
