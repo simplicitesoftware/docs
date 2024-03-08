@@ -78,18 +78,18 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 
 <h3 id="appservers">Application servers</h3>
 
-| ![](https://platform.simplicite.io/logos/logo.svg) | JEE Web profile (1) | Webapp |
-|:--------------------------------------------------:|---------------------|--------|
-| **6.x**                                            | JEE 8 (2)           | 6.0    |
-| **5.x**                                            | JEE 8               | 4.0    |
-| Legacy **4.0**                                     | JEE 8               | 4.0    |
-| Legacy **3.2**                                     | JEE 7               | 3.1    |
-| Legacy **3.1**                                     | JEE 6               | 3.1    |
-| Legacy **3.0**                                     | J2EE 1.4            | 2.5    |
+| ![](https://platform.simplicite.io/logos/logo.svg) | JEE Web profile (1) | Webapp  |
+|:--------------------------------------------------:|---------------------|---------|
+| **6.x**                                            | JEE 8 (2)           | 4.0 (2) |
+| **5.x**                                            | JEE 8               | 4.0     |
+| Legacy **4.0**                                     | JEE 8               | 4.0     |
+| Legacy **3.2**                                     | JEE 7               | 3.1     |
+| Legacy **3.1**                                     | JEE 6               | 3.1     |
+| Legacy **3.0**                                     | J2EE 1.4            | 2.5     |
 
 1. Web profile by default but full profile is also possible
-2. Compliance with JakartaEE 10 was the target when for versions 6.x.
-However, at the time of the first minor version (6.0) release, some third party libs are still not yet compliant with Jakarta 10.
+2. Compliance with JakartaEE 10 (an thus Webapp 6.0) was the target when for versions 6.x.
+However, at the time of the first minor version (6.0) release, some third party libs are still not yet compliant.
 
 The webapp implementation we recommend are:
 
