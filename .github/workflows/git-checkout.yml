@@ -16,14 +16,8 @@ jobs:
 
       - name: Main branch git-checkout request
         if: ${{ github.ref_name == 'main' }}
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-            --user username:password \
-            https://training.dev.simplicite.io/api/ext/TrnGitCheckoutService
+        run: curl -X POST https://docs.simplicite.io/api/ext/TrnGitCheckoutService
 
       - name: Rec branch git-checkout request
         if: ${{ github.ref_name == 'rec' }}
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-            --user username:password \
-            https://trainingrec.dev.simplicite.io/api/ext/TrnGitCheckoutService
+        run: curl -X POST https://docs2rec.dev.simplicite.io/api/ext/TrnGitCheckoutService
