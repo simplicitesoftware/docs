@@ -18,8 +18,7 @@ En V6, ils sont typés selon leur usage (Base, Responsive Page, Jquery page..., 
 L'objet externe est composé à minima de 3 ressources (HTML, CSS, SCRIPT).
 L'objet est paramétré par des ressources, le bouton créer des ressources génère une page HTML générique (HTML/css/JavaScript).  
 La classe peut se mettre directement dans l'attribut source du paramétrage de l'objet. 
-![external object screenshot](external.png)
-En fonction du type d'objet externe, celui-ci aura une classe java héritant de com.simplicite.util.ExternalObject
+
 - Base : com.simplicite.util.ExternalObject. Il est conseillé d'utiliser les autres classes dans les versions 5 et 6.
 - Responsive page : com.simplicite.webapp.web.ResponsiveExternalObject. 
 - Web page : com.simplicite.webapp.web.WebPageExternalObject 
