@@ -5,10 +5,10 @@ Un objet externe est une page externe (url spécifique) /un composant HTML perso
 Il permet également  d'implémenter un service spécifique JSON/REST (lorsqu'il hérite de la classe **com.simplicite.webapp.services.RESTServiceExternalObject**).  
 
 Un objet externe sert à :
-- Implémenter un front spécifique au sein de la UI générique 
+- Implémenter une page spécifique au sein de la UI générique 
 - Implémenter un front spécifique indépendant en zone publique (avec ou sans authentification)
 - Par extension délivrer un contenu spécifique binaire comme un PDF, une image 
-- Implémenter un service spécifique 
+- Implémenter un web service spécifique 
 
 Les objets externes sont paramétrables depuis le Menu **Interface/Objets externes** en V5, **Interface utilisateur/Objets externes** à partir de la V6.  
 En V6, ils sont typés selon leur usage (Base, Responsive Page, Jquery page..., PDF, ..etc).  
@@ -29,4 +29,4 @@ En fonction du type d'objet externe, celui-ci aura une classe java héritant de 
 
 
 ## Exercice
-Créez un objet externe simple qui liste des produit sur une page avec leurs vignettes (public sans authentification).  
+Créez un objet externe simple qui liste des produits sur une page avec leurs vignettes (public sans authentification).  

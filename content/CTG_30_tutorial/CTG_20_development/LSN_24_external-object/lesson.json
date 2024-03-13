@@ -1,12 +1,13 @@
 {
     "tags": ["lvl2"],
-    "FRA": {
+    "ENU": {
         "title": "External object",
         "description": ""
     },
-    "ENU": {
+    "FRA": {
         "title": "Objet externe",
         "description": ""
     },
-    "published": false
+    "published": true,
+    "display":"LINEAR"
 }
