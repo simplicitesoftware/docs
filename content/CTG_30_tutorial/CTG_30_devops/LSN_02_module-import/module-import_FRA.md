@@ -12,6 +12,7 @@ L'import peut se faire :
 - par upload du fichier zip via le formulaire du module
 - par utilisation des mécanismes GIT
 - par appel à la couche io (en ligne de commande avec `curl`), pour uploader le même fichier zip
+- en renseignant le fichier importspec au format json ou yaml (cas des images docker spécifique).
 
 S'il ne s'agit pas d'une création de module, mais d'une mise à jour (une v2 par exemple), il est possible que *des éléments de configuration aient été supprimés*. C'est pour cela que la plateforme réalise une comparaison (diff) entre l'existant et l'importé pour supprimer ces objets fantôme.
 
