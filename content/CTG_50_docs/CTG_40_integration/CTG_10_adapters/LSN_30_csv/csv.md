@@ -45,7 +45,7 @@ public class ExampleCsvAdapter extends CSVLineBasedAdapter {
 
 	// Good practice : use specific exception class
 	private static class ExampleCsvAdapterException extends Exception{
-		public ExampleCsvAdapter(String message){
+		public ExampleCsvAdapterException(String message){
 			super(message);
 		}
 	}
