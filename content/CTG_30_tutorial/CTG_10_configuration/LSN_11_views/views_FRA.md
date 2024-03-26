@@ -28,6 +28,8 @@ En tant que designer, il est facile de tester cette fonctionnalité avec les sco
 Exercice
 ====================
 
+<div class="error">Pour paramétrer la vue correctement votre utilisateur de développement doit posséder les droits sur vos objets</div>
+
 - créer une nouvelle vue `TrnHome` de type `Accueil de domaine`
 - y définir deux zones
     - la liste des commandes en cours via une recherche prédéfinie
