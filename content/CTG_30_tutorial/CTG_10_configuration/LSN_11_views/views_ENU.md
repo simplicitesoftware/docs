@@ -27,7 +27,7 @@ As a designer, it is easy to test this functionality with the scopes already ava
 Exercise
 ====================
 
-- create a view `TrnHome`
+- create a view `TrnHome` of type `Domain page`
 - add two areas to it:
     - the list of current orders via a predefined search
     - the pivot table previously set up
