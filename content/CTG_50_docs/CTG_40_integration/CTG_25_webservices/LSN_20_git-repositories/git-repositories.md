@@ -132,3 +132,30 @@ You can specify additional remotes:
 ```
 
 Each remote definition use the same syntax as the origin definition.
+
+<h3 id="maven">Maven settings</h3>
+
+If required, you can specify additional settings to change the Maven settings generated in the `pom.xml`.
+
+```json
+{
+  "maven": {
+    "name": "<alternative name>",
+    "description": "<alternative description>",
+    "javaVersion": "<alternative Java version>",
+    "url": "<alternative instance URL>",
+    "repositoryUrl": "<alternative Maven repository URL>",
+    "checkstyle" <true to add the CheckStyle plugin>,
+    "checkstyleReportFile": "<alternate CheckStyle report file, used if above setting is set>",
+    "dependencies": [
+    	{
+    		"groupId": "<additional dependency's group ID>",
+    		"artifactId": "<additional dependency's artifact ID>",
+    		"version": "<additional dependency's version>"
+    	},
+    	(...)
+    ]
+    
+  }
+}
+```
