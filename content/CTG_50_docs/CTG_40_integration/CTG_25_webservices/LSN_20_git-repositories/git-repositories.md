@@ -57,11 +57,11 @@ E.g. from another instance's module repository:
 
 Any call to the _Import module_ action will then result in either a clone or a pull on the configured remote Git repository.
 
-> Typical use case is to link a "slave" instance to a "master" instance. In such a case there are 2 possible ways to export/import a module from the "master" to the "slave" instance:
+> Typical use case is to link a "secondary" instance to a "primary" instance. In such a case there are 2 possible ways to export/import a module from the "primary" to the "secondary" instance:
 > 
-> - Directly use the _Import module_ action from the "slave" instance (that will be pulling last commit(s) from the "master" instance)
-> - Use a clone of the "master" instance Git repository configured with an additional remote that points to the "slave" instance.
->   Then `git pull` will pull from the "master" instance and `git push <remote name>` will push to the "slave" instance.
+> - Directly use the _Import module_ action from the "secondary" instance (that will be pulling last commit(s) from the "primary" instance)
+> - Use a clone of the "primary" instance Git repository configured with an additional remote that points to the "secondary" instance.
+>   Then `git pull` will pull from the "primary" instance and `git push <remote name>` will push to the "secondary" instance.
 
 E.g. from a **public** GitHub repository:
 
@@ -105,7 +105,7 @@ You can specify the branch to use in the origin definition (or in the remotes de
   "origin": {
     (...)
   },
-  "branch": "<branch, defaults to master>"
+  "branch": "<branch, defaults to 'master'>"
 }
 ```
 
