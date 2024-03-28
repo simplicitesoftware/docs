@@ -26,7 +26,7 @@ Create an excel publication on the `TrnSupplier` object which exports the list o
 - create a publication object on the supplier
     - Code: TrnSupPublication
     - Usage: on list only
-    - Grantable: no (= all of the groups have access to it)
+<!--   - Grantable: no (= all of the groups have access to it) -->
     - Language: *
     - Traduction: "Publication test"
     - Output file name: `Export-[trnSupName]`
