@@ -25,9 +25,11 @@ As a designer, it is easy to test this functionality with the scopes already ava
 - etc.
 
 Exercise
-====================
+====================  
 
-- create a view `TrnHome`
+<div class="error"> To set up the view correctly, your development user must have rights to your objects </div>  
+  
+- create a view `TrnHome` of type `Domain page`
 - add two areas to it:
     - the list of current orders via a predefined search
     - the pivot table previously set up
