@@ -26,13 +26,13 @@ Définir une publication de type excel sur l'objet `TrnSupplier` qui permet d'ex
 - créer un objet de type publication sur le fournisseur
     - Code: TrnSupPublication
     - Utilisation: sur l'objet uniquement
-<!--     - Habilitable: non (= tous les groupes y ont accès) -->
     - Langue: *
     - Traduction: "Publication test"
     - Nom de fichier: `Export-[trnSupName]`
     - MIME: Excel
     - Type: Méthode
     - Méthode: `pubExcel`
+<!--     - Habilitable: non (= tous les groupes y ont accès) -->
 
 - écrire la méthode permettant de générer le excel voulu dans le code du supplier:
 
