@@ -146,7 +146,7 @@ If required, you can specify additional settings to change the Maven settings ge
     "url": "<alternative instance URL>",
     "repositoryUrl": "<alternative Maven repository URL>",
     "checkstyle": <true to add the CheckStyle plugin>,
-    "checkstyleReportFile": "<alternate CheckStyle report file, used if above setting is set>",
+    "checkstyleReportFile": "<alternative CheckStyle report file, used if above setting is set>",
     "dependencies": [
     	{
     		"groupId": "<additional dependency's group ID>",
@@ -155,7 +155,22 @@ If required, you can specify additional settings to change the Maven settings ge
     	},
     	(...)
     ]
-    
   }
 }
 ```
+
+<h3 id="sonar">SonarQube&reg; settings</h3>
+
+If required, you can specify additional settings to change the SonarQube&reg; Maven settings generated in the `pom.xml`.
+
+```json
+{
+  "maven": {
+    "projectKey": "<alternative project key>",
+    "projectName": "<alternative project name>",
+    "projectVersion": "<alternative project version>",
+    "<custom name>": "<additional custom setting, will be prefixed by 'sonar.'>"
+  }
+}
+```
+
