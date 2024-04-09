@@ -483,7 +483,7 @@ This may be required on some networks (e.g. with old proxies) where websockets a
 You can generate them as a **self-signed** certficate with the following commands:
 
 ```bash
-openssl genrsa -des3 -out server.key 1024
+openssl genrsa -des3 -out server.key 4096
 openssl req -new -key server.key -out server.csr
 cp server.key server-pwd.key
 openssl rsa -in server-pwd.key -out server.key

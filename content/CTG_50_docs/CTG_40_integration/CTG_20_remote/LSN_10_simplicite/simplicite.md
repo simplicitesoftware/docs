@@ -58,18 +58,18 @@ Then linked objects are usable as local business objects: search, links, `row_id
 - Each application can inherit the linked-objects locally (in another business module) to extend them, add non-synchronized fields, rules...
 - In another setting module, all **Hosts** (URL of applications) must be shared 
 	- with the API/REST credentials with **CRUD rights** on objects
-	- the host name must match with the instance deployment to detect if it is the slave or the master:
+	- the host name must match with the instance deployment to detect if it is the dependant or the main:
 		- Forced named: JVM property `-Dapplication.name=MyAppName1` or by hook `Globals.setApplicationName("MyAppName1")` in startup hook `PlatformHooks.postPlatformInit(Grant sys)`
 		- Forced URL: JVM property `-Dapplication.url=https://appli1.mydomain.io` or by hook `Globals.setApplicationURL("https://appli1.mydomain.io")`
 		- With system parameter `SERVER_URL` or `DIRECT_URL` or by default the webapp context path
 - Finally designer have to define the **DataLinks**:
-	- between hosts: set as master or slave, anyone can be a master, but there can't be only slaves
+	- between hosts: set as primary or secondary, anyone can be a primary, but there can't be only secondaries
 	- with objects to synchronize in a given order of dependencies (it can synchronized objects and related links).
 
 ### Runtime
 
 - Datalinks are loaded once at startup/clear-cache, and tracked in server logs.
-- In case of UI update, the masters call all known hosts **synchronously** (to guarantee the order of possible successive calls). The update must be designed fast without many hooks/rules.
+- In case of UI update, the primaries call all known hosts **synchronously** (to guarantee the order of possible successive calls). The update must be designed fast without many hooks/rules.
 - It uses the common API/REST interface: the "sync" service is like a POST but it forces the same `row_id` everywhere (no data mapping needed).
 - In case of host shutdown or HTTP error, the **cron `DataLink`** checks and resynchronizes the tables from the last timestamp stored in system parameters `_SYNC_MASTER_<object>`
 - Removing all parameters `_SYNC_MASTER_<object>` will make a full-resync.
@@ -80,5 +80,5 @@ it is possible to disable the cron and copy the tables with faster DB mechanisms
 Current limitations:
 
 - Designer can't specify which fields are to be synchronized, it's the whole object that is synchronized (use inheritance to extend objects locally).
-- There will surely be undetermined cases of flows that cross when there are several masters in parallel that allow concurrent accesses: the last update wins.
+- There will surely be undetermined cases of flows that cross when there are several primaries in parallel that allow concurrent accesses: the last update wins.
 - The system will not set a lock between applications: the `m_object_usage` table remains for local access concurrency.
