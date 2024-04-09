@@ -1,6 +1,5 @@
 {
-    "main_color": "#1C4587",
-    "secondary_color": "#3C78D8",
-    "logo_path": "logo500-white.png",
-    "useless-attribute": "TODO delete (sca: just to force logo update)"
+    "main_color": "#000000",
+    "secondary_color": "#666666",
+    "logo_path": "logo500-white.png"
 }
