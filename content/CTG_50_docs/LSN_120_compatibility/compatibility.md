@@ -57,19 +57,19 @@ It is also possible to deploy Simplicit&eacute;&reg; platform on **PaaS** buildp
 
 The following table only indicates the **LTS (Long Term Support)** JVM versions.
 
-| ![](https://platform.simplicite.io/logos/logo125.png) | JVM 1.8 | JVM 11       | JVM 17   | JVM 21   |
-|:-----------------------------------------------------:|---------|--------------|----------|----------|
-| **6.x**                                               | no      | yes (1)      | yes (1)  | **yes**  |
-| **5.x**                                               | no      | yes (1)      | **yes**  | yes (1)  |
-| Legacy **4.0**                                        | no (2)  | yes (1)      | **yes**  | yes (1)  |
-| Legacy **3.2**                                        | **yes** | yes (1)      | yes (1)  | yes (1)  |
-| Legacy **3.1**                                        | **yes** | yes (1)      | yes (1)  | yes (1)  |
-| Legacy **3.0**                                        | **yes** | no           | no       | no       |
+| ![](https://platform.simplicite.io/logos/logo125.png) | JVM 1.8 | JVM 11  | JVM 17  | JVM 21  |
+|:-----------------------------------------------------:|---------|---------|---------|---------|
+| **6.x**                                               | no      | yes (1) | yes (1) | **yes** |
+| **5.x**                                               | no      | yes (1) | **yes** | yes (1) |
+| Legacy **4.0**                                        | no (2)  | yes (1) | **yes** | yes (1) |
+| Legacy **3.2**                                        | **yes** | yes (1) | yes (1) | yes (1) |
+| Legacy **3.1**                                        | **yes** | yes (1) | yes (1) | yes (1) |
+| Legacy **3.0**                                        | **yes** | no      | no      | no      |
 
 1. Not tested and not supported but should work.
 2. Due to optional dependencies that are compiled for the JVM 11, the platform version 4.0+ **requires** a JVM &gt;= 11.
-However these optional dependencies are not part of the "light" variant of the 4.0 platform, so it could still run on a **JDK** 1.8 but it is **discouraged**.
-(_NB: for this legacy version 1.8 a JDK is required, not a JRE_)
+However these optional dependencies are not part of the "light" variant of the 4.0 platform, so it could still run on a JVM 1.8 but it is strongly **discouraged**.
+(_NB: for this legacy JVM version 1.8 a JDK is required, not a JRE_)
 
 In **bold** the recommended choice for considered Simplicit&eacute;&reg; version.
 
@@ -101,14 +101,14 @@ The webapp implementation we recommend are:
 
 <h2 id="databases">Databases</h2>
 
-| ![](https://platform.simplicite.io/logos/logo125.png) | MySQL/MariaDB | PostgreSQL | Oracle   | SQLServer |
-|:-----------------------------------------------------:|---------------|------------|----------|-----------|
-| **6.x**                                               | 8+            | 12+        | 19c+     | 2019+     |
-| **5.x**                                               | 5.7+          | 11+        | 12c+     | 2019+     |
-| Legacy **4.0**                                        | 5.5+          | 10+        | 12c+     | 2016+     |
-| Legacy **3.2**                                        | 5.1+          | 9+         | 11g+     | 2012+     |
-| Legacy **3.1**                                        | 5.1+          | 9+         | 11g+     | 2012+     |
-| Legacy **3.0**                                        | 5.1+          | 9+         | 10g+     | 2008+     |
+| ![](https://platform.simplicite.io/logos/logo125.png) | PostgreSQL | MySQL | Oracle   | SQLServer |
+|:-----------------------------------------------------:|------------|-------|----------|-----------|
+| **6.x**                                               | 12+        | 8+    | 19c+     | 2019+     |
+| **5.x**                                               | 11+        | 5.7+  | 12c+     | 2019+     |
+| Legacy **4.0**                                        | 10+        | 5.5+  | 12c+     | 2016+     |
+| Legacy **3.2**                                        | 9+         | 5.1+  | 11g+     | 2012+     |
+| Legacy **3.1**                                        | 9+         | 5.1+  | 11g+     | 2012+     |
+| Legacy **3.0**                                        | 9+         | 5.1+  | 10g+     | 2008+     |
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
