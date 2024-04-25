@@ -50,33 +50,31 @@ com.simplicite.webapp.tools
 
 It is possible to include a whole additional packages by:
 
-#### Rhino script
-
-```plaintext
-importPackage(Packages.<java package name (e.g. org.apache.commons.lang3)>);
-```
 #### Java
 ```plaintext
 import <java class name (e.g. org.apache.commons.lang3)>.*;
 ```
-or a single additional class by:
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
 ```plaintext
-importClass(Packages.<java class name (e.g. org.apache.commons.lang3.StringUtils)>);
+importPackage(Packages.<java package name (e.g. org.apache.commons.lang3)>);
 ```
+</details>
+
+or a single additional class by:
 #### Java
 ```plaintext
 import <java class name (e.g. org.apache.commons.lang3.StringUtils)>;
 ```
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```plaintext
+importClass(Packages.<java class name (e.g. org.apache.commons.lang3.StringUtils)>);
+```
+</details>
 Example:
 
-#### Rhino script
-
-```javascript
-importClass(Packages.org.apache.commons.lang3.StringUtils);
-console.log(StringUtils.isNumeric("hello world")); // false
-console.log(StringUtils.isNumeric("123")); // true
-```
 #### Java
 
 ```java
@@ -84,6 +82,15 @@ import org.apache.commons.lang3.StringUtils;
 AppLog.info(StringUtils.isNumeric("hello world"),getGrant()); // false
 AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 ```
+<details>
+<summary>Rhino Javascript equivalent</summary>
+```javascript
+importClass(Packages.org.apache.commons.lang3.StringUtils);
+console.log(StringUtils.isNumeric("hello world")); // false
+console.log(StringUtils.isNumeric("123")); // true
+```
+
+</details>
 
 <h2 id="logging">Logging</h2>
 
@@ -91,13 +98,6 @@ AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 
 It is possible to log messages using:
 
-```javascript
-console.debug("Hello world !");   // Debug level message
-console.info("Hello world !");    // Info level message
-console.warning("Hello world !"); // Warning level message
-console.error("Hello world !");   // Error level message
-console.fatal("Hello world !");   // Fatal level message
-```
 #### Java
 
 ```java
@@ -108,67 +108,89 @@ AppLog.warning(e,getGrant()); // Warning level message
 AppLog.error(e,getGrant());   // Error level message
 AppLog.fatal(e,getGrant());   // Fatal level message
 ```
-It is also possible to link a message to an explicit log code:
-### Rhino script
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
 ```javascript
-console.log("Hello world !", "MYLOGCODE_001");
+console.debug("Hello world !");   // Debug level message
+console.info("Hello world !");    // Info level message
+console.warning("Hello world !"); // Warning level message
+console.error("Hello world !");   // Error level message
+console.fatal("Hello world !");   // Fatal level message
 ```
+
+</details>  
+
+It is also possible to link a message to an explicit log code:
+
 #### Java
 
 ```java
 AppLog.log("MYLOGCODE_001","Hello world !" ,getGrant());
 ```
+<details>
+<summary>Rhino Javascript equivalent</summary>
+```javascript
+console.log("Hello world !", "MYLOGCODE_001");
+```
+</details>
 
 Note that if the log code is omitted the `log` method is the equivalent to the default `info`method.
 
 The messages are actually displayed depending on the log appenders configuration and on the log code associated configuration.
 
-It is possible to set custom target log codes for default log methods using:
+Designers can activate the hooks tracer during the development phase. (only > V6 Version)
 
-#### Rhino script
 
-```javascript
-console.setDebugCode("MYLOGCODE_000");   // Otherwise the default DEBUG code is used 
-console.setInfoCode("MYLOGCODE_001");    // Otherwise the default INFO code is used 
-console.setWarningCode("MYLOGCODE_002"); // Otherwise the default WARN code is used 
-console.setErrorCode("MYLOGCODE_003");   // Otherwise the default ERROR code is used 
-console.setFatalCode("MYLOGCODE_004");   // Otherwise the default FATAL code is used 
+```java
+Override
+public void postLoad() {
+	// no trace (the default)
+	traceHooks(false, false);
+	// trace only implemented hooks (during test)
+	traceHooks(true, true);
+	// trace all hooks (verbose only for training)
+	traceHooks(true, false);
+}
+```
+It is possible to track hook's duration : log a warning after 2s by default (only in > V6 Version of Simplicité)
+
+```java
+@Override
+protected void hookBegin(String hook, int maxTime, int maxStack) throws HookException {
+	// postUpdate may be long because of ...
+	if ("postUpdate".equals(hook))
+		maxTime = 10000; // warning after 10s in ms
+
+	// default duration is 2s by default
+	// default stack is set 20 to stop infinite calls loop => HookException 
+	super.hookBegin(hook, maxTime, maxStack);
+}
+
+@Override
+protected long hookEnd(String hook) {
+	long time = super.hookEnd(hook);
+	// do something if postUpdate is too long
+	if (time>10000 && "postUpdate".equals(hook)) {
+		// notify the supervisor...
+	}
+	return time;
+}
 ```
 
-<h3 id="debughookscalls">Debug hook calls &amp; SQL logging (as of version 3.1)</h3>
+It is possible to track method duration : log a warning after 2s bu default (only in > V6 Version of Simplicité)
 
-Designers can activate the hooks tracer during the development phase. 
-At the top of the object script add the following code:
-#### Rhino script
-
-```javascript
-// Trace object hooks
-// - Tracks the calls hierarchy
-// - Tracks the call frequency and the durations
-var trace = true;     // to active the hooks tracer
-var traceAll = true;  // trace all hooks to display the calls hierarchy or only the implemented ones
-var traceArgs = true; // trace all hooks arguments or only simple ones
-console.traceHooks(trace, traceAll, traceArgs);
-
-// Trace object CRUD 
-// - Tracks object accesses
-// - Explains the SQL statements
-console.traceObject(true);
+```java
+// Same for Action method
+@Override
+protected void methodBegin(String method, int maxTime, int maxStack) throws HookException {
+	super.methodBegin(method, maxTime, maxStack);
+}
+@Override
+protected long methodEnd(String method) {
+	return super.methodEnd(method);
+}
 ```
-
-<h2 id="rhinotraps">Rhino usual traps</h2>
-
-### JVM scripting engine considerations
-
-As of JVM version 1.8 the default `javax.script` scripting engine (_Nashorn_) is not the same as in previous JVMs (_Rhino_).
-
-As of JVM 13 _Nashorn_ is scheduled to be removed shortly from the JVM.
-
-To avoid compatibility problems the up-to-date _Rhino_ script engine has been added as third party JSR223 libs and
-is explicitly used instead of the defaut `javax.script`.
-
-For more details on **Rhino** scripting engine you can check [the Mozilla Rhino documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino/Documentation)
 
 <h2 id="businessobjects">Business objects manipulation</h2>
 
@@ -188,7 +210,9 @@ if (o.select(rowId)) {
 	// etc.
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 
 ```javascript
 var o = this.getGrant().getTmpObject("myObject");
@@ -198,6 +222,7 @@ if (o.select(rowId)) {
 	// etc.
 }
 ```
+</details>
 
 <h3 id="searching">Searching</h3>
 
@@ -220,7 +245,9 @@ for (String[] row : o.search(false)) {
 	// etc
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 
 ```javascript
 var o = this.getGrant().getTmpObject("myObject");
@@ -252,7 +279,7 @@ for (var i = 0; i < rows.size(); i++) {
 	// etc.
 }
 ```
-
+</details>
 
 With pagination to limit memory usage:
 
@@ -273,7 +300,8 @@ for (int p = 0; p <= o.getMaxPage(); p++) {
 	}
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 var totalNbRows = o.getCount();
@@ -290,8 +318,8 @@ for (var p = 0; p <= o.getMaxPage(); p++) {
 	}
 }
 ```
-
-In V5, a simplified way is available with a callback for each page:
+</details>
+In V5 and above, a simplified way is available with a callback for each page:
 
 ```java
 int maxRowsPerPage = 200;
@@ -320,7 +348,8 @@ for (EnumItem item : o.getField("myField").getList().getAllItems()) {
 	(...)
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 var l = o.getField("myField").getList().getAllItems();
@@ -329,6 +358,7 @@ for (var i = 0; i < l.size(); i++)) {
 	(...)
 }
 ```
+</details>
 
 <h3 id="filtering">Filtering</h3>
 
@@ -397,7 +427,8 @@ public void readZip(File zipFile){
 	}
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 	var destDir = new File(this.getGrant().getTmpDir() + "/mydata." + System.currentTimeMillis());
@@ -411,6 +442,7 @@ public void readZip(File zipFile){
 		FileTool.deleteFileOrDir(destDir);
 	}
 ```
+</details>
 
 #### Write ZIP file
 
@@ -432,7 +464,8 @@ public byte[] writeZip() {
 	}
 }
 ```
-#### Rhino script
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 try {
@@ -449,7 +482,8 @@ catch (e)
 	console.log(e.message);
 }
 ```
+</details>
 
-> **Note**: There are several other methods and variants in `Tool`, `ZIPTool` and `FileTool` that you ca use to manipulate URLs and files
+> **Note**: There are several other methods and variants in `Tool`, `ZIPTool` and `FileTool` that you can use to manipulate URLs and files
 
 
