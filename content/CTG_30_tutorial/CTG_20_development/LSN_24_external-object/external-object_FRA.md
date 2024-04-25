@@ -2,7 +2,7 @@ Objet externe
 ====================
 
 Un objet externe est une page externe (url spécifique) /un composant HTML personnalisé qui peut être placé dans un domaine de la même manière qu'un objet métier ou bien être complètement indépendant de la UI Simplicité. 
-Il permet également  d'implémenter un service spécifique JSON/REST (lorsqu'il hérite de la classe **com.simplicite.webapp.services.RESTServiceExternalObject**).  
+Il permet également d'implémenter un service spécifique JSON/REST (lorsqu'il hérite de la classe **com.simplicite.webapp.services.RESTServiceExternalObject**).  
 
 Un objet externe sert à :
 - Implémenter une page spécifique au sein de la UI générique 
