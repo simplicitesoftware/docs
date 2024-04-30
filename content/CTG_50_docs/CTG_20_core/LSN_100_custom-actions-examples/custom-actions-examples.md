@@ -13,15 +13,6 @@ This _method_ field contains the name of a server-side **Rhino** script function
 For instance if you set `myCustomAction` as action _method_ and if you grant this action to the `MyObject` business object,
 the platform will look for the server-side **Rhino** script function or **Java** method called `MyObject.myCustomAction()` and will run it.
 
-**Rhino**
-
-```javascript
-MyObject.myCustomAction = function() {
-	var rowId = this.getRowId();
-	return Message.formatSimpleInfo("Using instance " + this.getInstanceName() + (!Tool.isEmpty(rowId) ? " and row ID " + rowId : ""));
-}
-```
-
 **Java**
 
 ```java
@@ -30,6 +21,17 @@ public String myCustomAction() {
 	return Message.formatSimpleInfo("Using instance " + getInstanceName() + (!Tool.isEmpty(rowId) ? " and row ID " + rowId : ""));
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.myCustomAction = function() {
+	var rowId = this.getRowId();
+	return Message.formatSimpleInfo("Using instance " + this.getInstanceName() + (!Tool.isEmpty(rowId) ? " and row ID " + rowId : ""));
+}
+```
+</details>
 
 On responsive UI (using ajax services) the action can return:
 
@@ -56,7 +58,19 @@ The action supports fields in the confirmation dialog:
 
 On server side the action's method will receive the fields within a `HashMap`:
 
-**Rhino**
+**Java**
+
+```java
+public String myCustomAction(Map<String,String> params) {
+		String value = params!=null? params.get("myActionField"): null;
+		...
+		return null;
+		
+}
+```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 Previous V4 syntax supports `String` values only thru a `Map`:
 
@@ -66,9 +80,29 @@ MyObject.myCustomAction = function(params) {
 	...
 }
 ```
+</details>
+
 
 This syntax is deprecated in V5 and must be replaced by a new
 V5 syntax to supports `ObjectField` directly as follow:
+**Java**
+
+```java
+public String myCustomAction(Action a) {
+	String = getGrant().getLang();
+	String actionField = action!=null ? action.get(lang, "myActionField").getValue() : null;
+	DocumentDB myDoc = action!=null ? action.get(lang, "myDocField").getDocument() : null;
+	File file = myDoc.getUploadFile();
+	// do something with the document...
+	// Remove the file from /tmp directory
+	file.delete();
+	// ...
+		
+}
+```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyObject.myCustomAction = function(action) {
@@ -82,6 +116,7 @@ MyObject.myCustomAction = function(action) {
 	// ...
 }
 ```
+</details>
 
 **Java**
 
@@ -150,16 +185,6 @@ This parameters can be read in all common hooks during the state transition (val
 
 **Previous V4 implementation:**
 
-Rhino
-
-```javascript
-MyObject.postSave = function() {
-	var params = this.geObjectParameter("ActionFields");
-	var myActionField = params!=null ? params.get("myActionField") : null;
-	...
-}
-```
-
 Java
 
 ```java
@@ -169,6 +194,18 @@ public String postSave() {
 	...
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.postSave = function() {
+	var params = this.geObjectParameter("ActionFields");
+	var myActionField = params!=null ? params.get("myActionField") : null;
+	...
+}
+```
+</details>
 
 **V5 implementation:**
 
