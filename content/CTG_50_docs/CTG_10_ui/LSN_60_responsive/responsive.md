@@ -189,6 +189,7 @@ Options can be changed in :
 | sticky                       | ensure table header to stay visible during vertical scrolling (V5)      | true                                       |
 | onopen\(ctn,obj,rowId\)      | handler when record is opened/clicked                                   | engine.openObject                          |
 | onhelp\(ctn,obj\)            | handler to display the long help                                        | engine.displayHelp                         |
+| onsavecell\(ctn,obj,id,f,index\) | handler to save the editable field by cell                          | engine.saveField                           |
 | showAreaTitles               | show area titles                                                        | true                                       |
 | renderTitle\(obj,fld,label\) | optional title rendering                                                |                                            |
 | renderValue\(obj,fld,val\)   | optional cell rendering                                                 |                                            |
