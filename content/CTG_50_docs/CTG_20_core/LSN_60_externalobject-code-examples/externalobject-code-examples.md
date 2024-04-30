@@ -52,6 +52,7 @@ MyExtObj.display = function(params) {
 ```
 </details>
 
+
 Note that the `display` method is created in the `MyExtObj` namespace that corresponds to the name of the configured external object.
 
 Once granted and made available from a main menu entry or a shortcut for instance, the page will render like this:
@@ -758,12 +759,12 @@ public class MyCustomWebservice extends RESTServiceExternalObject {
 	public Object get(Parameters params) throws HTTPException {
 		return error(400, "Call me in POST please!");
 	}
-    
-   @Override
+	
+	@Override
 	public Object post(Parameters params) throws HTTPException {
 		try {
    		 	return new JSONObject().put("hello", "world");
-    	}catch (Exception e) {
+		}catch (Exception e) {
 			return error(e);
 		}
 	
@@ -830,7 +831,7 @@ var MyExtObject = (function() {
 		JSONObject data = new JSONObject()
 		.put("greetings", "Hello")
 		.put("name", "Bob");
-	return javascript(getName() + ".render(" + data.toString() + ");");
+		return javascript(getName() + ".render(" + data.toString() + ");");
 };
 ```
 
@@ -920,7 +921,7 @@ public Object display(Parameters params) {
 	JSONObject data = new JSONObject()
 		.put("greetings", "Hello")
 		.put("name", "Bob");
-	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
+	return javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
 } 
 ```
 
