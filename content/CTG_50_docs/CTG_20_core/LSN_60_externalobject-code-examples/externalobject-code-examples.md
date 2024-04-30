@@ -131,9 +131,6 @@ public Object display(Parameters params) {
 
 ```javascript
 MyExtObj.display = function(params) {
-
-
-
 	this.setDecoration(false);
 	var wp = new JQueryWebPage(params.getRoot(), this.getDisplay());
 	wp.setReady("$('#hello').append('Hello world !');");
