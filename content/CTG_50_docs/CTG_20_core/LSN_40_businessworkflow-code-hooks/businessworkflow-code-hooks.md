@@ -60,7 +60,9 @@ public void postInstantiate(Grant g) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyProcess.postInstantiate = function(grant) {  
 
@@ -78,6 +80,7 @@ MyProcess.postInstantiate = function(grant) {
 		o.setDefaultSearchSpec("(t.amount > 1000 and t.enabled='1')");
 };
 ```
+</details>
 
 ### Pre/Post activate hook
 
@@ -105,7 +108,8 @@ public Message preActivate() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preActivate = function() {  
@@ -122,6 +126,7 @@ MyProcess.preActivate = function() {
 	...
 };
 ```
+</details>
 
 ### Pre/Post lock hook
 
@@ -156,7 +161,8 @@ public void postLock(ActivityFile context) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preLock = function(context) {
@@ -175,6 +181,7 @@ MyProcess.postLock = function(context) {
 		context.setDataFile("Field", "cliType", "someValue");
 };
 ```
+</details>
 
 ### Pre/Post validate hook
 
@@ -213,7 +220,8 @@ public Message preValidate(ActivityFile context) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preValidate = function(context) {  
@@ -237,6 +245,7 @@ MyProcess.preValidate = function(context) {
 	} 
 };
 ```
+</details>
 
 ### Pre/Post abandon hook
 
@@ -278,7 +287,8 @@ public Message preAbandon() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preAbandon = function() {
@@ -305,7 +315,7 @@ MyProcess.preAbandon = function() {
 	return null; // continue
 };
 ```
-
+</details>
 
 ### Pre/Post cancel hook  
 
@@ -330,7 +340,8 @@ public Message preCancel(ActivityFile context) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preCancel = function(context) {  
@@ -343,6 +354,7 @@ MyProcess.preCancel = function(context) {
 	}
 };
 ```
+</details>
 
 ### Pre/Post unlock hook
 
@@ -364,8 +376,8 @@ public Message preUnlock(ActivityFile context) {
 }
 
 ```
-
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.preUnlock = function(context) {  
@@ -377,6 +389,7 @@ MyProcess.preUnlock = function(context) {
 	}
 };
 ```
+</details>
 
 ### Pre/Post terminate hook
 
@@ -405,7 +418,8 @@ public void postTerminate() {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyProcess.postTerminate = function() {  
@@ -419,4 +433,4 @@ MyProcess.postTerminate = function() {
 	}
 };
 ```
-
+</details>
