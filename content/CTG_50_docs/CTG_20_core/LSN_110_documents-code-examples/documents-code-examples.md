@@ -192,14 +192,16 @@ import org.apache.poi.hssf.usermodel.*;
 
 (...)
 
-ExcelPOITool xls = new ExcelPOITool(getGrant(), doc);
-Workbook wb = xls.getWorkbook();
-HSSFSheet s = wb.getSheetAt(0);
-HSSFRow r = sh.getRow(0);
-HSSFCell c = r.getCell(0);
-c.setCellValue("Hello again World !");
-byte[] bytes = xls.generateToByteArray();
-// Do something with document content...
+ExcelTool xls = new ExcelTool(true);
+Sheet sheet = xls.addSheet("Custom");
+for (int i = 0; i < rows.size(); i++) {
+	ExcelRow r = new ExcelRow(i);
+	String[] row = rows.get(i);
+	for (int j = 0; j < row.length; j++) {
+		r.add(xls.newCell(j, row[j]));
+	}
+	xls.addRow(sheet, r);
+}
 ```
 
 <details>
@@ -207,15 +209,17 @@ byte[] bytes = xls.generateToByteArray();
 
 ```javascript
 importPackage(Packages.org.apache.poi.hssf.usermodel);
-
-var xls = new ExcelPOITool(this.getGrant(), doc);
-var wb = xls.getWorkbook();
-var s = wb.getSheetAt(0);
-var r = sh.getRow(0);
-var c = r.getCell(0);
-c.setCellValue("Hello again World !");
-var bytes = xls.generateToByteArray();
-// Do something with document content...
+(...)
+ 
+var sheet = xls.addSheet("Custom");
+for (var i = 0; i < rows.size(); i++) {
+	var r = new ExcelRow(i);
+	var row = rows.get(i);
+	for (var j = 0; j < row.length; j++) {
+		r.add(xls.newCell(j, row[j]));
+	}
+	xls.addRow(sheet, r);
+}
 ```
 </details>
 

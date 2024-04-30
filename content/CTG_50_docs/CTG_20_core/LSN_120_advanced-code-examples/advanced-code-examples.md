@@ -7,7 +7,7 @@ These advanced examples are given using the server-side **Rhino** scripting lang
 
 > **Note**:
 >
-> In Rhino scripts the `this` variable correspond to the contextual item (business object, workflow, external object, ...) itself,
+> Rhino scripts correspond to the contextual item (business object, workflow, external object, ...) itself,
 > it must be **explicitly** used (it can't be implicit like in Java code).
 >
 > The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
@@ -31,31 +31,7 @@ It can be useful to store parameters (or serializable objects) in the user's ses
 Examples:
 
 Share a parameter between objects:
-**Rhino**
-```javascript
-MyObjectA.initUpdate = function() {
-	// To store the current RowId of this object
-	this.getGrant().setParameter("MYAPP_CONTEXT_ID", this.getRowId());
-}
 
-MyObjectB.initList = function(parent) {
-	// To use the current Id of A when a list B is displayed
-	var id = this.getGrant().getParameter("MYAPP_CONTEXT_ID");
-	if (id && id!="") // ...
-};
-
-MyExternalObjectC.display = function(param) {
-	// To use the current Id of A when the external object is displayed
-	var id = this.getGrant().getParameter("MYAPP_CONTEXT_ID");
-	if (id && id!="") ...
-};
-
-MyObjectB.myAction = function() {
-	// To use the current Id of A when a list B is displayed
-	var id = this.getGrant().getParameter("MY_CONTEXT_ID");
-	if (id && id!="") ...
-};
-```
 **Java**
 
 ```java
@@ -92,23 +68,36 @@ public void myAction() {
 }
 ```
 
-Store a set of data (as `org.json.JSONObject` between hooks of the same object:
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
-**Rhino**
 ```javascript
-MyObject.postValidate = function() {
-	var data = new JSONObject().put("key1", "value").put("key2", 123).put("key3", new JSONArray().put(new JSONObject(...)));
-	this.setParameter("MY_DATA", data);
+MyObjectA.initUpdate = function() {
+	// To store the current RowId of this object
+	this.getGrant().setParameter("MYAPP_CONTEXT_ID", this.getRowId());
 }
-MyObject.postSave = function() {
-	var data = this.getParameter("MY_DATA");
-	console.log(data.toString());
-	var k1 = data.getString("key1");
-	var k2 = data.getInt("key2");
-	var k3 = data.getJSONArray("key3");
-	// ...
-}
+
+MyObjectB.initList = function(parent) {
+	// To use the current Id of A when a list B is displayed
+	var id = this.getGrant().getParameter("MYAPP_CONTEXT_ID");
+	if (id && id!="") // ...
+};
+
+MyExternalObjectC.display = function(param) {
+	// To use the current Id of A when the external object is displayed
+	var id = this.getGrant().getParameter("MYAPP_CONTEXT_ID");
+	if (id && id!="") ...
+};
+
+MyObjectB.myAction = function() {
+	// To use the current Id of A when a list B is displayed
+	var id = this.getGrant().getParameter("MY_CONTEXT_ID");
+	if (id && id!="") ...
+};
 ```
+</details>
+
+Store a set of data (as `org.json.JSONObject` between hooks of the same object:
 
 **Java**
 ```Java
@@ -131,6 +120,25 @@ public String postSave() {
 }
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.postValidate = function() {
+	var data = new JSONObject().put("key1", "value").put("key2", 123).put("key3", new JSONArray().put(new JSONObject(...)));
+	this.setParameter("MY_DATA", data);
+}
+MyObject.postSave = function() {
+	var data = this.getParameter("MY_DATA");
+	console.log(data.toString());
+	var k1 = data.getString("key1");
+	var k2 = data.getInt("key2");
+	var k3 = data.getJSONArray("key3");
+	// ...
+}
+```
+</details>
+
 Etc.
 
 <h3 id="globalparam">Global parameter</h3>
@@ -152,16 +160,6 @@ The best solution is to load the parameter depending on user in the `GrantHooks`
 
 Example: 
 
-```javascript
-GrantHooks.postLoadGrant = function(grant) {
-	var login = grant.getLogin();
-	var employeeId = grant.simpleQuery("select ... query depending on login ...");
-	grant.setParameter("MYAPP_EMP_ID", employeeId || "unknown");
-	var empPhone = Tools.readURL("http://...external REST service...");
-	grant.setParameter("MYAPP_EMP_PHONE", empPhone || "");
-};
-```
-
 **Java**
 ```Java
 @Override
@@ -178,6 +176,21 @@ public void postLoadGrant(Grant g) {
 	super.postLoadGrant(g);
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+GrantHooks.postLoadGrant = function(grant) {
+	var login = grant.getLogin();
+	var employeeId = grant.simpleQuery("select ... query depending on login ...");
+	grant.setParameter("MYAPP_EMP_ID", employeeId || "unknown");
+	var empPhone = Tools.readURL("http://...external REST service...");
+	grant.setParameter("MYAPP_EMP_PHONE", empPhone || "");
+};
+```
+</details>
+
 ### Booby traps:
 
 - `name`: prefix the names of the grant-level parameters with your **unique** project code to prevent any conflicts
@@ -192,11 +205,6 @@ As of version 3.1 MAINTENANCE 07, it is possible to do an advanced validation of
 
 **Example**:
 
-**Rhino**
-```javascript
-var f = this.getFieldValue("myPhoneNumber");
-f.setValue("myPhoneNumber", new PhoneNumTool("fr").getNationalNumber(f.getValue()));
-```
 **Java**
 ```Java
 try {
@@ -205,6 +213,15 @@ try {
 	AppLog.error(e, getGrant());
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+var f = this.getFieldValue("myPhoneNumber");
+f.setValue("myPhoneNumber", new PhoneNumTool("fr").getNationalNumber(f.getValue()));
+```
+</details>
 
 
 > **Note**: it is also possible to format as international number using `getInternationalNumber` instead of `getNationalNumber`
@@ -223,19 +240,6 @@ In order to programmatically generate a list of values, you have to:
 
 **Example**:
 
-**Rhino**
-```javascript
-MyObject.postLoad = function(){
-	var field = this.getField("myField");
-	field.setList(new ObjectFieldList(field)); // Empty the configured list
-
-	// Build list (here the next 10 years)
-	var list = field.getList();
-	var year = Tool.parseInt(Tool.getCurrentYear(), 2000);
-	for (var i = year; i <= year + 10; i++)
-		list.putItem(new EnumItem(i.toString(), this.getGrant().T("YEAR") + " " + i)); // enum item = (value, label)
-};
-```
 **Java**
 ```Java
 @Override
@@ -251,6 +255,23 @@ public void postLoad() {
 }
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.postLoad = function(){
+	var field = this.getField("myField");
+	field.setList(new ObjectFieldList(field)); // Empty the configured list
+
+	// Build list (here the next 10 years)
+	var list = field.getList();
+	var year = Tool.parseInt(Tool.getCurrentYear(), 2000);
+	for (var i = year; i <= year + 10; i++)
+		list.putItem(new EnumItem(i.toString(), this.getGrant().T("YEAR") + " " + i)); // enum item = (value, label)
+};
+```
+</details>
+
 <h2 id="encryption">Data encryption</h2>
 
 As of version 3.2 you can use the `EncryptionTool`class to encrypt/decrypt a field value.
@@ -258,32 +279,6 @@ As of version 3.2 you can use the `EncryptionTool`class to encrypt/decrypt a fie
 
 **Example:**
 
-**Rhino**
-```javascript
-MyObject.key = function() {
-	// ZZZ set as a system parameter (make sure to configure it as "private") ZZZ
-	//return this.getGrant().getParameter("MY_ENCRYPTION_KEY");
-	// or
-	// ZZZ pass this to the JVM by -Dmy.encryption.key=...
-	//return System.getProperty("my.encryption.key");
-	// or
-	// ZZZ set this in the JVM environment
-	return System.getEnv("MY_ENCRYPTION_KEY");
-	// etc.
-};
-
-MyObject.preSave = function() {
-	// Encrypt the value before saving
-	var l = this.getField("mySensitiveField");
-	l.setValue(EncryptionTool.encrypt(l.getValue(), MyObject.key.call(this)));
-};
-
-MyObject.postSelect = function(rowId, copy) {
-	// Decrypt the value after selecting it
-	var l = this.getField("mySensitiveField");
-	l.setValue(EncryptionTool.decrypt(l.getValue(), MyObject.key.call(this)));
-};
-```
 **Java**
 ```Java
 public String key() {
@@ -321,6 +316,35 @@ public void postSelect(String rowId, boolean copy) {
 }
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.key = function() {
+	// ZZZ set as a system parameter (make sure to configure it as "private") ZZZ
+	//return this.getGrant().getParameter("MY_ENCRYPTION_KEY");
+	// or
+	// ZZZ pass this to the JVM by -Dmy.encryption.key=...
+	//return System.getProperty("my.encryption.key");
+	// or
+	// ZZZ set this in the JVM environment
+	return System.getEnv("MY_ENCRYPTION_KEY");
+	// etc.
+};
+
+MyObject.preSave = function() {
+	// Encrypt the value before saving
+	var l = this.getField("mySensitiveField");
+	l.setValue(EncryptionTool.encrypt(l.getValue(), MyObject.key.call(this)));
+};
+
+MyObject.postSelect = function(rowId, copy) {
+	// Decrypt the value after selecting it
+	var l = this.getField("mySensitiveField");
+	l.setValue(EncryptionTool.decrypt(l.getValue(), MyObject.key.call(this)));
+};
+```
+</details>
 > **Note**: an encrypted field using this method cannot be searchable except of exact values (by encrypting the search filter in the `preSearch` hook)
 
 Since version 6.0, you can use the hook `fieldEncryptDB`
@@ -368,16 +392,6 @@ and the certificate password as a password field.
 It can be easily transposed with the JKS avialable as a static local file or as a (protected) resource
 and with the password stored as a system parameter or a environment variable etc.
   
-**Rhino**
-```javascript
-MyObject.callAPI = function() {
-	var url = "https://myremotehost/myservice";
-	var cert = this.getField("myClientCertificateField").getDocument();
-	var pwd = this.getFieldValue("myClientCertificatePasswordField");
-	console.log("Calling " + url + " with client certificate " + cert.getName());
-	return Tool.readUrlWithClientCert(url, cert.getBytes(true), pwd);
-};
-```
 **Java**
 ```Java
 public String callAPI() {
@@ -394,15 +408,52 @@ public String callAPI() {
 }
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyObject.callAPI = function() {
+	var url = "https://myremotehost/myservice";
+	var cert = this.getField("myClientCertificateField").getDocument();
+	var pwd = this.getFieldValue("myClientCertificatePasswordField");
+	console.log("Calling " + url + " with client certificate " + cert.getName());
+	return Tool.readUrlWithClientCert(url, cert.getBytes(true), pwd);
+};
+```
+</details>
 > **Note**: the client certificate **must** be a JKS file, if you have a PEM certificate you can convert
 > it to JKS format converting it first as PKCS12 using `openssl pkcs12 -export -inkey mycert.key -in mycert.pem -out mycert.p12`
 > and then importing it in a JKS file using `keytool -importkeystore -destkeystore mycert.jks -srckeystore mycert.p12 -srcstoretype PKCS12`
 > (you will be prompted to enter the passwords for the certficates)
 
-<!-- 
+
 Asynchronous code
 -----------------
 
-**TO BE COMPLETED**
--->
+This exemple to implement a monitoring of CSV exports launched in parallel. 
+
+
+```Java
+// Launcher, example : Action button
+public String myActionMethod() {
+
+	JobQueue.push("myExport123", new Runnable() {
+		@Override
+		public void run() {
+			ObjectDB obj = getGrant().getObject("myExportObject123", "MyObject");
+			CSVTool.export(obj...);
+		}
+	});
+```
+
+and tracker thread, example : external object to display the counter
+
+```Java
+@Override
+public String display(Parameters params) {
+	// same object instance
+	ObjectDB obj = getGrant().getObject("myExportObject123", "MyObject"); 
+	return obj.getParameter(ImportExportTool.EXPORT_PROGRESS);
+}
+```
 
