@@ -56,6 +56,7 @@ import <java class name (e.g. org.apache.commons.lang3)>.*;
 ```
 <details>
 <summary>Rhino Javascript equivalent</summary>
+
 ```plaintext
 importPackage(Packages.<java package name (e.g. org.apache.commons.lang3)>);
 ```
@@ -84,6 +85,7 @@ AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 ```
 <details>
 <summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 importClass(Packages.org.apache.commons.lang3.StringUtils);
 console.log(StringUtils.isNumeric("hello world")); // false
@@ -111,6 +113,7 @@ AppLog.fatal(e,getGrant());   // Fatal level message
 
 <details>
 <summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 console.debug("Hello world !");   // Debug level message
 console.info("Hello world !");    // Info level message
@@ -130,6 +133,7 @@ AppLog.log("MYLOGCODE_001","Hello world !" ,getGrant());
 ```
 <details>
 <summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 console.log("Hello world !", "MYLOGCODE_001");
 ```
