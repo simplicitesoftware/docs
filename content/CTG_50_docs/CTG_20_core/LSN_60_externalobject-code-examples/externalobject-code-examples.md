@@ -13,17 +13,10 @@ Please refer to [this document](/lesson/docs/integration/custom-services) for de
 
 > **Note**:
 >
-> Some of the examples below are only given using the server-side **Rhino** scripting language.
+> Some of the examples below are given using the server-side **Rhino** scripting language.
 > In such Rhino scripts the `this` variable correspond to the external object itself,
 > it must be **explicitly** used (it can't be implicit like in Java code).
->
-> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
-> Some examples are provided both in Rhino and Java so as you can see the syntax differences.
->
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
->
-> - Rhino: `a == b`, Java: `a.equals(b)`
-> - Rhino: `a != b`, Java: `!a.equals(b)`
+> but good practice is to use Java language which includes a compilation step and ensure that the syntax of the script is > correct. In advanced use cases that are not part of this tutorial, the use of Java gives access to all of the classic > > application development tools: step-by-step debugging, unit tests, development in a Java IDE, code quality analysis with Sonar etc..
 
 The content of an external page is produced by the `display` method of its server side script.
 
@@ -49,12 +42,15 @@ public Object display(Parameters params) {
 }
 ```
 
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyExtObj.display = function(params) {
 	return "<h1>Hello world !</h1>";
 };
 ```
+</details>
 
 Note that the `display` method is created in the `MyExtObj` namespace that corresponds to the name of the configured external object.
 
@@ -75,14 +71,6 @@ To do so, the page includes all core JavaScript and CSS:
 If you just want to generate only a plain HTML content (e.g. to be embedded inside another page)
 you need to set it explicitly as **non decorated** (meaning not using the default UI page framework):
 
-**Rhino**
-
-```javascript
-MyExtObj.display = function(params) {
-	this.setDecoration(false); // Just a plain page
-	return "<h1>Hello world !</h1>";
-};
-```
 **Java**
 
 ```java
@@ -92,6 +80,16 @@ public Object display(Parameters params) {
 	return "<h1>Hello world !</h1>";
 }
 ```
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObj.display = function(params) {
+	this.setDecoration(false); // Just a plain page
+	return "<h1>Hello world !</h1>";
+};
+```
+</details>
 
 Then the plain page will render like this:
 
@@ -114,17 +112,6 @@ If you want to generate a full custom HTML page, one of the following web helper
 
 E.g. of a simple jQuery&reg; page:
 
-**Rhino**
-
-```javascript
-MyExtObj.display = function(params) {
-	this.setDecoration(false);
-	var wp = new JQueryWebPage(params.getRoot(), this.getDisplay());
-	wp.setReady("$('#hello').append('Hello world !');");
-	wp.appendHTML("<h1 id=\"hello\"></h1>");
-	return wp.toString();
-};
-```
 **Java**
 
 ```java
@@ -138,6 +125,22 @@ public Object display(Parameters params) {
 }
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObj.display = function(params) {
+
+
+
+	this.setDecoration(false);
+	var wp = new JQueryWebPage(params.getRoot(), this.getDisplay());
+	wp.setReady("$('#hello').append('Hello world !');");
+	wp.appendHTML("<h1 id=\"hello\"></h1>");
+	return wp.toString();
+};
+```
+</details>
 
 The output is visually the same as above but the generated HTML is now:
 
@@ -203,19 +206,6 @@ If resources are associated to an external object, they are automatically proces
 
 On **standard** standalone pages (in the 3.x web UI or 4.0 **legacy** web UI), several methods allows to add custom JavaScript/CSS includes or fragments when required:
 
-**Rhino**
-
-```javascript
-MyExtObj.display = function(params) {
-	this.appendCSSInclude("http://url/of/a/file.css");
-	this.appendCSSIncludes([ "http://url/of/a/file1.css", "http://url/of/a/file2.css" ]);
-	this.appendJSInclude("http://url/of/a/file.js");
-	this.appendJSIncludes([ "http://url/of/a/file1.js", "http://url/of/a/file2.js" ]);
-	return "<p>Hello world !</p>"
-		+ HTMLTool.jsBlock("console.log('Hello again !');")
-		+ HTMLTool.cssBlock("p { color: red; }");
-};
-```
 **Java**
 
 ```java
@@ -233,6 +223,22 @@ public Object display(Parameters params) {
 		+ HTMLTool.cssBlock("p { color: red; }");
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObj.display = function(params) {
+	this.appendCSSInclude("http://url/of/a/file.css");
+	this.appendCSSIncludes([ "http://url/of/a/file1.css", "http://url/of/a/file2.css" ]);
+	this.appendJSInclude("http://url/of/a/file.js");
+	this.appendJSIncludes([ "http://url/of/a/file1.js", "http://url/of/a/file2.js" ]);
+	return "<p>Hello world !</p>"
+		+ HTMLTool.jsBlock("console.log('Hello again !');")
+		+ HTMLTool.cssBlock("p { color: red; }");
+};
+```
+</details>
 
 The `com.simplicite.util.tools.HTMLTool` helper class provides methods that can be used to get the URLs
 of packaged third party components' JavaScript/CSS (for use in the `append*` methods described above):
@@ -274,19 +280,8 @@ This can be used, for instance, by self links and self form submissions.
 For example you can write a traditional form posted to server
 (you should really consider using the Ajax APIs instead of doing this kind of things ;-):
 
-**Rhino**
-
-```javascript
-MyExtObj.display = function(params) {
-	var name = params.getParameter("myname", "");
-	if (name != "") return "Hello " + name + " !";
-	return "<form action=\"" + params.getLocation() + "\" method=\"post\">"
-		+ "Your name: <input type=\"text\" name=\"myname\"/>"
-		+ "<input type=\"submit\"/>"
-		+ "</form>"
-};
-```
 **Java**
+
 ```Java
 @Override
 	public Object display(Parameters params) {
@@ -298,6 +293,21 @@ MyExtObj.display = function(params) {
 			+ "</form>";
 	}
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObj.display = function(params) {
+	var name = params.getParameter("myname", "");
+	if (name != "") return "Hello " + name + " !";
+	return "<form action=\"" + params.getLocation() + "\" method=\"post\">"
+		+ "Your name: <input type=\"text\" name=\"myname\"/>"
+		+ "<input type=\"submit\"/>"
+		+ "</form>"
+};
+```
+</details>
 
 
 When used inside the generic web UI authenticated zone with navigation (i.e. by adding the URL parameter `nav=add` 
@@ -337,22 +347,14 @@ Most external pages are using the Ajax APIs to interact with Simplicit&eacute;&r
 
 As indicated above, the Ajax APIs JavaScripts are included by default in the **standard** decorated pages. In other cases they must be explicitly included:
 
-* using `this.appendJSIncludes(HTMLTool.ajaxJS())` in **standard** non decorated pages
+* using `appendJSIncludes(HTMLTool.ajaxJS())` in **standard** non decorated pages
 * using dedicated APIs of the web helper classes in **non standard** pages, e.g. using `wp.appendAjax()`
 where `wp` is an instance of a sub class of `com.simplicite.webapp.web.WebPage`
 
 The usage of the Ajax APIs itself is described in details in another [document](/lesson/docs/apis/ajax-api). Here is just a simple **standard** page example:
 
-**Rhino**
-
-```javascript
-MyExtObj.display = function(params) {
-	return "<div id=\"hello\"></div>"
-		+ HTMLTool.jsBlock("new Simplicite.Ajax().getGrant(function(g) { $('#hello').append('Hello ' + g.login); });");
-};
-```
-
 **Java**
+
 ```Java
 @Override
 public Object display(Parameters params) {
@@ -360,6 +362,17 @@ public Object display(Parameters params) {
 	return javascript("new Simplicite.Ajax().getGrant(function(g) { $('#hello').append('Hello ' + g.login); });");
 }
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObj.display = function(params) {
+	return "<div id=\"hello\"></div>"
+		+ HTMLTool.jsBlock("new Simplicite.Ajax().getGrant(function(g) { $('#hello').append('Hello ' + g.login); });");
+};
+```
+</details>
 
 ### Legacy UI tools (deprecated)
 
@@ -400,8 +413,8 @@ public class MyExtObj extends com.simplicite.util.ExternalObject {
 	}
 }
 ```
-
-#### Legacy UI (deprecated)
+<details>
+<summary> Legacy UI (deprecated)</summary>
 
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy UI** (or for versions 3.x UI) is something like:
 
@@ -413,7 +426,12 @@ MyExtObj.display = function(params) {
 };
 ```
 
+</details>
+
 Note that for simple charts you can also use the `Simplicite.UI` jQplot&reg; wrappers APIs.
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -427,6 +445,8 @@ MyExtObj.display = function(params) {
 		+ "});");
 };
 ```
+
+</details>
 
 For both legacy and responsive UI please refer to [jQPlot&reg; examples](http://www.jqplot.com/examples/) for details on usage.
 
@@ -458,6 +478,9 @@ public class MyExtObj extends com.simplicite.util.ExternalObject {
 
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy UI** (or for versions 3.x UI) is something like:
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
 ```javascript
 MyExtObj.display = function(params) {
 	this.appendJSIncludes(HTMLTool.gmapJS());
@@ -465,6 +488,7 @@ MyExtObj.display = function(params) {
 		+ HTMLTool.jsBlock("onload_functions.push(function() { Simplicite.Gmap.simpleDisplay('mymap', 8.8566667, 2.3509871, 15); });");
 };
 ```
+</details>
 
 The above example uses the `Simplicite.Gmap` wrapper but the Google Maps&reg; API can also be directly used
 (check the [Google Maps&reg; API documentation](...) for details on usage).
@@ -494,7 +518,8 @@ public class MyExtObj extends com.simplicite.util.ExternalObject {
 }
 ```
 
-#### Legacy UI (deprecated)
+<details>
+<summary>Legacy UI (deprecated)</summary>
 
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy** UI (or for versions 3.x UI) is something like:
 
@@ -506,6 +531,7 @@ MyExtObj.display = function(params) {
 		HTMLTool.jsBlock("onload_functions.push(function() { tinymce.init({ selector: '#myeditor' }); });");
 };
 ```
+</details>
 
 For both legacy and responsive UI check the [TinyMCE&reg; documentation](https://www.tiny.cloud/docs-4x/) for details on usage.
 
@@ -516,10 +542,21 @@ For both legacy and responsive UI check the [TinyMCE&reg; documentation](https:/
 Typical usage (using Java) as a standalone **standard** page for version **4.0 responsive UI** is something like:
 
 ```java
-// TODO
+public Object display(Parameters params) {
+	return "<div style=\"position: relative;\">" +
+			"<div id=\"myeditor\" style=\"width: 400px; height: 300px;\"></div>" +
+		"</div>" +
+		HTMLTool.jsBlock("onload_functions.push(function() {" +
+			"var e = ace.edit('myeditor');" +
+			"e.getSession().setMode('ace/mode/html');" +
+			"e.getSession().setValue('<p>Hello world !</p>');" +
+		"});") +
+		HTMLTool.jsIncludes(HTMLTool.aceJS(), "UTF-8"); // Must be done like this and here!
+};
 ```
 
-#### Legacy UI (deprecated)
+<details>
+<summary>Legacy UI (deprecated)</summary>
 
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy** UI (or for versions 3.x UI) is something like:
 
@@ -536,6 +573,7 @@ MyExtObj.display = function(params) {
 		HTMLTool.jsIncludes(HTMLTool.aceJS(), "UTF-8"); // Must be done like this and here!
 };
 ```
+</details>
 
 For both legacy and responsive UI check the [Ace&reg; documentation](http://ace.c9.io) for details on usage.
 
@@ -545,7 +583,7 @@ For both legacy and responsive UI check the [Ace&reg; documentation](http://ace.
 
 Typical usage (using Java) as a standalone **standard** page for version **4.0+ responsive UI** is something like:
 
-```javascript
+```java
 package com.simplicite.extobjects.MyModule;
 
 import com.simplicite.util.tools.Parameters;
@@ -568,30 +606,40 @@ public class MyExtObj extends com.simplicite.util.ExternalObject {
 
 For both legacy and responsive UI check the [Fullcalendar&reg; documentation](http://arshaw.com/fullcalendar/docs/) for details on usage.
 
-#### Legacy UI (deprecated)
 
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy UI** (or for versions 3.x UI) is something like:
 
-```javascript
-MyExtObj.display = function(params) {
-	this.appendCSSIncludes(HTMLTool.fullcalendarCSS());
-	this.appendJSIncludes(HTMLTool.fullcalendarJS(this.getGrant().getLang()));
+```java
+package com.simplicite.extobjects.MyModule;
+
+import com.simplicite.util.tools.Parameters;
+import com.simplicite.util.tools.HTMLTool;
+
+public class MyExtObj extends com.simplicite.util.ExternalObject {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public Object display(Parameters params) {
+
+	appendCSSIncludes(HTMLTool.fullcalendarCSS());
+	appendJSIncludes(HTMLTool.fullcalendarJS(this.getGrant().getLang()));
 	return "<div id=\"mycalendar\"></div>" +
 		HTMLTool.jsBlock(onload_functions.push(function() { $('#mycalendar').fullCalendar({ defaultView: 'agendaWeek', timezone: 'local', editable: false });});");
 };
+}
 ```
 
 If you plan to use this external object **also** as a part of a view (in this case you get the `embedded` parameter) you should write the code like this:
 
-```javascript
-MyExtObj.display = function(params) {
-	var embedded = params.getBooleanParameter("embedded");
+```java
+public class MyExtObj extends com.simplicite.util.ExternalObject {
+	boolean embedded = params.getBooleanParameter("embedded");
 	if (!embedded) {
-		this.appendCSSIncludes(HTMLTool.fullcalendarCSS());
-		this.appendJSIncludes(HTMLTool.fullcalendarJS(this.getGrant().getLang()));
+		appendCSSIncludes(HTMLTool.fullcalendarCSS());
+		appendJSIncludes(HTMLTool.fullcalendarJS(getGrant().getLang()));
 	}
 	return "<div id=\"mycalendar\"></div>" +
-		(embedded ? HTMLTool.cssIncludes(HTMLTool.fullcalendarCSS()) + HTMLTool.jsIncludes(HTMLTool.fullcalendarJS(this.getGrant().getLang())) : "") +
+		(embedded ? HTMLTool.cssIncludes(HTMLTool.fullcalendarCSS()) + HTMLTool.jsIncludes(HTMLTool.fullcalendarJS(getGrant().getLang())) : "") +
 		HTMLTool.jsBlock(
 			(embedded ? "" : "onload_functions.push(function() {") +
 				"$('#mycalendar').fullCalendar({ defaultView: 'agendaWeek', timezone: 'local', editable: false });" +
@@ -607,9 +655,9 @@ The field completion API allows to add completion capabilities on a text input u
 
 Typical usage as a standalone **standard** page (in the 3.x web UI or 4.0 **legacy** web UI) is something like:
 
-```javascript
-MyExtObj.display = function(params) {
-	this.appendJSInclude(HTMLTool.completionJS()); // Single JavaScript include
+```java
+public class MyExtObj extends com.simplicite.util.ExternalObject {
+	appendJSInclude(HTMLTool.completionJS()); // Single JavaScript include
 	return "<input type=\"text\" id=\"myloginfield\"/>" +
 		HTMLTool.jsBlock("onload_functions.push(function() { Simplicite.FieldCompletion.fcomp.register('myloginfield', 'usr_login', 'User'); });");
 };
@@ -622,10 +670,10 @@ The basic thing to do if you want your external object to be available in the pu
 is to grant it to the public user (either by granting it to the `PUBLIC` group or, better, by giving a responsibility
 on a dedicated group to the `public` user).
 
-The other thing to to is to call `this.setPublic(true)` in the `display` method.
+The other thing to to is to call `setPublic(true)` in the `display` method.
 
 Most of the time, this kind of public external object does not need to use the default UI layout. This can be achieved by
-calling `this.setDecoration(false)` in the `display` method as described above.
+calling `setDecoration(false)` in the `display` method as described above.
 
 <h2 id="redirects">Redirects</h2>
 
@@ -665,12 +713,11 @@ Example of an external object generating a PDF document (using the iText&reg; li
 
 For more information on itext 2.1.7 available on <a href="https://coderanch.com/how-to/javadoc/itext-2.1.7" target="_blank">javadoc</a>
 
-```javascript
-MyExtObj.display = function(params) {
-	this.setMIMEType(HTTPTool.MIME_TYPE_PDF); // Must force the MIME type
-	importPackage(Packages.com.lowagie.text);
-	var bos = new java.io.ByteArrayOutputStream();
-	var pdf = PDFTool.open(bos);
+```java
+public Object display(Parameters params) {
+	setMIMEType(HTTPTool.MIME_TYPE_PDF); // Must force the MIME type
+	ByteArrayOutputStream bos = new java.io.ByteArrayOutputStream();
+	com.lowagie.text.Document pdf = PDFTool.open(bos);
 	pdf.add(new Phrase("Hello world !"));
 	PDFTool.close(pdf);
 	return bos.toByteArray();
@@ -679,30 +726,47 @@ MyExtObj.display = function(params) {
 
 Example of an external object generating a Microsoft Excel&reg; document (using the POI&reg; library through its wrapper tool):
 
-```javascript
-MyExtObj.display = function(params) {
-	this.setMIMEType(HTTPTool.MIME_TYPE_XLS); // Must force the MIME type
-	var xls = new ExcelPOITool();
+```java
+
+public Object display(Parameters params) {
+	setMIMEType(HTTPTool.MIME_TYPE_XLS); // Must force the MIME type
+	ExcelTool xls = new ExcelTool(true);
 	/* or as of version 4.0
-	this.setMIMEType(HTTPTool.MIME_TYPE_XLSX); // Must force the MIME type
-	var xls = new ExcelPOITool(true); // the true argument means using XLSX format
+	setMIMEType(HTTPTool.MIME_TYPE_XLSX); // Must force the MIME type
+	ExcelPOITool xls = new ExcelPOITool(true); // the true argument means using XLSX format
 	*/
-	var s = xls.newSheet("MySheet");
-	var r = xls.newRow(0);
-	r.add(xls.newCell(0, "Hello"));
-	r.add(xls.newCell(1, "world !"));
-	s.add(r);
-	xls.add(s);
-	return xls.generateToByteArray();
+	try{
+		Sheet s = xls.addSheet("My Simple sheet");
+		ExcelTool.ExcelRow r = new ExcelTool.ExcelRow(0); 
+		r.add(new ExcelTool.ExcelCell(0,"Hello"));
+		r.add(new ExcelTool.ExcelCell(1,"world !"));
+		xls.addRow(s,r);
+		return xls.generateToByteArray();
+	}catch(Exception e){
+		AppLog.error("Excel generation error", e, getGrant());
+		return null;
+	}
 };
 ```
 
 Example of a web service external object:
 
-```javascript
-MyExtObj.display = function(params) {
-	this.setMIMEType(HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON)); // or, as of version 4.0, this.setJSONMimeType();
-	return new JSONObject().put("hello", "world");
+```java
+public class MyCustomWebservice extends RESTServiceExternalObject {
+
+	@Override
+	public Object get(Parameters params) throws HTTPException {
+		return error(400, "Call me in POST please!");
+	}
+    
+   @Override
+	public Object post(Parameters params) throws HTTPException {
+		try {
+   		 	return new JSONObject().put("hello", "world");
+    	}catch (Exception e) {
+			return error(e);
+		}
+	
 };
 ```
 
@@ -716,7 +780,7 @@ which renders as:
 
 <h2 id="responsive">Responsive UI pattern</h2>
 
-The **version 4.0 responsive UI** is a single page UI, so the implementation of custom components is using a different pattern than th²e standalone page pattern of the above examples.
+The **version 4.0 responsive UI** is a single page UI, so the implementation of custom components is using a different pattern than the standalone page pattern of the above examples.
 
 The use of client-side JavaScript is mandatory, a typical UI external objet will return a JavaScript statement and will rely on HTML/CSS/JavaScript resources.
 
@@ -758,19 +822,20 @@ var MyExtObject = (function() {
 
 #### Server-side code
 
-**Rhino script**
+**Java**
 
-```javascript
-MyExtObject.display = function(params) {
-	var data = new JSONObject()
+```java
+	@Override
+	public Object display(Parameters params) {
+		JSONObject data = new JSONObject()
 		.put("greetings", "Hello")
 		.put("name", "Bob");
-	return this.javascript(this.getName() + ".render(" + data.toString() + ");");
+	return javascript(getName() + ".render(" + data.toString() + ");");
 };
 ```
 
-> **Note**: For a dynamic HTML part you can also use `this.setHTML()` instead of a static HTML resource,
-> in the above case it would be `this.setHTML('<div id="myextobject"></div>')`.
+> **Note**: For a dynamic HTML part you can also use `setHTML()` instead of a static HTML resource,
+> in the above case it would be `setHTML('<div id="myextobject"></div>')`.
 
 **Java**
 
@@ -846,16 +911,6 @@ Same as above
 Not needed in this case
 
 #### Server-side script
-**Rhino**
-```javascript
-MyExtObject.display = function(params) {
-	this.addMustache();
-	var data = new JSONObject()
-		.put("greetings", "Hello")
-		.put("name", "Bob");
-	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
-};
-```
 
 **Java**
 ```Java
@@ -868,6 +923,20 @@ public Object display(Parameters params) {
 	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
 } 
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObject.display = function(params) {
+	this.addMustache();
+	var data = new JSONObject()
+		.put("greetings", "Hello")
+		.put("name", "Bob");
+	return this.javascript("$('#myextobject').html(Mustache.render($('#myextobject-template').html(), " + data.toString() + "));");
+};
+```
+</details>
 
 ### Submitting and returning dynamic data
 
@@ -903,18 +972,7 @@ var MyExtObject = (function() {
 ```
 
 #### Server-side script
-**Rhino**
-```javascript
-MyExtObject.display = function(params) {
-	if (params.isPost()) {
-		this.setJSONMIMEType();
-		return new JSONObject()
-			.put("greetings", "Hello")
-			.put("name", params.getParameter("name").trim());
-	}
-	return this.javascript(this.getName().".init(" + params.toJSON() + ");");
-};
-```
+
 **Java**
 ```Java
 @Override
@@ -928,3 +986,19 @@ public Object display(Parameters params) {
 	return javascript(getName()+".init(" + params.toJSON() + ");");
 } 
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+MyExtObject.display = function(params) {
+	if (params.isPost()) {
+		this.setJSONMIMEType();
+		return new JSONObject()
+			.put("greetings", "Hello")
+			.put("name", params.getParameter("name").trim());
+	}
+	return this.javascript(this.getName().".init(" + params.toJSON() + ");");
+};
+```
+</details>
