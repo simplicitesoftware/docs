@@ -99,22 +99,6 @@ This example is given in the server-side **Rhino** scripting language. It can be
 To use the **iText&reg;** library classes you need to include the `com.lowagie.text` package explicitly.
 For more information on itext 2.1.7 available on <a href="https://coderanch.com/how-to/javadoc/itext-2.1.7" target="_blank">javadoc</a>
 
-**Rhino**
-
-```javascript
-importPackage(Packages.com.lowagie.text);
-
-var bos = new java.io.ByteArrayOutputStream();
-	
-var pdf = PDFTool.open(bos);
-pdf.add(new Paragraph("Hello world !"));
-(...)
-PDFTool.close(pdf);
-
-var bytes = bos.toByteArray();
-// Do something with document content...
-```
-
 **Java**
 
 ```java
@@ -133,6 +117,24 @@ byte[] bytes = bos.toByteArray();
 // Do something with document content...
 ```
 
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+importPackage(Packages.com.lowagie.text);
+
+var bos = new java.io.ByteArrayOutputStream();
+	
+var pdf = PDFTool.open(bos);
+pdf.add(new Paragraph("Hello world !"));
+(...)
+PDFTool.close(pdf);
+
+var bytes = bos.toByteArray();
+// Do something with document content...
+```
+</details>
+
 Note that it is possible to insert resource images in the PDF document, e.g.:
 
 ```javascript
@@ -142,20 +144,6 @@ pdf.add(PDFTool.getImageFromResource(obj.getGrant(), "MYIMAGERESOURCECODE"));
 <h2 id="excel">Excel(R) sheet using Apache POI&reg;</h2>
 
 ### Create sheet fron scratch
-
-**Rhino**
-
-```javascript
-var xls = new ExcelPOITool(); // or ExcelPOITool(true); as of version 4.0, the true argument means using XLSX format
-var s = xls.newSheet("MyNewSheet");
-var r = xls.newRow(0);
-var c = xls.newCell(0, "Hello World !");
-r.add(c);
-s.add(r);
-xls.add(s);
-var bytes = xls.generateToByteArray();
-// Do something with document content...
-```
 
 **Java**
 
@@ -175,24 +163,26 @@ bytes[] bytes = xls.generateToByteArray();
 // Do something with document content...
 ```
 
-### Using an existing template sheet
 
-For this advanced usage of the **Apache POI** lib you need to include the `org.apache.poi.hssf.usermodel` package explicitly.
-
-**Rhino**
+<details>
+<summary>Rhino Javascript equivalent</summary>
 
 ```javascript
-importPackage(Packages.org.apache.poi.hssf.usermodel);
-
-var xls = new ExcelPOITool(this.getGrant(), doc);
-var wb = xls.getWorkbook();
-var s = wb.getSheetAt(0);
-var r = sh.getRow(0);
-var c = r.getCell(0);
-c.setCellValue("Hello again World !");
+var xls = new ExcelPOITool(); // or ExcelPOITool(true); as of version 4.0, the true argument means using XLSX format
+var s = xls.newSheet("MyNewSheet");
+var r = xls.newRow(0);
+var c = xls.newCell(0, "Hello World !");
+r.add(c);
+s.add(r);
+xls.add(s);
 var bytes = xls.generateToByteArray();
 // Do something with document content...
 ```
+</details>
+
+### Using an existing template sheet
+
+For this advanced usage of the **Apache POI** lib you need to include the `org.apache.poi.hssf.usermodel` package explicitly.
 
 **Java**
 
@@ -211,6 +201,24 @@ c.setCellValue("Hello again World !");
 byte[] bytes = xls.generateToByteArray();
 // Do something with document content...
 ```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
+
+```javascript
+importPackage(Packages.org.apache.poi.hssf.usermodel);
+
+var xls = new ExcelPOITool(this.getGrant(), doc);
+var wb = xls.getWorkbook();
+var s = wb.getSheetAt(0);
+var r = sh.getRow(0);
+var c = r.getCell(0);
+c.setCellValue("Hello again World !");
+var bytes = xls.generateToByteArray();
+// Do something with document content...
+```
+</details>
+
 
 In the above example `doc` is a Simplicit&eacute;&reg; document.
 
