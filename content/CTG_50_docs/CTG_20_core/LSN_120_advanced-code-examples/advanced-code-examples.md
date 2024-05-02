@@ -3,20 +3,12 @@ Advanced code examples
 
 Please refer to [basic code examples](/lesson/docs/core/basic-code-examples) document for naming conventions and logging strategies. 
 
-These advanced examples are given using the server-side **Rhino** scripting language.
-
 > **Note**:
 >
-> Rhino scripts correspond to the contextual item (business object, workflow, external object, ...) itself,
-> it must be **explicitly** used (it can't be implicit like in Java code).
->
-> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
-> Some examples are provided both in Rhino and Java so as you can see the syntax differences.
->
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
->
-> - Rhino: `a == b`, Java: `a.equals(b)`
-> - Rhino: `a != b`, Java: `!a.equals(b)`
+> Object scripts can be written in Java or Javascript (which will be executed by Rhino, just like the executed fields), but good practice is to use Java language which  
+> include a compilation step and ensure that the syntax of the script is correct. In advanced use cases that are not part of this tutorial, the use of Java gives access > to all of the classic application development tools: step-by-step debugging, unit tests, development in a Java IDE, code quality analysis with Sonar etc..
+
+> Examples are provided both in Rhino and Java so as you can see the syntax differences.
 
 <h2 id="parameters">Sharing parameters</h2>
 
