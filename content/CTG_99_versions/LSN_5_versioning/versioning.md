@@ -17,9 +17,9 @@ Versioning
 
 
 Some intechangeable terms:
-- **Current release**: release, lastest version, latest stable
-- **Beta/release candidate**: pre-release, test
-- **Alpha**: developement version, master, nightly build
+- **Current release**: release, latest version, latest stable
+- **Beta/release candidate**: pre-release, test version
+- **Alpha**: master, developement version, nightly build
 
 The [platform site](https://platform.simplicite.io) contains generated technical docs for all versions:
 - Java & JS docs
