@@ -8,12 +8,18 @@ This document explains the basic usage principles of the generic web user interf
 ![](homepage4.png)
 
 1 - Return to Home Page    
-2 - Work area with last consulted items  
+2 - Work area with UI components  
 3 - Menu  
 4 - Change scope  
 5 - Shortcuts  
 6 - Global search  
-  
+7 - UI widget (Counter external object > V6)  
+8 - UI widget (Carousel external object > V6)    
+9 - UI widget (Cards external object > V6)    
+10 - Crosstab displayed as a chart  
+11 - Crosstab displayed as a chart  
+
+   
 ### Search, list and form pages
 
 ![](searchlistform4.png)
