@@ -91,6 +91,7 @@ This document explains the basic usage principles of the generic web user interf
 3 - Action bar  
 4 - Action bar per line (including specific actions)  
 5 - Number of lines per page (configurable)  
+5 - Group by option (configurable)
 
 ### Tree list
 
