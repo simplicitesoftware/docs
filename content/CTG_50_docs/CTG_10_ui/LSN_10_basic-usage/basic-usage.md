@@ -98,8 +98,8 @@ This document explains the basic usage principles of the generic web user interf
 ![](treelist4.png)
 
 
-1 - In the case above a treeview is associated to the user object   
-2 - Direct access to tree view hierarchy in the menu         
+1 - In the case above a treeview is associated to the customer object   
+2 - Direct access to tree view hierarchy to the left of the customer form           
 
 ### Create from list
 
