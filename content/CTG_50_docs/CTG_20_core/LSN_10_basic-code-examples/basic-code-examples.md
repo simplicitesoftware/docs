@@ -8,20 +8,13 @@ For more details on **Rhino** sscripting you can check [the Mozilla Rhino docume
 
 > **Note**:
 >
-> Object scripts can be written in Java or Javascript (which will be executed by Rhino until V5, just like the executed fields), but good practice is to use Java language which  
+> Object scripts can be written in Java or Javascript (which will be executed by Rhino, just like the executed fields), but good practice is to use Java language which  
 > include a compilation step and ensure that the syntax of the script is correct. In advanced use cases that are not part of this tutorial, the use of Java gives access > to all of the classic application development tools: step-by-step debugging, unit tests, development in a Java IDE, code quality analysis with Sonar etc..
 
 > Examples are provided both in Rhino and Java so as you can see the syntax differences.
 > In Rhino scripts the `this` variable correspond to the contextual item (business object, workflow, external object, ...) itself,
 > it must be **explicitly** used (it can't be implicit like in Java code).
 >
-> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
-
->
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
->
-> - Rhino: `a == b`, Java: `a.equals(b)`
-> - Rhino: `a != b`, Java: `!a.equals(b)`
 
 <h2 id="namingconventions">Naming conventions</h2>
 
@@ -31,6 +24,9 @@ Recommended naming conventions are:
   class (put a capital letter at the beginning of each word, e.g. `MyBusinessObject`)
 - Name field as you would name a Java variable (do not start by a capital letter, but afterwards put a capital
   letter at the beginning of each word, e.g. `myFirstName`)
+
+Since version 4, the platform includes automatic naming convention validation (activated by a SYNTAX system parameter whose value is yes by default).  
+This is available for objects, functions, groups, domains and actions.  
 
 <h2 id="inclusions">Packages inclusions</h2>
 
@@ -87,6 +83,7 @@ AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 <summary>Rhino Javascript equivalent</summary>
 
 ```javascript
+
 importClass(Packages.org.apache.commons.lang3.StringUtils);
 console.log(StringUtils.isNumeric("hello world")); // false
 console.log(StringUtils.isNumeric("123")); // true
@@ -116,6 +113,7 @@ AppLog.fatal(e,getGrant());   // Fatal level message
 console.debug("Hello world !");   // Debug level message
 <details>
 <summary>Rhino Javascript equivalent</summary>
+
 console.info("Hello world !");    // Info level message
 console.warning("Hello world !"); // Warning level message
 console.error("Hello world !");   // Error level message

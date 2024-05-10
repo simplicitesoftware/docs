@@ -165,7 +165,7 @@ curl -s <API credentials> <base URL>/api/rest/Script/<shared code row ID>/action
 > **Note**: you can get the row ID of your unit test shared code from its logical name by:
 >
 > ```plaintext
-> curl -s <API credentials> <base URL>/api/rest/Script?scr_name=<unit tests shared code logical name> | jq -r '.[].row_id'
+> curl -s <API credentials> <base URL>/api/rest/Script?scr_code=<unit tests shared code logical name> | jq -r '.[].row_id'
 > ```
 
 ### For the legacy unit tests methods
