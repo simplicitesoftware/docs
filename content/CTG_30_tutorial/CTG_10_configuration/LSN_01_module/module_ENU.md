@@ -16,9 +16,9 @@ Start the process that includes the following steps:
 
 - Creating the module
     - name: **Training**
-    - prefix: **trn** *(the prefix enables automatic syntactic conventions to the naming of your objects)*
+    - prefix: **trn** *(the prefix enables automatic syntaxtic conventions to the naming of your objects)*  
 - Creating a group of rights
-	- name: **SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*
+	- name: **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
 - Creating a domain (menu)
     - name: **TrnDomain**
 - Creating a scope: *the scope allows to set up different user "caps". For instance an administrator will be able to use a "basic user" cap, change scope with the dedicated button and use his "administrator" cap, enabling him to perform all operations.*

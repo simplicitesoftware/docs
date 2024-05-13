@@ -18,7 +18,7 @@ Démarrer le process qui se compose de différentes étapes:
     - nom: **Training**
     - préfixe: **trn** *(le préfixe permet d'appliquer automatiquement des conventions syntaxiques au nommage de vos objets)*
 - Création d'un groupe de droits
-    - nom: **SUPERADMIN** *(si vous avez bien saisi le préfixe à l'étape précédente, la plateforme vous proposera un nom de groupe respectant les conventions)*
+    - nom: **TRN_SUPERADMIN** *(si vous avez bien saisi le préfixe à l'étape précédente, la plateforme vous proposera un nom de groupe respectant les conventions)*
 - Création d'un domaine (menu)
     - nom: **TrnDomain**
 - Création d'un scope: *le scope permet de définir différentes "casquettes" d'utilisateurs. Par exemple un administrateur pourra utiliser sa casquette "utilisateur standard", ou bien changer de scope via le composant dédié et utiliser sa casquette "administrateur" lui permettant d'effectuer toutes les opérations.*

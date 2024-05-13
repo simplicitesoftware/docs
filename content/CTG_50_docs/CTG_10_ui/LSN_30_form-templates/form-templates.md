@@ -10,12 +10,17 @@ A business object has a form template which is a HTML fragment including special
 
 ### Field zones
 
-The basic tag is the **field zone** tag `[AREA:n]`, this will tell the platform to display all object fields of zone number `n` in this form area.
+The basic tag is the **field zone** tag `data-area="n"`, this will tell the platform to display all object fields of zone number `n` in this form area.
 For instance:
 
 ```html
-<div class="area" style="background-color: red; padding: 20px;">[AREA:1]</div>
-<div class="area" style="background-color: green; padding: 20px;">[AREA:2]</div>
+<div>
+  <div class="row">  
+	<div class="area col-sm-8" data-area="2,3,4"></div>  
+	<div class="area col-sm-4" data-area="1:="></div>  
+  </div>  
+  <div class="area" data-area="5,6"></div>  
+</div>  
 ```
 
 <!-- 
@@ -45,16 +50,17 @@ It is possible to embed template fragments within templates:
 Form templates allow to integrate external web-based components. For instance the following template will display a Google map:
 
 ```html
-<div class="area">[AREA:1]</div>
-<iframe name="gmap" frameborder="0" scrolling="no" style="width: 400px; height: 300px; border: solid 1px gray"></iframe>
-<script type="text/javascript">
-function page_loaded() {
-	var a = getFieldValue("myAddress1") + ", " + getFieldValue("myZipCode") + " " + getFieldValue("myCity") + ", " + getFieldValue("myCountry");
-	var u = "../PUB_gmap.jsp?address=" + urlEncodeParam(a) + "&info=" + urlEncodeParam(a);
-	openInFrame(window.frames.gmap, u + "&width=400&height=300&title=false");
-}
-</script>
-```
+<div>
+  <div class="extern" data-embedded="true" data-extern="BpiWebPageExt" data-iframe="true" data-title="false" style="width: 100%; height: 100%;"></div>
+  <div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="field" data-field="myField"></div>
+      </div>
+      </div>
+    <div class="area" data-area="1"></div>
+  </div>
+</div>```
 
 ### Resources
 
