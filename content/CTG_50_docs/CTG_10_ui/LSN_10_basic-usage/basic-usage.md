@@ -170,9 +170,8 @@ A user can customize its display : change the fields and their order in lists, h
 1 - Browse all tabs to see all the fields.               
 2 - Click on the magnifying glass icon to select a data from a link object.    
 3 - Allows to attach local file.      
-4 - Collapse area.  
-5 - Error message.  
-The action bar below allows to `Save`and stay on the form, `Save/close` to save and go to the last consulted page, `Close`to exit without saving.
+4 - Error message.  
+5 - The action bar below allows to `Save`and stay on the form, `Save/close` to save and go to the last consulted page, `Close`to exit without saving.  
 
 ### Update Form details
 
