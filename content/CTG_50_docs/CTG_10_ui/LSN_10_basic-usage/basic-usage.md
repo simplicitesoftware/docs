@@ -95,7 +95,7 @@ This document explains the basic usage principles of the generic web user interf
 
 ### Tree list
 
-![](treelist4.png)
+![](treelist.png)
 
 
 1 - In the case above a treeview is associated to the customer object   
@@ -103,7 +103,7 @@ This document explains the basic usage principles of the generic web user interf
 
 ### Create from list
 
-![](addlist4.png)
+![](addlist.png)
 
 
  
@@ -113,7 +113,7 @@ Creation is only possible if the list contains all the required fields, includin
      
 ### Edit list
 
-![](editlist4.png)
+![](editlist.png)
 
 
  
@@ -186,4 +186,4 @@ A user can customize its display : change the fields and their order in lists, h
 
 ![](updateformdetail42.png)
 
-- Link objects are displayed in list.     
+1 - Link objects are displayed in list.     
