@@ -10,8 +10,7 @@ Portainer is a professional Docker cluster management tool that facilitates inst
 
 ![portainer](portainer.png)
 
-1) Server deployement
----------------------------
+## 1) Server deployement
 
 Sizing of the server should be made acording to the needs, as always. Any up-to-date unix image should be able to run the containers.
 
@@ -26,8 +25,7 @@ Sizing of the server should be made acording to the needs, as always. Any up-to-
 
 </details>
 
-2) Docker Install
----------------------------
+## 2) Docker Install
 
 Portainer needs docker as a requirement, so we'll install it after usual upgrades. Based on [docker CentOS install docs](https://docs.docker.com/engine/install/centos/) (adapted)
 
@@ -48,8 +46,7 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo reboot
 ```
 
-3) Portainer install with lets encrypt and traefik
----------------------------
+## 3) Portainer install with lets encrypt and traefik
 
 This is a modified version of the config given in Portainer's doc "[Deploying Portainer behind Traefik Proxy](https://docs.portainer.io/advanced/reverse-proxy/traefik)"
 
@@ -129,16 +126,14 @@ volumes:
 
 > The Traefik container and the Simplicité instances have to run in the same docker network, that's why we create a "proxy" network where we'll put all our containers.
 
-4) Configure
----------------------------
+## 4) Configure
 
 - access `https://portainer.my.domain` **right after starting the service** (it's only configurable for a limited amout of time)
 - create local environement
 - create registry.simplicite.io registry, with authentication
 - pull a Simplicité image
 
-5) Start a Simplicité instance
----------------------------
+## 5) Start a Simplicité instance
 
 This is the minimal configuration to get a working Simplicité instance. Create a "stack" (a docker compose deployement, in portainer's semantics), and paste the following config. 
 
