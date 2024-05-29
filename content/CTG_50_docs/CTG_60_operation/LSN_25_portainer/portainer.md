@@ -7,6 +7,7 @@ Portainer is a professional Docker cluster management tool that facilitates inst
 - HTTP -> HTTPS redirection
 - Traefik's reverse proxy dashboard activated and available at `traefik.my.domain` behind `test / test` basic auth
 - Portainer available at `portainer.my.domain`
+- allow remote debugging through the proxy
 
 ![portainer](portainer.png)
 
@@ -75,6 +76,7 @@ services:
       - --entryPoints.web.http.redirections.entrypoint.scheme=https
       - --entrypoints.websecure.address=:443
       - --entrypoints.websecure.asdefault=true
+      - --entrypoints.jpda.address=:8000 # to route JPDA traffic for remote debugging
       - --log.level=INFO
       - --accesslog=true
       - --providers.docker
@@ -153,6 +155,11 @@ services:
       - "traefik.http.routers.demo.entrypoints=websecure"
       - "traefik.http.routers.demo.tls.certresolver=leresolver"
       - "traefik.http.services.demo.loadbalancer.server.port=8443"
+      # JPDA Remote debugging
+      - "traefik.tcp.routers.demo.rule=HostSNI(`demo.my.domain`)"
+      - "traefik.tcp.routers.demo.entrypoints=jpda"
+      - "traefik.tcp.routers.demo.tls.certresolver=leresolver"
+      - "traefik.tcp.services.demo.loadbalancer.server.port=8000"
 networks:
   proxy:
     name: proxy
