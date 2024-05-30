@@ -90,6 +90,7 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 1. Web profile by default but full profile is also possible
 2. Compliance with JakartaEE 10 (an thus Webapp 6.0) was the target when for versions 6.x.
 However, at the time of the first minor version (6.0) release, some third party libs are still not yet compliant.
+Compliance with JakartaEE 10 is thus postponed to a future major version.
 
 The webapp implementation we recommend are:
 
