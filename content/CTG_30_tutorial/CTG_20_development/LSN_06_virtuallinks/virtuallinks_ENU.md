@@ -25,6 +25,6 @@ Exercise
 =================
 - Create a field with no physical column and add it to the **Client** object with **Supplier** as linked object. This will create a link between both objectS.
 - Fill in the filter on the link that allows to view the list of a supplier's products that are linked to a sent order.
-
+<div class="warning">From version 6 onwards, fill in SQL specification. Filters attribute is used to sort and filter the linked list.</div>
 
 *To prevent typos when typing field names or list codes, we recommend you use the "copy" functionnality in the modeler.*

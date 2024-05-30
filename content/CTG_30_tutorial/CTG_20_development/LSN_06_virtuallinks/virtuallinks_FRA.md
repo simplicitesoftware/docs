@@ -25,6 +25,6 @@ Exercice
 =================
 - Créer un attribut sans colonne physique et l'associer à l'objet **Client** en spécifiant l'objet lié **Fournisseur**. Cette action va créer la relation entre vos deux objets.
 - Renseignez un filtre sur la relation permettant de consulter la liste des produits d'un fournisseur ayant fait l'objet d'une commande expédiée.
-
+<div class="warning">À partir de la version 6, renseignez SQL spécifique. L'attribut Filtres permet de trier, filtrer la liste liée</div>
 
 *Pour éviter les fautes de frappe lors de la saisie de noms d'attributs ou de codes de liste, il est conseillé d'utiliser la fonction "copier" du modeler*
