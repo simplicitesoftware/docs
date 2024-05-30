@@ -1,4 +1,5 @@
 [
+  {"sourceUrl": "/lesson/docs/authentication/multi-auth-providers","destinationUrl": "/lesson/docs/authentication/auth-providers"},
   {"sourceUrl": "/lesson/versions/v6-x/releasenote/releasenote-6-0","destinationUrl": "/lesson/versions/release-notes/v6-0"},
   {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-3","destinationUrl": "/lesson/versions/release-notes/v5-3"},
   {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-2","destinationUrl": "/lesson/versions/release-notes/v5-2"},
@@ -10,7 +11,7 @@
   {"sourceUrl": "/lesson/docs/compliance","destinationUrl": "/lesson/docs/compatibility"},
   {"sourceUrl": "/lesson/docs/roadmap","destinationUrl": "/lesson/versions/roadmap"},
   {"sourceUrl": "/lesson/docs/core/businessobject-code-hooks","destinationUrl": "/lesson/docs/core/objects/businessobject-code-hooks"},
-  {"sourceUrl": "/lesson/docs/authentication/tomcat-multi-auth-providers","destinationUrl": "/lesson/docs/authentication/multi-auth-providers"},
+  {"sourceUrl": "/lesson/docs/authentication/tomcat-multi-auth-providers","destinationUrl": "/lesson/docs/authentication/auth-providers"},
   {"sourceUrl": "/lesson/docs/authentication/tomcat-customauth","destinationUrl": "/lesson/docs/authentication/customauth"},
   {"sourceUrl": "/lesson/docs/authentication/tomcat-ldap","destinationUrl": "/lesson/docs/authentication/ldap"},
   {"sourceUrl": "/lesson/docs/authentication/tomcat-saml","destinationUrl": "/lesson/docs/authentication/saml"},
@@ -154,7 +155,7 @@
   {"sourceUrl": "/documentation/91-authentication/jboss-custom-jaas-module.md","destinationUrl": "/lesson/docs/authentication/jboss-custom-jaas-module"},
   {"sourceUrl": "/documentation/91-authentication/keycloak.md","destinationUrl": "/lesson/docs/authentication/keycloak"},
   {"sourceUrl": "/documentation/91-authentication/tomcat-apisession.md","destinationUrl": "/lesson/docs/authentication/tomcat-apisession"},
-  {"sourceUrl": "/documentation/91-authentication/tomcat-multi-auth-providers.md","destinationUrl": "/lesson/docs/authentication/tomcat-multi-auth-providers"},
+  {"sourceUrl": "/documentation/91-authentication/tomcat-multi-auth-providers.md","destinationUrl": "/lesson/docs/authentication/auth-providers"},
   {"sourceUrl": "/documentation/91-authentication/internal-auth.md","destinationUrl": "/lesson/docs/authentication/internal-auth"},
   {"sourceUrl": "/documentation/04-ui/basic-usage.md","destinationUrl": "/lesson/docs/ui/basic-usage"},
   {"sourceUrl": "/documentation/04-ui/search-syntax.md","destinationUrl": "/lesson/docs/ui/search-syntax"},
@@ -251,5 +252,6 @@
   {"sourceUrl": "/documentation/faq.md","destinationUrl": "/lesson/docs/faq"},
   {"sourceUrl": "/documentation/quality.md","destinationUrl": "/lesson/docs/quality"},
   {"sourceUrl": "/documentation/roadmap.md","destinationUrl": "/lesson/docs/roadmap"},
+  {"sourceUrl": "/documentation/gdpr.md","destinationUrl": "/lesson/docs/gdpr"},
   {"sourceUrl": "/documentation/gdpr.md","destinationUrl": "/lesson/docs/gdpr"}
 ]
