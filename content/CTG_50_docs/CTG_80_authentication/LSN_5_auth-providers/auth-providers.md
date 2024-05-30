@@ -59,15 +59,14 @@ The authentication providers are to be configured with the `AUTH_PROVIDERS` syst
 
 The JSON settings include the common attributes:
 
-| Setting   | Supported values                              | Required     | Comment                                 |
-|-----------|-----------------------------------------------|--------------|-----------------------------------------|
-| `type`    | `internal`, `oauth2`, `saml`, `ldap`, `crowd` | **Required** |                                         |
-| `name`    | String                                        | **Required** | provider name (must be unique per type) |
-| `visible` | `true` (default) / `false`                    | optional     |                                         |
-| `label`   | String                                        | optional     | label on the provider choice page       |
-| `sync`    | `true` / `false`                              | optional     |                                         |
-| `image`   | String                                        | optional     | disposition resource name               |
-
+| Setting   | Supported values                              | Required     | Comment                                                        |
+|-----------|-----------------------------------------------|--------------|----------------------------------------------------------------|
+| `type`    | `internal`, `oauth2`, `saml`, `ldap`, `crowd` | **Required** |                                                                |
+| `name`    | String                                        | **Required** | provider name (must be unique per type)                        |
+| `visible` | `true` (default) / `false` / Array            | optional     | can be an array of base URLs for which the provider is visible |
+| `label`   | String                                        | optional     | label on the provider choice page                              |
+| `sync`    | `true` / `false`                              | optional     |                                                                |
+| `image`   | String                                        | optional     | disposition resource name                                      |
 
 
 > If the provider is configured as **not visible**, it is still accessible by appending `?_provider=<type>:<name>` (e.g.: `?_provider=internal:simplicite`)
