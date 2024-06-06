@@ -334,6 +334,12 @@ You can have CORS enforced at Tomcat level:
 
 On some networks you can't use websockets, they can be enabled/disabled using `-e WEBSOCKETS=<true|false, defaults to true>]`
 
+<h3 id="compiler">Disable Java compiler</h3>
+
+In some cases (e.g. for security reasons) it may be required to explicitly disable the Java compiler, to do so it is possible to use `-e COMPILER=<true|false, defaults to true>]`
+
+Note that this means that any Java compiled class must be provided otherwise, e.g. by mounting/copying externally built JARs in the `WEB-INF/lib` of the webapp.
+
 <h3 id="sysparams">Force overridden values of system parameters at startup</h3>
 
 It is possible to set the overriden value of system parameters at startup by using `-e SYSPARAM_<system param name>=<overridden system param value>` environment variables.

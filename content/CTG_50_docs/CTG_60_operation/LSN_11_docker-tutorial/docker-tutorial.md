@@ -478,6 +478,13 @@ In all cases you **should** configure GZIP compression. Depending on your deploy
 Websockets-based features (such as pushing servers logs to the browser's console) can be totally **inhibited** using the `WEBSOCKETS=false`.
 This may be required on some networks (e.g. with old proxies) where websockets are filtered or forced closed after a given timeout.
  
+<h3 id="compiler">Java compiler</h3>
+
+The Java compiler can be totally **inhibited** using the `COMPILER=false`.
+This may be required in some particular cases (e.g. security reasons).
+
+Note that this means that any Java compiled class must be provided otherwise, e.g. by mounting/copying externally built JARs in the `WEB-INF/lib` of the webapp.
+ 
 <h3 id="selfsigned-certificate">Generate a self-signed certificate</h3>
 
 You can generate them as a **self-signed** certficate with the following commands:
