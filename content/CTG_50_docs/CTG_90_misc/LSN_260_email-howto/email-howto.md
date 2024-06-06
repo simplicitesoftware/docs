@@ -6,9 +6,22 @@ This document shows how to configure application server's e-mail service that is
 Tomcat context-level configuration
 ---------------------------------
 
-You can adjust the `mail.*` properties in your project's `server-tomcat.properties` in order to get the desired resource configuration in the deployed `META-INF/context.xml` (or set it manually after deploy).
+You can configure the dedicated `mail/simplicite` context service in the  `META-INF/context.xml`, e.g.
 
-As of version 3.1 this type of configuration, although still possible, is not recommended (see below).
+```xml
+<Resource
+	name="mail/simplicite"
+	type="javax.mail.Session"
+	auth="Container"
+	mail.from="..."
+	mail.transport.protocol="smtp"
+	mail.smtp.host="..."
+	mail.smtp.port="..."
+...
+/>
+```
+
+As of version 3.1 this type of configuration is still possible but the bellow approach, by configuration, is more flexible.
 
 Configuration-level configuration
 ---------------------------------
@@ -58,6 +71,7 @@ To use GMail as SMTP server you need to configure an existing (and active) GMail
 3) Set the `MAIL_SERVICE` with SSL or TLS protocol:
 
 Using SSL protocol on port 465:
+
 ```json
 {
 	"mail.from": "<default sender email address>",
@@ -73,6 +87,7 @@ Using SSL protocol on port 465:
 ```
 
 Using TLS protocol on port 587:
+
 ```json
 {
 	"mail.from": "<default sender email address>",
