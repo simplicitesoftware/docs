@@ -16,8 +16,33 @@ This document describes the hooks that can be implemented to put some **addition
 
 The `customAuth` (version 3.2+), `parseAuth` (version 3.0+) and `postAuth` (version 4.0+) can be used to implement/customize authentication flows.
 
-Check [this document about custom authentication](/lesson/docs/authentication/tomcat-customauth), [this document about OAuth2 authentication](/lesson/docs/authentication/tomcat-oauth2)
-or [this document about SAML authentication](/lesson/docs/authentication/tomcat-saml) for details.
+```mermaid
+flowchart TD
+    A0-->H 
+    H -- Yes -->B
+    H -- No -->A
+    B-->D
+    D-->A
+    A-->E
+    E-->F 
+    F-->G1
+    G1-->G
+    A0(customAuth) 
+    A("parseAuth (extract login)")
+    B(preAuth)
+    D("postAuth")
+    E("preLoadGrant")
+    F("postLoadGrant")
+    G("postLoadHome")
+    H{internal auth?}
+    G1(preLoadHome)
+```
+
+Check 
+- [Javadoc](https://platform.simplicite.io/current/javadoc/com/simplicite/util/PlatformHooks.html)
+- [this document about custom authentication](/lesson/docs/authentication/tomcat-customauth), 
+- [this document about OAuth2 authentication](/lesson/docs/authentication/tomcat-oauth2)
+- [this document about SAML authentication](/lesson/docs/authentication/tomcat-saml) for details.
 
 <h2 id="startpagehook">Start page hook</h2>
 

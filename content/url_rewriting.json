@@ -1,4 +1,5 @@
 [
+  {"sourceUrl": "/lesson/docs/core/grant-code-hooks","destinationUrl": "/lesson/docs/core/platform-hooks"},
   {"sourceUrl": "/lesson/docs/authentication/multi-auth-providers","destinationUrl": "/lesson/docs/authentication/auth-providers"},
   {"sourceUrl": "/lesson/versions/v6-x/releasenote/releasenote-6-0","destinationUrl": "/lesson/versions/release-notes/v6-0"},
   {"sourceUrl": "/lesson/versions/v5-x/releasenote/releasenote-5-3","destinationUrl": "/lesson/versions/release-notes/v5-3"},
