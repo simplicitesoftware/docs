@@ -37,6 +37,9 @@ simple quotes to enclose all textual values (not required for number values)
 - `like`: partial equals
 - `is null`: empty value
 - `is not null`: any non empty value
+- `in (...)`: exists in a list of values
+- `not in (...)`: not exists in a list of values
+
 
 Comparators can be combined with logical operators:
 
@@ -44,7 +47,13 @@ Comparators can be combined with logical operators:
 - `and`: and operator
 - `not`: negation operator
 
-Parenthesis can be used for complex combinations, e.g.: `='value1' or (like 'value2%' and is not null)`.
+Parenthesis can be used for complex combinations.
+
+Examples: 
+- `='value1' or ='value2'`
+- `not like 'value%'`
+- `not in ('value1', 'value2') and like 'value%'`
+- `='value1' or (like 'value2%' and is not null)`
 
 ### Interval searches on date and datetime fields
 
