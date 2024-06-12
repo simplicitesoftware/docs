@@ -50,6 +50,7 @@ Comparators can be combined with logical operators:
 Parenthesis can be used for complex combinations.
 
 Examples: 
+- `>50 and <=100`
 - `='value1' or ='value2'`
 - `not like 'value%'`
 - `not in ('value1', 'value2') and like 'value%'`
