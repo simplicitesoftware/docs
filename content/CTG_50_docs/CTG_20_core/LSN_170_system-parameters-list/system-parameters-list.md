@@ -312,7 +312,17 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Internal use to identify the host running Unique cronjobs. Value is calculated.  
+	Internal use to identify the host running Unique cron-jobs. Value is calculated.  
+
+### `CRON_LOCK_OWNER`
+
+**Description**
+
+	Optional parameter to force only one host to run Unique cron-jobs.
+	The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted.
+	When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`.
+	The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically.
+	See the log at startup of each host to check that the URL is correctly defined.	
 
 ### `DATETIME_HOUR_STEP`
 
