@@ -326,10 +326,10 @@ Internal use to identify the host running Unique cron-jobs. Value is calculated.
 
 **Description**
 
-- Optional parameter to force only one host to run Unique cron-jobs.
-- The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted.
-- When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`.
-- The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically.
+- Optional parameter to force only one host to run Unique cron-jobs (i.e. get the `CRON_LOCK`),
+- The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted,
+- When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`,
+- The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically,
 - See the log at startup of each host to check that the URL is correctly defined.	
 
 ### `DATETIME_HOUR_STEP`
@@ -341,7 +341,6 @@ Internal use to identify the host running Unique cron-jobs. Value is calculated.
 **Description**
 
 Step of the timepicker in minutes
-
 
 ### `DATETIME_ZERO_HOUR`
 
@@ -361,7 +360,8 @@ If set to yes, presets hour to 00:00:00 in datetime pickers instead of current h
 
 **Description**
 
-Thumbnail default size of Image field without precision. 0 = no thumb.
+- Thumbnail default size of Image field without precision
+- 0 = no thumb
 
 ### `DIRECT_TRANSACTION`
 
@@ -487,19 +487,6 @@ Default email sender
 **Description**
 
 Send emails asynchronously ?
-
-### `EMAIL_SEND_OUTLOOK`
-
-**Default value**
-
-	no
-
-**Description**
-
-Send emails using local Windows Outlook. 
-
-- yes : Windows only, needs moyocore.jar and dll
-- no : use the server Java Mail
 
 ### `EXPORT_DIR`
 
