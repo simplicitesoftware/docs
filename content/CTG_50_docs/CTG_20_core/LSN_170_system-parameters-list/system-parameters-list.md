@@ -8,16 +8,18 @@ Some system parameters might not be available on previous version or default val
 
 **Default value**
 
-	{
-		"invisibles": false,
-		"theme": "eclipse",
-		"keybindings": "default",
-		"wrap": true  
-	}
+```json
+{
+	"invisibles": false,
+	"theme": "eclipse",
+	"keybindings": "default",
+	"wrap": true  
+}
+```
 
 **Description**
 
-	**Ace editor options:
+Ace editor options:
 
 - `"theme"`: `"eclipse"`, `"github"`, ...
 - `"keybindings"`: `"default"`, `"vim"` or `"emacs"`
@@ -32,7 +34,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `ACTIVE_LISTS`
 
@@ -42,14 +44,14 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allow lists to handle onclick events:
+Allow lists to handle onclick events:
 
-	- `no`: no event
-	- `cell`: simple cells can open the row (exclude foreign fields, document, image...)
-	- `key`: only functional keys can open the row
-	- `row`: specific handler, prototype
+- `no`: no event
+- `cell`: simple cells can open the row (exclude foreign fields, document, image...)
+- `key`: only functional keys can open the row
+- `row`: specific handler, prototype
 
-	Function `<object>[_<parentobj>_<ref_field>]_listclicked(obj, rowId, parentobj, parentobj_rowId, ref_field)`
+Function `<object>[_<parentobj>_<ref_field>]_listclicked(obj, rowId, parentobj, parentobj_rowId, ref_field)`
 
 ### `ADMIN_SYSTEM`
 
@@ -59,7 +61,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows ADMIN to change the core-system.
+Allows ADMIN to change the core-system.
 
 ### `API_PAGE_THEME`
 
@@ -69,7 +71,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows ADMIN to change API Page theme.
+Allows ADMIN to change API Page theme.
 
 ### `ASYNC_POOL_SIZE`
 
@@ -79,7 +81,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Max pool size of Asynchronous actions (not used when <=0)
+Max pool size of Asynchronous actions (not used when <=0)
 
 ### `AUDIT_DESIGN`
 
@@ -89,7 +91,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Enable to audit the design.
+Enable to audit the design.
 
 ### `AUDIT_RUNTIME`
 
@@ -99,7 +101,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Enable to audit the runtime.
+Enable to audit the runtime.
 
 ### `AUTH_PROVIDERS`
 
@@ -111,8 +113,9 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Authentication providers (as JSON array).
-	Example:
+Authentication providers (as JSON array).
+
+Example:
 
 ```json
 [
@@ -124,7 +127,6 @@ Some system parameters might not be available on previous version or default val
 ]
 ```
 
-
 ### `BIN_DIR`
 
 **Default value**
@@ -133,7 +135,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Binary directory. Relative to PROJECT_DIR or absolute path.
+Binary directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `BOOTSTRAP_VERSION`
 
@@ -143,8 +145,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Bootstrap version 4 is supported in releases 4 and 5
-	Bootstrap version 5 is only supported since release 5.3
+- Bootstrap version 4 is supported in releases 4 and 5
+- Bootstrap version 5 is only supported since release 5.3
 
 ### `BOTTOM_MARGIN`
 
@@ -154,7 +156,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Bottom margin size width (in pixels), this parameter is used by HTML5 layout only
+Bottom margin size width (in pixels), this parameter is used by HTML5 layout only
 		
 ### `BPMALERT_FROM`
 
@@ -164,7 +166,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Default "from" for alerts, "default" means using mail service default
+Default "from" for alerts, "default" means using mail service default
 
 ### `CACHE_INFO_LIMIT`
 
@@ -174,7 +176,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Limit the number of objects to display in the Cache info
+Limit the number of objects to display in the Cache info
 
 ### `CACHE_MAXAGE`
 
@@ -184,13 +186,15 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Static resources HTTP cache max age in seconds
+Static resources HTTP cache max age in seconds
 
 ### `CAPTCHA_AUDIOS`
 
 **Default value**
 
-	[{ val:"10", src:"5times2.mp3" },
+```json
+[
+	{ val:"10", src:"5times2.mp3" },
 	{ val:"20", src:"2times10.mp3" },
 	{ val:"6", src:"5plus1.mp3" },
 	{ val:"5", src:"4plus1.mp3" },
@@ -209,24 +213,28 @@ Some system parameters might not be available on previous version or default val
 	{ val:"paris", src:"capitaloffrance.mp3" },
 	{ val:"black", src:"skynight.mp3" },
 	{ val:"march", src:"thirdmonth.mp3" },
-	{ val:"a", src:"firstletteralphabet.mp3" }]
+	{ val:"a", src:"firstletteralphabet.mp3" }
+]
+```
 
 **Description**
 
-	Internal list of captcha audios
+Internal list of captcha audios
 
 ### `CAPTCHA_IMAGES`
 
 **Default value**
 
-	["airplane","balloons","camera","car","cat","chair","clip","clock","cloud","computer",
-	"envelope","eye","flag","folder","foot","graph","house","key","leaf","lightbulb",
-	"lock","magnifyingglass","man","music","pants","pencil","printer","robot",
-	"scissors","sunglasses","tag","tree","truck","tshirt","umbrella","woman","world"]
+```json
+["airplane","balloons","camera","car","cat","chair","clip","clock","cloud","computer",
+"envelope","eye","flag","folder","foot","graph","house","key","leaf","lightbulb",
+"lock","magnifyingglass","man","music","pants","pencil","printer","robot",
+"scissors","sunglasses","tag","tree","truck","tshirt","umbrella","woman","world"]
+```
 
 **Description**
 
-	Internal list of captcha images
+Internal list of captcha images
 
 ### `CHART_PALETTE`
 
@@ -236,7 +244,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Pastel, Base, Strong, Light, Bright, Mars, Sea, Berry, Fire, Choco or add values to Simplicite.Chart.PALETTES
+Pastel, Base, Strong, Light, Bright, Mars, Sea, Berry, Fire, Choco or add values to Simplicite.Chart.PALETTES
 	
 ### `CHARTJS_VERSION`
 
@@ -246,7 +254,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Supported version 2 or 3.
+Supported version 2 or 3.
 
 ### `CLIENT_ID`
 
@@ -256,7 +264,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows to create users system parameter with sessions data
+Allows to create users system parameter with sessions data
 	
 ### `COMPACT_HOME`
 
@@ -266,7 +274,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	empty is no by default. Displays the home page in compact mode
+empty is no by default. Displays the home page in compact mode
 
 ### `COMPLETION_SENSITIVE`
 
@@ -276,7 +284,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Case sensitive comparison on field completions
+Case sensitive comparison on field completions
 
 ### `COMPLETION_SIZE`
 
@@ -286,7 +294,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Max list size of field auto-completion
+Max list size of field auto-completion
 
 ### `CONTENT_DIR`
 
@@ -296,7 +304,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Content directory. Relative to PROJECT_DIR or absolute path.
+Content directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `CONVERT_WILDCARDS`
 
@@ -306,23 +314,23 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Set to yes to convert OS like wildcards (* and ?) into SQL wildcards (% and _)
+Set to yes to convert OS like wildcards (`*` and `?`) into SQL wildcards (`%` and `_`)
 
 ### `CRON_LOCK`
 
 **Description**
 
-	Internal use to identify the host running Unique cron-jobs. Value is calculated.  
+Internal use to identify the host running Unique cron-jobs. Value is calculated.  
 
 ### `CRON_LOCK_OWNER`
 
 **Description**
 
-	Optional parameter to force only one host to run Unique cron-jobs.
-	The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted.
-	When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`.
-	The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically.
-	See the log at startup of each host to check that the URL is correctly defined.	
+- Optional parameter to force only one host to run Unique cron-jobs.
+- The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted.
+- When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`.
+- The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically.
+- See the log at startup of each host to check that the URL is correctly defined.	
 
 ### `DATETIME_HOUR_STEP`
 
@@ -332,7 +340,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Step of the timepicker in minutes
+Step of the timepicker in minutes
 
 
 ### `DATETIME_ZERO_HOUR`
@@ -343,7 +351,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	If set to yes, presets hour to 00:00:00 in datetime pickers instead of current hour
+If set to yes, presets hour to 00:00:00 in datetime pickers instead of current hour
 
 ### `DEFAULT_THUMB_SIZE`
 
@@ -353,7 +361,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Thumbnail default size of Image field without precision. 0 = no thumb.
+Thumbnail default size of Image field without precision. 0 = no thumb.
 
 ### `DIRECT_TRANSACTION`
 
@@ -363,7 +371,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Manage transaction on direct access (tomcat behavior)
+Manage transaction on direct access (tomcat behavior)
 
 ### `DISPOSITION`
 
@@ -373,7 +381,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Webapp disposition, ex: default, myapp, ...
+Webapp disposition, ex: default, myapp, ...
 
 ### `DOC_DIR`
 
@@ -383,11 +391,11 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Documents directory, either:
+Documents directory, either:
 
-	- A **relative** path from the base directory configured in `PROJECT_DIR` (e.g. `dbdoc`)
-	- An **absolute** local path (e.g. `/var/dbdoc` on Linux or `D:/dbdoc` on windows)
-	- `BLOB` to store documents in the database (in this case a local document directory needs to be configured in the `DOC_LOCAL_DIR` for fallback strategy)
+- A **relative** path from the base directory configured in `PROJECT_DIR` (e.g. `dbdoc`)
+- An **absolute** local path (e.g. `/var/dbdoc` on Linux or `D:/dbdoc` on windows)
+- `BLOB` to store documents in the database (in this case a local document directory needs to be configured in the `DOC_LOCAL_DIR` for fallback strategy)
 
 
 [See database how-to to manage DB documents](/lesson/docs/misc/databases-howto)
@@ -400,31 +408,33 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Local document directory when DOC_DIR = BLOB
+Local document directory when DOC_DIR = BLOB
 
 ### `DOCUSIGN_API`
 
 **Description**
 
-	Credentials to use DocuSign APIs
+Credentials to use DocuSign APIs
 
 ### `DOCUSIGN_LIBS`
+
 **Default value**
 
 	thirdparty/docusign
 
 **Description**
 
-	Define the DocuSign librairies to load:
-	relative path of WEB-INF
-	or absolute path on a server shared directory
-	or explicit json Array of JAR paths
+Define the DocuSign librairies to load:
+
+- relative path of WEB-INF
+- or absolute path on a server shared directory
+- or explicit json Array of JAR paths
 
 ### `DOCUSIGN_PRIVATE_KEY`
 
 **Description**
 
-	Docusign private Key to connect API
+Docusign private Key to connect API
 
 ### `DOMAIN_RELAXING`
 
@@ -434,7 +444,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Domain relaxing (useful when integrating other applications from same domain with JavaScript interactions), settng it to "none" mean no explicit domain relaxing
+Domain relaxing (useful when integrating other applications from same domain with JavaScript interactions), settng it to "none" mean no explicit domain relaxing
 
 ### `EAI designer`
 
@@ -446,7 +456,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	EAI (I/O) user and password. Syntax: - code = EAI <login> - value = <login>:<password>
+EAI (I/O) user and password. Syntax: - code = EAI <login> - value = <login>:<password>
 
 ### `EDITOR_PREFS`
 
@@ -456,7 +466,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `EMAIL_DEFAULT_SENDER`
 
@@ -466,7 +476,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Default email sender
+Default email sender
 
 ### `EMAIL_SEND_ASYNC`
 
@@ -476,7 +486,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Send emails asynchronously ?
+Send emails asynchronously ?
 
 ### `EMAIL_SEND_OUTLOOK`
 
@@ -486,9 +496,10 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Send emails using local Windows Outlook. 
-	yes : Windows only, needs moyocore.jar and dll
-	no : use the server Java Mail
+Send emails using local Windows Outlook. 
+
+- yes : Windows only, needs moyocore.jar and dll
+- no : use the server Java Mail
 
 ### `EXPORT_DIR`
 
@@ -498,7 +509,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Import directory. Relative to PROJECT_DIR or absolute path.
+Import directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `EXPORT_MAX_ROWS`
 
@@ -508,8 +519,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Limit the number of rows to export in CSV, Excel or PDF only
-	0 or negative value means no limitation
+- Limit the number of rows to export in CSV, Excel or PDF only 
+- 0 or negative value means no limitation
 
 ### `EXPORT_MODULE_ARTIFACTS`
 
@@ -519,7 +530,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Generate artifacts (README.md, pom.xml, schemas, ...) in module ZIP exports
+Generate artifacts (README.md, pom.xml, schemas, ...) in module ZIP exports
 	
 ### `EXPORT_MODULE_EXPLODED`
 
@@ -529,13 +540,13 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Exploded files for configuration in ZIP exports
+Exploded files for configuration in ZIP exports
 
 ### `FEEDBACK_PWD`
 
 **Description**
 
-	Feedback user password
+Feedback user password
 
 ### `FEEDBACK_URL`
 
@@ -545,7 +556,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	This can also be an absolute URL (e.g. https://myapp.com/feedback). By default post on the instance
+This can also be an absolute URL (e.g. `https://myapp.com/feedback`). By default post on the instance
 
 ### `FEEDBACK_USER`
 
@@ -555,7 +566,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	feedback user name
+feedback user name
 
 ### `FIELD_INLINED_HELP`
 
@@ -565,7 +576,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Show fields help as an explicit help icon ?
+Show fields help as an explicit help icon ?
 	
 ### `FORCE_CHANGE_PASSWORD`
 
@@ -575,7 +586,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	'yes' to force password change (set at user level).
+'yes' to force password change (set at user level).
 
 ### `FORM_INLINED_HELP`
 
@@ -585,7 +596,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	'yes' to display the helps on the object forms, 'no' to use tooltips or popups.
+'yes' to display the helps on the object forms, 'no' to use tooltips or popups.
 
 ### `FORM_INLINED_MESSAGE`
 
@@ -595,13 +606,14 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to show the messages (error, info...) inlined with there related fields.
+yes/no to show the messages (error, info...) inlined with there related fields.
 
 ### `FULLCALENDAR_LIBS`
 
 **Default value**
 
-	{
+```json
+{
 	"5":[
 		"/scripts/fullcalendar/v5/common/main.min.css",
 		"/scripts/fullcalendar/v5/core/main.global.min.js",
@@ -627,12 +639,14 @@ Some system parameters might not be available on previous version or default val
 	"3":[
 		"/scripts/fullcalendar/fullcalendar.min.css",
 		"/scripts/fullcalendar/fullcalendar.min.js"
-	]}
+	]
+}
+```
 
 **Description**
 
-	List of plugins per version (https://fullcalendar.io).
-	Add you additional plugins in this parameter.
+- List of plugins per version (https://fullcalendar.io).
+- Add you additional plugins in this parameter.
 
 ### `FULLCALENDAR_VERSION`
 
@@ -642,7 +656,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	FullCalendar supported version: 3 (for backward backward compatibility) or 4 or 5. To upgrade your specific calendar from legacy V3 to V4 or V5 see: https://fullcalendar.io/docs/upgrading-from-v3
+- FullCalendar supported version: 3 (for backward backward compatibility) or 4 or 5. 
+- To upgrade your specific calendar from legacy V3 to V4 or V5 see: https://fullcalendar.io/docs/upgrading-from-v3
 
 ### `GIT_FORMAT`
 
@@ -652,9 +667,10 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Git export format:
-		- xml: configuration is exported as XML
-		- json: configuration is exported as JSON
+Git export format:
+
+- xml: configuration is exported as XML
+- json: configuration is exported as JSON
 
 ### `GOD_MODE_USER`
 
@@ -664,9 +680,10 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows the user to connect as any people without password
-		- true/yes: any user
-		- ['group1','group2']: limited to users belonging to groups
+Allows the user to connect as any people without password
+
+- `true`/`yes`: any user
+- `['group1','group2']`: limited to users belonging to groups
 
 ### `GOOGLE_API_KEY`
 
@@ -676,7 +693,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Google web API key
+Google web API key
 
 ### `GOOGLE_FONT`
 
@@ -686,7 +703,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Google font name, e.g. Roboto, defaults to none which means no Google font
+Google font name, e.g. Roboto, defaults to none which means no Google font
 
 ### `HASH_PASSWORD`
 
@@ -696,12 +713,12 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Password hashing algorithm and encoding: `<algorithm>:<encoding>` or `none` for no password hashing.
+Password hashing algorithm and encoding: `<algorithm>:<encoding>` or `none` for no password hashing.
 	
-	- Algorithm values: `MD5`, `SHA-1`, `SHA-256`, `SHA-512`
-	- Encoding values: `HEX` (hexadecimal) or `BASE64` (base 64)
+- Algorithm values: `MD5`, `SHA-1`, `SHA-256`, `SHA-512`
+- Encoding values: `HEX` (hexadecimal) or `BASE64` (base 64)
 
-	**Warning**: Hashing algorithm and encoding must be consistent with configured authentication module.
+**Warning**: Hashing algorithm and encoding must be consistent with configured authentication module.
 
 ### `HIST_SIZE`
 
@@ -711,7 +728,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Limit size of recent activities (RedoLog).
+Limit size of recent activities (RedoLog).
 		
 ### `HISTORY`
 
@@ -721,7 +738,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	User navigation history
+User navigation history
 
 ### `HOME_TITLE`
 
@@ -731,21 +748,25 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Display the home title
+Display the home title
 
 ### `HTML_HEADERS`
 
 **Default value**
 
-	{}
+```json
+{}
+```
 
 **Description**
 
-	{
+```json
+{
 	"Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' apis.google.com *.gstatic.com *.googleapis.com; 	style-src 'self' 'unsafe-inline' *.gstatic.com *.googleapis.com; img-src 'self' data: *.gstatic.com *.googleapis.com *.simplicite.io github.com 	raw.githubusercontent.com sonarcloud.io; font-src 'self' data: *.gstatic.com *.googleapis.com; connect-src 'self' *.gstatic.com *.googleapis.com; 	frame-src 'self' *.google.com;",
 	"X-Frame-Options": "SAMEORIGIN",
 	"X-XSS-Protection": "1; mode=block"
-	}
+}
+```
 
 ### `HTTPCALL_TIMEOUT`
 
@@ -755,7 +776,7 @@ Some system parameters might not be available on previous version or default val
 	
 **Description**
 
-	Timeout of external http call in seconds (0=infinite)
+Timeout of external http call in seconds (0=infinite)
 
 ### `IMPORT_DIR`
 
@@ -765,7 +786,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Import directory. Relative to PROJECT_DIR or absolute path.
+Import directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `INDEX_DIR`
 
@@ -775,7 +796,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Content directory. Relative to PROJECT_DIR or absolute path.
+Content directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `LAST_CLEAR_CACHE`
 
@@ -785,7 +806,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Internal use to manage clear-cache distribution
+Internal use to manage clear-cache distribution
 
 ## `LEFT_MARGIN`
 
@@ -795,7 +816,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Left margin width (in pixels), this parameter is used by HTML5 layout only
+Left margin width (in pixels), this parameter is used by HTML5 layout only
 
 ### `LICENSE_REMINDER_DELAY`
 
@@ -805,8 +826,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Time in days to send reminders of license expiration. 0 to disable.
-	You can also set the alert and the cron named LicenseReminder.
+- Time in days to send reminders of license expiration. 0 to disable.
+- You can also set the alert and the cron named LicenseReminder.
 
 ### `LIST_PAGINEBOTTOM`
 
@@ -816,7 +837,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Displays the pagination bar on list footer.
+Displays the pagination bar on list footer.
 
 ### `LIST_PAGINETOP`
 
@@ -836,26 +857,29 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `LOG_ACTIVITY`
 
 **Default value**
 
-	{
-	 "database": true,
-	 "prune": 7,
-	 "unit": "day",
-	 "logger": false
-	}
+```json
+{
+	"database": true,
+	"prune": 7,
+	"unit": "day",
+	"logger": false
+}
+```
 
 **Description**
 
-	User's activities tracking:  
-		- database: save actions in m_redolog  
-		- prune: integer to define the depth to store in DB  
-		- unit: prune unit (hour, day, month, year)  
-		- logger: true to export data thru log4j  
+User's activities tracking:  
+
+- database: save actions in m_redolog  
+- prune: integer to define the depth to store in DB  
+- unit: prune unit (hour, day, month, year)  
+- logger: true to export data thru log4j  
 
 ### `LOG_DEBUG`
 
@@ -865,7 +889,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to activate the DEBUG level. Log4j must be set to DEBUG first.
+yes/no to activate the DEBUG level. Log4j must be set to DEBUG first.
 
 ### `LOG_DIR`
 
@@ -875,7 +899,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Log directory. Relative to PROJECT_DIR or absolute path.
+Log directory. Relative to `PROJECT_DIR` or absolute path.
 
 ### `LOG_DOCUMENT`
 
@@ -885,7 +909,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace the documents usage. Log4j must be set to INFO first.
+yes/no to trace the documents usage. Log4j must be set to INFO first.
 
 ### `LOG_ERROR`
 
@@ -895,7 +919,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace the error level.
+yes/no to trace the error level.
 
 ### `LOG_FATAL`
 
@@ -905,7 +929,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace the fatal level.
+yes/no to trace the fatal level.
 
 ### `LOG_INFO`
 
@@ -915,7 +939,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace common informations. Log4j must be set to INFO or DEBUG level.
+yes/no to trace common informations. Log4j must be set to INFO or DEBUG level.
 
 ### `LOG_MEMORY`
 
@@ -925,7 +949,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to activate memory traces (MEMORY events, CyclicCache size, etc.)
+yes/no to activate memory traces (MEMORY events, CyclicCache size, etc.)
 
 ### `LOG_OBJECT`
 
@@ -935,26 +959,29 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace object usage in INFO level.
+yes/no to trace object usage in INFO level.
 
 ### `LOG_SESSION`
 
 **Default value**
 
-	{
-	 "database": true,  
-	 "prune": 7,  
-	 "unit": "day",  
-	 "logger": true  
-	}
+```json
+{
+	"database": true,  
+	"prune": 7,  
+	"unit": "day",  
+	"logger": true  
+}
+```
 
 **Description**
 
-	User's sessions tracking:
-		- database: save all sessions in m_session
-		- prune: integer to define the depth to store in DB
-		- unit: prune unit (hour, day, month, year)
-		- logger: true to export data thru log4j
+User's sessions tracking:
+
+- database: save all sessions in m_session
+- prune: integer to define the depth to store in DB
+- unit: prune unit (hour, day, month, year)
+- logger: true to export data thru log4j
 
 ### `LOG_SQL_SYSTEM`
 
@@ -964,7 +991,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace system SQL statements in INFO level.
+yes/no to trace system SQL statements in INFO level.
 
 ### `LOG_SQL_USER`
 
@@ -974,7 +1001,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace users SQL statements in INFO level.
+yes/no to trace users SQL statements in INFO level.
 
 ### `LOG_UI`
 
@@ -984,7 +1011,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to activate client monitoring.
+yes/no to activate client monitoring.
 
 ### `LOG_WARN`
 
@@ -994,27 +1021,28 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no to trace the warning level.
+yes/no to trace the warning level.
 
 ### `MAIL_SERVICE`
 
 **Default value**
 
-	{
+```json
+{
 	"mail.from": "noreply@simplicite.fr",
 	"mail.debug": "false",
 	"mail.transport.protocol": "smtp",
 	"mail.smtp.host": "localhost",
 	"mail.smtp.port": "25"
-	}
+}
+```
 
 **Description**
 
-	Mail service configuration.
+Mail service configuration.
+The JSON key-values pairs are directly used as properties to instantiate the mail session.
 
-	The JSON key-values pairs are directly used as properties to instantiate the mail session.
-	
-	Note: `mail.from` are also defined in `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` for state transition.
+Note: `mail.from` are also defined in `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` for state transition.
 
 ### `MAX_SESSIONS_USER`
 
@@ -1024,7 +1052,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Max private sessions per user. 0 means unlimited.
+Max private sessions per user. 0 means unlimited.
 
 ### `MAX_UPLOAD_SIZE`
 
@@ -1034,32 +1062,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Upload file: transfer size limitation (Mo).
-
-### `MENU_STYLE`
-
-**Default value**
-
-	accordion
-
-**Description**
-
-	Menu style:
-		- standard Standard menu (left),
-		- simple Simple menu (left)
-		- accordion Accordion menu (left),
-		- split Split menu (top and left),
-		- dropdown Dropdown menu (top)
-
-### `MOBILE_DISPOSITION`
-
-**Default value**
-
-	responsive
-
-**Description**
-
-	Disposition name for Mobile access. Ex: responsive, material
+Upload file: transfer size limitation (Mo).
 				
 ### `MODULE_FILTER`
 
@@ -1069,7 +1072,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Default module filter
+Default module filter
 
 ### `MYSQL_ENGINE`
 
@@ -1079,7 +1082,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	MySQL engine: InnoDB (default) or MyISAM
+MySQL engine: InnoDB (default) or MyISAM
 
 ### `OBJECT_CACHE_SIZE`
 
@@ -1089,7 +1092,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Cyclic area to store objects in memory.
+Cyclic area to store objects in memory.
 
 ### `OBJECT_LOCK_DURATION`
 
@@ -1099,7 +1102,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Max lock duration in seconds of inactive object with a blocking timestamp. This parameter is required by cron job "deadlockTimestamp"
+Max lock duration in seconds of inactive object with a blocking timestamp. This parameter is required by cron job "deadlockTimestamp"
 
 ### `OBJECT_MANAGEMENT_USER`
 
@@ -1109,7 +1112,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Specify the object of user management  (header user icon access) or none for no access
+Specify the object of user management  (header user icon access) or none for no access
 
 ### `PANEL_CHAR_MAX`
 
@@ -1119,7 +1122,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Panels tab max length in char
+Panels tab max length in char
 	
 ### `PANEL_FILTER`
 
@@ -1129,7 +1132,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Yes/No Show the object filter in panels
+Yes/No Show the object filter in panels
 
 ### `PASSWORD_VALIDATION_REGEXP`
 
@@ -1139,7 +1142,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Password validation regular expression
+Password validation regular expression
 
 ### `PATCH_LEVEL`
 
@@ -1149,7 +1152,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Platform patch level
+Platform patch level
 
 ### `POPUP_DEFAULT_MARGIN`
 
@@ -1159,7 +1162,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Popup default margin.
+Popup default margin.
 
 ### `POWERED_BY`
 
@@ -1169,7 +1172,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Powered by credits to display on UIs (HTML syntax can be used).
+Powered by credits to display on UIs (HTML syntax can be used).
 
 ### `PROCESS_CACHE_SIZE`
 
@@ -1187,7 +1190,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	'yes' to display the helps on the activities, 'no' to use tooltips or popups.
+'yes' to display the helps on the activities, 'no' to use tooltips or popups.
 
 ### `PROJECT_DIR`
 
@@ -1197,7 +1200,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Root directory of the project. Relative or absolute path or default to use project name.
+Root directory of the project. Relative or absolute path or default to use project name.
 
 ### `PRUNE_JOBS_DEPTH`
 
@@ -1207,7 +1210,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Depth of partial jobs deletion: negative or zero number of days (e.g. -30 = default)
+Depth of partial jobs deletion: negative or zero number of days (e.g. -30 = default)
 
 ### `PRUNE_LOG_DEPTH`
 
@@ -1217,9 +1220,10 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Depth of crontab PruneLogDB
-	- negative value : max period in days
-	- positive value : max rows
+Depth of crontab PruneLogDB
+
+- negative value: max period in days
+- positive value: max rows
 
 ### `PRUNE_SUPERV_DEPTH`
 
@@ -1229,7 +1233,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Depth of partial import supervisions deletion: negative or zero number of days (e.g. -30 = default)
+Depth of partial import supervisions deletion: negative or zero number of days (e.g. -30 = default)
 
 ### `PUBLIC_PAGES`
 
@@ -1239,8 +1243,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Yes/no to authorize public pages
-	
+Yes/no to authorize public pages	
 	
 ### `RAILWAY`
 
@@ -1250,11 +1253,11 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Size of the navigation bar railway:
-	- n limited to specified number of items
-	- 0 no item limit
-	- lower than 0 no railway
-	- Defaults to 5
+Size of the navigation bar railway:
+
+- n limited to specified number of items
+- 0 no item limit
+- lower than 0 no railway
 
 ### `READONLY_AS_PLAIN_TEXT`
 
@@ -1264,7 +1267,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Display readonly items as plain text ?
+Display readonly items as plain text?
 
 ### `RIGHT_MARGIN`
 
@@ -1274,7 +1277,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Right margin width (in pixels), this parameter is used by HTML5 layout only
+Right margin width (in pixels), this parameter is used by HTML5 layout only
 
 ### `SALT_PASSWORD`
 
@@ -1284,7 +1287,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Salted passwords ?
+Salted passwords?
 
 ### `SAVE_TOAST`
 
@@ -1294,7 +1297,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Displays the "SAVE_OK" toast
+Displays the "SAVE_OK" toast
 
 ### `SCOPE_PREFS`
 
@@ -1304,7 +1307,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `SCRIPT_DURATION_WARNING`
 
@@ -1314,7 +1317,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Warning on abnormal script execution (in ms), 0 means no warning
+Warning on abnormal script execution (in ms), 0 means no warning
 
 ### `SEARCH_PREFS`
 
@@ -1324,7 +1327,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `SESSION_TIMEOUT`
 
@@ -1334,7 +1337,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	UI session timeout (by default in minutes, but you can also use 30m or 1h qualified durations, 0 means using the server's default session timeout)
+UI session timeout (by default in minutes, but you can also use 30m or 1h qualified durations, 0 means using the server's default session timeout)
 
 ### `SHORTCUT_PREFS`
 
@@ -1344,7 +1347,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical, do not change/remove, needed in user's parameters
+Technical, do not change/remove, needed in user's parameters
 
 ### `SHOW_NAVIGATOR`
 
@@ -1354,7 +1357,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to show the navigation bar
+yes/no Flag to show the navigation bar
 
 ### `SHOW_SEARCHBOX`
 
@@ -1364,45 +1367,50 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to show the indexed search box
+yes/no Flag to show the indexed search box
 	
 ### `SLACK_SERVICE`
 
 **Default value**
 
-	{
-	 "enabled": false,
-	 "applicationId": "_your_applicaton_id_",
-	 "clientId": "_your_client_id_",
-	 "clientSecret": "_your_client_secret_",
-	 "signingSecret": "_your_signing_secret_",
-	 "defaultChannel": "_a_channel_name_1_"
-	 "channels": {
+```json
+{
+	"enabled": false,
+	"applicationId": "_your_applicaton_id_",
+	"clientId": "_your_client_id_",
+	"clientSecret": "_your_client_secret_",
+	"signingSecret": "_your_signing_secret_",
+	"defaultChannel": "_a_channel_name_1_"
+	"channels": {
 		"_a_channel_name_1_": "_a_channel_hook_url_1_",
 		"_a_channel_name_2_": "_a_channel_hook_url_2_"
-	 }
 	}
+}
+```
 
 **Description**
 
-	Slack service configuration (to be overriden as a disposition parameter)
+Slack service configuration (to be overriden as a disposition parameter)
 	
 ### `SMS_SERVICE`
 
 **Default value**
 
-	{
-	 "provider": "none"
-	}
+```json
+{
+	"provider": "none"
+}
+```
 
 **Description**
 
-	SMS service configuration:
-	- provider: e.g. twilio (set to none if no SMS service is enabled)
-	- Other setting depends on provider, e.g. for Twilio:
-	- account_sid: Twilio account SID
-	- auth_token: Authentication token
-	- from_number: From phone number
+SMS service configuration:
+
+- provider: e.g. twilio (set to none if no SMS service is enabled)
+- Other setting depends on provider, e.g. for Twilio:
+- account_sid: Twilio account SID
+- auth_token: Authentication token
+- from_number: From phone number
 
 ### `SOCIAL_POST_DEPTH`
 
@@ -1410,37 +1418,38 @@ Some system parameters might not be available on previous version or default val
 
 	365
 
-**Description**
-
 ### `SOCIAL_SHARE`
 
 **Default value**
 
-	{
-		"enabled": true,
-		"exclude": [],
-		"include": [],
-		"useAndroidChromeShare": true,
-		"providers":[
-			{ "name": "email", "url": "mailto:?subject=[TITLE]&body=[TEXT]%0D%0A[URL]" },
-			{ "name": "twitter", "url": "https://twitter.com/intent/tweet?url=[URL]&text=[TITLE]%20[TEXT]&hashtags=[TITLE]" },
-			{ "name": "linkedin", "url": "https://www.linkedin.com/shareArticle?mini=true&url=[URL]&title=[TITLE]&summary=[TEXT]&source=[ROOT]" },
-			{ "name": "facebook", "url": "http://www.facebook.com/sharer.php?u=[URL]" },
-			{ "name": "pinterest", "url": "http://pinterest.com/pin/create/bookmarklet?url=[URL]&media=[IMAGE]&description=[TITLE]%20[TEXT]" },
-			{ "name": "buffer", "url": "https://bufferapp.com/add?url=[URL]&text=[TITLE]%20[TEXT]" },
-			{ "name": "digg", "url": "http://www.digg.com/submit?url=[URL]" },
-			{ "name": "reddit", "url": "http://reddit.com/submit?url=[URL]" },
-			{ "name": "tumblr", "url": "http://www.tumblr.com/share/link?url=[URL]&title=[TITLE]%20[TEXT]" },
-			{ "name": "googleplus", "url": "https://plus.google.com/share?url=[URL]" }
-		]
-	}
+```json
+{
+	"enabled": true,
+	"exclude": [],
+	"include": [],
+	"useAndroidChromeShare": true,
+	"providers":[
+		{ "name": "email", "url": "mailto:?subject=[TITLE]&body=[TEXT]%0D%0A[URL]" },
+		{ "name": "twitter", "url": "https://twitter.com/intent/tweet?url=[URL]&text=[TITLE]%20[TEXT]&hashtags=[TITLE]" },
+		{ "name": "linkedin", "url": "https://www.linkedin.com/shareArticle?mini=true&url=[URL]&title=[TITLE]&summary=[TEXT]&source=[ROOT]" },
+		{ "name": "facebook", "url": "http://www.facebook.com/sharer.php?u=[URL]" },
+		{ "name": "pinterest", "url": "http://pinterest.com/pin/create/bookmarklet?url=[URL]&media=[IMAGE]&description=[TITLE]%20[TEXT]" },
+		{ "name": "buffer", "url": "https://bufferapp.com/add?url=[URL]&text=[TITLE]%20[TEXT]" },
+		{ "name": "digg", "url": "http://www.digg.com/submit?url=[URL]" },
+		{ "name": "reddit", "url": "http://reddit.com/submit?url=[URL]" },
+		{ "name": "tumblr", "url": "http://www.tumblr.com/share/link?url=[URL]&title=[TITLE]%20[TEXT]" },
+		{ "name": "googleplus", "url": "https://plus.google.com/share?url=[URL]" }
+	]
+}
+```
 
 **Description**
 
-	Share parameters of social objects:
-	- exclude: optional list of objects to exclude (even if they are social)
-	- include: optional list of objects to include (even if they are not social)
-	- list of providers {name, url, optional icon} with substitute tokens: URL, TITLE, TEXT, IMAGE, ROOT
+Share parameters of social objects:
+
+- exclude: optional list of objects to exclude (even if they are social)
+- include: optional list of objects to include (even if they are not social)
+- list of providers {name, url, optional icon} with substitute tokens: URL, TITLE, TEXT, IMAGE, ROOT
 	
 ### `SRC_DIR`
 
@@ -1450,21 +1459,23 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Sources directory. Relative to PROJECT_DIR or absolute path.
+Sources directory. Relative to PROJECT_DIR or absolute path.
 
 ### `STORE_SOURCE`
 
 **Default value**
 
-	[
-	 "https://docs.simplicite.io/appstore_demo.json", 
-	 "https://docs.simplicite.io/appstore_apps.json",
-	 "https://docs.simplicite.io/appstore_tools.json"
-	]
+```json
+[
+	"https://docs.simplicite.io/appstore_demo.json", 
+	"https://docs.simplicite.io/appstore_apps.json",
+	"https://docs.simplicite.io/appstore_tools.json"
+]
+```
 
 **Description**
 
-	URL of stores for the app store (JSON array)
+URL of stores for the app store (JSON array)
 
 ### `SYNTAX`
 
@@ -1474,7 +1485,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Check naming conventions?
+Check naming conventions?
 
 ### `THEME`
 
@@ -1484,7 +1495,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Base theme, e.g. default, sandbox, ... defaults to default
+Base theme, e.g. default, sandbox, ... defaults to default
 
 ### `TMP_DIR`
 
@@ -1494,17 +1505,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Temporary work directory. Relative to PROJECT_DIR or absolute path.
-
-### `TOP_MARGIN`
-
-**Default value**
-
-	0
-
-**Description**
-
-	Top margin width (in pixels), this parameter is used by HTML5 layout only
+Temporary work directory. Relative to PROJECT_DIR or absolute path.
 
 ### `TREEVIEW_PREFS`
 
@@ -1514,33 +1515,35 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical parameter 
+Technical parameter 
 
 ### `TRELLO_SERVICE`
 
 **Default value**
 
-	{
-		"enabled": false,
-		"key": "_your_trello_api_key_",
-		"token": "_your_trello_access_token_",
-		"secret": "_your_trelo_api_secret_",
-		"defaultBoard": "_a_board_name_1_"
-		"boards": {
-			"_a_board_name_1_": {
-				"boardId": "_a_target_board_id_1_",
-				"listId": "_a_default_list_id_in_the_target_board_1_"
-			},
-			"_a_board_name_2_": {
-				"boardId": "_a_target_board_id_2_",
-				"listId": "_a_default_list_id_in_the_target_board_2_"
-			}
+```json
+{
+	"enabled": false,
+	"key": "_your_trello_api_key_",
+	"token": "_your_trello_access_token_",
+	"secret": "_your_trelo_api_secret_",
+	"defaultBoard": "_a_board_name_1_"
+	"boards": {
+		"_a_board_name_1_": {
+			"boardId": "_a_target_board_id_1_",
+			"listId": "_a_default_list_id_in_the_target_board_1_"
+		},
+		"_a_board_name_2_": {
+			"boardId": "_a_target_board_id_2_",
+			"listId": "_a_default_list_id_in_the_target_board_2_"
 		}
 	}
+}
+```
 
 **Description**
 
-	Trello service configuration (to be overriden as a disposition parameter)
+Trello service configuration (to be overridden as a disposition parameter)
 
 ### `UI_EDITOR_PREFS`
 
@@ -1550,21 +1553,26 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Technical for user parameters
+Technical for user parameters
 
 ### `URI_MAPPINGS`
 
 **Default value**
 
-	[]
+```json
+[]
+```
 
 **Description**
 
-	Optional custom URI mappings, e.g.
-	[
+Optional custom URI mappings, e.g.
+
+```json
+[
 	{ "source": "^/v1(.+)$", "destination": "/api/ext/MyAPIv1$1" },
 	{ "source": "^/site$",   "destination": "/ext/MyWebSiteSite" }
-	]
+]
+```
 
 ### `USE_ABOUT`
 
@@ -1574,7 +1582,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to display the about-box on objects
+yes/no Flag to display the about-box on objects
 
 ### `USE_API`
 
@@ -1584,7 +1592,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use API interface?
+Use API interface?
 
 ### `USE_API_TESTER`
 
@@ -1594,7 +1602,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use API tester page?
+Use API tester page?
 
 ### `USE_CHANGE_USER`
 
@@ -1604,7 +1612,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows the user to change login between his different connections
+Allows the user to change login between his different connections
 
 ### `USE_COMPACT`
 
@@ -1614,7 +1622,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows user to compact the UI content
+Allows user to compact the UI content
 
 ### `USE_COMPLETION`
 
@@ -1624,7 +1632,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate the completion feature
+yes/no Flag to activate the completion feature
 
 ### `USE_DOC_GRANT`
 
@@ -1634,7 +1642,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate the document rights management
+yes/no Flag to activate the document rights management
 
 ### `USE_DOC_INDEX`
 
@@ -1644,7 +1652,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate the document indexation management
+yes/no Flag to activate the document indexation management
 
 ### `USE_DOC_PREVIEW`
 
@@ -1654,7 +1662,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate document preview
+yes/no Flag to activate document preview
 
 ### `USE_DOMAIN_HOMES`
 
@@ -1664,7 +1672,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Display menu domain homes
+Display menu domain homes
 
 ### `USE_FILEEDITOR`
 
@@ -1674,7 +1682,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use file editor (e.g. for resources or scripts)
+Use file editor (e.g. for resources or scripts)
 
 ### `USE_FORGOT_PWD`
 
@@ -1684,8 +1692,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Add "I forgot my password" on logon page (on the internal auth provider only)
-	and use alert `UserForgotPassword` to send the change request validation to user
+- Add "I forgot my password" on logon page (on the internal auth provider only)
+- and use alert `UserForgotPassword` to send the change request validation to user
 
 ### `USE_FULLTEXT_INDEXES`
 
@@ -1695,7 +1703,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use fulltext indexes for object and document index searches
+Use fulltext indexes for object and document index searches
 
 ### `USE_GIT`
 
@@ -1705,7 +1713,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use GIT endpoint ?
+Use GIT endpoint?
 
 ### `USE_HEALTH`
 
@@ -1715,7 +1723,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use health check?
+Use health check?
 
 ### `USE_HTMLEDITOR`
 
@@ -1725,7 +1733,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	yes/no Flag to activate the HTML editor
+yes/no Flag to activate the HTML editor
 
 ### `USE_IO`
 
@@ -1735,7 +1743,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use I/O endpoint?
+Use I/O endpoint?
 
 ### `USE_IO_TESTER`
 
@@ -1745,7 +1753,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use I/O tester page?
+Use I/O tester page?
 
 ### `USE_MAVEN`
 
@@ -1755,7 +1763,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Use Maven registry?
+Use Maven registry?
 
 ### `USE_OBJECT_PREFS`
 
@@ -1765,7 +1773,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Allows user to customize objects LIST_PREFS and ACTION_PREFS
+Allows user to customize objects `LIST_PREFS` and `ACTION_PREFS`
 
 ### `USE_OBJECT_USAGE`
 
@@ -1775,7 +1783,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Notify user when object is currently opened with update rights or deleted by other people
+Notify user when object is currently opened with update rights or deleted by other people
 
 ### `USE_ORACLE_SEQUENCE`
 
@@ -1785,7 +1793,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	yes : force the insert statments to use Oracle sequences. no : evaluate a "max+1" for each row_id Must be in System module (before any XML import)
+- yes: force the insert statements to use Oracle sequences. 
+- no: evaluate a "max+1" for each row_id Must be in System module (before any XML import)
 
 ### `USE_POSTGRESQL_SEQUENCE`
 
@@ -1795,7 +1804,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	yes : force the insert statments to use PostgreSQL serial/sequences. no : evaluate a "max+1" for each row_id Must be in System module (before any XML import)
+- yes: force the insert statements to use PostgreSQL serial/sequences. 
+- no: evaluate a "max+1" for each row_id Must be in System module (before any XML import)
 	
 ### `USE_ROWID_TABLE`
 
@@ -1805,7 +1815,8 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	yes : use the mutex m_rowid table to increment row_id by table (faster). no : calculate a max+1 for each new row_id (backward compatibility)
+- yes: use the mutex m_rowid table to increment row_id by table (faster). 
+- no: calculate a max+1 for each new row_id (backward compatibility)
 
 ### `USE_SEARCH_INDEX`
 
@@ -1815,7 +1826,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 	
-	Indexation and global search. Value: no, lucene or sql
+Indexation and global search. Value: no or sql
 
 ### `USE_SHOW_PWD`
 
@@ -1825,7 +1836,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Add "Show password" on logon page (on the internal auth provider only)
+Add "Show password" on logon page (on the internal auth provider only)
 
 ### `USE_MANIFEST`
 
@@ -1835,7 +1846,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Generate the `manifest.json` for the generic UI pages
+Generate the `manifest.json` for the generic UI pages
 
 ### `USE_SOCIAL_ACTIVITIES`
 
@@ -1845,7 +1856,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use social features for activities
+Use social features for activities
 
 ### `USE_UNACCENTUATED_INDEX`
 
@@ -1855,7 +1866,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Unaccentuated index search?
+Unaccentuated index search?
 
 ### `USE_UNDO_REDO`
 
@@ -1865,7 +1876,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Manage and display the Undo/Redo behaviors for users (experimental)
+Manage and display the Undo/Redo behaviors for users
 
 ### `USE_USERTOKENS`
 
@@ -1875,11 +1886,12 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use persistent user tokens ?
-	- no: for none of the endpoints
-	- api (or yes): for the API endpoint only
-	- ui: for the UI enpoint only
-	- all: for both API and UI endpoints
+Use persistent user tokens?
+
+- no: for none of the endpoints
+- api (or yes): for the API endpoint only
+- ui: for the UI enpoint only
+- all: for both API and UI endpoints
 	
 ### `USE_WEBSERVICES_DATACACHE`
 
@@ -1889,7 +1901,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use data cache for the API endpoint ?
+Use data cache for the API endpoint?
 
 ### `USE_WEBSERVICES_OBJECTPOOL`
 
@@ -1899,7 +1911,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use business object pool for the API endpoint ?
+Use business object pool for the API endpoint?
 
 ### `USE_WEBSOCKET_LOGS`
 
@@ -1909,7 +1921,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Use websocket logs (only usefull with websocket enabled servers) ?
+Use websocket logs (only usefull with websocket enabled servers)?
 
 ### `USE_ZOOM`
 
@@ -1919,7 +1931,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Allows user to resize the UI content
+Allows user to resize the UI content
 
 ### `USER_RESP_DEFAULTMODULENAME`
 
@@ -1929,7 +1941,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Default module name for users and responsibilities
+Default module name for users and responsibilities
 
 ### `USERTOKENS_CACHE_SIZE`
 
@@ -1939,7 +1951,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Size of the usertoken cache (API endpoitn only)
+Size of the usertoken cache (API endpoitn only)
 
 ### `USERTOKENS_DURATION`
 
@@ -1949,8 +1961,9 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	User tokens duration (by default in hours, but you can also use 24h or 1d qualified durations).
-	Note: This parameter can be overriden per user.
+User tokens duration (by default in hours, but you can also use 24h or 1d qualified durations).
+
+Note: This parameter can be overridden per user.
 
 ### `USERTOKENS_MODE`
 
@@ -1960,7 +1973,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	User tokens mode: `simple` or `jwt`.
+User tokens mode: `simple` or `jwt`.
 
 ### `USERTOKENS_REUSE`
 
@@ -1970,7 +1983,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Reuse existing user tokens for same logins?
+Reuse existing user tokens for same logins?
 
 ### `USERTOKENS_SIGNATURE_SECRET`
 
@@ -1980,7 +1993,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	User tokens signature secret (only used in jwt mode)
+User tokens signature secret (only used in jwt mode)
 
 ### `USERTOKENS_URL_PARAM`
 
@@ -1990,7 +2003,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	User token URL parameter name
+User token URL parameter name
 
 ### `VERSION`
 
@@ -2000,7 +2013,7 @@ Some system parameters might not be available on previous version or default val
 
 **Description**
 
-	Version to display on UIs (HTML syntax can be used).
+Version to display on UIs (HTML syntax can be used).
 
 Note: You can use single or multiple tokens like `[VERSION:<module name>]` to substitute a module's version in this version string.
 
@@ -2012,7 +2025,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	Webservice data cache expiry delay (in seconds)
+Webservice data cache expiry delay (in seconds)
 
 ### `WEBSERVICES_DATACACHE_MAXSIZE`
 
@@ -2022,7 +2035,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	Data cache max size
+Data cache max size
 
 ### `WEBSERVICES_EXTOBJECTPOOL_MAXPEROBJECT`
 
@@ -2032,7 +2045,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	External objects pool max size per external object (-1 means no limit)
+External objects pool max size per external object (-1 means no limit)
 
 ### `WEBSERVICES_EXTOBJECTPOOL_MAXTOTAL`
 
@@ -2042,7 +2055,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	External objects pool total max size (-1 means no limit)
+External objects pool total max size (-1 means no limit)
 
 ### `WEBSERVICES_OBJECTPOOL_MAXPEROBJECT`
 
@@ -2052,7 +2065,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	Business objects pool max size per object (-1 means no limit)
+Business objects pool max size per object (-1 means no limit)
 
 ### `WEBSERVICES_OBJECTPOOL_MAXTOTAL`
 
@@ -2062,7 +2075,7 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	Business objects pool total max size (-1 means no limit)
+Business objects pool total max size (-1 means no limit)
 
 ### `WINDOW_TITLE`
 
@@ -2072,4 +2085,4 @@ Note: You can use single or multiple tokens like `[VERSION:<module name>]` to su
 
 **Description**
 
-	Webapp title
+Webapp title in browser tab
