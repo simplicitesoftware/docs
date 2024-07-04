@@ -40,4 +40,4 @@ For example, only allow certain groups to see a field, ...etc.
 
 For all the objects listed above, you will see the Permissions panel, which allows you to create permissions. Alternatively, use the menu search bar to find where the permissions configuration is hidden.  
 
-![](Permissions.png)
+![](permissions.png)
