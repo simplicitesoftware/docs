@@ -38,6 +38,7 @@ For example, only allow certain groups to see a field, ...etc.
 
 <h2 id="howto">How to create a permission</h2>
 
-For all the objects listed above, you will see the Permissions panel, which allows you to create permissions. Alternatively, use the menu search bar to find where the permissions configuration is hidden.  
+For all the objects listed above, you will see the Permissions panel, which allows you to create permissions.  
+Alternatively, use the menu search bar to find where the permissions configuration is hidden.  
 
 ![](permissions.png)
