@@ -157,7 +157,7 @@ Binary directory. Relative to `PROJECT_DIR` or absolute path.
 **Description**
 
 Bottom margin size width (in pixels), this parameter is used by HTML5 layout only
-		
+
 ### `BPMALERT_FROM`
 
 **Default value**
@@ -245,7 +245,7 @@ Internal list of captcha images
 **Description**
 
 Pastel, Base, Strong, Light, Bright, Mars, Sea, Berry, Fire, Choco or add values to Simplicite.Chart.PALETTES
-	
+
 ### `CHARTJS_VERSION`
 
 **Default value**
@@ -265,7 +265,7 @@ Supported version 2 or 3.
 **Description**
 
 Allows to create users system parameter with sessions data
-	
+
 ### `COMPACT_HOME`
 
 **Default value**
@@ -330,7 +330,7 @@ Internal use to identify the host running Unique cron-jobs. Value is calculated.
 - The value is the endpoint URL of the node/host, when the value is updated the cluster must be restarted,
 - When this parameter exists, no ping/failover will be done by the platform to re-affect the `CRON_LOCK`,
 - The operator must ensure that this host is always available because no other host will get the `CRON_LOCK` automatically,
-- See the log at startup of each host to check that the URL is correctly defined.	
+- See the log at startup of each host to check that the URL is correctly defined.
 
 ### `DATETIME_HOUR_STEP`
 
@@ -465,7 +465,7 @@ EAI (I/O) user and password. Syntax: - code = EAI <login> - value = <login>:<pas
 	empty
 
 **Description**
-	
+
 Technical, do not change/remove, needed in user's parameters
 
 ### `EMAIL_DEFAULT_SENDER`
@@ -518,7 +518,7 @@ Import directory. Relative to `PROJECT_DIR` or absolute path.
 **Description**
 
 Generate artifacts (README.md, pom.xml, schemas, ...) in module ZIP exports
-	
+
 ### `EXPORT_MODULE_EXPLODED`
 
 **Default value**
@@ -564,7 +564,7 @@ feedback user name
 **Description**
 
 Show fields help as an explicit help icon ?
-	
+
 ### `FORCE_CHANGE_PASSWORD`
 
 **Default value**
@@ -638,31 +638,41 @@ yes/no to show the messages (error, info...) inlined with there related fields.
 ### `FULLCALENDAR_VERSION`
 
 **Default value**
-	
+
 	5
 
 **Description**
 
-- FullCalendar supported version: 3 (for backward backward compatibility) or 4 or 5. 
+- FullCalendar supported version: `3` (for backward backward compatibility) or `4` or `5`. 
 - To upgrade your specific calendar from legacy V3 to V4 or V5 see: https://fullcalendar.io/docs/upgrading-from-v3
 
 ### `GIT_FORMAT`
 
 **Default value**
-	
+
 	json
 
 **Description**
 
 Git export format:
 
-- xml: configuration is exported as XML
-- json: configuration is exported as JSON
+- `xml`: configuration is exported as XML
+- `json`: configuration is exported as JSON
+
+### `GIT_GPG_SIGNATURE_KEYID`
+
+**Default value**
+
+	none
+
+**Description**
+
+GPG signature ID for Git commits signing.
 
 ### `GOD_MODE_USER`
 
 **Default value**
-	
+
 	json
 
 **Description**
@@ -689,7 +699,7 @@ Google web API key
 	none
 
 **Description**
-	
+
 Google font name, e.g. Roboto, defaults to none which means no Google font
 
 ### `HASH_PASSWORD`
@@ -701,7 +711,7 @@ Google font name, e.g. Roboto, defaults to none which means no Google font
 **Description**
 
 Password hashing algorithm and encoding: `<algorithm>:<encoding>` or `none` for no password hashing.
-	
+
 - Algorithm values: `MD5`, `SHA-1`, `SHA-256`, `SHA-512`
 - Encoding values: `HEX` (hexadecimal) or `BASE64` (base 64)
 
@@ -716,7 +726,7 @@ Password hashing algorithm and encoding: `<algorithm>:<encoding>` or `none` for 
 **Description**
 
 Limit size of recent activities (RedoLog).
-		
+
 ### `HISTORY`
 
 **Default value**
@@ -760,7 +770,7 @@ Display the home title
 **Default value**
 
 	30
-	
+
 **Description**
 
 Timeout of external http call in seconds (0=infinite)
@@ -1050,7 +1060,7 @@ Max private sessions per user. 0 means unlimited.
 **Description**
 
 Upload file: transfer size limitation (Mo).
-				
+
 ### `MODULE_FILTER`
 
 **Default value**
@@ -1110,7 +1120,7 @@ Specify the object of user management  (header user icon access) or none for no 
 **Description**
 
 Panels tab max length in char
-	
+
 ### `PANEL_FILTER`
 
 **Default value**
@@ -1230,8 +1240,8 @@ Depth of partial import supervisions deletion: negative or zero number of days (
 
 **Description**
 
-Yes/no to authorize public pages	
-	
+Yes/no to authorize public pages
+
 ### `RAILWAY`
 
 **Default value**
@@ -1263,7 +1273,7 @@ Display readonly items as plain text?
 	0
 
 **Description**
-	
+
 Right margin width (in pixels), this parameter is used by HTML5 layout only
 
 ### `SALT_PASSWORD`
@@ -1273,7 +1283,7 @@ Right margin width (in pixels), this parameter is used by HTML5 layout only
 	no
 
 **Description**
-	
+
 Salted passwords?
 
 ### `SAVE_TOAST`
@@ -1283,7 +1293,7 @@ Salted passwords?
 	yes
 
 **Description**
-	
+
 Displays the "SAVE_OK" toast
 
 ### `SCOPE_PREFS`
@@ -1355,7 +1365,7 @@ yes/no Flag to show the navigation bar
 **Description**
 
 yes/no Flag to show the indexed search box
-	
+
 ### `SLACK_SERVICE`
 
 **Default value**
@@ -1378,7 +1388,7 @@ yes/no Flag to show the indexed search box
 **Description**
 
 Slack service configuration (to be overriden as a disposition parameter)
-	
+
 ### `SMS_SERVICE`
 
 **Default value**
@@ -1437,7 +1447,7 @@ Share parameters of social objects:
 - exclude: optional list of objects to exclude (even if they are social)
 - include: optional list of objects to include (even if they are not social)
 - list of providers {name, url, optional icon} with substitute tokens: URL, TITLE, TEXT, IMAGE, ROOT
-	
+
 ### `SRC_DIR`
 
 **Default value**
@@ -1749,7 +1759,7 @@ Use I/O tester page?
 	yes
 
 **Description**
-	
+
 Use Maven registry?
 
 ### `USE_OBJECT_PREFS`
@@ -1759,7 +1769,7 @@ Use Maven registry?
 	yes
 
 **Description**
-	
+
 Allows user to customize objects `LIST_PREFS` and `ACTION_PREFS`
 
 ### `USE_OBJECT_USAGE`
@@ -1769,7 +1779,7 @@ Allows user to customize objects `LIST_PREFS` and `ACTION_PREFS`
 	yes
 
 **Description**
-	
+
 Notify user when object is currently opened with update rights or deleted by other people
 
 ### `USE_ORACLE_SEQUENCE`
@@ -1779,7 +1789,7 @@ Notify user when object is currently opened with update rights or deleted by oth
 	yes
 
 **Description**
-	
+
 - yes: force the insert statements to use Oracle sequences. 
 - no: evaluate a "max+1" for each row_id Must be in System module (before any XML import)
 
@@ -1790,10 +1800,10 @@ Notify user when object is currently opened with update rights or deleted by oth
 	yes
 
 **Description**
-	
+
 - yes: force the insert statements to use PostgreSQL serial/sequences. 
 - no: evaluate a "max+1" for each row_id Must be in System module (before any XML import)
-	
+
 ### `USE_ROWID_TABLE`
 
 **Default value**
@@ -1801,7 +1811,7 @@ Notify user when object is currently opened with update rights or deleted by oth
 	yes
 
 **Description**
-	
+
 - yes: use the mutex m_rowid table to increment row_id by table (faster). 
 - no: calculate a max+1 for each new row_id (backward compatibility)
 
@@ -1812,7 +1822,7 @@ Notify user when object is currently opened with update rights or deleted by oth
 	sql
 
 **Description**
-	
+
 Indexation and global search. Value: no or sql
 
 ### `USE_SHOW_PWD`
@@ -1879,7 +1889,7 @@ Use persistent user tokens?
 - api (or yes): for the API endpoint only
 - ui: for the UI enpoint only
 - all: for both API and UI endpoints
-	
+
 ### `USE_WEBSERVICES_DATACACHE`
 
 **Default value**
