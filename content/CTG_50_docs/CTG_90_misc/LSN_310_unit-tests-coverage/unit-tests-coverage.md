@@ -20,12 +20,12 @@ The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_D
 
 You can do the same manually for "traditional" Tomcat deployments.
 
-Download the [JaCoCo tool](https://repo1.maven.org/maven2/org/jacoco/jacoco/0.8.11/jacoco-0.8.11.zip) and unzip it somewhere acessible to Tomcat (noted `<path>` bellow).
+Download the [JaCoCo tool](https://repo1.maven.org/maven2/org/jacoco/jacoco/0.8.12/jacoco-0.8.12.zip) and unzip it somewhere acessible to Tomcat (noted `<path>` bellow).
 
 Add following option to JVM arguments when starting Tomcat (in the example bellow only one module is monitored noted `<module>`):
 
 ```
--javaagent:<path>/jacoco-0.8.11/lib/jacocoagent.jar=destfile=<path>/jacoco-0.8.11/jacoco.exec,includes=com.simplicite.*.<module>.*
+-javaagent:<path>/jacoco-0.8.12/lib/jacocoagent.jar=destfile=<path>/jacoco.exec,includes=com.simplicite.*.<module>.*
 ```
 
 Generate a human-readable report <span id="debugger"></span>
@@ -34,9 +34,9 @@ Generate a human-readable report <span id="debugger"></span>
 You can generate a human-readable HTML report from the JaCoCo agent exec file using the following command:
 
 ```text
-java -jar <path>/jacoco-0.8.11/lib/jacococli.jar \
-  report jacoco.exec \
-  --html report \
+java -jar <path>/jacoco-0.8.12/lib/jacococli.jar \
+  report <path>/jacoco.exec \
+  --html <path>/jacoco-report \
   --sourcefiles <tomcat root>/webapps/ROOT/WEB-INF/src \
   --classfiles <tomcat root>/webapps/ROOT/WEB-INF/bin
 ```
