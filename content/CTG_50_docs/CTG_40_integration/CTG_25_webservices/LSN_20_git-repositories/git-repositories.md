@@ -174,3 +174,10 @@ If required, you can specify additional settings to change the SonarQube&reg; Ma
 }
 ```
 
+<h3 id="maven">GPG signature</h3>
+
+As of version 5.3 it is possible to enable GPG signature of commits.
+
+This uses the `GIT_GPG_SIGNATURE_KEYID` system parameter which denotes the GPG key ID to use for signature.
+
+> **Note**: THis system parameter can be overriden on a per-user base.
