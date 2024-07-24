@@ -200,7 +200,7 @@ Example:
 public Message preValidate(ActivityFile context) {
 	// At the client step
 	String step = context.getActivity().getStep();  
-	if (step=="STEP-CLIENT") {  
+	if ("STEP-CLIENT".equals(step)) {  
 		// Check if the name is set
 		String name = context.getDataValue("Field", "cliName");  
 		if (Tool.isEmpty(name)) {
@@ -270,7 +270,7 @@ public Message preAbandon() {
 	ActivityFile end = getContext(getEnd());
 	if (!Tool.isEmpty(end)) end.setDataFile("Forward", "Page", url);
 	// Delete the created object during the workflow
-	String id = this.getContext(this.getActivity("MY-STEP-CREATE")).getDataValue("Field", "row_id");
+	String id = getContext(this.getActivity("MY-STEP-CREATE")).getDataValue("Field", "row_id");
 	if (Tool.isEmpty(id) && !id.equals(ObjectField.DEFAULT_ROW_ID)) {
 		ObjectDB o = this.getGrant().getTmpObject("objDemand");
 		o.resetFilters();
@@ -404,7 +404,7 @@ Example:
 public void postTerminate() {
 	// Client ID
 	Activity a = this.getActivity("STEP-CLIENT");
-	String clientId = this.getContext(a).getDataValue("Field", "row_id");
+	String clientId = getContext(a).getDataValue("Field", "row_id");
 	ObjectDB cli = this.getGrant().getProcessObject("MyClient");
 	if (cli.select(clientId)) {
 		// Invoke a scripted action to send email
