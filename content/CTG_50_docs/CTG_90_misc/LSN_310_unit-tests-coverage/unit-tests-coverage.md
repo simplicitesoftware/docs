@@ -12,7 +12,7 @@ Our standard images already contains the up-to-date JaCoCo tool by default in th
 
 To enable coverage measurement of unit tests execution just pass the `JACOCO_MODULES` environment variable to the container with a list of spece-separated modules (e.g. `-e JACOCO_MODULES="MyModule MyOtherModule"`).
 
-The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_DESTFILE` environment variable which defaults to `/var/lib/jacoco/jacoco.exec`.
+The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_DESTFILE` environment variable which defaults to `/usr/local/tomcat/webapps/jacoco/jacoco.exec`.
 
 > **Note**: you can use the import specification mechanism to automate the modules import and unit tests execution.
 
@@ -39,7 +39,7 @@ Execute the following Docker command on your running container:
 docker exec <container ID or name> /usr/local/tomcat/jacocoreport.sh
 ```
 
-The generated human-readable HTML report will be then available at the folder location denoted by the `JACOCO_REPORTDIR` environment variable which defaults to `/var/lib/jacoco/report`.
+The generated human-readable HTML report will be then available at the folder location denoted by the `JACOCO_REPORTDIR` environment variable which defaults to `/usr/local/tomcat/webapps/jacoco/report`.
 
 > **Note**: you can make the report folder available outside of the container by mounting it as a volume
 
