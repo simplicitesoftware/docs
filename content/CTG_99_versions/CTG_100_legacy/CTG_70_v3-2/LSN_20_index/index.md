@@ -10,6 +10,6 @@ End of maintenance notice
 Documentation
 -------------
 
-- [Release notes](../releasenote/index/)
+- [Release notes](/lesson/versions/legacy/v3-2/releasenote/index)
 - [JavaDoc](https://platform.simplicite.io/3.2/javadoc/)
 - [JSDoc](https://platform.simplicite.io/3.2/jsdoc/)
