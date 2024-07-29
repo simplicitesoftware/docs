@@ -38,8 +38,9 @@ flowchart TD
     G1(preLoadHome)
 ```
 
-Check 
-- [Javadoc](https://platform.simplicite.io/current/javadoc/com/simplicite/util/PlatformHooks.html)
+Check:
+
+- [JavaDoc](https://platform.simplicite.io/current/javadoc/com/simplicite/util/PlatformHooks.html)
 - [this document about custom authentication](/lesson/docs/authentication/tomcat-customauth), 
 - [this document about OAuth2 authentication](/lesson/docs/authentication/tomcat-oauth2)
 - [this document about SAML authentication](/lesson/docs/authentication/tomcat-saml) for details.

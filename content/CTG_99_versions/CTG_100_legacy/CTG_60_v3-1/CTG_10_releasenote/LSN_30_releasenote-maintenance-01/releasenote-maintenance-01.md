@@ -24,13 +24,13 @@ The open source Barcode4J has been included and an associated `com.simplicite.ut
 
 <div id='online'/>
 
-### Online Javadoc and JSDoc
+### Online JavaDoc and JSDoc
 
-The Javadoc and JSDoc buttons of the editor page are now on the [online resources](../../).
+The JavaDoc and JSDoc buttons of the editor page are now on the [online resources](https://platform.simplicite.io).
 
-If you still need local Javadoc and JSDoc you can set the `JAVADOC_LOCATION` and `JSDOC_LOCATION` to a local URL or relative web path.
+If you still need local JavaDoc and JSDoc you can set the `JAVADOC_LOCATION` and `JSDOC_LOCATION` to a local URL or relative web path.
 
-If you use default online Javadoc you benefit from the direct class search feature which is available by clicking on the _Javadoc_ button
+If you use default [online JavaDoc](https://platform.simplicite.io) you benefit from the direct class search feature which is available by clicking on the _JavaDoc_ button
 on the script editor page when you have highlighted the name of the class you look for.
 
 ### TinyMCE as HTML Rich editor

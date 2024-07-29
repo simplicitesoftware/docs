@@ -25,7 +25,7 @@ Implémenter les règles de gestion suivantes:
 Pour ce faire :
 - créer un script Java pour la commande
 - ajouter un hook `postValidate` (après les validations par défaut, pour ajouter une validation supplémentaire), qui renvoie une erreur en cas de quantité négative
-    - on utilise `getInt(0)` au lieu de `getValue()` pour obtenir un `int` avec une valeur par défaut de 0 plutôt qu'un `String` ou un `Integer`, cf la Javadoc de ObjectDB.getField(), ObjectField.getValue() et ObjectField.getInt()
+    - on utilise `getInt(0)` au lieu de `getValue()` pour obtenir un `int` avec une valeur par défaut de 0 plutôt qu'un `String` ou un `Integer`, cf la JavaDoc de ObjectDB.getField(), ObjectField.getValue() et ObjectField.getInt()
     - on utilise Message.formatError() pour fournir à Simplicité un message d'erreur qui sera interprété pour envoyer une erreur à l'interface
     - les **snippets Simplicité**, disponibles dans l'éditeur via le raccourci <kbd>Ctrl</kbd>+<kbd>Espace</kbd>, offrent des squelettes de hooks prêts-à-l'emploi
 

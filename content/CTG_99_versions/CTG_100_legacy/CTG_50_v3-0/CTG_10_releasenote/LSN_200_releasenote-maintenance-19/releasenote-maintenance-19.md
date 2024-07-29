@@ -45,7 +45,7 @@ The publicattion result is a ZIP archive containing a main `index.md` file refer
 
 The `com.simplicite.webapp.web.BootstrapWebPage` has been enhanced (DOM IDs on main area `bs-main`, ans main menu `bs-menu`, side menu zone, ...).
 
-Check the associated Javadoc for details.
+Check the associated Java doc for details.
 
 ### Support for HTTP method override for REST services
 

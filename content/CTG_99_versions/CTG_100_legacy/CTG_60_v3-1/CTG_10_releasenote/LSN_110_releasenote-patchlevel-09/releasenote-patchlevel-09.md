@@ -91,7 +91,7 @@ _Note: this feature has been back ported to the 3.0 maintenance branch._
 The `com.simplicite.webapp.web.BootstrapWebPage` has been enhanced (DOM IDs on main area `bs-main`,
 and main menu `bs-menu`, side menu zone, ...).
 
-Check the associated Javadoc for details.
+Check the associated Java doc for details.
 
 _Note: this feature has been back ported to the 3.0 maintenance branch._
 

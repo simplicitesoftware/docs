@@ -25,7 +25,7 @@ Implement the following business rules
 To do so :
 - create a Java script for the order
 - add a `postValidate` hook (after the default validations, to add an additional validation), which returns an error if the quantity is negative
-    - we use `getInt(0)` instead of `getValue()` to obtain an `int` with a default value equal to 0 instead of a `String` or an `Integer`, cf the Javadoc de ObjectDB.getField(), ObjectField.getValue() and ObjectField.getInt()
+    - we use `getInt(0)` instead of `getValue()` to obtain an `int` with a default value equal to 0 instead of a `String` or an `Integer`, cf the JavaDoc de ObjectDB.getField(), ObjectField.getValue() and ObjectField.getInt()
     - we use Message.formatError() to provide Simplicité with an error message that will be interpreted to froward an error to the interface
     - the **Simplicité snippets**, available in the editor via the shortcut <kbd>Ctrl</kbd>+<kbd>Space</kbd>, provide ready to use templates
 

@@ -27,4 +27,4 @@ Création & clone du repository GIT
     - dans les paramètres système de la plateforme, rechercher le paramètre `EAI:designer` qui contient le mot de passe d'accès aux endpoints /git et /io. Copier le mot de passe
     - avec ces informations cloner le repository localement
 
-En ouvrant le repository cloné avec VS Code et l'extension "Java extension Pack", les dépendances du projet sont téléchargées (cela prend un peu de temps la première fois), et les fonctionnalités de Javadoc et d'auto-complétion sont automatiquement intégrées.
+En ouvrant le repository cloné avec VS Code et l'extension "Java extension Pack", les dépendances du projet sont téléchargées (cela prend un peu de temps la première fois), et les fonctionnalités de JavaDoc et d'auto-complétion sont automatiquement intégrées.

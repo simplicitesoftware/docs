@@ -29,9 +29,10 @@ This new system parameter controls users UI access (not applied to batch or APIs
 
 ### Script to add/remove user's responsibility
 
-See Javadoc 
-- Grant.addResponsibility
-- Grant.removeResponsibility
+See the Java doc:
+
+- `Grant.addResponsibility`
+- `Grant.removeResponsibility`
 
 ### Apply default value
 

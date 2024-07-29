@@ -22,7 +22,7 @@ Some intechangeable terms:
 - **Alpha**: master, developement version, nightly build
 
 The [platform site](https://platform.simplicite.io) contains generated technical docs for all versions:
-- Javadoc & JSdoc
+- JavaDoc & JSDoc
 - Java & JS dependecies list
 - CVE Audit report
 

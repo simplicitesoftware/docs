@@ -61,7 +61,7 @@ Both versions V3 and V4 are included in the platform:
 - Modular packaging, the templates are now available as "light" (without Docx4j, Tika, Google APIs clients, JCoulds, ...)
 - Upgraded thrid party libs (including on major components: Rhino, HSQLDB, Apache POI, Docx4J, ...)
 - Added authentication provider visibility on provider choice page (using `"visible": <true|false>` in `AUTH_PROVIDERS` entries)
-- Improved Maven repository to add Simplicit&eacute; Javadoc dependency to commited Java modules
+- Improved Maven repository to add Simplicit&eacute; Java doc dependency to commited Java modules
 - Linked lists inheritance
 - New sessions history in operation menu
 	- to persist per user the dates/duration of sessions and the user's rights
