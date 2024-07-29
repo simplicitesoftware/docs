@@ -1,7 +1,7 @@
 Quality
 =======
 
-See [this document](/lesson/docs/versions) for details on the platform's versioning strategies and the the [security guidelines](/lesson/docs/security) for more details on how to secure your deployments.
+See [this document](/lesson/versions/versioning) for details on the platform's versioning strategies and the the [security guidelines](/lesson/docs/security) for more details on how to secure your deployments.
 
 <h2 id="dependencies">Dependencies</h2>
 
