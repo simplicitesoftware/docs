@@ -11,7 +11,7 @@ Databases
 ---------
 
 Download and install the chosen up-to-date database engine server suitable for your target Simplicité platfor and suitable for your version of Windows
-(see [this document](/lesson/docs/compliance#databases) for databases compliance details):
+(see [this document](/lesson/docs/compatibility#databases) for databases compliance details):
 
 - MySQL/MariaDB
 - PostgreSQL
@@ -24,7 +24,7 @@ JVM
 ---
 
 Dowload and install an up to date Java VM Developpement Kit (or a Runtime Environment if you don't plan to do debugging) in the appropriate version
-for your target Simplicité platform version and suitable for your version of Windows (see [this document](/lesson/docs/compliance#jvm) for JVM compliance details).
+for your target Simplicité platform version and suitable for your version of Windows (see [this document](/lesson/docs/compatibility#jvm) for JVM compliance details).
 
 Register the `JAVA_HOME` environment variable as the path of your JVM Installation (e.g. `C:\Program Files\Java\jdk-x.y.z`) and add `%JAVA_HOME%\bin` to the system `PATH`.
 

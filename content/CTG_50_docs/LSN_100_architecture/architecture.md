@@ -27,7 +27,7 @@ Some examples are available in [this document](/lesson/docs/core/third-party-api
 Compliance
 ----------
 
-Please refer to [this document](/lesson/docs/compliance) for details on compliant components (OS, application servers, database, browsers, ...).
+Please refer to [this document](/lesson/docs/compatibility) for details on compliant components (OS, application servers, database, browsers, ...).
 
 Deployment modes
 ----------------

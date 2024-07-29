@@ -6,7 +6,7 @@ General/installation/operation
 
 > Is it possible to use the _foo_ database, the _bar_ application server, the _baz_ JVM version, ...?
 
-Please refer to the [compliance tables](/lesson/docs/compliance).
+Please refer to the [compatibily tables](/lesson/docs/compatibility).
 
 For details on some specific installation/operation requirements, please refer to the miscellaneous documentations on [this page](./).
 
