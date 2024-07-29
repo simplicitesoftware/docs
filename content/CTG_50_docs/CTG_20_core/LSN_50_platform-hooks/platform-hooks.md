@@ -49,7 +49,7 @@ Check:
 
 The `customStartPage` platform hooks only exists in version 5.0+. It allows to implement a custom low-level start page `/` instead of the default start page that only redirects to `/ui/`.  
 The `customAuthPage` platform hooks only exists in version 5.0+. It allows to implement a custom authentication/page.     
-For more details  [refer to this documentation](https://docs.simplicite.io/lesson/docs/authentication/custom-page)
+For more details  [refer to this documentation](/lesson/docs/authentication/custom-page)
 
 Note that similar start page customization can also be achieved at a higher level by implementing the `displayPublic` hook of a disposition associated to the `public` user.
 

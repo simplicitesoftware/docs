@@ -106,18 +106,18 @@ Data out
 
 Publications offer a standardized way to export data in any format. 
 
-Please refer to the [publication tutorial lesson](https://docs.simplicite.io/lesson/tutorial/development/publication) and the publication examples in the [Tips and Tricks category in the forum](https://community.simplicite.io/t/tips-and-tricks-list/2112#integration-adapters-importing-data-publications-exporting-data-webservices-exposing-data-4)
+Please refer to the [publication tutorial lesson]/lesson/tutorial/development/publication) and the publication examples in the [Tips and Tricks category in the forum](https://community.simplicite.io/t/tips-and-tricks-list/2112#integration-adapters-importing-data-publications-exporting-data-webservices-exposing-data-4)
 
 ### Exposing data
 
 There is ample documentation about the different ways of exposing data. 
 
 The built-in webservices are :
-- [REST Services](https://docs.simplicite.io/lesson/docs/integration/rest-services) (described in a Swagger/OpenAPI formal in the module exports)
-- [SOAP Services](https://docs.simplicite.io/lesson/docs/integration/soap-services)
-- [Raw Services](https://docs.simplicite.io/lesson/docs/integration/raw-services)
+- [REST Services](/lesson/docs/integration/rest-services) (described in a Swagger/OpenAPI formal in the module exports)
+- [SOAP Services](/lesson/docs/integration/soap-services)
+- [Raw Services](/lesson/docs/integration/raw-services)
 
-It is also possible to write your own APIs through dedicated External Objects, as documented in [Custom Services](https://docs.simplicite.io/lesson/docs/integration/custom-services) and [this tip'n'trick](https://community.simplicite.io/t/custom-webservice-example/1970)
+It is also possible to write your own APIs through dedicated External Objects, as documented in [Custom Services](/lesson/docs/integration/custom-services) and [this tip'n'trick](https://community.simplicite.io/t/custom-webservice-example/1970)
 
 
 

@@ -1464,9 +1464,9 @@ Sources directory. Relative to PROJECT_DIR or absolute path.
 
 ```json
 [
-	"https://docs.simplicite.io/appstore_demo.json", 
-	"https://docs.simplicite.io/appstore_apps.json",
-	"https://docs.simplicite.io/appstore_tools.json"
+	"https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/appstore_demo.json", 
+	"https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/appstore_apps.json",
+	"https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/appstore_tools.json"
 ]
 ```
 

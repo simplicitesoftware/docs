@@ -51,7 +51,7 @@ Configuring DocLegal
 The Simplicit&eacute;&reg; business object that manages DocuSign service calls for documents to be signed is **DocLegal** (Document menu/Legal documents).
 
 You can either give rights on the "DocLegal" system object  to end users to give access to legal documents or create an inheritor of "DocLegal" (inheritors if needed).   
-See [Inheritance documentation](https://docs.simplicite.io/lesson/tutorial/configuration/inheritance). You can then override the business object by creating new attributes, linking it with business objects, etc.  
+See [Inheritance documentation](/lesson/tutorial/configuration/inheritance). You can then override the business object by creating new attributes, linking it with business objects, etc.  
 > **Important**: Don't forget to also grant DocLegal's actions to your inheritor.
 
 
