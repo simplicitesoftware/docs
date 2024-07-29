@@ -5,8 +5,8 @@ Version 3.0 release notes
 > The maintenance release M36 is the **FINAL** maintenance release for this version,
 > no further maintenance releases are scheduled.
 
-- [Prior to M17 release note](/lesson/docs/versions/releasenote)
-- [M17 release note](/lesson/docs/versions/releasenote-maintenance-17)
+- [Prior to M17 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote)
+- [M17 release note](/lesson/versions/legacy/v3-1/releasenote/releasenote-maintenance-01)
 - [M18 release note](/lesson/docs/versions/releasenote-maintenance-18)
 - [M19 release note](/lesson/docs/versions/releasenote-maintenance-19)
 - [M20 release note](/lesson/docs/versions/releasenote-maintenance-20)
