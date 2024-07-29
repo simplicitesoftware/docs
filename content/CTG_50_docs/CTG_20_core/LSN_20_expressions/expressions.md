@@ -18,7 +18,7 @@ Summary
 
 Here is a summary of available preprocessed tags that can be used in expressions.
 
-> **Note**: The comprehensive descriptions below (and the JavaDoc) contains additional information.
+> **Note**: The comprehensive descriptions below (and the [JavaDoc](https://platform.simplicite.io/current/javadoc/)) contains additional information.
 
 | [Grant level](https://platform.simplicite.io/current/javadoc/com/simplicite/util/GrantCore.html#prepareExpression-java.lang.String-java.lang.String-boolean-boolean-) | [Object level](https://platform.simplicite.io/documentation/00-versions/4.0/javadoc/com/simplicite/util/ObjectCore.html#prepareExpression-java.lang.String-java.lang.String:A-boolean-boolean-) | [External object level](https://platform.simplicite.io/documentation/00-versions/4.0/javadoc/com/simplicite/util/ExternalObject.html#prepareExpression-java.lang.String-) |
 |:-----------------:|:-------------------------------------------------:|:-------------------------:|

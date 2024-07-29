@@ -11,9 +11,5 @@ Documentation
 -------------
 
 - [Release notes](./releasenote/)
-- [Upgrading note](/lesson/docs/versions/upgrading)
-
-### **Legacy** version<br/>(`master` branch of `template-3.0` Git repo / `3.0` Docker image)
-
-- <a href="https://platform.simplicite.io/3.0/javadoc/" target="_blank">Java API JavaDocs</a>
-- <a href="https://platform.simplicite.io/3.0/jsdoc/" target="_blank">JavaScript API JSDocs</a>
+- [JavaDoc](https://platform.simplicite.io/3.0/javadoc/)
+- [JSDoc](https://platform.simplicite.io/3.0/jsdoc/)

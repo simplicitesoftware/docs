@@ -2,7 +2,7 @@ Adapters
 ====================
 
 An adapter is a Simplicité tool which aims at processing incoming data, generally to import it in the database. Although it is always possible to import data by handling the task in custom code, using adapters offers some advantages:
-- pre-built adapter classes to build upon and speed up developement (see [integration package javadoc](https://platform.simplicite.io/current/javadoc/com/simplicite/util/integration/package-summary.html))
+- pre-built adapter classes to build upon and speed up developement (see the [integration package JavaDoc](https://platform.simplicite.io/current/javadoc/com/simplicite/util/integration/package-summary.html))
 - centralised "Imports supervisor"
 - import logs handling
 - imported file storing
