@@ -6,7 +6,7 @@ Version 3.0 release notes
 > no further maintenance releases are scheduled.
 
 - [Prior to M17 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote)
-- [M17 release note](/lesson/versions/legacy/v3-1/releasenote/releasenote-maintenance-17)
+- [M17 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote-maintenance-17)
 - [M18 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote-maintenance-18)
 - [M19 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote-maintenance-19)
 - [M20 release note](/lesson/versions/legacy/v3-0/releasenote/releasenote-maintenance-20)
