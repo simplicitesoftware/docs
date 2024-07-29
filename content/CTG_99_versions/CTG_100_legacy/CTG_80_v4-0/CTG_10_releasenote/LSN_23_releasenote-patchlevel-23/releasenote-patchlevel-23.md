@@ -154,7 +154,7 @@ Version 4.0 patchlevel 23 release note
 - Fixed some XSS vulnerabilities on responsive UI
 - Fixed issue with dynamic JAR folder in case of shared JAR
 - Fixed issue on POI Excel publications
-- Fixed javadoc page
+- Fixed Java documentation page
 - Fixed scope and deeplink preservation with SAML authentication
 - Forced webapp deployment failure in case of any **fatal initialisation error**. This means that, for instance,
   if the database is not accessible at startup, the webapp will not be deployed anymore.

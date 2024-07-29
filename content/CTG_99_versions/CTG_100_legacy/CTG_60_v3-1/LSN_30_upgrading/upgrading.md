@@ -33,7 +33,7 @@ platform/lib/js.jar
 
 ### Upgrade specific code
 
-- Pure Java : see the new javadoc to update deprecated APIs / compile your project
+- Pure Java : see the [JavaDoc](https://platform.simplicite.io/3.1/javadoc/) to update deprecated APIs / compile your project
 - Java scripted : nothing to do yet, deprecated calls will appear in logs during runtime
 
 ### Change build files

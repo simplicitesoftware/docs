@@ -308,7 +308,7 @@ javascript:debugger; alert("param=" + app.sysparams.MY_PARAM + " value=" + obj.g
 - Fixed populate reference in the search form on read-only field
 - Fixed test data on enum multiple with less than 3 values
 - Fixed issue on POI Excel publications
-- Fixed javadoc page
+- Fixed Java documentation page
 - Fixed big decimal rounding on UI
 - Fixed scope and deeplink preservation with SAML authentication
 - Forced webapp deployment failure in case of any **fatal initialisation error**. This means that, for instance,

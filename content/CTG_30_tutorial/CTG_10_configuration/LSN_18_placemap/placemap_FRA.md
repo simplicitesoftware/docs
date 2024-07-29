@@ -5,7 +5,6 @@ La géolocalisation Google Map à partir d'une adresse est paramétrable depuis 
 L'objet métier sur lequel on veut générer une carte d'emplacement doit comporter un attribut de type **Coordonnées géographiques** (**Geographical coordinates**) afin de stocker les longitute et lattitude d'une adresse.  
 La valeur de ce champ n’est pas calculée automatiquement (en effet il faut spécifier à partir de quel(s) autre champ(s) le calcul peut se faire : attributs d'un objet ou source de données externe).  
 Il convient donc de calculer ces données à partir d'une adresse via la classe **GMapTool** dans un hook preSave.   
-(cf javadoc)
 
 <div class="error">ATTENTION: nous fournissions une clé d’API Google par défaut dans le paramètre système GOOGLE_API_KEY il est IMPERATIF de la remplacer par votre propre clé.</div>
 
