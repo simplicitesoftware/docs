@@ -399,7 +399,7 @@ public void postLoad() {
 	ObjectDB obj = getGrant().getTmpObject("myObject");
 	ObjectField myObjectFile = obj.getField("myObjFile"); // must be of type file
 	
-	// https://www.simplicite.io/resources/4.0/javadoc/com/simplicite/util/tools/MailTool.html
+	// https://platform.simplicite.io/resources/latest/javadoc/com/simplicite/util/tools/MailTool.html
 	MailTool mail = new MailTool(getGrant());
 	mail.addRcpt("contact@null.fr");
 	mail.setSubject("Test Mail");
