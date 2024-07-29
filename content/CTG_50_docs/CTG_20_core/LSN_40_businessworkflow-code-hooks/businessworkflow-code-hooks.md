@@ -61,7 +61,7 @@ public void postInstantiate(Grant g) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.postInstantiate = function(grant) {  
@@ -109,7 +109,7 @@ public Message preActivate() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preActivate = function() {  
@@ -162,7 +162,7 @@ public void postLock(ActivityFile context) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preLock = function(context) {
@@ -221,7 +221,7 @@ public Message preValidate(ActivityFile context) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preValidate = function(context) {  
@@ -288,7 +288,7 @@ public Message preAbandon() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preAbandon = function() {
@@ -341,7 +341,7 @@ public Message preCancel(ActivityFile context) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preCancel = function(context) {  
@@ -377,7 +377,7 @@ public Message preUnlock(ActivityFile context) {
 
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.preUnlock = function(context) {  
@@ -419,7 +419,7 @@ public void postTerminate() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyProcess.postTerminate = function() {  

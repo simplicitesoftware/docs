@@ -118,7 +118,7 @@ byte[] bytes = bos.toByteArray();
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 importPackage(Packages.com.lowagie.text);
@@ -165,7 +165,7 @@ bytes[] bytes = xls.generateToByteArray();
 
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 var xls = new ExcelPOITool(); // or ExcelPOITool(true); as of version 4.0, the true argument means using XLSX format
@@ -205,7 +205,7 @@ for (int i = 0; i < rows.size(); i++) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 importPackage(Packages.org.apache.poi.hssf.usermodel);

@@ -51,7 +51,7 @@ public String display(Parameters params) {
 
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyDisp.display = function(params) {
@@ -109,7 +109,7 @@ public String display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyDisp.displayLogon = function(params) {

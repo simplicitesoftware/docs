@@ -19,7 +19,7 @@ Core changes
 	- Keep "memory free" in mind: it is now strongly recommended to refactor your code with streams/buffers reader/writer instead of huge bytes arrays
 - **Social post** has now 3 options: display posts on `popup` (default), `inline` on bottom of form, and `share` object to social medias
 - Improved Git export to enable Sonarqube&reg; analysis of modules (both Rhino and Java)
-- Added Open Street Map tool class and included the [Leaflet](https://leafletjs.com) Javascript client lib
+- Added Open Street Map tool class and included the [Leaflet](https://leafletjs.com) JavaScript client lib
 
 UI changes
 ----------

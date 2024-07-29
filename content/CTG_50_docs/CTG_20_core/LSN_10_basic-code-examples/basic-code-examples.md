@@ -8,7 +8,7 @@ For more details on **Rhino** sscripting you can check [the Mozilla Rhino docume
 
 > **Note**:
 >
-> Object scripts can be written in Java or Javascript (which will be executed by Rhino, just like the executed fields), but good practice is to use Java language which  
+> Object code can be written in Java (or JavaScript which will be executed by the Rhino server-side engine, just like the executed fields), but good practice is to perfer Java language which  
 > include a compilation step and ensure that the syntax of the script is correct. In advanced use cases that are not part of this tutorial, the use of Java gives access > to all of the classic application development tools: step-by-step debugging, unit tests, development in a Java IDE, code quality analysis with Sonar etc..
 
 > Examples are provided both in Rhino and Java so as you can see the syntax differences.
@@ -51,7 +51,7 @@ It is possible to include a whole additional packages by:
 import <java class name (e.g. org.apache.commons.lang3)>.*;
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```plaintext
 importPackage(Packages.<java package name (e.g. org.apache.commons.lang3)>);
@@ -64,7 +64,7 @@ or a single additional class by:
 import <java class name (e.g. org.apache.commons.lang3.StringUtils)>;
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```plaintext
 importClass(Packages.<java class name (e.g. org.apache.commons.lang3.StringUtils)>);
@@ -80,7 +80,7 @@ AppLog.info(StringUtils.isNumeric("hello world"),getGrant()); // false
 AppLog.info(StringUtils.isNumeric("123"),getGrant()); // true
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 
@@ -112,7 +112,7 @@ AppLog.fatal(e,getGrant());   // Fatal level message
 ```javascript
 console.debug("Hello world !");   // Debug level message
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 console.info("Hello world !");    // Info level message
 console.warning("Hello world !"); // Warning level message
@@ -130,7 +130,7 @@ It is also possible to link a message to an explicit log code:
 AppLog.log("MYLOGCODE_001","Hello world !" ,getGrant());
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 console.log("Hello world !", "MYLOGCODE_001");
@@ -213,7 +213,7 @@ if (o.select(rowId)) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 
 ```javascript
@@ -248,7 +248,7 @@ for (String[] row : o.search(false)) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 
 ```javascript
@@ -303,7 +303,7 @@ for (int p = 0; p <= o.getMaxPage(); p++) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 var totalNbRows = o.getCount();
@@ -351,7 +351,7 @@ for (EnumItem item : o.getField("myField").getList().getAllItems()) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 var l = o.getField("myField").getList().getAllItems();
@@ -430,7 +430,7 @@ public void readZip(File zipFile){
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 	var destDir = new File(this.getGrant().getTmpDir() + "/mydata." + System.currentTimeMillis());
@@ -467,7 +467,7 @@ public byte[] writeZip() {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 try {

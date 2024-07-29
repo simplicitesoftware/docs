@@ -29,7 +29,7 @@ A certain number of configuration fields, such as the *Calculated Expression* fi
 
 The contents of these executed fields are executed on the server side using the Rhino library, which is an implementation of JavaScript (ES6) written in Java. Rhino allows scripts to be executed in a Java application without first compiling them. However, since the scripts are executed on the server, they have access to the entire Simplicité Java API.
 
-Prior to execution by Rhino, Simplicité also pre-processes the executed fields to transcribe Simplicité expressions (bracketed syntax) into Javascript code.
+Prior to execution by Rhino, Simplicité also pre-processes the executed fields to transcribe Simplicité expressions (bracketed syntax) into JavaScript code.
 
 Some expressions are available in all executed fields, others are only available in specific executed fields.
 

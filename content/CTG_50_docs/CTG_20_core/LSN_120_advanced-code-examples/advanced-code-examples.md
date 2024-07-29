@@ -5,7 +5,7 @@ Please refer to [basic code examples](/lesson/docs/core/basic-code-examples) doc
 
 > **Note**:
 >
-> Object scripts can be written in Java or Javascript (which will be executed by Rhino, just like the executed fields), but good practice is to use Java language which  
+> Object scripts can be written in Java or JavaScript (which will be executed by the Rhino engine, just like the executed fields), but good practice is to prefer Java language which  
 > include a compilation step and ensure that the syntax of the script is correct. In advanced use cases that are not part of this tutorial, the use of Java gives access > to all of the classic application development tools: step-by-step debugging, unit tests, development in a Java IDE, code quality analysis with Sonar etc..
 
 > Examples are provided both in Rhino and Java so as you can see the syntax differences.
@@ -61,7 +61,7 @@ public void myAction() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObjectA.initUpdate = function() {
@@ -113,7 +113,7 @@ public String postSave() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postValidate = function() {
@@ -170,7 +170,7 @@ public void postLoadGrant(Grant g) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 GrantHooks.postLoadGrant = function(grant) {
@@ -207,7 +207,7 @@ try {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 var f = this.getFieldValue("myPhoneNumber");
@@ -248,7 +248,7 @@ public void postLoad() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postLoad = function(){
@@ -309,7 +309,7 @@ public void postSelect(String rowId, boolean copy) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.key = function() {
@@ -401,7 +401,7 @@ public String callAPI() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.callAPI = function() {

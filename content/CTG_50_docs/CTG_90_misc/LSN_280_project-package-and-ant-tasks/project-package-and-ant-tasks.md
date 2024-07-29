@@ -20,7 +20,7 @@ The project package includes the following folders:
 	- `com/simplicite/objects/<Module name>`: Objects specific Java sources (`<Object name>.java` for object name `<Object name>`):
 	- `com/simplicite/workflows/<Module name>`: Workflows specific Java sources (`<Workflow name>.java` for workflow name `<Workflow name>`):
 	- `com/simplicite/adapters/<Module name>` : Adapter Java sources (`<Adapter name>.java` for adapter name `<Adapter name>`)
-- `web`: **static** web resources such as JSP, HTML pages, Javascripts, CSS or JSPs (configured resources and external objects should now be preferred)
+- `web`: **static** web resources such as JSP, HTML pages, JavaScripts, CSS or JSPs (configured resources and external objects should now be preferred)
 	- `WEB-INF`: customized webapp descriptors (will override platform descriptors)
 - `ws`: **static** web services gateway resources
 	- `WEB-INF`: customized webapp descriptors (will override platform descriptors)

@@ -754,7 +754,7 @@ A date field can now be searched by period or a single date.
 
 ### Object resources ###
 
-Resource named `SCRIPT` and `STYLES` can be attached to one object to add Javascript and specific CSS.
+Resource named `SCRIPT` and `STYLES` can be attached to one object to add JavaScript and specific CSS.
 
 <div id='jqplot'/>
 
@@ -844,7 +844,7 @@ Internal json.js synchronous Ajax lib is still available for usage within generi
 Google Maps wrapper `gmap.js` library now uses Google Maps V3 API (vs V2 previously).
 This causes the system parameter GMAP_KEY to be deprecated (V3 API does not require a key)
 
-Usage from Java and Javascript APIs remains the same.
+Usage from Java and JavaScript APIs remains the same.
 
 <div id='package'/>
 

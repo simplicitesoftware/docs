@@ -69,7 +69,7 @@ public void postLoad() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postLoad= function() {
@@ -118,7 +118,7 @@ public boolean isDeleteEnable(String[] row) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.isCreateEnable = function() {  
@@ -165,7 +165,7 @@ public boolean isActionEnable(String[] row, String action) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.isActionEnable(row, action) {
@@ -197,7 +197,7 @@ public boolean isPrintTemplateEnable(String[] row, String printTemplateName) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.isPrintTemplateEnable(row, printtmpl) {
@@ -231,7 +231,7 @@ public boolean isStateTransitionEnable(String fromStatus, String toStatus) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.isStateTransitionEnable = function(fromStatus, toStatus) {
@@ -260,7 +260,7 @@ public boolean canReference(String objectName, String fieldName) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.canReference = function(objectName, fieldName) {
@@ -287,7 +287,7 @@ public boolean canUpdateAll(ObjectField fieldName) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.canUpdateAll = function(fieldName) {
@@ -314,7 +314,7 @@ public boolean isHistoric() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.isHistoric = function() {
@@ -366,7 +366,7 @@ public void initDelete() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.initCreate = function() {
@@ -403,7 +403,7 @@ public void initList(ObjectDB parent) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.initList = function(parent) {
@@ -431,7 +431,7 @@ public void initSearch() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.initSearch = function() {
@@ -491,7 +491,7 @@ public void initAction(Action action) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.initAction = function(action) {
@@ -558,7 +558,7 @@ In the above example, the error messages code (`ERR_TEST`) corresponds to a stat
 configured in the `TEXT` list.
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preValidate = function() {
@@ -611,7 +611,7 @@ public void preSelect(String rowId, boolean copy) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preSelect = function(rowId, copy) {
@@ -659,7 +659,7 @@ Post delete hook can be used to implement some business rules after the object i
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preCreate = function() {	
@@ -689,7 +689,7 @@ MyObject.preCreate = function() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyOrder.preCreate = function() {	
@@ -743,7 +743,7 @@ public String postSave() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postSave = function() {
@@ -818,7 +818,7 @@ public List<String[]> postSearch(List<String[]> rows) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preSearch = function() {
@@ -882,7 +882,7 @@ public String preUpdateAll(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preUpdateAll = function(params) {
@@ -927,7 +927,7 @@ These hooks are called to add specific behaviors before/after an import.
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preImport = function() {
@@ -1035,7 +1035,7 @@ public String preAlert(Alert a) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preAlert = function(alert) {
@@ -1063,7 +1063,7 @@ public String postAlert(Alert a) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postAlert = function(alert) {
@@ -1110,7 +1110,7 @@ public String postSave() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postSave = function() {
@@ -1176,7 +1176,7 @@ It is possible to add code during the predefined search creation:
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.preSavePredefinedSearch = function(ps) {
@@ -1221,7 +1221,7 @@ public String getUserKeyLabel(String[] row) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.getUserKeyLabel = function(row) {
@@ -1290,7 +1290,7 @@ public String getCtxHelp(String context) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.getHelp = function() {
@@ -1322,7 +1322,7 @@ h.search(false);
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 var h = this.getGrant().getTmpObject(this.getHistoricName()); // Get historic object
@@ -1381,7 +1381,7 @@ public String[] getTargetObject(String rowId, String[] row) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 Vegetable.getTargetObject = function(rowId, row) {

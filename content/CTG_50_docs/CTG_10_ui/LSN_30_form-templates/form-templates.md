@@ -64,7 +64,7 @@ Form templates allow to integrate external web-based components. For instance th
 
 ### Resources
 
-Javascript or CSS stylesheets resources can also be attached to a business object.
+JavaScript or CSS stylesheets resources can also be attached to a business object.
 
 The javascript resource with the `SCRIPT` code is automatically included in the object form template.
 

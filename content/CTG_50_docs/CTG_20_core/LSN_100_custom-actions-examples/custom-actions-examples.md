@@ -23,7 +23,7 @@ public String myCustomAction() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.myCustomAction = function() {
@@ -36,7 +36,7 @@ MyObject.myCustomAction = function() {
 On responsive UI (using ajax services) the action can return:
 
 - a textual message to be displayed in a UI dialog box (error and warning) or in a UI toast box (info)
-- a client-side **Javascript** statement (a string prefixed with `javascript:`)
+- a client-side **JavaScript** statement (a string prefixed with `javascript:`)
 - an HTTP redirect URL statement (a string prefixed with `redirect:`)
 
 Examples: 
@@ -70,7 +70,7 @@ public String myCustomAction(Map<String,String> params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 Previous V4 syntax supports `String` values only thru a `Map`:
 
@@ -102,7 +102,7 @@ public String myCustomAction(Action a) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.myCustomAction = function(action) {
@@ -196,7 +196,7 @@ public String postSave() {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyObject.postSave = function() {

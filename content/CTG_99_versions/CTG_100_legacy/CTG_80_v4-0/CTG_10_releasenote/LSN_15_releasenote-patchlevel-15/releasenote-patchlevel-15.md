@@ -50,7 +50,7 @@ UI changes
 	- `Alt+X` to open the code editor
 	- `Alt+C` to open the clear cache page, with a second `C` it will launch the full-clear cache
 - The `responsive` disposition script now uses the `ResponsivePage` class instead of lower level `JQueryWebPage`
-- JSdoc with Grant and ObjectField functions
+- JavaScript documentation with Grant and ObjectField functions
 
 Fixes
 -----

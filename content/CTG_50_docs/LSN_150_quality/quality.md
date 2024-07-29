@@ -23,19 +23,19 @@ On the `master` branch:
 
 The Java dependencies up-to-date check is done using Apache Maven and its [dependency plugin](http://maven.apache.org/plugins/maven-dependency-plugin/).
 
-#### Javascript dependencies
+#### JavasScript dependencies
 
-The Javascript dependencies up-to-date check is done using the [npm check update tool](https://www.npmjs.com/package/npm-check-updates).
+The JavaScript dependencies up-to-date check is done using the [npm check update tool](https://www.npmjs.com/package/npm-check-updates).
 
 <h3 id="audits">Dependencies security audits</h3>
 
-#### Java dependencies
+#### Java dependencies audit
 
 As of version 4.0, a dependencies security audit using Apache Maven and its [dependency check plugin](https://jeremylong.github.io/DependencyCheck/dependency-check-maven/index.html).
 
 It is done at each build of each version for each branch.
 
-#### Javascript dependencies
+#### JavaScript dependencies audit
 
 As of version 5, a dependencies security audit using the [npm audit tool](https://docs.npmjs.com/cli/v6/commands/npm-audit).
 
@@ -48,14 +48,14 @@ It is done at each build of each version for each branch.
 The code style is analysed at least at each `master` branch build using the following linters:
 
 - **Java** using [Checkstyle](https://checkstyle.sourceforge.io)
-- **Javascript** using [ESLint](https://eslint.org)
+- **JavaScript** using [ESLint](https://eslint.org)
 - **styles** using [Stylelint](https://stylelint.io)
 
 Any issue is fixed as soon as detected by the above tools.
 
 ### Code analysis
 
-The whole code (Java, Javascript and styles) is regularly checked using the [SonarQube](https://www.sonarqube.org/) code analysis and code security tool.
+The whole code (Java, JavaScript and styles) is regularly checked using the [SonarQube](https://www.sonarqube.org/) code analysis and code security tool.
 
 - Any new issues classified "bug" are resolved as soon as detected.
 - Any new "security hotspot" are reviewed as soon as they are raised. 

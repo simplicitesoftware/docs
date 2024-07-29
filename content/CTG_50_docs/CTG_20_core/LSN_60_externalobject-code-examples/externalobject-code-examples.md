@@ -43,7 +43,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -82,7 +82,7 @@ public Object display(Parameters params) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -127,7 +127,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -187,7 +187,7 @@ public class MyExtObject extends com.simplicite.util.ExternalObject {
 }
 ```
 
-The responsive UI requires a Javascript statement (even empty like above) to be returned by the `display` method to render as a **responsive page**.
+The responsive UI requires a JavaScript statement (even empty like above) to be returned by the `display` method to render as a **responsive page**.
 
 ![](externalobject-code-examples-3.png)
 
@@ -223,7 +223,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -293,7 +293,7 @@ For example you can write a traditional form posted to server
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -362,7 +362,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -385,7 +385,7 @@ MyExtObj.display = function(params) {
 ```
 
 > **Warning**: these legacy UI tools are not available in the responsive UI, see [this document](/lesson/docs/ui/responsive)
-> for details on the responsive UI Javascript API.
+> for details on the responsive UI JavaScript API.
 
 ### jQPlot&reg; charts
 
@@ -429,7 +429,7 @@ MyExtObj.display = function(params) {
 Note that for simple charts you can also use the `Simplicite.UI` jQplot&reg; wrappers APIs.
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -477,7 +477,7 @@ public class MyExtObj extends com.simplicite.util.ExternalObject {
 Typical usage (using Rhino script) as a standalone **standard** page for version **4.0 legacy UI** (or for versions 3.x UI) is something like:
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObj.display = function(params) {
@@ -847,7 +847,7 @@ public class MyExtObject extends com.simplicite.webapp.web.ResponsiveExternalObj
 }
 ```
 
-The HTML body being an HTML resource and the client-side Javascript being something like:
+The HTML body being an HTML resource and the client-side JavaScript being something like:
 
 ```javascript
 var MyExtObject = (function() {
@@ -923,7 +923,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObject.display = function(params) {
@@ -986,7 +986,7 @@ public Object display(Parameters params) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 MyExtObject.display = function(params) {

@@ -1,4 +1,4 @@
-Javascript UI tools code examples
+JavaScript UI tools code examples
 =================================
 
 The Simplicit&eacute;&reg; UI tools methods are in the `Simplicite.UI` namespace and rely on jQuery&reg;.

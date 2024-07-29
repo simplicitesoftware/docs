@@ -75,7 +75,7 @@ public void preLoadGrant(Grant g) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.preLoadGrant(g) {
@@ -101,7 +101,7 @@ public void postLoadGrant(Grant g) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.postLoadGrant(g) {
@@ -132,7 +132,7 @@ public boolean isMenuEnable(Grant g, String domain, String item) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.isMenuEnable(g, domain, item) {
@@ -182,7 +182,7 @@ public List<SearchItem> postSearchIndex(Grant g, List<SearchItem> rows) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.postSearchIndex = function(g, rows) {
@@ -235,7 +235,7 @@ public List<String> validatePassword(Grant g, String pwd) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.validatePassword = function(g, pwd) {
@@ -267,7 +267,7 @@ public void logout(Grant g) {
 }
 ```
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.logout = function(g) {
@@ -292,7 +292,7 @@ public void downloadDocument(Grant g, DocumentDB doc) {
 ```
 
 <details>
-<summary>Rhino Javascript equivalent</summary>
+<summary>Rhino JavaScript equivalent</summary>
 
 ```javascript
 PlatformHooks.downloadDocument = function(g, doc) {

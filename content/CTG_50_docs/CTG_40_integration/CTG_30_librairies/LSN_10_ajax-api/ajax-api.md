@@ -4,7 +4,7 @@ Ajax API
 Introduction
 ------------
 
-The Javascript files to include to use the Simplicit&eacute;&reg Ajax API are:
+The JavaScript files to include to use the Simplicit&eacute;&reg Ajax API are:
 
 - `scripts/ajax/appsession.js` (required) for application level services
 - `scripts/ajax/grant.js` (required) for grant data manipulation (as of version 4.0)

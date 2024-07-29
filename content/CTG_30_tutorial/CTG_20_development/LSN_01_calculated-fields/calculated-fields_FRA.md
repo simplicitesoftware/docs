@@ -29,7 +29,7 @@ Un certain nombre de champs de paramétrage, tel que le champ *Expression calcul
 
 Les contenu de ces champs exécutés est exécuté côté serveur grâce à la librairie Rhino, qui est une implémentation de JavaScript (ES6) écrite en Java. Rhino permet d'exécuter des scripts dans une application Java sans les compiler au préalable. Étant exécutés sur le serveur, les scripts ont cependant accès à toute l'API Java Simplicité.
 
-Avant l'exécution par Rhino, Simplicité effectue également un pré-traitement des champs exécutés pour transcrire les expressions Simplicité (syntaxe entre crochets) en code Javascript.
+Avant l'exécution par Rhino, Simplicité effectue également un pré-traitement des champs exécutés pour transcrire les expressions Simplicité (syntaxe entre crochets) en code JavaScript.
 
 Certaines expressions sont disponibles dans tous les champs exécutés, d'autres ne le sont que dans des champs exécutés spécifiques.
 

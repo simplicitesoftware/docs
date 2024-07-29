@@ -1211,8 +1211,6 @@ The engine can be loaded in a stand-alone page:
 * The platform must use the CORS configuration to allow cross-domain access
 	* server-side: when deploying the webapp, make sure `cors.filter` property is set to `true` in `build.properties` (this is useless if CORS is handled by an Apache/NGINX reverse proxy)
 	* client-side: `Simplicite.UI.Globls.ajaxSetup.crossDomain = true`
-* Use jQuery extensions to populate element with list, form... [see extensions](../../4.0/jsdocui/jQuery.fn.html)
-
 
 Example:
 
@@ -1413,13 +1411,9 @@ _Form_
 
 ![Demo order form](uidemo3.png)
 
-<h2 id="jsdoc">JSdoc for responsive UI</h2>
+<h2 id="jsdoc">JSDoc for responsive UI</h2>
 
-* [Main menu](../../4.0/jsdocui/index.html)
-	* [Ajax](../../4.0/jsdocui/Simplicite.Ajax.html)
-	* [Globals](../../4.0/jsdocui/Simplicite.UI.Globals.html)
-	* [Main controller](../../4.0/jsdocui/Simplicite.UI.Engine.html)
-	* [Main View](../../4.0/jsdocui/Simplicite.UI.View.Main.html)
+The JSDoc is available [here](https://platform.simplicite.io/current/jsdoc/)
 
 <h2 id="third-party">Examples of third party client-side APIs integration</h2>
 
@@ -1514,8 +1508,8 @@ var MyObject = (function(ui) {
 - Create as usual an external object named `MyExternalPage` 
 - Granted to ADMIN and accessible thru Menu
 - Attach 2 resources: 
-	- SCRIPT as Javascript 
-	- STYLES as CSS
+	- `SCRIPT` as JavaScript 
+	- `STYLES` as CSS
 
 ### Server side code
 
@@ -1560,7 +1554,7 @@ public class MyExternalPage extends ExternalObject {
 
 > **Note**: This code is written in Java but it can be easily transposed to Rhino script.
 
-### Javascript resource
+### JavaScript resource
 
 The external object's `SCRIPT` resource contains the client-side JavaScript
 (it is loaded by the UI before running the statement returned by the server-side `display` method above).
