@@ -10,6 +10,6 @@ End of maintenance notice
 Documentation
 -------------
 
-- [Release notes](./releasenote/index/)
+- [Release notes](../releasenote/index/)
 - [JavaDoc](https://platform.simplicite.io/3.1/javadoc/)
 - [JSDoc](https://platform.simplicite.io/3.1/jsdoc/)
