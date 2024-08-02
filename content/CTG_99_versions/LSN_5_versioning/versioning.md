@@ -16,14 +16,14 @@ Versioning
 | `3.x`     | ❌ Expired!           | Long-term (LTS)  | 2014 (for 3.0)                                             | July 3rd, 2020                                | `3.x`                                    | `3.x`               |
 
 
-Some intechangeable terms:
+Some interchangeable terms:
 - **Current release**: release, latest version, latest stable
 - **Beta**: release candidate, pre-release, test version
-- **Alpha**: master, developement version, nightly build
+- **Alpha**: master, development version, nightly build
 
 The [platform site](https://platform.simplicite.io) contains generated technical docs for all versions:
-- [JavaDoc](https://platform.simplicite.io/current/javadoc/) & [JSDoc](](https://platform.simplicite.io/current/jsdoc/))
-- Java & JS dependecies list
+- [JavaDoc](https://platform.simplicite.io/current/javadoc/) & [JSDoc](https://platform.simplicite.io/current/jsdoc/)
+- Java & JS dependencies list
 - CVE Audit report
 
 The [compatibility page](/lesson/docs/compatibility) maintains a list of compatible options to chose from when running Simplicité: OS, Database, Browser, etc.
