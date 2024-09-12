@@ -1171,6 +1171,31 @@ Popup default margin.
 
 Powered by credits to display on UIs (HTML syntax can be used).
 
+### `PGSQL_TSLANG`
+
+**Default value**
+
+	english
+
+**Description**
+
+PostgreSQL only: Language used by full-text search to clean up irrelevant words.
+`english`, `french`, `simple`...
+
+### `PGSQL_TSQUERY`
+
+**Default value**
+
+	websearch_to_tsquery
+
+**Description**
+
+PostgreSQL only: parser used by the fulltext search.
+
+Supported values:
+- `to_tsquery`: legacy and limited, does not support quoted text and special caracters `&|:*()` in query
+- `websearch_to_tsquery`: needs PGSQL v11+, it supports more user friendly syntax (quoted text and +/-/or operators)
+
 ### `PROCESS_CACHE_SIZE`
 
 **Default value**
