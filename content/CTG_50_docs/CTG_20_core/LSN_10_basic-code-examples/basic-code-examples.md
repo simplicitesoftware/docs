@@ -204,14 +204,16 @@ Selecting a **single record** from its row ID.
 
 ```java
 ObjectDB o = getGrant().getTmpObject("myObject");
-o.resetFilters(); // Just in case...
-o.resetValues(); // Just in case...
-// Same as above regarding filters
-if (o.select(rowId)) {
-	String val = o.getFieldValue("myField1");
-	// etc.
+synchronized (o.getLock()) {
+	o.resetFilters();
+	// Same as above regarding filters
+	if (o.select(rowId)) {
+		String val = o.getFieldValue("myField1");
+		// etc.
+	}
 }
 ```
+
 <details>
 <summary>Rhino JavaScript equivalent</summary>
 
@@ -236,20 +238,38 @@ Without pagination:
 
 ```java
 ObjectDB o = getGrant().getTmpObject("myObject");
+synchronized (o.getLock()) {
 
-o.resetFilters();
-o.resetValues();
-o.resetOrders(); 
+	// Place filters if needed
+	o.resetFilters(); // remove all previous filters
+	o.setFieldFilter("myFkField", this.getRowId()); // Foreign key
+	o.setFieldFilter("myField1", "ABC"); // simple text
+	o.setFieldFilter("myField2", "is not null"); // or "is null"
+	o.setFieldFilter("myField3", "in (1,5,8)"); // or "not in"
+	o.setFieldFilter("myField4", "like 'AB%')"); // or "not like"
+	o.getField("myDate1").setFilterDateMin(Tool.getCurrentDate());
+	o.getField("myDatetime1").setFilterDateMax("2013-06-26 23:45:23");
+	o.getField("myBoolean1").setFilter(true); // or false
+	o.getField("myInteger1").setFilter(">100 and <200");
+	o.getField("myString1").setFilter("='abc' or ='def'");
 
-for (String[] row : o.search(false)) {
-	o.setValues(row, false /* or true if you do an update */);
-	String val = o.getField("myField1").getValue();
-	// etc
+	// Place orders if needed
+	o.resetOrders();
+	o.getField("myField1").setOrder(1); // order by myField1 ascendant
+	o.getField("myField2").setOrder(-2); // then order by myField2 descendant
+	
+	// A non-paginated search can consume a lot of memory
+	// The designer must ensure that the search is limited/filtered
+	for (String[] row : o.search()) {
+		o.setValues(row, true);
+		String val = o.getFieldValue("myField1");
+		// etc
+	}
 }
 ```
+
 <details>
 <summary>Rhino JavaScript equivalent</summary>
-
 
 ```javascript
 var o = this.getGrant().getTmpObject("myObject");
@@ -287,50 +307,17 @@ With pagination to limit memory usage:
 
 #### Java
 
-Before V5, you have to prepare the object before a loop per page:
+You have to implement a callback for each page:
 
 ```java
-long totalNbRows = o.getCount();
-int maxRowsPerPage = 200;
-o.preparePagination(totalNbRows, maxRowsPerPage);
-for (int p = 0; p <= o.getMaxPage(); p++) {
-	o.setCurrentPage(p);
-	for (String[] row : o.search(true, maxRowsPerPage)) {
-		o.setValues(row, false /* or true if you do an update */);
-		String val = o.getField("myField1").getValue();
-		// ...
-	}
-}
-```
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-var totalNbRows = o.getCount();
-var maxRowsPerPage = 200;
-o.preparePagination(totalNbRows, maxRowsPerPage);
-for (var p = 0; p <= o.getMaxPage(); p++) {
-	o.setCurrentPage(p);
-	var rows = o.search(true, maxRowsPerPage);
-	for (int i = 0; i < rows.size(); j++) {
-		var row = rows.get(i);
-		o.setValues(row, false /* or true if you do an update */);
-		var val = o.getField("myField1").getValue();
-		(...)
-	}
-}
-```
-</details>
-In V5 and above, a simplified way is available with a callback for each page:
-
-```java
-int maxRowsPerPage = 200;
-obj.search(true, maxRowsPerPage, (rows) -> {
+int maxRowsPerPage = 50;
+obj.search(true, maxRowsPerPage, (rows, pageNum) -> {
 	for (String[] row : rows)
-		o.setValues(row, false /* or true if you do an update */);
+		o.setValues(row, true);
 		// ...
 	});
 ```
+
 <h3 id="enum">Using enumerations fields' code/values</h3>
 
 Enumeration fields are particular because they refer a list of value which consist of a list of **code** and **value**.
@@ -347,7 +334,7 @@ Example: iterate on the codes of a field's list of values:
 ```java
 for (EnumItem item : o.getField("myField").getList().getAllItems()) {
 	String code = item.getCode();
-	(...)
+	// ...
 }
 ```
 <details>
