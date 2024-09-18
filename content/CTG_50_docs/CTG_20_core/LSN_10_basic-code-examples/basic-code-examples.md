@@ -312,10 +312,11 @@ You have to implement a callback for each page:
 ```java
 int maxRowsPerPage = 50;
 obj.search(true, maxRowsPerPage, (rows, pageNum) -> {
-	for (String[] row : rows)
+	for (String[] row : rows) {
 		o.setValues(row, true);
 		// ...
-	});
+	}
+});
 ```
 
 <h3 id="enum">Using enumerations fields' code/values</h3>
