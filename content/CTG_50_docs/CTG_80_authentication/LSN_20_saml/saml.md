@@ -98,8 +98,31 @@ Then you can implement `GrantHooks`'s `parseAuth` method to handle the returned
 Google account identifier if required.
 
 The **example** below checks and removes the domain part of the account name in `parseAuth`
-and creates/updates the corresponding application user on the fly in `pre/postLoadGrant`.
+.
 
+
+```Java
+@Override
+public String parseAuth(Grant sys, SessionInfo info) {
+	// Check if the account is in authorized domain
+	String domain = sys.getParameter("MY_GOOGLE_DOMAIN", "simplicite.fr");
+
+	// Auth string from session info after SAML authentication (e.g. username@simplicite.fr)
+	String auth = info.getLogin();
+
+	// Reject auth string not on domain
+	if (!auth.matches("^.*@" + domain + "$")) {
+		AppLog.globalError("Invalid domain for account = " + auth, sys);
+		return null;
+	}
+
+	// Remove domain part from the auth string to get a plain username login
+	return auth.replaceFirst("@" + domain, "");
+}
+```
+
+<details>
+<summary>Rhino Javascript equivalent</summary>
 ```javascript
 GrantHooks.parseAuth = function(sys, info) {
 	// Check if the account is in authorized domain
@@ -118,23 +141,5 @@ GrantHooks.parseAuth = function(sys, info) {
 	return auth.replaceFirst("@" + domain, "");
 };
 ```
-**Java**
-```Java
-@Override
-public String parseAuth(Grant sys, SessionInfo info) {
-	// Check if the account is in authorized domain
-	String domain = sys.getParameter("MY_GOOGLE_DOMAIN", "simplicite.fr");
+</details>
 
-	// Auth string from session info after SAML authentication (e.g. username@simplicite.fr)
-	String auth = info.getLogin();
-
-	// Reject auth string not on domain
-	if (!auth.matches("^.*@" + domain + "$")) {
-		console.error("Invalid domain for account = " + auth);
-		return null;
-	}
-
-	// Remove domain part from the auth string to get a plain username login
-	return auth.replaceFirst("@" + domain, "");
-}
-```
