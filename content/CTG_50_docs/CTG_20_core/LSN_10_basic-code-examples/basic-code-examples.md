@@ -309,9 +309,25 @@ With pagination to limit memory usage:
 
 You have to implement a callback for each page:
 
+V6 supports a `pageNum` parameter to calculate a global rownum in search:
+
+```java
+final int maxRowsPerPage = 50;
+obj.search(true, maxRowsPerPage, (rows, pageNum) -> {
+	int rownum = maxRowsPerPage * pageNum;
+	for (String[] row : rows) {
+		o.setValues(row, true);
+		// ...
+		rownum++;
+	}
+});
+```
+
+V5 previous syntax without `pageNum`:
+
 ```java
 int maxRowsPerPage = 50;
-obj.search(true, maxRowsPerPage, (rows, pageNum) -> {
+obj.search(true, maxRowsPerPage, (rows) -> {
 	for (String[] row : rows) {
 		o.setValues(row, true);
 		// ...
