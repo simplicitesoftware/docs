@@ -1,0 +1,11 @@
+{
+    "tags": ["lvl1","lvl2"],
+    "FRA": {
+        "title": "Bienvenue",
+        "description": ""
+    },
+    "ENU": {
+        "title": "Welcome",
+        "description": ""
+    }
+}
