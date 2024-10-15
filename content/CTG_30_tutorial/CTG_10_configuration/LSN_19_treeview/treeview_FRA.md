@@ -1,8 +1,6 @@
 Arborescences
 ====================
 
-![treeview screenshot](treeview.png)
-
 Un arbre est une manière classique d'organiser des données, qui est largement utilisée aussi bien en algorithmique qu'en interface utilisateur. Dans les modèles de données, il est très courant d'avoir une série d'objets liés que l'on souhaite visualiser de cette manière. Simplicité propose un composant Arborescence (ou Vue arborescente) pour faciliter et rendre rapide la mise en place et la visualisation de telles structures.
 
 La structure de l'arbre est définie en configurant :  

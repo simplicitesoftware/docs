@@ -1,6 +1,5 @@
 Processus métier - workflow
 ====================
-![workflow screenshot](workflow.png)
 
 Un processus (suite d'écrans) est un assistant destiné à assister l'utilisateur lors d'un processus spécifique.  
 Le processus peut être défini dans le menu **Processus métier/Processus métier**.

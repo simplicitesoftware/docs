@@ -1,7 +1,6 @@
 Timesheet
 ====================
 
-![timesheet screenshot](timesheet.png)
 
 Timesheets can be configured from the **Interface/Timesheet** menu in V5, **User Interface/Display Objects/Timesheet**. 
 They can be used to enter up to 3 pieces of data (quantity, number of days, etc.) on an object for a given period.  

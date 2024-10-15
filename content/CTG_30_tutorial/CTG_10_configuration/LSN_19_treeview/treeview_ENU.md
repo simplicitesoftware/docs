@@ -1,7 +1,6 @@
 Treeviews
 ====================
 
-![treeview screenshot](treeview.png)
 
 A tree is [a classic way to organize data](https://en.wikipedia.org/wiki/Tree_(data_structure)), which is visual and a widely used paradigm, both in algorithmics and in UI. In data models, it is very common to have a series of linked objects that you want to visualize in such way. Simplicité offers a **Treeview** component to make it quick and easy to implement and visualize such structures.
 

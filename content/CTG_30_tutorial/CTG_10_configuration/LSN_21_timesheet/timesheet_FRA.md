@@ -1,7 +1,6 @@
 Feuille de temps - Timesheet
 ====================
 
-![timesheet screenshot](timesheet.png)
 
 Les feuilles de temps ou Timesheet sont paramétrables depuis le Menu **Interface/Feuille de temps** en V5, **Interface utilisateur/Affichage d'objets/Feuille de temps** 
 Elles permettent de saisir jusqu'à 3 données  (quantité, nombre de jours ...etc) sur un objet pour une période donnée.  
