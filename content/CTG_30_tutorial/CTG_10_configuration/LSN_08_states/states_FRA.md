@@ -21,4 +21,5 @@ Exercice : création de l'état de la commande
     2. choix des transitions possibles entre les différents états
     3. choix des groupes pouvant effectuer les transitions choisies (attribuer toutes les transitions au groupe `TRN_ADMIN`)
     4. traduction des actions : à chaque transition d'état est associée une traduction qui sera le texte affiché sur le bouton permettant de passer d'un état à l'autre
+    5. Aller sur la paramétrage de la liste de valeurs TRN_ORD_STATE ou depuis le template editor pour ajouter la barre d'états sur l'IHM.
 - vider le cache (*car des habilitations ont été modifiées*) et tester les transitions d'état

@@ -21,4 +21,5 @@ Exercise: create the state of the order.
 2. selection of the possible transitions between the different states
 3. selection of the groups that can perform the chosen transitions (assign all transitions to the `TRN_ADMIN` group)
 4. translation of the actions: each state transition has a translation associated to it which corresponds to the text displayed on the button allowing to switch from one state to another
+5. Navigate to the TRN_ORD_STATE list of value configuration, or alternatively, use the template editor to add the status bar to the user interface (UI).
 - clear the cache (*because some grants have been modified*) and test the state transitions
