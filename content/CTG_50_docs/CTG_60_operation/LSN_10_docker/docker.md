@@ -652,7 +652,7 @@ For instance, given the folowing Dockerfile:
 ```
 FROM registry.simplicite.io/platform:<tag>
 USER simplicite
-ARG maven=3.8.5
+ARG maven=3.9.9
 ARG deps
 RUN wget -qO- https://www-eu.apache.org/dist/maven/maven-3/$maven/binaries/apache-maven-$maven-bin.tar.gz | tar xfz - && \
     MAVEN_HOME=/usr/local/tomcat/apache-maven-$maven ./adddeps.sh $deps && \
