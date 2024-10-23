@@ -2,6 +2,7 @@ Simplicité with Portainer & Traefik
 ====================================
 
 Portainer is a professional Docker cluster management tool that facilitates installation and operation of Docker containers. This lesson leverages its power to rapidly install Simplicité instances on a server, with the following objectives:
+
 - **minimal manual configuration**
 - SSL certificates auto-setup with Let's Encrypt
 - HTTP -> HTTPS redirection
@@ -47,7 +48,7 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo reboot
 ```
 
-**Note**: Optionaly a firewall can be configuerd on the host (or among the host) to allow only the relevant traffic.
+**Note**: Optionaly a firewall should be configuerd on the host (or among the host) to allow only the relevant traffic.
 Minimal configuration is to allow the HTTP port `80` and HTTPS port `443` (along with the SSH port `22` from legitimate origins) through this firewall.
 
 ## 3) Portainer install with lets encrypt and traefik
@@ -59,7 +60,7 @@ This config has to be copied at the home of your user and started with `sudo doc
 <details>
 <summary>See config</summary>
 
-**Important**: you must create a local `acme.json` with `600` rights **prior** to starting this Docker compose configuration.
+> **Important**: you must create a local `acme.json` with `600` rights **prior** to starting this Docker compose configuration.
 
 ```yaml
 services:
@@ -145,8 +146,6 @@ volumes:
 
 This is the minimal configuration to get a working Simplicité (non persistent) instance. Create a "stack" (a docker compose deployement, in portainer's semantics), and paste the following config. 
 
-> Do adapt the Host name and all all instances of `demo` in the file for each new deployement.
-
 ```yaml
 services:
   test:
@@ -184,13 +183,13 @@ volumes:
   #git:
 ```
 
-## 6) Add stack templates
+## 6) Configure stack templates
 
-You can aslo add the follwing templates, so as you can deploy several instances with the database of your choice.
+You can also configure the following stack templates, so as you can deploy several instances (with the database of your choice) more easily.
 
-These template imports the `Demo` module.
+> **Note**: These template imports the `Demo` module.
 
-**Note**: When deploying a stack from any of these templates make sure to change `xxx` to your instance name.
+> **Important**: When deploying a stack from any of these templates make sure to change all occurences of `xxx` to your instance name (e.g. `myapp`).
 
 ### Embedded HSQL database
 
