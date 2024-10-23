@@ -165,7 +165,7 @@ networks:
     name: proxy
 ```
 
-To make it persistent add the following volumes:
+To make it persistent add the following volumes to the above configuration:
 
 ```yaml
 services:
@@ -175,7 +175,6 @@ services:
       - db:/usr/local/tomcat/webapps/ROOT/WEB-INF/db
       - dbdoc:/usr/local/tomcat/webapps/ROOT/WEB-INF/dbdoc
       #- git:/usr/local/tomcat/webapps/ROOT/WEB-INF/git
-      
 (...)
 volumes:
   db:
