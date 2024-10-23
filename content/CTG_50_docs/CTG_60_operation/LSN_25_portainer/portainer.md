@@ -72,7 +72,8 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./acme.json:/acme.json"
     command:
-      - --api.insecure=true # to activate Traefik dashboard
+      - --api.insecure=true
+      - --api.dashboard=true # to activate Traefik dashboard
       - --entrypoints.web.address=:80
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entryPoints.web.http.redirections.entrypoint.scheme=https
