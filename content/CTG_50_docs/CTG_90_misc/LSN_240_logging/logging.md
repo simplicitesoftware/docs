@@ -26,7 +26,7 @@ Technical logging
 
 The technical logging is based on Log4J&reg; and can be configured using a standard Log4J&reg; configuration file.
 
-A default `log4j.xml` configuration file is provided including several samples of appenders, two of them are active and have a specific behavior:
+A default `log4j2.xml` configuration file is provided including several samples of appenders, two of them are active and have a specific behavior:
 
 * `SIMPLICITE-CONSOLE` is configured to push logs to the standard output (in default Tomcat's logging configuration, this output is appended to the `catalina.out` log file)
 * `SIMPLICITE-FILE` is configured to push logs in dedicated daily log files
