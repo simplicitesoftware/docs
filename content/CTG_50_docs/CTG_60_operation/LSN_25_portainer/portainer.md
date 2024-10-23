@@ -47,6 +47,9 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo reboot
 ```
 
+**Note**: Optionaly a firewall can be configuerd on the host (or among the host) to allow only the relevant traffic.
+Minimal configuration is to allow the HTTP port `80` and HTTPS port `443` (along with the SSH port `22` from legitimate origins) through this firewall.
+
 ## 3) Portainer install with lets encrypt and traefik
 
 This is a modified version of the config given in Portainer's doc "[Deploying Portainer behind Traefik Proxy](https://docs.portainer.io/advanced/reverse-proxy/traefik)"
