@@ -149,7 +149,7 @@ This is the minimal configuration to get a working Simplicité (non persistent) 
 ```yaml
 services:
   test:
-    image: registry.simplicite.io/platform:6.0-light
+    image: registry.simplicite.io/platform:6-latest-light
     restart: unless-stopped
     container_name: test
     networks:
