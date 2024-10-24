@@ -156,7 +156,7 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.test.rule=Host(`demo.my.domain`)"
+      - "traefik.http.routers.test.rule=Host(`test.my.domain`)"
       - "traefik.http.routers.test.entrypoints=websecure"
       - "traefik.http.routers.test.tls.certresolver=leresolver"
       - "traefik.http.services.test.loadbalancer.server.port=8443"
@@ -195,7 +195,7 @@ services:
     (...)
     labels:
       (...)
-      - "traefik.tcp.routers.test.rule=HostSNI(`xxx.daz.simplicite.io`)"
+      - "traefik.tcp.routers.test.rule=HostSNI(`test.my.domain`)"
       - "traefik.tcp.routers.test.entrypoints=jpda"
       - "traefik.tcp.routers.test.tls.certresolver=leresolver"
       - "traefik.tcp.services.test.loadbalancer.server.port=8000"```
