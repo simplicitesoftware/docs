@@ -203,7 +203,7 @@ services:
 
 ## 6) Configure stack templates
 
-You can also configure Portainer to use our stack templates, to do so change the _App Templates_  URL in the settings using this URL: `https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/portainer_templates/templates.json`
+You can also configure Portainer to use our stack templates, to do so change the _App Templates_ URL in the settings using this URL: `https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/portainer_templates/templates.json`
 
 ![templates](templates.png)
 
