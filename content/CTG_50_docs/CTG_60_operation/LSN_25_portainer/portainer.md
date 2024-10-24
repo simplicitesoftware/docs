@@ -10,7 +10,7 @@ Portainer is a professional Docker cluster management tool that facilitates inst
 - Portainer available at `portainer.my.domain`
 - allow remote debugging through the proxy
 
-![portainer](portainer.png)
+![Portainer](portainer.png)
 
 ## 1) Server deployement
 
@@ -144,7 +144,7 @@ volumes:
 
 ## 5) Start a Simplicité instance
 
-This is the minimal configuration to get a working Simplicité (non persistent) instance. Create a "stack" (a docker compose deployement, in portainer's semantics), and paste the following config. 
+This is the minimal configuration to get a working Simplicité (non persistent) instance. Create a "stack" (a docker compose deployement, in Portainer's semantics), and paste the following config. 
 
 ```yaml
 services:
@@ -207,3 +207,4 @@ You can also configure Portainer to use our stack templates, to do so change the
 
 ![templates](templates.png)
 
+Or manually configure custom templates using the `*.yml` present at [this location](https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/portainer_templates/).
