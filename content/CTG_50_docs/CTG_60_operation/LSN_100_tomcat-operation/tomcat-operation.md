@@ -58,7 +58,7 @@ The content of these logs is managed at Tomcat configuration level, please refer
 
 The application-specific technical logs are located in `$TOMCAT_ROOT/webapps/ROOT/WEB-INF/log` (template-based packaging) or in custom location depending on your installation.
 
-The content of these logs is managed by **Log4J** and can be customized by overriding the default `log4j.xml` file provided in `$TOMCAT_ROOT/webapps/ROOT/WEB-INF/classes`.
+The content of these logs is managed by **Log4J** and can be customized by overriding the default `log4j2.xml` file provided in `$TOMCAT_ROOT/webapps/ROOT/WEB-INF/classes`.
 
 For each logging event, an event **code** is associated, and depending on the configuration in Operation / Events, the message will be either:
 - logged via the Log4J logger

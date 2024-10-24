@@ -2,6 +2,7 @@ Simplicité with Portainer & Traefik
 ====================================
 
 Portainer is a professional Docker cluster management tool that facilitates installation and operation of Docker containers. This lesson leverages its power to rapidly install Simplicité instances on a server, with the following objectives:
+
 - **minimal manual configuration**
 - SSL certificates auto-setup with Let's Encrypt
 - HTTP -> HTTPS redirection
@@ -47,6 +48,9 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo reboot
 ```
 
+**Note**: Optionaly a firewall should be configuerd on the host (or among the host) to allow only the relevant traffic.
+Minimal configuration is to allow the HTTP port `80` and HTTPS port `443` (along with the SSH port `22` from legitimate origins) through this firewall.
+
 ## 3) Portainer install with lets encrypt and traefik
 
 This is a modified version of the config given in Portainer's doc "[Deploying Portainer behind Traefik Proxy](https://docs.portainer.io/advanced/reverse-proxy/traefik)"
@@ -55,6 +59,8 @@ This config has to be copied at the home of your user and started with `sudo doc
 
 <details>
 <summary>See config</summary>
+
+> **Important**: you must create a local `acme.json` with `600` rights **prior** to starting this Docker compose configuration.
 
 ```yaml
 services:
@@ -70,7 +76,8 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./acme.json:/acme.json"
     command:
-      - --api.insecure=true # to activate Traefik dashboard
+      - --api.insecure=true
+      - --api.dashboard=true # to activate Traefik dashboard
       - --entrypoints.web.address=:80
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entryPoints.web.http.redirections.entrypoint.scheme=https
@@ -137,29 +144,226 @@ volumes:
 
 ## 5) Start a Simplicité instance
 
-This is the minimal configuration to get a working Simplicité instance. Create a "stack" (a docker compose deployement, in portainer's semantics), and paste the following config. 
-
-> Do adapt the Host name and all all instances of `demo` in the file for each new deployement.
+This is the minimal configuration to get a working Simplicité (non persistent) instance. Create a "stack" (a docker compose deployement, in portainer's semantics), and paste the following config. 
 
 ```yaml
 services:
-  demo:
-    image: registry.simplicite.io/platform:6.0-light
-    restart: always
-    container_name: demo
+  test:
+    image: registry.simplicite.io/platform:6-latest-light
+    restart: unless-stopped
+    container_name: test
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.demo.rule=Host(`demo.my.domain`)"
-      - "traefik.http.routers.demo.entrypoints=websecure"
-      - "traefik.http.routers.demo.tls.certresolver=leresolver"
-      - "traefik.http.services.demo.loadbalancer.server.port=8443"
+      - "traefik.http.routers.test.rule=Host(`demo.my.domain`)"
+      - "traefik.http.routers.test.entrypoints=websecure"
+      - "traefik.http.routers.test.tls.certresolver=leresolver"
+      - "traefik.http.services.test.loadbalancer.server.port=8443"
+networks:
+  proxy:
+    name: proxy
+```
+
+To make it persistent add the following volumes to the above configuration:
+
+```yaml
+services:
+  demo:
+(...)
+    volumes:
+      - db:/usr/local/tomcat/webapps/ROOT/WEB-INF/db
+      - dbdoc:/usr/local/tomcat/webapps/ROOT/WEB-INF/dbdoc
+      #- git:/usr/local/tomcat/webapps/ROOT/WEB-INF/git
+(...)
+volumes:
+  db:
+  dbdoc:
+  #git:
+```
+
+## 6) Configure stack templates
+
+You can also configure the following stack templates, so as you can deploy several instances (with the database of your choice) more easily.
+
+> **Note**: These template imports the `Demo` module.
+
+> **Important**: When deploying a stack from any of these templates make sure to change all occurences of `xxx` to your instance name (e.g. `myapp`).
+
+### Embedded HSQL database
+
+```yaml
+services:
+  xxx:
+    image: registry.simplicite.io/platform:6-latest
+    restart: unless-stopped
+    container_name: xxx
+    environment:
+      IO_PASSWORD: "_a_very_strong_password_"
+      #JPDA: "true"
+      #JPDA_SUSPEND: "true"
+      MODULES_IMPORT_SPEC: |
+        title: "Demo v6"
+        modules:
+          - name: "Demo"
+            version: "6"
+            git:
+              uri: "https://github.com/simplicitesoftware/module-demo.git"
+              branch: "v6"
+            datasets: true
+    volumes:
+      - db:/usr/local/tomcat/webapps/ROOT/WEB-INF/db
+      - dbdoc:/usr/local/tomcat/webapps/ROOT/WEB-INF/dbdoc
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xxx.rule=Host(`xxx.daz.simplicite.io`)"
+      - "traefik.http.routers.xxx.entrypoints=websecure"
+      - "traefik.http.routers.xxx.tls.certresolver=leresolver"
+      - "traefik.http.services.xxx.loadbalancer.server.port=8443"
       # JPDA Remote debugging
-      - "traefik.tcp.routers.demo.rule=HostSNI(`demo.my.domain`)"
-      - "traefik.tcp.routers.demo.entrypoints=jpda"
-      - "traefik.tcp.routers.demo.tls.certresolver=leresolver"
-      - "traefik.tcp.services.demo.loadbalancer.server.port=8000"
+      #- "traefik.tcp.routers.xxx.rule=HostSNI(`xxx.daz.simplicite.io`)"
+      #- "traefik.tcp.routers.xxx.entrypoints=jpda"
+      #- "traefik.tcp.routers.xxx.tls.certresolver=leresolver"
+      #- "traefik.tcp.services.xxx.loadbalancer.server.port=8000"
+volumes:
+  db:
+  dbdoc:
+networks:
+  proxy:
+    name: proxy
+```
+
+### PostgreSQL
+
+```yaml
+services:
+  xxx_database:
+    image: postgres:latest
+    restart: unless-stopped
+    container_name: xxx_database
+    environment:
+      TZ: "Europe/Paris"
+      PGTZ: "Europe/Paris"
+      POSTGRES_USER: "simplicite"
+      POSTGRES_PASSWORD: "simplicite"
+      POSTGRES_DB: "simplicite"
+    networks:
+      - proxy
+    volumes:
+      - data:/var/lib/postgresql/data
+  xxx:
+    image: registry.simplicite.io/platform:6-latest
+    restart: unless-stopped
+    container_name: xxx
+    environment:
+      IO_PASSWORD: "_a_very_strong_password_"
+      TOMCAT_TIMEZONE: "Europe/Paris"
+      DB_SETUP: "true"
+      DB_VENDOR: "postgresql"
+      DB_HOST: "xxx_database"
+      DB_USER: "simplicite"
+      DB_PASSWORD: "simplicite"
+      DB_NAME: "simplicite"
+      DB_WAIT: 100
+      DB_WAIT_INTERVAL: 10
+      #JPDA: "true"
+      #JPDA_SUSPEND: "true"
+      MODULES_IMPORT_SPEC: |
+        title: "Demo v6"
+        modules:
+          - name: "Demo"
+            version: "6"
+            git:
+              uri: "https://github.com/simplicitesoftware/module-demo.git"
+              branch: "v6"
+            datasets: true
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xxx.rule=Host(`xxx.daz.simplicite.io`)"
+      - "traefik.http.routers.xxx.entrypoints=websecure"
+      - "traefik.http.routers.xxx.tls.certresolver=leresolver"
+      - "traefik.http.services.xxx.loadbalancer.server.port=8443"
+      # JPDA Remote debugging
+      #- "traefik.tcp.routers.xxx.rule=HostSNI(`xxx.daz.simplicite.io`)"
+      #- "traefik.tcp.routers.xxx.entrypoints=jpda"
+      #- "traefik.tcp.routers.xxx.tls.certresolver=leresolver"
+      #- "traefik.tcp.services.xxx.loadbalancer.server.port=8000"
+    depends_on:
+      - xxx_database
+volumes:
+  data:
+networks:
+  proxy:
+    name: proxy
+```
+
+### MySQL
+
+```yaml
+services:
+  xxx_database:
+    image: mysql:latest
+    container_name: xxx_database
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      TZ: "Europe/Paris"
+      MYSQL_ROOT_PASSWORD: "simplicite"
+      MYSQL_DATABASE: "simplicite"
+      MYSQL_USER: "simplicite"
+      MYSQL_PASSWORD: "simplicite"
+    networks:
+      - proxy
+    volumes:
+      - data:/var/lib/mysql
+  xxx:
+    image: registry.simplicite.io/platform:6-latest
+    restart: unless-stopped
+    container_name: xxx
+    environment:
+      IO_PASSWORD: "_a_very_strong_password_"
+      TOMCAT_TIMEZONE: "Europe/Paris"
+      DB_SETUP: "true"
+      DB_VENDOR: "mysql"
+      DB_HOST: "xxx_database"
+      DB_USER: "simplicite"
+      DB_PASSWORD: "simplicite"
+      DB_NAME: "simplicite"
+      #DB_SSL: "true"
+      DB_WAIT: 100
+      DB_WAIT_INTERVAL: 10
+      #JPDA: "true"
+      #JPDA_SUSPEND: "true"
+      MODULES_IMPORT_SPEC: |
+        title: "Demo v6"
+        modules:
+          - name: "Demo"
+            version: "6"
+            git:
+              uri: "https://github.com/simplicitesoftware/module-demo.git"
+              branch: "v6"
+            datasets: true
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xxx.rule=Host(`xxx.daz.simplicite.io`)"
+      - "traefik.http.routers.xxx.entrypoints=websecure"
+      - "traefik.http.routers.xxx.tls.certresolver=leresolver"
+      - "traefik.http.services.xxx.loadbalancer.server.port=8443"
+      # JPDA Remote debugging
+      #- "traefik.tcp.routers.xxx.rule=HostSNI(`xxx.daz.simplicite.io`)"
+      #- "traefik.tcp.routers.xxx.entrypoints=jpda"
+      #- "traefik.tcp.routers.xxx.tls.certresolver=leresolver"
+      #- "traefik.tcp.services.xxx.loadbalancer.server.port=8000"
+    depends_on:
+      - xxx_database
+volumes:
+  data:
 networks:
   proxy:
     name: proxy
