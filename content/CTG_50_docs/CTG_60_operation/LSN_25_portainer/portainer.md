@@ -169,24 +169,24 @@ To make it persistent add the following volumes to the above configuration:
 
 ```yaml
 services:
-  demo:
+  test:
     (...)
     volumes:
       - db:/usr/local/tomcat/webapps/ROOT/WEB-INF/db
       - dbdoc:/usr/local/tomcat/webapps/ROOT/WEB-INF/dbdoc
-      #- git:/usr/local/tomcat/webapps/ROOT/WEB-INF/git
+      - git:/usr/local/tomcat/webapps/ROOT/WEB-INF/git
 (...)
 volumes:
   db:
   dbdoc:
-  #git:
+  git:
 ```
 
-To enable remote debugging add the following environment variables and labels:
+To enable remote JPDA debugging (port `8000`)  add the following environment variables and labels:
 
 ```yaml
 services:
-  demo:
+  test:
     (...)
     environment:
       (...)
@@ -195,10 +195,10 @@ services:
     (...)
     labels:
       (...)
-      - "traefik.tcp.routers.xxx.rule=HostSNI(`xxx.daz.simplicite.io`)"
-      - "traefik.tcp.routers.xxx.entrypoints=jpda"
-      - "traefik.tcp.routers.xxx.tls.certresolver=leresolver"
-      - "traefik.tcp.services.xxx.loadbalancer.server.port=8000"```
+      - "traefik.tcp.routers.test.rule=HostSNI(`xxx.daz.simplicite.io`)"
+      - "traefik.tcp.routers.test.entrypoints=jpda"
+      - "traefik.tcp.routers.test.tls.certresolver=leresolver"
+      - "traefik.tcp.services.test.loadbalancer.server.port=8000"```
 ```
 
 ## 6) Configure stack templates
