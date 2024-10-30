@@ -191,7 +191,7 @@ services:
     environment:
       (...)
       JPDA: "true"
-      JPDA_SUSPEND: "<true|false>" # true to wait for debugger
+      JPDA_SUSPEND: "<y|n, defaults to n>" # true to wait for debugger
     (...)
     labels:
       (...)
