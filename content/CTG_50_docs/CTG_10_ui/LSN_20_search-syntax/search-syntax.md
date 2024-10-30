@@ -85,3 +85,15 @@ getField("myObjectField").setFilter("User:12");
 
 ![](filter_obj.png)
 
+API Filters
+-----------
+
+JSON Filters are used in several contexts: API endpoint, link filters, widgets, etc.
+
+```json
+{
+  "field1" : ">=1000 and <=5000",
+  "order__field2" : -1,
+  "group__childField3" : 1
+}
+```
