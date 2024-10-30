@@ -1,4 +1,4 @@
-I/O services and command line interface (CLI)
+I/O services for command line interface (/io)
 =============================================
 
 As of **version 3.0**, usual administrative tasks can be done using the `curl` command line tool using the I/O endpoint.

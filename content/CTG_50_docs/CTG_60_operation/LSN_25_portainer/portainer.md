@@ -8,7 +8,7 @@ Portainer is a professional Docker cluster management tool that facilitates inst
 - HTTP -> HTTPS redirection
 - Traefik's reverse proxy dashboard activated and available at `traefik.my.domain` behind `test / test` basic auth
 - Portainer available at `portainer.my.domain`
-- allow remote debugging through the proxy
+- allow remote debugging
 
 ![Portainer](portainer.png)
 
@@ -83,7 +83,6 @@ services:
       - --entryPoints.web.http.redirections.entrypoint.scheme=https
       - --entrypoints.websecure.address=:443
       - --entrypoints.websecure.asdefault=true
-      - --entrypoints.jpda.address=:8000 # to route JPDA traffic for remote debugging
       - --log.level=INFO
       - --accesslog=true
       - --providers.docker
@@ -182,23 +181,19 @@ volumes:
   git:
 ```
 
-To enable remote JPDA debugging (port `8000`)  add the following environment variables and labels:
+To enable JPDA remote debugging add the following environment variables and open an access to port `8000`. Assign a different port to each instance (8001, 8002, 8003...).
 
 ```yaml
 services:
   test:
     (...)
+    ports:
+      - 8001:8000 # expose port 8000
     environment:
       (...)
       JPDA: "true"
       JPDA_SUSPEND: "<y|n, defaults to n>" # true to wait for debugger
     (...)
-    labels:
-      (...)
-      - "traefik.tcp.routers.test.rule=HostSNI(`test.my.domain`)"
-      - "traefik.tcp.routers.test.entrypoints=jpda"
-      - "traefik.tcp.routers.test.tls.certresolver=leresolver"
-      - "traefik.tcp.services.test.loadbalancer.server.port=8000"```
 ```
 
 ## 6) Configure stack templates
@@ -208,3 +203,47 @@ You can also configure Portainer to use our stack templates, to do so change the
 ![templates](templates.png)
 
 Or manually configure custom templates using the `*.yml` present at [this location](https://cdn.jsdelivr.net/gh/simplicitesoftware/resources@latest/public/portainer_templates/).
+
+## Backup an instance
+
+This script makes the assumption that you have deployed with portainer a stack that with an app service (Simplicité) and a database service (PostgreSQL). You can call it daily and setup rotating backups.
+
+<details>
+<summary>Click to see backup script example</summary>
+
+```bash
+# stop stack
+BACKUPDIR=$(date +"backup-%Y-%m-%d-%H%M")
+COMPOSE_PROJECT="XXXX" # the name of the stack
+
+APP_SERVICE="XXXX" # name of the service (not the container)
+APP_DBDOC_VOLUME="XXXX" # name of the volume (careful, docker compose prefixes it with the stack name)
+
+PSQL_SERVICE="" 
+PSQL_DBNAME="simplicite"
+PSQL_DBUSER="simplicite"
+
+mkdir $BACKUPDIR
+
+# stop Simplicité service
+sudo docker compose -p $COMPOSE_PROJECT stop $APP_SERVICE
+
+# save database dump
+sudo docker compose -p $COMPOSE_PROJECT exec $PSQL_SERVICE sh -c "rm -f /var/lib/backup/database.dump"
+sudo docker compose -p $COMPOSE_PROJECT exec $PSQL_SERVICE sh -c "pg_dump -U $PSQL_DBUSER $PSQL_DBNAME > /var/lib/backup/database.dump"
+sudo docker compose -p $COMPOSE_PROJECT cp $PSQL_SERVICE:/var/lib/backup/database.dump $BACKUPDIR/database.dump
+
+# save dbdoc
+sudo docker run -v $APP_DBDOC_VOLUME:/data --name helper busybox true
+sudo docker cp helper:/data $BACKUPDIR/dbdoc
+sudo docker rm helper
+
+# restart Simplicité service
+sudo docker compose -p $COMPOSE_PROJECT start $APP_SERVICE
+
+# create archive & clean
+tar -czvf $BACKUPDIR.tgz $BACKUPDIR
+rm -rf $BACKUPDIR
+```
+
+</details>

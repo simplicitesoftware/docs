@@ -1,4 +1,4 @@
-Git repositories
+Git repositories (/git)
 ================
 
 As of **version 3.2 MAINTENANCE 03**, a new endpoint is available to export/import modules using [Git](https://git-scm.com/) over HTTP(S).
