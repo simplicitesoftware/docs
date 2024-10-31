@@ -5,8 +5,8 @@ This is the repository for the content feeding :
 - **main branch** -> https://docs2.simplicite.io
 - **rec branch** -> https://docs2rec.simplicite.io
 
-Documentation format guidelines [](#guidelines)
----------------------------
+Documentation format guidelines <span id="version-6.0.26">guidelines</span>
+---------------------------------------------------------------------------
 
 ## Category
 
