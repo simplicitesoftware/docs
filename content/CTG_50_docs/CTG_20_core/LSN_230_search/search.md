@@ -32,6 +32,8 @@ The **Simplicité index** is quite simple: it uses a single database table (`m_i
 
 The **Lucene index** relies on the lucene engine to index objects and retrieve results. Please refer to its documentation for more information.
 
+<!-- TODO global search results https://community.simplicite.io/t/recherche-limitee-a-un-domaine/1885/7 -->
+
 ### Object Search
 
 The object search is a by-column search on an object. 
@@ -88,10 +90,14 @@ catch(SearchException e){
 }
 ```
 
+<!--
+
 ### JS
 
 TBD... lib ajax & lib npm
 
 ### API
 
-TBD...
+TBD... 
+
+-->
