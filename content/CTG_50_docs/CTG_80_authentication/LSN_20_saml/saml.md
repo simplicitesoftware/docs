@@ -24,6 +24,8 @@ Then declare your SAML authentication provider in the `AUTH_PROVIDERS` system pa
 ]
 ```
 
+You can get the resulting SAML SP meta data by calling `<base URL>/saml?_provider=<your provider name, e.g. gogle>&metadata`
+
 See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for details on how to configure authentication providers.
 
 > **Warning**: Before doing these changes, **make sure** that you will still be able to login with a user having at least a responsibility on the `ADMIN` group.
@@ -142,4 +144,3 @@ GrantHooks.parseAuth = function(sys, info) {
 };
 ```
 </details>
-
