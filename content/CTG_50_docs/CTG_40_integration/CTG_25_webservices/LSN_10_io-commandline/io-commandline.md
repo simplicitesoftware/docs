@@ -13,7 +13,8 @@ or the API endpoint authentication mechanisms described in [this document](/less
 As of **version 4.0.P22**, the I/O endpoint does not any longer support API authentication, to use such API authentication you now need to use the I/O service deployed on the API endpoint.
 
 As of **version 5**, the I/O endpoint allows passing a dedicated password as the `io.password` JVM argument or the `IO_PASSWORD` environment parameter
-instead of the legacy `EAI *` system parameters.
+(which can contain either a plain text password - not recommended - or a non salted hashed password using the configured hashing algorithm)
+instead of the legacy (and rather unsecure) `EAI *` system parameters. 
 
 > **Warning**: In production the I/O endpoint should be restricted only to allowed origins (e.g. using filtering on request's origin IP address or similar approaches).
 

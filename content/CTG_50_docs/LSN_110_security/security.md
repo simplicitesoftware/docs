@@ -73,7 +73,8 @@ At least you **should** disable the I/O tester page by setting the private syste
 For more information defaut on I/O authentication mechanisms, see [this document](/lesson/docs/integration/io-commandline).
 
 > **Note 1**: for backward compatibility reasons (and for particular cases) the I/O and Git endpoints **also** use the legacy authentication
-> method bases on private system parameters names `EAI *` or, as of version 5, the `io.password` JVM argument or the `IO_PASSWORD` environment variable.
+> method bases on private system parameters names `EAI *` or, as of version 5, the `io.password` JVM argument or the `IO_PASSWORD` environment variable
+> which can contain either a plain text password (not recommended) or a non salted hashed password using the configured hashing algorithm.
 > If you have no good reason to keep it all the time, this authentication method **should** be inhibited (at least when you don't need it)
 > by removing the corresponding system parameters, JVM argument or environment variable. Note that, as of minor version 5.1, it is not be possible
 > to use the user's password if it is requested to be changed.
@@ -195,8 +196,12 @@ Use built-in (see the Data Encryption part in [code examples](/lesson/docs/core/
 If you use the internal authentication you **should** consider securing it by adding a second authentication factor (2FA) and/or by implementing custom rules (e.g.: disabling a login
 after a certain amount of erroneous password entry or enforcing appropriate password validation rules). See [this document](/lesson/docs/authentication/internal-auth) for details.
 
-You **should** also use the appropriate password hashing algorithm by setting the `HASH_PASSWORD` system parameter (note that changing this algorithm will require that all your users
+You **should** also use the appropriate internal password hashing algorithm by setting the `HASH_PASSWORD` system parameter (note that changing this algorithm will require that all your users
 change their password).
+
+You **should** also enable the "salting" of the above hashed internal password using the flag system parameter `SALT_PASSWORD=yes` (note that changing this flag will require that all your users
+change their password). As of version 6.2 you can also add a "pepper" string to this "salting" by configuring an environement variable `HASH_PASSWORD_PEPPER` or a JVM propery `hash.password.pepper`
+(note that adding or changing this pepper string will also require that all your users change their password).
 
 You **may** also consider implementing an anti-brute policy by using appropriate `PlatformHooks`. See [this document](/lesson/docs/authentication/internal-auth#antibruteforce) for a comprehensive example.
 

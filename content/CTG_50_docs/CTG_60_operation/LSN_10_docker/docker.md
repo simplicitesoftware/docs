@@ -290,7 +290,7 @@ You can enable or disable the I/O endpoint (`/io`) or you can define an IP white
 
 > **Note**: When deploying several Simplicité nodes, make sure to configure a proper filtering rule and an I/O password to allow.
 > these nodes to communicate with each other (e.g. for propagating a clear cache).
-> This can be acheived by adding the dedicated environment variable `-e IO_PASSWORD=<a very complex password>`
+> This can be acheived by adding the dedicated environment variable `-e IO_PASSWORD=<a very complex password, can be plain text (not recommended) or hashed using configured algorithm (without salting)>`
 
 <h4 id="gitwhitelist">Enable/disable or define an IP white list on the Git enpoint</h4>
 
