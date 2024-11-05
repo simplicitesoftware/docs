@@ -6,8 +6,8 @@ Portainer is a professional Docker cluster management tool that facilitates inst
 - **minimal manual configuration**
 - SSL certificates auto-setup with Let's Encrypt
 - HTTP -> HTTPS redirection
-- Traefik's reverse proxy dashboard activated and available at `traefik.my.domain` behind `admin / simplicite` default basic auth
-  (can be changed using `htpasswd -bn yourusername yourpassword | sed 's/\$/$$/g'`, doubling the `$` is required)
+- Traefik's reverse proxy dashboard activated and available at `traefik.my.domain` behind `admin / _ChangeItNow_` default basic auth
+  (can be changed using `htpasswd -bn your_user_name your_super_complex_password | sed 's/\$/$$/g'`, doubling the `$` is required)
 - Portainer available at `portainer.my.domain`
 - allow remote debugging
 
@@ -100,7 +100,7 @@ services:
       - traefik.http.routers.mydashboard.entrypoints=websecure
       - traefik.http.routers.mydashboard.service=api@internal
       - traefik.http.routers.mydashboard.middlewares=myauth
-      - traefik.http.middlewares.myauth.basicauth.users=admin:$$apr1$$PigBtVup$$WO.iBj3m2/epA7MXUOLEb/ # adapt basic auth
+      - traefik.http.middlewares.myauth.basicauth.users=admin:$$apr1$$HQ4CZZxC$$kUrQ6qAFrX4v/EAYFdrsh1 # adapt basic auth
   portainer:
     image: portainer/portainer-ce:latest
     command: -H unix:///var/run/docker.sock
