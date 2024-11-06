@@ -1,10 +1,9 @@
 [
-  {"sourceUrl": "/lesson/docs/misc/sonarqube","destinationUrl": "/lesson/docs/devops/"},
-  {"sourceUrl": "/lesson/docs/misc/project-package-and-ant-tasks","destinationUrl": "/lesson/docs/devops/project-package-and-ant-tasks"},
+  {"sourceUrl": "/lesson/docs/misc/sonarqube","destinationUrl": "/lesson/docs/devops/code-quality"},
+  {"sourceUrl": "/lesson/docs/misc/project-package-and-ant-tasks","destinationUrl": "/lesson/docs/devops/java-project"},
   {"sourceUrl": "/lesson/docs/misc/remote-debug","destinationUrl": "/lesson/docs/devops/remote-debug"},
   {"sourceUrl": "/lesson/docs/misc/jconsole","destinationUrl": "/lesson/docs/devops/jconsole"},
-  {"sourceUrl": "/lesson/docs/misc/unit-tests-coverage","destinationUrl": "/lesson/docs/devops/unit-tests-coverage"},
-  {"sourceUrl": "/lesson/docs/misc/projects-git-repositories","destinationUrl": "/lesson/docs/devops/projects-git-repositories"},
+  {"sourceUrl": "/lesson/docs/misc/unit-tests-coverage","destinationUrl": "/lesson/docs/devops/tests-coverage"},
   {"sourceUrl": "/lesson/docs/core/grant-code-hooks","destinationUrl": "/lesson/docs/core/platform-hooks"},
   {"sourceUrl": "/lesson/docs/authentication/multi-auth-providers","destinationUrl": "/lesson/docs/authentication/auth-providers"},
   {"sourceUrl": "/lesson/versions/v6-x/releasenote/releasenote-6-0","destinationUrl": "/lesson/versions/release-notes/v6-0"},
