@@ -1,4 +1,4 @@
 {
   "display": "LINEAR",
-  "ANY": {"title": "SonarQube"}
+  "ANY": {"title": "Code quality / Sonar"}
 }
