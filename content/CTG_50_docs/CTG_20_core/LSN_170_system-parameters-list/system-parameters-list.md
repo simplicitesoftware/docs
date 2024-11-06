@@ -168,6 +168,8 @@ Bottom margin size width (in pixels), this parameter is used by HTML5 layout onl
 
 Default "from" for alerts, "default" means using mail service default
 
+> **deprecated** in version 6.2, the `mail.user` of `MAIL_SERVICE` is preferred
+
 ### `CACHE_INFO_LIMIT`
 
 **Default value**
@@ -478,6 +480,8 @@ Technical, do not change/remove, needed in user's parameters
 
 Default email sender
 
+> **deprecated** in version 6.2, the `mail.user` of `MAIL_SERVICE` is preferred
+
 ### `EMAIL_SEND_ASYNC`
 
 **Default value**
@@ -487,6 +491,8 @@ Default email sender
 **Description**
 
 Send emails asynchronously ?
+
+> **deprecated** in version 6.2, asynchronous sending being the default
 
 ### `EXPORT_DIR`
 
@@ -1039,7 +1045,7 @@ yes/no to trace the warning level.
 Mail service configuration.
 The JSON key-values pairs are directly used as properties to instantiate the mail session.
 
-Note: `mail.from` are also defined in `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` for state transition.
+> Note: `mail.from` are car be overriden by `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` (for state transition). Both these system parameters are **deprecated** in 6.2.
 
 ### `MAX_SESSIONS_USER`
 
