@@ -1783,6 +1783,16 @@ Use I/O endpoint?
 
 Use I/O tester page?
 
+### `USE_LANGS`
+
+**Default value**
+
+	yes
+
+**Description**
+
+yes/no flag to allow user to change language on UI (since 6.1.14)
+
 ### `USE_MAVEN`
 
 **Default value**
