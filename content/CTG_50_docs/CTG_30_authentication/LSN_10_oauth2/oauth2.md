@@ -54,7 +54,7 @@ Ex:
 > **Note**: for historical reasons the names `google`, `microsoft`, `linkedin` and `franceconnect` are **reserved** as they correspond to dedicated connectors.
 > To use the **generic** OpenIDConnect connector you must use another name (such as the `myoidc` of the above example).
 
-All OAuth2/OpenIDConnect providers requires at least the following system parameters or attributes:
+All OAuth2/OpenIDConnect providers requires at least the following settings:
 
 - Set `OAUTH2_CLIENT_ID <provider name>` or `client_id` attribute in `AUTH_PROVIDERS`: your instance's client ID
 - Set `OAUTH2_CLIENT_SECRET <provider name>` or `client_secret` attribute in `AUTH_PROVIDERS`: your instance's client secret
@@ -75,25 +75,19 @@ As of version 4.0 it is possible to configure generic OpenIDConnect (OIDC) provi
 
 Beyond the above common system parameters, for the OIDC providers there are some additional system parameters that needs to be configured:
 
-- `OAUTH2_BASE_URL <provider name>` or `base_url` attribute in `AUTH_PROVIDERS`, **required** unless the 3 below are defined: base URL for endpoints, the authorization endpoint is then defined as `<value of OAUTH2_BASE_URL <provider name>>/authorize`,
-   the token endpoint as `<value of OAUTH2_BASE_URL <provider name>>/token` and the user info endpoint as `<value of OAUTH2_BASE_URL <provider name>>/userinfo`
-- `OAUTH2_AUTHORIZE_URL <provider name>` or `authorize_url` attribute in `AUTH_PROVIDERS`, **required** unless `OAUTH2_BASE_URL <provider name>` is defined: URL of authorize endpoint
-- `OAUTH2_TOKEN_URL <provider name>` or `token_url` attribute in `AUTH_PROVIDERS`, **required** unless `OAUTH2_BASE_URL <provider name>` is defined: URL of token endpoint
-- `OAUTH2_REDIRECT_URL <provider name>` or `redirect_url` attribute in `AUTH_PROVIDERS`, **optional** post authentication redirect URL, defaults to `<instance URL>/oauth2callback`
-- `OAUTH2_CLIENT_CREDENTIALS_MODE <provider name>` or `client_credentials_mode` attribute in `AUTH_PROVIDERS`, **optional** authentication method, defaults to `authheader` for Basic (Authorization header), should be `params` for HTTP POST method  
-- `OAUTH2_USERINFO_URL <provider name>` or `userinfo_url` attribute in `AUTH_PROVIDERS`, **required** unless `OAUTH2_BASE_URL <provider name>` is defined: URL of user info endpoint
-- `OAUTH2_USERINFO_MAPPINGS <provider name>` or `userinfo_mappings` attribute in `AUTH_PROVIDERS`, **optional**: user info fields to use as instead of standard fields defined by the OIDC standards,
-  the value is a JSON object (e.g. `{ "login": "uid", "firstname": "first_name", "lastname": "last_name", "email": "email_address", "phone": "mobile_phone, "lang": "preferred_language"}` to
-  map the defaults which are respectively `sub`, `given_name`, `family_name`, `email`, `phone_number` and `locale`)
+| **Setting** | **Required** | **Comments** | **Availability** |
+|---|---|---|---|
+| `base_url` | **required**, unless `authorize_url`, `token_url` and `userinfo_url` are defined |  | v4.0 |
+| `authorize_url` | **required**, unless `base_url` is defined | defaults to `base_url/authorize` | v4.0 |
+| `token_url` | **required**, unless `base_url` is defined | defaults to `base_url/token` | v4.0 |
+| `userinfo_url` | **required**, unless `base_url` is defined | defaults to `base_url/userinfo` | v4.0 |
+| `redirect_url` | optional | defaults to `instance_url/oauth2callback` | v4.0 |
+| `client_credentials_mode` | optional | defaults to `authheader` for Basic (Authorization header), should be `params` for HTTP POST method | v4.0 |
+| `userinfo_mappings` | optional | user info fields to use as instead of standard fields defined by the OIDC standards, the value is a JSON object (e.g. `{ "login": "uid", "firstname": "first_name", "lastname": "last_name", "email": "email_address", "phone": "mobile_phone, "lang": "preferred_language"}` to map the defaults which are respectively `sub`, `given_name`, `family_name`, `email`, `phone_number` and `locale`) | v4.0 |
+| `pkce_challenge_method` | optional | to enable PKCE flow, possible values are `S256` or `plain` (if absent PKCE is disabled) | v5.2.30 |
+| `pkce_code_verifier_length` | optional | to define the length of the PKCE code verifier, defaults to `64` | v5.2.30 |
+| `non_ssl_urls_allowed` | optional | to allow using non SSL URLs (Note that this does not comply with OAuth2/OpenIDConnect standards, it should never be used unless you absolutly need it) | v5.2.32 |
 
-As of version 5.2.30:
-
-- `OAUTH2_PKCE_CHALLENGE_METHOD <provider name>` or `pkce_challenge_method` attribute in `AUTH_PROVIDERS`, **optional** to enable PKCE flow, possible values are `S256` or `plain` (if absent PKCE is disabled)
-- `OAUTH2_PKCE_CODE_VERIFIER_LENGTH <provider name>` or `pkce_code_verifier_length` attribute in `AUTH_PROVIDERS`, **optional** to define the length of the PKCE code verifier, defaults to `64`
-
-As of version 5.2.32:
-
-- `OAUTH2_NON_SSL_URLS_ALLOWED <provider name>` or `non_ssl_urls_allowed` attribute in `AUTH_PROVIDERS`, **optional** to allow using non SSL URLs (Note that this does not comply with OAuth2/OpenIDConnect standards, it should never be used unless you absolutly need it)
 
 > **Note**: By default the OIDC OAuth2 implementation uses by default the `openid` and `profile` scopes when calling user info endpoint.
 > Only **additional** scopes need to be configured using the `OAUTH2_SCOPES` system parameter or`scopes` attribute in `AUTH_PROVIDERS`if needed.
@@ -182,6 +176,7 @@ Token validation using token info URL is enabled by adding the following attribu
 Token validation using the `getAuthTokenInfo` hook in `PlatformHooks`.
 
 With the following provider added to `AUTH_PROVIDERS` :
+
 ```JSON
 {
 	"name":"my_custom_provider", "type":"oauth2", "visible":false,
@@ -192,7 +187,9 @@ With the following provider added to `AUTH_PROVIDERS` :
 	}
 }
 ```
+
 The following example performs an HTTP call to get the token info :
+
 ```java
 @Override
 public String getAuthTokenInfo(String token) {
@@ -274,75 +271,6 @@ If needed you can implement additional business logic in the `GrantHooks` Java c
 The following **example** checks and removes the domain part of the account name in the `parseAuth` hook
 and creates/updates the corresponding application user (with responsibilities on `MYAPP_GROUP1` and `MYAPP_GROUP2` groups
 on the fly in the `preLoadGrant` hook:
-
-**Rhino**
-
-```javascript
-PlatformHooks.parseAuth = function(g, auth) {
-	if (Globals.useOAuth2()) {
-		// Example of domain verification
-		var domain = Grant.getSystemAdmin().getParameter("MY_OAUTH2_DOMAIN", "");
-		if (!Tool.isEmpty(domain)) {
-			console.log("OAuth2 account = " + auth);
-			if (Tool.isEmpty(auth) || !auth.matches("^.*@" + domain + "$")) {
-				console.log("OAuth2 error: Invalid domain for " + auth);
-				return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
-			}
-			console.log("OAuth2 valid domain for " + auth + " = " + domain);
-		}
-		/* and/or
-		// Example of user verification
-		var uid = Grant.getSystemAdmin().simpleQuery("select row_id from m_user where usr_login = '" + auth + "' and usr_active = '1'");
-		if (Tool.isEmpty(uid)) {
-			console.log("OAuth2 error: No active user for " + auth);
-			return ""; // ZZZ must return empty string, not null, to tell the auth is rejected
-		}
-		console.log("OAuth2 active user ID for " + auth + " = " + uid);
-		*/
-		return auth;
-	}
-	return auth;
-};
-
-PlatformHooks.preLoadGrant = function(g) {
-	if (Globals.useOAuth2()) {
-		// Example of business logic to create users on the fly
-		if (!Grant.exists(g.getLogin(), false)) {
-			var usr;
-			try {
-				// Create user if not exists
-				usr = Grant.getSystemAdmin().getIsolatedObject("User");
-				usr.setRowId(ObjectField.DEFAULT_ROW_ID);
-				usr.resetValues(true);
-				usr.setStatus(Grant.USER_ACTIVE);
-				usr.getField("usr_login").setValue(g.getLogin());
-				new BusinessObjectTool(usr)/* or usr.getTool() in version 5+ */.validateAndCreate();
-				
-				// Get module in which user has been created (default module for users)
-				var module = usr.getFieldValue("row_module_id.mdl_name");
-				console.log("OAuth2 user " + g.getLogin() + " created in module " + module);
-
-				// Force a random password to avoid the change password popup
-				usr.resetPassword();
-
-				// Add responsibilities on designated groups
-				var groups = [ "MYAPP_GROUP1", "MYAPP_GROUP2" ];
-				for (var i = 0; i < groups.length; i++) {
-					var group = groups[i];
-					Grant.addResponsibility(usr.getRowId(), group, Tool.getCurrentDate(-1), "", true, module);
-					console.log("Added user " + group + " responsibility for OAuth2 user " + g.getLogin());
-				}
-			} catch (e) {
-				console.error(e.javaException ? e.javaException.getMessage() : e);
-			} finally {
-				usr.destroy();
-			}
-		}
-	}	
-};
-```
-
-**Java**
 
 ```Java
 @Override

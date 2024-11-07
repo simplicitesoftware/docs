@@ -12,7 +12,7 @@ Versioning
 | `5.2`       | ❌ Expired!            | Short term (STS) | April 20th, 2022                            | September 30th, 2023                        | `5.2[-light]`, `5.2.x`              | `5.2[-light]`       |
 | `5.1`       | ❌ Expired!            | Short term (STS) | September 1st, 2021                         | October 31st, 2022                          | `5.1[-light]`, `5.1.x`              | `5.1[-light]`       |
 | `5.0`       | ❌ Expired!            | Short term (STS) | January 11th, 2021                          | September 30th, 2021                        | `5.0[-light]`, `5.0.x`              | `5.0[-light]`       |
-| `4.0`       | ❌ Expired!            | Long-term (LTS)  | April 2018                                  | January 15th, 2024                          | `4.0[-light]`                       | `4.0[-light]`       |
+| `4.0`       | ❌ Expired!            | Long-term (LTS)  | 2018                                        | January 15th, 2024                          | `4[-light]`, `4.0[-light]`          | `4.0[-light]`       |
 | `3.x`       | ❌ Expired!            | Long-term (LTS)  | 2014 (for 3.0)                              | July 3rd, 2020                              | `3.x`                               | `3.x`               |
 
 Some interchangeable terms:
