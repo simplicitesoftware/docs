@@ -541,6 +541,7 @@ A specific component can implement some of then to add dynamic behaviors.
 | js-ctrl-s                    | ui.key.ctrls                        | CTRL-S is pressed                            |                                                  |
 | js-field-visible             | ui.field.visible                    | a field is shown or hidden                   | field, visible                                   |
 | js-view-visible              | ui.view.visible                     | a view is shown or hidden                    | view, visible, slide                             |
+| js-view-filters              | ui.view.filters                     | the view filters have changed                | filters \{ fromDate, toDate, fields... \}        |
 | js-area-visible              | ui.area.visible                     | an area is shown or hidden                   | area, visible                                    |
 | js-action-visible            | ui.action.visible                   | an action is shown or hidden                 | action, visible                                  |
 
