@@ -12,13 +12,11 @@ Our standard images already contains the up-to-date JaCoCo tool by default in th
 
 To enable coverage measurement of unit tests execution just pass the `JACOCO_MODULES` environment variable to the container with a list of spece-separated modules (e.g. `-e JACOCO_MODULES="MyModule MyOtherModule"`).
 
-The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_DESTFILE` environment variable which defaults to `/usr/local/tomcat/jacoco/jacoco.exec` (the default `/usr/local/tomcat/jacoco` folder of this file should be mounted from the host machine - e.g. `-v ./jacoco:/usr/local/tomcat/jacoco`- for report generation, see bellow).
+The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_DESTFILE` environment variable which defaults to `/usr/local/tomcat/jacoco/jacoco.exec`.
+You must ensure persistence for this file, for instance by mounting the default `/usr/local/tomcat/jacoco` folder (e.g. `-v ./jacoco:/usr/local/tomcat/jacoco`)
+which is also useful for report generation as this default folder is the default location for report files, see bellow.
 
 > **Note**: you can use the import specification mechanism to automate the modules import and unit tests execution.
-
-> **Note**: the `jacococ.exec` file is generated only **when the JVM is shut down** which explians why you should make it persistet by mounting it.
-> To be able to generate a human-readable report (see bellow) you should also mount the `src` and `bin` folders
-> located in the `/usr/local/tomcat/webapps/ROOT/WEB-INF` folder because both of them are used by the report generation process.
 
 ### Manually
 
@@ -34,6 +32,10 @@ Add following option to JVM arguments when starting Tomcat (in the example bello
 
 Generate a human-readable report <span id="report"></span>
 ----------------------------------------------------------
+
+Note that **in all cases** (Docker ou manual) the above agent's `jacococ.exec` exec file is generated only **when the JVM is shut down**.
+
+This means you **must** stop the JVM **before** generating the report as explained bellow.
 
 ### Using Docker images
 
