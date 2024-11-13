@@ -267,7 +267,9 @@ MyObject.postLoad = function(){
 <h2 id="encryption">Data encryption</h2>
 
 As of version 3.2 you can use the `EncryptionTool`class to encrypt/decrypt a field value.
-`EncryptionTool` uses the parameter `ENCRYPTION_ALGORITHM` = `AES` by default.
+`EncryptionTool` uses the system parameter `ENCRYPTION_ALGORITHM` (defaults to `AES`).
+
+Encryption/decryption methods using `String` produce/consumes Base64-encoded strings.
 
 **Example:**
 
