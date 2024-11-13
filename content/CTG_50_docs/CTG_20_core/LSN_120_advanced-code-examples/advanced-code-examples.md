@@ -337,6 +337,7 @@ MyObject.postSelect = function(rowId, copy) {
 };
 ```
 </details>
+
 > **Note**: an encrypted field using this method cannot be searchable except of exact values (by encrypting the search filter in the `preSearch` hook)
 
 Since version 6.0, you can use the hook `fieldEncryptDB`
