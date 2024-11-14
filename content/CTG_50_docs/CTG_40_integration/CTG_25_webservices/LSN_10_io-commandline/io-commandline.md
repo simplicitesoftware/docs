@@ -1,5 +1,5 @@
-I/O services for command line interface (/io)
-=============================================
+I/O services for command line interface (`/io`)
+=================================================
 
 As of **version 3.0**, usual administrative tasks can be done using the `curl` command line tool using the I/O endpoint.
 
@@ -18,17 +18,20 @@ instead of the legacy (and rather unsecure) `EAI *` system parameters.
 
 > **Warning**: In production the I/O endpoint should be restricted only to allowed origins (e.g. using filtering on request's origin IP address or similar approaches).
 
-<h2 id="rights">Rights</h2>
+Rights <span id="rights"></span>
+--------------------------------
 
 The I/O interface uses, by default, the `system` pseudo user which is only granted the `ADMIN` group, and thus only the groups being part of the `ADMIN` group's profile.
 
 If you get "Object ... not granted" messages, make sure the considered object is allowed to at least one of the groups of the `ADMIN` group profile.
 
-<h2 id="formats">Standard formats</h2>
+Standard formats <span id="formats"></span>
+-------------------------------------------
 
 The standard formats used by the standard I/O imports/exports are described in [this document](/lesson/docs/integration/standard-formats)
 
-<h2 id="url">I/O URL</h2>
+I/O URL <span id="url"></span>
+------------------------------
 
 The `<I/O URL>` used in `curl` commands below is the one available on the I/O endpoint: `http[s]://<host[:port]>[/<app root>]/io`.
 
@@ -36,7 +39,8 @@ As of **version 4.0.P22** it can also be one available on the API endpoint `http
 
 > **Note**: all requests to these URL **must** use the `POST` method with multipart for data (this is what does the `--form` arguments passed to the `curl` commands)
 
-<h2 id="imports">Imports</h2>
+Imports <span id="imports"></span>
+----------------------------------
 
 To import a file `<file>` the command is:
 
@@ -50,6 +54,8 @@ Where `<import command>` is one of :
 - `adpimport` : import a custom file using an adapter with `<extra parameters>` = `--form adapter=<adapter name>`
 - `moduleimport` : import a **standard XML/JSON or ZIP/tar.gz** using module strategy file with `<extra parameters>` = `--form module=<module name> --form version=<module version> --form zip=<true|false>` (restricted to users who have a responsibility on the `ADMIN` group)
 	- an optional extra parameter can be set the diff mode import: `--form diff=<true|false>` (defaults to `true`)
+- `modulesimport` (as of **version 5**) : import a set of modules (with optional datasets loading and unit tests execution) described by an **importspec**
+  (this applies the same version-driver logic as the one used during the startup's importspec phase)
 - `sqlscript` : execute a SQL script (no extra parameter required, restricted to users who have a responsibility on the `ADMIN` group)
 
 The file can also be designated by a URL then the `--form file=@<file>` is to be changed to `--form url=@<url>`.
@@ -59,7 +65,8 @@ The file can also be designated by a URL then the `--form file=@<file>` is to be
 
 > **Note**: the standard XML, ZIP and CSV formats are described [here](../../schemas/)
 
-<h2 id="exports">Exports</h2>
+Exports <span id="exports"></span>
+----------------------------------
 
 To export data in a file `<file>` the command is:
 
@@ -85,21 +92,23 @@ TODO: arguments for various formats (XML/JSON)
 
 > **Note**: the standard XML, ZIP and CSV formats are described [here](../../schemas/)
 
-<h2 id="git">Git</h2>
+Git <span id="git"></span>
+--------------------------
 
 As of **version 3.2**, to do a Git commit on a module, the command is:
 
 	curl <credentials> --form service=modulecommit --form module=<module name> --form message="<commit message>" <I/O URL>
 
-<h2 id="others">Others</h2>
+Others <span id="others"></span>
+--------------------------------
 
-<h3 id="clearcache">Clear cache</h3>
+### Clear cache <span id="clearcache"></span>
 
 To flush server-side cache, the command is:
 
 	curl <credentials> --form service=clearcache <I/O URL>
 
-<h3 id="purge">Purge tasks</h3>
+### Purge tasks <span id="purge"></span>
 
 Various purge tasks can be processed using following commands:
 
@@ -119,13 +128,13 @@ As of version 5.2 for `purgelogs`, `purgejobs`and `purgesuversions` an additonal
 - If `depth` is **negative** it gives the number of days of records to keep (e.g. `depth=-7`: delete all except last week's reords)
 - If `depth` is **positive** it gives the number of records to keep (e.g. `depth=100`: delete all except the last 100 records)
 
-<h3 id="indexation">Indexation</h3>
+### Indexation <span id="indexation"></span>
 
 To force indexation to be (re)built, the command is:
 
 	curl <credentials> --form service=buildindex <I/O URL>
 
-<h3 id="unittests">Unit tests</h3>
+### Unit tests <span id="unittests"></span>
 
 To run a **business object**'s unit tests, the command is:
 
@@ -143,7 +152,31 @@ As of **version 5.1**, to run all tests from a **test shared code**, the command
 
 	curl <credentials> --form service=unittests --form test=<test shared code name> <I/O URL>
 
-<h3 id="logs">Logs</h3>
+As of **version 5.3**, to run all unit tests shared codes of a **module**, the command is:
+
+	curl <credentials> --form service=unittests --form module=<module name> <I/O URL>
+
+As of **version 5.3**, the importspec syntax can also be used, the command is:
+
+	curl <credentials> --form service=unittests --form file=@<file> <I/O URL>
+
+Where the content of `<file>` is a JSON im^portspec (or its YAML equivalent) like:
+
+```json
+{
+	"modules": [
+		{
+			"name": "<module name>",
+			"unittests": true
+				|| "<shared code name>"
+				|| [ "<shared code names>" ]
+		},
+		...
+	]
+}
+```
+
+### Logs <span id="logs"></span>
 
 To retreive the server logs, the command is:
 
