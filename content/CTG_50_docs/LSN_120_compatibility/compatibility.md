@@ -59,17 +59,15 @@ The following table only indicates the **LTS (Long Term Support)** JVM versions.
 
 | ![](https://platform.simplicite.io/logos/logo125.png) | JVM 1.8 | JVM 11  | JVM 17  | JVM 21  |
 |:-----------------------------------------------------:|---------|---------|---------|---------|
-| **6.x**                                               | no      | yes (1) | yes (1) | **yes** |
+| Alpha 6.2                                             | no      | no      | yes (1) | **yes** |
+| **6.1** and legacy 6.0                                | no      | yes (1) | yes (1) | **yes** |
 | **5.x**                                               | no      | yes (1) | **yes** | yes (1) |
-| Legacy **4.0**                                        | no (2)  | yes (1) | **yes** | yes (1) |
-| Legacy **3.2**                                        | **yes** | yes (1) | yes (1) | yes (1) |
-| Legacy **3.1**                                        | **yes** | yes (1) | yes (1) | yes (1) |
-| Legacy **3.0**                                        | **yes** | no      | no      | no      |
+| Legacy 4.0                                            | no      | yes (1) | **yes** | yes (1) |
+| Legacy 3.2                                            | yes (1) | **yes** | yes (1) | yes (1) |
+| Legacy 3.1                                            | yes (1) | **yes** | yes (1) | yes (1) |
+| Legacy 3.0                                            | **yes** | no      | no      | no      |
 
 1. Not tested and not supported but should work.
-2. Due to optional dependencies that are compiled for the JVM 11, the platform version 4.0+ **requires** a JVM &gt;= 11.
-However these optional dependencies are not part of the "light" variant of the 4.0 platform, so it could still run on a JVM 1.8 but it is strongly **discouraged**.
-(_NB: for this legacy JVM version 1.8 a JDK is required, not a JRE_)
 
 In **bold** the recommended choice for considered Simplicit&eacute;&reg; version.
 
@@ -82,10 +80,10 @@ In **bold** the recommended choice for considered Simplicit&eacute;&reg; version
 |:-----------------------------------------------------:|---------------------|---------|
 | **6.x**                                               | JEE 8 (2)           | 4.0 (2) |
 | **5.x**                                               | JEE 8               | 4.0     |
-| Legacy **4.0**                                        | JEE 8               | 4.0     |
-| Legacy **3.2**                                        | JEE 7               | 3.1     |
-| Legacy **3.1**                                        | JEE 6               | 3.1     |
-| Legacy **3.0**                                        | J2EE 1.4            | 2.5     |
+| Legacy 4.0                                            | JEE 8               | 4.0     |
+| Legacy 3.2                                            | JEE 7               | 3.1     |
+| Legacy 3.1                                            | JEE 6               | 3.1     |
+| Legacy 3.0                                            | J2EE 1.4            | 2.5     |
 
 1. Web profile by default but full profile is also possible
 2. Compliance with JakartaEE 10 (an thus Webapp 6.0) was the target when for versions 6.x.
@@ -106,10 +104,10 @@ The webapp implementation we recommend are:
 |:-----------------------------------------------------:|------------|-------|----------|-----------|
 | **6.x**                                               | 12+        | 8+    | 19c+     | 2019+     |
 | **5.x**                                               | 11+        | 5.7+  | 12c+     | 2019+     |
-| Legacy **4.0**                                        | 10+        | 5.5+  | 12c+     | 2016+     |
-| Legacy **3.2**                                        | 9+         | 5.1+  | 11g+     | 2012+     |
-| Legacy **3.1**                                        | 9+         | 5.1+  | 11g+     | 2012+     |
-| Legacy **3.0**                                        | 9+         | 5.1+  | 10g+     | 2008+     |
+| Legacy 4.0                                            | 10+        | 5.5+  | 12c+     | 2016+     |
+| Legacy 3.2                                            | 9+         | 5.1+  | 11g+     | 2012+     |
+| Legacy 3.1                                            | 9+         | 5.1+  | 11g+     | 2012+     |
+| Legacy 3.0                                            | 9+         | 5.1+  | 10g+     | 2008+     |
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
@@ -121,11 +119,8 @@ The webapp implementation we recommend are:
 |:-----------------------------------------------------:|----------|------------|------------|------------|---------|
 | **6.x**                                               | yes      | yes        | yes        | yes        | no      |
 | **5.x**                                               | yes      | yes        | yes        | yes        | no      |
-| Legacy **4.0**                                        | yes      | yes        | yes        | yes        | yes (2) |
-| Legacy **3.2**                                        | yes      | yes        | yes        | yes        | yes     |
-| Legacy **3.1**                                        | yes      | yes        | yes        | yes        | yes     |
-| Legacy **3.0**                                        | yes      | yes        | yes        | yes        | yes     |
+| Legacy 4.0                                            | yes      | yes        | yes        | yes        | yes (2) |
+| Legacy 3.x                                            | yes      | yes        | yes        | yes        | yes     |
 
 1. Up to date version only (recent previous versions are not supported but should work)
-2. Not recommended, not tested and not supported. Use at your own risks. You may experience poor performances and/or visual/functional issues.
-   (IE11 is officially retired on June 6th 2022)
+2. Not recommended, not tested and not supported. You may experience poor performances and/or visual/functional issues, IE11 is officially retired on June 6th 2022.
