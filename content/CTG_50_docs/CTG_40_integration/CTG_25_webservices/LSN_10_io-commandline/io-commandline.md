@@ -160,7 +160,7 @@ As of **version 5.3**, the importspec syntax can also be used, the command is:
 
 	curl <credentials> --form service=unittests --form file=@<file> <I/O URL>
 
-Where the content of `<file>` is a JSON im^portspec (or its YAML equivalent) like:
+Where the content of `<file>` is a JSON importspec (or its YAML equivalent) like:
 
 ```json
 {
