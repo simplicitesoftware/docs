@@ -225,7 +225,7 @@ version: "3"
 services:
   simplicite:
     image: registry.simplicite.io/platform:<tag>
-    restart: always
+    restart: unless-stopped
     container_name: myinstance-hsqldb
     ports:
       - 80:8080
@@ -249,7 +249,7 @@ version: "3"
 services:
   db:
     image: mysql:latest
-    restart: always
+    restart: unless-stoped
     container_name: myinstance-mysql-database
     command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
@@ -264,7 +264,7 @@ services:
       - myinstance-mysql-db:/var/lib/mysql
   simplicite:
     image: registry.simplicite.io/platform:<tag>
-    restart: always
+    restart: unless-stopped
     container_name: myinstance-mysql-webapp
     environment:
       DB_SETUP: "true"
@@ -297,7 +297,7 @@ version: "3"
 services:
   db:
     image: postgres:latest
-    restart: always
+    restart: unless-stopped
     container_name: myinstance-postgres-database
     environment:
       POSTGRES_USER: "simplicite"
@@ -310,7 +310,7 @@ services:
       - myinstance-postgres-db:/var/lib/postgresql/data
   simplicite:
     image: platform:<tag>
-    restart: always
+    restart: unless-stopped
     container_name: myinstance-postgres-webapp
     environment:
       DB_SETUP: "true"
@@ -373,7 +373,7 @@ services:
 (...)
   nginx:
     image: nginx:latest
-    restart: always
+    restart: unless-stopped
     container_name: myinstance-reverseproxy
     ports:
       - 80:80

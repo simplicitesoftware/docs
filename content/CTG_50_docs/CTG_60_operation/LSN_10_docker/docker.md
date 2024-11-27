@@ -320,7 +320,7 @@ You can enable or disable the UI endpoint (`/ui`) or you can define an IP white 
 - Enable/disable: `-e SYSPARAM_USER_UI=<yes|no, defaults to yes>`
 - or define a white list: `-e UI_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
-<h3 id="cors">Enable CORS</h3>
+### Enable CORS <span id="cors"></span>
 
 You can have CORS enforced at Tomcat level:
 
@@ -330,7 +330,7 @@ You can have CORS enforced at Tomcat level:
 
 > **Warning**: if you set "with credentials" to `true` you **must** set explicit origins, any origin (`*`) is not permitted by CORS specifications in this case.
 
-<h3 id="websockets">Disable websockets</h3>
+### Disable websockets <span id="websockets"></span>
 
 On some networks you can't use websockets, they can be enabled/disabled using `-e WEBSOCKETS=<true|false, defaults to true>]`
 
@@ -344,9 +344,17 @@ Note that this means that any Java compiled class must be provided otherwise, e.
 
 It is possible to set the overriden value of system parameters at startup by using `-e SYSPARAM_<system param name>=<overridden system param value>` environment variables.
 
-### Force the server URL
+### Developper mode <span id="developper-mode"></span>
 
-it is possible to force a custom server URL (e.g. when exposed through a reverse proxy that does not send public URL information to Tomcat)
+If you plan to act as a developper on the container (e.g. use developpment-oriented features such as code formatting, etc.)
+you **must** add the `DEV_MODE` environment variable: `-e DEV_MODE=true`
+
+In particular, this environment variable enables access to the JDK `sun.com.tools` packages (compiler, ...).
+This only makes sense if you are using a JDK and not a JRE for which these package are not preset anyway.
+
+### Force the server URL <span id="server-url"></span>
+
+It is possible to force a custom server URL (e.g. when exposed through a reverse proxy that does not send public URL information to Tomcat)
 by using `-e SERVER_URL=<a custom public URL>`
 
 > **Warning**: this will prevent exposing the instance on several public URLs. This is to be considered as a workaround for poorly configurable/configured reverse proxies.
