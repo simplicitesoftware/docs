@@ -5,7 +5,7 @@ Versioning
 
 | **Version** | **Maintenance State**  | **Support type** | **Release date**                            | **Maintenance end date**                    | **Docker images tags**              | **Template branch** |
 |-------------|------------------------|------------------|---------------------------------------------|---------------------------------------------|-------------------------------------|---------------------|
-| `6.2`       | ⚠️ Alpha               | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`                   | `6.2[-light]`       |
+| `6.2`       | ⚠️ Beta                | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-beta[-light]`                    | `6.2[-light]`       |
 | `6.1`       | ✅ **Current release** | Current          | July 10th, 2024                             | *<abbr title="To Be Determined">TBD</abbr>* | `6[-light]`, `6.1[-light]`, `6.1.x` | `6.1[-light]`       |
 | `6.0`       | ❌ Expired!            | Short term (STS) | January 31st, 2024                          | October 31th, 2024                          | `6.0[-light]`, `6.0.x`              | `6.0[-light]`       |
 | `5.3`       | ☑️ Maintained          | Long-term (LTS)  | April 24th, 2023                            | January 31st, 2027                          | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`       |
@@ -36,7 +36,8 @@ A `major.minor.revision` (eg. `5.3.25`) numbering system is used where:
 - the `minor` number is incremented for **new features** without major breaking changes
 - the `revision` number is incremented for **improvements and fixes without any breaking change**
 
-Unreleased (alpha and beta) version's numbers can be subject to change if major breaking changes are introduced in the platform (for example, planned version `5.4` was never released and became version `6.0` instead).
+Unreleased (alpha and beta) version's numbers can be subject to change if a major breaking changes are introduced in the platform
+(for example, planned version `5.4` was never released as `5.4` but became version `6.0` instead).
 
 ### Maintenance strategy
 
