@@ -149,12 +149,12 @@ If required, you can specify additional settings to change the Maven settings ge
     "jshint": <true to add the JSHint check at build>,
     "checkstyleReportFile": "<alternative CheckStyle report file, used if above setting is set>",
     "dependencies": [
-    	{
-    		"groupId": "<additional dependency's group ID>",
-    		"artifactId": "<additional dependency's artifact ID>",
-    		"version": "<additional dependency's version>"
-    	},
-    	(...)
+      {
+        "groupId": "<additional dependency's group ID>",
+        "artifactId": "<additional dependency's artifact ID>",
+        "version": "<additional dependency's version>"
+      },
+      (...)
     ]
   }
 }
