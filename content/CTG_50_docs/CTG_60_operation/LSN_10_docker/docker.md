@@ -7,21 +7,23 @@ This document gives you extended information on how to use/configure such Docker
 
 A simplified **[tutorial](/lesson/docs/operation/docker-tutorial)** is also available for a **step by step** procedure in the usual case.
 
-<h2 id="prerequistes">Prerequisites</h2>
+Prerequisites <span id="prerequistes"></span>
+---------------------------------------------
 
 Have a Linux server with Docker-ce installed and configured (e.g. with recent Linux distributions this is straightforward as Docker is part of the distributions)
 or an account at a cloud provider allowing Docker images deployments.
 
 Take a look at the [Docker documentation](https://docs.docker.com/) for details.
 
-<h2 id="run">Run a Simplicit&eacute;&reg; platform container</h2>
+Run a Simplicit&eacute;&reg; platform container <span id="run"></span>
+----------------------------------------------------------------------
 
 ### Introduction
 
 To run a Simplicit&eacute;&reg; platform container you can either use one of our **pre-built images** as is
 or build a **custom image** that fits your custom needs.
 
-<h3 id="prebuiltimages">Use the pre-built platform images</h3>
+### Use the pre-built platform images <span id="prebuiltimages"></span>
 
 Pre-built **platform** images including the latest Simplicit&eacute;&reg; intances are available and can be run as is.
 
@@ -31,7 +33,7 @@ These images are available either as **server-only** images and **server +  plat
 
 Please [contact us](mailto:contact@simplicitesoftware.com) to get access to these images.
 
-<h3 id="customimage">Build a custom image</h3>
+### Build a custom image <span id="customimage"></span>
 
 If, for some **good reasons**, you can't use one of the above pre-built images as is you can build your own custom image:
 
@@ -49,7 +51,7 @@ and build a new child image adding the application package of the instance templ
 > which has access (`docker save registry.simplicite.io/<server|platform:<tag>> > simplicite-<server|platform>[-<tag>].tar`), then transfer it
 > to yor target server, then load it on this server's local docker images registry (`docker load < simplicite-<server|platform>[-<tag>].tar`)
 
-<h3 id="centos">Basic procedure on CentOS 7</h3>
+### Basic procedure on CentOS 7 <span id="centos"></span>
 
 On an "out of the box" **CentOS 7** server you can start a clean & fresh Simplicit&eacute;&reg; **sandbox** instance with the folowing commands in only few seconds:
 
@@ -78,7 +80,7 @@ sudo docker run -it --rm -name <myapp> -p 80:8080 registry.simplicite.io/platfor
 
 The instance is then available on `http://<your server IP address or hostname>`
 
-<h3 id="debian">Basic procedure on Debian 9</h3>
+### Basic procedure on Debian 9 <span id="debian"></span>
 
 On an "out of the box" **Debian 9** server you can start a clean & fresh Simplicité&reg; **sandbox** instance with the folowing commands in only few seconds:
 
@@ -109,15 +111,17 @@ sudo docker run -it --rm -name <myapp> -p 80:8080 registry.simplicite.io/platfor
 
 The instance is then available on `http://<your server IP address or hostname>`
 
-<h3 id="cloud">Procedure on managed cloud platforms</h3>
+### Procedure on managed cloud platforms <span id="cloud"></span>
 
 Please refer to your cloud provider's documentation to learn how to deploy containers on their specific infrastructures.
 
-<h2 id="tags">Tags</h2>
+Tags <span id="tags"></span>
+----------------------------
 
 There are several variants of the prebuilt images: `registry.simplicite.io/platform:<tag>`
 
-<h2 id="ports">Exposed ports</h2>
+Exposed ports <span id="ports"></span>
+--------------------------------------
 
 The prebuilt images are configured to exposes the following ports for different usage:
 
@@ -147,9 +151,10 @@ Without a reverse proxy:
 
 ![Docker direct](docker-direct.png)
 
-<h2 id="run">Run variants</h2>
+Run variants <span id="runvariants"></span>
+-------------------------------------------
 
-<h3 id="embeddeddatabase">Run with an embedded HSQLDB database</h3>
+### Run with an embedded HSQLDB database <span id="embeddeddatabase"></span>
 
 ```bash
 sudo docker run\
@@ -188,7 +193,7 @@ sudo docker run\
 > **Note**: you can also use this volume strategy with `dbdoc` only along with an external database not configured to store documents as BLOBs.
 > This approach is only suitable for very particular needs (e.g. if you want to have a file system access to your documents, etc.)
 
-<h3 id="externaldatabase">Run with an external database</h3>
+### Run with an external database <span id="externaldatabase"></span>
 
 Both the server and prebuilt images allows you to start a container using an external database using the following `DB_*` environment variables:
 
@@ -232,7 +237,7 @@ The `DOC_DIR` system parameter should be set by default to `BLOB` for external d
 Otherwise you **must** mapped the folder containing the documents denoted by `DOC_DIR` as a named volume.
 See below, this is not recommended unless you have to handle huge volumes of documents.
 
-<h3 id="ssl">Enable SSL Tomcat connector</h3>
+### Enable SSL Tomcat connector <span id="ssl"></span>
 
 It is possible to enable a SSL conector at Tomcat level (e.g. useful if you don't use a reverse proxy):
 
@@ -242,14 +247,14 @@ It is possible to enable a SSL conector at Tomcat level (e.g. useful if you don'
   - Indicate the mounted JKS path: ` -e KEYSTORE_FILE=/usr/local/tomcat/cert/myserver.jks`
   - Provide JKS password `-e KEYSTORE_PASSWORD=<my keystore password, defaults to "password">`
 
-<h3 id="ajp">Enable Tomcat AJP connector</h3>
+### Enable Tomcat AJP connector <span id="ajp"></span>
 
 It is possible to enable/disable an AJP conector at Tomcat level (e.g. useful if you use an Apache reverse proxy):
 
 - Enable/disable the AJP connector: `-e AJP=<true|false, defaults to false>`
 - Expose the AJP port: `-p [127.0.0.1:]<AJP port, e.g. 8009>:8009]`
 
-<h3 id="jpda">Start Tomcat in remote debug (JPDA) mode</h3>
+### Start Tomcat in remote debug (JPDA) mode <span id="jpda"></span>
 
 It is possible to start Tomcat in remote debug (JPDA) mode (e.g. useful in development):
 
@@ -259,66 +264,70 @@ It is possible to start Tomcat in remote debug (JPDA) mode (e.g. useful in devel
 
 > **Note**: starting Tomcat in this mode has a huge impact on performances, never do it in production.
 
-<h3 id="jmx">Enable JMX services</h3>
+### Enable JMX services <span id="jmx"></span>
 
 You can enable JMX services:
 
 - Enable/disable JMX services: `-e JMX=<true|false, defaults to false>`
 - Expose the JMX port: ` -p [127.0.0.1:]<JMX port, e.g. 1099>:1099]`
 
-<h3 id="gzip">Enable GZIP compression</h3>
+### Enable GZIP compression <span id="gzip"></span>
 
 You can enable/disable GZIP compression at Tomcat level: `-e GZIP=<true|false, defaults to false>`
 
-<h3 id="whitelists">Enable/disable endpoints or define IP whitelists</h3>
+### Enable/disable endpoints or define IP address(es) whitelists <span id="whitelists"></span>
 
-<h4 id="healthwhitelist">Enable/disable or define an IP white list on the health check endpoint</h4>
+#### Enable/disable or define an IP address(es) white list on the ping endpoint <span id="pingwhitelist"></span>
 
-You can enable or disable the health check endpoint (`/health`) or you can add an IP white list at Tomcat level for this endpoint:
+You can you can add an IP address(es) white list at Tomcat level for the ping endpoint (`/ping`), this endpoint is always enabled:
+
+- Define a white list: `-e PING_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+
+#### Enable/disable or define an IP address(es) white list on the health check endpoint <span id="healthwhitelist"></span>
+
+You can enable or disable the health check endpoint (`/health`) and you can add an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_HEALTH=<true|false, defaults to the configured value of the system parameter>`
-- or define a white list: `-e HEALTH_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e HEALTH_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
-> **Note**: the ping endpoint (`/ping`) is always enabled
+#### Enable/disable or define an IP address(es) white list on the I/O enpoint <span id="iowhitelist"></span>
 
-<h4 id="iowhitelist">Enable/disable or define an IP white list on the I/O enpoint</h4>
-
-You can enable or disable the I/O endpoint (`/io`) or you can define an IP white list at Tomcat level for this endpoint:
+You can enable or disable the I/O endpoint (`/io`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_IO=<true|false, defaults to the configured value of the system parameter>`
-- or define a white list: `-e IO_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e IO_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
 > **Note**: When deploying several Simplicité nodes, make sure to configure a proper filtering rule and an I/O password to allow.
 > these nodes to communicate with each other (e.g. for propagating a clear cache).
 > This can be acheived by adding the dedicated environment variable `-e IO_PASSWORD=<a very complex password, can be plain text (not recommended) or hashed using configured algorithm (without salting)>`
 
-<h4 id="gitwhitelist">Enable/disable or define an IP white list on the Git enpoint</h4>
+#### Enable/disable or define an IP address(es) white list on the Git enpoint <span id="gitwhitelist"></span>
 
-You can enable or disable the Git endpoint (`/git`) or you can define an IP white list at Tomcat level for this endpoint:
+You can enable or disable the Git endpoint (`/git`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_GIT=<yes|no, defaults to the configured value of the system parameter>`
-- or define a white list: `-e GIT_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e GIT_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
-<h4 id="mavenwhitelist">Enable/disable or define an IP white list on the Maven repository enpoint</h4>
+#### Enable/disable or define an IP address(es) white list on the Maven repository enpoint <span id="mavenwhitelist"></span>
 
-You can enable or disable the Maven repository endpoint (`/maven`) or you can define an IP white list at Tomcat level for this endpoint:
+You can enable or disable the Maven repository endpoint (`/maven`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_MAVEN=<yes|no, defaults to the configured value of the system parameter>`
-- or define a white list: `-e MAVEN_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e MAVEN_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
-<h4 id="apiwhitelist">Enable/disable or define an IP white list on the API enpoint</h4>
+#### Enable/disable or define an IP address(es) white list on the API enpoint <span id="apiwhitelist"></span>
 
-You can enable or disable the API endpoint (`/api`) or you can define an IP white list at Tomcat level for this endpoint:
+You can enable or disable the API endpoint (`/api`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USER_API=<yes|no, defaults to the configured value of the system parameter>`
-- or define a white list: `-e API_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e API_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
-<h4 id="uiwhitelist">Enable/disable or define an IP white list on the UI enpoint</h4>
+#### Enable/disable or define an IP address(es) white list on the UI enpoint <span id="uiwhitelist"></span>
 
-You can enable or disable the UI endpoint (`/ui`) or you can define an IP white list at Tomcat level for this endpoint:
+You can enable or disable the UI endpoint (`/ui`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USER_UI=<yes|no, defaults to yes>`
-- or define a white list: `-e UI_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e UI_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
 
 ### Enable CORS <span id="cors"></span>
 
@@ -334,13 +343,13 @@ You can have CORS enforced at Tomcat level:
 
 On some networks you can't use websockets, they can be enabled/disabled using `-e WEBSOCKETS=<true|false, defaults to true>]`
 
-<h3 id="compiler">Disable Java compiler</h3>
+### Disable Java compiler <span id="compiler"></span>
 
 In some cases (e.g. for security reasons) it may be required to explicitly disable the Java compiler, to do so it is possible to use `-e COMPILER=<true|false, defaults to true>]`
 
 Note that this means that any Java compiled class must be provided otherwise, e.g. by mounting/copying externally built JARs in the `WEB-INF/lib` of the webapp.
 
-<h3 id="sysparams">Force overridden values of system parameters at startup</h3>
+### Force overridden values of system parameters at startup <span id="sysparams"></span>
 
 It is possible to set the overriden value of system parameters at startup by using `-e SYSPARAM_<system param name>=<overridden system param value>` environment variables.
 
@@ -359,7 +368,7 @@ by using `-e SERVER_URL=<a custom public URL>`
 
 > **Warning**: this will prevent exposing the instance on several public URLs. This is to be considered as a workaround for poorly configurable/configured reverse proxies.
 
-<h3 id="logs">Run with volumes for server and platform logs</h3>
+### Run with volumes for server and platform logs <span id="logs"></span>
 
 The logs folders of both the server and the platform are stored on the file system within the container,
 if you do nothing in particular these folders are thus **ephemeral**
@@ -383,7 +392,7 @@ sudo docker run (...) -name <myapp>\
 	registry.simplicite.io/platform[:tag]
 ```
 
-<h3 id="modulesgit">Run with a volume for modules' Git repository</h3>
+### Run with a volume for modules' Git repository <span id="modulesgit"></span>
 
 The Git repository of the modules are stored on the file system within the container,
 if you do nothing in particular these Git repository are thus **ephemeral**
@@ -405,13 +414,13 @@ sudo docker run (...) -name <myapp>\
 	registry.simplicite.io/platform[:tag]
 ```
 
-<h3 id="gitcredentials">Add remote Git credentials</h3>
+### Add remote Git credentials <span id="gitcredentials"></span>
 
 If you use a remote Git repositories managements platform such as GitHub or GitLab you can use remote SSH URIs and provide credentials as SSH keys, see bellow.
 
 If you prefer HTTP(S) remote URIs you can pass a username and password using `-e REMOTE_GIT_USERNAME=<username> -e REMOTE_GIT_PASSWORD=<pasword>`.
 
-<h3 id="sshkey">Add an SSH key</h3>
+### Add an SSH key <span id="sshkey"></span>
 
 It is possible to mount your local `.ssh` directory (that contains your SSH key, authorized SSH keys, ...) by adding this kind of mount argument:
 `-v /path/to/your/ssh/dir:/usr/local/tomcat/.ssh`
@@ -422,7 +431,7 @@ It is also possible to provide a list of IP addresses or hostnames to be added t
 > **Note**: it may be better to mount the `.ssh` dir in **read only** mode by adding `:ro` but in this case the `SSH_KNOWN_HOSTS` is inefficent
 > as it can't write the `.ssh/known_hosts` file. In this case you must reference your known hosts **prior** to mounting the volume in read only.
 
-<h3 id="timezone">Run on a specific time zone</h3>
+### Run on a specific time zone <span id="timezone"></span>
 
 It is possible to specify in which timezone Tomcat will run by using `-e TOMCAT_TIMEZONE=<time zone string e.g. Europe/Paris>`.
 
@@ -434,7 +443,7 @@ You can also use the OS-level `TZ` environment variable (but make sure to use a 
 > the database's timezone matches your custom timezone.
 > For most databases flavors this can be achieved by setting the `TZ` environment variable.
 
-<h3 id="tomcatstartuplogging">Enable/disable Tomcat logging of JVM arguments, environment variables or properties</h3>
+### Enable/disable Tomcat logging of JVM arguments, environment variables or properties <span id="tomcatstartuplogging"></span>
 
 It is possible to enable/disable the way **Tomcat** logs the following elements during its startup process:
 
@@ -442,9 +451,9 @@ It is possible to enable/disable the way **Tomcat** logs the following elements 
 - Environment variables: `-e TOMCAT_LOG_ENV=<true|false, defaults to false>`
 - Properties: `-e TOMCAT_LOG_PROPS=<true|false, defaults to false>`
 
-<h3 id="logging">Logging</h3>
+### Logging <span id="logging"></span>
 
-<h4 id="logappenders">Enable/disable console/file log appenders</h4>
+#### Enable/disable console/file log appenders <span id="logappenders"></span>
 
 It is possible to enable/disable the console/file appenders of the standard
 application logging using **Log4J** (i.e. managed by `AppLog` and configurable log events):
@@ -452,7 +461,7 @@ application logging using **Log4J** (i.e. managed by `AppLog` and configurable l
 - Console appender: `-e LOG4J_CONSOLE=<true|false, defaults to true>`
 - File appender: `-e LOG4J_FILE=<true|false, defaults to true>`
 
-<h4 id="logginglevels">Customize logging levels</h4>
+#### Customize logging levels <span id="logginglevels"></span>
 
 It is possible to adjust the logging levels:
 
@@ -461,14 +470,14 @@ It is possible to adjust the logging levels:
   - `-e LOGGING_CONSOLE_LEVEL=<default logging level for console: FINEST|FINER|FINE|CONFIG|INFO|WARNING|SEVERE|OFF, defaults to FINE>`
   - `-e LOGGING_FILE_LEVEL=<default logging level for file: FINEST|FINER|FINE|CONFIG|INFO|WARNING|SEVERE|OFF, defaults to FINE>`
 
-<h3 id="tomcatcleaning">Cleaning work/log dirs</h3>
+### Cleaning work/log dirs <span id="tomcatcleaning"></span>
 
 It is possible to enable/disable cleanning the work and/or log dirs at startup:
 
 - Clean work dirs: `-e TOMCAT_CLEAN_WORK_DIRS=<true|false, defaults to true>`
 - Clean log dirs: `-e TOMCAT_CLEAN_LOG_DIRS=<true|false, defaults to false>`
 
-<h3 id="tomcatadvancedsettings">Adjust advanced Tomcat settings</h3>
+### Adjust advanced Tomcat settings <span id="tomcatadvancedsettings"></span>
 
 It is possible to adjust some advanced Tomcat settings:
 
@@ -477,7 +486,7 @@ It is possible to adjust some advanced Tomcat settings:
 - Maximum threads: `-e TOMCAT_MAXTHREADS=<max number of threads, defaults to 200>`
 - Maximum connections: `-e TOMCAT_MAXCONNECTIONS=<max number of connections, defaults to 8192>`
 
-<h3 id="jvmoptions">Set custom JVM options</h3>
+### Set custom JVM options <span id="jvmoptions"></span>
 
 It is also possible to pass other custom options to the JVM by using `-e JAVA_OPTS=<java options>`
 
@@ -487,7 +496,7 @@ E.g. content of `JAVA_OPTS`:
 - `-Dhttp.proxyHost=<HTTP proxy hostname or IP address> -Dhttp.proxyPort=<HTTP proxy port> -Dhttps.proxyHost=<HTTPS proxy hostname or IP address> -Dhttps.proxyPort=<HTTPS proxy port>` to set the JVM's default HTTP/HTTPS proxy
 - Etc.
 
-<h3 id="reverseproxy">Run behind a reverse proxy</h3>
+### Run behind a reverse proxy <span id="reverseproxy"></span>
 
 the exposed HTTP ports `8080`/`8443` are designed to be used with an HTTP/HTTPS reverse proxy such as NGINX, Traefik, Apache, Lighttpd, ...:
 
@@ -571,7 +580,7 @@ and thus the container's `8443` port (exposed here using `-p 8443:8443`) is the 
 
 ### Advanced configurations
 
-<h4 id="addcertificate">Add a custom certificate</h4>
+#### Add a custom certificate <span id="addcertificate"></span>
 
 If you need to add a custom certificate (e.g. a CA certificate or a database certificate) to the image you must build a derived image from 
 one of our image using a `Dockerfile` like:
@@ -592,7 +601,7 @@ COPY mycertificate.pem /usr/local/share/ca-certificates/
 RUN update-ca-certificates
 ```
 
-<h3 id="systemcustomization">Apply system customizations after system initial deployment and subsequent system upgrades</h3>
+### Apply system customizations after system initial deployment and subsequent system upgrades <span id="systemcustomization"></span>
 
 If you need to alter the system configuration after initial deployment and after each subsequent system upgrade you can
 mount a custom XML patch file like this `-v my-custom-file.xml:/usr/local/tomcat/webapps/ROOT/WEB-INF/patch/V5/customization.xml`
@@ -605,7 +614,7 @@ COPY my-custom-file.xml /usr/local/tomcat/webapps/ROOT/WEB-INF/patch/V5/customiz
 
 This custom XML patch is applied at the end of the system patching procedure.
 
-<h3 id="nonrootimage">Build a custom image with non root webapp context path</h3>
+### Build a custom image with non root webapp context path <span id="nonrootimage"></span>
 
 The default `registry.simplicite.io/platform` images deploys the webapp on the root context `/`, if you want to deploy the webapp on a non root context (e.g. `/myapp`)
 you can build a custom image using the following `Dockerfile`:
@@ -627,9 +636,9 @@ And the following build command:
 sudo docker build -t <image tag> --build-arg tag=<the tag of the base image> --build-arg ctx=<a non root context, e.g. myapp> .
 ```
 
-<h3 id="smtpserver">Add a local email server (for developement only)</h3>
+### Add a local email server (for developement only) <span id="smtpserver"></span>
 
-If required in development, you can start a local Postfix SMTP server within the container by using `-e LOCAL_SMTP_SERVER=true`.
+If required **in development**, you can start a local Postfix SMTP server within the container by using `-e LOCAL_SMTP_SERVER=true`.
 
 Using this feature requires that you build a custom image including the Postfix Package:
 
@@ -650,7 +659,7 @@ RUN apk add --update postfix && rm -rf /var/cache/apk/*
 
 > **Note**: starting a Postfix process within the container is **not suitable for production** where an external SMTP service must be used instead.
 
-<h3 id="adddependencies">Add custom Maven dependencies</h3>
+### Add custom Maven dependencies <span id="adddependencies"></span>
 
 If you need addtional libraries that are not -yet - integrated in Simplicité you can build a custom images with addtional Maven dependencies
 using the embedded `adddeps.sh` script.
@@ -677,7 +686,8 @@ docker build  (...) --build-arg deps="<group ID 1>:<artifact ID 1>:<version 1> (
 > Note that only the **non conflicting** JAR librairies denoted by the dependencies will be added to the platform's JAR librairies.
 You need to check carefully the build logs to see which libraries were ignored.
 
-<h2 id="dockercompose">Run with Docker Compose tool</h2>
+Run with Docker Compose tool <span id="dockercompose"></span>
+-------------------------------------------------------------
 
 You can use the Docker Compose tool to start an database container and a Simplicit&eacute;&reg; instace container.
 
@@ -697,7 +707,7 @@ sudo systemctl start docker
 sudo docker login
 ```
 
-<h3 id="dockercompose-hsqldb">HSQLDB</h3>
+### HSQLDB <span id="dockercompose-hsqldb"></span>
 
 Create the following `docker-compose.yml` file:
 
@@ -761,7 +771,7 @@ sudo docker-compose up [-d]
 > In the above example the server certificate's keystore file as located as `/etc/ssl/myapp.jks` on the host machine and
 > its password is `mypassword`. See [this document](/lesson/docs/misc/java-ssl) to learn how to build such a keystore file.
 
-<h3 id="dockercompose-mysql">MySQL/MariaDB</h3>
+### MySQL/MariaDB <span id="dockercompose-mysql"></span>
 
 Create the following `docker-compose.yml` file:
 
@@ -816,7 +826,7 @@ sudo docker-compose up [-d]
 
 > **Note**: if you want to enable SSL see above, set `GZIP` to `true` if you don't have a reverse proxy in charge of compression.
 
-<h3 id="dockercompose-postgresql">PostgreSQL</h3>
+### PostgreSQL <span id="dockercompose-postgresql"></span>
 
 Create the following `docker-compose.yml` file:
 
@@ -868,7 +878,7 @@ sudo docker-compose up [-d]
 
 > **Note**: if you want to enable SSL see above, set `GZIP` to `true` if you don't have a reverse proxy in charge of compression.
 
-<h3 id="dockercompose-upgrades">Upgrade containers</h3>
+### Upgrade containers <span id="dockercompose-upgrades"></span>
 
 The commands to upgrade containers managed by Docker Compose tool are:
 
@@ -898,11 +908,13 @@ Note that you may also experiment issues when downgrading the database container
 Backuping the data (database dump + document database filesystem archive if not using BLOB mode)
 is **always** the right thing to do before **any** container upgrade (Simplicité container and/or database container).
 
-<h2 id="kubernetes">Run on a Kubernetes cluster</h2>
+Run on a Kubernetes cluster <span id="kubernetes"></span>
+---------------------------------------------------------
 
 See [this document](/lesson/docs/operation/kubernetes).
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+Troubleshooting <span id="troubleshooting"></span>
+--------------------------------------------------
 
 ### Upgrade issues
 
