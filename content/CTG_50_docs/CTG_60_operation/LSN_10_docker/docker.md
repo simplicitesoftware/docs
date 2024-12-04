@@ -281,21 +281,21 @@ You can enable/disable GZIP compression at Tomcat level: `-e GZIP=<true|false, d
 
 You can you can add an IP address(es) white list at Tomcat level for the ping endpoint (`/ping`), this endpoint is always enabled:
 
-- Define a white list: `-e PING_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e PING_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 #### Enable/disable or define an IP address(es) white list on the health check endpoint <span id="healthwhitelist"></span>
 
 You can enable or disable the health check endpoint (`/health`) and you can add an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_HEALTH=<true|false, defaults to the configured value of the system parameter>`
-- Define a white list: `-e HEALTH_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e HEALTH_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 #### Enable/disable or define an IP address(es) white list on the I/O enpoint <span id="iowhitelist"></span>
 
 You can enable or disable the I/O endpoint (`/io`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_IO=<true|false, defaults to the configured value of the system parameter>`
-- Define a white list: `-e IO_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e IO_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 > **Note**: When deploying several Simplicité nodes, make sure to configure a proper filtering rule and an I/O password to allow.
 > these nodes to communicate with each other (e.g. for propagating a clear cache).
@@ -306,28 +306,28 @@ You can enable or disable the I/O endpoint (`/io`) and you can define an IP addr
 You can enable or disable the Git endpoint (`/git`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_GIT=<yes|no, defaults to the configured value of the system parameter>`
-- Define a white list: `-e GIT_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e GIT_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 #### Enable/disable or define an IP address(es) white list on the Maven repository enpoint <span id="mavenwhitelist"></span>
 
 You can enable or disable the Maven repository endpoint (`/maven`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USE_MAVEN=<yes|no, defaults to the configured value of the system parameter>`
-- Define a white list: `-e MAVEN_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e MAVEN_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 #### Enable/disable or define an IP address(es) white list on the API enpoint <span id="apiwhitelist"></span>
 
 You can enable or disable the API endpoint (`/api`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USER_API=<yes|no, defaults to the configured value of the system parameter>`
-- Define a white list: `-e API_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e API_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 #### Enable/disable or define an IP address(es) white list on the UI enpoint <span id="uiwhitelist"></span>
 
 You can enable or disable the UI endpoint (`/ui`) and you can define an IP address(es) white list at Tomcat level for this endpoint:
 
 - Enable/disable: `-e SYSPARAM_USER_UI=<yes|no, defaults to yes>`
-- Define a white list: `-e UI_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1,::1,172\\.17\\.0\\.0/24>`
+- Define a white list: `-e UI_WHITELIST=<comma-separated list of IP address / IP ranges regex patterns, e.g. 127\\.0\\.0\\.1, ::1, 172\\.17\\.0\\.0/24>`
 
 ### Enable CORS <span id="cors"></span>
 
