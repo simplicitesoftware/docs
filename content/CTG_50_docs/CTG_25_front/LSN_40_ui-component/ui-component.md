@@ -1,7 +1,7 @@
 UI Component
 ============
 
-This document outlines the process of using **External Objects** to design and implement custom widgets *from scratch*. It focuses primarily on creating *static* objects to thoroughly address the **creation** and **integration process**.
+This document outlines the process of using **External Objects** to design and implement custom widgets *from scratch*. It breaks down the important steps to create *dynamic* objects to thoroughly address the **creation**, **integration** and the **implementation** processes.
 
 > Following this, it will explore how to make these widgets dynamic by incorporating interactive behaviors, user engagement, and seamless communication with Simplicité's backend and features.
 
@@ -171,3 +171,37 @@ As for the *creation process*, the process of integrating the created widget is 
 > Make sure to grant the rights for your external object !
 > * If encountering the `External object ____ not granted`, first try to clear your cache.
 > * If clearing cache wasn't the solution check for your object's rights, and make sure that they matches the ones of your application.
+
+The creation of an object's behavior and interaction within one Simplicité application sure comes along with the creation of its content & styles. Though it requires a bit more understanding of how Simplicité is organized and how to communicate properly and access the informations.
+
+## Implementation (Welcome Card)
+
+The first step is to make sure that our object can be aware of the Simplicité's system that he is a part f. To make such things we are gonna use the `javascript` resources of our External Object: **extobj_script** or **CLASS** or **SCRIPT**.
+
+### File structure
+
+The created `javascript` file initially contains only the base structure to later implement whatever we want in our object:
+
+```javascript
+class CustomWelcomeCard extends Simplicite.UI.ExternalObject {
+	async render(params, data = {}) {
+		$('#demowelcomecard').append('Hello world!');
+	}
+}
+```
+
+* The class extends the `Simplicite.UI.ExternalObject` class, so the object is set to access all (possibly needed features)[]
+* Only the `render(params, data)` function is declared yet, as it is the one called inside the server-side java code resource `com.simplicite.webapp.web.ResponsiveExternalObject`.
+
+### Workflow
+
+
+
+### Accessing the current session
+
+The communication with Simplicité's environment is allowed by using the `$ui` call within our object's class extending `Simplicite.UI.ExternalObject`. And we get the current session by using the `getApp()` function, returning the current `Simplicite.Ajax` instance.
+
+> Throughout this document, the exposed example will be the same as in *Custom Widgets*, the **CustomWelcomeCard**. Indeed make sure to understand its creation and setup as an embedded custom widget.
+
+### Fetching BusinessObjects
+
