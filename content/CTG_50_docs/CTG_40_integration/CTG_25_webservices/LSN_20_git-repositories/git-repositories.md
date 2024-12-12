@@ -133,7 +133,7 @@ You can specify additional remotes:
 
 Each remote definition use the same syntax as the origin definition.
 
-<h3 id="maven">Maven settings</h3>
+### Maven settings <span id="maven"></span>
 
 If required, you can specify additional settings to change the Maven settings generated in the `pom.xml`.
 
@@ -145,9 +145,9 @@ If required, you can specify additional settings to change the Maven settings ge
     "javaVersion": "<alternative Java version>",
     "url": "<alternative instance URL>",
     "repositoryUrl": "<alternative Maven repository URL>",
-    "checkstyle": <true to add the CheckStyle verification at build>,
-    "jshint": <true to add the JSHint check at build>,
-    "checkstyleReportFile": "<alternative CheckStyle report file, used if above setting is set>",
+    "checkstyle": <true to execute the CheckStyle verification at build>,
+    "jshint": <true to execute the JSHint check at build>,
+    "eslint": <true to execute the ESLint check at build>,
     "dependencies": [
       {
         "groupId": "<additional dependency's group ID>",
@@ -160,13 +160,13 @@ If required, you can specify additional settings to change the Maven settings ge
 }
 ```
 
-<h3 id="sonar">SonarQube&reg; settings</h3>
+### SonarQube&reg; settings <span id="sonar"></span>
 
-If required, you can specify additional settings to change the SonarQube&reg; Maven settings generated in the `pom.xml`.
+If required, you can specify additional settings to change the SonarQube&reg; configuration generated in the `pom.xml`.
 
 ```json
 {
-  "maven": {
+  "sonar": {
     "projectKey": "<alternative project key>",
     "projectName": "<alternative project name>",
     "projectVersion": "<alternative project version>",
@@ -175,7 +175,38 @@ If required, you can specify additional settings to change the SonarQube&reg; Ma
 }
 ```
 
-<h3 id="maven">GPG signature</h3>
+### Checkstyle&reg; settings <span id="checkstyle"></span>
+
+If required, you can specify additional settings to change the Checkstyle&reg; configuration generated in the `pom.xml`.
+
+```json
+{
+  "checkstyleConfig": "<default|google|<XML resource name>>",
+  "checkstyleReportFile": "<report file>"
+}
+```
+
+### JSHint&reg; settings <span id="jshint"></span>
+
+If required, you can specify additional settings to change the JSHint&reg; configuration.
+
+```json
+{
+  "jshintConfig": "<default|<JSON resource name>>"
+}
+```
+
+### ESLint&reg; settings <span id="eslint"></span>
+
+If required, you can specify additional settings to change the ESLint&reg; configuration.
+
+```json
+{
+  "eslintConfig": "<default|<Javascript resource name>>"
+}
+```
+
+### GPG signature <span id="gpg"></span>
 
 As of version 5.3 it is possible to enable GPG signature of commits.
 
