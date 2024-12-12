@@ -1,5 +1,10 @@
 {
     "main_color": "#000000",
     "secondary_color": "#000000",
-    "logo_path": "logo500-white.png"
+    "neutral_color": "#f6f4f1",
+    "accent_color_1": "#4341CC",
+    "accent_color_2": "#46BD7C",
+    "accent_color_3": "#BD7EBE",
+    "logo_path": "logo500-white.png",
+    "favicon_path": "favicon.svg"
 }
