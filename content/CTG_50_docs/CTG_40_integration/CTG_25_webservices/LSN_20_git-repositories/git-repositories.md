@@ -148,6 +148,7 @@ If required, you can specify additional settings to change the Maven settings ge
     "checkstyle": <true to execute the CheckStyle verification at build>,
     "jshint": <true to execute the JSHint check at build>,
     "eslint": <true to execute the ESLint check at build>,
+    "stylelint": <true to execute the StyleLint check at build>,
     "dependencies": [
       {
         "groupId": "<additional dependency's group ID>",
@@ -203,6 +204,16 @@ If required, you can specify additional settings to change the ESLint&reg; confi
 ```json
 {
   "eslintConfig": "<default|<Javascript resource name>>"
+}
+```
+
+### StyleLint&reg; settings <span id="stylelint"></span>
+
+If required, you can specify additional settings to change the StyleLint&reg; configuration.
+
+```json
+{
+  "stylelintConfig": "<default|<JSON resource name>>"
 }
 ```
 
