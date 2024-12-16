@@ -48,37 +48,6 @@ A custom service is just a plain external object (check [this document](/lesson/
 
 In particular this external object needs to be granted to the user that will be calling it on the API endpoint.
 
-<h3 id="rhino">Rhino</h3>
-
-For a JSON/REST custom service, the **Rhino** implementation of the `MyServiceV1` external object could be something like:
-
-```javascript
-// The function to implement is the display method like for any external object
-MyService.display = function(params) {
-	// In this example the output is JSON, the MIME type needs to be forced explicitly
-	this.setMIMEType(HTTPTool.getMimeTypeWithEncoding(HTTPTool.MIME_TYPE_JSON));
-	// Note that if MIME type is left to default (HTML), a this.setDecoration(false) is generally required
-
-	var method = params.getMethod();
-	console.log("Call method = " + method);
-
-	var req = params.getJSONObject();
-	console.log("Request body = " + req);
-
-	var res = new JSONObject();
-	if (method == "POST") {
-		if (req != null) {
-			res.put("request", req);
-			res.put("response", "Hello " + req.optString("name", "Unknown"));
-		} else {
-			res.put("error", "Call me with a request please!");
-		}
-	} else {
-		res.put("error", "Call me in POST please!");
-	}
-	return res.toString();
-};
-```
 
 <h3 id="java">Java</h3>
 
