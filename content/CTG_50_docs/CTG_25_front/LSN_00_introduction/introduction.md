@@ -49,23 +49,23 @@ This part of the documentation follows the following organization and flow:
 
 ### Basic customizations
 
-1 - *Theme Editor*; presents the tool and illustrating how to modify the general theme and to adjust specific elements.
-2 - *Addons*; explains how to specificaly customize micro-interactions or overriding foundational styles with `{less}`
-3 - *Widgets Integration*; shows the workflows to integrate existing Simplicité's widget in order to understand the logic behind the integration of external objects.
+1 - *Theme Editor*; presents the tool and illustrating how to modify the general theme and to adjust specific elements.  
+2 - *Addons*; explains how to specificaly customize micro-interactions or overriding foundational styles with `{less}`  
+3 - *Widgets Integration*; shows the workflows to integrate existing Simplicité's widget in order to understand the logic behind the integration of external objects.  
 
 ### Advanced customizations
 
 1 - *Widgets Creation*; understanding how to design and implement custom tools such as widgets or dashboards.
-2 - *Responsive External Objects*; presents how to create and manage responsive, external design elements for seamless integration.
-3 - *External Webpages (Native)*; shows and illustrates how to develop specific pages fully connected and integrated into your Simplicité's application.
-4 - *External Webpages (Framework*); explains how to do the same as *3* but using web frameworks instead of native configurations.dsfr.
+2 - *Responsive External Objects*; presents how to create and manage responsive, external design elements for seamless integration.  
+3 - *External Webpages (Native)*; shows and illustrates how to develop specific pages fully connected and integrated into your Simplicité's application.  
+4 - *External Webpages (Framework*); explains how to do the same as *3* but using web frameworks instead of native configurations.dsfr.  
 
 ### Other relevant lessons
 
-* !(**External Objects (Tutorial)**)[https://https://docs.simplicite.io/lesson/tutorial/development/external-object]
-* !(**Responsive UI (Documentation)**)[https://docs.simplicite.io/lesson/docs/ui/responsive]
-* !(**Custom UI disposition (Documentation)**)[https://docs.simplicite.io/lesson/docs/core/disposition-code-examples]
-* !(**Core Javascript (Documentation)**)[https://docs.simplicite.io/lesson/docs/core/javascript-code-examples]
-* !(**Interface tool `$ui` (Documentation)**)[https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples]
-* !(**Custom Services through External Objects (Dodumentation)**)[https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services]
-* !(**Ajax API (Documentation)**)[https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api]
+* [**External Objects (Tutorial)**](https://docs.simplicite.io/lesson/tutorial/development/external-object)  
+* [**Responsive UI (Documentation)**](https://docs.simplicite.io/lesson/docs/ui/responsive)  
+* [**Custom UI disposition (Documentation)**](https://docs.simplicite.io/lesson/docs/core/disposition-code-examples)  
+* [**Core Javascript (Documentation)**](https://docs.simplicite.io/lesson/docs/core/javascript-code-examples)  
+* [**Interface tool `$ui` (Documentation)**](https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples)  
+* [**Custom Services through External Objects (Dodumentation)**](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
+* [**Ajax API (Documentation)**](https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api)  
