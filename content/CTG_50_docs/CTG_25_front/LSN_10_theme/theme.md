@@ -46,9 +46,9 @@ When creating your own themes, you first need to select the base theme which you
 
 After creating and saving your themes, the styles are compiled, and you can see that files were added to your theme, they serve to apply your styles through all selected interfaces, there are 3 of them:
 
-1 - `constants.less`: this file is the result of what you applied in the `Theme Editor`, it basically contains all the values you defined as *less constants*.
-2 - `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in **Addons**).
-3 - `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.
+1 - `constants.less`: this file is the result of what you applied in the `Theme Editor`, it basically contains all the values you defined as *less constants*.  
+2 - `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in **Addons**).  
+3 - `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.  
 
 ## Organization
 
@@ -56,9 +56,9 @@ getting back to the tool itself, it is divided in `three parts`, each hosting an
 
 ![](theme-editor-parts.png)
 
-1 - Interface preview
-2 - Values menu
-3 - DOM path
+1 - Interface preview  
+2 - Values menu  
+3 - DOM path  
 
 ### Interface Preview
 
@@ -71,23 +71,23 @@ The Theme Editor’s Preview Section displays a `live preview` of your themes an
 
 ![](theme-editor-preview-buttons.png)
 * **Buttons**: unique as it combines both elements and their style options. It displays all button types available in Simplicité and allows you to customize the following properties; `background-color`, `text-color` or `icon-color`, `border-radius` and `border-width`. The button types are:
-1 - `Primary`: represent main actions shared across various contexts and interfaces.
-2 - `Secondary`: represent secondary or less critical actions with text labels.
-3 - `Action`: specific to the current object or context.
-4 - `Transition`: used for state-switching handlers for business objects or fields.
-5 - `Icon`: represent actions using icons instead of text.
+1 - `Primary`: represent main actions shared across various contexts and interfaces.  
+2 - `Secondary`: represent secondary or less critical actions with text labels.  
+3 - `Action`: specific to the current object or context.  
+4 - `Transition`: used for state-switching handlers for business objects or fields.  
+5 - `Icon`: represent actions using icons instead of text.  
 
 ![](theme-editor-preview-panels.png)
 * **Panels**: contains core UI elements that structure Simplicité’s interface:
-1 - `Panels`: Found primarily in the `WORK` section of the UI, these display the content of selected menus or objects.
-2 - `Sub-Panels`: nest within Panels, typically containing `fields` for displayed objects.
-3 - `Tabs`: Organize fields and are available in four layouts: `Left`, `Right`, `Top`, and `Bottom`. These layouts determine the position of tab navigation items.
+1 - `Panels`: Found primarily in the `WORK` section of the UI, these display the content of selected menus or objects.  
+2 - `Sub-Panels`: nest within Panels, typically containing `fields` for displayed objects.  
+3 - `Tabs`: Organize fields and are available in four layouts: `Left`, `Right`, `Top`, and `Bottom`. These layouts determine the position of tab navigation items.  
 
 ![](theme-editor-preview-form.png)
 * **Form**: essential components in Simplicité’s UI. They combine `Panels`, `Sub-Panels`, and `Tabs` to organize `fields and inputs. The types of customizable fields include:
-1 - `Field`: casual element for text inputs within objects' forms.
-2 - `Readonly`: non-editable fields displaying static information.
-3 - `References`: editable link to other objects or data.
+1 - `Field`: casual element for text inputs within objects' forms.  
+2 - `Readonly`: non-editable fields displaying static information.  
+3 - `References`: editable link to other objects or data.  
 
 Other input types, such as radio buttons, dropdown menus, or code editors, are not customizable in the Theme Editor. However, they adapt their styles based on the selected `base theme`.
 
@@ -103,10 +103,10 @@ Other input types, such as radio buttons, dropdown menus, or code editors, are n
 
 The Styles Menu section allows you to actually change the values of the elements displayed in the Preview, in this menu you'll have access to the presented elements per category, making it easier to navigate through styles. The different sub-sections so are each related to a preview section, making it it more intuitive to design, emphasizing on the context of items and their cohenrency.
 In each of the section, you'll be given control of the following style variables and values:
-1 - `BACKGROUND`: for all elements' backgrounds you'll be able to choose the `color` and `opacity`.
-2 - `TEXT`: you have control hover the `fonts` you wanna apply, but also the overall `size` of it. Then for each elements you can modify the `color` & `opacity` of your texts.
-3 - `BORDER`: for all the elements you can first select if a border is `displayed or not`, and then it's `color` and `opacity`, but also the `border-radius` for some elements.
-4 - `HOVER`: available for some of the `interactive elements`, you can define the styles while beeing hovered, such as the `background-color` and `text-color`.
+1 - `BACKGROUND`: for all elements' backgrounds you'll be able to choose the `color` and `opacity`.  
+2 - `TEXT`: you have control hover the `fonts` you wanna apply, but also the overall `size` of it. Then for each elements you can modify the `color` & `opacity` of your texts.  
+3 - `BORDER`: for all the elements you can first select if a border is `displayed or not`, and then it's `color` and `opacity`, but also the `border-radius` for some elements.  
+4 - `HOVER`: available for some of the `interactive elements`, you can define the styles while beeing hovered, such as the `background-color` and `text-color`.  
 
 Here is a detailled list of the menu's sub-section and the specific elements they cover:
 
