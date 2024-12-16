@@ -67,5 +67,5 @@ This part of the documentation follows the following organization and flow:
 * [**Custom UI disposition (Documentation)**](https://docs.simplicite.io/lesson/docs/core/disposition-code-examples)  
 * [**Core Javascript (Documentation)**](https://docs.simplicite.io/lesson/docs/core/javascript-code-examples)  
 * [**Interface tool `$ui` (Documentation)**](https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples)  
-* [**Custom Services through External Objects (Dodumentation)**](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
+* [**Custom Services through External Objects (Documentation)**](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
 * [**Ajax API (Documentation)**](https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api)  
