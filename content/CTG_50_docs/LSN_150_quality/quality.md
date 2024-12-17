@@ -49,7 +49,7 @@ The code style is analysed at least at each `master` branch build using the foll
 
 - **Java** using [Checkstyle](https://checkstyle.sourceforge.io)
 - **JavaScript** using [ESLint](https://eslint.org)
-- **styles** using [Stylelint](https://stylelint.io)
+- **styles** using [StyleLint](https://stylelint.io)
 
 Any issue is fixed as soon as detected by the above tools.
 
