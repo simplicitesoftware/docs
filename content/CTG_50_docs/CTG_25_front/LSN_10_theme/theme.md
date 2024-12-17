@@ -1,7 +1,7 @@
 Theme Editor presentation and overview
 ======================================
 
-This document presents the `Theme Editor` tool of Simplicité, and explains how it works, illustrating its features and the possible customizations you can perform when using it.
+This document presents the **Theme Editor** tool of Simplicité, and explains how it works, illustrating its features and the possible customizations you can perform when using it.
 
 ![](simplicite-mazette-form.png)
 
@@ -18,13 +18,13 @@ This tool allows you to customize your instances design globally, giving you con
 **Example**: here are few example already created and available in the default Simplicité's solution.
 
 ![](theme-admin-overview.png)
-* `ThemeAdmin`: main administrator theme created with `Dark Base`, used mainly by Simplicité's administrator or `designer users`.
+* **ThemeAdmin**: main administrator theme created with `Dark Base`, used mainly by Simplicité's administrator or *designer users*.
 
 ![](theme-design-overview.png)
-* `ThemeDesign`: theme made up from `Light Base` this theme is the equivalent of the `ThemeAdmin` for users that would prefer light mode.
+* **ThemeDesign**: theme made up from `Light Base` this theme is the equivalent of the *ThemeAdmin* for users that would prefer light mode.
 
 ![](theme-etat-overview.png)
-* `ThemeEtat`: this theme is created based on the `DSFR` design norms from & for french government. It is applied to there solutions in order to follow specific rules of contrasts and spacings.
+* **ThemeEtat**: this theme is created based on the *DSFR* design norms from & for french government. It is applied to there solutions in order to follow specific rules of contrasts and spacings.
 
 > 2 new themes (Dark & Light) are coming, matching the Simplicité's new look & identity !
 
@@ -34,11 +34,11 @@ This tool allows you to customize your instances design globally, giving you con
 ### Theme Creation
 
 When creating your own themes, you first need to select the base theme which you will override with your own styles:
-- `Dark Base`: contains all base values for a dark theme, keeping it simple so everything is easily overridable for your own theme.
+- **Dark Base:** contains all base values for a dark theme, keeping it simple so everything is easily overridable for your own theme.
 
-- `Light Base`: contains all base values for a light theme, keeping it simple so everything is easily overridable for your own theme.
+- **Light Base:** contains all base values for a light theme, keeping it simple so everything is easily overridable for your own theme.
 
-- `Default Base`: similar to both above, more alike with the `Light Base`, thus this one is slightly more refined than both others. 
+- **Default Base:** similar to both above, more alike with the *Light Base*, thus this one is slightly more refined than both others. 
 
 > None of the base theme are actually meant to be used, those simply vows to contain the basic bricks for you to create new themes.
 
@@ -46,16 +46,19 @@ When creating your own themes, you first need to select the base theme which you
 
 After creating and saving your themes, the styles are compiled, and you can see that files were added to your theme, they serve to apply your styles through all selected interfaces, there are 3 of them:
 
-1 - `constants.less`: this file is the result of what you applied in the `Theme Editor`, it basically contains all the values you defined as *less constants*.  
-2 - `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in **Addons**).  
-3 - `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.  
+1 - `constants.less`: this file is the result of what you applied in the *Theme Editor*, it basically contains all the values you defined as *less constants*.
+2 - `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in **Addons**).
+3 - `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.
 
 ## Organization
 
-getting back to the tool itself, it is divided in `three parts`, each hosting and representing a `key feature`. So it makes it very important to understand how each part works and how to use them all.
+getting back to the tool itself, it is divided in *three parts*, each hosting and representing a *key feature*. So it makes it very important to understand how each part works and how to use them all.
 
 ![](theme-editor-parts.png)
 
+1 - Interface preview  
+2 - Values menu  
+3 - DOM path  
 1 - Interface preview  
 2 - Values menu  
 3 - DOM path  
@@ -64,30 +67,30 @@ getting back to the tool itself, it is divided in `three parts`, each hosting an
 
 ![](theme-editor-previewpart.png)
 
-The Theme Editor’s Preview Section displays a `live preview` of your themes and the styles you are currently applying. It allows you to instantly see the results of your design. You can navigate through `Simplicité’s interface` elements using the tabs menu, enabling you to explore all contexts and situations with your custom styles applied.
+The Theme Editor’s Preview Section displays a *live preview* of your themes and the styles you are currently applying. It allows you to instantly see the results of your design. You can navigate through *Simplicité’s interface elements* using the tabs menu, enabling you to explore all contexts and situations with your custom styles applied.
 
 ![](theme-editor-preview-home.png)
 * **Home**: presents the main shared elements across Simplicité’s UI, including the header and menu. The menu showcases various states and hierarchy cases, such as sub-menus and active domains.
 
 ![](theme-editor-preview-buttons.png)
 * **Buttons**: unique as it combines both elements and their style options. It displays all button types available in Simplicité and allows you to customize the following properties; `background-color`, `text-color` or `icon-color`, `border-radius` and `border-width`. The button types are:
-1 - `Primary`: represent main actions shared across various contexts and interfaces.  
-2 - `Secondary`: represent secondary or less critical actions with text labels.  
-3 - `Action`: specific to the current object or context.  
-4 - `Transition`: used for state-switching handlers for business objects or fields.  
-5 - `Icon`: represent actions using icons instead of text.  
+1 - ***Primary:*** represent main actions shared across various contexts and interfaces.
+2 - ***Secondary:*** represent secondary or less critical actions with text labels.
+3 - ***Action:*** specific to the current object or context.
+4 - ***Transition:*** used for state-switching handlers for business objects or fields.
+5 - ***Icon:*** represent actions using icons instead of text.
 
 ![](theme-editor-preview-panels.png)
 * **Panels**: contains core UI elements that structure Simplicité’s interface:
-1 - `Panels`: Found primarily in the `WORK` section of the UI, these display the content of selected menus or objects.  
-2 - `Sub-Panels`: nest within Panels, typically containing `fields` for displayed objects.  
-3 - `Tabs`: Organize fields and are available in four layouts: `Left`, `Right`, `Top`, and `Bottom`. These layouts determine the position of tab navigation items.  
+1 - ***Panels:*** Found primarily in the `WORK` section of the UI, these display the content of selected menus or objects.
+2 - ***Sub-Panels:*** nest within Panels, typically containing *fields* for displayed objects.
+3 - ***Tabs:*** Organize fields and are available in four layouts: *Left*, *Right*, *Top*, and *Bottom*. These layouts determine the position of tab navigation items.
 
 ![](theme-editor-preview-form.png)
-* **Form**: essential components in Simplicité’s UI. They combine `Panels`, `Sub-Panels`, and `Tabs` to organize `fields and inputs. The types of customizable fields include:
-1 - `Field`: casual element for text inputs within objects' forms.  
-2 - `Readonly`: non-editable fields displaying static information.  
-3 - `References`: editable link to other objects or data.  
+* **Form**: essential components in Simplicité’s UI. They combine Panels, *Sub-Panels*, and *Tabs* to organize `fields and inputs. The types of customizable fields include:
+1 - ***Field:*** casual element for text inputs within objects' forms.
+2 - ***Readonly:*** non-editable fields displaying static information.
+3 - ***References:*** editable link to other objects or data.
 
 Other input types, such as radio buttons, dropdown menus, or code editors, are not customizable in the Theme Editor. However, they adapt their styles based on the selected `base theme`.
 
@@ -103,10 +106,10 @@ Other input types, such as radio buttons, dropdown menus, or code editors, are n
 
 The Styles Menu section allows you to actually change the values of the elements displayed in the Preview, in this menu you'll have access to the presented elements per category, making it easier to navigate through styles. The different sub-sections so are each related to a preview section, making it it more intuitive to design, emphasizing on the context of items and their cohenrency.
 In each of the section, you'll be given control of the following style variables and values:
-1 - `BACKGROUND`: for all elements' backgrounds you'll be able to choose the `color` and `opacity`.  
-2 - `TEXT`: you have control hover the `fonts` you wanna apply, but also the overall `size` of it. Then for each elements you can modify the `color` & `opacity` of your texts.  
-3 - `BORDER`: for all the elements you can first select if a border is `displayed or not`, and then it's `color` and `opacity`, but also the `border-radius` for some elements.  
-4 - `HOVER`: available for some of the `interactive elements`, you can define the styles while beeing hovered, such as the `background-color` and `text-color`.  
+1 - **BACKGROUND:** for all elements' backgrounds you'll be able to choose the `color` and `opacity`.
+2 - **TEXT:** you have control hover the `fonts` you wanna apply, but also the overall `size` of it. Then for each elements you can modify the `color` & `opacity` of your texts.
+3 - **BORDER:** for all the elements you can first select if a border is *displayed or not*, and then it's `color` and `opacity`, but also the `border-radius` for some elements.
+4 - **HOVER:** available for some of the *interactive elements*, you can define the styles while beeing hovered, such as the `background-color` and `text-color`.
 
 Here is a detailled list of the menu's sub-section and the specific elements they cover:
 
@@ -132,7 +135,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 |-----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Header Logo           | Image File             | Any: this will be the image placed at the very left of your Simplicité's header bar.                                                                                   |
 | Header Logo           | Color Invert           | Yes/No: says if the logo shall be inverted or not.                                                                                                                     |
-| Navigation Breadcrumb | Background Color       | Any: defines the background color of your navigation breadcrumb (top-left of your `WORK` UI section).                                                                  |
+| Navigation Breadcrumb | Background Color       | Any: defines the background color of your navigation breadcrumb (top-left of your **WORK** UI section).                                                                  |
 | Navigation Breadcrumb | Text Color             | Any: defines the colors of the texts composing your navigation breadcrumb.                                                                                             |
 | Header Bar            | Background Color       | Any: defines the color of your header's background only (rendered on top of the general background), header is full width of your window.                              |
 | Header Bar            | Text Color             | Any: defines the colors of the texts composing your header section (all the text within).                                                                              |
@@ -149,18 +152,18 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Element              | Style Value            | Value Range / Description                                                                                                                                              |
 |----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Main Menu            | Background Color       | Any: will define the background color for your menu, which is the bottom layer in this element.                                                                        |
-| Inactive Menu Domain | Background Color       | Any: will define the `inactive` background color of all the domains in your main menu.                                                                                 |
-| Inactive Menu Domain | Text Color             | Any: will define the `inactive` color of the text for all the domains in your main menu.                                                                               |
-| Active Menu Domain   | Background Color       | Any: will define the `active` background color of all the domains in your main menu.                                                                                   |
-| Active Menu Domain   | Text Color             | Any: will define the `active` text color of all the domains in your main menu.                                                                                         |
-| Inactive Sub-Menu    | Background Color       | Any: will define the `inactive` background color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.  |
-| Inactive Sub-Menu    | Text Color             | Any: will define the `inactive` text color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.        |                                                                                  |
-| Active Sub-Menu      | Background Color       | Any: will define the `active` background color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.    |
-| Active Sub-Menu      | Text Color             | Any: will define the `active` text color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.          |
-| Status Menu          | Background Color       | Any: will define the `inactive` background color for the status items held in the sub-menus.                                                                           |
-| Status Menu          | Text Color             | Any: will define the `inactive` textcolor for the status items held in the sub-menus.                                                                                  |
+| Inactive Menu Domain | Background Color       | Any: will define the **inactive** background color of all the domains in your main menu.                                                                                 |
+| Inactive Menu Domain | Text Color             | Any: will define the **inactive** color of the text for all the domains in your main menu.                                                                               |
+| Active Menu Domain   | Background Color       | Any: will define the **active** background color of all the domains in your main menu.                                                                                   |
+| Active Menu Domain   | Text Color             | Any: will define the **active** text color of all the domains in your main menu.                                                                                         |
+| Inactive Sub-Menu    | Background Color       | Any: will define the **inactive** background color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.  |
+| Inactive Sub-Menu    | Text Color             | Any: will define the **inactive** text color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.        |                                                                                  |
+| Active Sub-Menu      | Background Color       | Any: will define the **active** background color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.    |
+| Active Sub-Menu      | Text Color             | Any: will define the **active** text color of all the items in your domains. Which are referenced as 'sub-menus' but in fact are the items you add in a domain.          |
+| Status Menu          | Background Color       | Any: will define the **inactive** background color for the status items held in the sub-menus.                                                                           |
+| Status Menu          | Text Color             | Any: will define the **inactive** textcolor for the status items held in the sub-menus.                                                                                  |
 
-* **Panel**: in this section you will get access to the values for the panels styles, by this mean you will be able to modify only the higher level of panels. These changes are previewed in the `Panels` section of the `PREVIEW`, with the top-left item. 
+* **Panel**: in this section you will get access to the values for the panels styles, by this mean you will be able to modify only the higher level of panels. These changes are previewed in the *Panels* section of the ***PREVIEW***, with the top-left item. 
 
 ![](theme-editor-style-panel.png)
 
@@ -169,7 +172,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Panel Container    | Background Color       | Any: defines the background of your whole panel container, these elements are rendered on top of the `WORK` part of your UI. But on first layer for this element.                                 | 
 | Panel Container    | Text Color             | Any: defines the color of all texts within your Panel but not contained by another element.                                                                                                       |
 | Panel Container    | Border Radius          | [0;200]: defines the border radius of your Panel, so modifies the following corner; `top-left` & `top-right` from `panel-header`, and `bottom-left` & `bottom-right` from `panel-footer`.         |
-| Panel Container    | Box Shadows            | [0;100]: defines the `box-shadow` value for panel items, with the following relation; `0 ~ box-shadow: none`, `50 ~ box-shadow: .125rem .125rem 1rem` and `0 ~ box-shadow: .125rem .125rem 2rem`. | 
+| Panel Container    | Box Shadows            | [0;100]: defines the `box-shadow` value for panel items, with the following relation; 0 ~ `box-shadow: none`, 50 ~ `box-shadow: .125rem .125rem 1rem` and 0 ~ `box-shadow: .125rem .125rem 2rem`. | 
 | Panel Header       | Background Color       | Any: defines the background color of your panel's header, renderer on top of the background defined at first layer for this element.                                                              |
 | Panel Header       | Text Color             | Any: defines the color of all texts within the header of your panel, excluding for the ones of buttons.                                                                                           |
 | Panel Header       | Bottom Border          | Any: defines the color of the header's `bottom-border`, if you want to hide the border then simply untick the value.                                                                              |
@@ -186,7 +189,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Sub-Panel Container    | Background Color       | Any: defines the background of your whole sub-panel container, first layer for this element.                                  | 
 | Sub-Panel Container    | Text Color             | Any: defines the color of all texts within your Sub-Panel but not contained by another element.                                                                                                        |
 | Sub-Panel Container    | Border Radius          | [0;200]: defines the border radius of your Panel, so modifies the following corner; `top-left` & `top-right` from `sub-panel-header`, and `bottom-left` & `bottom-right` from `sub-panel-footer`.      |
-| Sub-Panel Container    | Box Shadows            | [0;100]: defines the `box-shadow` value for sub-panel items, with the following relation; `0 ~ box-shadow: none`, `50 ~ box-shadow: .125rem .125rem 1rem` and `0 ~ box-shadow: .125rem .125rem 2rem`.  | 
+| Sub-Panel Container    | Box Shadows            | [0;100]: defines the `box-shadow` value for sub-panel items, with the following relation; 0 ~ `box-shadow: none`, 50 ~ `box-shadow: .125rem .125rem 1rem` and 0 ~ `box-shadow: .125rem .125rem 2rem`.  | 
 | Sub-Panel Header       | Background Color       | Any: defines the background color of your sub-panel's header, renderer on top of the background defined at first layer for this element.                                                               |
 | Sub-Panel Header       | Text Color             | Any: defines the color of all texts within the header of your sub-panel, excluding for the ones of buttons.                                                                                            |
 | Sub-Panel Header       | Bottom Border          | Any: defines the color of the header's `bottom-border`, if you want to hide the border then simply untick the value.                                                                                   |
@@ -213,7 +216,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Tabs Content       | Background Color       | Any: defines the background color for the `tab-content` part only, rendered on very last layer.                                                                                |
 | Tabs Content       | Text Color             | Any: defines the color of all informative texts within the `tab-content`, doesn't apply to buttons or text within other elements, is overriden by `text-color` from **Fields** |
 | Tabs Content       | Border Color           | Any: defines the color of the border of the whole content part, untick to hide.                                                                                                |
-| Tabs Content       | Shadow                 | [0;100]: defines the `box-shadow` style for the tab-content (not nav-links!), with the following range; `0 ~ none`, `50 ~ solid .125rem .125rem 1rem #e0e0e0`, `100 ~ solid .125rem .125rem 2rem #e0e0e0` |
+| Tabs Content       | Shadow                 | [0;100]: defines the `box-shadow` style for the tab-content (not nav-links!), with the following range; 0 ~ `none`, 50 ~ `solid .125rem .125rem 1rem #e0e0e0`, 100 ~ `solid .125rem .125rem 2rem #e0e0e0` |
 
 * **Field**: in both the Sub-Panels and Tabs elements, several infos are displayed, but mostly fields of various type and input features.
 
@@ -252,7 +255,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 This last section allows you to see the location of the interfaces elements in the actual DOM of your instance. It mainly serves for you to understand quickly how those elements are defined, their overall layout and the organization of every Simplicité's shared elements through any UI. It is coupled with the **Home**, **Form** and **List** sections of the **Preview**, as they contain elements that are identifiable through any Simplicité's interface.
 
-In order to show an element's path, simply hover on it and its path shall be displayed as it is supposed to be in a `less` file:
+In order to show an element's path, simply hover on it and its path shall be displayed as it is supposed to be in a *.less* file:
 
 * **Home common path;** `div.main > div.simplicite.wrapper > . . . > **element.class**`.
 
