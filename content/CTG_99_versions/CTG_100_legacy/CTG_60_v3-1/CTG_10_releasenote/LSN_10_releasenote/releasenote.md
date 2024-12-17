@@ -121,7 +121,7 @@ onload_functions.push(function() {
 It is now possible to edit more than one script in a session.
 
 The view allows you to edit multiple scripts at the same time, and a top shortcut has been added to return quickly to the editors.
-All opened scripts are persistent in a designer's parameter: `EDITOR_PREFS`.
+All opened scripts are persistent in a designer's parameter: `CODE_EDITOR_PREFS`.
 
 ![](editor.jpg)
 

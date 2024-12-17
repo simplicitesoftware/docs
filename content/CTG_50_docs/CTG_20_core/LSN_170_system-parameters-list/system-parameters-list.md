@@ -460,16 +460,6 @@ Domain relaxing (useful when integrating other applications from same domain wit
 
 EAI (I/O) user and password. Syntax: - code = EAI <login> - value = <login>:<password>
 
-### `EDITOR_PREFS`
-
-**Default value**
-
-	empty
-
-**Description**
-
-Technical, do not change/remove, needed in user's parameters
-
 ### `EMAIL_DEFAULT_SENDER`
 
 **Default value**
@@ -1573,7 +1563,7 @@ Technical parameter
 
 Trello service configuration (to be overridden as a disposition parameter)
 
-### `UI_EDITOR_PREFS`
+### `CODE_EDITOR_PREFS`
 
 **Default value**
 
