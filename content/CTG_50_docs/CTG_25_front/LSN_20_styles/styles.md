@@ -1,9 +1,9 @@
 Complementary Theme Styles
 ==========================
 
-This document outlines how to enhance and refine your custom or pre-existing themes using the `addon.less` file.
+This document outlines how to enhance and refine your custom or pre-existing themes using the *addon.less* file.
 
-The `addon.less` file enables you to override or fine-tune the styles defined in the foundational files, namely `constants.less` and `theme_gen.css`. By leveraging this approach, you can create more dynamic and cohesive designs while maintaining flexibility and ease of management.
+The *addon.less* file enables you to override or fine-tune the styles defined in the foundational files, namely *constants.less* and *theme_gen.css*. By leveraging this approach, you can create more dynamic and cohesive designs while maintaining flexibility and ease of management.
 
 > **What is Less ?**
 > Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends the capabilities of CSS. It introduces features like variables, nesting, mixins and functions. Thus making style sheets more maintainable, customizable and easier to scale.
@@ -75,13 +75,13 @@ body {
 }
 ```
 
-Combining all these features can allow you to go very far in the customization of your UI, but the use of the `addon.less` file to add more specificities should be limited to not create too much of less programming for your devs.
+Combining all these features can allow you to go very far in the customization of your UI, but the use of the *addon.less* file to add more specificities should be limited to not create too much of less programming for your devs.
 
 ## Use Case for addon.less
 
-The use of `addon.less` can be justified in case of very specific needs, in the Simplicité's identity, there are those vertical and horizontal colored lines. Which we wanted to include in one of our themes.
+The use of *addon.less* can be justified in case of very specific needs, in the Simplicité's identity, there are those vertical and horizontal colored lines. Which we wanted to include in one of our themes.
 
-This will also serve to illustrate how to use the `addon.less` to add a unique style to themes.
+This will also serve to illustrate how to use the *addon.less* to add a unique style to themes.
 
 ### Process Overview
 
@@ -100,11 +100,11 @@ The first step after knowing what style we wanna add on top of the theme. For th
 
 **Example:** In our case, the elements we wanted to add style to were the Panels, Sub-Panels and Tabs, so we used the browser's inspector tool to find the following path:
 
-* `Panels`: the element that is use to implement the panels in the page HTML is `div.card`. Which is then organized in three parts; `div.card-header`, `div.card-body`, `div.card-footer`.
+* ***Panels:*** the element that is use to implement the panels in the page HTML is `div.card`. Which is then organized in three parts; `div.card-header`, `div.card-body`, `div.card-footer`.
 
-* `Sub-Panels`: the element used to implement the sub-panels is fortunately the same as for panels, `div.card`.
+* ***Sub-Panels:*** the element used to implement the sub-panels is fortunately the same as for panels, `div.card`.
 
-* `Tabs`: these are implemented thanks to another element, more identifiable and unique by `div.tabs`, then the layout is specified by a second class, so our different tabs are; `div.tabs.tabs-top`, `div.tabs.tabs-left`, `div.tabs.tabs-right`, `div.tabs.tabs-bottom`. Plus the organizarion of tans is a bit specific as it is roughly organized this way:
+* ***Tabs:*** these are implemented thanks to another element, more identifiable and unique by `div.tabs`, then the layout is specified by a second class, so our different tabs are; `div.tabs.tabs-top`, `div.tabs.tabs-left`, `div.tabs.tabs-right`, `div.tabs.tabs-bottom`. Plus the organizarion of tans is a bit specific as it is roughly organized this way:
 ```less
 div.tabs.tabs-top {
     ul.nav.nav-tabs {
@@ -132,13 +132,13 @@ A proper way to do so is to identify the focused elements and there classes, and
 
 > This part is especially needed when you are going for the second options in the previous step, as classes are shared by many objects, you need to really be careful while adding new styles.
 
-**Example:** For our 3 targeted elements, which are core items of every Simplicité's UI, we had to make sure that the style was applied properly, especially for the differentiation between `Panels` and `Sub-Panels`, that are both referenced as `card` in the HTML.
+**Example:** For our 3 targeted elements, which are core items of every Simplicité's UI, we had to make sure that the style was applied properly, especially for the differentiation between *Panels* and *Sub-Panels*, that are both referenced as `card` in the HTML.
 
 ## 3) Implement the style
 
-Last but not least, you have to actually implement your style in the `addon.less` file, using the DOM path & context your previously identified, in order to target your wanted element without impacting other unwanted cases.
+Last but not least, you have to actually implement your style in the *addon.less* file, using the DOM path & context your previously identified, in order to target your wanted element without impacting other unwanted cases.
 
-**Example:** within the `addon.less` file, we'll apply the identified path to precisely target our element:
+**Example:** within the *addon.less* file, we'll apply the identified path to precisely target our element:
 
 ```less
 // Colors variables
