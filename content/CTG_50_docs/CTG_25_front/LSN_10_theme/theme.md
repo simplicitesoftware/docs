@@ -56,9 +56,9 @@ getting back to the tool itself, it is divided in *three parts*, each hosting an
 
 ![](theme-editor-parts.png)
 
-1 - Interface preview
-2 - Values menu
-3 - DOM path
+1 - Interface preview  
+2 - Values menu  
+3 - DOM path  
 
 ### Interface Preview
 
