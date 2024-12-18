@@ -81,7 +81,11 @@ In order to properly develop with JavaScript within Simplicité solutions, some 
 
 > Here is only an overview, you can have more details in the associated Tutorial and lesson about **Object Hooks** in Simplicité [here]().
 
-Hooks let you customize the behavior of Simplicité objects. For instance, adding `onChange` hook can serve to validate a specific field:
+Hooks in Simplicité allow developers to *extend or modify* the default behavior of *objects* and *fields*. These hooks, such as `onLoad`, `onChange`, and `onSave`, act as entry points where you can inject **custom logic** to adapt the application to *specific requirements*.
+
+For instance, an `onChange` hook can validate field inputs or dynamically fetch additional data when a value is modified. Hooks are defined in the *JavaScript* object corresponding to the Simplicité business object, ensuring that the custom logic is closely tied to the object’s lifecycle. For example, an onLoad hook can be used to pre-populate fields or adjust UI settings dynamically when an object is initialized. By using hooks strategically, you can maintain Simplicité’s standard functionality while adding tailored features.
+
+**Example:** validating a specific field using the `onChange` object hook:
 
 ```javascript
 MyObject.onChange = function(field, value) {
@@ -100,3 +104,26 @@ Such manipulations can be used to change the content of a view, by showing or hi
 **Example:**
 
 # Tips & Guidelines
+
+In order to ensure efficient and maintainable development, here are few tips to start off with. 
+
+> Basic development tips are obviously appliable here:
+> - Organize & Document your code to structure it and make it more readable to ease your debugging and possible reuse.
+> - Test it before deployment to ensure it works as intended in sandbox environments to prevent it from having unintended impacts on production.
+> - Try to optimize performances, on one hand by avoiding uneeded heavy behaviors with the back-end, and on the other hand by minimizing DOM manipulations to avoid long loading and possibly bugged interfaces. 
+
+> Always align your customizations with Simplicité's documented best practices to ensure compatibility and upgradability. Keep your JavaScript code modular and maintainable, making it easier for future developers to adapt or debug.
+
+## Working with Hooks
+
+When using the **Object Hooks** to implement specific behaviors for your objects, make sure to inject logic that won't disrupt the standard behavior of Simplicité's objects.
+
+Also make sure to use existing and not already used hooks, or properly override them if it's the case.
+
+## Work with `$ui` effectively
+
+## Fetching data and Ajax requests
+
+## Respect MVC organization
+
+## Security Practices
