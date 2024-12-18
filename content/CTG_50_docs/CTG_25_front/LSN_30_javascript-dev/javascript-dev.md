@@ -3,16 +3,36 @@ Javascript Development
 
 This document presents the base & guidelines to javascript development within Simplicité. As the main use for it is the implementation of specific interactions for different external objects. Here we will provide an understanding of how javascript codes are handled within Simplicité, giving some guidelines for your developments and tips on how to work with javascript for your external objects.
 
-> Before delving into javascript dev, make sure the specific behaviors and possible features you want to implement within your Simplicité application don't have a possible implementation with Simplicité's features !
+> **Quick Tips:**
+> * Always align your customizations with Simplicité's documented best practices to ensure compatibility and upgradability. Keep your JavaScript code modular and maintainable, making it easier for future developers to adapt or debug.
+> * Before delving into javascript dev, make sure the specific behaviors and possible features you want to implement within your Simplicité application don't have a possible implementation with Simplicité's features !
 
 # NPM Library
 
 Simplicité NPM library serves as a bridge to integrate JavaScript functionalities into Simplicité applications, both in front-end & back-end contexts. By default it is installed for everything within your instances and applications.
 [Here](https://www.npmjs.com/package/simplicite) you will find the node.js® & browser JavaScript API client module for the Simplicité® platform.
 
+The basic usage for the *JavaScript API client module* is the following:
+
+```javascript
+import simplicite from 'simplicite';
+
+const app = simplicite.session({ url: '<my instance base URL>' });
+
+try {
+  const user = await app.login({ username: '<my username>', password: '<my password>' });
+	console.log('Hello ' + user.login + '!');
+	const obj = app.getBusinessObject('MyObject');
+	const list = await obj.search();
+	// Do something with the search results list
+} catch (err) {
+  console.error(err.message);
+}
+```
+
 It provides several APIs for:
 - **Authentication** to manage user session programmatically.
-- **Object Handling**, performing CRUD operations on *Business Objects*.
+- **Object Handling**, performing *CRUD* operations on Business Objects.
 - **Ajax Call** to communicate with Simplicité's back-end in order to fetch data or invoke specific logic.
 - **Utilities** in order to acess helper methods for logging, debugging, etc.
 
@@ -26,104 +46,104 @@ session.login()
   .then(data => console.log('Business object data:', data))
   .catch(err => console.error('Error:', err));
 ```
-# Integrations with Simplicité Framework
 
-Javascript enables integrations with existing frameworks, --both within Simplicité or from third-party libraries-- for enhanced functionality.
+## More Examples
 
-This part is especially explored in the [UI Components]() lesson, where we explain how to develop interactive widgets using *javascript*.
+If you want to have a larger amount of examples don't hesitate to go on the `test/test*js` file from the [Github repository](https://github.com/simplicitesoftware/javascript-api) to see other basic usage examples and start playing with the library.
 
-## UI Customizations 
+If you want more advanced examples for different usages, you can check the existing demos:
 
-The main use for javascript development within Simplicité is for dynamically manipulating the views (using `$ui.views.*`), in order to enhance any user interface.
-`
-**Example:** Displaying a Chart within a modal:
-```javascript
-$ui.view.showModal('My Chart', '<canvas id="myChart"></canvas>');
-const ctx = document.getElementById('myChart').getContext('2d');
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['January', 'February', 'March'],
-    datasets: [{ label: 'Sales', data: [10, 20, 30], backgroundColor: 'blue' }]
-  }
-});
+* **Server-Side:**
+
+* **Client-Side:** several front-end demos are available for this case; 
+
+- [Plain Web](https://github.com/simplicitesoftware/web-demo) 
+
+- [Vue.js](https://github.com/simplicitesoftware/vue-demo)
+
+- [React](https://github.com/simplicitesoftware/react-demo)
+
+- [Angular](https://github.com/simplicitesoftware/angular-demo)
+
+* **Native:** this [git repo](https://github.com/simplicitesoftware/react-native-demo) is a basic native front-end demo written in *React Native* for a Simplicité use case.
+
+# Core Javascript usages
+
+Below are explained some of the main contexts in which javascript development will be encountered and needed. As Simplicité is mainly based on Java development, the use cases for javascript coding are more specific to **External Objects** and correlated to front-end development within Simplicité.
+
+## External Objects (within Simplicité)
+
+The main utility for javascript development within Simplicité is the implementation of custom behaviors for your **External Objects** that you want to embed within Simplicité (so of type `com.simplicite.webapp.web.widgets.ResponsiveExternalObject`), this is shown in the [UI Component](https://docs.simplicite.io/lesson/docs/front/ui-component) lesson.
+
+The javascript development will happen within the *SCRIPT* resource of your *External Object*, and will allow you to do two things:
+
+* **Customized Behaviours:** first, you are gonna be able to apply custom behaviors and interactions for your custom object
+* **Communicate with Simplicité:** then, you will be able to make your widget even more interactive by allowing it to discuss in various ways 
+
+In this case, you can declare all your javascript code within the *SCRIPT* resource, make sure that you respect common rules and methodologies, so define your methods thoughfully, don't make redundant code, don't hesitate to document your code and make reusable functions in case you need it.
+
+**Example Code:** Displaying a list of the DemoProducts objects, with only the name and price.
+
+* HTML content of the custom widget:
+```html
+<!-- Starting with an empty object that we'll fill using Javascript -->
+<div id="mycustomwidget">
+  <div id="mycustomwidget-productlist"></div>
+</div>
 ```
 
-## Back-End Integrations
-
-Thanks to the **Ajax Library** (explanations developped in the next "[Ajax Library]()" lesson), you can use Ajax services using `$ui.getApp()` to call back-end workflows.
-
-**Example:** within an *External Object* you can fetch *Business Objects* or other data from your application's database:
+* JS instantiation script of the custom widget:
 ```javascript
+/* Basic javascript simply fetching and displaying the DemoProduct Business Objects */
 let app = $ui.getApp();
-let clients = app.getBusinessObject("DemoClient");
-
-clients.search(function() {
-  for (var i=0; i<clients.list.Length; i++)
+let prdList = app.getBusinessObject("DemoProduct");
+products.search(function(){
+  for (let i=0; i<products.list.Length; i++)
   {
-    const cli = clients.list[i];
-    console.log(`Client n°${i} is named ${cli.demoCliName}`);
+    const prd = products.list[i];
+    document.getElementById("mycustomwidget-productlist").insertAdjacentHTML(
+      'beforeend',
+      `<div class="mycustomwidget-product>
+        <span class="mycustomwidget-product-name">${prd.demoPrdName}</span>
+        <span class="mycustomwidget-product-name">${prd.demoPrdUnitPrice}</span>
+      </div>`
+    );
   }
-}, null, {})
+}, null, {});
 ```
 
-## Use of Third-Party libraries
-
-Simplicité also supports the addition and use of external libraries for extended functionalities.
-
-> Before adding libraries, you might want to check if some parts of it aren't already included in Simplicité. Such practices will help you reduce duplicatas and debugging.
-
-# Common Concepts
-
-In order to properly develop with JavaScript within Simplicité solutions, some concepts are important to understand properly. Knowing the following will help you navigate development more efficiently.
-
-## Object Hooks
-
-> Here is only an overview, you can have more details in the associated Tutorial and lesson about **Object Hooks** in Simplicité [here]().
-
-Hooks in Simplicité allow developers to *extend or modify* the default behavior of *objects* and *fields*. These hooks, such as `onLoad`, `onChange`, and `onSave`, act as entry points where you can inject **custom logic** to adapt the application to *specific requirements*.
-
-For instance, an `onChange` hook can validate field inputs or dynamically fetch additional data when a value is modified. Hooks are defined in the *JavaScript* object corresponding to the Simplicité business object, ensuring that the custom logic is closely tied to the object’s lifecycle. For example, an onLoad hook can be used to pre-populate fields or adjust UI settings dynamically when an object is initialized. By using hooks strategically, you can maintain Simplicité’s standard functionality while adding tailored features.
-
-**Example:** validating a specific field using the `onChange` object hook:
-
-```javascript
-MyObject.onChange = function(field, value) {
-  if (field === 'myField' && value.length < 5) {
-    $ui.alert('Validation Error', 'The value must be at least 5 characters long.');
-  }
+* CSS stylesheet of the custom widget:
+```css
+/* Simple yet good looking Styles for our objects */
+#mycustomwidget {
+  width: 100%
+}
+.mycustomwidget-product {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color:rgb(228, 228, 228);
+  color: rgb(36, 36, 36);
+  border: solid 0.125rem rgb(36, 36, 36);
+  border-radius: 0.5rem;
+  transition: all 0.25s ease;
+}
+.mycustomwidget-product:hover {
+  border-radius: 1rem;
+  transform: scale(1.05);
+}
+.mycustomwidget-product-name {
+  font-size: 1.25rem;
+}
+.mycustomwidget-product-price {
+  font-size: 1rem;
 }
 ```
 
-## View Manipulations
+## External Objects (external pages)
 
-With the `$ui.views` --mentionned before for UI Customizations-- presented to perform any **integration**, you can also control the display and layout of existing UI components dynamically.
+Another slightly different case of javascript development within Simplicité can be the implementation of **External Object** being used as *external pages* (so of type `com.simplicite.webapp.web.WebPageExternalObject`), furtherly explored in the [External Pages](https://docs.simplicite.io/lesson/docs/front/external-pages) lesson.
 
-Such manipulations can be used to change the content of a view, by showing or hiding elements based on different conditions.
+Indeed, the development of a whole web-page isn't quite the same as the development of an embedded widget. First of all you'll have your javascript acting solely as *client-side* script, with a dedicated *server-side* script in Java.
 
-**Example:**
-
-# Tips & Guidelines
-
-In order to ensure efficient and maintainable development, here are few tips to start off with. 
-
-> Basic development tips are obviously appliable here:
-> - Organize & Document your code to structure it and make it more readable to ease your debugging and possible reuse.
-> - Test it before deployment to ensure it works as intended in sandbox environments to prevent it from having unintended impacts on production.
-> - Try to optimize performances, on one hand by avoiding uneeded heavy behaviors with the back-end, and on the other hand by minimizing DOM manipulations to avoid long loading and possibly bugged interfaces. 
-
-> Always align your customizations with Simplicité's documented best practices to ensure compatibility and upgradability. Keep your JavaScript code modular and maintainable, making it easier for future developers to adapt or debug.
-
-## Working with Hooks
-
-When using the **Object Hooks** to implement specific behaviors for your objects, make sure to inject logic that won't disrupt the standard behavior of Simplicité's objects.
-
-Also make sure to use existing and not already used hooks, or properly override them if it's the case.
-
-## Work with `$ui` effectively
-
-## Fetching data and Ajax requests
-
-## Respect MVC organization
-
-## Security Practices
+## UI Tools
