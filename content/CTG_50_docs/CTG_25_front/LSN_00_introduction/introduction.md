@@ -50,6 +50,11 @@ In order to properly manipulate and customize your Simplicité applications, it 
 
 ![](disposition-schema.png)
 
+* **HEADER:**
+* **MENU:**
+* **WORK:**
+* **FOOTER:**
+
 ### CSS stylesheet.s (optional)
 
 ### JS script.s (optional)
@@ -90,3 +95,4 @@ This part of the documentation follows the following organization and flow:
 * [**Interface tool `$ui` (Documentation)**](https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples)  
 * [**Custom Services through External Objects (Documentation)**](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
 * [**Ajax API (Documentation)**](https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api)  
+* [**Simplicité NPM Javascript API Doc**](https://simplicitesoftware.github.io/javascript-api/)

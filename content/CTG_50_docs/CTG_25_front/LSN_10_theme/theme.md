@@ -224,14 +224,17 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Label              | Text Color             | Any: |
-| Label              | Font Weight            | [200;900]: per hundreds, |
-| Input              | Height                 | [100;400]: |
-| Readonly Field     | Background Color       | Any: |
-| Reference Field    | Background Color       | Any: |
-| Input              | Border Color           | Any: |
-| Input              | Border-Bottom Color    | Any: |
-| Input              | Border-Bottom Radius   | [0;100]: |
+| Label              | Text Color             | Any: defines the `text-color` of all fields' labels. |
+| Label              | Font Weight            | [200;900]: per hundreds, defines the `font-weight` for all fields' labels. |
+| Input              | Height                 | [100;400]: defines the `height` of all fields' inputs part. |
+| Readonly Field     | Background Color       | Any: defines the `background-color` for all the fields with `readonly` class. |
+| Reference Field    | Background Color       | Any: defines the `background-color` for all the fields with `reference` class. |
+| Input              | Border Color           | Any: defines the `border-color` of all fields' inputs, no value (empty) will apply  `border: none`. |
+| Input              | Border-Bottom Color    | Any: defines the `bottom-border-color` of all fields' inputs, no value (empty) will apply `border-bottom: none`. |
+| Input              | Border-Bottom Radius   | [0;100]: defines the `border-radius` of all fields' inputs. |
+| Field Buttons      | Background Color       | Any: defines the background color for all the fields' addons buttons. |
+| Field Buttons      | Icon Color             | Any: defines the color of the *icons* for all the fields' addons buttons. |
+| Field Buttons      | Border Color           | Any: defines the border color for all the fields' addons buttons, no value (empty) will apply `border: none`. |
 
 > Except for the presented above ones, input fields are from the bootstrap library, and so aren't customizable from here. Still they are adapted to the `base-theme` you choosed. 
 > You can use the `addon.less` file to override their styles anyway.
