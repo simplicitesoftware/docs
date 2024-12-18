@@ -140,6 +140,8 @@ products.search(function(){
 }
 ```
 
+
+
 ## External Objects (external pages)
 
 Another slightly different case of javascript development within Simplicité can be the implementation of **External Object** being used as *external pages* (so of type `com.simplicite.webapp.web.WebPageExternalObject`), furtherly explored in the [External Pages](https://docs.simplicite.io/lesson/docs/front/external-pages) lesson.

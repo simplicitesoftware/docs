@@ -50,71 +50,74 @@ For the welcome card, both content and style ressources are quite easy to create
         Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy a seamless experience tailored for you.
     </span>
     <div class="welcome-buttons">
-        <button class="welcome-btn tuto" onclick="goToSimpliciteDoc()">Get Started (Tutorial)</button>
-        <button class="welcome-btn prd-nav" onclick="goToProductsWithin()">Products List</button>
-        <button class="welcome-btn info" onclick="getMyInfos()">My Informations</button>
+        <button class="welcome-btn tuto" onclick="">Get Started (Tutorial)</button>
+        <button class="welcome-btn prd-nav" onclick="">Products List</button>
+        <button class="welcome-btn info" onclick="">My Informations</button>
     </div>
+    <div id="welcome-list" hidden></div>
 </div>
 ```
 
+<details>
+	<summary>CSS Stylesheet</summary>
+	
 ```css
 #customwelcomecard {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    width: 100%;
-    padding: 1rem 2rem;
+	width: 100%;
+	padding: 1rem 2rem;
 
-    justify-content: start;
-    align-items: center;
+	justify-content: start;
+	align-items: center;
 }
 .welcome-title {
 	width: 100%;
-    color: #303030;
-    text-align: center;
+	color: #303030;
+	text-align: center;
 	font-size: 3.5rem;
-    border-right: solid 0.25rem #5451FF;
+	border-right: solid 0.25rem #5451FF;
 }
 .welcome-text {
 	padding: 0rem 1.5rem;
-    color: #474747;
-    text-align: left;
+	color: #474747;
+	text-align: left;
 	font-size: 2rem;
-    margin-bottom: 1rem;
-    border-right: solid 0.25rem #58EC9B;
+	margin-bottom: 1rem;
+	border-right: solid 0.25rem #58EC9B;
 }
 .welcome-buttons {
-    display: flex;
-    flex-direction: row;
-    width: 100%
-
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 2rem;
+	display: flex;
+	flex-direction: row;
+	width: 100%
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	margin-top: 2rem;
 }
 .welcome-btn {
-    position: relative;
-    padding: 1.5rem 3rem;
-    border: none;
-    color: #303030;
-    background-color: transparent;
-    overflow: hidden;
-    cursor: pointer;
-    text-align: center;
-    font-size: 2rem;
+	position: relative;
+	padding: 1.5rem 3rem;
+	border: none;
+	color: #303030;
+	background-color: transparent;
+	overflow: hidden;
+	cursor: pointer;
+	text-align: center;
+	font-size: 2rem;
 }
 .welcome-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.25rem;
-    height: 100%;
-    background-color: transparent;
-    border-left: solid 0.25rem transparent;
-    border-bottom: solid 0.125rem transparent;
-    transition: all 0.5s ease;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.25rem;
+	height: 100%;
+	background-color: transparent;
+	border-left: solid 0.25rem transparent;
+	border-bottom: solid 0.125rem transparent;
+	transition: all 0.5s ease;
 }
 .welcome-btn:hover::before {
 	border-left-width: 1.5rem;
@@ -130,9 +133,9 @@ For the welcome card, both content and style ressources are quite easy to create
 	&:active {
 		background-color: darken(#FFF6E0,4%);
 	}
-    &::before {
-        border-color: #FFD166;
-    }
+	&::before {
+		border-color: #FFD166;
+	}
 }
 .info {
 	background-color: #FBEBFB;
@@ -140,9 +143,9 @@ For the welcome card, both content and style ressources are quite easy to create
 	&:active {
 		background-color: darken(#FBEBFB,4%);
 	}
-    &::before {
-        border-color: #EC9DED;
-    }
+	&::before {
+		border-color: #EC9DED;
+	}
 }
 .prd-nav {
 	background-color: #FED7D9;
@@ -150,11 +153,12 @@ For the welcome card, both content and style ressources are quite easy to create
 	&:active {
 		background-color: darken(#FED7D9,4%);
 	}
-    &::before {
-        border-color: #FB3640;
-    }
+	&::before {
+		border-color: #FB3640;
+	}
 }
 ```
+</details>
 
 > Yet the buttons are doing nothing, because yet we are sticking to creation & integration, dynamic implementation will be a bother for next lesson, where features will be implemented in the *Dynamic External Object* lesson. That's why only the styles are presented above.
 
@@ -193,9 +197,27 @@ class CustomWelcomeCard extends Simplicite.UI.ExternalObject {
 * The class extends the `Simplicite.UI.ExternalObject` class, so the object is set to access all (possibly needed features)[]
 * Only the `render(params, data)` function is declared yet, as it is the one called inside the server-side java code resource `com.simplicite.webapp.web.ResponsiveExternalObject`.
 
+But for simple embedded *External Objects* we can use a slightly simpler setup, by simply declaring our object as a peculiar namespace in which we'll declare everything we need to ensure it is only related to our object:
+
+```javascript
+var CustomWelcomeCard = (function(){
+	return {};
+})();
+```
+
 ### Accessing the current session
 
 The communication with Simplicité's environment is allowed by using the `$ui` call within our object's class extending `Simplicite.UI.ExternalObject`. And we get the current session by using the `getApp()` function, returning the current `Simplicite.Ajax` instance.
+
+From the previous example we just need a small improvement, adding the `let app= $ui.getApp()` line to instantiate a reference to the current Simplicité session:
+
+```javascript
+var CustomWelcomeCard = (function(){
+	let app = $ui.getApp();
+	
+	return {};
+})();
+```
 
 ### Manipulating BusinessObjects
 
@@ -204,7 +226,24 @@ As they are a core element of any Simplicité application, it is important to kn
 By doing so, you are gonna get a variable of type `[object Object]`, that is organized as follows:
 ```json
 {
-
+	"count": <INT>, // count of BusinessObjects with this name & applied filters
+	"crosstabdata": {},
+	"filters": {}, // applied filters in the 'search' call
+	"item": {},
+	"list": [<OBJECT>...], // array of all the BusinessObject
+	"locals": {},
+	"maxpage": <INT>,
+	"metadata": {
+		"name": <STRING>, // BusinessObject's name
+		"instance": <STRING>, // Instance where object is located
+		"rowidfield": <STRING>, // Id of the object within the Database
+	},
+	"page": <INT>,
+	"selectedIds": <ARRAY>,
+	"_app": {
+		// specific parameters of your app
+		"_errorActive": <BOOL>, "_warningActive": <BOOL>, "infoActive": <BOOL>, "_debugActive": <BOOL>, "_approot": <STRING>, // ...
+	}
 }
 ```
 
@@ -275,7 +314,8 @@ function displayProductsWithin()
 
 If we break it down, here is the HTML element we've inserted for each product:
 
-* `HTML` content:
+<details>
+<summary>HTML content</summary>
 ```html
 <div class="welcome-product-card">
 	<div class="welcome-prd-card-left">
@@ -292,8 +332,11 @@ If we break it down, here is the HTML element we've inserted for each product:
 	</div>
 </div>
 ```
+</details>
 
-* `CSS` styles:
+<details>
+<summary>CSS styles</summary>
+
 ```css
 .welcome-product-card {
 	display: flex;
@@ -346,5 +389,252 @@ If we break it down, here is the HTML element we've inserted for each product:
 	font-size: 1rem;
 }
 ```
+</details>
 
 > The way to input HTML from javascript is your choice, here we did it this way to ease the understanding from an external perspective.
+
+## Final Welcome-Card
+
+After all that we should be done with the implementation of our customized Welcome-Card widget ! We so have 3 resource files that should look like this:
+
+**HTML** resource file:
+```html
+<div id="customwelcomecard">
+	<span class="welcome-title">Welcome User</span>
+    <span class="welcome-text">
+        Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy a seamless experience tailored for you.
+    </span>
+    <div class="welcome-buttons">
+        <button class="welcome-btn tuto" onclick="CustomWelcomeCard.goToSimpliciteDoc()">Get Started (Tutorial)</button>
+        <button class="welcome-btn prd-nav" onclick="CustomWelcomeCard.displayProductsWithin()">Products List</button>
+        <button class="welcome-btn info" onclick="CustomWelcomeCard.getMyInfos()">My Informations</button>
+    </div>
+    <div id="welcome-list" hidden></div>
+</div>
+```
+
+**CLASS** resource file (script):
+```javascript
+var CustomWelcomeCard = (function(){
+	let app = $ui.getApp();
+	let productdBusinessObject = app.getBusinessObject("DemoProduct");
+	
+	return {
+        goToSimpliciteDoc: function() {
+            window.open("https://docs.simplicite.io/", "_blank");
+        },
+        displayProductsWithin: function() {
+        	productdBusinessObject.search( function() { //Here it is important to put the function here and not outside, so the search() operation is actually done before accessing the object, otherwise you might access a non-updated (empty) version of your object.
+				document.getElementById("welcome-list").hidden = false;
+				
+				console.dir(productdBusinessObject);
+				
+				for (let i=0; i<productdBusinessObject.list.length; i++)
+				{
+					const prd = productdBusinessObject.list[i];
+					console.log(`prd_${i}:\n${JSON.stringify(prd)}`);
+					
+					document.getElementById("welcome-list").insertAdjacentHTML(
+				        'beforeend',
+				        `<div class="welcome-product-card">
+				        	<div class="welcome-prd-card-left">
+				        		<div class="prd-card-left-header">
+				        			<div class="prd-card-left-header-texts">
+				        				<span class="card-left-header-prd-name">${prd.demoPrdName}</span>
+				        				<span class="card-left-header-prd-type">${prd.demoPrdType}</span>
+				        			</div>
+				        			<span class="card-left-header-prd-price">${prd.demoPrdUnitPrice}</span>
+				        		</div>
+				        		<div class="prd-card-left-body">
+				        			<span class="card-left-body-prd-descr">${prd.demoPrdDescription}</span>
+				        		</div>
+				        	</div>
+				        </div>`
+				    );}
+			}, null, {});
+        },
+        getMyInfos: function() {
+			// TODO: Redirect to the user's own settings and stuff ??
+        }
+    };
+})();
+```
+
+**STYLES** resource file (stylesheet):
+```css
+#customwelcomecard {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 1rem 2rem;
+
+    justify-content: start;
+    align-items: center;
+}
+.welcome-title {
+	width: 100%;
+    color: #303030;
+    text-align: center;
+	font-size: 3.5rem;
+    border-right: solid 0.25rem #5451FF;
+}
+.welcome-text {
+	padding: 0rem 1.5rem;
+    color: #474747;
+    text-align: left;
+	font-size: 2rem;
+    margin-bottom: 1rem;
+    border-right: solid 0.25rem #58EC9B;
+}
+
+/*
+	GENERIC BUTTON STYLES
+                           */
+.welcome-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%
+
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.welcome-btn {
+    position: relative;
+    padding: 1.5rem 3rem;
+    border: none;
+    color: #303030;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    font-size: 2rem;
+}
+.welcome-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.25rem;
+    height: 100%;
+    background-color: transparent;
+    border-left: solid 0.25rem transparent;
+    border-bottom: solid 0.125rem transparent;
+    transition: all 0.5s ease;
+}
+.welcome-btn:hover::before {
+	border-left-width: 1.5rem;
+}
+.welcome-btn:active {
+	&::before {
+		border-left-width: 3rem;
+	}
+}
+
+/*
+	SPECIFIC BUTTONS STYLES
+                              */
+
+.tuto {
+	background-color: #FFF6E0;
+	transition: all 0.25s ease;
+	&:active {
+		background-color: darken(#FFF6E0,4%);
+	}
+}
+.info {
+	background-color: #FBEBFB;
+	transition: all 0.25s ease;
+	&:active {
+		background-color: darken(#FBEBFB,4%);
+	}
+}
+.prd-nav {
+	background-color: #FED7D9;
+	transition: all 0.25s ease;
+	&:active {
+		background-color: darken(#FED7D9,4%);
+	}
+}
+.tuto::before {
+    border-color: #FFD166;
+}
+.info::before {
+    border-color: #EC9DED;
+}
+.prd-nav::before {
+	border-color: #FB3640;
+}
+
+
+#welcome-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	justify-content: center;
+	align-items: center;
+	
+	width: calc(100%-2rem);
+	
+	margin-top: 2rem;
+	padding: 2rem;
+	gap: 2rem;
+}
+
+/*
+	PRODUCT CARDS STYLES
+                           */
+.welcome-product-card {
+	display: flex;
+	flex-direction: row;
+	width: 25%;
+	gap: 1rem;
+	padding: 2rem;
+	font-size: 2rem;
+	background-color: rgba(226, 226, 226, 0.24);
+	border-left: solid 0.125rem #E2E2E2;
+	box-shadow: none;
+	
+	transition: all 0.33s ease-in;
+}
+.welcome-product-card:hover {
+	transform: scale(1.05);
+	box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.25);
+	border-left: solid 0.125rem #777777;
+}
+.welcome-prd-card-left {
+	display: flex;
+	flex-direction: column;
+}
+.prd-card-left-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: start;
+	margin-bottom: 0.5rem;
+}
+.prd-card-left-header-texts {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+.card-left-header-prd-name {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+.card-left-header-prd-type {
+	font-size: 0.6rem;
+	font-style: italic;
+}
+.card-left-header-prd-price {
+	font-size: 0.75rem
+	text-align: right;
+}
+.prd-card-left-body {
+	text-align: left;
+	font-size: 1rem;
+}
+``` 

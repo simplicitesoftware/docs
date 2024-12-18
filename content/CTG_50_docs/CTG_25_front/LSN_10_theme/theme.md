@@ -17,19 +17,35 @@ This tool allows you to customize your instances design globally, giving you con
 
 **Example**: here are few example already created and available in the default Simplicité's solution.
 
-![](theme-admin-overview.png)
 * **ThemeAdmin**: main administrator theme created with `Dark Base`, used mainly by Simplicité's administrator or *designer users*.
+<details>
+<summary>ThemeAdmin Overview</summary>
+
+![](theme-admin-overview.png)
+</details>
+
+* **ThemeDesign**: theme made up from `Light Base` this theme is the equivalent of the *ThemeAdmin* for users that would prefer light mode.
+<details>
+<summary>ThemeDesign Overview</summary>
 
 ![](theme-design-overview.png)
-* **ThemeDesign**: theme made up from `Light Base` this theme is the equivalent of the *ThemeAdmin* for users that would prefer light mode.
+</details>
+
+* **ThemeEtat**: this theme is created based on the *DSFR* design norms from & for french government. It is applied to there solutions in order to follow specific rules of contrasts and spacings.
+<details>
+<summary>ThemeEtat Overview</summary>
 
 ![](theme-etat-overview.png)
-* **ThemeEtat**: this theme is created based on the *DSFR* design norms from & for french government. It is applied to there solutions in order to follow specific rules of contrasts and spacings.
+</details>
 
 > 2 new themes (Dark & Light) are coming, matching the Simplicité's new look & identity !
 
+<details>
+<summary>"Mazette" Themes Overview</summary>
+
 ![](theme-mazettelight-overview.png)
 ![](theme-mazettedark-overview.png)
+</details>
 
 ### Theme Creation
 
@@ -69,36 +85,60 @@ getting back to the tool itself, it is divided in *three parts*, each hosting an
 
 The Theme Editor’s Preview Section displays a *live preview* of your themes and the styles you are currently applying. It allows you to instantly see the results of your design. You can navigate through *Simplicité’s interface elements* using the tabs menu, enabling you to explore all contexts and situations with your custom styles applied.
 
-![](theme-editor-preview-home.png)
 * **Home**: presents the main shared elements across Simplicité’s UI, including the header and menu. The menu showcases various states and hierarchy cases, such as sub-menus and active domains.
+<details>
+<summary>Home Preview</summary>
 
-![](theme-editor-preview-buttons.png)
+![](theme-editor-preview-home.png)
+</details>
+
 * **Buttons**: unique as it combines both elements and their style options. It displays all button types available in Simplicité and allows you to customize the following properties; `background-color`, `text-color` or `icon-color`, `border-radius` and `border-width`. The button types are:
 1 - ***Primary:*** represent main actions shared across various contexts and interfaces.
 2 - ***Secondary:*** represent secondary or less critical actions with text labels.
 3 - ***Action:*** specific to the current object or context.
 4 - ***Transition:*** used for state-switching handlers for business objects or fields.
 5 - ***Icon:*** represent actions using icons instead of text.
+<details>
+<summary>Buttons Preview</summary>
 
-![](theme-editor-preview-panels.png)
+![](theme-editor-preview-buttons.png)
+</details>
+
 * **Panels**: contains core UI elements that structure Simplicité’s interface:
 1 - ***Panels:*** Found primarily in the `WORK` section of the UI, these display the content of selected menus or objects.
 2 - ***Sub-Panels:*** nest within Panels, typically containing *fields* for displayed objects.
 3 - ***Tabs:*** Organize fields and are available in four layouts: *Left*, *Right*, *Top*, and *Bottom*. These layouts determine the position of tab navigation items.
+<details>
+<summary>Panels Preview</summary>
 
-![](theme-editor-preview-form.png)
+![](theme-editor-preview-panels.png)
+</details>
+
 * **Form**: essential components in Simplicité’s UI. They combine Panels, *Sub-Panels*, and *Tabs* to organize `fields and inputs. The types of customizable fields include:
 1 - ***Field:*** casual element for text inputs within objects' forms.
 2 - ***Readonly:*** non-editable fields displaying static information.
 3 - ***References:*** editable link to other objects or data.
+<details>
+<summary>Form Preview</summary>
+
+![](theme-editor-preview-form.png)
+</details>
 
 Other input types, such as radio buttons, dropdown menus, or code editors, are not customizable in the Theme Editor. However, they adapt their styles based on the selected `base theme`.
 
-![](theme-editor-preview-list.png)
 * **List**: core element in Simplicité, appearing at various levels of the UI. They display rows of data in table format and can be customized for style consistency.
+<details>
+<summary>List Preview</summary>
+
+![](theme-editor-preview-list.png)
+</details>
+
+* **Dialog**: pop-up interfaces used for confirmations, alerts, or additional inputs. They can be styled to align with the overall theme. Similar look to panels and sub-panel, but are meant to contain easily understandable contents with clear actions at hand.
+<details>
+<summary>Dialog Preview</summary>
 
 ![](theme-editor-preview-dialog.png)
-* **Dialog**: pop-up interfaces used for confirmations, alerts, or additional inputs. They can be styled to align with the overall theme. Similar look to panels and sub-panel, but are meant to contain easily understandable contents with clear actions at hand.
+</details>
 
 * **Addons**: provides customization options for external plugins or integrations, ensuring a cohesive design across additional functionalities. This is the `addon.less` file mentionned above
 

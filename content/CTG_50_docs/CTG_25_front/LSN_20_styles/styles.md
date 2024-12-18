@@ -17,14 +17,21 @@ Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends t
 ### Key Features
 
 *Variables:* Store reusable values for colors, fonts or dimensions:
+<details>
+<summary>Code Snippet<summary>
+
 ```less
 @primary-color: #3498db;
 body {
     color: @primary-color;
 }
 ```
+</details>
 
 *Nesting:* Write styles in a structured & hierarchical way. Allowing to specify depending on contexts when it's needed. Below are shown two ways to use nesting, and shows a use case where items with same class have different styles depending on their parent:
+<details>
+<summary>Code Snippet<summary>
+
 ```less
 .container {
     .header {
@@ -37,8 +44,12 @@ body {
     }
 }
 ```
+</details>
 
 *Interactions Nesting:* Same way as nesting works for children elements or contexts, yo ucan use it to dynamically handle different type of interactions for your elements:
+<details>
+<summary>Code Snippet<summary>
+
 ```less
 body {
     .container {
@@ -56,8 +67,12 @@ body {
     }
 }
 ```
+</details>
 
 *Mixins:* Define reusable style blocks for consistency:
+<details>
+<summary>Code Snippet<summary>
+
 ```less
 .rounded-corners(@radius: 0.5rem) {
     border-radius: @radius;
@@ -66,14 +81,19 @@ div {
     .rounded-corners(1rem);
 }
 ```
+</details>
 
 *Functions:* Perform calculations and color operations directly in your styles:
+<details>
+<summary>Code Snippet<summary>
+
 ```less
 @primary-color: #3498db;
 body {
     color: darken(@primary-color, 16%);
 }
 ```
+</details>
 
 Combining all these features can allow you to go very far in the customization of your UI, but the use of the *addon.less* file to add more specificities should be limited to not create too much of less programming for your devs.
 

@@ -30,21 +30,19 @@ The Controller is the central orchestrator of the Simplicité solution, managing
 
 Simplicité allows you to also communicate only with specific parts of it --some like `$ui`, `$app` or `$view` have been quickly explained before-- but there are other that are important to be aware of in order to enhance your capacities with Simplicité's development.
 
-* [`$ui`](https://platform.simplicite.io/6.1/jsdoc/global.html#$ui) represents the **UI Singleton** of type `Simplicite.UI.Engine`, it basically is the *Main UI Controller* with an abstract view to display components.
+* [`$ui`](https://platform.simplicite.io/6.1/jsdoc/global.html#$ui) represents the **UI Singleton** --of type `Simplicite.UI.Engine`-- that basically is the *Main UI Controller* with an abstract view to display components.
 
-* [`$app`](https://platform.simplicite.io/6.1/jsdoc/global.html#$app) represents the **Ajax Service** of type `Simplicite.Application`, and behaves like the *Main Model* for your current Simplicité instance/session.
+* [`$app`](https://platform.simplicite.io/6.1/jsdoc/global.html#$app) represents the **Ajax Service** --of type `Simplicite.Application`-- that behaves like the *Main Model* for your current Simplicité instance/session.
 
-* [`$view`](https://platform.simplicite.io/6.1/jsdoc/global.html#$view) represents the **View Engine** of type `Simplicite.UI.View`, it is the *Main View* that must be loaded by the *Model* in order to access and use display controls. It implements the UI interfaces, and interacts with the *Controller* to access data.
+* [`$view`](https://platform.simplicite.io/6.1/jsdoc/global.html#$view) represents the **View Engine** --of type `Simplicite.UI.View`-- which is the *Main View* that must be loaded by the *Model* in order to access and use display controls. It implements the UI interfaces, and interacts with the *Controller* to access data.
 
-* [`$T`](https://platform.simplicite.io/6.1/jsdoc/global.html#$t)
+* [`$grant`](https://platform.simplicite.io/6.1/jsdoc/global.html#$grant) represent the **User Rights** --of type `Simplicite.Ajax.Grant`-- and allows to access and possibly manipulate the instance through the rights of the current user.
 
-* [`$grant`](https://platform.simplicite.io/6.1/jsdoc/global.html#$grant)
+* [`$nav`](https://platform.simplicite.io/6.1/jsdoc/global.html#$nav) represents the **Navigation Controller** --of type `Simplicite.UI.Navigator`-- thanks to which you can possibly navigate through your Simplicité application through the *Navigation* tool.
 
-* [`$nav`](https://platform.simplicite.io/6.1/jsdoc/global.html#$nav)
+* [`$root`](https://platform.simplicite.io/6.1/jsdoc/global.html#$root) represents the **Server Root URL** --of type `String`-- through which you can get and access the static resources of your Simplicité instance/session.
 
-* [`$root`](https://platform.simplicite.io/6.1/jsdoc/global.html#$root)
-
-* [`$tools`](https://platform.simplicite.io/6.1/jsdoc/global.html#$tools)
+* [`$tools`](https://platform.simplicite.io/6.1/jsdoc/global.html#$tools) represents the **Bootstrap Tools** --of type `Simplicite.UI.View`-- that allows you to use a bunch of Bootstrap specific methods and workflows (for example BootstrapWebPages for external pages, or bootstrap's specific widgets).
 
 # Accessing Simplicité's session
 
