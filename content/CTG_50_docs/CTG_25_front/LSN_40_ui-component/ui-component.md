@@ -219,7 +219,7 @@ var CustomWelcomeCard = (function(){
 })();
 ```
 
-### Manipulating BusinessObjects
+### Manipulating Business Objects
 
 As they are a core element of any Simplicité application, it is important to know how to get and use them properly within any **External Object**. In order to do so you first need to have your app declared above, `let app = $ui.getApp();`, and then the method is `getBusinessObject(string name)`, thanks to which you can fetch all the Business Objects having the wanted `name`. 
 
@@ -393,6 +393,58 @@ If we break it down, here is the HTML element we've inserted for each product:
 
 > The way to input HTML from javascript is your choice, here we did it this way to ease the understanding from an external perspective.
 
+### Displaying Content
+
+Another interesting possibility is to implement custom shortcuts from our widgets, basically to redirect to any display Business Object's form, or even redirect to more general parts of the solution.
+
+Such interactions can be done using the `BusinessObject.displayForm()` or `BusinessObject.displayList()` methods. The use case for displaying **Products' Form** is pretty straightforward:
+```javascript
+document.getElementById("welcome-list").insertAdjacentHTML(
+    'beforeend',
+    `<div class="welcome-product-card" onclick="CustomWelcomeCard.goToProductForm(${prd.row_id})">
+    . . . `
+);
+
+// ... end of function & rest of code ...
+
+function goToProductForm(prdRowId) {
+	$ui.displayForm(null, "DemoProduct", prdRowId, {
+		nav: "add",
+		target: "work"
+	});
+}
+```
+
+The `display` methods available for **Business Objects** are all working as follows; specify the name of the Business Object, the `row_id` of the specific instance of this object, and then some options as `nav` --that defines the behavior regarding the navigation element (breadcrumb)-- or `target` --that specifies the UI area in which the form will be displayed (`"work"` is the only appropriate for forms, lists etc)--.
+
+### Getting User Infos
+
+Keeping the idea of redirecting our user, we will implement a slightly different interaction; displaying the current user's form. Such feature will require us to get the currently logged user, and to do so here is a simple script workflow:
+
+```javascript
+let grant = $ui.getGrant(); // can be removed if using $grant
+let currentUserLogin = grant.login; // equivalent: $grant.login
+
+let userBusinessObject = app.getBusinessObject("User");
+```
+
+Then thanks to the following script, we can easily use the previously fetched informations to properly display the currently logged user's form:
+
+```javascript
+userBusinessObject.search( function(){
+	const user = userBusinessObject.list.find(u => u.usr_login === currentUserLogin);
+	
+	if (user && user.row_id) {
+		$ui.displayForm(null, "User", user.row_id, {
+			nav: "add",
+			target: "work"
+		});
+	} else {
+		console.error("User not found.");
+	}
+}, null, {});
+```
+
 ## Final Welcome-Card
 
 After all that we should be done with the implementation of our customized Welcome-Card widget ! We so have 3 resource files that should look like this:
@@ -402,12 +454,12 @@ After all that we should be done with the implementation of our customized Welco
 <div id="customwelcomecard">
 	<span class="welcome-title">Welcome User</span>
     <span class="welcome-text">
-        Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy a seamless experience tailored for you.
+        Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy your experience with us !
     </span>
     <div class="welcome-buttons">
         <button class="welcome-btn tuto" onclick="CustomWelcomeCard.goToSimpliciteDoc()">Get Started (Tutorial)</button>
         <button class="welcome-btn prd-nav" onclick="CustomWelcomeCard.displayProductsWithin()">Products List</button>
-        <button class="welcome-btn info" onclick="CustomWelcomeCard.getMyInfos()">My Informations</button>
+        <button class="welcome-btn info" onclick="CustomWelcomeCard.goToUserInfos()">My Informations</button>
     </div>
     <div id="welcome-list" hidden></div>
 </div>
@@ -417,45 +469,73 @@ After all that we should be done with the implementation of our customized Welco
 ```javascript
 var CustomWelcomeCard = (function(){
 	let app = $ui.getApp();
+	let grant = $ui.getGrant();
 	let productdBusinessObject = app.getBusinessObject("DemoProduct");
+	let userBusinessObject = app.getBusinessObject("User");
+	let currentUserLogin = grant.login;
+	
+	function goToSimpliciteDoc() {
+		window.open("https://docs.simplicite.io/", "_blank");
+	}
+	
+	function displayProductsWithin() {
+		productdBusinessObject.search( function() {
+			document.getElementById("welcome-list").hidden = false;
+			
+			console.dir(productdBusinessObject);
+			
+			for (let i=0; i<productdBusinessObject.list.length; i++)
+			{
+				const prd = productdBusinessObject.list[i];
+				console.log(`prd_${i}:\n${JSON.stringify(prd)}`);
+				
+				document.getElementById("welcome-list").insertAdjacentHTML(
+			        'beforeend',
+			        `<div class="welcome-product-card" onclick="CustomWelcomeCard.goToProductForm(${prd.row_id})">
+			        	<div class="welcome-prd-card-left">
+			        		<div class="prd-card-left-header">
+			        			<div class="prd-card-left-header-texts">
+			        				<span class="card-left-header-prd-name">${prd.demoPrdName}</span>
+			        				<span class="card-left-header-prd-type">${prd.demoPrdType}</span>
+			        			</div>
+			        			<span class="card-left-header-prd-price">${prd.demoPrdUnitPrice}</span>
+			        		</div>
+			        		<div class="prd-card-left-body">
+			        			<span class="card-left-body-prd-descr">${prd.demoPrdDescription}</span>
+			        		</div>
+			        	</div>
+			        </div>`
+			    );}
+		}, null, {});
+	}
+	
+	function goToUserInfos() {
+		userBusinessObject.search( function(){
+			const user = userBusinessObject.list.find(u => u.usr_login === currentUserLogin);
+			
+			if (user && user.row_id) {
+				$ui.displayForm(null, "User", user.row_id, {
+					nav: "add",
+					target: "work"
+				});
+			} else {
+				console.error("User not found.");
+			}
+        }, null, {});
+	}
+	
+	function goToProductForm(prdRowId) {
+		$ui.displayForm(null, "DemoProduct", prdRowId, {
+			nav: "add",
+			target: "work"
+		});
+	}
 	
 	return {
-        goToSimpliciteDoc: function() {
-            window.open("https://docs.simplicite.io/", "_blank");
-        },
-        displayProductsWithin: function() {
-        	productdBusinessObject.search( function() { //Here it is important to put the function here and not outside, so the search() operation is actually done before accessing the object, otherwise you might access a non-updated (empty) version of your object.
-				document.getElementById("welcome-list").hidden = false;
-				
-				console.dir(productdBusinessObject);
-				
-				for (let i=0; i<productdBusinessObject.list.length; i++)
-				{
-					const prd = productdBusinessObject.list[i];
-					console.log(`prd_${i}:\n${JSON.stringify(prd)}`);
-					
-					document.getElementById("welcome-list").insertAdjacentHTML(
-				        'beforeend',
-				        `<div class="welcome-product-card">
-				        	<div class="welcome-prd-card-left">
-				        		<div class="prd-card-left-header">
-				        			<div class="prd-card-left-header-texts">
-				        				<span class="card-left-header-prd-name">${prd.demoPrdName}</span>
-				        				<span class="card-left-header-prd-type">${prd.demoPrdType}</span>
-				        			</div>
-				        			<span class="card-left-header-prd-price">${prd.demoPrdUnitPrice}</span>
-				        		</div>
-				        		<div class="prd-card-left-body">
-				        			<span class="card-left-body-prd-descr">${prd.demoPrdDescription}</span>
-				        		</div>
-				        	</div>
-				        </div>`
-				    );}
-			}, null, {});
-        },
-        getMyInfos: function() {
-			// TODO: Redirect to the user's own settings and stuff ??
-        }
+        goToSimpliciteDoc: goToSimpliciteDoc,
+        displayProductsWithin: displayProductsWithin,
+        goToUserInfos: goToUserInfos,
+        goToProductForm: goToProductForm,
     };
 })();
 ```
