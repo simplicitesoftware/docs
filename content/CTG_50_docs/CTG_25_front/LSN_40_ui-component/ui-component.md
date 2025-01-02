@@ -1,45 +1,51 @@
 UI Component
 ============
 
-This document outlines the process of using **External Objects** to design and implement custom widgets *from scratch*. It breaks down the important steps to create *dynamic* objects to thoroughly address the **creation**, **integration** and the **implementation** processes.
+This document outlines the process of using **External Objects** to design and implement custom widgets from scratch. It breaks down the important steps to create interactive objects to thoroughly address the *creation*, *integration* and the *implementation* processes.
 
-> Following this, it will explore how to make these widgets dynamic by incorporating interactive behaviors, user engagement, and seamless communication with Simplicité's backend and features.
+Following this, it will explore how to make these widgets dynamic by incorporating *interactive behaviors*, and seamless communication with Simplicité's backend and features.
 
 ## Use Case Scenarios
 
 The need for custom widgets typically arises when existing Simplicité components do not fully meet your requirements. These scenarios may include the need to display information in a particular format, implement specific functionalities that are incompatible with the desired UI, or combine features in ways that the default options do not support.
 
-> Such requirements are often niche. Most technical operations can already be accomplished using Simplicité's core functionalities. Consequently, the primary purpose of creating custom widgets is to address unique visualization needs, enabling you to embed tailored styles and feature combinations within a custom interface.
+> ***Note:*** Such requirements are often niche. Most technical operations can already be accomplished using Simplicité's core functionalities. Consequently, the primary purpose of creating custom widgets is to address unique visualization needs, enabling you to embed tailored styles and feature combinations within a custom interface.
 
-### Welcome Card
+### Our Example: Welcome Card
 
 ![](welcome-card-result.png)
 
-Highly customizable element that can be styled to align with the platform's visual identity, offering users a warm and engaging entry point. Depending on the context, its design can include dynamic color palettes, branded typography, or interactive icons to reflect the system's tone or purpose. For instance, a business-oriented platform might feature a professional and minimalist style, while a creative application might opt for bold, vibrant visuals to set an energetic tone. It can also integrate unique ways of calling objects, such as clickable shortcuts or personalized greetings.
+It is a *highly customizable* element that can be styled to align with the platform's visual identity, offering users an engaging entry point. Depending on the context, its design can include specific elements to match your graphic identity, or interactive icons to reflect the application's tone or purpose.
+
+For instance, a business-oriented platform might feature a professional and minimalist style, while a creative application might opt for bold, vibrant visuals to set an energetic tone. It can also integrate unique ways of calling objects, such as clickable shortcuts or personalized greetings.
 
 ## Implementation (Welcome Card)
 
 The creation process is quite straightforward, as it is a specific type of **External Object**, it is mainly instantiating a new external object with specific values and then implementing the content and styles for the widget we want.
 
-![](welcome-card-object-form.png)
-
 ### External Object Creation
 
-Start by creating an **External Object**, and make sure it is of nature **UI page or component**, and of class `com.simplicite.webapp.web.widgets.ResponsiveExternalObject`. Also make sure that the **UI widget** field is set to *Yes*.
+![](welcome-card-object-form.png)
 
-Another important step is to grant your widget the rights of the module and view you want to embed it in. This way you won't have troubles integrating it to your application.
+Start by creating an **External Object**, and make sure it is of nature *UI page or component*, and of class `com.simplicite.webapp.web.widgets.ResponsiveExternalObject`. Also make sure that the *UI widget* field is set to *Yes*.
+
+Another important step is to grant your widget the rights of the module and view you want to embed it in. This way you won't have troubles integrating it to your application. To do so navigate to your object's tab, in the *Permissions* section, and add all the ones you need.
+
+![](welcome-card-permissions.png)
 
 ### Adding Content & Styles
 
-Then use the *Create Resources* action button, and click *Yes*. By doing so, you are adding 3 files to your object's *Resources*:
+Then use the *Create Resources* action button, and click *Yes*. By doing so, you are adding 3 files to your object's *Resources* (visible in the bottom tab section "Resources"):
 
-- **ext-object_index** or **HTML**; the *HTML* file in which you can define the content for your object. By default it just contains the `<div id="ext-obj"></div>` in which you can put whatever style you want.
+- **HTML**; the *HTML* file in which you can define the content for your object. By default it just contains the `<div id="ext-obj"></div>` in which you can put whatever style you want.
 
-- **ext-obj_styles** or **STYLES**; the *CSS* file that serves as stylesheet for your object. There are no default style defined, only an empty bracket `#ext-obj { /* Custom styles */ }`.
+- **STYLES**; the *CSS* file that serves as stylesheet for your object. There are no default style defined, only an empty bracket `#ext-obj { /* Custom styles */ }`.
 
-- **ext-obj_script** or **CLASS**; the *Javascript* script that will be useful for the next lesson. 
+- **CLASS**; the *Javascript* script that will be useful for the next lesson. 
 
-> The ressources are organized as any web element, in order to be easily integrated and created by designers and frontend developers.
+![](welcome-card-resources.png)
+
+> ***Note:*** The ressources are organized as any web element, in order to be easily integrated and created by designers and frontend developers.
 
 For the welcome card, both content and style ressources are quite easy to create. Below are the *HTML* and *CSS* codes.
 
@@ -122,10 +128,8 @@ For the welcome card, both content and style ressources are quite easy to create
 .welcome-btn:hover::before {
 	border-left-width: 1.5rem;
 }
-.welcome-btn:active {
-	&::before {
-		border-left-width: 3rem;
-	}
+.welcome-btn:active::before {
+	border-left-width: 3rem;
 }
 .tuto {
 	background-color: #FFF6E0;
@@ -160,8 +164,6 @@ For the welcome card, both content and style ressources are quite easy to create
 ```
 </details>
 
-> Yet the buttons are doing nothing, because yet we are sticking to creation & integration, dynamic implementation will be a bother for next lesson, where features will be implemented in the *Dynamic External Object* lesson. That's why only the styles are presented above.
-
 ## Integration (Welcome Card)
 
 As for the *creation process*, the process of integrating the created widget is very straightforward, everything will be done in the *User Interface > Views > Show All*, select a view that is of type *Home Page*, and click the *Edit View* action button:
@@ -172,9 +174,9 @@ As for the *creation process*, the process of integrating the created widget is 
 4 - Fill the *External Object* field with the name of your widget (for the welcome-card use **CustomWelcomeCard**).
 5 - Save it, and you shall see a preview of your object integrated within the view.
 
-> Make sure to grant the rights for your external object !
-> * If encountering the *External object ____ not granted*, first try to clear your cache.
-> * If clearing cache wasn't the solution check for your object's rights, and make sure that they matches the ones of your application.
+> ***Warning:*** Make sure to grant the rights for your external object !
+> - If encountering the *External object ____ not granted*, first try to clear your cache.
+> - If clearing cache wasn't the solution check for your object's rights, and make sure that they matches the ones of your application.
 
 The creation of an object's behavior and interaction within one Simplicité application sure comes along with the creation of its content & styles. Though it requires a bit more understanding of how Simplicité is organized and how to communicate properly and access the informations.
 
@@ -263,15 +265,15 @@ businessObject.search( function() {
 ```
 
 And the final step to access your different objects from here is to know how they are organized, and that you can do within the Simplicité's designer UI, as when declaring your object, each field and attribute of it has followed specific naming rules: 
+- A Business Object from the module *Demo* with the name *Product* and Prefix *prd* will always have its fields start with **demoPrd**.
+- If you have links between your Business Objects, for example if  your *DemoProduct* as several fields from *DemoSupplier* using the key **demoPrdSupId**, these fields will be accessible from javascript by using `demoPrdSupId__*` where `*` is the name of your field (let's take **demoSupName** for example).
 
-* A Business Object from the module **Demo** with the name **Product** and Prefix **prd** will always have its fields start with **demoPrd**.
-* If you have links between your Business Objects, for example if  your **DemoProduct** as several fields from **DemoSupplier** using the key **demoPrdSupId**, these fields will be accessible from javascript by using `demoPrdSupId__*` where `*` is the name of your field (let's take **demoSupName** for example).
-
-> If you want to access this without having to think of the possible names you had, or if you are unsure about your fields, you can chekc them from a *designer* scope, by going to **Business Objects > Your Object"* and then in the bottom tabs, select *Object Fields* to have the list of all fields and the possible links (example below).
+> ***Note:*** If you want to access this without having to think of the possible names you had, or if you are unsure about your fields, you can chekc them from a *designer* scope, by going to **Business Objects > Your Object"* and then in the bottom tabs, select *Object Fields* to have the list of all fields and the possible links (example below).
 
 ![](demo-prd-fields-list.png)
 
 Now here is how we implemented a simple product fetching & display function within the **CustomWelcomeCard** External Oject using the previously explained methods:
+
 ```javascript
 function displayProductsWithin()
 {
@@ -312,27 +314,7 @@ function displayProductsWithin()
 
 ![](welcome-product-cards.png)
 
-If we break it down, here is the HTML element we've inserted for each product:
-
-<details>
-<summary>HTML content</summary>
-```html
-<div class="welcome-product-card">
-	<div class="welcome-prd-card-left">
-		<div class="prd-card-left-header">
-		    <div class="prd-card-left-header-texts">
-		        <span class="card-left-header-prd-name">${prd.demoPrdName}</span>
-		        <span class="card-left-header-prd-type">${prd.demoPrdType}</span>
-		    </div>
-		    <span class="card-left-header-prd-price">${prd.demoPrdUnitPrice}</span>
-		</div>
-		<div class="prd-card-left-body">
-		    <span class="card-left-body-prd-descr">${prd.demoPrdDescription}</span>
-		</div>
-	</div>
-</div>
-```
-</details>
+Additionaly we create the corresponding styles for the product card we are dynamically adding:
 
 <details>
 <summary>CSS styles</summary>
@@ -391,13 +373,14 @@ If we break it down, here is the HTML element we've inserted for each product:
 ```
 </details>
 
-> The way to input HTML from javascript is your choice, here we did it this way to ease the understanding from an external perspective.
+> ***Note:*** The way to input HTML from javascript is your choice, here we did it this way to ease the understanding from an external perspective.
 
 ### Displaying Content
 
 Another interesting possibility is to implement custom shortcuts from our widgets, basically to redirect to any display Business Object's form, or even redirect to more general parts of the solution.
 
 Such interactions can be done using the `BusinessObject.displayForm()` or `BusinessObject.displayList()` methods. The use case for displaying **Products' Form** is pretty straightforward:
+
 ```javascript
 document.getElementById("welcome-list").insertAdjacentHTML(
     'beforeend',
@@ -449,7 +432,7 @@ userBusinessObject.search( function(){
 
 After all that we should be done with the implementation of our customized Welcome-Card widget ! We so have 3 resource files that should look like this:
 
-**HTML** resource file:
+***HTML*** resource file:
 ```html
 <div id="customwelcomecard">
 	<span class="welcome-title">Welcome User</span>
@@ -465,7 +448,7 @@ After all that we should be done with the implementation of our customized Welco
 </div>
 ```
 
-**CLASS** resource file (script):
+***CLASS*** resource file (script):
 ```javascript
 var CustomWelcomeCard = (function(){
 	let app = $ui.getApp();
@@ -540,7 +523,7 @@ var CustomWelcomeCard = (function(){
 })();
 ```
 
-**STYLES** resource file (stylesheet):
+***STYLES*** resource file (stylesheet):
 ```css
 #customwelcomecard {
     display: flex;
