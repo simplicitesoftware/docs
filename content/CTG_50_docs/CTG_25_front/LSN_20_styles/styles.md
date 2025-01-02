@@ -1,9 +1,9 @@
 Complementary Theme Styles
 ==========================
 
-This document outlines how to enhance and refine your custom or pre-existing themes using the *addon.less* file.
+This document outlines how to enhance and refine your custom or the pre-existing themes using the *addon.less* file.
 
-The *addon.less* file enables you to override or fine-tune the styles defined in the foundational files, namely *constants.less* and *theme_gen.css*. By leveraging this approach, you can create more dynamic and cohesive designs while maintaining flexibility and ease of management.
+The *addon.less* file enables you to override or fine-tune the styles defined in the foundational files, *constants.less* and *theme_gen.css*. By leveraging this approach, you can create more dynamic and cohesive designs while maintaining flexibility and ease of management.
 
 > **What is Less ?**
 > Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends the capabilities of CSS. It introduces features like variables, nesting, mixins and functions. Thus making style sheets more maintainable, customizable and easier to scale.
@@ -95,36 +95,47 @@ body {
 ```
 </details>
 
-Combining all these features can allow you to go very far in the customization of your UI, but the use of the *addon.less* file to add more specificities should be limited to not create too much of less programming for your devs.
+Combining all the available customization features in Simplicité allows for *extensive control* over your **UI**. However, while the *addon.less* file is a powerful tool for adding specific design elements, its use should be reserved for cases where *built-in customization* options are *insufficient*. Over-reliance on addon.less can lead to complex code, making future maintenance more challenging for developers.
 
 ## Use Case for addon.less
 
-The use of *addon.less* can be justified in case of very specific needs, in the Simplicité's identity, there are those vertical and horizontal colored lines. Which we wanted to include in one of our themes.
+The **addon.less** file should be employed to address highly specific design needs that cannot be achieved through standard Simplicité configurations. For example, *Simplicité's brand identity* incorporates distinctive vertical and horizontal colored lines, which we decided to integrate into one of our custom themes. 
 
-This will also serve to illustrate how to use the *addon.less* to add a unique style to themes.
+This serves as a *practical illustration* of how addon.less can introduce unique visual elements to enhance theme aesthetics.
+
+> ***Warning:*** Simplicité provides a robust set of tools to modify various aspects of your interfaces, applications, and themes. Before resorting to addon.less, ensure that you have fully explored Simplicité's native customization features. This approach minimizes unnecessary code and promotes cleaner, more maintainable designs.
 
 ### Process Overview
 
 Such process can be divided in several steps:
-1 - Finding the elements & their DOM path.
-2 - Identifying the precise context for our style to be applied
-3 - Implementing the style in the file
+1) Finding the elements & their DOM path.
+2) Identifying the precise context for our style to be applied
+3) Implementing the style in the file
 
-### 1) Finding the element
+### 1. Finding the element
 
-The first step after knowing what style we wanna add on top of the theme. For that you need to understand which element of the UI you are gonna modify. And to do so there are two ways to proceed:
+Before applying additional styles, clearly define the visual modifications you want to implement. This requires identifying the *specific UI element* you intend to modify. There are two main approaches to achieve this:
 
-* If the element you wanna add style to is part of the *Theme Editor - Preview, Home* section, then you can simply use the *Theme Editor - Path in DOM* section to read the path until the precise element.
+**Option 1:** If the element is part of the *Theme Editor - Preview* or *Home* section, utilize the *Theme Editor - Path in DOM* feature to directly locate the path to the target element.
 
-* If the element is another one, then you will have to identify your element within the Simplicité's UI using the browser's inspector tool. Which is slightly less practical but accurate enough to give you the element and also the context.
+**Option 2:** If the element lies outside of the Theme Editor, use your *browser's inspector* tool to manually locate the desired element within Simplicité's UI. While slightly more manual, this method still provides accurate identification and contextual insights.
 
-**Example:** In our case, the elements we wanted to add style to were the Panels, Sub-Panels and Tabs, so we used the browser's inspector tool to find the following path:
+**Example:** In our case, we aimed to style *Panels*, *Sub-Panels*, *Tabs* and *List*. By using the **Theme Editor - Path in DOM**, we identified the following paths:
 
-* ***Panels:*** the element that is use to implement the panels in the page HTML is `div.card`. Which is then organized in three parts; `div.card-header`, `div.card-body`, `div.card-footer`.
+- *Panels:* THe primary element for panels is `div.card`, typically organized into 3 parts:
+    - `div.card-header`, the *header section* of the panel card, where the name of the panel and all sort of buttons are displayed.
+    - `div.card-body`, the *content section* of the panel card, where all of it's content is displayed (static and dynamic).
+    - `div.card-footer`, the *footer section* of the panel card, often used to contain some context-specific features.
 
-* ***Sub-Panels:*** the element used to implement the sub-panels is fortunately the same as for panels, `div.card`.
+- *Sub-Panels:* Share the same structure as panels using the `div.card` element, difference is that it's embedded and usually don't have a *footer section*.
 
-* ***Tabs:*** these are implemented thanks to another element, more identifiable and unique by `div.tabs`, then the layout is specified by a second class, so our different tabs are; `div.tabs.tabs-top`, `div.tabs.tabs-left`, `div.tabs.tabs-right`, `div.tabs.tabs-bottom`. Plus the organizarion of tans is a bit specific as it is roughly organized this way:
+- *Tabs:* Those are implemented through the `div.tabs` element. Their layout can be further specified using additional classes specifying how the `li.nav-item` (tab headers within `ul.nav.nav-tabs`) are displayed compared to the `div.tab-pane.active` (tab content contained in `div.tab-content`).:
+    - `div.tabs.tabs-top`, where they are displayed *vertically on top*.
+    - `div.tabs-bottom`, where they are displayed *vertically below*.
+    - `div.tabs-left`, where they are displayed *horizontaly before*.
+    - `div.tabs-right`, where they are displayed *horizontaly after*.
+
+To provide a better understanding, here is the organizarion of tabs as it is visible in a *.less* file:
 ```less
 div.tabs.tabs-top {
     ul.nav.nav-tabs {
@@ -138,25 +149,58 @@ div.tabs.tabs-top {
 }
 ```
 
-> For our style, only the header of each element is gonna be targeted, that's why it is important to understand how different items are organized and what are their precise contexts.
+- *Lists:* This item is another core one of Simplicité, and its architecture is similar but slightly more complex than the ones seen before, first of all it is represented using the `<table>` html element, furthermore it is only placed within panels for more clarity. So here is what it looks like:
+
+```less
+div.card-body { //panel body containing the list element
+    div.container-table {
+        table.table {
+            thead { // Table Header (for headers, categories, fields, etc)
+                tr { // table row
+                    th.col-action { } // this is an unique cell (the first one) that contains specific actions
+                    th { }
+                    // as many headers as needed ...
+                }
+                // as many table row within the header section ...
+            }
+            tbody { // Table Body  (containing content rows)
+                tr.list-clickable { // table row (clickable)
+                    td.col-action { } // this is an unique cell (the first one) that contains specific actions  
+                    td { }
+                    // as many cells as needed (usually as many as headers above) ...
+                }
+            }
+            tfoot { // Table Footer (usually for totals and other results)
+                tr { // table row
+                    td.col-actions { }
+                    td { }
+                    // as many cells as needed results (usually not all are used)
+                }
+            }
+        }
+    }
+}
+```
+
+> ***Note:*** For our specific style needs, our primary goal was to target the headers of each element. Understanding the organization and hierarchy of different components is essential to ensure precision in applying styles. Targeting incorrect elements or misunderstanding their structure may lead to unintended styling across various UI components.
 
 ![](elements-focus.png)
 
 ![](browser-inspector.png)
 
-## 2) Identifying the context
+## 2. Identifying the context
 
-When the element is found, you need to be sure to grasp the whole context in which you wanna add the style, otherwise your new styles could be mixed up in other UIs, which can have (unless it is wanted) impacts in unwanted contexts.
+Once an element is identified, ensure that you thoroughly *understand the context* in which the style will be applied. Failing to grasp the full scope can result in styles unintentionally *affecting other parts* of the UI. This is particularly crucial when using the browser's inspector (Option 2) since multiple UI elements often share the same classes.
 
-A proper way to do so is to identify the focused elements and there classes, and same for their parents, etc
+To mitigate this, carefully document the target element's classes, as well as the classes of its parent containers and related elements. This ensures that your styles are isolated to the intended component.
 
 > This part is especially needed when you are going for the second options in the previous step, as classes are shared by many objects, you need to really be careful while adding new styles.
 
 **Example:** For our 3 targeted elements, which are core items of every Simplicité's UI, we had to make sure that the style was applied properly, especially for the differentiation between *Panels* and *Sub-Panels*, that are both referenced as `card` in the HTML.
 
-## 3) Implement the style
+## 3. Implement the style
 
-Last but not least, you have to actually implement your style in the *addon.less* file, using the DOM path & context your previously identified, in order to target your wanted element without impacting other unwanted cases.
+After identifying the *DOM path* and *context*, proceed to implement the desired styles by writing the appropriate code in the *addon.less* file. This ensures the applied styles are scoped to the correct elements, preventing unwanted side effects in other parts of the interface.
 
 **Example:** within the *addon.less* file, we'll apply the identified path to precisely target our element:
 
@@ -165,6 +209,7 @@ Last but not least, you have to actually implement your style in the *addon.less
 @border-pink: #EC9DED;
 @border-blue: #5451FF;
 @border-green: #58EC9B;
+@border-red: #FB3640;
 
 // Targetting Panels and Sub-Panels
 div.card {
@@ -187,13 +232,47 @@ div.tabs-top {
         border-left: solid 0.2rem @border-green;
     }
 }
+
+// Targetting Lists
+div.container-table > table {
+    thead {
+    	border-left: solid 0.2rem @border-red;
+    }
+}
 ```
 
 > **Careful**
-> If the style you are adding doesn't appear at first, consider adding *!important* on it so you make sure it is applied.
+> If the style you are adding doesn't appear at first (even after clearing cache), consider adding *!important* on it so you make sure it is applied.
 
 Now to see if your new styles has been applied, make sure to apply your theme to the wanted *Home Page* view in the *User Interface > Views > Home Pages*:
 
 ![](view-apply-theme.png)
 
 Then make sure to clear your cache to update the styles, and you should see the result !
+
+### (Optional) Make it interactive !
+
+To extend the previous example, let's add a customization for interactive behaviors. Specifically, we will modify the appearance of selected rows in a list element. By default, selecting a row slightly darkens it. Our goal is to enhance this by adding a left-side line to the selected row, preserving the theme's identity.
+
+When a row is selected in a list, the associated `tbody.tr.list-clickable` element receives the *selected* class. This triggers the default darkening effect and ticking of box in the .
+
+Once the behavior is understood, update the *addon.less* file to add the left-side line:
+
+```less
+@border-red: #FB3640;
+@border-yellow: #FFD166;
+
+div.container-table > table {
+    thead {
+    	border-left: solid 0.2rem @border-red;
+    }
+    tbody > tr.list-clickable {
+        border-left: solid 0.25rem transparent; // preventing any movement when border will be visible
+        &.selected {
+            border-left-color: @border-yellow;
+        }
+    }
+}
+```
+
+This modification applies the desired effect without interfering with other interface elements.
