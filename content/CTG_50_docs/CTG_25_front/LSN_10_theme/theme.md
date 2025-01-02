@@ -17,21 +17,21 @@ This tool enables you to *manage and customize* the overall design of your insta
 
 **Examples of Default Themes:**: Simplicité includes several predefined themes as part of its default solution:
 
-* **ThemeAdmin**: a primary theme for *administrators*, created from the `Dark Base`. It is mainly used by administrators or designer users who prefer a dark mode interface.
+*ThemeAdmin*: a primary theme for *administrators*, created from the `Dark Base`. It is mainly used by administrators or designer users who prefer a dark mode interface.
 <details>
 <summary>ThemeAdmin Overview</summary>
 
 ![](theme-admin-overview.png)
 </details>
 
-* **ThemeDesign**: built from the `Light Base`, this theme mirrors the **ThemeAdmin** in functionality but caters to those who prefer a *lighter mode*.
+*ThemeDesign*: built from the `Light Base`, this theme mirrors the *ThemeAdmin* in functionality but caters to those who prefer a *lighter mode*.
 <details>
 <summary>ThemeDesign Overview</summary>
 
 ![](theme-design-overview.png)
 </details>
 
-* **ThemeEtat**: designed following the *DSFR* (French government) *design norms*. It adheres to strict rules of **contrast**, **spacing**, and **accessibility** to meet public sector guidelines.
+*ThemeEtat*: designed following the *DSFR* (French government) *design norms*. It adheres to strict rules of **contrast**, **spacing**, and **accessibility** to meet public sector guidelines.
 <details>
 <summary>ThemeEtat Overview</summary>
 
@@ -63,9 +63,9 @@ Creating a theme begins with clicking the **Create** button from the **User Inte
 
 After creating and saving your themes, the styles are compiled, and you can see that files were added to your theme object, they serve to apply your styles through all selected interfaces, there are 3 of them:
 
-1 - `constants.less`: this file is the result of what you applied in the *Theme Editor*, it basically contains all the values you defined as *less constants*.
-2 - `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in [this lesson](https://docs.simplicite.io/lessons/docs/front/styles)).
-3 - `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.
+1) `constants.less`: this file is the result of what you applied in the *Theme Editor*, it basically contains all the values you defined as *less constants*.
+2) `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in [this lesson](https://docs.simplicite.io/lessons/docs/front/styles)).
+3) `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.
 
 ## Organization
 
@@ -73,9 +73,9 @@ The **Theme Editor** interface is divided into *three main sections*, each provi
 
 ![](theme-editor-parts.png)
 
-1 - **Interface Preview:** A live preview of your theme in action, helping you visualize changes in real-time.
-2 - **Values Menu:** The control panel where you define and adjust style variables such as colors, fonts, and spacing.
-3 - **DOM Path:** A detailed view that highlights the structural elements of the interface, enabling precise customizations.
+1) **Interface Preview:** A live preview of your theme in action, helping you visualize changes in real-time.
+2) **Values Menu:** The control panel where you define and adjust style variables such as colors, fonts, and spacing.
+3) **DOM Path:** A detailed view that highlights the structural elements of the interface, enabling precise customizations.
 
 ### Interface Preview
 
@@ -85,38 +85,38 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 
 #### Preview Tabs Overview
 
-* **Home**: displays the primary shared elements of Simplicité’s UI, such as the header and main menu. The menu highlights multiple states and hierarchies, including sub-menus and active domain indicators.
+**Home**: displays the primary shared elements of Simplicité’s UI, such as the header and main menu. The menu highlights multiple states and hierarchies, including sub-menus and active domain indicators.
 <details>
 <summary>Home Preview</summary>
 ![](theme-editor-preview-home.png)
 </details>
 
-* **Buttons**: a unique tab that gives access to customization for button elements and their style options. It showcases all button types available in Simplicité, allowing you to customize the following properties: `background-color`, `text-color` or `icon-color`, `border-radius`, and `border-width` for each of the predefined button types:
-1 - ***Primary:*** represents the main actions shared across various contexts.
-2 - ***Secondary:*** displays secondary or less critical actions with text labels.
-3 - ***Action:*** specific to the current object or context.
-4 - ***Transition:*** used for state-switching handlers within business objects or fields.
-5 - ***Icon:*** represents actions visually using icons instead of text.
+**Buttons**: a unique tab that gives access to customization for button elements and their style options. It showcases all button types available in Simplicité, allowing you to customize the following properties: `background-color`, `text-color` or `icon-color`, `border-radius`, and `border-width` for each of the predefined button types:
+1) ***Primary:*** represents the main actions shared across various contexts.
+2) ***Secondary:*** displays secondary or less critical actions with text labels.
+3) ***Action:*** specific to the current object or context.
+4) ***Transition:*** used for state-switching handlers within business objects or fields.
+5) ***Icon:*** represents actions visually using icons instead of text.
 
 <details>
 <summary>Buttons Preview</summary>
 ![](theme-editor-preview-buttons.png)
 </details>
 
-* **Panels**: focuses on the structural elements that form Simplicité’s interface:
-1 - ***Panels:*** found in the `WORK` section, these display the content of selected menus or objects.
-2 - ***Sub-Panels:*** nested within Panels, typically containing fields for displayed objects.
-3 - ***Tabs:*** organize fields into sections, offering four layout options: *Left*, *Right*, *Top*, and *Bottom*. The layout determines the placement of tab navigation.
+**Panels**: focuses on the structural elements that form Simplicité’s interface:
+1) ***Panels:*** found in the `WORK` section, these display the content of selected menus or objects.
+2) ***Sub-Panels:*** nested within Panels, typically containing fields for displayed objects.
+3) ***Tabs:*** organize fields into sections, offering four layout options: *Left*, *Right*, *Top*, and *Bottom*. The layout determines the placement of tab navigation.
 
 <details>
 <summary>Panels Preview</summary>
 ![](theme-editor-preview-panels.png)
 </details>
 
-* **Form**: showcases essential UI components that combine *Panels*, *Sub-Panels*, and Tabs to organize fields and inputs.
-1 - ***Field:*** standard text input within object forms.
-2 - ***Readonly:*** non-editable fields displaying static information.
-3 - ***References:*** editable links to other objects or data.
+**Form**: showcases essential UI components that combine *Panels*, *Sub-Panels*, and Tabs to organize fields and inputs.
+1) ***Field:*** standard text input within object forms.
+2) ***Readonly:*** non-editable fields displaying static information.
+3) ***References:*** editable links to other objects or data.
 <details>
 <summary>Form Preview</summary>
 ![](theme-editor-preview-form.png)
@@ -125,34 +125,34 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 > ***Note:*** Other input types, such as *radio buttons*, *dropdown menus*, are not directly customizable within the Theme Editor but inherit styles from the selected base theme. 
 > - Code editors for example are customizable through your theme's object form, in which you can modify the monokai based theme (light, dark).
 
-* **List**: a core element of Simplicité’s UI, Lists display rows of data in table format and can be extensively styled for consistency and readability.
-
+**List**: a core element of Simplicité’s UI, Lists display rows of data in table format and can be extensively styled for consistency and readability.
 <summary>List Preview</summary>
 ![](theme-editor-preview-list.png)
 </details>
 
-* **Dialog**: represents pop-up interfaces used for confirmations, alerts, or additional inputs. Styled similarly to Panels and Sub-Panels, Dialogs are designed for clear and concise communication with easily accessible actions.
+**Dialog**: represents pop-up interfaces used for confirmations, alerts, or additional inputs. Styled similarly to Panels and Sub-Panels, Dialogs are designed for clear and concise communication with easily accessible actions.
 <details>
 <summary>Dialog Preview</summary>
 ![](theme-editor-preview-dialog.png)
 </details>
 
-* **Addons**: supports the customization of more advanced or precise customizations. Those being defined in the `addon.less` file, ensure that additional functionalities align visually with the core theme.
+**Addons**: supports the customization of more advanced or precise customizations. Those being defined in the `addon.less` file, ensure that additional functionalities align visually with the core theme.
 
 ### Styles Values Menu
 
 The Styles Menu is where you define the visual properties of the elements displayed in the Preview. This section is organized by categories corresponding to the Preview’s tabs, making it intuitive to locate and adjust styles within a specific context.
 
 Adjust style variables accorss elements and contexts:
-1 - ***Background:*** Set the `color` and `opacity` of elements' backgrounds.
-2 - ***Text:*** Customize `font-size`, and `font-color`, as well as the `font-weight` of some text elements.
-3 - ***Border:*** Determine whether a border is displayed (sets as `none` or not), then define its `border-color`, `opacity`, `border-radius`, and in some cases, `border-width` or specifications on location (`border-top`, `border-bottom`, ...).
-4 - ***Hover:*** Modify the appearance of some interactive elements when hovered, including `background-color` and `text-color`.
+1) ***Background:*** Set the `color` and `opacity` of elements' backgrounds.
+2) ***Text:*** Customize `font-size`, and `font-color`, as well as the `font-weight` of some text elements.
+3) ***Border:*** Determine whether a border is displayed (sets as `none` or not), then define its `border-color`, `opacity`, `border-radius`, and in some cases, `border-width` or specifications on location (`border-top`, `border-bottom`, ...).
+4) ***Hover:*** Modify the appearance of some interactive elements when hovered, including `background-color` and `text-color`.
 
 
 Here is a detailled list of the menu's sub-section and the specific elements they cover:
 
-* **Base**: defines fundamental styles such as the main background color, global font, and shared spacing parameters, ensuring consistency across all elements.
+
+**Base**: defines fundamental styles such as the main background color, global font, and shared spacing parameters, ensuring consistency across all elements.
 
 ![](theme-editor-style-base.png)
 
@@ -166,7 +166,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Contents           | Padding Y              | [0;300]: defines the padding-top & padding-bottom of all elements displayed in different containers (texts, sub-panels, ...), thus modifying container's height.       |
 | Background         | Color                  | Any: defines the color of your whole background, noticeable mainly on the `WORK` part of the UI.                                                                       |
 
-* **Main**: configures the permanent UI elements, including the header, footer, and navigation breadcrumb.
+
+**Main**: configures the permanent UI elements, including the header, footer, and navigation breadcrumb.
 
 ![](theme-editor-style-main.png)
 
@@ -184,7 +185,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Footer Bar            | Text Color             | Any: defines the colors of the texts composing your footer section (links in it).                                                                                      |
 | Footer Bar            | Border Color           | Any: defines the colors & display of the `border-top` for your whole footer, can be hidden by unticking the value.                                                     |
 
-* **Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
+
+**Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
 
 ![](theme-editor-style-menu.png)
 
@@ -202,7 +204,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Status Menu          | Background Color       | Any: will define the **inactive** background color for the status items held in the sub-menus.                                                                           |
 | Status Menu          | Text Color             | Any: will define the **inactive** textcolor for the status items held in the sub-menus.                                                                                  |
 
-* **Panel**: focuses on the overarching style of *top-level Panels*, which can be previewed in the ***Panels*** section of the Preview. 
+
+**Panel**: focuses on the overarching style of *top-level Panels*, which can be previewed in the ***Panels*** section of the Preview. 
 
 ![](theme-editor-style-panel.png)
 
@@ -219,7 +222,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your panel, excluding for the ones of buttons.                                                                                           |
 | Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                 |
 
-* **Sub-panel**: similar to *Panels* but specific to nested panels embedded within higher-level panels.
+
+**Sub-panel**: similar to *Panels* but specific to nested panels embedded within higher-level panels.
 
 ![](theme-editor-style-subpanel.png)
 
@@ -236,7 +240,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Sub-Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your sub-panel, excluding for the ones of buttons.                                                                                            |
 | Sub-Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                      |
 
-* **Tabs**: controls the style of Tabs, which organize information into sections within the same placeholder. Tabs often appear alongside Sub-Panels.
+
+**Tabs**: controls the style of Tabs, which organize information into sections within the same placeholder. Tabs often appear alongside Sub-Panels.
 
 ![](theme-editor-style-tabs.png)
 
@@ -257,7 +262,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Tabs Content       | Border Color           | Any: defines the color of the border of the whole content part, untick to hide.                                                                                                |
 | Tabs Content       | Shadow                 | [0;100]: defines the `box-shadow` style for the tab-content (not nav-links!), with the following range; 0 ~ `none`, 50 ~ `solid .125rem .125rem 1rem #e0e0e0`, 100 ~ `solid .125rem .125rem 2rem #e0e0e0` |
 
-* **Field**: configures styles for displayed fields within Sub-Panels and Tabs.
+
+**Field**: configures styles for displayed fields within Sub-Panels and Tabs.
 
 ![](theme-editor-style-field.png)
 
@@ -275,9 +281,10 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Field Buttons      | Icon Color             | Any: defines the color of the *icons* for all the fields' addons buttons. |
 | Field Buttons      | Border Color           | Any: defines the border color for all the fields' addons buttons, no value (empty) will apply `border: none`. |
 
-> Input fields provided by the Bootstrap library are not directly customizable but adapt to the selected base theme. Use the `addon.less` file for advanced overrides.
+> ***Note:*** Input fields provided by the Bootstrap library are not directly customizable but adapt to the selected base theme. Use the `addon.less` file for advanced overrides.
 
-* **List**: provides extensive customization options for one of Simplicité’s most critical UI components. Careful styling ensures both functionality and aesthetics.
+
+**List**: provides extensive customization options for one of Simplicité’s most critical UI components. Careful styling ensures both functionality and aesthetics.
 
 ![](theme-editor-style-list.png)
 
@@ -303,7 +310,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Table Footer       | Text Color             | Any: defines `color`, the color of any text within the table footer only (mostly results). |
 | Table Footer       | Top Border Color       | Any: Any: defines the top `border-top-color` of table's footer, no values (empty) defines `none` or `transparent`. |
 
-* **Dialog**: syles `modal` dialogs that appear over the UI (with a `z-index = 1055`). These overlays dim the rest of the interface for focus and clarity.
+
+**Dialog**: syles `modal` dialogs that appear over the UI (with a `z-index = 1055`). These overlays dim the rest of the interface for focus and clarity.
 
 ![](theme-editor-style-dialog.png)
 
@@ -324,11 +332,11 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 This section of the Theme Editor is an essential tool for developers and designers aiming to understand the structure and organization of Simplicité's user interface. This feature allows you to locate and analyze the placement of interface elements within the DOM (Document Object Model) of your instance. By visualizing the hierarchy and layout of shared UI components, you can gain valuable insights into how elements are defined and interconnected.
 
 This section provides a clear representation of the structural organization of every shared element across Simplicité’s interfaces. It is particularly useful for:
-- ***Understanding Layouts:*** Quickly grasp how elements are nested and structured within the DOM.
-- ***Defining Custom Styles:*** Identify the exact DOM paths for elements you wish to customize using LESS or CSS files.
-- ***Optimizing Consistency:*** Ensure that styles applied to elements in one section, such as the Home, Form, or List tabs in the Preview, are consistent across all instances of those elements throughout the UI.
+- *Understanding Layouts:* Quickly grasp how elements are nested and structured within the DOM.
+- *Defining Custom Styles:* Identify the exact DOM paths for elements you wish to customize using LESS or CSS files.
+- *Optimizing Consistency:* Ensure that styles applied to elements in one section, such as the Home, Form, or List tabs in the Preview, are consistent across all instances of those elements throughout the UI.
 
-The DOM Path Viewer is closely integrated with the ***Preview*** sections like **Home**, **Form**, and **List**, as these sections display elements that are shared across all Simplicité interfaces. This coupling ensures that you can identify and style elements accurately, regardless of their context.
+The DOM Path Viewer is closely integrated with the *Preview* sections like *Home*, *Form*, and *List*, as these sections display elements that are shared across all Simplicité interfaces. This coupling ensures that you can identify and style elements accurately, regardless of their context.
 
 #### How to use
 
@@ -336,8 +344,8 @@ To use the DOM Path Viewer, simply navigate to the Preview section and hover ove
 
 Below a quick overview of what are the main locations for elements as displayed in a LESS file:
 
-* **Home common path;** `div.main > div.simplicite.wrapper > ... > **element.class**`.
+* *Home common path;* `div.main > div.simplicite.wrapper > ... > **element.class**`.
 
-* **Form common path;** `div.objform > div.card > ... > **element.class**`.
+* *Form common path;* `div.objform > div.card > ... > **element.class**`.
 
-* **List common path;** `div.objlist > div.card.panel-list > ... > **element.class**`.
+* *List common path;* `div.objlist > div.card.panel-list > ... > **element.class**`.

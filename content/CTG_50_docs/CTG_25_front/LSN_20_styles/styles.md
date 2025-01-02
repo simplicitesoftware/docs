@@ -18,8 +18,7 @@ Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends t
 
 *Variables:* Store reusable values for colors, fonts or dimensions:
 <details>
-<summary>Code Snippet<summary>
-
+<summary>Code Snippet</summary>
 ```less
 @primary-color: #3498db;
 body {
@@ -30,7 +29,7 @@ body {
 
 *Nesting:* Write styles in a structured & hierarchical way. Allowing to specify depending on contexts when it's needed. Below are shown two ways to use nesting, and shows a use case where items with same class have different styles depending on their parent:
 <details>
-<summary>Code Snippet<summary>
+<summary>Code Snippet</summary>
 
 ```less
 .container {
@@ -48,7 +47,7 @@ body {
 
 *Interactions Nesting:* Same way as nesting works for children elements or contexts, yo ucan use it to dynamically handle different type of interactions for your elements:
 <details>
-<summary>Code Snippet<summary>
+<summary>Code Snippet</summary>
 
 ```less
 body {
@@ -71,7 +70,7 @@ body {
 
 *Mixins:* Define reusable style blocks for consistency:
 <details>
-<summary>Code Snippet<summary>
+<summary>Code Snippet</summary>
 
 ```less
 .rounded-corners(@radius: 0.5rem) {
@@ -85,7 +84,7 @@ div {
 
 *Functions:* Perform calculations and color operations directly in your styles:
 <details>
-<summary>Code Snippet<summary>
+<summary>Code Snippet</summary>
 
 ```less
 @primary-color: #3498db;
