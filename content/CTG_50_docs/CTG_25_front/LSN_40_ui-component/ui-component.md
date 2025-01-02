@@ -65,7 +65,7 @@ For the welcome card, both content and style ressources are quite easy to create
 ```
 
 <details>
-	<summary>CSS Stylesheet</summary>
+<summary>CSS Stylesheet</summary>
 	
 ```css
 #customwelcomecard {

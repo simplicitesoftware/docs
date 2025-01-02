@@ -333,7 +333,7 @@ fetch('/products')
     });
 ```
 <details>
-<summary>Code Details</summar>
+<summary>Code Details</summary>
 
 - `fetch('/products')` makes an HTTP GET request to the server at the `/products` endpoint to retrieve a list of products in JSON format.
 - `.then(response => response.json())` processes the response by parsing it as JSON, making the product data available for further use.

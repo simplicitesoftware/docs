@@ -19,6 +19,7 @@ Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends t
 *Variables:* Store reusable values for colors, fonts or dimensions:
 <details>
 <summary>Code Snippet</summary>
+
 ```less
 @primary-color: #3498db;
 body {
