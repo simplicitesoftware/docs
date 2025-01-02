@@ -72,7 +72,7 @@ In order to properly manipulate and customize your Simplicité applications, it 
 This part of the documentation follows the following organization and flow:
 
 0) This introduction document.
-1) Presentation of the [Theme Editor](https://docs.simplicite.io/lesson/docs/front/theme-editor) tool, allowing you to customize the themes and styles of you applications, all within Simplicité's solution.
+1) Presentation of the [Theme Editor](https://docs.simplicite.io/lesson/docs/front/theme) tool, allowing you to customize the themes and styles of you applications, all within Simplicité's solution.
 2) Overview of the [complementary tool](https://docs.simplicite.io/lesson/docs/front/styles) for theming, allowing you to add even more precise customizations to your applications.
 3) Guide through the [javascript development](https://docs.simplicite.io/lesson/docs/front/javascript-dev) in Simplicité, both outside with the *NPM Library* and inside with the *External Objects*.
 4) Breakdown of the [Ajax Library](https://docs.simplicite.io/lesson/docs/front/lib-ajax) that is useful for javascript development as it presents the core functions and methods to navigate and manipulate Simplicité's concepts and objects.
