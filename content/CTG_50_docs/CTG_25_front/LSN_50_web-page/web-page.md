@@ -1125,12 +1125,680 @@ In order to build custom webpages using the **Vue.js** web framework, you have t
 
 The main specificities are to be considered when setting up your *server-side* code first, indeed you have to specify that you are gonna use **Vue.js** components in the rest of your resource files using the `BootstrapWebPage.appendVue()` function.
 
-Of course you still need to setup your object as a **BootstrapWebPage** using an equivalent of:
+All code snippets and examples are derived from an external page we created as a hands-on demonstration. The complete code for this page can be found at the end of the document.
+![](customvue-page.png)
+
+#### Server-Side 
+
+First, for webpages built with only HTML, CSS, and JavaScript, you need to use a slightly modified Java code that sets up a *BootstrapWebPage*. This helps properly initialize your webpage and leads to JavaScript similar to what we covered earlier.
+
 ```java
+public class MyCustomVuePage extends ExternalObject {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Display method
+	 * @param params Request parameters
+	 */
+	@Override
+	public Object display(Parameters params) {
+		try {
+			setDecoration(false);
+
+			BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), getDisplay());
+			
+			wp.appendAjax();
+			wp.appendJSInclude(HTMLTool.getResourceJSURL(this, "CLASS"));
+			wp.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"));
+			wp.appendHTML(HTMLTool.getResourceHTMLContent(this, "HTML"));
+
+			wp.setReady(this.getName() + ".render({});");
+
+			return wp.toString();
+		} catch (Exception e) {
+			AppLog.error(getClass(), "display", null, e, getGrant());
+			return e.getMessage();
+		}
+	}
+}
 ```
+
+Once this is done, you'll need to fine-tune it to add Vue to your page:
+```java
+public class MyCustomVuePage extends ExternalObject {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public Object display(Parameters params) {
+        try {
+            boolean pub = isPublic();
+            setDecoration(!pub);
+            String render = getName() + ".render(" + params.toJSONObject() + ");";
+
+            if (pub) {
+                BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), getDisplay());
+
+                wp.appendAjax();
+                wp.appendVue();
+
+                wp.appendJSInclude(HTMLTool.getResourceJSURL(this, "SCRIPT"));
+                wp.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"));
+                wp.append(HTMLTool.getResourceHTMLContent(this, "HTML"));
+
+                wp.setReady(render);
+                return wp.toString();
+            } else {
+                appendVue(); 
+                return javascript(render);
+            }
+        } catch (Exception e) {
+            AppLog.error(getClass(), "display", null, e, getGrant());
+            return e.getMessage();
+        }
+    }
+}
+```
+
+**Modifications:**
+Here’s a breakdown of the modifications made, along with explanations for why they were necessary for using Vue:
+1) *Encapsulating within an if-else statement:* This is a precaution to handle cases where the external object may be displayed as either a standalone (public) or embedded (private) page. This ensures that a *BootstrapWebPage* isn’t instantiated inside Simplicité’s interface if the object is private.
+2) *Initiating "render" before the statement:* Since the "render" string is used in both conditions, it makes sense to declare it in the global scope rather than repeating the declaration twice. This keeps the code cleaner and more efficient.
+3) *Use of `appendVue()`:* When using Vue within Simplicité, the `com.simplicite.web.webapp.BootstrapWebPage` method must be used. This method declares the necessary variables and components to ensure the Vue application works correctly.
+
+> ***Warning:*** This option only works for specific web frameworks that are available in the [BootstrapWebPage doc](https://platform.simplicite.io/6.1/javadoc/com/simplicite/webapp/web/BootstrapWebPage.html).
+
+The available web-tools with this method are:
+- Vue® with `BootstrapWebPage.appendVue()`, which allows you to use the framework’s components, workflows, and logic.
+- Mustache® (Logic-less template) using `BootstrapWebPage.appendMustache()`, enabling the use of template components and logic.
+
+It’s also possible to include other tools, as long as they don’t override the structure of your object or page.
+| Tool Name     | Method                 | Tool documentation (official) |
+|---------------|------------------------|-------------------------------|
+| JQuery        | `appendJQuery()`       | JQuery [offical page](https://api.jquery.com/) |
+| JQPlot        | `appendJQPlot()`       | JQPlot [documentation](http://www.jqplot.com/docs/files/usage-txt.html) |
+| Bootbox®      | `appendBootbox()`      | Bootbox [documentation](https://bootboxjs.com/documentation.html) |
+| Bootstrap®    | `appendBoostrap()`     | Bootstrap latest [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) |
+| ChartJS       | `appendChartjs()`      | ChartJs [page](https://www.chartjs.org/) |
+| Markdown      | `appendMarkdown()`     | Markdown [guide](https://www.markdownguide.org/) |
+| Moment®       | `appendMoment()`       | Moment [documentation](https://momentjs.com/docs/) |
+| FullCalendar® | `appendFullCalendar()` | Full Calendar [documentation](https://fullcalendar.io/docs) |
+
+> ***Note:*** For any other frameworks you can refer to the second method **Building Project** seen in the next section. Or directly using the Simplicité NPM library, explored in [this lesson](https://docs.simplicite.io/lesson/docs/front/javascript-dev).
+
+#### Client-Side (setup)
+
+The *JavaScript client-side* script differs from the one used for *native custom webpages*. Since we are creating the equivalent of a Vue *app/component*, it needs to be set up properly. To achieve this, you’ll need to completely overwrite the existing default code. For first-time setup, we recommend replacing it with the code provided below.
+
+The JS script is indeed very different, even if the overall structure is similar to the one we've previously seen, it is specific to Vue's features:
+```javascript
+var MyCustomVuePage = MyCustomVuePage || (() => {
+	
+	function render(params) {
+		try {
+			if (typeof Vue === 'undefined')
+				throw 'Vue.js not available';
+
+			const data = {};
+			
+			const app = typeof $ui !== 'undefined' ? $ui.getAjax() : new Simplicite.Ajax(params.root, 'uipublic');
+			
+			// creating Vue app & mounting it to resource html
+			const vue = Vue.createApp({
+				data() { return data; },
+				methods: { }
+			});
+
+			vue.mount("#mycustomvuefront"); // mounting vue app on resource html
+			
+		} catch(e) {
+			$('#mycustomvuepage').text(`Error: ${e.message}`);
+		}
+	}
+
+	return { render: render };
+})();
+```
+
+Understanding the differences in the script is crucial to grasp how Vue communicates and integrates with Simplicité:
+
+1) **Declaration of object:** Instead of declaring the object as `var ExtObj = (function($){ ... })(jQuery);`, we now declare it as `var ExtObj = ExtObj || (()=>{ ... })();`. This approach ensures the object is only created if it doesn’t already exist. The `||` operator checks if "ExtObj" exists and reuses it if it does, otherwise, it creates a new one.
+
+2) **App declaration:** While app instantiation in native webpages typically looks like
+`app = new Simplicite.Ajax(params.root, "uipublic");`. We add extra precautions with `const app = typeof $ui !== 'undefined' ? $ui.getAjax() : new Simplicite.Ajax(params.root, 'uipublic');`. This checks if `$ui` (the main UI controller) is defined. If it is, we retrieve the existing Ajax session (`$ui.getAjax()`). If not, a new session is created with the "uipublic" parameter.
+
+3) **Creating Vue App:** To initialize Vue, we use `createApp()`, passing data and methods as:
+```javascript
+const appInstance = createApp({  
+  data() { return data; },  
+  methods: { ... }  
+});
+```
+This is key because:
+- `data()` – Passes all the values and variables that the HTML resource file will use.
+- `methods` – Defines the functions that can be called from the HTML file.
+
+4) **Additional Precautions:** Before proceeding, it’s recommended to check if Vue is available and ready. This can be done by adding `if (typeof Vue === 'undefined') throw 'Vue.js not available';`. Place this at the beginning of the `try { ... }` block to catch any issues early on.
+
+
+#### Specificities
+
+The architecture and workflows are slightly different than in a regular Vue project, and also different than the one of a regular ExternalObject. Below we'll overview the different aspects of Vue and ExternalObjects that are usable or not, or that needs specific ackinledgments:
+
+***VueJS features***
+Indeed some of the Vue.js features are not accessible:
+- `ref` & `onMounted` - as they usually are imported through `import { ref, onMounted } from 'vue` the `Component.vue` files, imports not being allowed within both the SCRIPT resource file and the `<script setup>` part of the component (as it's not *.vue*).
+- `.vue` components - those are not acknowledged as Vue components by default, so their use within the resources is impossible.
+
+While most of the other features from the Vue framework are accessible:
+- `<style scoped>` style element; Allows for all the defined styles to be applied only to your current element, ensures that other elements outside of your page with the same id or class (mistakely) don't share the same styles.
+- `<template>` html5 tag; Special wrapper used to define the structure of your component's html, it doesn't get rendered directly in the final output (so giving it class & styles is useless). Not vue-specific but Vue.js does make it an important element in its logic.
+- `v-*` statements; Vue's directive are usable within your HTML resource file, it's one of Vue's core features.
+<details>
+<summary>Common Statement</summary>
+
+| Vue Statement | Description                                                    |
+|---------------|----------------------------------------------------------------|
+| `v-if`        | Conditionally renders elements based on expression evaluation. |
+| `v-else`      | Renders content when the preceding `v-if` condition is false.  |
+| `v-else-if`   | Adds *else-if* condition to an existing `v-if` chain.          |
+| `v-show`      | Toggles visibility by applying display CSS property.           |
+| `v-bind`      | Dynamically binds attributes or properties to HTML elements.   |
+| `v-on`        | Attaches event listeners to elements.                          |
+| `v-for`       | Renders a list by iterating over an array or object.           |
+</details>
+
+***JavaScript specificities***
+
+While implementing your SCRIPT resource file, there are a few important things to keep in mind to avoid errors and bugs:
+
+1) **Order of Methods:** 
+The first thing to consider is the order in which you define your methods, as incorrect sequencing can lead to unnecessary issues. The proper order is:
+* First instantiate your app with: `const app = typeof $ui !== 'undefined' ? $ui.getAjax() : new Simplicite.Ajax(params.root, 'uipublic');`, ensuring that the app is correctly set up before making any other calls.
+* Then call `createApp()` to create the Vue application component. This step allows you to perform asynchronous calls such as `search()`.
+* Finally, use `vue.mount()`. It's crucial that the mount occurs after the last search scope is set (as shown below). It ensures that the Vue app is properly bound to the right element after all necessary data has been fetched.
+
+```javascript
+function render(params) {
+	try {
+		const data = {};
+
+		const app = typeof $ui !== 'undefined' ? $ui.getAjax() : new Simplicite.Ajax(params.root, 'uipublic');
+
+		let product = app.getBusinessObject("DemoProduct");
+
+		const vue = Vue.createApp({
+			data() { return data; },
+			methods: {}
+		});
+
+		// ... previous BusinessObject.search() calls ...
+
+		product.search(function() {
+			// manipulate data however you want
+			data.products = product.list;
+		}, null, { inlineDocs: true });
+
+	} catch(err) {
+		// error handling code here
+	}
+}
+```
+
+2) **Passing Values and Methods:**
+As mentioned earlier, the methods, variables, and values you pass from the SCRIPT to the HTML should be declared within the `vue.createApp()` function like this:
+
+* *For constants and variables;* You should pass all the values you want to share with the HTML inside a data constant, which you then provide to the Vue application. Make sure to name your variables clearly. In the SCRIPT, it should look like this: `data.varName = ...`.
+In the HTML, you can simply refer to the variable as varName, as shown in the following example:
+```javascript
+function render(params) {
+	const data = { // you can pass data at declaration if you want 
+		coverImage: params.coverUrl // the common example are the objects passed through 'params' from the java script
+	};
+	
+	const vue = Vue.createApp({
+		data() { return data; },
+		methods: {}
+	});
+
+	// you can pass data statically
+	data.integer = 42;
+	data.string = "foo";
+
+	product.search(function(){
+		// but you can also pass data dynamically
+		data.singleObject = product.list[0]; // first product as dummy example
+	}, null, {});
+}
+```
+```html
+<!-- From the above javascript code, here is how we can access the data elements properly -->
+<div class="example-container">
+	<span>{{ string }}: {{ integer }}</span>
+	<h1>Object is {{ singleObject.field }}</h1>
+</div>
+```
+* *For methods;* Include your methods in the `methods: { ... }` section of the `createApp()` function. You can either define them directly within this scope or declare them outside (though declaring them outside is not recommended for database calls). Declaring them in the `methods` section ensures they are correctly linked to the Vue instance and available for use in the HTML, as shown in the example below.
+```javascript
+function render(params) {
+
+	// previous part of code
+	
+	const vue = Vue.createApp({
+		data() { return data; },
+		methods: { 
+			fooInner(){
+				console.log("foo from inside !");
+			},
+			fooOutter
+		}
+	});
+
+	// next part of code
+}
+
+function fooOutter(){
+	console.log("foo from outside !");
+}
+```
+```html
+<!-- The ways to use the declared functions are similar but still different -->
+<button v-on:click="fooInner()">Inner Foo</button> <!-- '()' are mandatory if you want the function to actually be executed -->
+<button v-on:click="fooOutter">Outter Foo</button> <!-- don't need the parenthesis if there are no argument (still not recommended) -->
+```
+
+If you want to explore these concepts further and understand how they coexist, here is the full code for the Custom Vue webpage that serves as an example:
+<details>
+<summary>CustomVueFront Full Code</summary>
+
+**HTML Resource File Code**
+```html
+<template id="demovuejsfrontend-copy">
+	<div id="vuefront-header" v-bind:style="{ backgroundImage: 'url(' + coverImage + ')' }">
+		<div class="vuefront-header-title">
+			<span class="vuefront-title-name" v-on:click="hello">Simplicité</span>
+			<span class="vuefront-title-sign">/</span>
+			<span class="vuefront-title-name">Vue.js</span>
+		</div>
+		
+		<div class="vuefront-header-buttons">
+			<!-- Here Dynamically input the different suppliers (clicking them lists only their items down below -->
+			<button class="vuefront-suppplier-button" v-on:click="displayProducts(null)">
+				All Products
+			</button>
+			<template v-for="sup in supList">
+				<!-- Supplier Button for display options -->
+				<button class="vuefront-suppplier-button" v-on:click="displayProducts(sup)">
+					{{ sup.demoSupName }}
+				</button>
+			</template>
+		</div>
+	</div>
+	
+	<div id="vuefront-body">
+		<div class="vuefront-product-list">
+			<!-- Here Dynamically put the products (yet with no filter) -->
+			<template v-for="prd in prdList">
+				<!-- Product Card -->
+				<div v-if="item==null || item.demoSupName==prd.demoPrdSupId__demoSupName" class="vuefront-product-card">
+					<img class="vuefront-product-picture" v-bind:src="'data:'+prd.demoPrdPicture.mime+';base64,'+prd.demoPrdPicture.content" v-bind:alt="prd.demoPrdName"/>
+					<div class="vuefront-product-card-content">
+						<span class="vuefront-product-name">{{ prd.demoPrdName }}</span>
+						<div class="vuefront-product-card-infos">
+							<span class="vuefront-product-supplier">{{ prd.demoPrdSupId__demoSupName }}</span>
+							<span class="vuefront-product-reference">{{ prd.demoPrdReference }}</span>
+						</div>
+						<div class="vuefront-product-card-actions">
+							<span class="vuefront-product-stock">{{ prd.demoPrdStock }} in stock</span>
+							<span class="vuefront-product-price">{{ prd.demoPrdUnitPrice }}€</span>
+						</div>
+						<button v-bind:id=`order-${prd.row_id}` class="vuefront-product-card-order" v-on:click="orderProduct(prd)">Order Now !</button>
+					</div>
+				</div>
+			</template>
+		</div>
+	</div>
+
+	<div id="vuefront-footer">
+		<p class="vuefront-footer-text">&copy; Simplcit&eacute; Software</p>
+		<a href="https://docs.simplicite.io/lesson/docs/front/web-page" class="vuefront-footer-text">Associated Tutorial</a>
+	</div>
+</template>
+
+<script setup>
+console.log("<script setup>");
+// works but without the 'ref' or 'onMounted' as import isn't doable
+</script>
+
+<style scope>
+#vuefront-header {
+	width: 100%;
+	height: fit-content;
+	background-size: cover;
+	background-position-y: center;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	gap: 24px;
+	padding-top: 56px;
+	
+	.vuefront-header-title {
+		color: white;
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		
+		.vuefront-title-name {
+			font-size: 48px;
+		}
+		.vuefront-title-sign {
+			font-size: 64px;
+		}
+	}
+	
+	.vuefront-header-buttons {
+		display: flex;
+		gap: 8px;
+		
+		.vuefront-suppplier-button {
+			background: none;
+			color: #A4F0C7;
+			border-radius: 16px 16px 0 0;
+			border: solid 4px #A4F0C7;
+			border-bottom: none;
+			padding: 8px 16px;	
+			font-weight: bold;
+			transition: all 0.25s ease;
+			
+			&:hover {
+				background: rgba(164, 240, 199, 0.25);
+			}
+			&:active {
+				background: rgba(164, 240, 199, 0.5);
+				border-color: #4AE28F;
+				color: #4AE28F;
+			}
+		}
+	}
+}
+
+#vuefront-body {
+	width: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.vuefront-product-list {
+	width: 100%;
+	flex-grow: 1;
+	background: #A4F0C7;
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	padding: 16px 16px;
+	
+	overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+	
+	.vuefront-product-card {
+	    display: flex;
+	    flex-direction: column;
+	    border: solid 2px #1F1F1F;
+	    
+	    .vuefront-product-picture {
+	    	background: rgba(0,0,0, 0.25);
+	    	height: 50%;
+	    	border-bottom: solid 2px #1F1F1F;
+	    	padding: 16px;
+	    }
+	    .vuefront-product-card-content {
+	    	display: flex;
+	    	flex-direction: column;
+	    	justify-content: start;
+	    	align-items: center;
+	    	height: 50%;
+	    	width: 100%;
+	    	
+	    	.vuefront-product-name {
+	    		width: 100%;
+	    		font-size: 20px;
+	    		font-weight: 500;
+	    		padding: 4px 8px;
+	    		border-bottom: solid 2px #1F1F1F;
+	    	}
+	    	
+	    	.vuefront-product-card-infos {
+	    		display: flex;
+	    		justify-content: space-between;
+	    		font-size: 14px;
+	    		padding: 4px 8px;
+	    		width: 100%;
+	    		border-bottom: solid 2px #1F1F1F;
+	    		
+	    		.vuefront-product-supplier {
+	    			font-style: italic;
+	    		}
+	    	}
+	    	
+	    	.vuefront-product-card-actions {
+	    		display: flex;
+	    		justify-content: space-between;
+	    		padding: 4px 8px;
+	    		width: 100%;
+	    		border-bottom: solid 2px #1F1F1F;
+	    	}
+	    	
+	    	.vuefront-product-card-order {
+	    		border: none;
+	    		background: none;
+	    		width: 100%;
+	    		height: 100%;
+	    		transition: all 0.5s ease;
+	    		font-size: 20px;
+	    		
+	    		&:hover {
+	    			background: rgba(0,0,0, 0.5);
+	    			font-weight: bold;
+	    			color: #A4F0C7;
+	    		}
+	    	}
+	    }
+	    
+	    transition: all 0.33s ease;
+	    &:hover {
+	    	background: rgba(0,0,0, 0.1);
+	    	transform: scale(1.05);
+		}
+	}
+}
+
+#vuefront-footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	color: white;
+	height: 28px;
+	font-size: 16px;
+	
+	a {
+		margin-left: 24px;
+		text-decoration: none;
+		color: white;
+		transition: all 0.25s ease;
+		
+		&:hover {
+			opacity: 0.5;
+		}
+		&:active {
+			opacity: 0.75;
+			transform: scale(0.9);
+		}
+	}
+}
+</style>
+```
+
+**SCRIPT Resource File Code**
+```javascript
+/* global Vue */
+
+var DemoVueJSFrontendCopy = DemoVueJSFrontendCopy || (() => {
+	let supplier, product, order; // Casual BusinessObjects from Simplicité Demo
+	let cli = {
+		demoCliCode: "VUECLI",
+		row_id: "6",
+		demoCliFirstname: "Robert",
+		demoCliLastname: "ROSS"
+	};
+	
+	function render(params) {
+		try {
+			if (typeof Vue === 'undefined')
+				throw 'Vue.js not available';
+
+			const data = { 
+				coverImage: params.coverImage
+			};
+			console.log("Data Image: "+params.coverImage+" vs "+data.coverImage);
+			
+			const app = typeof $ui !== 'undefined' ? $ui.getAjax() : new Simplicite.Ajax(params.root, 'uipublic');
+			
+			// initializing & fetching Simplicité-related objects 
+			const supplier = app.getBusinessObject("DemoSupplier");
+			const product = app.getBusinessObject("DemoProduct");
+			const order = app.getBusinessObject("DemoOrder");
+			
+			supplierList = [];
+			productList = [];
+			
+			// creating Vue app & mounting it to resource html
+			const vue = Vue.createApp({
+				data() { return data; },
+				methods: {
+					displayProducts(s){ this.item = s; },
+					orderProduct(p){
+						console.log("ordering product -> "+p.demoPrdName);
+						
+						const date = new Date();
+    	
+				    	order.getForCreate(function() {
+				    		order.item.demoOrdCliId = cli.row_id;
+				    		order.item.demoOrdCliId__demoCliCode = cli.demoCliCode;
+				    		
+				    		order.item.demoOrdPrdId = p.row_id;
+				    		order.item.demoOrdPrdId__demoPrdReference = p.demoPrdReference;
+				    		order.item.demoOrdPrdId__demoPrdUnitPrice = p.demoPrdUnitPrice;
+				    		order.item.demoOrdPrdId__demoPrdStock = p.demoPrdStock;
+				    		
+				    		order.item.demoOrdQuantity = "1";
+				    		order.item.demoOrdComments = `Custom Vue Front Order on ${date}`;
+				    		
+				    		order.create();
+				    		
+				    		showToast(`Order Sent for Product: ${p.demoPrdReference}`);
+				    	});
+					}
+				}
+			});
+			
+			// search methods (before or after "createApp" ??)
+				// -> AFTER because first creating app then mounting it WITHIN search .
+			supplier.search(function() {
+				let supplierList = [];
+				for(let i=0; i<supplier.count; i++)
+				{
+					let sup = supplier.list[i];
+					supplierList.push(sup);
+				}
+				data.supList = supplierList;
+				
+			}, null, { inlineDocs: true });
+			
+			product.search(function() {
+				let productList = [];
+				for(let i=0; i<product.count; i++)
+				{
+					let prd = product.list[i];
+					productList.push(prd);
+				}
+				data.prdList = productList;
+				
+				data.item = null; // tmp object storage ?
+				vue.mount('#demovuejsfrontend-copy'); // Call this WITHIN search to mount once every fetch is done.
+			}, null, { inlineDocs: true });
+			
+		} catch(e) {
+			$('#demovuejsfrontend-copy').text(`Error: ${e.message}`);
+		}
+	}
+	
+	function showToast(message) {
+	    const toast = document.createElement('div');
+	    toast.classList.add('custom-toast');
+	    toast.innerText = message;
+	    document.body.appendChild(toast);
+	    
+	    setTimeout(() => {
+	        toast.classList.add('fade-out');
+	        setTimeout(() => toast.remove(), 500);  // Remove after fade-out
+	    }, 3000);
+	}
+
+	return {
+		render: render
+	};
+})();
+```
+
+**CLASS Resource File Code**
+```css
+#demovuejsfrontend-copy {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+	overflow: hidden;
+}
+
+.custom-toast {
+    position: fixed;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    top: 16px;
+    left: calc(50% - 250px);
+    background-color: #D2D2FE;
+    color: #4B4CFC;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: solid 2px #4B4CFC;
+    opacity: 1;
+    font-size: 20px;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+}
+
+.custom-toast.fade-out {
+    opacity: 0;
+}
+```
+</details>
 
 ### Building project
 
-just `npm run build` into ZIP dist, bring it as "file set" resource and ensure Java code is correct (CREATE IT)
+Simplicité also allows you to direclty import projects created under a chosen framework as `.zip` file, and then loading those from the *java server-side* script.
 
-> Possible use for Vue.js, React, Angular or even templating tools like Mustache.
+This technique allows you to use frameworks not included in the `com.simplicite.web.webapp.BootstrapWebPage` class, by creating projects as you would for any of the associated frameworks' project using NodeJS. To import it you simply have to run `npm run build` to create a `dist/` folder.
+Then the last preparation step is to compress the `dist/` folder into a `.zip`, and add it as a resource in your ExternalObject's form.
+
+> ***Note:*** You can also do that for a Vue project in order to access multi-component projects and a wider range of Vue features.
+
+Next step is to write a proper and functionning *java server-side* code in order to load the compressed as a valid resource in order to reference, load, and render it as any other ExternalObject.
