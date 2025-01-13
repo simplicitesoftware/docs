@@ -39,7 +39,7 @@ simple quotes to enclose all textual values (not required for number values)
 - `is not null`: any non empty value
 - `in ('a','b','c')`: exists in a list of values
 - `not in ('a','b','c')`: not exists in a list of values
-- `not in`: does not exists in the ENUM field definition
+- `not in`: does not exists in the ENUM field definition (since 6.2)
 
 
 Comparators can be combined with logical operators:
@@ -110,7 +110,7 @@ JSON Filters are used in several contexts: API endpoint, link filters, widgets, 
   "nmax___number2" : 456.78,
   // use a predefined group-by fields
   "group__childField3" : 1,
-  // or force another group-by on fields
+  // or force another group-by on fields (since 6.2)
   "groupby": true, "groupbyfields": ['myEnumField']",
   // meta-object
   "mofield": "User#%martin%"
