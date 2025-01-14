@@ -111,7 +111,7 @@ JSON Filters are used in several contexts: API endpoint, link filters, widgets, 
   // use a predefined group-by fields
   "group__childField3" : 1,
   // or force another group-by on fields (since 6.2)
-  "groupby": true, "groupbyfields": ['myEnumField']",
+  "groupby": true, "groupbyfields": ['myEnumField'],
   // meta-object
   "mofield": "User#%martin%"
 }
