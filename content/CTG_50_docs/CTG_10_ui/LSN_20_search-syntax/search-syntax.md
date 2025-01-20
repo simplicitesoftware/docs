@@ -37,8 +37,9 @@ simple quotes to enclose all textual values (not required for number values)
 - `like`: partial equals
 - `is null`: empty value
 - `is not null`: any non empty value
-- `in (...)`: exists in a list of values
-- `not in (...)`: not exists in a list of values
+- `in ('a','b','c')`: exists in a list of values
+- `not in ('a','b','c')`: not exists in a list of values
+- `not in`: does not exists in the ENUM field definition (since 6.2)
 
 
 Comparators can be combined with logical operators:
@@ -61,6 +62,11 @@ Examples:
 Date or datetime interval search syntax is `YYYY-MM-DD[ hh:mm:ss];YYYY-MM-DD[ hh:mm:ss]` each boundary date or datetime being optional.
 
 Alternatively you can use search filters named `dmin__<field name>` or `dmax__<field name>`
+
+### Interval searches on number fields
+
+Number interval search syntax is `(>12 and <=25) or >100`.
+For simple interval (min/max) you can use search filters named `nmin__<field name>` or `nmax__<field name>`
 
 ### Geographical search
 
@@ -92,8 +98,21 @@ JSON Filters are used in several contexts: API endpoint, link filters, widgets, 
 
 ```json
 {
+  // expression
   "field1" : ">=1000 and <=5000",
+  // ordered field
   "order__field2" : -1,
-  "group__childField3" : 1
+  // date range
+  "dmin___date1" : "2021-01-01",
+  "dmax___date2" : "2023-12-31 15:35:00",
+  // number range
+  "nmin___number1" : 123,
+  "nmax___number2" : 456.78,
+  // use a predefined group-by fields
+  "group__childField3" : 1,
+  // or force another group-by on fields (since 6.2)
+  "groupby": true, "groupbyfields": ['myEnumField'],
+  // meta-object
+  "mofield": "User#%martin%"
 }
 ```
