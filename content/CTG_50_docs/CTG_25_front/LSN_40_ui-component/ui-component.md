@@ -11,7 +11,7 @@ The need for custom widgets typically arises when existing Simplicité component
 
 > ***Note:*** Such requirements are often niche. Most technical operations can already be accomplished using Simplicité's core functionalities. Consequently, the primary purpose of creating custom widgets is to address unique visualization needs, enabling you to embed tailored styles and feature combinations within a custom interface.
 
-### Our Example: Welcome Card
+### Example: Welcome Card
 
 ![](welcome-card-result.png)
 
@@ -33,7 +33,7 @@ Another important step is to grant your widget the rights of the module and view
 
 ![](welcome-card-permissions.png)
 
-### Adding Content & Styles
+### Creating Resources
 
 Then use the *Create Resources* action button, and click *Yes*. By doing so, you are adding 3 files to your object's *Resources* (visible in the bottom tab section "Resources"):
 
@@ -41,138 +41,92 @@ Then use the *Create Resources* action button, and click *Yes*. By doing so, you
 
 - **STYLES**; the *CSS* file that serves as stylesheet for your object. There are no default style defined, only an empty bracket `#ext-obj { /* Custom styles */ }`.
 
-- **CLASS**; the *Javascript* script that will be useful for the next lesson. 
+- **CLASS**; the *Javascript* script that will be useful for the next sections. 
 
 ![](welcome-card-resources.png)
 
 > ***Note:*** The ressources are organized as any web element, in order to be easily integrated and created by designers and frontend developers.
 
-For the welcome card, both content and style ressources are quite easy to create. Below are the *HTML* and *CSS* codes.
+For the next steps, there are several ways to conceive your object:
+
+1) **Dynamic Instantiation** *(recommended)*
+
+As at some point you will have to fetch data and dynamically create your html elements (for example if you are retrieving an object and then using its data within a div). Thus it is more relevant to instantiate all of your HTML directly from your *CLASS* resource file using javascript.
+This way is the one recommended by Simplicité when creating your External Objects, as they won't be very large in the DOM and mostly embedded in your existing Simplicité Interfaces, it is preferred to have the lowest loading time possible --through lighter HTML--, and overall the workflow of the *CLASS* and *HTML* resource file together is simpler using this way.
+
+This way your *HTML* resource file will remain very light and only contain sort of 'anchors' that will help you tell where and how to instantiate your different elements. And your *CLASS* file on the contrary, will be slightly bigger and complex. Below are shown the examples of the basic setup for our *DemoWelcomeCard* using this instantiation type:
+
+```html
+<div id="demowelcomecard">
+	<!-- Basically this is left empty at creation -->
+    <div id="demowelcomecard-header"></div>
+    <div id="demowelcomecard-actions"></div>
+    <div id="demowelcomecard-productlist"  hidden></div>
+</div>
+```
+
+```javascript
+Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.ExternalObject {
+	async render(params, data = {}) {
+		$('#demowelcomecard').append('Hello world!');
+	}
+}
+```
+
+* A class with the name of your External Object is declared within the `Simplicite.UI.ExternalObjects` module, extending the `Simplicite.UI.ExternalObject` to properly access any method from it.
+* Only the `render(params, data)` function is declared yet, as it is the one called inside the server-side java code resource `com.simplicite.webapp.web.ResponsiveExternalObject`.
+* We dynamically instantiate an "Hello world!" text simply to test that the connection & basic instantiation is enabled using `$('#demowelcomecard').append(...)`.
+
+The *HTML* will remain the same during this lesson (for this instantiation), while the *CLASS* will be modified and furtherly explained later on.
+
+> ***WARNING:*** The javascript code snippet is the one you'll have from V6.1.19, if you use an outdated version the resource file for javascript might be *SCRIPT* and then you can refer to the code presented at the very end of this document, that uses a more general and fully working setup; `var DemoWelcomeCard = DemoWelcomeCard || (function(){ ... })(jQuery);`.
+<details>
+<summary>V5 Default Javascript</summary>
+
+```javascript
+var CustomWelcomeCard = CustomWelcomeCard || (function($) {
+	function render(url) {
+		$('#customwelcomecard').append('Hello world!');
+	}
+
+	return { render: render };
+})(jQuery);
+```
+</details>
+
+2) **Static Instantation**
+
+There are some use cases where it is easier to work with a static setup (i.e longer HTML), for example if you only fetch few data and have everything doable from HTML or from any "static function". This is thus not recommended compared to the previous version, as it will be slightly less effective while co-existing with/within Simplicité's solution.
+With this method, the setup remains the same for the *CLASS* file, but you'll maybe already setup a more complete structure for your *HTML*:
 
 ```html
 <div id="customwelcomecard">
 	<span class="welcome-title">Welcome User</span>
     <span class="welcome-text">
-        Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy a seamless experience tailored for you.
+        Welcome to Simplicité's solution! We're excited to have you onboard. Explore, interact, and enjoy your experience with us !
     </span>
     <div class="welcome-buttons">
-        <button class="welcome-btn tuto" onclick="">Get Started (Tutorial)</button>
-        <button class="welcome-btn prd-nav" onclick="">Products List</button>
-        <button class="welcome-btn info" onclick="">My Informations</button>
+        <button class="welcome-btn tuto" onclick="goToSimpliciteDoc()">Get Started (Tutorial)</button>
+        <button class="welcome-btn prd-nav" onclick="displayProductsWithin()">Products List</button>
+        <button class="welcome-btn info" onclick="goToUserInfos()">My Informations</button>
     </div>
     <div id="welcome-list" hidden></div>
 </div>
 ```
 
-<details>
-<summary>CSS Stylesheet</summary>
-	
-```css
-#customwelcomecard {
-	display: flex;
-	flex-direction: column;
+Yet we won't actually instantiate the different features and functions, but still we can include them to know how they'll be included. Moreover, the presented scripts are not the final ones and will be modified with explanations later on this lesson.
 
-	width: 100%;
-	padding: 1rem 2rem;
-
-	justify-content: start;
-	align-items: center;
-}
-.welcome-title {
-	width: 100%;
-	color: #303030;
-	text-align: center;
-	font-size: 3.5rem;
-	border-right: solid 0.25rem #5451FF;
-}
-.welcome-text {
-	padding: 0rem 1.5rem;
-	color: #474747;
-	text-align: left;
-	font-size: 2rem;
-	margin-bottom: 1rem;
-	border-right: solid 0.25rem #58EC9B;
-}
-.welcome-buttons {
-	display: flex;
-	flex-direction: row;
-	width: 100%
-	justify-content: center;
-	align-items: center;
-	gap: 3rem;
-	margin-top: 2rem;
-}
-.welcome-btn {
-	position: relative;
-	padding: 1.5rem 3rem;
-	border: none;
-	color: #303030;
-	background-color: transparent;
-	overflow: hidden;
-	cursor: pointer;
-	text-align: center;
-	font-size: 2rem;
-}
-.welcome-btn::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0.25rem;
-	height: 100%;
-	background-color: transparent;
-	border-left: solid 0.25rem transparent;
-	border-bottom: solid 0.125rem transparent;
-	transition: all 0.5s ease;
-}
-.welcome-btn:hover::before {
-	border-left-width: 1.5rem;
-}
-.welcome-btn:active::before {
-	border-left-width: 3rem;
-}
-.tuto {
-	background-color: #FFF6E0;
-	transition: all 0.25s ease;
-	&:active {
-		background-color: darken(#FFF6E0,4%);
-	}
-	&::before {
-		border-color: #FFD166;
-	}
-}
-.info {
-	background-color: #FBEBFB;
-	transition: all 0.25s ease;
-	&:active {
-		background-color: darken(#FBEBFB,4%);
-	}
-	&::before {
-		border-color: #EC9DED;
-	}
-}
-.prd-nav {
-	background-color: #FED7D9;
-	transition: all 0.25s ease;
-	&:active {
-		background-color: darken(#FED7D9,4%);
-	}
-	&::before {
-		border-color: #FB3640;
-	}
-}
-```
-</details>
+> ***Note:*** Both techniques are working fine in Simplicité and it indeed depends on how you prefer to do it. The main presented examples are gonna be for the first one, but at the end we provide a similar code that works with the second technique.
 
 ## Integration (Welcome Card)
 
 As for the *creation process*, the process of integrating the created widget is very straightforward, everything will be done in the *User Interface > Views > Show All*, select a view that is of type *Home Page*, and click the *Edit View* action button:
 
-1 - Add a new **Sub-View**.
-2 - Make it of type **External Page**.
-3 - Select *External Object* as Source.
-4 - Fill the *External Object* field with the name of your widget (for the welcome-card use **CustomWelcomeCard**).
-5 - Save it, and you shall see a preview of your object integrated within the view.
+1) Add a new **Sub-View**.
+2) Make it of type **External Page**.
+3) Select *External Object* as Source.
+4) Fill the *External Object* field with the name of your widget (for the welcome-card use **CustomWelcomeCard**).
+5) Save it, and you shall see a preview of your object integrated within the view.
 
 > ***Warning:*** Make sure to grant the rights for your external object !
 > - If encountering the *External object ____ not granted*, first try to clear your cache.
@@ -182,44 +136,115 @@ The creation of an object's behavior and interaction within one Simplicité appl
 
 ## Implementation (Welcome Card)
 
-The first step is to make sure that our object can be aware of the Simplicité's system that he is a part f. To make such things we are gonna use the *javascript* resources of our External Object: **extobj_script** or **CLASS** or **SCRIPT**.
+The first step is to make sure that our object can be aware of the Simplicité's system that he is a part of. To make such things we are gonna use the *javascript* resources of our External Object: **CLASS**.
+
+> ***Note:*** The **CLASS** resource file name is automatically assigned at creation from v6.1.19, above it's possible that your javascript resource file is named **SCRIPT**. Thus the inner workflow remains similar.
 
 ### File structure
 
-The created *javascript* file initially contains only the base structure to later implement whatever we want in our object:
+The default *CLASS* vows to be organized is a certain way while you develop it, this it is important to understand its structure and how to navigate through it:
 
 ```javascript
-class CustomWelcomeCard extends Simplicite.UI.ExternalObject {
+Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.ExternalObject {
 	async render(params, data = {}) {
-		$('#demowelcomecard').append('Hello world!');
+		$('#demowelcomecard')
+			.append($('<h1>').addClass("custom-header-title").text("Hello World!"))
+			.append($('<h3>').addId("custom-result-text").text("none"))
+			.append($('<button/>').addClass("custom-btn-big").text("Click Me").on("click", this.foo()))
+			.append($('<button/>').addClass("custom-btn-small").text("click me").on("click", () => { $('#custom-result-text').text("Clicked on the small button") }))
+	}
+
+	foo()
+	{
+		$('#custom-result-text').text("Clicked on the BIG button");
 	}
 }
 ```
 
-* The class extends the `Simplicite.UI.ExternalObject` class, so the object is set to access all (possibly needed features)[]
-* Only the `render(params, data)` function is declared yet, as it is the one called inside the server-side java code resource `com.simplicite.webapp.web.ResponsiveExternalObject`.
+1) **Dynamically instantiate HTML:**
+As with this way you dynamically create all of your HTML content, the syntax we recommend to use is the illustrated one above; `$(target).append(content)` with content usually being `$(selector)` to add an empty div. Such expression means and does several things:
+- `$()` is a shorthand for `jQuery()`, and allows to both select a target element in the DOM from its 'id', `$('#container')` will select the `<div id="container></div>` element (that may be something else than a div).
+- `.append()` allows to insert a specified content as the last child of the selected element, thus modifying the DOM.
 
-But for simple embedded *External Objects* we can use a slightly simpler setup, by simply declaring our object as a peculiar namespace in which we'll declare everything we need to ensure it is only related to our object:
+You then can specify the attributes of your appended elements using several simple methods:
+- `.attr("attr", "name")` to specify any attribute of your element (id, style, ...) as `<div attr="name"></div>`.
+- `.addClass("class0 class1")` to specify the differente classes (may be single) of your element, here `<div class="class0 class1"></div>`.
+- `.text("txt")` to input a given string (possibly not static) to your element, from the example we would have `<div>txt</div>`.
+- `.on("event", function)` allows to define an *eventListener* to your element, giving first a string naming the event, and then specifying the function to call when this event occurs (events can come from several interacting sources such as mouse, forms, keyboard, documents, and even touch).
+
+With such approach, passing out variables and methods is pretty straighforward and intuitive, as everything happens within your *CLASS* javascript resource file. Indeed you can simply link some elements of your *HTML* content file to specific functions and features implemented in your *CLASS* javascript file. Thus you have nothing to actually implement in the *HTML*, just some anchors to then dynamically instantiate your elements from the *CLASS* file.
+
+2) ***Alternative "Hybrid" Script Structure***
+
+If you still like to have elements with associated features statically instantiated within your *HTML* file, then there is one slightly different way to think your structure; you need a reference or an entry point to your javascript methods, this is done through an actual *instance* of your class that can be declared as follows:
 
 ```javascript
-var CustomWelcomeCard = (function(){
-	return {};
-})();
+Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.ExternalObject {
+	async render(params, data = {}) {
+		// do whatever you need/want here
+	}
+
+	foo()
+	{
+		$('#custom-result-text').text("Clicked on the static button :)");
+	}
+}
+
+const demowelcomecard = new Simplicite.UI.ExternalObjects.CustomExternalObjectTest();
+window.demowelcomecard = demowelcomecard;
 ```
 
-### Accessing the current session
+Then using function from statically instantiated elements can be done as:
 
-The communication with Simplicité's environment is allowed by using the `$ui` call within our object's class extending `Simplicite.UI.ExternalObject`. And we get the current session by using the `getApp()` function, returning the current `Simplicite.Ajax` instance.
+```html
+<div id="demowelcomecard">
+	<h1 class="custom-header-title">Hello World !</h1>
+	<h3 id="custom-result-text">none</h3>
+	<button onclick="demowelcomecard.foo()">Click me</button>
+</div>
+```
 
-From the previous example we just need a small improvement, adding the `let app= $ui.getApp()` line to instantiate a reference to the current Simplicité session:
+3) ***Previous Script Structure***
 
+For the older *SCRIPT* the structure is thus more straigthforward, as you declare your whole object's script as an *Immediately Invoked Function Expression*, everything is contained in it, and for a proper organisation you can refer to the following script:
 ```javascript
-var CustomWelcomeCard = (function(){
+var CustomWelcomeCard = CustomWelcomeCard || (function($){
 	let app = $ui.getApp();
-	
-	return {};
-})();
+	let login = $ui.getGrant().login;
+	let product = app.getBusinessObject("DemoProduct");
+
+	function foo()
+	{
+		console.log("Hello There !");
+	}
+
+	function asyncFoo()
+	{
+		product.search( function(){
+			// access and manipulate the "DemoProduct" BusinessObject's instances here
+		}, null { inlineDocs: true });
+	}
+
+	return {
+		foo: foo,
+		asyncFoo: asyncFoo,
+	};
+})(jQuery);
 ```
+
+With such structure, you don't especially need the `render(params, data)` method to be called, and you can declare your variables as you would in a regular function. The only specificity is to actually return all of your functions and variables in order to access them in your *HTML*.
+
+Then accessing the returned methods in the *HTML* would be done similarly to how it is in the below code snippet:
+
+```html
+<div id="customwelcomecard">
+	<h1 id="dynamic-title"></h1>
+	<button onclick="CustomWelcomeCard.foo()">Casual Foo</button>
+	<button onclick="CustomWelcomeCard.asyncFoo()">Asynchronous Foo</button>
+</div>
+```
+
+> ***Note:*** With this method you can't pass variables or constants statically, so you still need to add the fetched datas dynamically.
 
 ### Manipulating Business Objects
 
@@ -272,44 +297,60 @@ And the final step to access your different objects from here is to know how the
 
 ![](demo-prd-fields-list.png)
 
-Now here is how we implemented a simple product fetching & display function within the **CustomWelcomeCard** External Oject using the previously explained methods:
+Now here is how we implemented a simple product fetching & display function within the **CustomWelcomeCard** External Oject using the previously explained methods, so inside the `BusinessObject.search(function(){ ... })` call we can use the following code snippet:
 
 ```javascript
-function displayProductsWithin()
+for (let i=0; i<product.count; i++)
 {
-	var app = $ui.getApp();
-	let productdBusinessObject = app.getBusinessObject("DemoProduct");
+    const prd = product.list[i];
+    const imageSource = `data:${prd.demoPrdPicture.mime};base64,${prd.demoPrdPicture.content}`;
+            
+    let productDiv = $('<div>').addClass("demowelcomecard-product-card").on("click", () => {
+    	// triggers an error but still saves & runs ...
+    	$ui.displayForm(null, "DemoProduct", prd.row_id, {
+			nav: "add",
+			target: "work"
+		});
+    });
+    let cardLeft = $('<div>').addClass("dwc-product-card-left");
+        
+    let cardLeftHeader = $('<div>').addClass("dwc-product-card-left-header");
+    let cardLeftHeaderTitle = $('<span>').addClass("dwc-product-card-left-header-title").text(prd.demoPrdName);
+    let cardLeftHeaderSubtitle = $('<span>').addClass("dwc-product-card-left-header-subtitle").text(prd.demoPrdSupId__demoSupName+" - "+prd.demoPrdType);
+            
+    cardLeftHeader
+        .append(cardLeftHeaderTitle)
+        .append(cardLeftHeaderSubtitle);
+            
+	let cardLeftFooter = $('<div>').addClass("dwc-product-card-left-footer");
+    let cardLeftFooterStock = $('<span>').addClass("dwc-product-card-left-footer-stock").text(prd.demoPrdStock+" left in stock.");
+    let cardLeftFooterPrice = $('<span>').addClass("dwc-product-card-left-footer-price").text(prd.demoPrdUnitPrice+"€");
+            
+    cardLeftFooter
+    	.append(cardLeftFooterStock)
+    	.append(cardLeftFooterPrice);
+            
+    cardLeft
+    	.append(cardLeftHeader)
+    	.append(cardLeftFooter);
+            
+    let cardRight = $('<div>').addClass("demowelcomecard-product-card-right");
     
-	productdBusinessObject.search( function() { //Here it is important to put the function here and not outside, so the search() operation is actually done before accessing the object, otherwise you might access a non-updated (empty) version of your object.
-		document.getElementById("welcome-list").hidden = false;
-		
-		console.dir(productdBusinessObject);
-		
-		for (let i=0; i<productdBusinessObject.list.length; i++)
-		{
-			const prd = productdBusinessObject.list[i];
-			console.log(`prd_${i}:\n${JSON.stringify(prd)}`);
-			
-			document.getElementById("welcome-list").insertAdjacentHTML(
-		        'beforeend',
-		        `<div class="welcome-product-card">
-		        	<div class="welcome-prd-card-left">
-		        		<div class="prd-card-left-header">
-		        			<div class="prd-card-left-header-texts">
-		        				<span class="card-left-header-prd-name">${prd.demoPrdName}</span>
-		        				<span class="card-left-header-prd-type">${prd.demoPrdType}</span>
-		        			</div>
-		        			<span class="card-left-header-prd-price">${prd.demoPrdUnitPrice}</span>
-		        		</div>
-		        		<div class="prd-card-left-body">
-		        			<span class="card-left-body--prd-descr">${prd.demoPrdDescription}</span>
-		        		</div>
-		        	</div>
-		        </div>`
-		    );
-		}
-	}, null, {});
+    let cardRightImage = $('<img/>').addClass("dwc-product-card-right-image").attr("src", imageSource).attr("alt", prd.demoPrdName);
+    let cardRightText = $('<span>').addClass("dwc-product-card-right-description").text('"'+prd.demoPrdDescription+'"');
+            
+            
+    cardRight
+    	.append(cardRightImage)
+    	.append(cardRightText);
+    productDiv
+    	.append(cardLeft)
+    	.append(cardRight);
+            
+    $("#demowelcomecard-productlist").append(productDiv);
 }
+    
+$("#demowelcomecard-productlist").attr("hidden", "true"); // hiding by default
 ```
 
 ![](welcome-product-cards.png)
@@ -320,55 +361,94 @@ Additionaly we create the corresponding styles for the product card we are dynam
 <summary>CSS styles</summary>
 
 ```css
-.welcome-product-card {
-	display: flex;
-	flex-direction: row;
-	width: 25%;
-	gap: 1rem;
-	padding: 2rem;
-	font-size: 2rem;
-	background-color: rgba(226, 226, 226, 0.24);
-	border-left: solid 0.125rem #E2E2E2;
-	box-shadow: none;
-	
-	transition: all 0.33s ease-in;
-}
-.welcome-product-card:hover {
-	transform: scale(1.05);
-	box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.25);
-	border-left: solid 0.125rem #777777;
-}
-.welcome-prd-card-left {
-	display: flex;
-	flex-direction: column;
-}
-.prd-card-left-header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: start;
-	margin-bottom: 0.5rem;
-}
-.prd-card-left-header-texts {
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-}
-.card-left-header-prd-name {
-	font-size: 1.25rem;
-	font-weight: bold;
-}
-.card-left-header-prd-type {
-	font-size: 0.6rem;
-	font-style: italic;
-}
-.card-left-header-prd-price {
-	font-size: 0.75rem
-	text-align: right;
-}
-.prd-card-left-body {
-	text-align: left;
-	font-size: 1rem;
+.demowelcomecard-product-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 16px;
+    width: 40vw; /* fix this later on */
+    border: solid 1px #C6C6C6;
+    background: rgba(198, 198, 198, 0.25);
+    & .dwc-product-card-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        text-align: left;
+        & .dwc-product-card-left-header {
+            display: flex;
+            flex-direction: column;
+            & .dwc-product-card-left-header-title {
+                font-size: 32px;
+                font-weight: 600;
+            }
+            & .dwc-product-card-left-header-subtitle {
+                font-size: 24px;
+            }
+        }
+        & .dwc-product-card-left-footer {
+            display: flex;
+            flex-direction: column;
+            & .dwc-product-card-left-footer-stock {
+                font-size: 16px;
+                font-style: italic;
+            }
+            & .dwc-product-card-left-footer-price {
+                font-size: 32px;
+                font-style: italic;
+            }
+        }
+    }
+    & .demowelcomecard-product-card-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 16px;
+        width: 50%;
+        text-align: center;
+        border-left: solid 1px #C6C6C6;
+        transition: all 0.33s ease;
+        & .dwc-product-card-right-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75%;
+            height: auto;
+        }
+        & .dwc-product-card-right-description {
+            border-top: solid 1px #C6C6C6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            font-size: 16px;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        border-left: solid 2px #777777;
+        transition: all 0.33s ease-in;
+    }
+    &:hover {
+        background: rgba(198, 198, 198, 0.5);
+        &::before {
+            border-left-width: 6px;
+        }
+    }
+    &:active {
+        background: rgba(251,54,64, 0.25);
+        &::before {
+            border-left-width: 6px;
+            border-left-color: #FB3640;
+        }
+    }
 }
 ```
 </details>
@@ -382,23 +462,13 @@ Another interesting possibility is to implement custom shortcuts from our widget
 Such interactions can be done using the `BusinessObject.displayForm()` or `BusinessObject.displayList()` methods. The use case for displaying **Products' Form** is pretty straightforward:
 
 ```javascript
-document.getElementById("welcome-list").insertAdjacentHTML(
-    'beforeend',
-    `<div class="welcome-product-card" onclick="CustomWelcomeCard.goToProductForm(${prd.row_id})">
-    . . . `
-);
-
-// ... end of function & rest of code ...
-
-function goToProductForm(prdRowId) {
-	$ui.displayForm(null, "DemoProduct", prdRowId, {
-		nav: "add",
-		target: "work"
-	});
-}
+$ui.displayForm(null, "DemoProduct", prd.row_id, {
+	nav: "add",
+	target: "work"
+});
 ```
 
-The `display` methods available for **Business Objects** are all working as follows; specify the name of the Business Object, the `row_id` of the specific instance of this object, and then some options as `nav` --that defines the behavior regarding the navigation element (breadcrumb)-- or `target` --that specifies the UI area in which the form will be displayed (`"work"` is the only appropriate for forms, lists etc)--.
+The `display*` methods available for **Business Objects** are all working as follows; specify the name of the Business Object, the `row_id` of the specific instance of this object, and then some options as `nav` --that defines the behavior regarding the navigation element (breadcrumb)-- or `target` --that specifies the UI area in which the form will be displayed (`"work"` is the only appropriate for forms, lists etc)--.
 
 ### Getting User Infos
 
@@ -408,17 +478,17 @@ Keeping the idea of redirecting our user, we will implement a slightly different
 let grant = $ui.getGrant(); // can be removed if using $grant
 let currentUserLogin = grant.login; // equivalent: $grant.login
 
-let userBusinessObject = app.getBusinessObject("User");
+let user = app.getBusinessObject("User");
 ```
 
 Then thanks to the following script, we can easily use the previously fetched informations to properly display the currently logged user's form:
 
 ```javascript
-userBusinessObject.search( function(){
-	const user = userBusinessObject.list.find(u => u.usr_login === currentUserLogin);
+user.search( function(){
+	const usr = user.list.find(u => u.usr_login === currentUserLogin);
 	
-	if (user && user.row_id) {
-		$ui.displayForm(null, "User", user.row_id, {
+	if (usr && usr.row_id) {
+		$ui.displayForm(null, "User", usr.row_id, {
 			nav: "add",
 			target: "work"
 		});
@@ -428,9 +498,324 @@ userBusinessObject.search( function(){
 }, null, {});
 ```
 
-## Final Welcome-Card
+## Final Welcome-Card (V6.1.19)
 
 After all that we should be done with the implementation of our customized Welcome-Card widget ! We so have 3 resource files that should look like this:
+
+***HTML*** resource file:
+```html
+<div id="demowelcomecard">
+    <div id="demowelcomecard-header"></div>
+    <div id="demowelcomecard-actions"></div>
+    <div id="demowelcomecard-productlist"></div>
+</div>
+
+```
+
+***CLASS*** resource file (script):
+```javascript
+Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.ExternalObject {
+    async render(params, data = {})
+    {
+        let app = $ui.getApp();
+        let product = app.getBusinessObject("DemoProduct");
+        let user = app.getBusinessObject("User");
+        let login = $ui.getGrant().login;
+        
+
+        $("#demowelcomecard-header")
+            .append($('<h1>').text("Welcome to Simplicité's Demo !"))
+            .append($('<h3>').text("We're excited to have you onboard. Explore, interact, and enjoy your experience with us !"));
+
+        $("#demowelcomecard-actions")
+            .append($('<button/>').text("Check the Tutorial").attr("id", "tutorial").addClass("demowelcomecard-btn").on("click", () => { window.open("https://docs.simplicite.io/", "_blank"); } ))
+            .append($('<button/>').text("Display Products").attr("id","products").addClass("demowelcomecard-btn").on("click", () => {
+            	console.log("HELLO MISTER USER");
+            	let b = document.getElementById("demowelcomecard-productlist").hidden;
+            	document.getElementById("demowelcomecard-productlist").hidden = !b;
+            } ))
+            .append($('<button/>').text("See my Infos").attr("id","user-infos").addClass("demowelcomecard-btn").on("click", () => {
+            	user.search( function(){
+					const usr = user.list.find(u => u.usr_login === login);
+					
+					if (usr && usr.row_id) {
+						$ui.displayForm(null, "User", usr.row_id, {
+							nav: "add",
+							target: "work"
+						});
+					} else {
+						console.error("User not found.");
+					}
+		        }, null, {});
+            } ));
+		
+        product.search(function() {
+            for (let i=0; i<product.count; i++)
+            {
+                const prd = product.list[i];
+                const imageSource = `data:${prd.demoPrdPicture.mime};base64,${prd.demoPrdPicture.content}`;
+                
+                let productDiv = $('<div>').addClass("demowelcomecard-product-card").on("click", () => {
+                	// triggers an error but still saves & runs ...
+                	$ui.displayForm(null, "DemoProduct", prd.row_id, {
+					nav: "add",
+					target: "work"
+				});
+                });
+   
+                let cardLeft = $('<div>').addClass("dwc-product-card-left");
+                
+                let cardLeftHeader = $('<div>').addClass("dwc-product-card-left-header");
+                let cardLeftHeaderTitle = $('<span>').addClass("dwc-product-card-left-header-title").text(prd.demoPrdName);
+                let cardLeftHeaderSubtitle = $('<span>').addClass("dwc-product-card-left-header-subtitle").text(prd.demoPrdSupId__demoSupName+" - "+prd.demoPrdType);
+                
+                cardLeftHeader
+                	.append(cardLeftHeaderTitle)
+                	.append(cardLeftHeaderSubtitle);
+                
+                let cardLeftFooter = $('<div>').addClass("dwc-product-card-left-footer");
+                let cardLeftFooterStock = $('<span>').addClass("dwc-product-card-left-footer-stock").text(prd.demoPrdStock+" left in stock.");
+                let cardLeftFooterPrice = $('<span>').addClass("dwc-product-card-left-footer-price").text(prd.demoPrdUnitPrice+"€");
+                
+                cardLeftFooter
+                	.append(cardLeftFooterStock)
+                	.append(cardLeftFooterPrice);
+                
+                cardLeft
+                	.append(cardLeftHeader)
+                	.append(cardLeftFooter);
+                
+                let cardRight = $('<div>').addClass("demowelcomecard-product-card-right");
+                
+                let cardRightImage = $('<img/>').addClass("dwc-product-card-right-image").attr("src", imageSource).attr("alt", prd.demoPrdName);
+                let cardRightText = $('<span>').addClass("dwc-product-card-right-description").text('"'+prd.demoPrdDescription+'"');
+                
+                
+                cardRight
+                	.append(cardRightImage)
+                	.append(cardRightText);
+
+                productDiv
+                	.append(cardLeft)
+                	.append(cardRight);
+                
+                $("#demowelcomecard-productlist").append(productDiv);
+            }
+            
+            $("#demowelcomecard-productlist").attr("hidden", "true"); // hiding by default
+            
+        }, null, { inlineDocs: true });
+	}
+};
+```
+
+***STYLES*** resource file (stylesheet):
+```css
+#demowelcomecard {
+    display: flex;
+    flex-direction: column;
+}
+
+#demowelcomecard-header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 4px;
+    width: 100%;
+
+    & h1 { 
+        font-size: 32px;
+        font-weight: 600;
+    }
+    & h3 {
+        font-size: 24px;
+    }
+}
+
+#demowelcomecard-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin-top: 32px;
+    gap: 32px;
+
+    & .demowelcomecard-btn {
+        position: relative;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 16px 32px;
+        border: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            border-left: solid 4px transparent;
+            transition: all 0.33s ease-in;
+        }
+
+        &:hover {
+            &::before {
+                border-left-width: 16px;
+            }
+        }
+        &:active {
+            &::before {
+                border-left-width: 64px;
+            }
+        }
+    }
+
+    & #tutorial {
+        background-color: rgba(84, 81, 255, 0.1);
+        color: #5451FF;
+
+        &::before {
+            border-color: #5451FF;
+        }
+    }
+    & #products {
+        background-color: rgba(255, 209, 102, 0.1);
+        color: #FFD166;
+
+        &::before {
+            border-color: #FFD166;
+        }
+    }
+    & #user-infos {
+        background-color: rgba(88, 236, 155, 0.1);
+        color: #58EC9B;
+
+        &::before {
+            border-color: #58EC9B;
+        }
+    }
+}
+
+#demowelcomecard-productlist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin-top: 16px;
+    padding: 32px;
+    gap: 16px;
+
+    & .demowelcomecard-product-card {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 16px;
+        width: 40vw; /* fix this later on */
+        border: solid 1px #C6C6C6;
+        background: rgba(198, 198, 198, 0.25);
+
+        & .dwc-product-card-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+            text-align: left;
+
+            & .dwc-product-card-left-header {
+                display: flex;
+                flex-direction: column;
+
+                & .dwc-product-card-left-header-title {
+                    font-size: 32px;
+                    font-weight: 600;
+                }
+                & .dwc-product-card-left-header-subtitle {
+                    font-size: 24px;
+                }
+            }
+
+            & .dwc-product-card-left-footer {
+                display: flex;
+                flex-direction: column;
+
+                & .dwc-product-card-left-footer-stock {
+                    font-size: 16px;
+                    font-style: italic;
+                }
+                & .dwc-product-card-left-footer-price {
+                    font-size: 32px;
+                    font-style: italic;
+                }
+            }
+        }
+
+        & .demowelcomecard-product-card-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 16px;
+            width: 75%;
+            text-align: center;
+            border-left: solid 1px #C6C6C6;
+            transition: all 0.33s ease;
+
+            & .dwc-product-card-right-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                height: auto;
+            }
+            & .dwc-product-card-right-description {
+                border-top: solid 1px #C6C6C6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 16px;
+                font-size: 16px;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            border-left: solid 2px #777777;
+            transition: all 0.33s ease-in;
+        }
+
+        &:hover {
+            background: rgba(198, 198, 198, 0.5);
+            &::before {
+                border-left-width: 6px;
+            }
+        }
+        &:active {
+            background: rgba(251,54,64, 0.25);
+            &::before {
+                border-left-width: 6px;
+                border-left-color: #FB3640;
+            }
+        }
+    }
+}
+```
+
+## Final Welcome-Card (Alternative Code)
+
+An other way to do, with not specifically recommended techniques and logics (but overall similar and still working), is to have a more complete HTML and work with a namespace & instance of your Javascript object.
+
+Though this is not the best way to do as it contains some flaws (explained earlier) and isn't an optimized way to proceed within Simplicité's logic and concepts:
 
 ***HTML*** resource file:
 ```html
@@ -450,7 +835,7 @@ After all that we should be done with the implementation of our customized Welco
 
 ***CLASS*** resource file (script):
 ```javascript
-var CustomWelcomeCard = (function(){
+var CustomWelcomeCard = CustomWelcomeCard || (function(){
 	let app = $ui.getApp();
 	let grant = $ui.getGrant();
 	let productdBusinessObject = app.getBusinessObject("DemoProduct");
@@ -700,4 +1085,4 @@ var CustomWelcomeCard = (function(){
 	text-align: left;
 	font-size: 1rem;
 }
-``` 
+```
