@@ -26,12 +26,14 @@ flowchart TD
     R[Raw]:::sim
     S[Custom API]:::custom
     T[3rd party App]
+    U[Remote Object]:::sim
     subgraph Importing
         A-->B
         A-->K
         D-->E
         D-->F
         G-->H
+        I-->U
         I-->J
     end
         B-->C
@@ -39,6 +41,7 @@ flowchart TD
         E-->C
         F-->C
         H-->C
+        U-->C
         J-->C
         C-->M
         C-->O
