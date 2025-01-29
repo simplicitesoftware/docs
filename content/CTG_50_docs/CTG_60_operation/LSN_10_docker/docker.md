@@ -243,7 +243,7 @@ It is possible to enable a SSL conector at Tomcat level (e.g. useful if you don'
 
 - Enable/disable the SSL connector: `-e SSL=<true|false, defaults to false>`
 - Expose the SSL port: `-p <SSL port, e.g. 8444>:8444>`
-- Optionaly mount a custom JKS : `--mount=type=bind,source=<host folder in which is myserver.jks>,target=/usr/local/tomcat/cert`
+- Optionaly mount a custom JKS : `-v <host folder in which is myserver.jks>:/usr/local/tomcat/cert`
   - Indicate the mounted JKS path: ` -e KEYSTORE_FILE=/usr/local/tomcat/cert/myserver.jks`
   - Provide JKS password `-e KEYSTORE_PASSWORD=<my keystore password, defaults to "password">`
 
