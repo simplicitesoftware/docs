@@ -16,14 +16,13 @@ The configuration of the SNOW table is then provided in the _Filter_ field as JS
 
 ```json
 {
-{
 	"table": "<SNOW table name, e.g. sn_customerservice_access_request>",
 	"credentials": "<system parameter name, e.g. MY_SNOW_CONFIG>",
 	"debug": true
 }	
 ```
 
-The `credentials` refer to a dedicated system parameter, e.g. `MY_SNOW_CONFIG` being:
+The `credentials` value above refers to a dedicated JSON system parameter, e.g. `MY_SNOW_CONFIG`:
 
 ```json
 {
