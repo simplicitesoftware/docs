@@ -20,10 +20,11 @@ In the menu :
 * Click on "Creation assistant"
 
 ### Minimal configuration suggestion : 
-```shell
-Name : Unique identifier of your module (generally the name of the application)
-Prefix : Module trigram used for naming conventions
-```
+| Field | Description |
+| ----- | ----------- |
+| **Name** | Unique identifier of your module (generally the name of the application) |
+| **Prefix** | Module trigram used for naming conventions
+
 
 Building the "Order Management" Training App
 ---------------------------
