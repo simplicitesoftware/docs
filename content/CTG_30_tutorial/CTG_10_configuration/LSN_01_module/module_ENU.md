@@ -8,6 +8,7 @@ Each configuration of an app starts with the creation of a module. To facilitate
 
 The set of configuration objects and their relations form the **metamodel**. To obtain a given result, there are several ways to navigate the application, it is the understanding of the metamodel that helps you find your way around the configuration of an application. The purpose of this training is to present and explain this metamodel.
 
+![](formation_013.png)
 
 Exercise
 ---------------------------
