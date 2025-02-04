@@ -19,11 +19,13 @@ In the menu :
 * Project > Modules 
 * Click on "Creation assistant"
 
-### Module minimal configuration suggestion : 
-    - Name : Unique identifier of your module (generally the name of the application)
-    - Prefix : Module trigram used for naming conventions
+### Minimal configuration suggestion : 
+````
+Name : Unique identifier of your module (generally the name of the application)
+Prefix : Module trigram used for naming conventions
+````
 
-Exercise
+Building the Training App "Order Management"
 ---------------------------
 
 Start the process that includes the following steps:
