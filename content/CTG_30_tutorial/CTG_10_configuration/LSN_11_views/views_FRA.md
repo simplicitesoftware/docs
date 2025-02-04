@@ -24,6 +24,12 @@ En tant que designer, il est facile de tester cette fonctionnalité avec les sco
 - Simplicité Administrator (scope joker où tous les groupes sont actifs)
 - etc.
 
+Pour créer une scope et le rendre disponible à un utilisateur :
+
+1. Créer une Vue (Interface > Vues)
+2. Ajouter un Groupe actif à la vue (Onglet "Groupe actif")
+3. Définir la Vue comme page d'accueil du Groupe
+4. Ajouter l'utilisateur au Groupe
 
 Exercice
 ====================

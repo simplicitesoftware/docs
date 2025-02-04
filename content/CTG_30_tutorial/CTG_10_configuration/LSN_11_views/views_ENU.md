@@ -24,6 +24,13 @@ As a designer, it is easy to test this functionality with the scopes already ava
 - Simplicité Administrator (wildcard scope where all groups are active)
 - etc.
 
+To create a scope and make it available to a user : 
+
+1. Create a View (Interface > Views)
+2. Add an Active Group ("Active group" tab)
+3. Set the View as the Group's Home page
+4. Add the user to the Group
+
 Exercise
 ====================  
 
