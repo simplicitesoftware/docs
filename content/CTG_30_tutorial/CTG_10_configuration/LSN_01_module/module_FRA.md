@@ -9,6 +9,8 @@ Toute configuration commence donc par la création d'un module. Pour faciliter l
 
 L'ensemble des objets de configuration et les relations qu'ils ont les uns avec les autres forme ce que l'on appelle le **méta-modèle**. Il y a toujours de nombreuses façons de naviguer et d'obtenir un même résultat dans l'application, c'est donc la compréhension du méta-modèle qui permet de s'orienter dans la configuration d'une application. Cette formation a pour objet de présenter et d'expliquer ce méta-modèle.
 
+![](formation_013.png)
+
 Exercice
 ---------------------------
 

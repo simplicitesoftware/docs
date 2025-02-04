@@ -1,7 +1,7 @@
 Bienvenue
 ====================
 
-Commencez par filtrer sur le niveau 1. Cette version est conçue pour les (futurs) designers Simplicité. 
+Commencez par filtrer sur le niveau 1 (bouton marque-page en haut à droite). Cette version est conçue pour les (futurs) designers Simplicité. 
 Nous vous conseillons de suivre le niveau 2 après quelques mois de pratique sur la plateforme ou si vous avez des besoins spécifiques de configuration, afin d'étendre vos connaissances et vos compétences à un niveau intermédiaire.
 
 

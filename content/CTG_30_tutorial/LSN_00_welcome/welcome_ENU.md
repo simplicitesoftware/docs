@@ -1,6 +1,6 @@
 # Welcome
 
-Start by filtering on level 1. This version is designed for (future) Simplicité designers. 
+Start by filtering on level 1 (bookmark button at the top right). This version is designed for (future) Simplicité designers. 
 We recommend following level 2 after a few months of practice on the platform or if you have specific configuration needs, in order to expand your knowledge and skills to an intermediate level.
 
 ## Level 1 Tutorial: Introduction to the Simplicité Platform
