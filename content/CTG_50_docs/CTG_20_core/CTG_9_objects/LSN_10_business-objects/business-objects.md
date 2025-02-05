@@ -42,7 +42,7 @@ We ==highly== reccomend you use the business object **creation assistant** to cr
 #### Creation assistant via the Business object list
 
 1. Access the list of Business objects :
-    - Business objects > Business objects
+    - Business objects > Business objects  
     <img src="image-5.png" alt="modeler" width="75%"/>
 2. Click **Creation assitant**
 3. Fill in the Object information and click **Create** :  
