@@ -10,12 +10,13 @@ Start the process from Simplicité's home page :
 
 <img src="create_module_enu.png" alt="create_module" width="75%"/>
 
-#### Creating the module 
+
+### Creating the module 
 - name: **Training**
 - prefix: **trn** *(the prefix enables automatic syntaxtic conventions to the naming of your objects)* 
 <img src="module-step1.png" alt="create_module" width="75%"/>
 
-#### Creating a group of rights
+### Creating a group of rights
 - name: **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
 
 #### Creating a domain (menu)
