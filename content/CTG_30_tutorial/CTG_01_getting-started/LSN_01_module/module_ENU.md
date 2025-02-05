@@ -7,7 +7,9 @@ Building the "Order Management" Training App
 ---------------------------
 
 Start the process from Simplicité's home page :
+
 <img src="create_module_enu.png" alt="create_module" width="50%"/>
+
 ![create_module](create_module_enu.png)
 
 - Creating the module
