@@ -7,7 +7,7 @@ A module in Simplicité is the fundamental unit that encapsulates all configurat
 Building the "Order Management" Training App
 ---------------------------
 
-Start the process from the instance home page :
+Start the process from Simplicité's home page :
 
 ![alt text](create_module_enu.png)
 

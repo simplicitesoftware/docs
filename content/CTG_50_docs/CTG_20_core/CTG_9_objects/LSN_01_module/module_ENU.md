@@ -11,11 +11,15 @@ Simplicité is configured via **configuration objects** that provide the descrip
 
 ### How to create a Module ?
 
-To facilitate the first steps, a module creation process is available on the homepage, it allows to create a module, groups, a domain and a scope.
+To facilitate the first steps, a module creation process is available in Simplicité, it allows to create a module, groups, a domain and a scope.
 
-In the menu :
-* Project > Modules 
-* Click on "Creation assistant"
+You can access the process directly from the Simplicité Administrator Home page :
+
+![alt text](image.png)
+
+Or from the list of Modules :
+
+![alt text](image-1.png)
 
 ### Minimal configuration suggestion : 
 | Field | Description |
