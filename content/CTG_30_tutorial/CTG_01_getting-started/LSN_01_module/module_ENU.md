@@ -6,24 +6,38 @@ A module in Simplicité is the fundamental unit that encapsulates all configurat
 Building the "Order Management" Training App
 ---------------------------
 
-Start the process from Simplicité's home page :
+The first step to building an app in Simplicité is by creating a module.  
 
-<img src="create_module_enu.png" alt="create_module" width="75%"/>
+To create a module, follow the steps below :
 
+1. Do one of the following :
+    - Click **Start by creating a new module** on Simplicité's home page
+    - Click **Creation assistant** in Project > Modules
+2. Fill in the Module fields like so :
+    - name : **Training**
+    - prefix : **trn**
+3. Click **Next**
+4. Fill in the Group fields like so :
+    - name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
 
-### Creating the module 
-- name: **Training**
-- prefix: **trn** *(the prefix enables automatic syntaxtic conventions to the naming of your objects)* 
-<img src="module-step1.png" alt="create_module" width="75%"/>
+    > For more information about Groups, see the [Groups](/lesson/docs/core/objects/group) section. 
 
-### Creating a group of rights
-- name: **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
+5. Click **Next**
+6. Fill in the Domain fields like so :
+    - name : **TrnDomain**
+    > For more information about Domains, see the [Domain](/lesson/docs/core/objects/domain) section. 
+7. Click **Next**
+8. Fill in the Translations for your Domain :
+    - English : My App
+9. Click **Next**
+10. Grant the Group to the Domain :
+    - Check the box
+11. Click **Next**
+12. Fill in the View fileds like so :
+    - icon : click the magnifying glass and pick an icon
+    > For more information about Views, see the [View](/lesson/docs/core/objects/view) section.
+13. Click **Next**
 
-#### Creating a domain (menu)
-- name: **TrnDomain**
+The Module **Training** is created and opened. 
 
-#### Creating a scope
-
-*the scope allows to set up different user "caps". For instance an administrator will be able to use a "basic user" cap, change scope with the dedicated button and use his "administrator" cap, enabling him to perform all operations.*
-    - icon: click the magnifying glass and choose an icon for the scope.
-
+The next step to building the App is adding business objects : [Create business object](/lesson/tutorial/getting-started/object)
