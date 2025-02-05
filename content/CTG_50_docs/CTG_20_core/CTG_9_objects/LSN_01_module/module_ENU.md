@@ -24,3 +24,12 @@ To create a Module, follow the steps below :
 | ----- | ----------- |
 | **Name** | Unique identifier of your module (generally the name of the application) |
 | **Prefix** | Module trigram used for naming conventions |
+
+
+
+### Read more
+
+- [Module export / import]()
+- [Module add-on]()
+- [Managing git repositories](/lesson/docs/integration/webservices/git-repositories)
+- [Generating documentation]()

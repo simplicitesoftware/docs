@@ -7,7 +7,9 @@ Business objects represent real-world entities or concepts within an application
 
 As explained in the [object tutorial](/lesson/tutorial/configuration/object), the **business object** concept is central to Simplicité's meta-model.  
 
-Business objects are usually linked to a database table, enabling standard **Create, Read, Update, and Delete (CRUD)** operations. Additionally, they may include processing logic (code, constraints, etc.) to enforce behavior and data integrity. However, some objects are not tied to a table:  
+Business objects are usually linked to a database table, enabling standard **Create, Read, Update, and Delete (CRUD)** operations. Additionally, they may include processing logic (code, constraints, etc.) to enforce behavior and data integrity. 
+
+However, some objects are not tied to a table:  
 
 - **[Select objects](/lesson/docs/core/objects/select-objects)** – based on SQL queries  
 - **Service objects** – interact with external services
@@ -25,7 +27,7 @@ Additionally, business objects can include **business rules** to precisely contr
 
 ### How to create a Business object ?
 
-We **highly** recommend you use the business object **creation assistant** to create a Business object. 
+We **highly** recommend you use the business object **creation assistant** to create a Business object. The creation assistant will also create display labels for the object, grant the object to Groups and add it to a Menu. 
 
 #### Creation assistant via the modeler 
 
