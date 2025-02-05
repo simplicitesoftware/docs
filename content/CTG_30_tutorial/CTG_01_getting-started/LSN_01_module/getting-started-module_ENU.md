@@ -14,17 +14,17 @@ To create a module, follow the steps below :
     - Click **Start by creating a new module** on Simplicité's home page
     - Click **Creation assistant** in Project > Modules
 2. Fill in the Module fields like so :
-    - name : **Training**
-    - prefix : **trn**
+    - Name : **Training**
+    - Prefix : **trn**
 3. Click **Next**
 4. Fill in the Group fields like so :
-    - name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
+    - Name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
 
     > For more information about Groups, see the [Groups](/lesson/docs/core/objects/group) section. 
 
 5. Click **Next**
 6. Fill in the Domain fields like so :
-    - name : **TrnDomain**
+    - Name : **TrnDomain**
     > For more information about Domains, see the [Domain](/lesson/docs/core/objects/domain) section. 
 7. Click **Next**
 8. Fill in the Translations for your Domain :
@@ -33,8 +33,8 @@ To create a module, follow the steps below :
 10. Grant the Group to the Domain :
     - Check the box
 11. Click **Next**
-12. Fill in the View fileds like so :
-    - icon : click the magnifying glass and pick an icon
+12. Fill in the View fields like so :
+    - Icon : click the magnifying glass and pick an icon
     > For more information about Views, see the [View](/lesson/docs/core/objects/view) section.
 13. Click **Next**
 
