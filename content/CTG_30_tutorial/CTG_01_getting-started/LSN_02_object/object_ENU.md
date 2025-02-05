@@ -1,16 +1,35 @@
 Creating a business object
 ====================
 
-Business objects are the cornerstone of the platform, structuring data, enforcing rules, and driving key features.... [Learn more](lesson/docs/objects/business-objects)
+Business objects are the cornerstone of the platform, structuring data, enforcing rules, and driving key features.... [Learn more](/lesson/docs/core/objects/business-objects)
 
 Building the "Order Management" Training App
 ---------------------------
 
+> Prerequisite : [A module must be created before starting this lesson](/lesson/tutorial/getting-started/module)
 
-Configuration tool : Modeler
----------------------------
 
-To make the visualization of the business objects and their fields easier, Simplicité provides a tool called *Modeler*. The modeler uses the configuration to display the information in a visual *and manipulatable* form. Therefore the modeler grants access to some of Simplicité's functions such as the creation of a business object. A specific lesson is dedicated to the modeler at the end of the training.
+### Using the Modeler
+
+<figure>
+  <img
+  src="image-1.png"
+  alt="modeler" width="75%">
+  <figcaption>Open Modeler shortcut</figcaption>
+</figure>
+
+
+<figure>
+<p align="center">
+  <img src="image-1.png" alt="init_result" width="75%">
+  <figcaption><p align="center">Open Modeler shortcut</p></figcaption>
+  </p>
+</figure>
+
+
+<img src="image-1.png" alt="modeler" width="75%"/>
+
+To make the visualization of the business objects and their fields easier, Simplicité provides a tool called *Modeler*. The modeler uses the configuration to display the information in a visual *and manipulatable* form. Therefore the modeler grants access to some of Simplicité's functions such as the creation of a business object.
 
 To access the business object creation process (also accessible via Administration > Business Objects > Creation assistant):
 1. Click on the diagram button at the top right corner of the interface. An empty popup will show - there are currently no models configured in your module.
