@@ -1,7 +1,7 @@
 {
     "display": "LINEAR",
-    "published": false,
+    "published": true,
     "ANY": {
-      "title": "Business Objects"
+      "title": "Business objects"
     }
 }

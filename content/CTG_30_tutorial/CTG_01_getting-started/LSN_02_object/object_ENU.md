@@ -1,21 +1,11 @@
-Business object creation
+Creating a business object
 ====================
 
-Concepts
+Business objects are the cornerstone of the platform, structuring data, enforcing rules, and driving key features.... [Learn more](lesson/docs/objects/business-objects)
+
+Building the "Order Management" Training App
 ---------------------------
 
-The business object is the cornerstone of any configuration, most of the functionalities of the platform revolve around it:
-- search
-- lists
-- forms
-- scripts
-- publications
-- etc.
-
-From the configuration of the business object, the platform will create a table in the database, and will offer the user the usual data manipulation functionalities: creation, deletion, modification, copy, bulk modification, bulk deletion, merge, etc. Each business object can have business rules that allow to finely control its behavior, this is the subject of the second part of the training.
-
-
-The set of configuration objects and their relations form the **metamodel**. To obtain a given result, there are several ways to navigate the application, it is the understanding of the metamodel that helps you find your way around the configuration of an application. If the metamodel is the configuration manual, the business object is the first chapter since it is linked to most of the other configuration objects.
 
 Configuration tool : Modeler
 ---------------------------

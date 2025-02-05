@@ -1,13 +1,24 @@
-Introduction
+Business object
 ====================
 
-Business objects are a representation of a real-world entity or concept within the application, for example a Client, a Product, an Invoice, an Employee. They are typically composed of several **attributes**, have relationships with other Business Objects, and have a defined behaviour called "business logic": for example, the Items of an Invoice might not be modifiable once the invoice is sent to the client.
+### What is a Business object ?
 
-As stated in the [object tutorial](/lesson/tutorial/configuration/object), the concept of **business object** is at the center of Simpicité's meta-model. 
+Business objects represent real-world entities or concepts within an application, such as a **Client**, **Product**, **Invoice**, or **Employee**. They typically consist of multiple **attributes**, maintain relationships with other business objects, and follow specific **business logic**. For instance, once an invoice is sent to a client, its items may no longer be editable.  
 
-Objects are tipically associated to a table in the database allowing for basic Create/Read/Update/Delete (CRUD) operations, and to some logic  processing (code, constraints, etc) to control its behaviour, integrity, etc. However some objects are not associated to a table:
-- [select objects](/lesson/docs/core/objects/select-objects), based on a SQL query
-- service objects, based on requests to external services
-- external objects, which are 
+As explained in the [object tutorial](/lesson/tutorial/configuration/object), the **business object** concept is central to Simplicité's meta-model.  
 
+Business objects are usually linked to a database table, enabling standard **Create, Read, Update, and Delete (CRUD)** operations. Additionally, they may include processing logic (code, constraints, etc.) to enforce behavior and data integrity. However, some objects are not tied to a table:  
 
+- **[Select objects](/lesson/docs/core/objects/select-objects)** – based on SQL queries  
+- **Service objects** – interact with external services
+
+Since business objects form the foundation of the platform, most functionalities revolve around them, including:  
+
+- Search  
+- Lists  
+- Forms
+- Scripts
+- Publications
+- And more...
+
+Additionally, business objects can include **business rules** to precisely control their behavior.

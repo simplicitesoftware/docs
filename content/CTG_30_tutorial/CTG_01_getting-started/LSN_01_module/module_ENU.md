@@ -8,11 +8,9 @@ Building the "Order Management" Training App
 
 Start the process from Simplicité's home page :
 
-<img src="create_module_enu.png" alt="create_module" width="50%"/>
+<img src="create_module_enu.png" alt="create_module" width="75%"/>
 
-![create_module](create_module_enu.png)
-
-- Creating the module
+- Creating the module 
     - name: **Training**
     - prefix: **trn** *(the prefix enables automatic syntaxtic conventions to the naming of your objects)*  
 - Creating a group of rights

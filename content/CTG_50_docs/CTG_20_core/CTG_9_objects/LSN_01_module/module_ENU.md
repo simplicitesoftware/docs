@@ -26,4 +26,3 @@ You can access the process directly from the Simplicité Administrator Home page
 Or from the list of Modules :
 
 ![alt text](image-1.png)
-
