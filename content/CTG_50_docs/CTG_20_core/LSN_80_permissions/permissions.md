@@ -5,7 +5,7 @@ Since version 6.0, Permissions have replaced Functions for several Objects of th
 
 The Function Configuration Object is now dedicated to Business Objects only.  
 
-<h2 id="Concept">Concept</h2>
+### What is a Permission ?
 
 A Permission is a Configuration Object of the metamodel that contains an object-type attribute. 
 This makes it possible to create Permissions for the following Configuration Objects :
@@ -38,7 +38,7 @@ Examples :
 - Override Object Field visibility for a specific Group
 - Override the `mandatory` property of a Field for a specific Group
 
-<h2 id="howto">How to create a Permission</h2>
+### How to create a Permission ?
 
 Adding a Permission can be done via the `Permissions` panel in any of the objects listed above.
 Alternatively, use the menu search bar to find the Permissions configuration object.
