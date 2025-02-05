@@ -1,4 +1,3 @@
-<!-- <h1>Testing githook + sync</h1> -->
 Creating a module
 ====================
 
@@ -8,8 +7,8 @@ Building the "Order Management" Training App
 ---------------------------
 
 Start the process from Simplicité's home page :
-
-![alt text](create_module_enu.png)
+<img src="create_module_enu.png" alt="create_module" width="50%"/>
+![create_module](create_module_enu.png)
 
 - Creating the module
     - name: **Training**
