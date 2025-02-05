@@ -11,7 +11,7 @@ Building the "Order Management" Training App
 To create a business object, follow the steps below :
 
 1. Click **Creation assistant** in Business objects > Business objects
-	> This assistant is also available via the Modeler, for more information see the [How to create an object using the modeler](/lesson/docs/core/objects/business-objects#how-to-using-modeler)
+	> This assistant is also available via the Modeler, for more information see the [How to create an object using the modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)
 2. Fill in the Object information like so :
 	- Code : **TrnSupplier**
 	- Table : **trn_supplier**

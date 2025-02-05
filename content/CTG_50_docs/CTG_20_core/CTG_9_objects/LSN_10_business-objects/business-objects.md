@@ -25,17 +25,17 @@ Additionally, business objects can include **business rules** to precisely contr
 
 ### How to create a Business object ?
 
-We ==highly== reccomend you use the business object **creation assistant** to create a Business object. 
+We **highly** recommend you use the business object **creation assistant** to create a Business object. 
 
 #### Creation assistant via the modeler 
 
 1. Open the modeler :  
-<img src="image-1.png" alt="modeler" width="75%"/>
+<img src="open-modeler.png" alt="modeler" width="75%"/>
 
 2. Create or select a previsouly created *ModelBusinessObject* model :
     - For creation, fill in the header of the pop-up and click **Create** : 
         > Example values :   
-        <img src="image-2.png" alt="modeler" width="75%"/>
+        <img src="modeler-values.png" alt="modeler" width="75%"/>
 3. Right click on the opened modeler window and select **Add > Create Business object**. This will start the creation assistant.
 
 
@@ -43,11 +43,11 @@ We ==highly== reccomend you use the business object **creation assistant** to cr
 
 1. Access the list of Business objects :
     - Business objects > Business objects  
-    <img src="image-5.png" alt="modeler" width="75%"/>
+    <img src="obj-list.png" alt="modeler" width="75%"/>
 2. Click **Creation assitant**
 3. Fill in the Object information and click **Create** :  
     > Example values :  
-    <img src="image-3.png" alt="modeler" width="75%"/>
+    <img src="obj-values.png" alt="modeler" width="75%"/>
 4. Fill in the Translation for your Object and click **Next**:
     - These are the labels that will be displayed in the user interface. *NB: using "|" allows the use of the plural form (label used for lists)*
 5. If applicable, select a Function for each previously created Group(s) and click **Next**

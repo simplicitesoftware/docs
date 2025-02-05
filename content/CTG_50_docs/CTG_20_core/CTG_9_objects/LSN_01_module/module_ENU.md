@@ -11,18 +11,16 @@ Simplicité is configured via **configuration objects** that provide the descrip
 
 ### How to create a Module ?
 
+> If you are creating your first Module use the [Module creation assitant](/lesson/tutorial/getting-started/module)
+
+To create a Module, follow the steps below :
+1. Click **Create** in Project > Module
+2. Fill in the Module information and click **Save** :  
+    > Example values :  
+    <img src="module-values.png" alt="modeler" width="75%"/>
+
 #### Minimal configuration suggestion : 
 | Field | Description |
 | ----- | ----------- |
 | **Name** | Unique identifier of your module (generally the name of the application) |
 | **Prefix** | Module trigram used for naming conventions |
-
-To facilitate the first steps, a module creation process is available in Simplicité, it allows to create a module, groups, a domain and a scope.
-
-You can access the process directly from the Simplicité Administrator Home page :
-
-![alt text](image.png)
-
-Or from the list of Modules :
-
-![alt text](image-1.png)
