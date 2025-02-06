@@ -7,7 +7,7 @@ Each configuration of an app starts with the creation of a module.
 
 **All the configuration objects are part of a module, corresponding to the export unit of Simplicité**.
 
-Simplicité is configured via **configuration objects** that provide the description of the application. These objects are business objects, fields, templates, actions, etc. E.g. Developers create their application on a development instance and export their module on a production instance.
+Simplicité is configured via **configuration objects** that provide the description of the application. These objects are business objects, fields, templates, actions, etc.
 
 ### How to create a Module ?
 
