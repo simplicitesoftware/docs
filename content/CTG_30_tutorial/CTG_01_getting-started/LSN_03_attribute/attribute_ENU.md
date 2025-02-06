@@ -28,6 +28,6 @@ To create a field, follow the steps below :
     - Physical name : **trn_sup_name** *should be auto-completed*
 8. Click **Save**
 
-The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
+<div class="sucess">The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.</div>
 
-The next step to building the "Order Management" Training App is creating a test User : [Create user](lesson/getting-started/user)
+<div class="sucess">The next step to building the "Order Management" Training App is creating a test User : [Create user](lesson/tutorial/getting-started/user)</div>
