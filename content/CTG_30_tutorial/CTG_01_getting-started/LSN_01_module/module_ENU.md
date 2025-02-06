@@ -1,10 +1,10 @@
-Creating a module
-====================
+# Building the "Order Management" Training App : Creating a Module
+
+## What is a Module ?
 
 A module in Simplicité is the fundamental unit that encapsulates all configuration objects of an application, serving as its exportable configuration package... [Learn more](/lesson/docs/core/objects/module)
 
-Building the "Order Management" Training App
----------------------------
+## Creating a Module
 
 The first step to building an app in Simplicité is by creating a module.  
 
@@ -40,4 +40,4 @@ To create a module, follow the steps below :
 
 The Module **Training** is created and opened. 
 
-The next step to building the "Order Management" Training App is adding business objects : [Create business object](/lesson/tutorial/getting-started/object)
+[The next step to building the "Order Management" Training App is adding business objects](/lesson/tutorial/getting-started/object)

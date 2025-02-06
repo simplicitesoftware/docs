@@ -1,12 +1,12 @@
-Creating a user
-====================
-
-Users belong to groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
+# Building the "Order Management" Training App : Creating a User
 
 > Prerequisite : [A Business object with a field must be created before starting this lesson](/lesson/tutorial/getting-started/object)
 
-Building the "Order Management" Training App
----------------------------
+## What is a User ?
+
+Users belong to groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
+
+## Creating a User
 
 To create a test user, follow the steps below :
 

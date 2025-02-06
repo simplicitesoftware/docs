@@ -1,12 +1,12 @@
-Creating a business object
-====================
+# Building the "Order Management" Training App : Creating a Business object
+
+> Prerequisite : [A module, domain and group must be created before starting this lesson](/lesson/tutorial/getting-started/module)
+
+## What is a Business object ?
 
 Business objects are the cornerstone of the platform, structuring data, enforcing rules, and driving key features.... [Learn more](/lesson/docs/core/objects/business-objects)
 
-Building the "Order Management" Training App
----------------------------
-
-> Prerequisite : [A module, domain and group must be created before starting this lesson](/lesson/tutorial/getting-started/module)
+## Creating a Business object
 
 To create a business object, follow the steps below :
 
@@ -30,4 +30,4 @@ To create a business object, follow the steps below :
 
 The Object **TrnSupplier** is created and opened. 
 
-The next step to building the "Order Management" Training App is adding a field to the **TrnSupplier** object : [Create field](/lesson/tutorial/getting-started/attribute)
+[The next step to building the "Order Management" Training App is adding a field to the **TrnSupplier** object](/lesson/tutorial/getting-started/attribute)

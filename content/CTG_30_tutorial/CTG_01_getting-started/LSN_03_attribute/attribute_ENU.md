@@ -1,12 +1,12 @@
-Creating a field
-====================
+# Building the "Order Management" Training App : Creating a Field
+
+> Prerequisite : [A business object (TrnSupplier) must be created before starting this lesson](/lesson/tutorial/getting-started/object)
+
+## What is a Field ?
 
 In Simplicité, fields are configurable attributes of business objects (mandatory, type, etc.). They have a logical name (used in code) and a physical name (for database columns). When linked to an object, it creates a database column and allows parameter overrides... [Learn more](/lesson/docs/core/attribute)
 
-Building the "Order Management" Training App
----------------------------
-
-> Prerequisite : [A business object (TrnSupplier) must be created before starting this lesson](/lesson/tutorial/getting-started/object)
+## Creating a Field
 
 To create a field, follow the steps below :
 
@@ -28,6 +28,6 @@ To create a field, follow the steps below :
     - Physical name : **trn_sup_name** *should be auto-completed*
 8. Click **Save**
 
-<div class="sucess">The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.</div>
+The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
 
-<div class="sucess">The next step to building the "Order Management" Training App is creating a test User : [Create user](lesson/tutorial/getting-started/user)</div>
+[The next step to building the "Order Management" Training App is creating a test User](lesson/tutorial/getting-started/user)
