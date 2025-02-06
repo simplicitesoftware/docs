@@ -1,46 +1,92 @@
-Rights management
+Creating a user
 ====================
 
-The following items correspond to the minimal configuration required for a functional app:
-- a module that contains the configuration
-- a business object and it's fields to manipulate lists and forms
-- a domain (menu) to access the object
-- a user with granted rights to access the domain and object
+Users belong to groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
 
-The first three items are covered by the previous chapters, the goal here is to explain how rights work and create a user to test the configuration.
+> Prerequisite : [A Business object with a field must be created before starting this lesson](/lesson/tutorial/getting-started/object)
 
-Concepts
+Building the "Order Management" Training App
 ---------------------------
 
-Users belong to groups. There is a N:N link between a user and a group (a user can belong to N groups and a group can hold N users). The link object between a user and a group is a **responsibility**. It can be active/inactive and a start/end date.
+To create a test user, follow the steps below :
 
-Business objects present functions: 
-- **CRUD functions (Create / Read / Update / Delete)** define the type of access to the objects
-- **action functions** define access to specific actions (e.g. via a button)
+1. Click **Create a user** in Users and rights
+2. Fill in the User information like so :
+    - Login : **usertest**
+3. Click **Next**
+4. Choose a [previously](/lesson/tutorial/getting-started/module) created Group
+    - **TRN_SUPER_ADMIN** *if exists, this should be selected by default*
+5. Click **Next**
+6. Create a Responsibility, click **Next**
+    > For more information about Domains, see the [Responsability](/lesson/docs/core/objects/responsability) section. 
+7. Choose a new group :
+    - For now, select **no**
+8. Click **Next**
 
-Groups are granted to functions. Therefore, a N:N link exists between a group and a function, The link object is called a **grant**.
+The user **usertest** is created and opened.
 
-Finally, **profiles** allow to create a collection of groups.
+To connect to the application with **usertest**, follow the steps below :
 
-<div class="warning">Warning, when updating **grants**, the server's cache must be cleared for it to be acknowledged by the platform.</div>
+1. Click **Activate**
+2. Click **Reset password**
+    - Click **Yes**
+    - Copy the password displayed in the popup
+    - Click **Ok**
+3. Empty the platform's cache :
+    - Via the header menu :
+        - Click on the menu in the top-right corner
+        - Click **Clear cache**
+        - Click **Clear all sessions and all server caches**
+    - Via the keyboard shortcut : [ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ]
+    > For more information about the cahce, see the [Platform cache](/lesson/docs/core/objects/platform-cache) section. 
 
-*This will be explained in further detail later, for performance purposes, Simplicité stores in a cache a given amount of information - the rights configuration is part of this information. Hence the reason why the cache must be emptied when it is updated. If only the responsibilities are updated, the user will simply need to re-connect to the app.*
+4. Log-in using **usertest** :
+    - Login : **usertest**
+    - Password : *previously reset password*
+5. Click **Connection**
+6. Create a new password
+7. Click **Save**
 
-Exercise : Creating a test user
+You should now be connected with **usertest**
+
+**Expected result :**
+- A Menu entry is visible
+- The list of Suppliers is displayed when the menu is clicked
+
+Troubleshooting
 ---------------------------
-1. Empty the cache (menu in the top-right corner > empty cache > all sessions and server ([ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ])
-2. Scope "Rights management" > Domaine "Users and Rights" > Users > Show all > Create
-3. Create a test user "usertest" and copy the password that is displayed
-4. Click on the "Activate" button
-5. In the "Responsibility" tab, click on the "Associate" button and select the first group **TRN_SUPERADMIN** in the popup
-6. Logon to the app with "usertest"
-7. Check the access to the Supplier object
+> These steps must be done using the **designer** user with **no active module filter**, see [Module filter](path/to/module-filter)
+- <span class="error">Authentication error</span> when logging in, check that : 
+    - **usertest** is active
+    - password is reset
 
-Congratulations ! You have created your first app !
+- No menu is displayed when logged in, check that :
+    - The the Domain exist, contains **TrnSupplier** and is granted to **TRN_SUPERADMIN** :
+        - In **Business objects > Domains** 
+        - Open **TrnDomain** : 
+            - The Domain is granted to **TRN_SUPERADMIN** :
+                - In the **Permissions** tab, there should **TRN_SUPERADMIN**
+                    > If not, create it
+            - The Domain contains the **TrnSupplier** Business object :
+                - In the **Main menu** tab, there should be **TrnSupplier** 
+                    > If not, create it
+    - **TrnSupplier** has a CRUD Function, and is granted to **TRN_SUPERADMIN**
+        - In **Business objects > Business objects**
+        - Open **TrnSupplier** :
+            - In the **Functions** panel linked to the Object :
+                - There should be a **Read, create, update and delete** Function (TRN_SUP_CRUD)
+                    > If not, create it
+                - Open the **TRN_SUP_CRUD** Function :
+                    - In the **Grant** panel linked to the Function :
+                        - There should be the **TRN_SUPERADMIN** Group
+                            > If not, create it
+    - **usertest** has the **TRN_SUPERADMIN** Responsibility :
+        - In **Users and rights > Users > Show all**
+        - Open **usertest** :
+            - In the **Responsibilities** panel linked to the user :
+                - There should be **TRN_SUPERADMIN**
+                    > If not, create it
 
-
-
-Take things further : Create a readonly user
+<!--Take things further : Create a readonly user
 ---------------------------
-* Create a user "read" linked to a group **TRN_READONLY** granted to a **TrnDomainReadOnly** domain in which the user will be able to access the list of **Suppliers**.
-
+* Create a user "read" linked to a group **TRN_READONLY** granted to a **TrnDomainReadOnly** domain in which the user will be able to access the list of **Suppliers**. -->

@@ -1,33 +1,33 @@
 Creating a field
 ====================
 
-Concepts
+In Simplicité, fields are configurable attributes of business objects (mandatory, type, etc.). They have a logical name (used in code) and a physical name (for database columns). When linked to an object, it creates a database column and allows parameter overrides... [Learn more](/lesson/docs/core/attribute)
+
+Building the "Order Management" Training App
 ---------------------------
 
-If the object has a form, the attribute will be a field of this form. The configuration of the attribute allows to determine if it is mandatory or not, its type (text, number, single or multiple enumerated) etc.
+> Prerequisite : [A business object (TrnSupplier) must be created before starting this lesson](/lesson/tutorial/getting-started/object)
 
-Just like a business object, the field has a logical and physical name. The logical name identifies the attribute in the business rules, in the code and will follow the same syntactical conventions as Java variables. The physical name will be used to create a column in the business object's table. A field might not have a physical name, it's the case for non persisted calculated fields.
+To create a field, follow the steps below :
 
-We will now introduce you to a fundamental aspect of the metamodel: the **object field**. One field can be used on several objects: a "comment" field, for instance, can be used on the 300 objects of the app. If the size of this field needs to be increased, to allow the input of longer comments, it can be done by changing the parameters of one single attribute, instead of changing the 300 comment fields of our 300 business objects. Furthermore, a field doesn't have to be linked to an object (storage field for a planned task, process filed, etc). In the metamodel this concept is represented by a **N/N link between the field and the business object** therefore introducing a link object. In Simplicité, the link object between a business object and a field is called **object field**. The object field object allows to **override** the parameters of the attribute (mandatory, translation, etc).
+1. Click **Edit form** on the Business object's form (this will open the **template editor**)
+	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)
+    <!--![alt text](edit-form.png)-->
+2. Select the first **Template**
+3. Hover over the empty **Field Area** and click on the `+`
+    > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)
 
-When a field is linked to an object via an object field, Simplicité will create a column in the business object's table.
+    <img src="field-area.png" alt="field-area" width="75%"/>
+    
+4. Click **Field**
+5. Click **+ Create field**
+6. Click **Short text**
+7. Fill in the Field fields like so :
+    - Label : **Name**
+    - Logical name : **trnSupName** *should be auto-completed* 
+    - Physical name : **trn_sup_name** *should be auto-completed*
+8. Click **Save**
 
-Configuration tool : template editor
----------------------------
+The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
 
-The template editor is a tool that facilitates the creation, modification and templating of the following objects:
-- object template : HTML template that defines the display of an object (columns, tabs, etc)
-- field areas : they regroup object fields. These groups are also visible in the list view of the object.
-- fields
-- enumerations (single and multiple) : list of values for the field
-
-<div class="warning">If no template has been defined. The "Base" template will be used by default. The object fields will be positioned one underneath the other.</div>
-In the template editor, all of the configuration objects have purposely been simplified. To configure them in deeper detail, you must access the form of the configuration object.
-
-Exercise: Creating a field via the template editor
----------------------------
-
-1. Via the modeler, right-click on the Supplier object.
-2. Select the option "Template editor".
-3. Since the object doesn't have a template yet, the platform will suggest a few models. Select the fist one.
-4. On the template editor, move your mouse over the "+" button, and add a "Short text" "Field".
+The next step to building the "Order Management" Training App is creating a test User : [Create user](lesson/getting-started/user)

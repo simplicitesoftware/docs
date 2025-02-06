@@ -29,3 +29,5 @@ To create a business object, follow the steps below :
 9. Click **Next**
 
 The Object **TrnSupplier** is created and opened. 
+
+The next step to building the "Order Management" Training App is adding a field to the **TrnSupplier** object : [Create field](/lesson/tutorial/getting-started/attribute)

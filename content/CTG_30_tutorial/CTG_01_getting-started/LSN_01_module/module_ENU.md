@@ -40,4 +40,4 @@ To create a module, follow the steps below :
 
 The Module **Training** is created and opened. 
 
-The next step to building the App is adding business objects : [Create business object](/lesson/tutorial/getting-started/object)
+The next step to building the "Order Management" Training App is adding business objects : [Create business object](/lesson/tutorial/getting-started/object)
