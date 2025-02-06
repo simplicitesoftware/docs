@@ -2,11 +2,11 @@
     "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "4. Créer user",
+        "title": "Utilisateur",
         "description": ""
     },
     "ENU": {
-        "title": "4. Create user",
+        "title": "User",
         "description": ""
     }
 }

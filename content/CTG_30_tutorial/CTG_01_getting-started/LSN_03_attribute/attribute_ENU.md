@@ -30,4 +30,4 @@ To create a field, follow the steps below :
 
 The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
 
-[The next step to building the "Order Management" Training App is creating a test User](lesson/tutorial/getting-started/user)
+[The next step to building the "Order Management" Training App is creating a test User](/lesson/tutorial/getting-started/user)
