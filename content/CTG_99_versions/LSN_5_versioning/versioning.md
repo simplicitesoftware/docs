@@ -6,8 +6,8 @@ Versioning
 | **Version** | **Maintenance State**      | **Support type** | **Release date**                            | **Maintenance end date**                    | **Docker images tags**              | **Template branch** |
 |-------------|----------------------------|------------------|---------------------------------------------|---------------------------------------------|-------------------------------------|---------------------|
 | `6.3`       | ⚠️ Alpha                    | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`                   | `6.3[-light]`       |
-| `6.2`       | ⚠️ Beta (release candidate) | Not applicable   | Feb 10th, 2025                              | *<abbr title="To Be Determined">TBD</abbr>* | `6-beta[-light]`                    | `6.2[-light]`       |
-| `6.1`       | ✅ **Current release**     | Current          | July 10th, 2024                             | May 11th, 2025                              | `6[-light]`, `6.1[-light]`, `6.1.x` | `6.1[-light]`       |
+| `6.2`       | ✅ **Current release**     | Current          | Feb 10th, 2025                              | *<abbr title="To Be Determined">TBD</abbr>* | `6-beta[-light]`                    | `6.2[-light]`       |
+| `6.1`       | ☑️ Maintained               | Short term (STS) | July 10th, 2024                             | May 11th, 2025                              | `6[-light]`, `6.1[-light]`, `6.1.x` | `6.1[-light]`       |
 | `6.0`       | ❌ Expired!                | Short term (STS) | January 31st, 2024                          | October 31th, 2024                          | `6.0[-light]`, `6.0.x`              | `6.0[-light]`       |
 | `5.3`       | ☑️ Maintained               | Long-term (LTS)  | April 24th, 2023                            | January 31st, 2027                          | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`       |
 | `5.2`       | ❌ Expired!                | Short term (STS) | April 20th, 2022                            | September 30th, 2023                        | `5.2[-light]`, `5.2.x`              | `5.2[-light]`       |
@@ -32,7 +32,7 @@ The [compatibility page](/lesson/docs/compatibility) maintains a list of compati
 
 Simplicité follows a flavour of **semantic versioning**. 
 
-A `major.minor.revision` (eg. `5.3.25`) numbering system is used where:
+A `major.minor.revision` (eg. `6.1.21`) numbering system is used where:
 - the `major` number is incremented for **new features whith major breaking changes**
 - the `minor` number is incremented for **new features** without major breaking changes
 - the `revision` number is incremented for **improvements and fixes without any breaking change**
@@ -63,8 +63,9 @@ Not upgrading the platform is associated to numerous risks:
 - Version freezing: usually, the more commits between two versions, the more complex the upgrade
 - Support difficulties and latency: although flexible, our team officially only offers support on up-to-date platforms (mainly to rule out the responsibility of known bugs, and facilitate case reproduction)
 
-| Upgrade type | Priority | Planning and testing | Justification |
-|---|---|---|---|
-| revision | Upgrade ASAP | None | May contain critical fixes, should have no impact on the app. |
-| minor | Plan upgrade | Low | If you can do a minor upgrade, it means your version is in standard maintenance period, which has a lifespan of ~6months. A **minor version** is just a slightly more impacting revision which **may** require some minor refactoring of "atypical" custom code (e.g. custom code that is not using the Simplicité Java API). The configuration remains fully compatible vs previous minor version. |
-| major | Put it on your roadmap | Medium | A **major version** includes significant compatibility-breaking changes, including on the platform's technical components, that **will** require impact analysis and potential refactoring on your custom code. The configuration remains fully compatible vs previous major version except that some configuration concepts can become outdated. Upgrading to the next major version is **recommended** as no further functional changes will be done on the previous major version |
+| Upgrade type | Priority               | Planning and testing | Justification |
+|--------------|------------------------|----------------------|---------------|
+| Revision     | Upgrade ASAP           | None                 | May contain critical fixes, should have no impact on the app. |
+| Minor        | Plan upgrade           | Low                  | If you can do a minor upgrade, it means your version is in standard maintenance period, which has a lifespan of ~6months. A **minor version** is just a slightly more impacting revision which **may** require some minor refactoring of "atypical" custom code (e.g. custom code that is not using the Simplicité Java API). The configuration remains fully compatible vs previous minor version. |
+| Major        | Put it on your roadmap | Medium               | A **major version** includes significant compatibility-breaking changes, including on the platform's technical components, that **will** require impact analysis and potential refactoring on your custom code. The configuration remains fully compatible vs previous major version except that some configuration concepts can become outdated. Upgrading to the next major version is **recommended** as no further functional changes will be done on the previous major version |
+
