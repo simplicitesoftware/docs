@@ -1,6 +1,6 @@
 {
     "tags": ["lvl1","lvl2"],
-    "presentation": "LINEAR",
+    "display": "LINEAR",
     "FRA": {
         "title": "Bienvenue",
         "description": ""
