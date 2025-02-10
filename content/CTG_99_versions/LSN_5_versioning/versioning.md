@@ -6,8 +6,8 @@ Versioning
 | **Version** | **Maintenance State**      | **Support type** | **Release date**                            | **Maintenance end date**                    | **Docker images tags**              | **Template branch** |
 |-------------|----------------------------|------------------|---------------------------------------------|---------------------------------------------|-------------------------------------|---------------------|
 | `6.3`       | ⚠️ Alpha                    | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`                   | `6.3[-light]`       |
-| `6.2`       | ✅ **Current release**     | Current          | Feb 10th, 2025                              | *<abbr title="To Be Determined">TBD</abbr>* | `6-beta[-light]`                    | `6.2[-light]`       |
-| `6.1`       | ☑️ Maintained               | Short term (STS) | July 10th, 2024                             | May 11th, 2025                              | `6[-light]`, `6.1[-light]`, `6.1.x` | `6.1[-light]`       |
+| `6.2`       | ✅ **Current release**     | Current          | Feb 10th, 2025                              | *<abbr title="To Be Determined">TBD</abbr>* | `6[-light]`, `6.2[-light]`, `6.2.x` | `6.2[-light]`       |
+| `6.1`       | ☑️ Maintained               | Short term (STS) | July 10th, 2024                             | May 11th, 2025                              | `6.1[-light]`, `6.1.x`              | `6.1[-light]`       |
 | `6.0`       | ❌ Expired!                | Short term (STS) | January 31st, 2024                          | October 31th, 2024                          | `6.0[-light]`, `6.0.x`              | `6.0[-light]`       |
 | `5.3`       | ☑️ Maintained               | Long-term (LTS)  | April 24th, 2023                            | January 31st, 2027                          | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`       |
 | `5.2`       | ❌ Expired!                | Short term (STS) | April 20th, 2022                            | September 30th, 2023                        | `5.2[-light]`, `5.2.x`              | `5.2[-light]`       |
