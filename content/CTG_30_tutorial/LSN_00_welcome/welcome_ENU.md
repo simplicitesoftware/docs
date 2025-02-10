@@ -11,9 +11,6 @@ After completing this course, you will be able to take the **Fundamentals** cert
 
 ### Key Steps to Design the Order management Application
 
-#### The Data-Model :
-
-
 #### 1. Familiarization with the Simplicité interface
 - Discover the configuration and development environment.
 - Learn to navigate through the different menus and tools.

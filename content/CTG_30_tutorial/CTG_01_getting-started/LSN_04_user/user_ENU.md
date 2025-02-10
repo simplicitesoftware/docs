@@ -38,7 +38,7 @@ To connect to the application with **usertest**, follow the steps below :
         - Click **Clear cache**
         - Click **Clear all sessions and all server caches**
     - Via the keyboard shortcut : [ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ]
-    > For more information about the cahce, see the [Platform cache](/lesson/docs/core/objects/platform-cache) section. 
+    > For more information about the cache, see the [Platform cache](/lesson/docs/core/objects/platform-cache) section. 
 
 4. Log-in using **usertest** :
     - Login : **usertest**
@@ -49,9 +49,13 @@ To connect to the application with **usertest**, follow the steps below :
 
 You should now be connected with **usertest**
 
-**Expected result :**
-- A Menu entry is visible
-- The list of Suppliers is displayed when the menu is clicked
+<div class="success">
+    <b>Expected result :</b>
+    <ul>
+        <li>A Menu entry is visible</li>
+        <li>The list of Suppliers is displayed when the menu is clicked</li>
+    </ul>
+</div>
 
 Troubleshooting
 ---------------------------
