@@ -249,6 +249,7 @@ synchronized (o.getLock()) {
 	o.setFieldFilter("myField4", "ABC%"); // starts with
 	o.setFieldFilter("myField4", "%ABC"); // ends with
 	o.setFieldFilter("myField4", "%ABC%"); // contains
+	o.setFieldFilter("myField4", "A_B%C"); // like 'A_B%C'
 	o.setFieldFilter("myField4", "like 'ABC%'"); // or "not like"
 	o.getField("myDate1").setFilterDateMin(Tool.getCurrentDate());
 	o.getField("myDatetime1").setFilterDateMax("2013-06-26 23:45:23");
