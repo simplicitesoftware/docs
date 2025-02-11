@@ -1630,7 +1630,7 @@ Use API tester page?
 
 **Description**
 
-Allows the user to scan QRCodes/Barcodes in search components
+Allows the user to scan QRCodes/Barcodes in the index search component
 
 ### `USE_CHANGE_USER`
 
