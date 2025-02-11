@@ -51,7 +51,7 @@ Follow the steps in [Getting started : Create object](/lesson/tutorial/getting-s
 - Code : **TrnOrder**
 - Table : **trn_order**
 - Module : **Training**
-- Prefix : **cli**
+- Prefix : **ord**
 
 ### Order fields 
 Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-started/attribute) to add the following fields to the Order Business object : 

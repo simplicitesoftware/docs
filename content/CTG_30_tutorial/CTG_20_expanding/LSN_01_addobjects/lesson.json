@@ -2,11 +2,11 @@
     "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "Enrichir modèle",
+        "title": "1. Add objects",
         "description": ""
     },
     "ENU": {
-        "title": "Enrich model",
+        "title": "1. Ajouter des objets",
         "description": ""
     }
 }
