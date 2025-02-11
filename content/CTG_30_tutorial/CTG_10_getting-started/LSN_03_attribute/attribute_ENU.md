@@ -12,7 +12,6 @@ To create a field, follow the steps below :
 
 1. Click **Edit form** on the Business object's form (this will open the **template editor**)
 	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)
-    <!--![alt text](edit-form.png)-->
 2. Select the first **Template**
 3. Hover over the empty **Field Area** and click on the `+`
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)
@@ -23,9 +22,12 @@ To create a field, follow the steps below :
 5. Click **+ Create field**
 6. Click **Short text**
 7. Fill in the Field fields like so :
-    - Label : **Name**
-    - Logical name : **trnSupName** *should be auto-completed* 
-    - Physical name : **trn_sup_name** *should be auto-completed*
+    - Label : **Code**
+    - Logical name : **trnSupCode** *should be auto-completed* 
+    - Physical name : **trn_sup_code** *should be auto-completed*
+    - Functional key : **Toggled**
+    - Required : **Toggled**  
+        <img src="create-field.png" alt="create-field" width="75%"/>
 8. Click **Save**
 
 The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
