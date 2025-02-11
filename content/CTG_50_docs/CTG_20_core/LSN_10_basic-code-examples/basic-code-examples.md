@@ -246,7 +246,10 @@ synchronized (o.getLock()) {
 	o.setFieldFilter("myField1", "ABC"); // simple text
 	o.setFieldFilter("myField2", "is not null"); // or "is null"
 	o.setFieldFilter("myField3", "in (1,5,8)"); // or "not in"
-	o.setFieldFilter("myField4", "like 'AB%')"); // or "not like"
+	o.setFieldFilter("myField4", "ABC%"); // starts with
+	o.setFieldFilter("myField4", "%ABC"); // ends with
+	o.setFieldFilter("myField4", "%ABC%"); // contains
+	o.setFieldFilter("myField4", "like 'ABC%'"); // or "not like"
 	o.getField("myDate1").setFilterDateMin(Tool.getCurrentDate());
 	o.getField("myDatetime1").setFilterDateMax("2013-06-26 23:45:23");
 	o.getField("myBoolean1").setFilter(true); // or false
