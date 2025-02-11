@@ -2,11 +2,11 @@
     "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "1. Add objects",
+        "title": "2.1. Add objects",
         "description": ""
     },
     "ENU": {
-        "title": "1. Ajouter des objets",
+        "title": "2.1. Ajouter des objets",
         "description": ""
     }
 }
