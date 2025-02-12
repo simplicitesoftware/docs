@@ -17,7 +17,7 @@ Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends t
 ### Key Features
 
 *Variables:* Store reusable values for colors, fonts or dimensions:
-<details>
+<details style="padding-bottom:24px;">
 <summary>Code Snippet</summary>
 
 ```less
@@ -29,7 +29,7 @@ body {
 </details>
 
 *Nesting:* Write styles in a structured & hierarchical way. Allowing to specify depending on contexts when it's needed. Below are shown two ways to use nesting, and shows a use case where items with same class have different styles depending on their parent:
-<details>
+<details style="padding-bottom:24px;">
 <summary>Code Snippet</summary>
 
 ```less
@@ -47,7 +47,7 @@ body {
 </details>
 
 *Interactions Nesting:* Same way as nesting works for children elements or contexts, yo ucan use it to dynamically handle different type of interactions for your elements:
-<details>
+<details style="padding-bottom:24px;">
 <summary>Code Snippet</summary>
 
 ```less
@@ -70,7 +70,7 @@ body {
 </details>
 
 *Mixins:* Define reusable style blocks for consistency:
-<details>
+<details style="padding-bottom:24px;">
 <summary>Code Snippet</summary>
 
 ```less
@@ -84,7 +84,7 @@ div {
 </details>
 
 *Functions:* Perform calculations and color operations directly in your styles:
-<details>
+<details style="padding-bottom:24px;">
 <summary>Code Snippet</summary>
 
 ```less
@@ -184,9 +184,15 @@ div.card-body { //panel body containing the list element
 
 > ***Note:*** For our specific style needs, our primary goal was to target the headers of each element. Understanding the organization and hierarchy of different components is essential to ensure precision in applying styles. Targeting incorrect elements or misunderstanding their structure may lead to unintended styling across various UI components.
 
-![](elements-focus.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="element-focus.png" width="75%"/>
+<!-- ![](element-focus.png) -->
+</div>
 
-![](browser-inspector.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="browser-inspector.png" width="75%"/>
+<!-- ![](browser-inspector.png) -->
+</div>
 
 ## 2. Identifying the context
 
@@ -246,7 +252,10 @@ div.container-table > table {
 
 Now to see if your new styles has been applied, make sure to apply your theme to the wanted *Home Page* view in the *User Interface > Views > Home Pages*:
 
-![](view-apply-theme.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="view-apply-theme.png" width="75%"/>
+<!-- ![](view-apply-theme.png) -->
+</div>
 
 Then make sure to clear your cache to update the styles, and you should see the result !
 

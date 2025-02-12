@@ -3,7 +3,8 @@ Theme Editor: Presentation and Overview
 
 This document introduces Simplicité’s **Theme Editor**, a tool designed for *customizing the visual identity of your instance*, whether for the designer interface or the user interface. The Theme Editor provides the *flexibility* to align your instance’s appearance with personal preferences, organizational branding guidelines, or specific design requirements.
 
-![](simplicite-mazette-form.png)
+<img src="simplicite-mazette-form.png" width="75%"/>
+<!-- ![](simplicite-mazette-form.png) -->
 
 Through this document, we will provide an understanding of how the tool works, its *key features*, and the *extensive customization* options available. We’ll explore how you can leverage it to enhance both *functionality* and *aesthetics*, ensuring an optimized and cohesive user experience.
 
@@ -11,7 +12,8 @@ Through this document, we will provide an understanding of how the tool works, i
 
 The Theme Editor is accessible from the themes list located under **User Interface > Themes** To begin using it, select an existing theme and click the **Preview** button.
 
-![](theme-editor-overview.png)
+<img src="theme-editor-overview.png" width="75%"/>
+<!-- ![](theme-editor-overview.png) -->
 
 This tool enables you to *manage and customize* the overall design of your instance with a *global scope*, offering complete control over the styles of **every UI element**. Whether you aim to create a dark, light, or specialized theme, the **Theme Editor** allows you to apply consistent design elements across your platform.
 
@@ -20,22 +22,22 @@ This tool enables you to *manage and customize* the overall design of your insta
 *ThemeAdmin*: a primary theme for *administrators*, created from the `Dark Base`. It is mainly used by administrators or designer users who prefer a dark mode interface.
 <details>
 <summary>ThemeAdmin Overview</summary>
-
-![](theme-admin-overview.png)
+<img src="theme-admin-overview.png" width="75%"/>
+<!-- ![](theme-admin-overview.png) -->
 </details>
 
 *ThemeDesign*: built from the `Light Base`, this theme mirrors the *ThemeAdmin* in functionality but caters to those who prefer a *lighter mode*.
 <details>
 <summary>ThemeDesign Overview</summary>
-
-![](theme-design-overview.png)
+<img src="theme-design-overview.png" width="75%"/>
+<!-- ![](theme-design-overview.png) -->
 </details>
 
 *ThemeEtat*: designed following the *DSFR* (French government) *design norms*. It adheres to strict rules of **contrast**, **spacing**, and **accessibility** to meet public sector guidelines.
 <details>
 <summary>ThemeEtat Overview</summary>
-
-![](theme-etat-overview.png)
+<img src="theme-etat-overview.png" width="75%"/>
+<!-- ![](theme-etat-overview.png) -->
 </details>
 
 > ***Coming Soon:*** Two new themes (Dark & Light) aligned with Simplicité’s brand new look and identity !
@@ -43,8 +45,12 @@ This tool enables you to *manage and customize* the overall design of your insta
 <details>
 <summary>"Mazette" Themes Overview</summary>
 
-![](theme-mazettelight-overview.png)
-![](theme-mazettedark-overview.png)
+<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+<img src="theme-mazettelight-overview.png" width="50%"/>
+<img src="theme-mazettedark-overview.png" width="50%"/>
+<!-- ![](theme-mazettelight-overview.png)
+![](theme-mazettedark-overview.png) -->
+</div>
 </details>
 
 ## Theme Creation
@@ -71,15 +77,14 @@ After creating and saving your themes, the styles are compiled, and you can see 
 
 The **Theme Editor** interface is divided into *three main sections*, each providing a key functionality. Understanding how these sections work is essential for effectively using the tool:
 
-![](theme-editor-parts.png)
+<!-- ![](theme-editor-parts.png) -->
+<img src="theme-editor-parts.png" width="75%"/>
 
 1) **Interface Preview:** A live preview of your theme in action, helping you visualize changes in real-time.
 2) **Values Menu:** The control panel where you define and adjust style variables such as colors, fonts, and spacing.
 3) **DOM Path:** A detailed view that highlights the structural elements of the interface, enabling precise customizations.
 
 ### Interface Preview
-
-![](theme-editor-previewpart.png)
 
 The **Preview** section of the **Theme Editor** provides a *live visualization* of your themes and their applied styles. This feature allows you to see the *results of your customizations* in real time, making it easier to refine your designs. With the tabbed menu, you can navigate through various elements of Simplicité’s interface, ensuring that your custom styles work as intended across all contexts.
 
@@ -88,7 +93,8 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 **Home**: displays the primary shared elements of Simplicité’s UI, such as the header and main menu. The menu highlights multiple states and hierarchies, including sub-menus and active domain indicators.
 <details>
 <summary>Home Preview</summary>
-![](theme-editor-preview-home.png)
+<img src="theme-editor-preview-home.png" width="75%"/>
+<!-- ![](theme-editor-preview-home.png) -->
 </details>
 
 **Buttons**: a unique tab that gives access to customization for button elements and their style options. It showcases all button types available in Simplicité, allowing you to customize the following properties: `background-color`, `text-color` or `icon-color`, `border-radius`, and `border-width` for each of the predefined button types:
@@ -100,7 +106,8 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 
 <details>
 <summary>Buttons Preview</summary>
-![](theme-editor-preview-buttons.png)
+<img src="theme-editor-preview-buttons.png" width="75%"/>
+<!-- ![](theme-editor-preview-buttons.png) -->
 </details>
 
 **Panels**: focuses on the structural elements that form Simplicité’s interface:
@@ -110,7 +117,8 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 
 <details>
 <summary>Panels Preview</summary>
-![](theme-editor-preview-panels.png)
+<img src="theme-editor-preview-panels.png" width="75%"/>
+<!-- ![](theme-editor-preview-panels.png) -->
 </details>
 
 **Form**: showcases essential UI components that combine *Panels*, *Sub-Panels*, and Tabs to organize fields and inputs.
@@ -119,21 +127,25 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 3) ***References:*** editable links to other objects or data.
 <details>
 <summary>Form Preview</summary>
-![](theme-editor-preview-form.png)
+<img src="theme-editor-preview-form.png" width="75%"/>
+<!-- ![](theme-editor-preview-form.png) -->
 </details>
 
 > ***Note:*** Other input types, such as *radio buttons*, *dropdown menus*, are not directly customizable within the Theme Editor but inherit styles from the selected base theme. 
 > - Code editors for example are customizable through your theme's object form, in which you can modify the monokai based theme (light, dark).
 
 **List**: a core element of Simplicité’s UI, Lists display rows of data in table format and can be extensively styled for consistency and readability.
+<details>
 <summary>List Preview</summary>
-![](theme-editor-preview-list.png)
+<img src="theme-editor-preview-list.png" width="75%"/>
+<!-- ![](theme-editor-preview-list.png) -->
 </details>
 
 **Dialog**: represents pop-up interfaces used for confirmations, alerts, or additional inputs. Styled similarly to Panels and Sub-Panels, Dialogs are designed for clear and concise communication with easily accessible actions.
 <details>
 <summary>Dialog Preview</summary>
-![](theme-editor-preview-dialog.png)
+<img src="theme-editor-preview-dialog.png" width="75%"/>
+<!-- ![](theme-editor-preview-dialog.png) -->
 </details>
 
 **Addons**: supports the customization of more advanced or precise customizations. Those being defined in the `addon.less` file, ensure that additional functionalities align visually with the core theme.
@@ -154,7 +166,10 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Base**: defines fundamental styles such as the main background color, global font, and shared spacing parameters, ensuring consistency across all elements.
 
-![](theme-editor-style-base.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-base.png"/>
+<!-- ![](theme-editor-style-base.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -166,10 +181,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Contents           | Padding Y              | [0;300]: defines the padding-top & padding-bottom of all elements displayed in different containers (texts, sub-panels, ...), thus modifying container's height.       |
 | Background         | Color                  | Any: defines the color of your whole background, noticeable mainly on the `WORK` part of the UI.                                                                       |
 
+<br><br>
 
 **Main**: configures the permanent UI elements, including the header, footer, and navigation breadcrumb.
 
-![](theme-editor-style-main.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-main.png"/>
+<!-- ![](theme-editor-style-main.png) -->
+</div>
 
 | Element               | Style Value            | Value Range / Description                                                                                                                                              |
 |-----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -185,10 +204,13 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Footer Bar            | Text Color             | Any: defines the colors of the texts composing your footer section (links in it).                                                                                      |
 | Footer Bar            | Border Color           | Any: defines the colors & display of the `border-top` for your whole footer, can be hidden by unticking the value.                                                     |
 
+<br><br>
 
 **Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
-
-![](theme-editor-style-menu.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-menu.png"/>
+<!-- ![](theme-editor-style-menu.png) -->
+</div>
 
 | Element              | Style Value            | Value Range / Description                                                                                                                                              |
 |----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -204,10 +226,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Status Menu          | Background Color       | Any: will define the **inactive** background color for the status items held in the sub-menus.                                                                           |
 | Status Menu          | Text Color             | Any: will define the **inactive** textcolor for the status items held in the sub-menus.                                                                                  |
 
+<br><br>
 
 **Panel**: focuses on the overarching style of *top-level Panels*, which can be previewed in the ***Panels*** section of the Preview. 
 
-![](theme-editor-style-panel.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-panel.png"/>
+<!-- ![](theme-editor-style-panel.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                                         |
 |--------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -222,10 +248,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your panel, excluding for the ones of buttons.                                                                                           |
 | Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                 |
 
+<br><br>
 
 **Sub-panel**: similar to *Panels* but specific to nested panels embedded within higher-level panels.
 
-![](theme-editor-style-subpanel.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-subpanel.png"/>
+<!-- ![](theme-editor-style-subpanel.png) -->
+</div>
 
 | Element                | Style Value            | Value Range / Description                                                                                                                                                                              |
 |------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -240,10 +270,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Sub-Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your sub-panel, excluding for the ones of buttons.                                                                                            |
 | Sub-Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                      |
 
+<br><br>
 
 **Tabs**: controls the style of Tabs, which organize information into sections within the same placeholder. Tabs often appear alongside Sub-Panels.
 
-![](theme-editor-style-tabs.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-tabs.png"/>
+<!-- ![](theme-editor-style-tabs.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                      |
 |--------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -262,10 +296,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Tabs Content       | Border Color           | Any: defines the color of the border of the whole content part, untick to hide.                                                                                                |
 | Tabs Content       | Shadow                 | [0;100]: defines the `box-shadow` style for the tab-content (not nav-links!), with the following range; 0 ~ `none`, 50 ~ `solid .125rem .125rem 1rem #e0e0e0`, 100 ~ `solid .125rem .125rem 2rem #e0e0e0` |
 
+<br><br>
 
 **Field**: configures styles for displayed fields within Sub-Panels and Tabs.
 
-![](theme-editor-style-field.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-field.png"/>
+<!-- ![](theme-editor-style-field.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -283,10 +321,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 > ***Note:*** Input fields provided by the Bootstrap library are not directly customizable but adapt to the selected base theme. Use the `addon.less` file for advanced overrides.
 
+<br><br>
 
 **List**: provides extensive customization options for one of Simplicité’s most critical UI components. Careful styling ensures both functionality and aesthetics.
 
-![](theme-editor-style-list.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-list.png"/>
+<!-- ![](theme-editor-style-list.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -310,10 +352,14 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Table Footer       | Text Color             | Any: defines `color`, the color of any text within the table footer only (mostly results). |
 | Table Footer       | Top Border Color       | Any: Any: defines the top `border-top-color` of table's footer, no values (empty) defines `none` or `transparent`. |
 
+<br><br>
 
 **Dialog**: syles `modal` dialogs that appear over the UI (with a `z-index = 1055`). These overlays dim the rest of the interface for focus and clarity.
 
-![](theme-editor-style-dialog.png)
+<div width="100%" style="display:flex; justify-content:center;">
+<img src="theme-editor-style-dialog.png"/>
+<!-- ![](theme-editor-style-dialog.png) -->
+</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -326,6 +372,8 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Footer             | Background Color       | Any: defines the `background-color` of the `modal-footer` part of the dialog item. |
 | Footer             | Text Color             | Any: defines the `color` of all text within the `modal-footer` part of dialog item only. |
 | Footer             | Top Border Color       | Any: defines the `border-top-color` for the `modal-footer` dialog item part, no values (empty) sets `border-top: none`. | 
+
+<br><br>
 
 ### DOM Path Viewer
 
