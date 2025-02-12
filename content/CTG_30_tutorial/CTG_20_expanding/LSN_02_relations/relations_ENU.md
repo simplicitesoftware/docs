@@ -1,67 +1,49 @@
-Creating links
-====================
+# Building the "Order Management" Training App : Creating links
 
-Concepts
----------------------------
+> Prerequisite : [The Supplier, Product, Client and Order objects must be complete before starting this tutorial](/lesson/tutorial/getting-started/object)
 
-The definition of a 1:N relationship allows two business objects to be linked together. If we take the example of the supplier and the product, there is 1 supplier for N products. This section presents what the Simplicité engine does with the configuration of objects, attributes and relationships.
+## What is a Link ?
 
-### Technical key of the business object
+A Link in Simplicité represents a relationship between Business objects. It is defined physically by a foreign key in the database and configured using an Object field... [Learn more](/lesson/docs/platform/business-objects/links)
 
-From the definition of the physical object and attribute names, a table and a column are created in the database. In reality, as soon as a business object is created, 5 default columns are created, the **technical fields**. This can be verified by testing an SQL query via the "DB Access" shortcut as seen in the previous chapter:
+## Creating a Link between Supplier and Product
 
-```
-select * from trn_supplier;
-```
+To create a link between the **Supplier** Business object and the **Product** Business object, follow the steps below :
+1. In the **Business objects > Business objects** menu
+2. Open **TrnProduct**
+3. Click **Edit form** on the Business object's form (this will open the **template editor**)
+    <img src="edit-form.png" alt="edit-form" width="25%"/>
+4. Hover over the **Field Area** and click on the `+`
+    <img src="field-area.png" alt="field-area" width="75%"/>
+    > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)  
+5. Click **Business Object**
+6. In the search box, enter **TrnSupplier**
+    <img src="search-supplier.png" alt="search" width="75%"/>
+7. Check **Functional key ?** and **Required ?** 
+    > For more information about Functional keys, see [Functional key](lesson/docs/core/platform/business-objects/fields#functional-key)
+8. Click **Save**
 
-We obtain the following columns:
+The **Supplier Code** Joined field is added to the template.
+    > For more information about Joined field, see [Joined field](lesson/docs/core/platform/business-objects/fields#joined-field)
 
-| row\_id | created\_dt | created\_by | updated\_dt | updated\_by | trn\_sup\_code |
-|---------|-------------|-------------|-------------|-------------|----------------|
-|         |             |             |             |             |                |
+## Creating a Link between Product and Order
 
-The `row_id` column is what we call the **technical key**. It is generated and managed by the base, **so there is no need to create ID attributes** for your objects.
+To create a link between the **Product** Business object and the **Order** Business object, follow the steps below :
+1. In the **Business objects > Business objects** menu
+2. Open **TrnOrder**
+3. Click **Edit form** on the Business object's form (this will open the **template editor**)
+4. Hover over the **Field Area** and click on the `+`
+5. Click **Business Object**
+6. In the search box, enter **TrnProduct**
+7. Check **Functional key ?** and **Required ?** 
+8. Click **Save**
 
-These 5 columns are not intended to be visible to the user.
+This will add the **TrnProduct** joined fields to the template, allowing the Order object to reference a product.
 
-### Functional key of the business object
+## Creating a link between Client and Order
 
-The functional key is a set of fields defining the **functional** uniqueness of the business object. Thus, if we decide that the functional key of the customer is composed of his name and his first name, then we cannot have two customers with the same name + first name. 
+To create a link between the **Client** and **Order** business objects, follow the same steps as for linking **Product** to **Order**, with one key difference:
 
-**Every business object must have a functional key**. *If there is no key, Simplicité will only allow the creation of one record, which will have an  "empty" functional key. The second record, also having an "empty" functional key, will trigger an error because the functional key already exists.*
+6. In the search box, enter TrnClient instead of TrnProduct.
 
-### Foreign key
-
-A link between two objects is defined:
-- physically, by **a column in the referencing object's table**, pointing to the `row_id` column of the referenced object
-- in terms of configuration, by:
-    - an attribute of type Internal ID/Technical Key (created automatically when the relationship is created), 
-    - an object field with the following information :
-        - the object referenced in "Joined object"
-        - empty "referenced field"
-
-
-### Joined fields
-
-When there is a 1:N relationship between two objects, it becomes possible to add joined fields to the referring object. In our example, it is possible to display supplier information on the product form.
-
-There are three ways to join fields: 
-- when creating the relationship between two objects
-- by using template editor
-- by manually creating a correctly configured object field
-
-The joined field is defined:
-- physically, by the joined object
-- in terms of configuration by an object field linking **the joined object's field** to **the referencing object**, and containing:
-    - the referenced object in "linked object"
-    - the foreign key used in "reference field"
-
-
-Exercise
----------------------------
-
-- Create the following links, systematically joining the functional key of the referenced object:
-    - Supplier <-1:N- Product
-    - Product <-1:N- Order
-    - Customer <-1:N- Order
-- Edit the order form  and use the dedicated option to join a new field of a referenced object ("+" button on the template editor > Name of referenced object > )
+This will add the **TrnClient** joined fields to the template, allowing the Order object to reference client information.

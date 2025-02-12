@@ -1,10 +1,10 @@
 # Building the "Order Management" Training App : Creating a User
 
-> Prerequisite : [A Business object with a field must be created before starting this lesson](/lesson/tutorial/getting-started/object)
+> Prerequisite : [A Business object with a field must be created before starting this tutorial](/lesson/tutorial/getting-started/object)
 
 ## What is a User ?
 
-Users belong to groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
+Users belong to Groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
 
 ## Creating a User
 
@@ -56,6 +56,8 @@ You should now be connected with **usertest**
         <li>The list of Suppliers is displayed when the menu is clicked</li>
     </ul>
 </div>
+
+[Next step : Adding objects to the Application](/lesson/tutorial/expanding/relations)
 
 Troubleshooting
 ---------------------------

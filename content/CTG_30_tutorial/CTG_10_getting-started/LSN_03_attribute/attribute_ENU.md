@@ -1,6 +1,6 @@
 # Building the "Order Management" Training App : Creating a Field
 
-> Prerequisite : [A business object (TrnSupplier) must be created before starting this lesson](/lesson/tutorial/getting-started/object)
+> Prerequisite : [A business object (TrnSupplier) must be created before starting this tutorial](/lesson/tutorial/getting-started/object)
 
 ## What is a Field ?
 
@@ -32,4 +32,4 @@ To create a field, follow the steps below :
 
 The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
 
-# [Next step : Creating a test User](/lesson/tutorial/getting-started/user)
+[Next step : Creating a test User](/lesson/tutorial/getting-started/user)

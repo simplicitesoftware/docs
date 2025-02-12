@@ -1,12 +1,11 @@
 {
-    "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "Attribut",
+        "title": "Liens",
         "description": ""
     },
     "ENU": {
-        "title": "Field",
+        "title": "Links",
         "description": ""
     }
 }

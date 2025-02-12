@@ -1,7 +1,9 @@
 {
     "display": "LINEAR",
-    "published": true,
-    "ANY": {
+    "ENU": {
       "title": "Business objects"
+    }, 
+    "FRA": {
+      "title": "Objets métier"
     }
 }

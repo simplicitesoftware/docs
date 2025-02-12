@@ -1,6 +1,6 @@
 # Building the "Order Management" Training App : Creating a Business object
 
-> Prerequisite : [A module, domain and group must be created before starting this lesson](/lesson/tutorial/getting-started/module)
+> Prerequisite : [A module, domain and group must be created before starting this tutorial](/lesson/tutorial/getting-started/module)
 
 ## What is a Business object ?
 
@@ -8,7 +8,7 @@ Business objects are the cornerstone of the platform, structuring data, enforcin
 
 ## Creating a Business object
 
-To create a business object, follow the steps below :
+To create a Business object, follow the steps below :
 
 1. Click **Creation assistant** in Business objects > Business objects
 	> This assistant is also available via the Modeler, for more information see the [How to create an object using the modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)

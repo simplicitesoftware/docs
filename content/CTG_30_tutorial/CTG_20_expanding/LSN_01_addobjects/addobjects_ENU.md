@@ -73,3 +73,5 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Telephone** | Phone number | trnSupTelephone | trn_sup_telephone | no | no |
 | **Logo** | Image | trnSupLogo | trn_sup_logo | no | no |
 | **Website** | URL | trnSupWebsite | trn_sup_website | no | no |
+
+[Next step : Creating links between the Business objects](/lesson/tutorial/expanding/relations)
