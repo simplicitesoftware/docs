@@ -1,6 +1,6 @@
 # Building the "Order Management" Training App : Creating links
 
-> Prerequisite : [The Supplier, Product, Client and Order objects must be complete before starting this tutorial](/lesson/tutorial/getting-started/object)
+> Prerequisite : [The Supplier, Product, Client and Order objects must be complete before starting this tutorial](/lesson/tutorial/expanding/addobjects)
 
 ## What is a Link ?
 
@@ -12,7 +12,7 @@ To create a link between the **Supplier** Business object and the **Product** Bu
 1. In the **Business objects > Business objects** menu
 2. Open **TrnProduct**
 3. Click **Edit form** on the Business object's form (this will open the **template editor**)  
-    <img src="edit-form.png" alt="edit-form" width="25%"/>
+    <img src="edit-form.png" alt="edit-form" width="10%"/>
 4. Hover over the **Field Area** and click on the `+`  
     <img src="field-area.png" alt="field-area" width="50%"/>
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)  
