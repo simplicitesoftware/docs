@@ -46,7 +46,7 @@ You can specify the import mode in the `action` attribute of each of the `object
 - `update` = update (if the record does not exist an error is raised)
 - `delete` = delete (if the record does not exist an error is raised)
 
-You can also precise `if="exists"` or `if="not exists"` attribute on the `object` bloc to avoid potential errors.
+You can also precise `if="exists"` or `if="not exists"` attribute on the `action`tag of the `object` bloc to avoid potential errors.
 
 The `action` attribute can also be used to call a custom action of the business object by its name.
 

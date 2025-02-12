@@ -1622,6 +1622,16 @@ Use API interface?
 
 Use API tester page?
 
+### `USE_INDEX_SEARCH_SCANNER`
+
+**Default value**
+
+	yes
+
+**Description**
+
+Allows the user to scan QRCodes/Barcodes in the index search component
+
 ### `USE_CHANGE_USER`
 
 **Default value**
