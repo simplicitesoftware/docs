@@ -11,14 +11,14 @@ A Link in Simplicité represents a relationship between Business objects. It is 
 To create a link between the **Supplier** Business object and the **Product** Business object, follow the steps below :
 1. In the **Business objects > Business objects** menu
 2. Open **TrnProduct**
-3. Click **Edit form** on the Business object's form (this will open the **template editor**)
+3. Click **Edit form** on the Business object's form (this will open the **template editor**)  
     <img src="edit-form.png" alt="edit-form" width="25%"/>
-4. Hover over the **Field Area** and click on the `+`
-    <img src="field-area.png" alt="field-area" width="75%"/>
+4. Hover over the **Field Area** and click on the `+`  
+    <img src="field-area.png" alt="field-area" width="50%"/>
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)  
 5. Click **Business Object**
-6. In the search box, enter **TrnSupplier**
-    <img src="search-supplier.png" alt="search" width="75%"/>
+6. In the search box, enter **TrnSupplier**  
+    <img src="search-supplier.png" alt="search" width="25%"/>
 7. Check **Functional key ?** and **Required ?** 
     > For more information about Functional keys, see [Functional key](lesson/docs/core/platform/business-objects/fields#functional-key)
 8. Click **Save**
@@ -44,6 +44,7 @@ This will add the **TrnProduct** joined fields to the template, allowing the Ord
 
 To create a link between the **Client** and **Order** business objects, follow the same steps as for linking **Product** to **Order**, with one key difference:
 
-6. In the search box, enter TrnClient instead of TrnProduct.
+6. In the search box, enter **TrnClient** instead of TrnProduct.
 
 This will add the **TrnClient** joined fields to the template, allowing the Order object to reference client information.
+

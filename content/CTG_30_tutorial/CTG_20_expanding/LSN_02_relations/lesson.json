@@ -1,12 +1,11 @@
 {
-    "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "Créer relations",
+        "title": "2.2. Créer relations",
         "description": ""
     },
     "ENU": {
-        "title": "Create links",
+        "title": "2.2. Create links",
         "description": ""
     }
 }
