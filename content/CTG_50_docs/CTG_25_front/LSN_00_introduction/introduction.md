@@ -14,7 +14,10 @@ The use of such features can be encountered due to various needs, or specific us
 
 ### Visual identity & design guidelines
 
-![](identity-guidelines.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="identity-guidelines.png" width="75%"/>
+<!-- ![](identity-guidelines.png) -->
+</div>
 
 When integrating a Simplicité's instance into an existing system with a *distinct identity*, or specific *design guidelines*, you have the possibility to customize and align your instance's UI to those in order to ensure ease of use and familiarity for end-users.
 
@@ -22,11 +25,17 @@ These customizations can extend to the layout and organization of your Simplicit
 
 **Example**: the government's interfaces shall follow the *DSFR design guideline*, so they need to align their Simplicité's interface to match it's rules.
 
-![](dsfr-simplicite.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="dsfr-simplicite.png" width="75%"/>
+<!-- ![](dsfr-simplicite.png) -->
+</div>
 
 ### Client-oriented interfaces
 
-![](client-oriented-webpage.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="client-oriented-webpage.png" width="75%"/>
+<!-- ![](client-oriented-webpage.png) -->
+</div>
 
 If your solution is *client-oriented*, you may benefit from creating a *custom front-end* that is tailored to meet the specific needs of your end-users and possible customers. For example you can want your client to be immersed in a specific environment if you wanna apply some specific marketing strategies or user-oriented designs. The idea is that Simplicité will allow you to customize the fronts of your applications, and even take them outside of the solutions if you don't want to mix anything together. 
 
@@ -34,8 +43,12 @@ There are numerous possibilities, but a common example is the one of having prod
 
 **Example**: in case of a system or application containing orders, possibly emitted by clients, you might benefit from having a minimalist webpage using a more *user-friendly* interface than Simplicité's default one.
 
-![](order-internal-page.png)
-![](order-external-page.png)
+<div width="100%" style="display:flex; flex-direction: row; gap: 8px; padding-bottom:32px;">
+<img src="order-internal-page.png" width="50%"/>
+<img src="order-external-page.png" width="50%"/>
+<!-- ![](order-internal-page.png)
+![](order-external-page.png) -->
+</div>
 
 ### Use of specific web technologies
 
@@ -43,8 +56,12 @@ If your teams or organization are committed to a specific technical solution (we
 
 **Example**: it is possible that your teams are more comfortable with specific web frameworks like **VueJs**, or even templating frameworks like **Mustache**. Simplicité then allows you to use those to design and develop your specific interfaces.
 
-![](vue-webpage.png)
-![](mustache-webpage.png)
+<div width="100%" style="display:flex; flex-direction: row; gap: 8px; padding-bottom:32px;">
+<img src="vue-webpage.png" width="50%"/>
+<img src="mustache-webpage.png" width="50%"/>
+<!-- ![](vue-webpage.png)
+![](mustache-webpage.png) -->
+</div>
 
 ## Disposition
 
@@ -52,7 +69,10 @@ In order to properly manipulate and customize your Simplicité applications, it 
 
 ### Major HTML blocks
 
-![](disposition-schema.png)
+<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
+<img src="disposition-schema.png" width="50%"/>
+<!-- ![](disposition-schema.png) -->
+</div>
 
 * **HEADER -** remains visible and accessible whatever you are displaying, usually contains a set of necessary shortcuts and features that you want to access anytime such as:
 - Global Search Tool
