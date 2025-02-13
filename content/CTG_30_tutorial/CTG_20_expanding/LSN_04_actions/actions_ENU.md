@@ -34,3 +34,5 @@ To create an Action for the Product Business object, follow the steps below :
 <div class="success">
     The <b>Increase stock</b> Action is now granted to the <b>TRN_SUPERADMIN</b> Group.
 </div>
+
+

@@ -45,10 +45,13 @@ To add a label and icon to the **Field Area**, follow the steps below :
     <img src="edit-field-area.png" alt="edit-field-area" width="50%"/>
 2. Fill in the Field Area information like so :
     - Label : **Product**
-    - Icon code : **products** (*you can also use the <i class="fa-solid fa-magnifying-glass"></i> icon to open the icon picker*)  
-    <img src="field-area-info.png" alt="field-area-info" width="50%"/>
+    - Icon code : **products** (*you can also use the icon picker to select an icon*)  
+    <img src="field-area-info.png" alt="field-area-info" width="25%%"/>
 3. Click **Save**
 
+Rename the **TrnOrder-1** Field Area : 
+- Label : **Order**
+- Icon code : **box**
 
 ### Adding the Product fields to the "Product" Field Area
 
@@ -76,11 +79,15 @@ To add the Client fields to the "Client" **Field Area**, follow the steps below 
     <img src="client.png" alt="client" width="50%"/>
 
 
-### Structuring the Order form
+### Structuring the Order Template
 
 To structure to Order form, follow the steps below :
 
+1. Hover over an empty area of the template
+2. Click the `+` icon, and select **2 cols**   
+    <img src="empty.png" alt="empty" width="50%"/>
+3. Move the **Client** Field Area into the right column   
+    <img src="move-fieldarea.png" alt="move-fieldarea" width="50%"/>
 
-<div class="success">
-    The moved <b>Field</b> is now visible in the created <b>Field Area</b> 
-</div>
+Repeat these steps for the **Product** and **Order** Field Areas :  
+    <img src="order.png" alt="order" width="50%"/>

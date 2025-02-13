@@ -16,7 +16,7 @@ To create a field, follow the steps below :
 3. Hover over the empty **Field Area** and click on the `+`
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)
 
-    <img src="field-area.png" alt="field-area" width="75%"/>
+    <img src="field-area.png" alt="field-area" width="50%"/>
     
 4. Click **Field**
 5. Click **+ Create field**
@@ -27,7 +27,7 @@ To create a field, follow the steps below :
     - Physical name : **trn_sup_code** *should be auto-completed*
     - Functional key : **Toggled**
     - Required : **Toggled**  
-        <img src="create-field.png" alt="create-field" width="75%"/>
+        <img src="create-field.png" alt="create-field" width="25%"/>
 8. Click **Save**
 
 The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
