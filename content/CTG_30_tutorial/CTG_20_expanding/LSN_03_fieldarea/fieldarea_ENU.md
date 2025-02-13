@@ -31,7 +31,7 @@ To create a Field Area on the **Order** Business object, follow the steps below 
 2. Click **Edit form** on the Business object's form (this will open the **template editor**)  
     <img src="../LSN_02_relations/edit-form.png" alt="edit-form" width="10%"/>
 4. Hover over the template and click on the `+`  
-    <img src="../LSN_02_relations/field-area.png" alt="field-area" width="50%"/>
+    <img src="field-area.png" alt="field-area" width="50%"/>
 5. Click **Fields Area**
 
 A **Field Area** is added to the object's template
