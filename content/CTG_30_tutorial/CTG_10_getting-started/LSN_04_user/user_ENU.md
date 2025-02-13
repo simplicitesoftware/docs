@@ -10,33 +10,42 @@ Users belong to Groups, and each user-group relationship is defined by a Respons
 
 To create a test user, follow the steps below :
 
-1. Click **Create a user** in Users and rights
-2. Fill in the User information like so :
-    - Login : **usertest**
+1. Click **Create a user** in Users and rights and fill in the User information like so :
+    - Login : **usertest**  
+    <img src="process.png" alt="process" width="50%"/>
 3. Click **Next**
-4. Choose a [previously](/lesson/tutorial/getting-started/module) created Group
-    - **TRN_SUPER_ADMIN** *if exists, this should be selected by default*
+4. Choose a [previously](/lesson/tutorial/getting-started/module) created Group :
+    - **TRN_SUPER_ADMIN** *if exists, this should be selected by default*  
+    <img src="group.png" alt="group" width="50%"/>
 5. Click **Next**
-6. Create a Responsibility, click **Next**
+6. Create a Responsibility, click **Next**  
+    <img src="resp.png" alt="resp" width="50%"/>
     > For more information about Domains, see the [Responsability](/lesson/docs/core/objects/responsability) section. 
 7. Choose a new group :
     - For now, select **no**
 8. Click **Next**
 
-The user **usertest** is created and opened.
+<div class="success">
+    <p>The <b>usertest</b> User is created and opened</p>
+    <img src="success-user.png" alt="user" width="50%"/>
+</div>
+
+
+## Activating and testing the User
 
 To connect to the application with **usertest**, follow the steps below :
 
-1. Click **Activate**
-2. Click **Reset password**
+1. Click <img src="activate.png" alt="activate"/>
+2. Click <img src="reset-password.png" alt="reset"/>
     - Click **Yes**
     - Copy the password displayed in the popup
     - Click **Ok**
 3. Empty the platform's cache :
     - Via the header menu :
-        - Click on the menu in the top-right corner
-        - Click **Clear cache**
-        - Click **Clear all sessions and all server caches**
+        - Click on the menu in the top-right corner, click **Clear cache**  
+        <img src="shortcut.png" alt="shortcut" width="50%"/>
+        - Click **Clear all sessions and all server caches**  
+        <img src="clear-cache.png" alt="clear-cache" width="50%"/>
     - Via the keyboard shortcut : [ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ]
     > For more information about the cache, see the [Platform cache](/lesson/docs/core/objects/platform-cache) section. 
 
@@ -55,9 +64,10 @@ You should now be connected with **usertest**
         <li>A Menu entry is visible</li>
         <li>The list of Suppliers is displayed when the menu is clicked</li>
     </ul>
+    <img src="success-logon.png" alt="logon" width="50%"/>
 </div>
 
-[Next step : Adding objects to the Application](/lesson/tutorial/expanding/relations)
+## Next step : [Add objects](/lesson/tutorial/expanding/addobjects)
 
 Troubleshooting
 ---------------------------
@@ -67,7 +77,8 @@ Troubleshooting
     - password is reset
 
 - No menu is displayed when logged in, check that :
-    - The the Domain exist, contains **TrnSupplier** and is granted to **TRN_SUPERADMIN** :
+    - The the Domain exist, contains **TrnSupplier** and is granted to **TRN_SUPERADMIN** :  
+        
         - In **Business objects > Domains** 
         - Open **TrnDomain** : 
             - The Domain is granted to **TRN_SUPERADMIN** :
@@ -75,24 +86,31 @@ Troubleshooting
                     > If not, create it
             - The Domain contains the **TrnSupplier** Business object :
                 - In the **Main menu** tab, there should be **TrnSupplier** 
-                    > If not, create it
+                    > If not, create it    
+
+            <img src="trbl-domain.png" alt="logon" width="50%"/>
+  
     - **TrnSupplier** has a CRUD Function, and is granted to **TRN_SUPERADMIN**
         - In **Business objects > Business objects**
         - Open **TrnSupplier** :
             - In the **Functions** panel linked to the Object :
                 - There should be a **Read, create, update and delete** Function (TRN_SUP_CRUD)
-                    > If not, create it
+                    > If not, create it  
+
+                <img src="trbl-object.png" alt="object" width="50%"/> 
+
                 - Open the **TRN_SUP_CRUD** Function :
                     - In the **Grant** panel linked to the Function :
                         - There should be the **TRN_SUPERADMIN** Group
                             > If not, create it
+
+                <img src="trbl-function.png" alt="function" width="50%"/> 
+
     - **usertest** has the **TRN_SUPERADMIN** Responsibility :
         - In **Users and rights > Users > Show all**
         - Open **usertest** :
             - In the **Responsibilities** panel linked to the user :
                 - There should be **TRN_SUPERADMIN**
                     > If not, create it
-
-<!--Take things further : Create a readonly user
----------------------------
-* Create a user "read" linked to a group **TRN_READONLY** granted to a **TrnDomainReadOnly** domain in which the user will be able to access the list of **Suppliers**. -->
+                
+            <img src="trbl-user.png" alt="user" width="50%"/> 

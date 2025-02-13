@@ -1,11 +1,11 @@
 {
-    "tags": ["lvl1"],
     "FRA": {
         "title": "Créer diagramme d'états",
         "description": ""
     },
     "ENU": {
-        "title": "Create states",
+        "title": "2.5. Create state model",
         "description": ""
-    }
+    },
+    "display": "LINEAR"
   }

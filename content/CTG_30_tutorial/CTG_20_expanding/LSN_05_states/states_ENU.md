@@ -1,4 +1,4 @@
-State transitions
+<!--State transitions
 ====================
 
 A business object can have states that provide the following features: 
@@ -22,4 +22,16 @@ Exercise: create the state of the order.
 3. selection of the groups that can perform the chosen transitions (assign all transitions to the `TRN_ADMIN` group)
 4. translation of the actions: each state transition has a translation associated to it which corresponds to the text displayed on the button allowing to switch from one state to another
 5. Navigate to the TRN_ORD_STATE list of value configuration, or alternatively, use the template editor to add the status bar to the user interface (UI).
-- clear the cache (*because some grants have been modified*) and test the state transitions
+- clear the cache (*because some grants have been modified*) and test the state transitions -->
+
+# Building the "Order Management" Training App : Creating a State model
+
+> Prerequisite : [The Supplier, Product, Client and Order objects are complete and linked together](/lesson/tutorial/expanding/fieldarea)
+
+## What is a State model ?
+
+A state model defines the different statuses a business object can have and controls how it transitions between them. It enables filtered views, enforces permissions on state changes, and automates actions triggered by transitions. Setting up a state model ensures a structured workflow for business objects... [Learn more](/lesson/docs/platform/business-process/state)
+
+## Creating a State model for the Order Business object
+
+

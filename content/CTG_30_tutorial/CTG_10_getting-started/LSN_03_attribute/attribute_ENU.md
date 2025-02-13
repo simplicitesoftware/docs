@@ -11,25 +11,31 @@ In Simplicité, fields are configurable attributes of business objects (mandator
 To create a field, follow the steps below :
 
 1. Click **Edit form** on the Business object's form (this will open the **template editor**)
+    <img src="edit-form.png" alt="field-area" width="50%"/>
 	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)
-2. Select the first **Template**
+2. Select the first **Template**  
+    <img src="template.png" alt="template" width="25%"/>
 3. Hover over the empty **Field Area** and click on the `+`
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)
 
     <img src="field-area.png" alt="field-area" width="50%"/>
     
-4. Click **Field**
-5. Click **+ Create field**
-6. Click **Short text**
-7. Fill in the Field fields like so :
+4. Click **Field**  
+    <img src="add-field.png" alt="add-field" width="50%"/>
+5. Click **+ Create field**, and select **Short text**  
+    <img src="short-text.png" alt="short-text" width="50%"/>
+6. Fill in the Field fields like so :
     - Label : **Code**
     - Logical name : **trnSupCode** *should be auto-completed* 
     - Physical name : **trn_sup_code** *should be auto-completed*
     - Functional key : **Toggled**
     - Required : **Toggled**  
         <img src="create-field.png" alt="create-field" width="25%"/>
-8. Click **Save**
+7. Click **Save**
 
-The field **trnSupName** has been added to the object **TrnSupplier** and the template has the **Name** input visible on it.
+<div class="success">
+    <p>The <b>trnSupName</b> Field has been added to the <b>TrnSupplier</b> Business object and the template has a <b>Name</b> input visible on it</p>
+    <img src="success.png" alt="success" width="50%"/>
+</div>
 
-[Next step : Creating a test User](/lesson/tutorial/getting-started/user)
+## Next step : [Create a User](/lesson/tutorial/getting-started/user)

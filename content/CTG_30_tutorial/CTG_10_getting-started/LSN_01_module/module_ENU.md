@@ -15,29 +15,38 @@ To create a module, follow the steps below :
     - Click **Creation assistant** in Project > Modules
 2. Fill in the Module fields like so :
     - Name : **Training**
-    - Prefix : **trn**
+    - Type : **Application**
+    - Prefix : **trn**  
+    <img src="module.png" alt="module" width="50%"/>
 3. Click **Next**
 4. Fill in the Group fields like so :
     - Name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
-
+        <img src="group.png" alt="group" width="50%"/>
     > For more information about Groups, see the [Groups](/lesson/docs/core/objects/group) section. 
 
 5. Click **Next**
-6. Fill in the Domain fields like so :
-    - Name : **TrnDomain**
+6. Fill in the Domain (in Simplicité, a Domain is a menu) fields like so :
+    - Name : **TrnDomain**  
+        <img src="domain.png" alt="domain" width="50%"/>
     > For more information about Domains, see the [Domain](/lesson/docs/core/objects/domain) section. 
 7. Click **Next**
-8. Fill in the Translations for your Domain :
-    - English : My App
+8. Fill in the Translations (Menu display label) for your Domain :
+    - English : **My App**  
+         <img src="translate.png" alt="translate" width="50%"/>
 9. Click **Next**
 10. Grant the Group to the Domain :
-    - Check the box
+    - Check the box  
+         <img src="grant.png" alt="grant" width="50%"/>
 11. Click **Next**
-12. Fill in the View fields like so :
+12. Fill in the View field like so :
     - Icon : click the magnifying glass and pick an icon
     > For more information about Views, see the [View](/lesson/docs/core/objects/view) section.
 13. Click **Next**
 
-The Module **Training** is created and opened. 
+<div class="success">
+    <p>The <b>Training</b> Module is created and opened.</p>
+    <img src="success.png" alt="success" width="50%"/>
+</div>
 
-[The next step to building the "Order Management" Training App is adding business objects](/lesson/tutorial/getting-started/object)
+
+## Next step : [Create a Business object](/lesson/tutorial/getting-started/object)

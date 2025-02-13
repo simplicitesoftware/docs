@@ -2,11 +2,11 @@
     "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "1.1. Créer module",
+        "title": "1.1. Créer un Module",
         "description": ""
     },
     "ENU": {
-        "title": "1.1. Create module",
+        "title": "1.1. Create a Module",
         "description": ""
     }
 }

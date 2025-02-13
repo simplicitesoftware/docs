@@ -2,11 +2,11 @@
     "tags": ["lvl1"],
     "display": "LINEAR",
     "FRA": {
-        "title": "1.2. Créer objet métier",
+        "title": "1.2. Créer un Objet métier",
         "description": ""
     },
     "ENU": {
-        "title": "1.2. Create object",
+        "title": "1.2. Create a Business object",
         "description": ""
     }
   }
