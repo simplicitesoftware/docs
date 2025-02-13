@@ -35,7 +35,9 @@ To create a link between the **Product** Business object and the **Order** Busin
 4. Hover over the **Field Area** and click on the `+`
 5. Click **Business Object**
 6. In the search box, enter **TrnProduct**
-7. Check **Functional key ?** and **Required ?** 
+7. Check **Functional key ?** and **Required ?**  
+     <img src="foreign-key.png" alt="foreign-key" width="50%"/>
+
 8. Click **Save**
 
 This will add the **TrnProduct** joined fields to the template, allowing the Order object to reference a product.
@@ -44,7 +46,8 @@ This will add the **TrnProduct** joined fields to the template, allowing the Ord
 
 To create a link between the **Client** and **Order** business objects, follow the same steps as for linking **Product** to **Order**, with one key difference:
 
-6. In the search box, enter **TrnClient** instead of TrnProduct.
+6. In the search box, enter **TrnClient** instead of TrnProduct.  
+     <img src="foreign-key-cli.png" alt="foreign-key-cli" width="50%"/>
 
 This will add the **TrnClient** joined fields to the template, allowing the Order object to reference client information.
 
