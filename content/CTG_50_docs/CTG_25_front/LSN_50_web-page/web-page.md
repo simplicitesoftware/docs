@@ -1,17 +1,22 @@
 External Custom Web Pages
 =========================
 
-This document explains how to use Simplicité's External Objects to create web pages that operate independently from the Simplicité application interface. Thus, these objects are rendered as external web pages rather than being embedded within Simplicité's standard UI.
+This document explains how to use Simplicité's **External Objects** to create web pages that operate independently from the Simplicité application interface. Thus, these objects are rendered as custom web pages rather than being embedded within Simplicité's standard UI.
 
 # Native webpages
 
-In this section, we will walk through the process of creating an external webpage *from scratch*. This page will serve as a custom front-end that communicates with *Simplicité's back-office*. As an illustrative example, we will recreate and analyze the **DemoWebPage** (refer to the screenshots below). This demo page acts as a basic yet fully functional, allowing clients to view the product catalog and place orders, but also access all suppliers' informations and some resources for Simplicité's solution :
+In this section, we will walk through the process of creating a custom webpage *from scratch*. This page will serve as a custom front-end that communicates with *Simplicité's back-office*. As an illustrative example, we will recreate and analyze the **DemoWebPage** (refer to the screenshots below). This demo page acts as a basic yet fully functional, allowing clients to view the product catalog and place orders, but also access all suppliers' informations and some resources for Simplicité's solution :
 
-![](myexternalpage-home.png)
+<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
+<img src="myexternalpage-home.png" width="75%"/>
+</div>
+<!-- ![](myexternalpage-home.png) -->
+
+The presented web-pages are an "in-between" the complete external pages created using the **NPM Library** explained [here](https://docs.simplicite.io/lesson/docs/front/javascript-dev), and the *UI Component* that you can create as shown in [this lesson](https://docs.simplicite.io/lesson/docs/front/javascript-dev). Although such objects will be rendered at the `"/ext/"` of your Simplicité's instance URL (`https://<name>.demo.simplicite.io`), but still you can decide either to set this page public or private, thus requesting or not for credentials' validation before accessing it at the given URL.
 
 ## Object Creation
 
-Simplicité provides the ability to *extend* your External Objects *outside* of the *core application*, enabling you to build ***standalone custom web pages***. The process is quite similar to creating **custom widgets** but with a few key differences:
+Simplicité provides the ability to extend your External Objectsoutside* of the core application, enabling you to build ***custom web pages***. The process is quite similar to creating **custom widgets** but with a few key differences:
 
 * When defining your object, ensure that its nature is set to **Basic**.
 
@@ -66,7 +71,7 @@ public class MyExternalObject extends ExternalObject {
 }
 ```
 
-The *core class* that allows and facilitates the creation and management of *external web pages* is **BootstrapWebPage**, found in the `com.simplicité.webapp.web.BootstrapWebPage` package. This class, which extends `JQuery` and utilizes `Bootstrap`, enables the instantiation and rendering of objects defined within Simplicité.
+The *core class* that allows and facilitates the creation and management of custom web pages is **BootstrapWebPage**, found in the `com.simplicité.webapp.web.BootstrapWebPage` package. This class, which extends `JQuery` and utilizes `Bootstrap`, enables the instantiation and rendering of objects defined within Simplicité.
 
 The primary methods to utilize are as follows:
 
@@ -80,31 +85,64 @@ The primary methods to utilize are as follows:
 
 > For more information on the **BootstrapWebPage** class, refer to the [official documentation](https://platform.simplicite.io/6.1/javadoc/com/simplicite/webapp/web/BootstrapWebPage.html) and the [Javadoc](https://platform.simplicite.io/6.1/javadoc/).
 
+
+### Page Access
+
+As explained before, such objects can be declared either as public or private using the `setPublic()` method from the `com.simplicite.webapp.web.ResponsiveExternalObject` package. By default `isPublic()` returns `true` (at least for the provided examples). Objects that are declared as public are thus gonna be rendered in what's called the *public zone* and accessible by anyone who has the right URL, while object with `isPublic() == false` are gonna be rendered in the *private zone*, which means only in your Simplicité's instance (UI components).
+
+You can also create sort of "hybrid" objects that can be rendered in both zones by specifying to create or not a `BootstrapWebPage` in the *Java Code* of your object:
+```java
+@Override
+public Object display(Parameters params) {
+    try {
+        boolean pub = isPublic();
+
+        if (pub)
+		{
+            BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), getDisplay());
+			// then proceed to add all needed resources and elements to your object.
+            wp.setReady(render);
+
+            return wp.toString();
+
+        }
+		else return javascript(render);
+
+    } catch (Exception e) {
+        AppLog.error(getClass(), "display", null, e, getGrant());
+        return e.getMessage();
+    }
+}
+```
+
+* If your object is meant to be public, then you have to instantiate a `new BootstrapWebPage(...);`, add all the needed resources (HTML, STYLES, CLASS or other files), and finally initiate the link with the front-script *CLASS* using the `.setReady()` with the proper *render* variable.
+
+* Otherwise if your object is meant to be private, then you simply have to execute the javascript locally with `javascript()` with the proper *render* variable.
+
+In both case you wanna return the object to display (either BootstrapWebPage or embedded element), and to properly set your `String render` value.
+
 ## Web "Client" code
 
 Creating an external page involves defining a web component inside a `<div>` with the object's name as the ID; external object named *CustomExternalObject* will be defined within `<div id="customexternalobject"></div>`. This `<div>` will be rendered in the following html context:
 
 ```html
-<html><head>
-<title>My external object</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-<link rel="shortcut icon" href="/content/favicon/Theme-Mazette-Light-V1_16.png">
-<script type="text/javascript" src="/scripts/jquery/jquery.js"></script>
-<link rel="stylesheet" href="/scripts/jquery/bootstrap5/css/bootstrap.min.css" type="text/css">
-<script type="text/javascript" src="/scripts/jquery/bootstrap5/js/bootstrap.bundle.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="/scripts/ajax/ajax-bundle.js?_=6.1.18" charset="UTF-8"></script>
-<script type="text/javascript" src="/resource?row_id=402&amp;_=6.1.18_1734718365000"></script>
-<link rel="stylesheet" href="/resource?row_id=403&amp;_=6.1.18_1734606785000" type="text/css">
-<script type="text/javascript">
-jQuery(document).ready(function() { MyExternalObject.render({}); });
-</script>
+<html>
+<head>
+	<title>External Object</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+	<!-- bunch of other <link> <script> elements -->
+	<script type="text/javascript">
+		jQuery(document).ready(function() { ExternalObject.render({}); });
+	</script>
 </head>
+
 <body>
-<div id="bs-main" class="container"><div id="myexternalobject">
-	<!-- Content of your Object -->
-</div>
-</body></html>
+	<div id="bs-main" class="container"><div id="externalobject">
+		<!-- Content of your Object -->
+	</div>
+</body>
+</html>
 ```
 
 The subsequent sections break down the *structure* and key *elements* of our custom webpage.
@@ -237,7 +275,11 @@ row_id: "1"
 ```
 
 The accessible fields are the ones declared and visible in the *Business Object > Object Fields* list, accessible within the Simplicité UI:
-![](demoproduct-field-list.png)
+
+<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
+<img src="demoproduct-field-list.png" width="75%"/>
+</div>
+<!-- ![](demoproduct-field-list.png) -->
 
 #### Creating Business Objects
 
@@ -398,9 +440,12 @@ This approach ensures that your asynchronous operations are handled cleanly, red
 
 ## Final Result
 
-![](myexternalobject-products.png)
-
-![](myexternalobject-suppliers.png)
+<div style="display:flex; flex-direction:row; justify-content:center; width:100%; gap:16px;">
+<img src="myexternalobject-products.png" width="50%"/>
+<img src="myexternalobject-suppliers.png" width="50%"/>
+</div>
+<!-- ![](myexternalobject-products.png)
+![](myexternalobject-suppliers.png) -->
 
 <details>
 <summary>Java server-side Code</summary>
@@ -1126,7 +1171,10 @@ In order to build custom webpages using the **Vue.js** web framework, you have t
 The main specificities are to be considered when setting up your *server-side* code first, indeed you have to specify that you are gonna use **Vue.js** components in the rest of your resource files using the `BootstrapWebPage.appendVue()` function.
 
 All code snippets and examples are derived from an external page we created as a hands-on demonstration. The complete code for this page can be found at the end of the document.
-![](customvue-page.png)
+<div style="display:flex; flex-direction:row; width:100%; justify-content:center;">
+<img src="customvue-page.png" width="75%" />
+</div>
+<!-- ![](customvue-page.png) -->
 
 #### Server-Side 
 
