@@ -111,7 +111,7 @@ The webapp implementation we recommend are:
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
-> Only these up-to-date releases versions are tested and supported.
+> Only these up-to-date release versions are tested and supported.
 
 <h2 id="browsers">Web browsers</h2>
 
