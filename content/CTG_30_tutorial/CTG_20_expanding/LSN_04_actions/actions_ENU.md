@@ -36,3 +36,6 @@ To create an Action for the Product Business object, follow the steps below :
 </div>
 
 
+## Test the Action with the usertest User
+
+//TODO

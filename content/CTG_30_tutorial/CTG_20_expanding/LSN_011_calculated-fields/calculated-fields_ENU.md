@@ -91,7 +91,7 @@ Start by adding the **Product price** field in the [previsoulsy](/lesson/tutoria
 <img src="calculated.png" alt="calculated" width="50%"/>
 6. Click **Save**
 
-### Test the Calculated field with the usertest User
+## Test the Calculated field with the usertest User
 
 To test the Calculated field, follow the steps below :
 

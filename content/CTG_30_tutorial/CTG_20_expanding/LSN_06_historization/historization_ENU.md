@@ -39,7 +39,7 @@ To grant the RedoLog object to the TRN_SUPERADMIN Group, follow the steps below 
     <img src="update-module.png" alt="update-module" width="50%"/>
 8. Click **Save & Close**
 
-### Test the Change Log with the usertest User
+## Test the Change Log with the usertest User
 
 1. Clear the platform's cache and log in using *usertest*
     > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)

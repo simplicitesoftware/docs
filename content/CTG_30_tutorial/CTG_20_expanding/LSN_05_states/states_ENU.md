@@ -101,7 +101,7 @@ To create a State model for the the Order Business object, follow the steps belo
     A state model has been added to the TrnOrder Business object.
 </div>
 
-### Test the State model with the usertest User
+## Test the State model with the usertest User
 
 To test the State model, follow the steps below :
 

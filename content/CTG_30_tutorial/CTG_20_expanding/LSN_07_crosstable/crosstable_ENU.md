@@ -81,7 +81,7 @@ The Pivot table should be configured like so :
 
 <img src="config.png" alt="config" width="50%"/>
 
-### Test the Pivot table with the usertest User
+## Test the Pivot table with the usertest User
 
 1. Clear the platform's cache and log in using *usertest*
     > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
