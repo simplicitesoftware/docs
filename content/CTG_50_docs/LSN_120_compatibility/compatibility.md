@@ -102,7 +102,7 @@ The webapp implementation we recommend are:
 
 | ![](https://platform.simplicite.io/logos/logo125.png) | PostgreSQL | MySQL | Oracle   | SQLServer |
 |:-----------------------------------------------------:|------------|-------|----------|-----------|
-| **6.x**                                               | 12+        | 8+    | 19c+     | 2019+     |
+| **6.x**                                               | 13+        | 8+    | 19c+     | 2019+     |
 | **5.x**                                               | 11+        | 5.7+  | 12c+     | 2019+     |
 | Legacy 4.0                                            | 10+        | 5.5+  | 12c+     | 2016+     |
 | Legacy 3.2                                            | 9+         | 5.1+  | 11g+     | 2012+     |
@@ -111,7 +111,7 @@ The webapp implementation we recommend are:
 
 > **Note**: The above versions are not the **recommended** version but the **minimal** versions on which the platform can run.
 > Whichever database server you use, you **SHOULD** use an **up-to-date release version** instead of the above minimal versions.
-> Only these up-to-date releases versions are tested and supported.
+> Only these up-to-date release versions are tested and supported.
 
 <h2 id="browsers">Web browsers</h2>
 
