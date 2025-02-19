@@ -34,4 +34,55 @@ A state model defines the different statuses a business object can have and cont
 
 ## Creating a State model for the Order Business object
 
+### Adding a mandatory "State" field
+
+To add a State field to the Order Business object, follow the steps below :
+
+1. Add a **mandatory enumeration** field to the **TrnOrder** Business object in the [previsoulsy](/lesson/tutorial/expanding/field-area) created "Order" Field Area
+    > For a detailed guide on how to add a field, see [Getting started : Create field](/lesson/tutorial/getting-started/attribute)
+2. Fill in the Field fields like so : 
+    - Label : **State**
+    - Logical name : **trnOrdState** *should be auto-completed* 
+    - Physical name : **trn_ord_state** *should be auto-completed*
+    - Required : **Toggled**  
+    <img src="state-field.png" alt="state-field" width="25%"/>
+3. Click **Save**
+4. Hover over the created **State** field and click the **Edit** icon  
+    <img src="edit-field.png" alt="edit-field" width="50%"/>
+5. Click **Edit list**  
+    <img src="edit-list.png" alt="edit-list" width="50%"/>
+6. Fill in the List items like so :  
+     | Code | Value |
+     | ----------- | ----------- |
+     | P | Pending |
+     | C | Canceled |
+     | V | Validated |
+     | S | Shipped |  
+
+    *Click **Add** to add an element to the List*  
+    <img src="add-list.png" alt="add-list" width="25%"/>
+7. Click **Save**
+8. Close the Template editor
+
+### Creating the State model based on the "State field"
+
+To create a State model for the the Order Business object, follow the steps below :
+
+1. On the "TrnOrder" Business object's form, click **+ Add > Add State Model**  
+    <img src="add-state-model.png" alt="add-state-model" width="50%"/>
+2. Select the enumeration field that the State model is based on  
+    <img src="step1.png" alt="step1" width="50%"/>
+    > *By default "trnOrdState" is selected*
+3. Click **Next**
+4. Fill in the State Transition matrix like so : 
+    <img src="state-transition.png" alt="state-transition" width="50%"/>
+    ```mermaid
+    graph TD
+    Pending --> Canceled
+    Pending --> Validated 
+    Canceled --> Pending
+    Canceled --> Validated
+    Validated --> Canceled
+    Validated --> Shipped
+    ```
 

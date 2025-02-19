@@ -67,8 +67,9 @@ You should now be connected with **usertest**
     <img src="success-logon.png" alt="logon" width="50%"/>
 </div>
 
-***  
+ 
 [Next step : Add objects](/lesson/tutorial/expanding/addobjects)
+
 ***
 
 
