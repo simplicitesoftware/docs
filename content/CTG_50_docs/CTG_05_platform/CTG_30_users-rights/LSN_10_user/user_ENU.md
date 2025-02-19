@@ -1,7 +1,6 @@
-User
-====================
+# User
 
-### What is a User ?
+## What is a User ?
 
 Users belong to groups. There is a N:N link between a user and a group (a user can belong to N groups and a group can hold N users). The link object between a user and a group is a **responsibility**. It can be active/inactive and a start/end date.
 

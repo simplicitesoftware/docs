@@ -48,6 +48,6 @@ To grant the RedoLog object to the TRN_SUPERADMIN Group, follow the steps below 
 4. Click **Save**
 
 <div class="success">
-    <span>The "Change Log" list shows the change of quantity</span>
+    <p>The "Change Log" list shows the change in quantity</p>
     <img src="success.png" alt="logon" width="50%"/>
 </div>

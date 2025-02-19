@@ -4,7 +4,8 @@
         "description": ""
     },
     "ENU": {
-        "title": "2.7. Create a pivot table",
+        "title": "Pivot table",
         "description": ""
-    }
+    },
+    "display": "LINEAR"
   }
