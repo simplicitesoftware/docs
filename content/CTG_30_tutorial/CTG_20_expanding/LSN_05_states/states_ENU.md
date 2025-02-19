@@ -74,15 +74,59 @@ To create a State model for the the Order Business object, follow the steps belo
     <img src="step1.png" alt="step1" width="50%"/>
     > *By default "trnOrdState" is selected*
 3. Click **Next**
-4. Fill in the State Transition matrix like so : 
+4. Fill in the State transition matrix like so :   
     <img src="state-transition.png" alt="state-transition" width="50%"/>
-    ```mermaid
-    graph TD
-    Pending --> Canceled
-    Pending --> Validated 
-    Canceled --> Pending
-    Canceled --> Validated
-    Validated --> Canceled
-    Validated --> Shipped
-    ```
+5. Click **Next**
+6. Grant every State transition to the **TRN_SUPERADMIN** Group  
+    <img src="grant-states.png" alt="grant-states" width="50%"/>
+    > The *Associate Action* checkbox creates a button for each State transition
+7. Click **Next**
+8. Fill in the Translations (button labels) for the State transitions like so :
+ 	| | English | French |
+    | -- | --- | --- |
+    | TRN_ORD_STATE-C-P	| Back to Pending | Retour à En Attente |
+    | TRN_ORD_STATE-C-V	| Back to Validated  | Retour à Validée |
+    | TRN_ORD_STATE-P-C	| Cancel | Annuler |
+    | TRN_ORD_STATE-P-V	| Validate | Valider |
+    | TRN_ORD_STATE-V-C	| Cancel | Annuler |
+    | TRN_ORD_STATE-V-S	| Ship | Envoyer |
+
+    <img src="state-translation.png" alt="state-translation" width="50%"/>
+9. Click **Next**
+
+<div class="success">
+    A state model has been added to the TrnOrder Business object.
+</div>
+
+### Test the State model with the usertest User
+
+To test the State model, follow the steps below :
+
+1. Clear the platform's cache and log in using *usertest*
+    > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
+
+<div class="success">
+    <b>Expected result :</b>
+    <ul>
+        <li>In the Order menu</li>
+        <li>The list of States are visible</li>
+    </ul>
+    <img src="success-logon.png" alt="logon" width="50%"/>
+</div>
+
+2. Open or create an Order 
+    For a detailed step-by-step, see : [Adding data](/lesson/tutorial/expanding/relations#create-an-order)
+3. Click **Validate**  
+    <img src="validate-order.png" alt="validate" width="50%"/>
+4. Click **Yes**
+
+
+<div class="success">
+    <b>Expected result :</b>
+    <ul>
+        <li>The state field is updated with : "Validated"</li>
+        <li>The buttons "Cancel" and "Ship" are available</li>
+    </ul>
+    <img src="success-state.png" alt="logon" width="50%"/>
+</div>
 

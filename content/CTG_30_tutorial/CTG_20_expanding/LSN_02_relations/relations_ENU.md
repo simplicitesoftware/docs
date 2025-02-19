@@ -51,3 +51,66 @@ To create a link between the **Client** and **Order** business objects, follow t
 
 This will add the **TrnClient** joined fields to the template, allowing the Order object to reference client information.
 
+## Adding data to the Application
+
+### Log in using usertest
+Clear the platform's cache and log in using *usertest*
+    > For a detailed step-by-step see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
+
+<div class="success">
+    <b>Expected result :</b>
+    <ul>
+        <li>The Suppliers, Clients, Products, Orders are visible</li>
+        <li>For each object, the Create button is displayed</li>
+    </ul>
+    <img src="success-crud.png" alt="logon" width="50%"/>
+</div>
+
+### Create a Supplier
+
+1. Click the **Suppliers** menu
+2. Click **Create**
+3. Fill in the Supplier information like so :
+    - Code : **BIM**
+    - Name : **Bim Computers Ltd.**  
+    <img src="create-supplier.png" alt="create-supplier" width="50%"/>
+4. Click **Save**
+
+### Create a Product
+
+1. On the **BIM** Supplier's form, click **Create** on the linked Products list
+    <img src="create-product-panel.png" alt="create-product" width="50%"/>
+2. Fill in the Product information like so : 
+    - Reference : **REF001**
+    - Price : **100**
+    - Stock : **100**  
+    <img src="create-product.png" alt="create-product" width="50%"/>
+3. Click **Save**
+
+### Create a Client
+
+1. Click the **Clients** menu
+2. Click **Create**
+3. Fill in the Client information like so :
+    - First Name : **Robert**
+    - Last Name : **Zebuilder**  
+    <img src="create-client.png" alt="create-client" width="50%"/>
+4. Click **Save**
+
+### Create an Order
+
+1. Click the **Orders** menu
+2. Click **Create**
+3. Fill in the Order information like so : 
+    - Number : **1**
+    - Quantity : **10**
+    - Client First Name :
+        - Click the *Loupe* icon  
+            <img src="select-ref.png" alt="select-ref" width="25%"/>
+        - Select a Client  
+             <img src="select-client.png" alt="select-client" width="25%"/>
+    - Product Reference :
+        - Click the *Loupe* icon  
+        - Select a Product
+4. Click **Save**  
+<img src="create-order.png" alt="create-order" width="50%"/>
