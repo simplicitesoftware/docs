@@ -52,15 +52,17 @@ To add a State field to the Order Business object, follow the steps below :
 5. Click **Edit list**  
     <img src="edit-list.png" alt="edit-list" width="50%"/>
 6. Fill in the List items like so :  
-     | Code | Value |
-     | ----------- | ----------- |
-     | P | Pending |
-     | C | Canceled |
-     | V | Validated |
-     | S | Shipped |  
 
-    *Click **Add** to add an element to the List*  
-    <img src="add-list.png" alt="add-list" width="25%"/>
+| Code | Value |
+| ----------- | ----------- |
+| P | Pending |
+| C | Canceled |
+| V | Validated |
+| S | Shipped |  
+
+*Click **Add** to add an element to the List*  
+<img src="add-list.png" alt="add-list" width="25%"/>
+
 7. Click **Save**
 8. Close the Template editor
 
@@ -81,17 +83,18 @@ To create a State model for the the Order Business object, follow the steps belo
     <img src="grant-states.png" alt="grant-states" width="50%"/>
     > The *Associate Action* checkbox creates a button for each State transition
 7. Click **Next**
-8. Fill in the Translations (button labels) for the State transitions like so :
- 	| | English | French |
-    | -- | --- | --- |
-    | TRN_ORD_STATE-C-P	| Back to Pending | Retour à En Attente |
-    | TRN_ORD_STATE-C-V	| Back to Validated  | Retour à Validée |
-    | TRN_ORD_STATE-P-C	| Cancel | Annuler |
-    | TRN_ORD_STATE-P-V	| Validate | Valider |
-    | TRN_ORD_STATE-V-C	| Cancel | Annuler |
-    | TRN_ORD_STATE-V-S	| Ship | Envoyer |
-
+8. Fill in the Translations (button labels) for the State transitions like so :  
     <img src="state-translation.png" alt="state-translation" width="50%"/>
+
+| | English | French |
+| -- | --- | --- |
+| TRN_ORD_STATE-C-P	| Back to Pending | Retour à En Attente |
+| TRN_ORD_STATE-C-V	| Back to Validated  | Retour à Validée |
+| TRN_ORD_STATE-P-C	| Cancel | Annuler |
+| TRN_ORD_STATE-P-V	| Validate | Valider |
+| TRN_ORD_STATE-V-C	| Cancel | Annuler |
+| TRN_ORD_STATE-V-S	| Ship | Envoyer |
+
 9. Click **Next**
 
 <div class="success">
