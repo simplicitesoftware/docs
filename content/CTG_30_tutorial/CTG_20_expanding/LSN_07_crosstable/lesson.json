@@ -6,5 +6,6 @@
     "ENU": {
         "title": "2.7. Create a pivot table",
         "description": ""
-    }
+    },
+    "display": "LINEAR"
   }
