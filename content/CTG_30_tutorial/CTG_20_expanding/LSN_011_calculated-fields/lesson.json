@@ -1,11 +1,11 @@
 {
-  "tags": ["lvl1"],
   "FRA": {
     "title": "Champs calculés",
     "description": ""
   },
   "ENU": {
-    "title": "Calculated fields",
+    "title": "2.8. Add a calculated field",
     "description": ""
-  }
+  },
+  "display": "LINEAR"
 }
