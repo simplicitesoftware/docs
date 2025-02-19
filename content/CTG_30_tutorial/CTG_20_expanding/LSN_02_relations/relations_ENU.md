@@ -78,12 +78,12 @@ Clear the platform's cache and log in using *usertest*
 
 ### Create a Product
 
-1. On the **BIM** Supplier's form, click **Create** on the linked Products list
+1. On the **BIM** Supplier's form, click **Create** on the linked Products list  
     <img src="create-product-panel.png" alt="create-product" width="50%"/>
 2. Fill in the Product information like so : 
     - Reference : **REF001**
     - Price : **100**
-    - Stock : **100**  
+    - Stock : **100**   
     <img src="create-product.png" alt="create-product" width="50%"/>
 3. Click **Save**
 
@@ -110,7 +110,7 @@ Clear the platform's cache and log in using *usertest*
         - Select a Client  
              <img src="select-client.png" alt="select-client" width="25%"/>
     - Product Reference :
-        - Click the *Loupe* icon  
+        - Click the *magnifying glass* icon  
         - Select a Product
 4. Click **Save**  
 <img src="create-order.png" alt="create-order" width="50%"/>
