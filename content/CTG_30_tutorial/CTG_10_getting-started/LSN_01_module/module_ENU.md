@@ -48,10 +48,4 @@ To create a module, follow the steps below :
     <img src="success.png" alt="success" width="50%"/>
 </div>
 
-<a href="/lesson/tutorial/getting-started/object" class="btn btn-primary">Next step</a>
-
-<form action="/lesson/tutorial/getting-started/object">
-    <input type="submit" value="Next Step" />
-</form>
-
-## Next step : [Create a Business object](/lesson/tutorial/getting-started/object)
+[Next step : Create a Business object](/lesson/tutorial/getting-started/object)

@@ -39,4 +39,4 @@ To create a Business object, follow the steps below :
 	<img src="success.png" alt="success" width="50%"/>
 </div>
 
-## Next step : [Create a Field](/lesson/tutorial/getting-started/attribut)
+[Next step : Create a Field](/lesson/tutorial/getting-started/attribut)

@@ -38,4 +38,4 @@ To create a field, follow the steps below :
     <img src="success.png" alt="success" width="50%"/>
 </div>
 
-## Next step : [Create a User](/lesson/tutorial/getting-started/user)
+[Next step : Create a User](/lesson/tutorial/getting-started/user)
