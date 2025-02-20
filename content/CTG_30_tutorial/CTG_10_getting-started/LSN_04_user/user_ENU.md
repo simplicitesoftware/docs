@@ -20,7 +20,7 @@ To create a test user, follow the steps below :
 5. Click **Next**
 6. Create a Responsibility, click **Next**  
     <img src="resp.png" alt="resp" width="50%"/>
-    > For more information about Domains, see the [Responsability](/lesson/docs/core/objects/responsability) section. 
+    > For more information about Domains, see the [Responsibility](/lesson/docs/core/objects/responsibility) section. 
 7. Choose a new group :
     - For now, select **no**
 8. Click **Next**
@@ -67,7 +67,38 @@ You should now be connected with **usertest**
     <img src="success-logon.png" alt="logon" width="50%"/>
 </div>
 
- 
+## Adding designer to TRN_SUPERADMIN
+
+Before moving on, and to make testing / configuration easier, we will add the `designer` (*or the user used to design the application*) user to the **TRN_SUPERADMIN** Group. 
+
+To do so, follow the steps below : 
+
+1. Click on **Designer** in the top right corner of the App, and open the **Designer** user   
+    <img src="open-designer.png" alt="open-designer" width="50%"/>
+    > You can also access the user's form via the **Users and rights > Users > Show all** menu
+2. In the **Responsibilities** list linked to the User, click **Associate Groups**  
+    <img src="designer-associate.png" alt="designer-associate" width="50%"/>
+3. Select **TRN_SUPERADMIN** and click **Apply the selection**  
+    <img src="designer-group.png" alt="designer-group" width="50%"/>
+4. On the **Create Responsibility** pop-up, click **Save & Close**
+5. Empty the platform's cache :
+    - Via the header menu :
+        - Click on the menu in the top-right corner, click **Clear cache**  
+        <img src="shortcut.png" alt="shortcut" width="50%"/>
+        - Click **Clear all sessions and all server caches**  
+        <img src="clear-cache.png" alt="clear-cache" width="50%"/>
+    - Via the keyboard shortcut : [ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ]
+6. Log back in using `designer` (*or the user used to design the application*)
+
+<div class="success">
+    <b>Expected result :</b>
+    <ul>
+        <li>"My App" Menu is visible</li>
+        <li>The list of Suppliers is displayed when the menu is clicked</li>
+    </ul>
+    <img src="designer-success.png" alt="designer-success" width="50%"/>
+</div>
+
 [Next step : Add objects](/lesson/tutorial/expanding/addobjects)
 
 ***
