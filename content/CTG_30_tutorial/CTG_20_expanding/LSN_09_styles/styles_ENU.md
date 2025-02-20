@@ -1,10 +1,10 @@
-Style customization
+<!--Style customization
 ====================
 
 Theme and theme styles
 ---------------------------
 
-A theme is an object that defines the logo and the main colors of the interface.It is possible to add a custom stylesheet in LESS or CSS format to the theme which will be applied globally.
+A theme is an object that defines the logo and the main colors of the interface. It is possible to add a custom stylesheet in LESS or CSS format to the theme which will be applied globally.
 
 
 The theme must be associated to a scope.
@@ -35,3 +35,29 @@ Exercise
     - via list items for the icons
 
 *To avoid typing errors when entering field names or list codes, it is recommended to use the "copy" function of the modeler*.
+-->
+
+# Building the "Order Management" Training App : Adding icons and a theme
+
+> Prerequisite : [The Order has a state model](/lesson/tutorial/expanding/relations)
+
+## What is a Theme ?
+
+A theme defines the logo and the main colors of the interface...[Learn more](/lesson/docs/platform/user-interface/theme)
+
+## Creating a Theme
+
+To create a Theme, follow the steps below :
+
+1. In the **User interface > Themes** menu, click **Create**  
+    <img src="create-theme.png" alt="create-theme" width="50%"/>
+2. Fill in the Theme's information like so : 
+    - Name : **TrnTheme**
+    - Base theme : **Light**
+    - Module Name : **Training**
+    - Header logo : 
+<a href="header-logo.png" download>
+  Header logo
+</a>
+
+

@@ -1,16 +1,11 @@
 {
-  "tags": ["lvl1"],
   "FRA": {
       "title": "Styles",
       "description": ""
   },
   "ENU": {
-      "title": "Styles",
+      "title": "2.9. Adding icons and a theme",
       "description": ""
   },
-  "levels":[
-    {
-      "rank":"DESIGNER-1"
-    }
-  ]
+  "display": "LINEAR"
 }
