@@ -39,7 +39,7 @@ Exercise
 
 # Building the "Order Management" Training App : Adding icons and a theme
 
-> Prerequisite : [The Order has a state model](/lesson/tutorial/expanding/relations)
+> Prerequisite : [The Order has a state model](/lesson/tutorial/expanding/relations) and a [home page](/lesson/tutorial/expanding/views) exists
 
 ## What is a Theme ?
 
@@ -47,17 +47,38 @@ A theme defines the logo and the main colors of the interface...[Learn more](/le
 
 ## Creating a Theme
 
-To create a Theme, follow the steps below :
+To create a Theme and add it to the App, follow the steps below :
 
 1. In the **User interface > Themes** menu, click **Create**  
-    <img src="create-theme.png" alt="create-theme" width="50%"/>
+    <img src="theme-create.png" alt="create-theme" width="50%"/>
 2. Fill in the Theme's information like so : 
     - Name : **TrnTheme**
-    - Base theme : **Light**
+    - Base theme : **Dark**
     - Module Name : **Training**
     - Header logo : 
 <a href="header-logo.png" download>
   Header logo
-</a>
+</a>  
+    <img src="theme-form.png" alt="theme-form" width="50%"/>
 
+3. Click **Save**  
+4. In the **User interface > Views > Home page** menu, open **TrainingScope**
+5. In the **Home page** tab, click on the *magnifying glass* button next to the **Theme name** field  
+    <img src="theme-select.png" alt="theme-select" width="50%"/>
+6. Select the previously created **TrnTheme** theme  
+    <img src="theme-pick.png" alt="theme-pick" width="50%"/>
+7. Click **Save**
 
+## Adding icons to Business objects
+
+## Styling the Order's state field
+
+## Test the Theme with the usertest User
+
+1. Clear the platform's cache and log in using *usertest*
+    > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
+
+<div class="success">
+    <p>The new Theme and header logo are applied to the App</p>
+    <img src="success.png" alt="logon" width="50%"/>
+</div>
