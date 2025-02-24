@@ -102,6 +102,6 @@ t.row_id IN (
 2. Open a Supplier
 
 <div class="success">
-    <p>The "Supplier's customers" panel is visible and contains the list of client's that have ordered a Product from the Supplier</p>
+    <p>The "Supplier's customers" panel is visible and contains the list of clients that have ordered a Product from the Supplier</p>
     <img src="success.png" alt="success" width="50%"/>
 </div>

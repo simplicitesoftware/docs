@@ -10,10 +10,10 @@ In Simplicité, fields are configurable attributes of business objects (mandator
 
 To create a field, follow the steps below :
 
-1. Click **Edit form** on the Business object's form (this will open the **template editor**)
+1. Click **Edit form** on the Business object's form (this will open the **template editor**)  
     <img src="edit-form.png" alt="field-area" width="50%"/>
 	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/docs/core/objects/business-objects#creation-assistant-via-the-modeler)
-2. Select the first **Template**  
+2. Select the first **Template**    
     <img src="template.png" alt="template" width="25%"/>
 3. Hover over the empty **Field Area** and click on the `+`
     > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)

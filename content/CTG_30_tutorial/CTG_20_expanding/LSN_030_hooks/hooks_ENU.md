@@ -74,17 +74,17 @@ To add this business rule, override the `postValidate` hook by following the ste
 	<img src="edit-code.png" alt="edit-code" width="50%"/>	
 3. Override the `postValidate` method with the following implementation :
 	> The `postValidate` hook is called after the platform's `validate()` and is used to to add validation rules. For more information, see [Hooks]()
-	```java 
-	@Override
-	public List<String> postValidate() {
-		List<String> msgs = new ArrayList<String>();
-		if (getField("trnOrdQuantity").getInt(0) <= 0){
-			// Add an error message
-			msgs.add(Message.formatError("Invalid quantity", null, "trnOrdQuantity"));
-		}
-		return msgs;
+```java 
+@Override
+public List<String> postValidate() {
+	List<String> msgs = new ArrayList<String>();
+	if (getField("trnOrdQuantity").getInt(0) <= 0){
+		// Add an error message
+		msgs.add(Message.formatError("Invalid quantity", null, "trnOrdQuantity"));
 	}
-	```
+	return msgs;
+}
+```
 4. Click **Save** or use the keyboard shortcut : <kbd>Ctrl</kbd>+<kbd>S</kbd>
 
 ### The order quantity cannot exceed the product's amount of stock  
