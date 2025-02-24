@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Contraintes",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Constraints",
         "description": ""
     }
