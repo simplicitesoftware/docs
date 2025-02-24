@@ -1,6 +1,5 @@
 {
-    "display": "TUTO",
-    "tags": ["lvl2"],
+    "published": false,
     "FRA": {
         "title": "Listes liées",
         "description": ""
