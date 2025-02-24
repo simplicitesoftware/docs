@@ -1,11 +1,11 @@
 {
-  "tags": ["lvl1"],
   "FRA": {
     "title": "Publication",
     "description": ""
   },
   "ENU": {
-    "title": "Publication",
+    "title": "2.13. Customizing exports",
     "description": ""
-  }
+  },
+  "display": "LINEAR"
 }
