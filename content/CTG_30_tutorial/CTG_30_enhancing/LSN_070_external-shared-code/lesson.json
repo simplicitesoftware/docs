@@ -1,5 +1,4 @@
 {
-    "published": false,
     "ENU": {
         "title": "Shared code",
         "description": ""
@@ -8,6 +7,6 @@
         "title": "Code partagé",
         "description": ""
     },
-    "published": true,
+    "published": false,
     "display":"LINEAR"
   }

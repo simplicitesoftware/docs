@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Mapping",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Mapping",
         "description": ""
     },
-    "published": true
+    "published": false
   }

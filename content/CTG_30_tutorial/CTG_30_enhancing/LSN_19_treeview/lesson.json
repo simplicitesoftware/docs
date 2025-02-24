@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Arborescences",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Treeviews",
         "description": ""
     },
-    "published": true
+    "published": false
 }

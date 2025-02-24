@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Processus métier",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Business process",
         "description": ""
     },
-    "published": true
+    "published": false
 }

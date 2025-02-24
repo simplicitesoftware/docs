@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Feuille de temps",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Timesheet",
         "description": ""
     },
-    "published": true
+    "published": false
   }

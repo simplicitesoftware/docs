@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Place map",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Place map",
         "description": ""
     },
-    "published": true
+    "published": false
   }

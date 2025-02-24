@@ -1,5 +1,4 @@
 {
-    "published": false,
     "FRA": {
         "title": "Agenda",
         "description": ""
@@ -8,5 +7,5 @@
         "title": "Agenda",
         "description": ""
     },
-    "published": true
+    "published": false
   }
