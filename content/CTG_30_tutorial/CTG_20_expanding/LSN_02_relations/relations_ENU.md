@@ -15,7 +15,7 @@ To create a link between the **Supplier** Business object and the **Product** Bu
     <img src="edit-form.png" alt="edit-form" width="10%"/>
 4. Hover over the **Field Area** and click on the `+`  
     <img src="field-area.png" alt="field-area" width="50%"/>
-    > For more information about Field Areas, see [Field Area](lesson/docs/core/objects/field-area)  
+    > For more information about Field Areas, see [Field Area](lesson/docs/platform/user-interface/templating/fields-areas)  
 5. Click **Business Object**
 6. In the search box, enter **TrnSupplier**  
     <img src="search-supplier.png" alt="search" width="25%"/>

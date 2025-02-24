@@ -1,11 +1,7 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Utilisateurs",
-        "description": ""
-    },
-    "ENU": {
-        "title": "Users",
+    "ANY": {
+        "title": "Responsibilities",
         "description": ""
     }
 }

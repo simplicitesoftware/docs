@@ -25,22 +25,3 @@ Enfin, les **profils** permettent d'imbriquer des groupes dans d'autres groupes.
 <div class="warning">Attention, toute modification d'**habilitation** doit donner lieu à un vidage du cache pour être prise en compte par la plateforme.</div>
 
 *Cela est expliqué plus en détail plus en avant, Simplicité maintient en cache un certain nombre d'informations pour des raisons de performances, dont l'ensemble du modèle de droits qui est coûteux à calculer, d'où la nécessité de vider le cache lorsqu'on modifie les habilitations. En revanche, si l'on ne modifie que les responsabilités, il suffit que l'utilisateur se re-connecte pour que ses nouveaux droits soient pris en compte.*
-
-Exercice: Création d'un utilisateur de test
----------------------------
-
-1. Vider le cache (menu en haut à droite > vider le cache > toutes les sessions et serveur ([ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ])
-2. Scope "Gestion des droits" > Domaine "Habilitation" > Utilisateurs > Tout voir > Créer
-3. Créer un utilisateur de test "usertest", et copier le mot de passe qui s'affiche lors de la création
-4. Cliquer sur le bouton "Activer" pour le rendre actif
-5. Dans l'onglet "Responsabilité", cliquer sur le bouton "Associer", et sélectionner le groupe **TRN_SUPERADMIN** dans la fenêtre qui s'affiche.
-6. Se reconnecter en tant que "usertest"
-7. Vérifier l'accès à l'objet Supplier
-
-Félicitations! Vous avez créé une application!
-
-
-
-Pour approfondir : Création d'un utilisateur "lecture seule"
----------------------------
-* Créer un utilisateur "lecteur" associé à un groupe **TRN_READONLY** habilité à un domaine **TrnDomainReadOnly** dans lequel l'utilisateur accède à la liste des **Fournisseurs** en lecture seule.

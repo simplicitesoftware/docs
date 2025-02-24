@@ -4,7 +4,7 @@
 
 ## What is a User ?
 
-Users belong to Groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](lesson/docs/core/objects/user)
+Users belong to Groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](/lesson/docs/platform/users-rights/user)
 
 ## Creating a User
 
@@ -20,7 +20,7 @@ To create a test user, follow the steps below :
 5. Click **Next**
 6. Create a Responsibility, click **Next**  
     <img src="resp.png" alt="resp" width="50%"/>
-    > For more information about Domains, see the [Responsibility](/lesson/docs/core/objects/responsibility) section. 
+    > For more information about Domains, see the [Responsibility](/lesson/docs/platform/users-rights/responsibilities) section. 
 7. Choose a new group :
     - For now, select **no**
 8. Click **Next**
