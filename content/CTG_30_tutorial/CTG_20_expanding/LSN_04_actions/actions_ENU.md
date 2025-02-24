@@ -38,4 +38,15 @@ To create an Action for the Product Business object, follow the steps below :
 
 ## Test the Action with the usertest User
 
-//TODO
+
+1. Clear the platform's cache and log in using *usertest*
+    > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
+
+2. Open an existing Product
+
+<div class="success">
+    <p>The "Increase stock" button is visible</p>
+    <img src="success-btn.png" alt="success" width="50%"/>
+    <p>An alert is displayed when clicked</p>
+    <img src="success-action.png" alt="success" width="50%"/>
+</div>

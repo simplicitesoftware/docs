@@ -55,10 +55,7 @@ To create a Theme and add it to the App, follow the steps below :
     - Name : **TrnTheme**
     - Base theme : **Dark**
     - Module Name : **Training**
-    - Header logo : 
-<a href="header-logo.png" download>
-  Header logo
-</a>  
+    - Header logo : <img src="header-logo.png" alt="header-logo" width="15%"/>  
     <img src="theme-form.png" alt="theme-form" width="50%"/>
 3. Click **Save**  
 4. In the **User interface > Views > Home page** menu, open **TrainingScope**

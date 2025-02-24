@@ -97,7 +97,9 @@ To test the Calculated field, follow the steps below :
 
 1. Clear the platform's cache and log in using *usertest*
     > For a detailed step-by-step, see : [Testing the User](/lesson/tutorial/getting-started/user#activating-and-testing-the-user)
-2. Open an order and click **Save**
+2. Open or create an order
+3. Change the value in the **Quantity** field
+4. Click **Save**
 
 <div class="success">
     <b>Expected result :</b>

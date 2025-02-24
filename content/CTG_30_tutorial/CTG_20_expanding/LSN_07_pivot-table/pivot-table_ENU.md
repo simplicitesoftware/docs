@@ -10,7 +10,7 @@ Create a pivot table that summarizes the number of orders by product, supplier (
 
 # Building the "Order Management" Training App : Creating a Pivot table
 
-> Prerequisite : [The Supplier, Product, Client and Order objects are linked together](/lesson/tutorial/expanding/relations)
+> Prerequisite : [The Order object has a state model](/lesson/tutorial/expanding/states)
 
 ## What is a Pivot table ?
 
