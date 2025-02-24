@@ -19,7 +19,7 @@ The hooks to be implemented are **loadServiceConfig**, **countService()**, **sea
 ### How to create a Service Object ?
 
 1. Create a [business object](/lesson/docs/core/objects/business-objects) whose table is **service** with no timestamp (setting the **Timestamp** attribute of the object to the "None"). A read-only function is sufficient for this object. 
-<img src="serviceobject1.png" alt="service object" width="75%"/>
+<img src="serviceobject1.png" alt="service object" width="50%"/>
 2. Add as many attributes as data sent by the service. The object attribute (logical or physical) names must match the key names of the data received from the REST service. 
 3. Implement the **countService** and **searchService** hooks to display the list. 
 Implement the **selectService** hook to display the form, create and update when it is possible.
