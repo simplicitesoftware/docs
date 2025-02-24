@@ -1,11 +1,11 @@
 {
-    "tags": ["lvl1"],
     "FRA": {
         "title": "Liens virtuels",
         "description": ""
     },
     "ENU": {
-        "title": "Virtual links",
+        "title": "3.1. Creating virtual links",
         "description": ""
-    }
+    },
+    "display": "LINEAR"
   }
