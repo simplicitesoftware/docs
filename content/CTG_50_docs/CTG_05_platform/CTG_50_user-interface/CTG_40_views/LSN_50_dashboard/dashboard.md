@@ -20,10 +20,12 @@ A dashboard is a visual interface that provides an overview of key data, metrics
 
 To create a dashboard, follow the steps below:  
 1. If you have DASHBOARD_MAKER rights, a dashboard icon will appear in the page header.  
-It allows you to create your dashboard. Click on create.  
-<img src="dashboard1.png" alt="create dashboard" width="50%"/>
-2. Give a label. The dashboard editor is open. 
-<img src="dashboard2.png" alt="dashboard editor" width="50%"/>
+It allows you to create your dashboard. Click on create.    
+  <img src="dashboard1.png" alt="create dashboard" width="50%"/>
+
+2. Give a label. The dashboard editor is open.   
+  <img src="dashboard2.png" alt="dashboard editor" width="50%"/>
+
 You have differents choices : 
 - Pivot : this will give you access to all the crosstables available to you  
  <img src="dashboard3.png" alt="dashboard pivot" width="50%"/>
@@ -34,8 +36,10 @@ You have differents choices :
   Choose one and place it.   
 <img src="dashboard5.png" alt="dashboard widget![alt text](image.png)" width="50%"/>  
 - Preview : to preview your dashboard  
-- Up arrow icon : automatically arrange your dashboard  
+- Up arrow icon : automatically organize your dashboard  
 - Save : to save your dashboard  
 - Close : to close your dashboard   
-3. Once you have chosen the type of element (pivot, chart or widget), click on the element and drag it to the position of your choice.  
+
+3. Once you have chosen the type of element (pivot, chart or widget), click on the element and drag it to the position of your choice
+
 4. Save your dashboard 
