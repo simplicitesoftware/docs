@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Module",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Module",
         "description": ""
     }

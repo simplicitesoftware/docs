@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "2.2. Créer relations",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.2. Creating links",
         "description": ""
     }

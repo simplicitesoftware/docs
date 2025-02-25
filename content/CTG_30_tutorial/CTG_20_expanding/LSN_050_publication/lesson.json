@@ -1,9 +1,5 @@
 {
-  "FRA": {
-    "title": "Publication",
-    "description": ""
-  },
-  "ENU": {
+  "ANY": {
     "title": "2.13. Customizing exports",
     "description": ""
   },

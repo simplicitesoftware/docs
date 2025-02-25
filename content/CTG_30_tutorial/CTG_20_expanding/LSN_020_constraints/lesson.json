@@ -1,10 +1,6 @@
 {
   "display": "LINEAR",
-  "FRA": {
-    "title": "Contraintes",
-    "description": ""
-  },
-  "ENU": {
+  "ANY": {
     "title": "2.11. Configuring business rules",
     "description": ""
   }

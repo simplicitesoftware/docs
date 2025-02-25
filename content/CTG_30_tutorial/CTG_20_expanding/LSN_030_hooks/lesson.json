@@ -1,10 +1,6 @@
 {
   "display": "LINEAR",
-  "FRA": {
-    "title": "Hooks",
-    "description": ""
-  },
-  "ENU": {
+  "ANY": {
     "title": "2.12. Coding business rules",
     "description": ""
   }

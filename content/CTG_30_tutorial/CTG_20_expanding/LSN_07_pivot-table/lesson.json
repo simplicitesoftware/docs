@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Tableaux croisés",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.7. Creating a pivot table",
         "description": ""
     },

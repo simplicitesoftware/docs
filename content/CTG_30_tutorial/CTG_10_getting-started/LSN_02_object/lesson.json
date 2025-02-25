@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "1.2. Créer un Objet métier",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "1.2. Creating a Business object",
         "description": ""
     }

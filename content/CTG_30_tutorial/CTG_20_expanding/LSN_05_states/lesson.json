@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Créer diagramme d'états",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.5. Creating a state model",
         "description": ""
     },

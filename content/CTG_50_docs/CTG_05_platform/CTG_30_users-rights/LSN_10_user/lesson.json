@@ -1,11 +1,7 @@
 {
     "display": "LINEAR",
-    "ENU": {
+    "ANY": {
         "title": "User",
-        "description": ""
-    },
-    "FRA": {
-        "title": "Utilisateur",
         "description": ""
     }
 }

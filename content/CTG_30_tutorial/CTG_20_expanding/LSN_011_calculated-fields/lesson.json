@@ -1,9 +1,5 @@
 {
-  "FRA": {
-    "title": "Champs calculés",
-    "description": ""
-  },
-  "ENU": {
+  "ANY": {
     "title": "2.10. Adding a calculated field",
     "description": ""
   },

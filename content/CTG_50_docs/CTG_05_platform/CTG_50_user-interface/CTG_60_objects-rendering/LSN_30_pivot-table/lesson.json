@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Tableaux croisés",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Pivot table",
         "description": ""
     },

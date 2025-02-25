@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "2.1. Ajouter des objets",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.1. Adding objects",
         "description": ""
     }

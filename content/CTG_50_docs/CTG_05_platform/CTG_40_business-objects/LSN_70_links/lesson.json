@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Liens",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Links",
         "description": ""
     }

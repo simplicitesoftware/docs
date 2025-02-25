@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Créer zones d'attributs",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.3. Structuring forms",
         "description": ""
     }

@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Historisation",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "2.6. Adding a change log",
         "description": ""
     },

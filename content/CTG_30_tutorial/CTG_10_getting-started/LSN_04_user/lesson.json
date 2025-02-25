@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "1.4. Créer un Utilisateur",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "1.4. Creating a User",
         "description": ""
     }

@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Attributs",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Fields",
         "description": ""
     }
