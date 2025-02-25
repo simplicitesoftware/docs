@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Objets métier",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Business objects",
         "description": ""
     }
