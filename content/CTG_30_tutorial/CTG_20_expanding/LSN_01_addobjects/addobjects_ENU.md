@@ -12,6 +12,8 @@ Follow the steps in [Getting started : Create object](/lesson/tutorial/getting-s
 - Module : **Training**
 - Prefix : **prd**
 
+<img src="product-form.png" alt="product-form" width="50%"/>
+
 ### Product fields 
 Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-started/attribute) to add the following fields to the Product Business object : 
 
@@ -24,6 +26,11 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Description** | Long text | trnPrdDescription | trn_prd_description | no | no |
 | **Photo** | Image | trnPrdPhoto | trn_prd_photo | no | no |
 
+<img src="product-fields.png" alt="product-fields" width="50%"/>
+
+> The object's functional key is highlighted in red
+
+
 ## Create the Client Business object
 
 ### Client definition
@@ -32,6 +39,8 @@ Follow the steps in [Getting started : Create object](/lesson/tutorial/getting-s
 - Table : **trn_client**
 - Module : **Training**
 - Prefix : **cli**
+
+<img src="client-form.png" alt="client-form" width="50%"/>
 
 ### Client fields 
 Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-started/attribute) to add the following fields to the Client Business object : 
@@ -44,6 +53,8 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Telephone** | Phone number | trnCliTelephone | trn_cli_telephone | no | no |
 | **Address** | Long text | trnCliAddress | trn_cli_address | no | no |
 
+<img src="client-fields.png" alt="client-fields" width="50%"/>
+
 ## Create the Order Business object
 
 ### Order definition
@@ -53,6 +64,8 @@ Follow the steps in [Getting started : Create object](/lesson/tutorial/getting-s
 - Module : **Training**
 - Prefix : **ord**
 
+<img src="order-form.png" alt="order-form" width="50%"/>
+
 ### Order fields 
 Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-started/attribute) to add the following fields to the Order Business object : 
 
@@ -61,6 +74,8 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Number** | Integer | trnOrdNumer | trn_ord_number | yes | yes |
 | **Quantity** | Short text | trnOrdQuantity | trn_ord_quantity | no | yes |
 | **Date** | Date | trnOrdDate | trn_ord_date | no | no |
+
+<img src="order-fields.png" alt="order-fields" width="50%"/>
 
 ## Complete the Supplier Business object
 
@@ -73,5 +88,7 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Telephone** | Phone number | trnSupTelephone | trn_sup_telephone | no | no |
 | **Logo** | Image | trnSupLogo | trn_sup_logo | no | no |
 | **Website** | URL | trnSupWebsite | trn_sup_website | no | no |
+
+<img src="supplier-fields.png" alt="supplier-fields" width="50%"/>
 
 [Next step : Creating links between the Business objects](/lesson/tutorial/expanding/relations)
