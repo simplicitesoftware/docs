@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Habilitation",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Users and rights",
         "description": ""
     }
