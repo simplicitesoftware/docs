@@ -2,22 +2,32 @@
 
 ## What is a User ?
 
-Users belong to groups. There is a N:N link between a user and a group (a user can belong to N groups and a group can hold N users). The link object between a user and a group is a **responsibility**. It can be active/inactive and a start/end date.
+In Simplicité, a User represents an individual or system entity that has access to the platform. Users interact with the system based on their responsibilities, which determine their access to business objects and system functionalities.
 
-Business objects present functions: 
-- **CRUD functions (Create / Read / Update / Delete)** define the type of access to the objects
-- **action functions** define access to specific actions (e.g. via a button)
+A user can be:
+- A human user (e.g., an employee, administrator, or external partner)
+- A system user (e.g., a web service account with API access)
+- Etc.
 
-Groups are granted to functions. Therefore, a N:N link exists between a group and a function, The link object is called a **grant**.
+## Key Characteristics of a User 
 
-Finally, **profiles** allow to create a collection of groups.
+1. Authentication & Access
+    - By default, users log in using a **username and password**
+    - Authentication can be enhanced with [multi-factor authentication](/lesson/docs/authentication/internal-auth) or [third-party authentication providers](/lesson/docs/authentication/oauth2)
+    - Access to business objects and functionalities is governed by responsibilities
+2. User Status 
+    - Enabled: The user can log in and access the platform
+    - Disabled: The user exists but cannot log in
+    - Web services only: The user cannot log in but can access the platform's data through API calls
 
-<div class="warning">Warning, when updating **grants**, the server's cache must be cleared for it to be acknowledged by the platform.</div>
+## Configuration objects linked to a User
 
-### How to create a User ?
+- [Dashboards](/lesson/docs/platform/user-interface/views/dashboard) : List of Dashboards created by the user
+- [Responsibilites](/lesson/platform/user-rights/responsibilites) : List of a user's Responsiblities
 
-#### Minimal configuration suggestion : 
-| Field | Description |
-| ----- | ----------- |
-| **Field1** | Description |
-| **Field2** | Description |
+## Learn more
+
+- [Internal authentication](/lesson/docs/authentication/internal-auth)
+- [Authentication providers](/lesson/docs/authentication/auth-providers)
+- [OAuth2](/lesson/docs/authentication/oauth2)
+- [Custom user object](https://community.simplicite.io/t/custom-user-object)
