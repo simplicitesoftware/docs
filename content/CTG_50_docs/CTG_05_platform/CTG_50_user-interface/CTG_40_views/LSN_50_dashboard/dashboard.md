@@ -32,14 +32,19 @@ You have differents choices :
    <img src="dashboard4.png" alt="dashboard chart" width="50%"/>
    - Widget : this will give you access to all the widgets (specific external objects) available to you.    
      Choose one and place it.   
-   <img src="dashboard5.png" alt="dashboard widget" width="50%"/>  
+   <img src="dashboard5.png" alt="dashboard widget" width="50%"/>
+   - Filter : allows to add a search bar (new view item) with optional time period and fields.
+      - The item triggers a new event with user's filters { fromDate, toDate, fields... }.  
+      - The filters are applied to lists, charts, and pivot tables (having a date/period or matching filtered fields).  
+        You can add filters on object attributes to this period filter bar by clicking on Add Filter.       
+    <img src="dashboard8.png" alt="dashboard widget" width="50%"/>  
    - Preview : to preview your dashboard  
    - Up arrow icon : automatically arrange your dashboard  
    - Save : to save your dashboard  
    - Close : to close your dashboard   
-3. Once you have chosen the type of element (pivot, chart or widget), click on the element and drag it to the position of your choice.  
-4. Save your dashboard
-5. If it exists Dashboard sharing GROUPS with DASHBOARD right, you can share your dashboard with these groups who will be able to read it.     
+1. Once you have chosen the type of element (pivot, chart or widget), click on the element and drag it to the position of your choice.  
+2. Save your dashboard
+3. If it exists Dashboard sharing GROUPS with DASHBOARD right, you can share your dashboard with these groups who will be able to read it.     
  <img src="dashboard7.png" alt="dashboard widget" width="50%"/>   
 A Share button in the Dashboard editor allows you to select the dashboard sharing groups of your choice.   
 Click on Apply.  
@@ -54,7 +59,7 @@ Several additional options are available for this right:
     - The item triggers a new event with user's filters { fromDate, toDate, fields... }.  
     - The filters are applied to lists, charts, and pivot tables (having a date/period or matching filtered fields).  
     - External objects must implement a new handler when they are concerned by filters.  
-    - A new front-end helper is available to apply view's filters to a business object: `obj.applyFilters(filters`.    
+    - A new front-end helper is available to apply view's filters to a business object: `obj.applyFilters(filters)`.    
 For example:
 ```javascript
 $("#myWidget").addClass("js-view-filters").on("ui.view.filters", (e,filters) => {
