@@ -11,7 +11,7 @@ Business objects are usually linked to a database table, enabling standard **Cre
 However, some objects are not tied to a table:  
 
 - **[Select objects](/lesson/docs/core/objects/select-objects)** – based on SQL queries  
-- **Service objects** – interact with external services
+- **[Service objects](/lesson/docs/core/objects/service-objects)** – interact with external services
 
 Since business objects form the foundation of the platform, most functionalities revolve around them, including:  
 
