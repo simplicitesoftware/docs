@@ -1,10 +1,7 @@
 {
-  "FRA": {
-    "title": "Import de module",
-    "description": ""
-  },
-  "ENU": {
+  "ANY": {
     "title": "Module import",
     "description": ""
-  }
+  },
+  "published":false
 }
