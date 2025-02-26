@@ -1,10 +1,6 @@
 {
     "display": "LINEAR",
-    "FRA": {
-        "title": "Jeux de données",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Datasets",
         "description": ""
     }

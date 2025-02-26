@@ -1,4 +1,4 @@
-# Constrinats 
+# Constraints 
 
 **Constraints** are configuration elements that apply to a business object and allow the execution of business rules of limited complexity. They can be expressed schematically in pseudo-code as `If execution conditions are met THEN execute the impacts`.
 
