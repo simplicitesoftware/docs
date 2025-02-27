@@ -22,7 +22,7 @@ To create a module, follow the steps below :
 4. Fill in the Group fields like so :
     - Name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
         <img src="group.png" alt="group" width="50%"/>
-    > For more information about Groups, see the [Groups](/lesson/docs/plaform/users-rights/groups) section. 
+    > For more information about Groups, see the [Groups](/lesson/docs/platform/users-rights/groups) section. 
 
 5. Click **Next**
 6. Fill in the Domain (in Simplicité, a Domain is a menu) fields like so :
