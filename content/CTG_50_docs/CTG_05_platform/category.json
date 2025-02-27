@@ -1,9 +1,5 @@
 {
-    "FRA": {
-        "title": "Plateforme",
-        "description": ""
-    },
-    "ENU": {
+    "ANY": {
         "title": "Simplicité configuration objects",
         "description": ""
     }
