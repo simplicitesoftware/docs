@@ -1,17 +1,17 @@
 # Business object
 
-## What is a Business object ?
+## Introduction
 
 Business objects represent real-world entities or concepts within an application, such as a **Client**, **Product**, **Invoice**, or **Employee**. They typically consist of multiple **attributes**, maintain relationships with other business objects, and follow specific **business logic**. For instance, once an invoice is sent to a client, its items may no longer be editable.  
 
-As explained in the [object tutorial](/lesson/tutorial/configuration/object), the **business object** concept is central to Simplicité's meta-model.  
+As explained in the [object tutorial](/lesson/tutorial/getting-started/object), the **business object** concept is central to Simplicité's meta-model.  
 
 Business objects are usually linked to a database table, enabling standard **Create, Read, Update, and Delete (CRUD)** operations. Additionally, they may include processing logic (code, constraints, etc.) to enforce behavior and data integrity. 
 
 However, some objects are not tied to a table:  
 
-- **[Select objects](/lesson/docs/core/objects/select-objects)** – based on SQL queries  
-- **Service objects** – interact with external services
+- [Select objects](/lesson/docs/core/objects/select-objects) – based on SQL queries  
+- [Service objects](/lesson/docs/core/objects/service-objects) – interact with external services
 
 Since business objects form the foundation of the platform, most functionalities revolve around them, including:  
 
@@ -54,6 +54,25 @@ We **highly** recommend you use the business object **creation assistant** to cr
 5. If applicable, select a Function for each previously created Group(s) and click **Next**
 6. If applicable, add the Object to the previously created Domain(s) and click **Next**
 
+
+## Configuration 
+
+| Field | Description | 
+| ----- | ----------- |
+| Code | Object's unique identifier |
+| Table | Table name / *service* for a [Service object](/lesson/docs/core/objects/service-objects) / *select* for a [Select object](/lesson/docs/core/objects/select-objects) |
+| Extend of Logical name | Used for inheritance (parent object) |
+| Icon code | Object's logo |
+
+
+
+## Read more 
+
+- [Business objects hooks](/lesson/docs/core/objects/businessobject-code-hooks)
+- [Select objects](/lesson/docs/core/objects/select-objects)
+- [Service objects](/lesson/docs/core/objects/service-objects)
+- [Custom service objects](/lesson/docs/integration/remote/custom)
+
 <!--
 ## Business object Hooks
 
@@ -80,11 +99,6 @@ Each time a user manipulates an object, he will need to instantiate it, and load
 
 When the object, inheriting from `ObjectDB` is manipulated in the code as in the previous lesson, one of these instances is used. Beware, if only one instance of the object was used, this would mean that when searching for the object in the code (see below) to programmatically modify a set of objects, the user browsing the object would see this search positioned without having done it himself!
 
-```java
-this.setFieldFilter("trnPrdName", "Supercomputer");
-List<String[]> results = this.search();
-```
-
 To avoid this problem, the session loads not one, but many instances of the object, each with a name relevant to its use:
 - **the_ajax_ObjectName:** main instance, used for the main list
 - **ref_ajax_ObjectName:** instance dedicated to the selection of objects on links (for example the selection of the product for the order)
@@ -100,24 +114,4 @@ There are many instance names used by the platform, we won't list them all, but 
 Therefore, when using an instance in scripts, it should be kept in mind:
 - that it may be necessary to flush loaded filters and values (via `ObjectDB.resetFilters()` and `ObjectDB.resetValues()`)
 - to avoid concurrent use of the same instance by several threads, it is essential to use a synchronisation block (see commented example below)
-
-```java
-// loading a temporary instance
-ObjectDB product = getGrant().getTmpObject("TrnProduct");
-// block synchronized to prevent concurrent use of this instance by another thread
-synchronized(product.getLock()){
-    // resetting potential searches already set on the instance
-    product.resetFilters();
-    // positioning of a filter
-    product.setFieldFilter("trnPrdName", "Supercomputer");
-    // database query
-    List<String[]> results = product.search();
-    // iteration over results
-    for(String[] row : product.search()){
-        // load of a result line into the object's instance
-        product.setValues(row);
-        // instance operations
-    }
-}
-```
 -->
