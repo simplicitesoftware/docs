@@ -114,5 +114,5 @@ There are many instance names used by the platform, we won't list them all, but 
 Therefore, when using an instance in scripts, it should be kept in mind:
 - that it may be necessary to flush loaded filters and values (via `ObjectDB.resetFilters()` and `ObjectDB.resetValues()`)
 - to avoid concurrent use of the same instance by several threads, it is essential to use a synchronisation block (see commented example below) 
-SYNC TEST 2
+SYNC TEST 3
 -->
