@@ -66,7 +66,7 @@ We **highly** recommend you use the business object **creation assistant** to cr
 
  
 
-## Read more 
+## Read more   
 
 - [Business objects hooks](/lesson/docs/core/objects/businessobject-code-hooks)
 - [Select objects](/lesson/docs/core/objects/select-objects)
