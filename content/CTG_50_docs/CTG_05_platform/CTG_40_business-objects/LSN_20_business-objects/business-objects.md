@@ -64,7 +64,7 @@ We **highly** recommend you use the business object **creation assistant** to cr
 | Extend of Logical name | Used for inheritance (parent object) |
 | Icon code | Object's logo |
 
-
+ 
 
 ## Read more 
 
