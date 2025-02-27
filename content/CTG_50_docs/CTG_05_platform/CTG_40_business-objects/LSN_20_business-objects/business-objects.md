@@ -26,7 +26,7 @@ Additionally, business objects can include **business rules** to precisely contr
 
 ## How to create a Business object ?
 
-We **highly** recommend you use the business object **creation assistant** to create a Business object. The creation assistant will also create display labels for the object, grant the object to Groups and add it to a Menu. 
+We **highly** recommend you use the business object **creation assistant** to create a Business object. The creation assistant will also create display labels for the object, grant the object to Groups and add it to a Menu (Domain). 
 
 ### Creation assistant via the modeler 
 
