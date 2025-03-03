@@ -4,7 +4,7 @@
 
 ## What is a Theme ?
 
-A theme defines the logo and the main colors of the interface...[Learn more](/lesson/docs/platform/user-interface/theme)
+A theme defines the logo and the main colors of the interface...[Learn more](/lesson/docs/platform/userinterface/theme)
 
 ## Creating a Theme
 

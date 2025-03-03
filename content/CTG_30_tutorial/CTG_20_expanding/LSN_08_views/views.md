@@ -50,7 +50,7 @@ Exercise
 
 ## What is a Home page ?
 
-A View is a structured collection of components that define user interfaces, such as domain or group homepages. It can include predefined searches, crosstabs, custom UI components... [Learn more](/lesson/docs/platform/user-interface/views/home-page)
+A View is a structured collection of components that define user interfaces, such as domain or group homepages. It can include predefined searches, crosstabs, custom UI components... [Learn more](/lesson/docs/platform/userinterface/views/home-page)
 
 ## Creating a Home page for the TRN_SUPERADMIN Group
 
