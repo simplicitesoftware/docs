@@ -1,8 +1,8 @@
 # Fields Areas
 
-## What is a Field Area ?
+## What is a Fields Area ?
 
-Field areas are used to group fields, both in forms and in lists. They help organize the UI by structuring data into logical sections, making forms more readable and easier to navigate.  
+Fields areas are used to group fields, both in forms and in lists. They help organize the UI by structuring data into logical sections, making forms more readable and easier to navigate.  
 
 ### Key Features
 - Groups related fields to improve clarity.
@@ -10,9 +10,9 @@ Field areas are used to group fields, both in forms and in lists. They help orga
 - Supports conditional display (e.g., shown only under certain conditions).
 - Affects both form layout and list headers.
 
-## How to create Field Areas ?
+## How to create Fields Areas ?
 
-### Create a Field Area via the template editor
+### Create a Fields Area via the template editor
 - Select the object where you want to add field area and go to its configuration.  
 - Click on the **Edit form** button of your business object. If the object doesn't yet have a template, you'll be asked to choose one. The template editor will open on a 1st attribute zone named <Objectname>-1  
 If the object already has a template, click on the + in the zone of your choice and select **Fields Area**.  
@@ -30,7 +30,7 @@ Once the field area is created:
 - Use + to add fields or place attributes not yet used in your form.  
  
 
-### Managing Field Areas in Forms & Lists    
+### Managing Fields Areas in Forms & Lists    
 
 - In forms, fields areas appear as section headers, organizing input fields.
 - In lists, they can be used to create grouped column headers.

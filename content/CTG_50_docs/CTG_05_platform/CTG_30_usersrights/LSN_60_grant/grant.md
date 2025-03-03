@@ -27,15 +27,15 @@ A Grant acts as a link between a Group and a Function, allowing:
 
 By assigning Grants, Simplicité enables:
 
-- Centralized access control: Users inherit permissions based on their assigned Group.
-- Flexible and scalable authorization management: Access can be adjusted by modifying Group Grants instead of updating individual user rights.
+- Centralized access control: Users inherit rights and permissions of their assigned Group.
+- Flexible and scalable authorization management: Access can be adjusted by modifying Group Grants and permissions instead of updating individual user rights.
 
 Example use case :
 The "DEMO_ADMIN" Group needs access to:  
 - CRUD operations on the "DemoOrder" business object.
 - A Grant links the "DEMO_ADMIN" Group to the "DEMO_ORD_CRUD" function.
 
-All users in the "DEMO_ADMIN" Group inherit access to the "DemoOrder" object without requiring individual assignments.
+All users in the "DEMO_ADMIN" Group inherit access to the "DemoOrder" object.
 
 ### Difference Between Grant and Responsibility
 
@@ -46,5 +46,4 @@ All users in the "DEMO_ADMIN" Group inherit access to the "DemoOrder" object wit
 The functional key of Responsibility is:  
 - A Grant links to a Group via grt_group_id.  
 - A Grant links to a Function via grt_function_id.  
-- 
 <img src="meta-model.png" alt="metamodel" width="75%"/>
