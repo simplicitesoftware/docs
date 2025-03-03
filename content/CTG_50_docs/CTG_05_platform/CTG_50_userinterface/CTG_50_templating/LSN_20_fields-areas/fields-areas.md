@@ -17,7 +17,7 @@ Field areas are used to group fields, both in forms and in lists. They help orga
 - Click on the **Edit form** button of your business object. If the object doesn't yet have a template, you'll be asked to choose one. The template editor will open on a 1st attribute zone named <Objectname>-1  
 If the object already has a template, click on the + in the zone of your choice and select **Fields Area**.  
 - Define the properties    
-  <img src="fields-area1.png" alt="fields area" width="50%">  
+  <img src="fieldsarea1.png" alt="fields area" width="50%">  
     - Label : Name displayed in the UI.  
     - Display Title : choose if the label is displayed.  
     - Collapse : Choose if the area can be expanded/collapsed.  
@@ -36,16 +36,17 @@ Once the field area is created:
 - In lists, they can be used to create grouped column headers.
 - Custom styling can be applied via UI properties for a customized arrangement.
   In version v6, it is possible to change the display of tabbed fields areas by choosing whether tabs are displayed horizontally or vertically, top or bottom.  
-  <img src="fields-area2.png" alt="fields area" width="50%">  
+  <img src="fieldsarea2.png" alt="fields area" width="50%"> 
+   
 Example:  
     - Top  
-   <img src="fields-area3.png" alt="fields area" width="50%">
+   <img src="fieldsarea3.png" alt="fields area" width="50%">
     - Left   
-  <img src="fields-area4.png" alt="fiels area" width="50%">
+  <img src="fieldsarea4.png" alt="fiels area" width="50%">
     - Right  
-  <img src="fields-area5.png" alt="fields area" width="50%">  
+  <img src="fieldsarea5.png" alt="fields area" width="50%">  
     - Bottom   
-  <img src="fields-area6.png" alt="fields area" width="50%"> 
+  <img src="fieldsarea6.png" alt="fields area" width="50%"> 
 
 
 
