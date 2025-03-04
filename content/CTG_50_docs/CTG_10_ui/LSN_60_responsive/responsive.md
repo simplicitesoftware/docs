@@ -70,18 +70,14 @@ Most functions have been implemented on responsive UI, other functions are only 
 
 <h2 id="libs">External libs</h2>
 
-This engine integrates some popular plugins:
+This engine integrates some popular third party libraries:
 
-- JQuery v3.4.1 (Simplicité V4) or 3.6.0 (V5)
-- Bootstrap v3.3.7 (V4) or 4.6.0 (V5)
-- Bootstrap datetimepicker https://github.com/simplicitesoftware/bootstrap-datetimepicker
-- Google APIs for placemap
-- FullCalendar for agenda
-- Ace editor for code edit (HTML, JavaScript, CSS, javascript...)
-- TinyMCE 5.8.2 for rich text edit (HTML)
-- ChartJS 2.8.0 https://www.chartjs.org/docs/2.8.0
-- Spectrum http://bgrins.github.io/spectrum (color picker)
-- Google APIs for placemap
+- JQuery
+- Bootstrap
+- Ace editor for code edit
+- TinyMCE for rich text edit 
+- ChartJS for charting
+- Etc.
 
 <h2 id="globals">Global properties</h2>
 
