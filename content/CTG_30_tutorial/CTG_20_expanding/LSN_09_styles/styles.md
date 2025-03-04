@@ -1,6 +1,6 @@
 # Building the "Order Management" Training App : Adding icons and a theme
 
-> Prerequisite : [The Order has a state model](/lesson/tutorial/expanding/relations) and a [home page](/lesson/tutorial/expanding/views) exists
+> Prerequisite : [The Order has a state model](/lesson/tutorial/expanding/states) and a [home page](/lesson/tutorial/expanding/views) exists
 
 ## What is a Theme ?
 
