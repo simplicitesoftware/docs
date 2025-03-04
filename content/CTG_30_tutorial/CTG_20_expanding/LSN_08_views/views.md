@@ -46,7 +46,7 @@ Exercise
 
 # Building the "Order Management" Training App : Creating a Home page
 
-> Prerequisite : [The designer user has the TRN_SUPERADMIN responsibility](lesson/tutorial/getting-started/user#adding-designer-to-trn_superadmin), the Order has [state model](/lesson/tutorial/expanding/states) and a [pivot table](/lesson/tutorial/expanding/pivot-table).
+> Prerequisite : [The designer user has the TRN_SUPERADMIN responsibility](/lesson/tutorial/getting-started/user#adding-designer-to-trn_superadmin), the Order has [state model](/lesson/tutorial/expanding/states) and a [pivot table](/lesson/tutorial/expanding/pivot-table).
 
 ## What is a Home page ?
 

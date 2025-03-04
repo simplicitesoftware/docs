@@ -2,7 +2,7 @@
 
 ## Introduction
 
-"UI page or component" is a type of [External Object](https://docsrec.dev2.simplicite.io/lesson/docs/platform/userinterface/externalobjects/basic) that is used to implement **specific front components** within your Simplicité instance. Thus creating **custom interactive components** to embedd to your interfaces.
+"UI page or component" is a type of [External Object](/lesson/docs/platform/userinterface/externalobjects/basic) that is used to implement **specific front components** within your Simplicité instance. Thus creating **custom interactive components** to embedd to your interfaces.
 
 Thanks to such objects you can create dynamic elements that have customed behaviours and can seamlessly interact with Simplicité's API.
 
@@ -14,7 +14,7 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - **Code** that is the name of your object.
     > While naming your objects, we **highly** recommend to follow the suggested nomenclature *ModulePrefix + ObjectName*.
     - **Nature** set to **UI page or component**.
-    - **UI Widget** tells if your external object shall be considered as a *widget* or not, declaring weither or not it can be used in [dashboard](https://docsrec.dev2.simplicite.io/lesson/docs/platform/userinterface/views/dashboard).
+    - **UI Widget** tells if your external object shall be considered as a *widget* or not, declaring weither or not it can be used in [dashboard](/lesson/docs/platform/userinterface/views/dashboard).
     > In **both** case, the component is usable in **any editable view**, the only difference is its possible including in dashboards.
 
     > Example values:<br>
@@ -22,7 +22,7 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
 
 2. **Save** your object and click **Create resources**:
     <img src="uicomp_createresources.png" alt="create resources" width="65%">
-    - This creates the default [resources](https://docsrec.dev2.simplicite.io/lesson/docs/platform/userinterface/resourrces) for your external object:
+    - This creates the default [resources](/lesson/docs/platform/userinterface/resources) for your external object:
         - **HTML** in which you'll define your object's content structure.
         - **STYLES** that is your object's stylesheet.
         - **CLASS** where the component's behaviour will happen.<br>
@@ -480,9 +480,9 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 
 ## Read More
 
-- [Widgets](https://docsrec.dev2.simplicite.io/lesson/docs/misc/widgets) already implemented within Simplicité's **Demo** module.
-- [Code Examples](https://docsrec.dev2.simplicite.io/lesson/docs/core/externalobject-code-examples)
-- [Permission Groups](https://docsrec.dev2.simplicite.io/lesson/docs/platform/usersrights/groups)
-- [Resources](https://docsrec.dev2.simplicite.io/lesson/docs/platform/userinterface/resources)
+- [Widgets](/lesson/docs/misc/widgets) already implemented within Simplicité's **Demo** module.
+- [Code Examples](/lesson/docs/core/externalobject-code-examples)
+- [Permission Groups](/lesson/docs/platform/usersrights/groups)
+- [Resources](/lesson/docs/platform/userinterface/resources)
 - [JSDoc](https://platform.simplicite.io/6.2/jsdoc/)
 - [Javadoc](https://platform.simplicite.io/6.2/javadoc/)

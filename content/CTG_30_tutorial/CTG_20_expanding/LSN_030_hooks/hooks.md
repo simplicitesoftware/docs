@@ -4,7 +4,7 @@
 
 ## What is a Hook ?
 
-In Simplicité, Hooks allow you to extend the default behavior of business objects by overriding key lifecycle methods in Java or JavaScript, enabling advanced custom logic and processing... [Learn more]()
+In Simplicité, Hooks allow you to extend the default behavior of business objects by overriding key lifecycle methods in Java or JavaScript, enabling advanced custom logic and processing... [Learn more](/lesson/docs/core/objects/businessobject-code-hooks)
 
 ## Adding business rules to the Order Business object 
 
