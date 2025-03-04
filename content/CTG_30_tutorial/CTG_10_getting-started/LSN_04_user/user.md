@@ -106,7 +106,7 @@ To do so, follow the steps below :
 
 Troubleshooting
 ---------------------------
-> These steps must be done using the **designer** user with **no active module filter**, see [Module filter](path/to/module-filter)
+> These steps must be done using the **designer** user with **no active module filter**, see [Module filter](/lesson/docs/platform/project/module#module-filtering)
 - <span class="error">Authentication error</span> when logging in, check that : 
     - **usertest** is active
     - password is reset
