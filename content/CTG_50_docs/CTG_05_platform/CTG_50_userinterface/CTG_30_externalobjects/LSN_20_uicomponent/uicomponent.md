@@ -68,9 +68,7 @@ There are 2 different categories for your external object's implementation:
     - Implementing the `render()` method to handle the DOM-related instantiations.
     - Declaring any other custom behaviors or features.
 
-> In this part the taken code examples and features will be from an unreleased widget *DemoWelcomeCard*.
-> Download the [XML](DemoWelcomeCard.xml) to explore it in your instance ! 
-> Download the separate [HTML](DemoWelcomeCard_HTML.html), [STYLES](DemoWelcomeCard_STYLES.less), [CLASS](DemoWelcomeCard_CLASS.js) (you will miss some resources).
+> In this part the taken code examples and features will be from an unreleased widget *DemoWelcomeCard* (source codes are provided in the sections below).
 
 ### Java instantiation
 
