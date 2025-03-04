@@ -20,11 +20,11 @@ To create a link between the **Supplier** Business object and the **Product** Bu
 6. In the search box, enter **TrnSupplier**  
     <img src="search-supplier.png" alt="search" width="25%"/>
 7. Check **Functional key ?** and **Required ?** 
-    > For more information about Functional keys, see [Functional key](/lesson/docs/core/platform/businessobjects/fields#functional-key)
+    > For more information about Functional keys, see [Functional key](/lesson/docs/platform/businessobjects/fields#functional-key)
 8. Click **Save**
 
 The **Supplier Code** Joined field is added to the template.
-    > For more information about Joined field, see [Joined field](/lesson/docs/core/platform/businessobjects/fields#joined-field)
+    > For more information about Joined field, see [Joined field](/lesson/docs/platform/businessobjects/fields#joined-fields)
 
 ## Creating a Link between Product and Order
 
