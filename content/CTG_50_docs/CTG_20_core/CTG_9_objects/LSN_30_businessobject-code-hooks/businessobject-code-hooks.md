@@ -129,7 +129,7 @@ public boolean isPrintTemplateEnable(String[] row, String printTemplateName) {
 }
 ```
 
-> See [this document](/lesson/docs/core/publication-examples) for details on how to implement publications.
+> See [this document](/lesson/docs/platform/userinterface/objectsrendering/publications) for details on how to implement publications.
 
 <h3 id="isstatetransitionenable">State transitions hook</h3>
 
