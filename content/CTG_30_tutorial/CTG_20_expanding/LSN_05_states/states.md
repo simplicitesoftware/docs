@@ -12,7 +12,7 @@ A state model defines the different statuses a business object can have and cont
 
 To add a State field to the Order Business object, follow the steps below :
 
-1. Add a **mandatory enumeration** field to the **TrnOrder** Business object in the [previsoulsy](/lesson/tutorial/expanding/field-area) created "Order" Field Area
+1. Add a **mandatory enumeration** field to the **TrnOrder** Business object in the [previsoulsy](/lesson/tutorial/expanding/fieldarea#structuring-the-order-template) created "Order" Field Area
     > For a detailed guide on how to add a field, see [Getting started : Create field](/lesson/tutorial/getting-started/attribute)
 2. Fill in the Field fields like so : 
     - Label : **State**
