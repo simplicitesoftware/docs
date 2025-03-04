@@ -1,4 +1,4 @@
-# Building the "Order Management" Training App : Adding a Change Log
+# Building the "Order Management" Training App : Adding a Calculated field
 
 > Prerequisite : [The Supplier, Product, Client and Order objects are linked together](/lesson/tutorial/expanding/relations)
 
@@ -12,7 +12,7 @@ The "Total" Calculated field will display the Order's total : `Product price x O
 
 ### Add the Product price Field to the Order Business Object 
 
-Start by adding the **Product price** field in the [previsoulsy](/lesson/tutorial/expanding/field-area) created "Product" Field Area :
+Start by adding the **Product price** field in the [previsoulsy](/lesson/tutorial/expanding/fieldarea#adding-the-product-fields-to-the-product-field-area) created "Product" Field Area :
 1. In the **Business objects > Business objects** menu, open **TrnOrder**
 2. Click **Edit form** on the Business object's form 
 3. Just like for [adding a new Field](/lesson/tutorial/getting-started/attribute), hover over the "Product" Field Area, and click the `+` button
@@ -23,7 +23,7 @@ Start by adding the **Product price** field in the [previsoulsy](/lesson/tutoria
 
 ### Add the Total Field
 
-1. Add a **integer** field to the **TrnOrder** Business object in the [previsoulsy](/lesson/tutorial/expanding/field-area) created "Order" Field Area
+1. Add a **integer** field to the **TrnOrder** Business object in the [previsoulsy](/lesson/tutorial/expanding/fieldarea#structuring-the-order-template) created "Order" Field Area
     > For a detailed guide on how to add a field, see [Getting started : Create field](/lesson/tutorial/getting-started/attribute)
 2. Fill in the Field information like so : 
     - Label : **Total**
