@@ -4,7 +4,7 @@
 
 ## What is a Virtual link ?
 
-In Simplicité, a virtual link allows you to access data between business objects without adding a physical column or foreign key. The data is retrieved via an SQL query configured on the virtual link, enabling flexible relationships without altering the database structure... [Learn more](/lesson/docs/platform/businessobjects/links#virtual-links)
+In Simplicité, a virtual link allows you to access data between business objects without adding a physical column or foreign key. The data is retrieved via an SQL query configured on the virtual link, enabling flexible relationships without altering the database structure... [Learn more](/lesson/docs/platform/businessobjects/links#virtual-link)
 
 ## Accessing the list of a Supplier's Clients
 
