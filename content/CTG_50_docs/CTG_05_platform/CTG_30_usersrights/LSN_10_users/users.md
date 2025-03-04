@@ -38,8 +38,8 @@ A user can be:
 
 ## Configuration objects linked to a User
 
-- [Dashboards](/lesson/docs/platform/user-interface/views/dashboard) : List of Dashboards created by the user
-- [Responsibilites](/lesson/platform/user-rights/responsibilites) : List of a user's Responsiblities
+- [Dashboards](/lesson/docs/platform/userinterface/views/dashboard) : List of Dashboards created by the user
+- [Responsibilites](/lesson/docs/platform/usersrights/responsibilities) : List of a user's Responsiblities
 
 ## Learn more
 
