@@ -16,7 +16,7 @@ To create a field, follow the steps below :
 2. Select the first **Template**    
     <img src="template.png" alt="template" width="25%"/>
 3. Hover over the empty **Field Area** and click on the `+`
-    > For more information about Field Areas, see [Field Area](lesson/docs/platform/userinterface/templating/fields-areas)
+    > For more information about Field Areas, see [Field Area](/lesson/docs/platform/userinterface/templating/fields-areas)
 
     <img src="field-area.png" alt="field-area" width="50%"/>
     
