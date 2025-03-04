@@ -4,7 +4,7 @@
 
 A theme is an object that defines the visual & graphics styles of a Simplicité's native interface. You create it through the embedded **Theme Editor**, and you then have the possibility to refine it by adding a custom stylesheet (written in LESS or CSS) that will define styles applied globally over your interfaces.
 
-A theme has to be associated to a scope.
+A theme has to be associated to a [scope](https://docsrec.dev2.simplicite.io/lesson/docs/platform/userinterface/views/home-page#scopes).
 
 ## Theme Editor
 
@@ -66,8 +66,98 @@ Once that you created your theme, you can use it on any **View** that is of type
 2. Go to the *Home page* tab-item.<br>
 <img src="themes_view_tab.png" alt="view form" width="50%">  
 
-3. Through the field *Theme Name*, select the theme you want to apply.
+3. Through the field *Theme Name*, select the theme you want to apply.<br>
 <img src="themes_view_fields.png" alt="theme name" width="50%">  
 
 4. **Save** & **Clear your cache**. When connecting back to your session and opening the targeted *Home Page* you'll see the applied theme.
 
+## LESS breakthrough
+
+### What is Less ?
+
+Leaner CSS (Less), is a dynamic preprocessor style sheet language that extends the capabilities of CSS. It introduces features like variables, nesting, mixins and functions. Thus making style sheets more maintainable, customizable and easier to scale.
+
+### Key Features
+
+*Variables:* Store reusable values for colors, fonts or dimensions:
+<details style="padding-bottom:24px;">
+<summary>Code Snippet</summary>
+
+```less
+@primary-color: #3498db;
+body {
+    color: @primary-color;
+}
+```
+</details>
+
+*Nesting:* Write styles in a structured & hierarchical way. Allowing to specify depending on contexts when it's needed. Below are shown two ways to use nesting, and shows a use case where items with same class have different styles depending on their parent:
+<details style="padding-bottom:24px;">
+<summary>Code Snippet</summary>
+
+```less
+.container {
+    .header {
+        .box {
+            background-color: red;
+        }
+    }
+    .body > .box {
+        background-color: blue;
+    }
+}
+```
+</details>
+
+> **Warning:** the nesting `.parent > .child` and `.parent .child` have different meanings: **">"** targets only the *direct .child*, otherwise *all .child* are targeted.
+
+*Interactions Nesting:* Same way as nesting works for children elements or contexts, yo ucan use it to dynamically handle different type of interactions for your elements:
+<details style="padding-bottom:24px;">
+<summary>Code Snippet</summary>
+
+```less
+body {
+    .container {
+        .box {
+            background-color: yellow;
+            transition: background-color 0.5s ease;
+
+            &:hover {
+                background-color: orange;
+            }
+            &:active {
+                background-color: red;
+            }
+        }
+    }
+}
+```
+</details>
+
+*Mixins:* Define reusable style blocks for consistency:
+<details style="padding-bottom:24px;">
+<summary>Code Snippet</summary>
+
+```less
+.rounded-corners(@radius: 0.5rem) {
+    border-radius: @radius;
+}
+div {
+    .rounded-corners(1rem);
+}
+```
+</details>
+
+*Functions:* Perform calculations and color operations directly in your styles:
+<details style="padding-bottom:24px;">
+<summary>Code Snippet</summary>
+
+```less
+@primary-color: #3498db;
+body {
+    color: darken(@primary-color, 16%);
+}
+```
+</details>
+
+> **Note:** Most of the described features are also available in regular CSS.
