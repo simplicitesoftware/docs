@@ -38,7 +38,7 @@ public List<String> postValidate() {
 To add this business rule, update the `postValidate` hook by following the steps below :
 
 1. Add the Product's **Stock** field to the Order object
-	> For a detailed guide, see : [Adding a joined field](/lesson/tutorial/getting-started/calculated-fields#add-the-product-price-field-to-the-oder-business-object)
+	> For a detailed guide, see : [Adding a joined field](/lesson/tutorial/expanding/calculated-fields#add-the-product-price-field-to-the-order-business-object)
 2. Click **Edit code** on the **TrnOrder** object's form
 3. Update the `postValidate()` implementation :
 ```java
