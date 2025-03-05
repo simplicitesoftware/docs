@@ -43,8 +43,8 @@ Ensure the relevant Groups have access to the Domain.
 <img src="domain2.png" alt="domain" width="50%"/>
 1. Associate Objects to the Domain by clicking on **create** in the header of Main menu list.  
 The types of objects that can be included in a menu are : 
-- Business object
-- Business process 
-- Domain 
-- External object 
-- Simple view 
+   - Business object
+   - Business process 
+   - Domain 
+   - External object 
+   - Simple view 
