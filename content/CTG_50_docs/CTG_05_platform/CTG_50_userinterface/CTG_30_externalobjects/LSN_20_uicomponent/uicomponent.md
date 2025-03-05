@@ -80,7 +80,7 @@ By default your component is just of Java class `com.simplicite.webapp.web.Respo
     - Yet you can click **Save** and **Close** to come back to the component's form.
 
 3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.<br>
-<img src="uicomp_sourcecode_field.png" alt="add element" width="50%">
+<img src="uicomp_sourcecode_field.png" alt="java code field" width="50%">
 
 ### HTML content
 
