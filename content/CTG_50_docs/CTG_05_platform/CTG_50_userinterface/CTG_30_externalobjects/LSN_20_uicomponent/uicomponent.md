@@ -72,10 +72,19 @@ There are 2 different categories for your external object's implementation:
 
 ### Java instantiation
 
-Before diving into the *frontend* implementation, 
+By default your component is just of Java class `com.simplicite.webapp.web.ResponsiveExternalObject`, but in case you need additional methods, you can create your own *Java class* for your component, that will extend the mentionned one.
+
+1. In your external object's form, click **Edit Code**, then **Confirm**.
+
+2. You will be redirected to the code editor with the basic java setup for your component's own class.
+    - Yet you can click **Save** and **Close** to come back to the component's form.
+
+3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.<br>
+<img src="uicomp_sourcecode_field.png" alt="add element" width="50%">
+
 ### HTML content
 
-Here the good practice is to define only the anchors for later implementation of the content through the **CLASS** dynamically.
+Here, in the **HTML** you will write the html content of your component, the good practice is to define only the anchors for later implementation of the content through the **CLASS** dynamically.
 
 At creation the script looks like:
 
@@ -104,7 +113,7 @@ There are several keypoints to understand and keep in mind while developing in t
 
 ### CSS styles
 
-Here ensure you target the correct element from your **HTML** and refer to them as precisely as possible. You can implement interactive styles and use all of CSS's regular features.
+In the **STYLES** resource, you will write the *CSS* code that defines your component's styles. Thus ensure you target the correct element from your **HTML** and refer to them as precisely as possible. You can implement interactive styles and use all of CSS's regular features.
 
 At creation the stylesheet looks like:
 
@@ -325,7 +334,9 @@ There are several keypoints to understand and keep in mind while developing in t
 
 ### JS behaviour
 
-In 
+In the **CLASS** resource, you will write the JS script for your component's behavior. Here you will have the possibility to use both the [JSDoc](https://platform.simplicite.io/6.2/jsdoc/) for frontend operations direclty in the **CLASS** resource's script, and to make few calls to the *Java* code of your component to add custom server-side operations.
+
+> By default the only call from **CLASS** to **Java** is through `render()` that allows for your component's correct display and instantiation. But [later]() on we'll see another method that allow for more custom calls: `service()`.
 
 At creation the script is:
 ```javascript
@@ -365,6 +376,59 @@ public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
 	}
 }
 ```
+
+<details>
+<summary><b>service()</b> basic code example</summary>
+
+<div style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap: 50px;" width="100%">
+
+```javascript
+Simplicite.UI.ExternalObjects._ = class extends Simplicite.UI.ExternalObject {
+	async render(params, data = {}) {
+		// Send as parameter
+		$('#apptestbackendservice-param').on('click', async _ => {
+			const data = { text: $('#apptestbackendservice-text').val() };
+			const res = await this.service(data);
+			console.log(`Result: ${JSON.stringify(res)}`);
+			$('#apptestbackendservice-result').append(`${res.result}\n`);
+		});
+
+		// Send as JSON body
+		$('#apptestbackendservice-body').on('click', async _ => {
+			const data = { text: $('#apptestbackendservice-text').val() };
+			const res = await this.service(JSON.stringify(data), { contentType: 'application/json' });
+			console.log(`Result: ${JSON.stringify(res)}`);
+			$('#apptestbackendservice-result').append(`${res.result}\n`);
+		});
+	}
+};
+```
+
+```java
+package com.simplicite.extobjects.Application;
+
+import org.json.JSONObject;
+
+import com.simplicite.util.AppLog;
+import com.simplicite.util.tools.Parameters;
+
+public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public Object service(Parameters params) {
+		JSONObject body = params.getJSONObject();
+
+		String txt = "[" + (body != null
+			? body.optString("text") + "] from JSON body"
+			: params.getParameter("text") + "] from parameter");
+
+		return new JSONObject().put("result", txt);
+	}
+}
+```
+</div>
+</details>
 
 <details>
 <summary><b><i>DemoWelcomeCard</b> code example<i></summary>
