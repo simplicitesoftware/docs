@@ -1,6 +1,6 @@
 # User
 
-## Introduction
+## What is a User ?
 
 In Simplicité, a User represents an individual or system entity that has access to the platform. Users interact with the system based on their responsibilities, which determine their access to business objects and system functionalities.
 
@@ -9,7 +9,7 @@ A user can be:
 - A system user (e.g., a web service account with API access)
 - Etc.
 
-## Features
+## Key Characteristics of a User 
 
 1. Authentication & Access
     - By default, users log in using a **username and password**
@@ -19,22 +19,6 @@ A user can be:
     - Enabled: The user can log in and access the platform
     - Disabled: The user exists but cannot log in
     - Web services only: The user cannot log in but can access the platform's data through API calls
-
-## Configuration
-
-| Field | Description |
-| ----- | ----------- |
-| Login | User's unique identifier | 
-| Active language | Language used for the user's UI |
-| Preferred language | Language selected by user on first login |
-| Min / Max size of lists | Override the list size selector on lists |
-| Date format | Override the date format for the user |
-| Number format | Override the number format for the user |
-| Time zone | Override system timezone for user |
-| Home page | User's home page (overriden by the active scope) |
-| Menu visible | Display / Hide menu for the user |
-| Default opened domain | Default menu opened after connecting |
-| Authentication | See [internal authentication](/lesson/docs/authentication/internal-auth) |
 
 ## Configuration objects linked to a User
 
