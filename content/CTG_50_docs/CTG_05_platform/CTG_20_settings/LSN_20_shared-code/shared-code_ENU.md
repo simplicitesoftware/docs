@@ -22,6 +22,7 @@ Shared Code can be used in various scenarios, including Java class creation, bus
 4. **Custom SQL Execution**  
    - Write and execute specific SQL queries for data retrieval and processing.  
    - Execute SQL scripts for data processing or recovery.  
+  
 5. **Using Java Libraries**  
    - Import and integrate external Java libraries into the platform.  
    - Extend the platform's capabilities by reusing third-party Java code.  
@@ -37,16 +38,15 @@ Shared Code can be used in various scenarios, including Java class creation, bus
 
 ## How to create a Shared Code?
 
-1. Navigate to the **Shared Code** section in the configuration menu.  
-2. Click on **Create a new Shared Code**.  
-3. Define the **Name** and provide a **Description**.  
+1. Navigate to the **Settings > Shared Code**.  
+2. Click on **Create**.  
+3. Define the **Name**.  
 4. Select the **Type** (Java, SQL, etc.).  
 5. Write or paste the code into the editor.  
-6. Save the changes and deploy if necessary.  
+6. Save the changes and clear the cache if necessary.  
 
 ## Learn more
 
-- [Extending Business Objects](/lesson/docs/platform/development/customization)  
-- [Using Java in Simplicité](/lesson/docs/platform/development/java)  
-- [Executing Custom SQL](/lesson/docs/platform/database/sql)  
-- [Authentication & PlatformHooks](/lesson/docs/platform/security/authentication)  
+- [PlatformHooks](/lesson/docs/platform/core/platform-hooks)  
+- [Unit testing](/lesson/docs/platform/core/unit-testing)    
+
