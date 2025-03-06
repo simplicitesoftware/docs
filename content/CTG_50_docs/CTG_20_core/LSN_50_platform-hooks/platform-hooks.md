@@ -66,14 +66,9 @@ As of version 6.2 the `customHealthCheck` platform hook allows to implement e cu
 public void customHealthCheck(HttpServletRequest request, HttpServletResponse response, boolean minimal) throws Exception {
 	AppLog.info("Custom health check called from " + request.getRemoteAddr());
 
-	ServletTool.responseWithStatus(
-		request, response,
-		HttpServletResponse.SC_OK,
-		new JSONObject()
-			.put("status", "OK")
-			.put("message", "Everything seems fine!")
-			.put("date", Tool.toDatetime(new Date())),
-		null);
+	ServletTool.success(request, response, new JSONObject()
+		.put("status", "OK")
+		.put("date", Tool.toDatetime(new Date())));
 }
 ```
 <h2 id="rightshooks">User rights hooks</h2>
