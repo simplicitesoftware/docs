@@ -1,57 +1,81 @@
-Permissions
-==========================
+# Permissions
+
+## Introduction
 
 Since version 6.0, Permissions have replaced Functions for several Objects of the metamodel.  
 
-The Function Configuration Object is now dedicated to Business Objects only.  
+The Function Configuration Object is now dedicated to Business Objects, Actions and Views.  
 
-### What is a Permission ?
+A **Permission** is a Configuration Object in the metamodel that allows controlling access rights and visibility for various system objects. It provides more flexibility than Functions by allowing finer control over attributes such as visibility, update properties, and other constraints that can be overridden for specific Groups.  
 
-A Permission is a Configuration Object of the metamodel that contains an object-type attribute. 
-This makes it possible to create Permissions for the following Configuration Objects :
-- Agenda  
-- Domain  
-- External object  
-- Link  
-- Modeltemplate  
-- Pivot table  
-- Places map  
-- Publication  
-- Search  
-- Shortcut   
-- Simple view  
-- Timesheet  
-- Tree view  
+## Features
 
-For these Configuration Objects, Permissions replace Functions by setting the Object's `visible` property and provide the option to grant access to the relevant Groups.
+1. **Permissions Control**
+    - Permissions can be used to define access rights for a wide range of Configuration Objects.  
+    - They provide control over the visibility and properties of objects, overriding default settings for specific Groups.  
+    - Permissions can be applied to objects like Agenda, Domain, and Business Objects, among others.  
 
-It is also possible to create Permissions for :
-- Business object
-- Field
-- Object Field
+2. **Object Types**
+    - Permissions can be created for both:
+        - **Business objects**, **Fields**, and **ObjectFields** where properties can be overridden.  
+        - **Other Configuration Objects** like Agenda, Search, Timesheet, and more.  
 
-For these objects, Permissions allow properties to be overridden and restricted to specific Groups. In this way, they can replace certain constraints.
+3. **Group-Based Permissions**
+    - Permissions allow setting specific access rights for Groups, making them more scalable and maintainable for different user roles.  
 
-Examples : 
-- Override the `List update` property of a Business Object for a specific Group
-- Override the `filter` property of a Business Object to set a SQL filter for a specific Group 
-- Override Object Field visibility for a specific Group
-- Override the `mandatory` property of a Field for a specific Group
+## Configuration
 
-### How to create a Permission ?
+| Field | Description |
+| ----- | ----------- |
+| **Target Object** | The target object for which the permission is set |
+| **Visible** | Visible Property being overridden (e.g., visibility) |
+| **Updatable** | Updatable overridden property |
+| **Property** | Property overriden |
+| **Primary Group** | Group to which the permission applies |
+| **Group permissions** | Others Groups to which the permission applies |
+| **Module** | The module to which the Permission belongs |
 
-Adding a Permission can be done via the `Permissions` panel in any of the objects listed above.
-Alternatively, use the menu search bar to find the Permissions configuration object.
+## Configuration objects linked to Permissions
 
-1. Create a Permission
-2. Select the Group
-3. Set the Module
-4. Select the target object
-5. Select the property to override
-6. Set the overriden value
+- **Agenda**: Grants visibility and access rights for calendar-related objects  
+- **Business Object**: Allows overriding specific properties for certain groups  
+- **Constraint**: Controls access to constraints  
+- **Dashboard**: Controls access to dashboard configurations  
+- **Domain**: Controls access to domain-specific configurations  
+- **External Object**: Manages access to external objects  
+- **Field**: Restrict or override field-level properties
+- **Link**: Manages access to links  
+- **Model template** : Manages access to specific model templates  
+- **Object Field**: Override visibility and other attributes for Object Fields
+- **Pivot Table**: Manage visibility and access to pivot tables  
+- **Places Map**: Define permissions for geographic places map    
+- **Publication**: Control user access to published content    
+- **Search**: Adjust search-related permissions  
+- **Shortcut**: Manage visibility of shortcuts  
+- **Simple view**: Manage visibility of simple views    
+- **Timesheet**: Set permissions related to Timesheets  
+- **Tree View**: Define visibility rules for Treeviews  
+
+## How to create a Permission?
+
+Adding a Permission can be done via the `Permissions` panel in any of the objects listed above. Alternatively, use the menu search bar to find the Permissions configuration object.
+
+1. Create a Permission  
+2. Select the Group  
+3. Set the Module  
+4. Select the target object  
+5. Select the property to override  
+6. Set the overridden value  
+![](permissions.png)
 
 <div class="warning">
 It is required to clear the platform's cache to apply changes made to Permissions
 </div>
 
-![](permissions.png)
+## Learn more
+
+- [Functions](/lesson/docs/platform/usersrights/function)
+- [Grant](/lesson/docs/platform/usersrights/grant)
+- [Business object](/lesson/docs/platform/businessobjects/business-objects/business-objects)
+  
+
