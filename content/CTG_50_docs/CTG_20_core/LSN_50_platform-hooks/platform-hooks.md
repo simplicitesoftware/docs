@@ -45,14 +45,37 @@ Check:
 - [this document about OAuth2 authentication](/lesson/docs/authentication/tomcat-oauth2)
 - [this document about SAML authentication](/lesson/docs/authentication/tomcat-saml) for details.
 
-<h2 id="startpagehook">Start page hook</h2>
+<h2 id="startpagehook">Custom start page hook</h2>
 
-The `customStartPage` platform hooks only exists in version 5.0+. It allows to implement a custom low-level start page `/` instead of the default start page that only redirects to `/ui/`.  
-The `customAuthPage` platform hooks only exists in version 5.0+. It allows to implement a custom authentication/page.     
-For more details  [refer to this documentation](/lesson/docs/authentication/custom-page)
+As of version 5.0 `customStartPage` platform hooks allows to implement a custom low-level start page `/` instead of the default start page that only redirects to `/ui/`.  
 
 Note that similar start page customization can also be achieved at a higher level by implementing the `displayPublic` hook of a disposition associated to the `public` user.
 
+<h2 id="startpagehook">Custom authentication page hook</h2>
+
+As of version 5.0, the `customAuthPage` platform hooks allows to implement a custom authentication/page.
+
+For more details  [refer to this documentation](/lesson/docs/authentication/custom-page)
+
+<h2 id="startpagehook">Custom health check hook</h2>
+
+As of version 6.2 the `customHealthCheck` platform hook allows to implement e custom health check, e.g.:
+
+```java
+@Override
+public void customHealthCheck(HttpServletRequest request, HttpServletResponse response, boolean minimal) throws Exception {
+	AppLog.info("Custom health check called from " + request.getRemoteAddr());
+
+	ServletTool.setHTTPHeadersForJSON(request, response);
+	try (OutputStream out = response.getOutputStream()) {
+		out.write(new JSONObject()
+			.put("status", "OK")
+			.put("message", "Everything seems fine!")
+			.put("date", Tool.toDatetime(new Date()))
+			.toString().getBytes());
+	}
+}
+```
 <h2 id="rightshooks">User rights hooks</h2>
 
 ### `preLoadGrant` &amp; `postLoadGrant`
