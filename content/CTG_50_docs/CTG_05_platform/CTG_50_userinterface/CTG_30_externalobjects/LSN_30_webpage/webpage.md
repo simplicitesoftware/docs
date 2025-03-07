@@ -19,21 +19,63 @@ The creation process is similar to the one for any *External Object*:
     - **UI Widget** should be set as **No**
     - Ensure you assign the right **Module Name** for your object.
     > Example values:<br>
-    > ![]()
+    > <image src="webpage_createform.png" alt="web page creation form" width="75%"/>
 
 3. Click **Save**.
+
+<br>
+<image src="webpage_createresource.png" alt="creating resources" width="65%"/>
 
 4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/externalobjects/resources).
     - Ensure **CLASS** **HTML** and **STYLES** well appear in the *Resources* tab.
     > Created Resources:<br>
-    > ![]()
+    > <image src="webpage_resources.png" alt="web resources" width="75%"/>
+
+<br>
+<image src="webpage_editcode.png" alt="java code creation" width="65%"/>
 
 5. Finally, click **Edit Code** to create the custom *Java class* code for your object.
     - You should see the **Class** field empty.
     - **Source Code** field should have the `<your-object-code>.java` file referenced.
     > Result Form:<br>
-    > ![]()
+    > <image src="webpage_javasource.png" alt="custom java class" width="50%"/>
 
+<br>
+The code for your webpage shall look like this by default:
+
+```java
+package com.simplicite.extobjects._; // replace _ with <module-name>
+
+import java.util.*;
+
+import com.simplicite.util.*;
+import com.simplicite.util.exceptions.*;
+import com.simplicite.util.tools.*;
+
+/**
+ * Standalone basic web page external object _
+ */
+public class _ extends com.simplicite.webapp.web.WebPageExternalObject { // replace _ with <object-code>
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Body part of the page
+	 * @param params Request parameters
+	 */
+	@Override
+	public String displayBody(Parameters params) {
+		try {
+			// Call the render Javascript function implemented in the SCRIPT resource
+			return javascript(getName() + ".render();");
+		}
+		catch (Exception e) {
+			AppLog.error(null, e, getGrant());
+			return e.getMessage();
+		}
+	}
+}
+
+```
 ## Usage
 
 Using *Web Page* external objects, you have two logics to implement:
@@ -43,14 +85,49 @@ Using *Web Page* external objects, you have two logics to implement:
     - **STYLES:** where you define the stylesheet declaring all styles for your component. Using either CSS or LESS syntax.
     - **CLASS:** the javascript file where you declare all of your component's behaviour and interactions, within the `async render(){ ... }` method. Which you can refine or extend by using server-side logic by calling `this.server()` that references a custom method in the *Java Code*.
 
-2. **Server-Side logic:** here is defined your object's instantiation and global setup.
-    - Most of it is declared within the `public Object display(Parameters params){ ... }`.
-    - Your page is implemented using the `com.simplicite.webapp.web.BootstrapWebPage` class with `new BootstrapWebPage(params.getRoot(), getDisplay())`.
-    - Your **CLASS** javascript code is called using `String render = getName() + ".render(params.toJsonObject().toString())"` then `wp.setReady(render)` and `return wp.toString()`.
-    - You can pass other types of resources to your *client-side* scripts by putting them into the `params` variable that you pass to `String render` as follows; `params.toJSONObject().put("<usableName>", HTMLTool.getResourceImageUrl(this, "<resource-name>"))`.
-    - It's also here that you load your web-resources using the `BootstrapWebPage.appendJSInclude(HTMLTool.getResourceJSURL(this, "SCRIPT"))`, `BootstrapWebPage.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"))` and `BootstrapWebPage.append(HTMLTool.getResourceHTMLContent(this, "HTML"))`.
+2. **Server-Side logic:** here is defined your object's instantiation and global setup, in a class extending `com.simplicite.webapp.web.WebPageExternalObject`.
+    - Most of it is declared within the `public Object displayBody(Parameters params){ ... }`.
+    - Your page is rendered by referencing the **CLASS** resource through `javascript(getName() + ".render();");`<br>
+    - **Other Possible Structure**
+        - Your page is implemented using the `com.simplicite.webapp.web.BootstrapWebPage` class with `new BootstrapWebPage(params.getRoot(), getDisplay())`.
+        - Your **CLASS** javascript code is called using `String render = getName() + ".render(params.toJsonObject().toString())"` then `wp.setReady(render)` and `return wp.toString()`.
+        - You can pass other types of resources to your *client-side* scripts by putting them into the `params` variable that you pass to `String render` as follows; `params.toJSONObject().put("<usableName>", HTMLTool.getResourceImageUrl(this, "<resource-name>"))`.
+        - It's also here that you load your web-resources using the `BootstrapWebPage.appendJSInclude(HTMLTool.getResourceJSURL(this, "SCRIPT"))`, `BootstrapWebPage.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"))` and `BootstrapWebPage.append(HTMLTool.getResourceHTMLContent(this, "HTML"))`.
+
+<details>
+<summary>Code Example</summary>
+
+```java
+@Override
+public Object display(Parameters params) {
+	// Bootstrap page
+	BootstrapWebPage wp = new BootstrapWebPage(params.getRoot(), getDisplay());
+	
+	wp.appendAjax(true);
+
+	wp.appendJSInclude(HTMLTool.getResourceJSURL(this, "CLASS"));
+	wp.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"));
+	wp.appendHTML(HTMLTool.getResourceHTMLContent(this, "HTML"));
+	
+	JSONObject p = params.toJSONObject();
+
+    String imageResource = HTMLTool.getResourceImageURL(this, "IMAGE");
+    
+    p.put("customImage", imageResource); // Add IMAGE image to params
+	
+	wp.setReady(this.getName() + ".render(" + p.toString() + ");");
+
+	return wp.toString();
+}
+```
+</details>
 
 ## Read More
 
+**JavaDoc links**
+- [BootstrapWebPage](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/BootstrapWebPage.html)
+- [WebPageExternalObject](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/WebPageExternalObject.html)
+
+**Other Lessons**
 - [Resources](/lesson/docs/platform/userinterface/externalobjects/resources)
 - [Static Web Sites](/lesson/docs/platform/userinterface/externalobjects/staticsite)
