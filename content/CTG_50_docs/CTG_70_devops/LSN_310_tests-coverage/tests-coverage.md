@@ -10,7 +10,7 @@ Enable the JaCoCo agent for a specified module <span id="agent"></span>
 
 Our standard images already contains the up-to-date JaCoCo tool by default in the `/usr/local/jacoco` folder.
 
-To enable coverage measurement of unit tests execution just pass the `JACOCO_MODULES` environment variable to the container with a list of spece-separated modules (e.g. `-e JACOCO_MODULES="MyModule MyOtherModule"`).
+To enable coverage measurement of unit tests execution just pass the `JACOCO_MODULES` environment variable to the container with a space-separated list of modules (e.g. `-e JACOCO_MODULES="MyModule MyOtherModule"`).
 
 The JaCoCo agent exec file is generated at the location denoted by the `JACOCO_DESTFILE` environment variable which defaults to `/usr/local/tomcat/jacoco/jacoco.exec`.
 You must ensure persistence for this file, for instance by mounting the default `/usr/local/tomcat/jacoco` folder (e.g. `-v ./jacoco:/usr/local/tomcat/jacoco`)
