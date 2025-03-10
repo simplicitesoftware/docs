@@ -34,7 +34,7 @@ An application consists of:
 - **Modules**: core components of an application. They contain business objects, actions, fields, and other configuration elements.
 - **Packages**: A Package represents the relationship between the Modules and the Application.
 - **Import History**: Logs of imported versions and configurations.
-- Archive: The application archive contains the POM (Project Object Model) file and the modules that compose the application.
+- **Archive**: The application archive contains the POM (Project Object Model) file and the modules that compose the application.
 
 ### Application-Module Relationship
 
