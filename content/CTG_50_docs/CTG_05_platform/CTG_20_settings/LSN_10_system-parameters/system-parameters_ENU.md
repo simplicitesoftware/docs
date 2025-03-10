@@ -34,7 +34,7 @@ System Parameters help centralize configuration, making it easier to maintain an
 ## How System Parameters Manage Application Settings
 
 - **Static Variables**: Used to store constant values like VAT rates, tax rules, or API keys.
-- **User**: Override default settings for specific users (e.g., default language, theme).
+- **User**: Override default settings for specific users.
 - **Application Settings**: Control system-wide behaviors, such as cache duration, authentication settings, or session timeouts.
 - **Configurable Features**: Adjust feature availability using system parameters.  
 - **Performance & Limits**: Adjust system limits, such as maximum file upload size or API rate limits.
