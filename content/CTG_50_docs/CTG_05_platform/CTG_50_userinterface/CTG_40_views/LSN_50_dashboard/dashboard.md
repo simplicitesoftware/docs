@@ -38,6 +38,8 @@ You have differents choices :
       - The filters are applied to lists, charts, and pivot tables (having a date/period or matching filtered fields).  
         You can add filters on object attributes to this period filter bar by clicking on Add Filter.       
     <img src="dashboard8.png" alt="dashboard widget" width="50%"/>  
+  - Rights to drag a list from the menu : If the object has been set to allow dashboard listing.       
+    <img src="dashboard9.png" alt="dashboard widget" width="50%"/>  
    - Preview : to preview your dashboard  
    - Up arrow icon : automatically arrange your dashboard  
    - Save : to save your dashboard  
