@@ -63,6 +63,40 @@ Date or datetime interval search syntax is `YYYY-MM-DD[ hh:mm:ss];YYYY-MM-DD[ hh
 
 Alternatively you can use search filters named `dmin__<field name>` or `dmax__<field name>`
 
+### Floating date search
+
+Syntax with today's date:
+
+- `[DATE:offset]`
+- `[DATETIME:offset]`
+
+With offset = `<+|-><number><unit>`, the `+` sign is optional
+
+Time units:
+- `ms` for milliseconds
+- `s`econds
+- `mi`inutes
+- `h`ours
+- `d`ays 
+- `dw` days without week-ends
+- `w`eeks
+- `m`onths
+- `y`ears
+
+Examples
+
+```java
+// last 3 months
+getField("myDate").setFilter(">=[DATE:-3m]");
+// in 6 weeks
+getField("myDate").setFilter(">=[DATE:+6w]");
+getField("myDate").setFilter(">=[DATE:+42d]");
+// in next 15 days
+getField("myDate").setFilter(">=[DATE] and <=[DATE:15d]");
+// before next 12 hours
+getField("myDatetime").setFilter("<[DATETIME:+12h]");
+```
+
 ### Interval searches on number fields
 
 Number interval search syntax is `(>12 and <=25) or >100`.
@@ -105,6 +139,8 @@ JSON Filters are used in several contexts: API endpoint, link filters, widgets, 
   // date range
   "dmin___date1" : "2021-01-01",
   "dmax___date2" : "2023-12-31 15:35:00",
+  // today offset
+  "date1" : ">[DATE:15d] and <=[DATE:3m]",
   // number range
   "nmin___number1" : 123,
   "nmax___number2" : 456.78,
