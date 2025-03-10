@@ -95,6 +95,9 @@ At creation the script looks like:
 
 With the `id` tag being the raw **Code** of your external object.
 
+> **NB:** you can remove the div if you prefer, but then you have to reference your object's html using `const $content = this.ctn` in the **CLASS** resource file, and then add elements using methods like `$content.html()`.<br>
+> Such workflow will refer directly to the default container div your external object is created within.
+
 There are several keypoints to understand and keep in mind while developing in this file:
 - Those elements are displayed within the ```<div class="view-item item-extern"></div>``` element. Thus they can be targeted by existing styles and DOM constraints.
 - The *html* is **not** linked to its script with the ```<script>``` tag, meaning you can't instantiate or call functions from the static content (the one written in the **HTML**).
