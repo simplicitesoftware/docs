@@ -31,7 +31,7 @@ System Parameters help centralize configuration, making it easier to maintain an
 | **Type** | Type of the system parameter |
 | **Module** | The module to which the parameter belongs |
 
-## Configuration objects linked to System Parameters
+## How System Parameters Manage Application Settings
 
 - **Static Variables**: Used to store constant values like VAT rates, tax rules, or API keys.
 - **User**: Override default settings for specific users (e.g., default language, theme).
