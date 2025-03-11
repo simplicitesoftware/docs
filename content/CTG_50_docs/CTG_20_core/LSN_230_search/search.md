@@ -4,17 +4,17 @@ Search
 ## Searching with the UI
 
 There are differend kind of searches in Simplicité : 
-- the Global Search
-- the Object Search
-- the Object-Global Search
-- the Domain Search
-- the Form Search
+- Global Search
+- Advanced Search
+- Object Search
+- Domain Search
+- Form Search
 
 ![alt](search-types.png)
 
 ### Global Search
 
-The global search (aka fulltext search) works by searching the **index** for the string the user types in the header search bar. Needless to say, only objects that the user has access to are displayed.
+The global search (aka fulltext search, or indexed search) works by searching the **index** for the string the user types in the header search bar. Needless to say, only objects that the user has access to are displayed.
 
 For the objects to appear in the search:
 1. The object must be **indexable** (property set on the Business Object configuration options)
@@ -34,9 +34,9 @@ The **Lucene index** relies on the lucene engine to index objects and retrieve r
 
 <!-- TODO global search results https://community.simplicite.io/t/recherche-limitee-a-un-domaine/1885/7 -->
 
-### Object Search
+### Advanced Search
 
-The object search is a by-column search on an object. 
+The advanced search is a by-column search on an object. 
 
 The be activated, the object needs to have at least one searchable field (*be careful: indexable->global vs searchable->object*).
 
@@ -49,9 +49,9 @@ The detached and pinned modes have a richer UI with components to help the user 
 
 Basically, each filter is translated to a SQL `WHERE` clause, allowing filtering on the table.
 
-### Object-Global Search
+### Object Search
 
-The Object-Global Search is just the Global Search functionnality (using the same index and specificities) but applied to one object only.
+The Object Search is just the Global Search functionnality (using the same index and specificities) but applied to one object only.
 
 ### Menu Search
 
