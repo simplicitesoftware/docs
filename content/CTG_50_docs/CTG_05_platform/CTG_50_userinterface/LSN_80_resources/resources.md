@@ -47,7 +47,7 @@ Resources are created & defined at the creation of an object (Business Object, E
     - **Object** is automatically filled with the context object.
     - Select the type from the **Type** dropdown.
     - Enter the name of your resource in **Code**.
-    - **Cache?** tells if your object shall be included in the cache or not.
+    - **Cached?** tells if your object shall be included in the cache or not.
     - **Module Name** should be automatically filled with the context object's module.
     - Select the content of your resource through the fields:
         - **Image** if your resource is of type *Image* or *Object Icon*
@@ -71,6 +71,6 @@ And from here the process is the same but ensure to properly set the **Object** 
 | ----- | ----------- |
 | Object | Which object is using this resource. |
 | Type | Type of the resource from ([types](#what-is-a-resource-)) |
-| Language | Written language of the resource (**'*'** by default, otherwise `English` or `French`) |
+| Language | Written language of the resource (_'*'_ by default, otherwise `English` or `French`) |
 | Code | Name of the resource |
 | Cached? | Tells if the resource is included in the cache or not (**No** by default) |

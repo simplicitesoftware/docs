@@ -23,7 +23,7 @@ The creation process is similar to the one for any *External Object*:
 <br>
 <image src="staticsite_createresources.png" alt="creating resources" width="65%"/>
 
-4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/externalobjects/resources).
+4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/resources).
     - Ensure **CLASS** **HTML** and **STYLES** well appear in the *Resources* tab.
     > Created Resources:<br>
     > <image src="staticsite_resources.png" alt="web resources" width="75%"/>
@@ -77,4 +77,4 @@ Simplicite.UI.ExternalObjects.TrnStaticPage = class extends Simplicite.UI.Extern
 ## Read More
 
 - [JSDoc](https://platform.simplicite.io/6.2/jsdoc/global.html)
-- [Specific Javadoc](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/StaticSiteExternalObject.html)
+- [StaticSiteExternalObject](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/StaticSiteExternalObject.html) (javadoc)

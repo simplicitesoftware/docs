@@ -103,7 +103,7 @@ There are several keypoints to understand and keep in mind while developing in t
 - The *html* is **not** linked to its script with the ```<script>``` tag, meaning you can't instantiate or call functions from the static content (the one written in the **HTML**).
 
 <details>
-<summary><b><i>DemoWelcomeCard</b> code example<i></summary>
+<summary><b><i>DemoWelcomeCard</b> code example</i></summary>
 
 ```html
 <div id="demowelcomecard">
@@ -339,7 +339,7 @@ There are several keypoints to understand and keep in mind while developing in t
 
 In the **CLASS** resource, you will write the JS script for your component's behavior. Here you will have the possibility to use both the [JSDoc](https://platform.simplicite.io/6.2/jsdoc/) for frontend operations direclty in the **CLASS** resource's script, and to make few calls to the *Java* code of your component to add custom server-side operations.
 
-> By default the only call from **CLASS** to **Java** is through `render()` that allows for your component's correct display and instantiation. But [later]() on we'll see another method that allow for more custom calls: `service()`.
+> By default the only call from **CLASS** to **Java** is through `render()` that allows for your component's correct display and instantiation. But later on we'll see another method that allow for more custom calls: `service()`.
 
 At creation the script is:
 ```javascript
@@ -381,9 +381,7 @@ public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
 ```
 
 <details>
-<summary><b>service()</b> basic code example</summary>
-
-<div style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap: 50px;" width="100%">
+<summary><b>service()</b> code example (js)</summary>
 
 ```javascript
 Simplicite.UI.ExternalObjects._ = class extends Simplicite.UI.ExternalObject {
@@ -406,6 +404,10 @@ Simplicite.UI.ExternalObjects._ = class extends Simplicite.UI.ExternalObject {
 	}
 };
 ```
+</details>
+
+<details>
+<summary><b>service()</b> code example (java)</summary>
 
 ```java
 package com.simplicite.extobjects.Application;
@@ -430,7 +432,6 @@ public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
 	}
 }
 ```
-</div>
 </details>
 
 <details>
@@ -547,7 +548,5 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 
 - [Widgets](/lesson/docs/misc/widgets) already implemented within Simplicité's **Demo** module.
 - [Code Examples](/lesson/docs/core/externalobject-code-examples)
-- [Permission Groups](/lesson/docs/platform/usersrights/groups)
-- [Resources](/lesson/docs/platform/userinterface/resources)
 - [JSDoc](https://platform.simplicite.io/6.2/jsdoc/)
 - [Javadoc](https://platform.simplicite.io/6.2/javadoc/)

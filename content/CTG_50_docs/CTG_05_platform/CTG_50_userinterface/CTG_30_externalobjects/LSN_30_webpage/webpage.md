@@ -26,7 +26,7 @@ The creation process is similar to the one for any *External Object*:
 <br>
 <image src="webpage_createresource.png" alt="creating resources" width="65%"/>
 
-4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/externalobjects/resources).
+4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/resources).
     - Ensure **CLASS** **HTML** and **STYLES** well appear in the *Resources* tab.
     > Created Resources:<br>
     > <image src="webpage_resources.png" alt="web resources" width="75%"/>
@@ -92,7 +92,10 @@ Using *Web Page* external objects, you have two logics to implement:
         - Your page is implemented using the `com.simplicite.webapp.web.BootstrapWebPage` class with `new BootstrapWebPage(params.getRoot(), getDisplay())`.
         - Your **CLASS** javascript code is called using `String render = getName() + ".render(params.toJsonObject().toString())"` then `wp.setReady(render)` and `return wp.toString()`.
         - You can pass other types of resources to your *client-side* scripts by putting them into the `params` variable that you pass to `String render` as follows; `params.toJSONObject().put("<usableName>", HTMLTool.getResourceImageUrl(this, "<resource-name>"))`.
-        - It's also here that you load your web-resources using the `BootstrapWebPage.appendJSInclude(HTMLTool.getResourceJSURL(this, "SCRIPT"))`, `BootstrapWebPage.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"))` and `BootstrapWebPage.append(HTMLTool.getResourceHTMLContent(this, "HTML"))`.
+        - It's also here that you load your web-resources using the **BootstrapWebPage** embedded methods:
+			- **CLASS** with `BootstrapWebPage.appendJSInclude(HTMLTool.getResourceJSURL(this, "CLASS"))`
+			- **STYLES** with `BootstrapWebPage.appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"))`
+			- **HTML** with `BootstrapWebPage.append(HTMLTool.getResourceHTMLContent(this, "HTML"))`.
 
 <details>
 <summary>Code Example</summary>
@@ -129,5 +132,5 @@ public Object display(Parameters params) {
 - [WebPageExternalObject](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/WebPageExternalObject.html)
 
 **Other Lessons**
-- [Resources](/lesson/docs/platform/userinterface/externalobjects/resources)
+- [Resources](/lesson/docs/platform/userinterface/resources)
 - [Static Web Sites](/lesson/docs/platform/userinterface/externalobjects/staticsite)
