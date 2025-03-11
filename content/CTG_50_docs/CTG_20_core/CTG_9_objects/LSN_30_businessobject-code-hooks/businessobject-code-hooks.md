@@ -21,20 +21,6 @@ The choice depends on the nature of the considered business logic:
 - data preparation logic,
 - etc.
 
-> **Note**:
->
-> Some of the examples below are only given using the **Rhino** scripting language.
-> In such Rhino scripts the `this` variable correspond to the business object itself,
-> it must be **explicitly** used (it can't be implicit like in Java code).
->
-> The **Rhino**-only code examples can easily be transposed to equivalent **Java** code.
-> Some examples are provided both in Rhino and Java so as you can see the syntax differences.
->
-> Apart from the variable and methods declarations syntax, the main point of attention is regarding comparisons syntax for **non raw types**:
->
-> - Rhino: `a == b`, Java: `a.equals(b)`
-> - Rhino: `a != b`, Java: `!a.equals(b)`
-
 Some very common and useful code examples are given in the [basic code examples](/lesson/docs/core/basic-code-examples) document.
 <!-- and some more unusual examples are given [advanced code examples](/lesson/docs/core/advanced-code-examples) document.-->
 
@@ -67,19 +53,6 @@ public void postLoad() {
 		setDefaultSearchSpec(getStatusField().getColumn() + " = 'VALIDATED'");
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.postLoad= function() {
-	// In this example we set a restrictive search spec on object (to validated records only) if the user is in a specified group
-	if (this.getGrant().hasResponsibility("MYGROUP")
-		this.setDefaultSearchSpec(this.getStatusField().getColumn() + " = 'VALIDATED'");
-};
-```
-
-</details>
 
 <h3 id="isopencreatecopyupdatedeleteenable">Access rights enabling/disabling hooks</h3>
 
@@ -117,32 +90,6 @@ public boolean isDeleteEnable(String[] row) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.isCreateEnable = function() {  
-	// In this example we check the status of parent object to allow/disallow creation  
-	var p = this.getParentObject();
-	if (p && p.getName() == "MyParentObject")
-		return p.getStatus() == "VALIDATED";
-};
-
-MyObject.isUpdateEnable = function(row) {
-	// In this example update is allowed if a specified field has a true value  
-	return Tool.isTrue(row[this.getFieldIndex("objField1")]);
-};
-
-MyObject.isDeleteEnable = function(row) {
-	// In this example we apply the same rule as for update
-	return this.isUpdateEnable(row);
-};
-```
-
-</details>
-
-
-
 <h3 id="isactionenable">Custom action processing right enabling/disabling hook</h3>
 
 The `isActionEnable` hook has a similar use as above right hooks but for custom actions.
@@ -164,20 +111,6 @@ public boolean isActionEnable(String[] row, String action) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.isActionEnable(row, action) {
-	// In this example the custom action is allowed depending on the value of a given object field
-	if (action == "myCustomAction")
-		return Tool.isTrue(row[this.getFieldIndex("objField1")]);
-	return true; // Note: In Rhino this can be omitted as default return value is true
-};
-```
-
-</details>
-
 > See [this document](/lesson/docs/core/custom-actions-examples) for details on how to implement custom actions.
 
 <h3 id="isprintemplateenable">Publication processing right enabling/disabling hook</h3>
@@ -196,21 +129,7 @@ public boolean isPrintTemplateEnable(String[] row, String printTemplateName) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.isPrintTemplateEnable(row, printtmpl) {
-	// In this example the publication is allowed depending on the value of a given object field
-	if (printtmpl == "myPrintTemplate")
-		return Tool.isTrue(row[this.getFieldIndex("objField1")]);
-	return true; // Note: In Rhino this can be omitted as default return value is true
-};
-```
-
-</details>
-
-> See [this document](/lesson/docs/core/publication-examples) for details on how to implement publications.
+> See [this document](/lesson/docs/platform/userinterface/objectsrendering/publications) for details on how to implement publications.
 
 <h3 id="isstatetransitionenable">State transitions hook</h3>
 
@@ -230,21 +149,6 @@ public boolean isStateTransitionEnable(String fromStatus, String toStatus) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.isStateTransitionEnable = function(fromStatus, toStatus) {
-	// In this example above the transition between `PENDING` state and `VALIDATED` statuses is dynamically allowed to users of `MYGROUP`:
-	if (fromStatus == "PENDING" && toStatus == "VALIDATED")
-		return this.getGrant().hasResponsibility("MYGROUP");
-	return true; // Note: In Rhino this can be omitted as default return value is true
-};
-```
-
-</details>
-
-
 <h3 id="canreference">Panel objects hook</h3>
 
 The `canReference` hook allows to show/hide linked objects' panels based on custom business rules.
@@ -258,18 +162,6 @@ public boolean canReference(String objectName, String fieldName) {
 	return ("MyPanelObject".equals(objectName) && !getGrant().hasResponsibility("MYGROUP"));	
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.canReference = function(objectName, fieldName) {
-	// In this example the MyPanelObject's panel is shown only if the user does not belong to MYGROUP
-	return (objectName == "MyPanelObject" && !this.getGrant().hasResponsibility("MYGROUP"));	
-};
-```
-
-</details>
 
 
 <h3 id="canupdateall">Bulk update hook</h3>
@@ -286,17 +178,6 @@ public boolean canUpdateAll(ObjectField fieldName) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.canUpdateAll = function(fieldName) {
-	// In this example, the bulk update feature is allowed to users who does not belong to MYGROUP
-	return (!this.getGrant().hasResponsibility("MYGROUP"));
-};
-```
-
-</details>
 
 <h3 id="ishistoric">Data history hook</h3>
 
@@ -312,18 +193,6 @@ public boolean isHistoric() {
 	return !getStatus().equals(getOldStatus());
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.isHistoric = function() {
-	// In this example an historization is done only when the object's status had changed
-	return this.getStatus() != this.getOldStatus();
-};
-```
-
-</details>
 
 <h2 id="datapreparationhooks">Data preparation hooks</h2>
 
@@ -364,27 +233,6 @@ public void initDelete() {
 	initUpdate();
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.initCreate = function() {
-	this.getField("objField1").setUpdatable(true);
-	this.getField("objField2").setUpdatable(this.getGrant().hasResponsibility("MYGROUP"));
-};
-
-MyObject.initUpdate = function() {
-	var s = this.getStatus();
-	this.getField("objField1").setUpdatable(s == "PENDING" || s == "VALIDATED");	
-};
-
-MyObject.initCopy = function() {
-	this.initUpdate();
-};
-```
-
-</details>
 
 <h3 id="initlist">List preparation hook</h3>
 
@@ -429,18 +277,6 @@ public void initSearch() {
 	getField("objLogin").setFilter(getGrant().getLogin());	
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.initSearch = function() {
-	this.getField("objField1").setFilter("is null or <1000");
-	this.getField("objLogin").setFilter(this.getGrant().getLogin());	
-};
-```
-
-</details>
 
 <h3 id="initrefselect">Reference lookup preparation hook</h3>
 
@@ -489,21 +325,6 @@ public void initAction(Action action) {
 	f.setRequired(true);
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.initAction = function(action) {
-	var f = action.getConfirmField("myFieldName");
-	f.setDefaultValue("aValue");
-	f.setRequired(true);
-};
-```
-
-</details>
-
-
 
 <h3 id="otherinit">Other preparation hooks</h3>
 
@@ -557,41 +378,6 @@ public List<String> postValidate() {
 In the above example, the error messages code (`ERR_TEST`) corresponds to a static text
 configured in the `TEXT` list.
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preValidate = function() {
-	var msgs = new ArrayList();
-
-	msgs.add(Message.formatError("ERR_TEST0")); // Global error message
-	msgs.add(Message.formatInfo("ERR_TEST1", null, "objField1")); // Field error message
-	msgs.add(Message.formatWarning("WRN_TEST1", null, "objField2")); // Field warning message
-
-	return msgs; // Return a list of messages
-};
-
-MyObject.postValidate = function() {
-
-	if (this.isNew())
-		this.getField("objField1").setValue(this.getFieldValue("objField2"));
-
-	// No message (in Rhino return statement can be omitted)
-};
-```
-
-Note that `pre/postValidate` hooks implemented in **Rhino** can also return only a single message instead of a list like in the above examples:
-
-```javascript
-MyObject.preValidate = function() {
-	if (this.getField("objQuantity").getInt(0) <= 0)
-		return Message.formatError("ERR_TEST", null, "objQuantity");
-};
-```
-
-</details>
-
-
 <h3 id="prepostselecthooks">Pre and post selection hooks</h3>
 
 The `preSelect` and `postSelect` hooks are called before/after selecting the object data (in a list they are called for each list items). 
@@ -609,20 +395,6 @@ public void preSelect(String rowId, boolean copy) {
 	super.preSelect(rowId, copy);
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preSelect = function(rowId, copy) {
-	// If the data is selected for a copy set a field with particular value 
-	if (copy)
-		this.getField("objField1").setValue("value");
-};
-```
-
-</details>
-
 
 <h3 id="prepostcreateundatedeletehooks">Pre and post creation, update, deletion hooks</h3>
 
@@ -658,19 +430,6 @@ Post delete hook can be used to implement some business rules after the object i
 	}
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preCreate = function() {	
-	// Get a system param sequence next value
-	this.setFieldValue("objRefField", "REF"+this.getGrant().getNextSystemParamValue("MYSEQUENCEPARAM")); 	
-};
-```
-
-</details>
-
-
 > **Note**: for this simple case, the same result could be obtained using te following default value expression of the `objRefField` field:
 > `[EXPR:"REF"+[GRANT].getNextSystemParamValue("MYSEQUENCEPARAM")]`
 
@@ -687,21 +446,6 @@ MyObject.preCreate = function() {
 		return super.preCreate();
 	}
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyOrder.preCreate = function() {	
-	// Generate a unique number use as an id. For example an Order number for a Client.
-	var client = this.getField("orderClientId");  // foreign key
-	var number = this.getField("orderNumber");
-	var n = this.getGrant().getNextValueForColumnWhere(this.getTable(), number.getColumn(), client.getColumn()+" = "+client.getValue());
-	number.setValue(n); 	
-};
-```
-
-</details>
 
 > **Note**: to generate unique codes based on the **row ID** the right approach is to configure a default value expression on your field with an expression like
 > `[EXPR:Tool.format("ABC-%05d", Long.valueOf([ROWID]))]` (in this example the field gets `ABC-00123` as value at the creation of a record with row ID `123`)
@@ -741,27 +485,6 @@ public String postSave() {
 	return super.postSave();
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.postSave = function() {
-	// Update a data of a linked object after
-	if (this.getOldStatus() == "VALIDATED" && this.getStatus() == "DELIVERED") {
-		var obj = this.getGrant().getTmpObject("MyLinkedObject");
-		obj.select(this.getField("objMyLinkedObjectMyObjectId").getValue());
-		obj.getField("otherObjField1").setValue("value");
-		try {
-			new BusinessObjectTool(obj)/* or obj.getTool() in version 5+ */.validateAndSave();
-		} catch(e) {
-			console.error(e.javaException ? e.javaException.getMessage() : e);
-		}
-	}
-};
-```
-
-</details>
 
 `postSave`, `postCreate` and `postUpdate` can also return a redirect or a javascript statement.
 The javascript override the default behavior and have to reload the form or redirect somewhere.
@@ -817,29 +540,6 @@ public List<String[]> postSearch(List<String[]> rows) {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preSearch = function() {
-	this.getField("objField1").setFilter("is null or <1000");
-	this.getField("objField2").setOrder(1);
-	this.getField("objField3").setOrder(-2);
-};
-
-MyObject.postSearch = function(rows) {
-	var fieldIndex = this.getFieldIndex("objField1");
-	for (var i = 0; rows && i < rows.size(); i++) {
-		var row = rows.get(i);
-		row[i] = "Value #" + i;		
-	}
-	return rows;
-};
-```
-
-</details>
-
-
 ### Post deletion with message or redirect statement
 
 The `postDelete` and `postDeleteAll` hooks can return a redirect statement.
@@ -881,24 +581,6 @@ public String preUpdateAll(Parameters params) {
 };
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preUpdateAll = function(params) {
-	if (params!=null) {
-		// Check values
-		if (params.getParameter("objField1") == "123")
-			return Message.formatError("ERR_TEST", null, "objField1");
-		// force values for each record
-		params.setParameter("objField2", "forced value");
-		params.setParameter("objDate3", Tool.getCurrentDate());
-	}
-};
-```
-
-</details>
-
 <h3 id="importhooks">Import hooks</h3>
 
 The `preImport` and `postImport` hooks are called before/after a data is imported.
@@ -925,27 +607,6 @@ These hooks are called to add specific behaviors before/after an import.
 		return super.postImport();
 	}
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preImport = function() {
-	if (this.getFieldValue("objField1") == "value 1") {
-		this.setFieldValue("objField2", "value 2");
-		this.setFieldValue("objField3", "value 3");
-	}	
-};
-
-MyObject.postImport = function() {
-	// Send an alert if a value is imported 
-	var a = this.getAlert("MYALERT", Alert.TYPE_INFO);
-	if (a && this.getField("objField1").isEmpty())
-		a.send(this);	
-};
-```
-
-</details>
 
 <h3 id="exporthooks">Export hooks</h3>
 
@@ -1033,23 +694,6 @@ public String preAlert(Alert a) {
 	return super.preAlert(a);
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preAlert = function(alert) {
-	if (alert!=null) {
-		alert.setSubject("ENU", "Dear [bill_last_name]");
-		alert.setContent("ENU", "Your bill of [bill_amount] ...");
-		alert.addRecipient("john@domain.com", Alert.RECIP_TO);
-		alert.addRecipient(getGrant().getEmail(), Alert.RECIP_CC);
-	}
-};
-```
-
-</details>
-
 The `postAlert` hook can be used to implement some business logic just after sending.
 
 **Example:**
@@ -1061,18 +705,6 @@ public String postAlert(Alert a) {
 	return super.postAlert(a);
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.postAlert = function(alert) {
-	this.getField("objField4").setValue("Mail sent !");
-};
-```
-
-</details>
-
 
 <h4 id="sendalert">Send alert with custom attachments</h4>
 
@@ -1109,39 +741,6 @@ public String postSave() {
 }
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.postSave = function() {
-	var g = this.getGrant();
-	// Get the alert definition (with subject, body, recipients... or null if the alert is disabled)
-	var alert = this.getAlert("MyAlert", Alert.TYPE_INFO);
-	if (alert) {
-		// Add attachments from a child object with a document field
-		var i, doc, list, att = new ArrayList();
-		var a = g.getTmpObject("MyObjectAttachment");
-		a.resetFilters();
-		a.setFieldFilter("MyObject_FK", this.getRowId());
-		list = a.search();
-		for (i=0; i<list.size(); i++) {
-			a.setValues(list.get(i));
-			doc = a.getField("MyDocField").getDocument(g);
-			if (doc) {
-				console.log("debug attach: "+doc.toString());
-				att.add(doc);
-			}
-		}
-		// Send with custom attachments
-		alert.send(this, att);
-	}
-}
-```
-
-</details>
-
-
-
 <h3 id="predefinedsearchhooks">Predefined searches hooks</h3>
 
 It is possible to add code during the predefined search creation:
@@ -1175,33 +774,6 @@ It is possible to add code during the predefined search creation:
 	}
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.preSavePredefinedSearch = function(ps) {
-	// stop creation
-	if (ps.getId() == "0" && ps.getName()=="something reserved")
-		return "ERROR";
-	return null; // ok
-};
-MyObject.getPredefinedSearches() {
-	// all public + privates
-	var list = this.getGrant().getPredefinedSearch("MyObject");
-	for (var i=0; list && i<list.size(); i++) {
-		var ps = list.get(i);
-		// remove ungranted searches
-		if (ps.getName()=="something reserved") {
-			list.remove(i);
-			i--;
-		}
-	}
-	return list;
-};
-```
-
-</details>
-
 <h2 id="otherhooks">Other hooks</h2>
 
 <h3 id="shortlabelhook">Short label hook</h3>
@@ -1219,22 +791,6 @@ public String getUserKeyLabel(String[] row) {
 		return getFieldValue("myThirdLabelField", row);
 }
 ```
-
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.getUserKeyLabel = function(row) {
-	if (this.isTreeviewInstance()) // On treviews
-		return row[this.getFieldIndex("myFirstLabelField")] + " - " + row[this.getFieldIndex("mySecondLabelField");
-	else if (!row) // On forms
-		return this.getFieldValue("myFormLabelField");
-	else // On lists
-		return row[this.getFieldIndex("myListLabelField")];
-}
-```
-
-</details>
 
 <h3 id="stylehook">Style hook</h3>
 
@@ -1289,22 +845,6 @@ public String getCtxHelp(String context) {
 };
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-MyObject.getHelp = function() {
-	if (this.getGrant().hasResponsibility("MYGROUP"))
-		return "This is a custom main help";
-};
-MyObject.getCtxHelp = function(ctx) {
-	if (this.getGrant().hasResponsibility("MYGROUP") && ctx == ObjectCtxHelp.CTXHELP_UPDATE)
-		return "This is a custom contextual help";
-};
-```
-
-</details>
-
 <h3 id="usinghistory">Using history</h3>
 
 If a `MyObject` business object is historized, there is an additional business object names `MyObjectHistoric` that stores the values of each record.
@@ -1321,21 +861,6 @@ h.getField("row_idx").setOrder(-1); // Reverse order on history index
 h.search(false);
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-var h = this.getGrant().getTmpObject(this.getHistoricName()); // Get historic object
-h.resetFilters();
-h.getField("row_ref_id").setFilter(this.getRowId()); // Filter on current row ID
-h.getField("row_idx").setOrder(-1); // Reverse order on history index
-h.search(false);
-(...)
-```
-
-</details>
-
- 
 <h3 id="redirections">Redirection</h3>
  
 It is possible to open a given "abstract" father object (e.g. `Vegetable`) record
@@ -1380,38 +905,6 @@ public String[] getTargetObject(String rowId, String[] row) {
 };
 ```
 
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
-```javascript
-Vegetable.getTargetObject = function(rowId, row) {
-	if (this.isCopied())
-		rowId = getCopyId(); // Propagate the copy Id (not "0")
-	else if (rowId.equals(ObjectField.DEFAULT_ROW_ID))
-		return null; // No redirection at creation
-	if (!row && this.select(rowId))
-		row = this.getValues();
-	var target = null;
-	if (row) {
-		var type = row[this.getFieldIndex("vegetableType")];
-		if (type=="CARROT")
-			target = "Carrot";
-		else if (type=="CABBAGE")
-			target = "Cabbage";
-	}
-	if (!target)
-		return null; // Unknown type, no redirection
-		
-	var t = ScriptInterpreter.getStringArray(3);
-	t[0] = target; // target object
-	t[1] = "the_ajax_" + target; // main target instance
-	t[2] = rowId; // target row Id (same in this inheritance case)
-	return t;
-};
-```
-
-</details>
-
 This mechanism can also be used to do redirection between objects that don't have a father-child relationship.
 
 <h3 id="metaobjlink">Meta-object link</h3>
@@ -1444,9 +937,10 @@ make the call to be done for the child object's scope).
 
 **Example:**
 
-```javascript
-MyChildObject.postCreate = function() {
-	MyFatherObject.postCreate.call(this); // Call parent object hook
+```java
+@Override
+public String postCreate() {
+	super.postCreate();	// Call parent object hook
 	// Do something specific to the child object
 }
 ```

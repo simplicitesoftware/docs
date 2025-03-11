@@ -20,4 +20,4 @@ jobs:
 
       - name: Rec branch git-checkout request
         if: ${{ github.ref_name == 'rec' }}
-        run: curl -X POST https://docs2rec.dev.simplicite.io/api/ext/TrnGitCheckoutService
+        run: curl -X POST https://docsrec.dev2.simplicite.io/api/ext/TrnGitCheckoutService

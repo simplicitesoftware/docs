@@ -1,15 +1,15 @@
 # Welcome
 
-Start by filtering on level 1. This version is designed for (future) Simplicité designers. 
+Start by filtering on level 1 (bookmark button at the top right). This version is designed for (future) Simplicité designers. 
 We recommend following level 2 after a few months of practice on the platform or if you have specific configuration needs, in order to expand your knowledge and skills to an intermediate level.
 
 ## Level 1 Tutorial: Introduction to the Simplicité Platform
 
-During this level 1 tutorial, you will discover the fundamentals of the Simplicité platform. We will design an order-taking application.
+During this level 1 tutorial, you will discover the fundamentals of the Simplicité platform. We will design an order management application.
 
 After completing this course, you will be able to take the **Fundamentals** certification exam.
 
-### Key Steps to Design the Order-Taking Application
+### Key Steps to Design the Order management Application
 
 #### 1. Familiarization with the Simplicité interface
 - Discover the configuration and development environment.
@@ -17,7 +17,8 @@ After completing this course, you will be able to take the **Fundamentals** cert
 
 #### 2. Creating the data model
 - Define the necessary objects (e.g., Customers, Products, Orders).
-- Establish relationships between these objects.
+- Establish relationships between the objects.  
+<img src="data-model_ENU.png" alt="field-area" width="50%"/>
 
 #### 3. Designing the user interface
 - Create input forms for business objects.
@@ -41,6 +42,5 @@ After completing this course, you will be able to take the **Fundamentals** cert
 
 ---
 
-By following these steps, you will acquire the fundamental skills necessary to create a simple order-taking application on Simplicité. This will also prepare you for the **Fundamentals** exam.
+By following these steps, you will acquire the fundamental skills necessary to create a simple order management application on Simplicité. This will also prepare you for the **Fundamentals** certification.
 
-Remember to practice regularly and explore the Simplicité documentation to deepen your knowledge.
