@@ -3,5 +3,6 @@
     "ANY": {
         "title": "Field styles",
         "description": ""
-    }
+    },
+    "published":false
 }
