@@ -15,17 +15,17 @@ The creation process is similar to the one for any *External Object*:
 2. During the form's filling, ensure you select *Static Web Site* as **Nature**.
     - **UI Widget** should be set as **No**
     - Ensure you assign the right **Module Name** for your object.
-    > Example values:<br>
+    > Example values:  
     > <image src="staticsite_createform.png" alt="static web page creation" width="75%"/>
 
 3. Click **Save**.
 
-<br>
+  
 <image src="staticsite_createresources.png" alt="creating resources" width="65%"/>
 
 4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/resources).
     - Ensure **CLASS** **HTML** and **STYLES** well appear in the *Resources* tab.
-    > Created Resources:<br>
+    > Created Resources:  
     > <image src="staticsite_resources.png" alt="web resources" width="75%"/>
 
 ## Usage

@@ -52,7 +52,7 @@ Resources are created & defined at the creation of an object (Business Object, E
     - Select the content of your resource through the fields:
         - **Image** if your resource is of type *Image* or *Object Icon*
         - **File** otherwise.
-    > Example values:<br>
+    > Example values:  
     > <img src="resources_form.png" alt="resources list" width="50%">
 
 3. Click **Save**.

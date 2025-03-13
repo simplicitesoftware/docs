@@ -17,15 +17,15 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - **UI Widget** tells if your external object shall be considered as a *widget* or not, declaring weither or not it can be used in [dashboard](/lesson/docs/platform/userinterface/views/dashboard).
     > In **both** case, the component is usable in **any editable view**, the only difference is its possible including in dashboards.
 
-    > Example values:<br>
+    > Example values:  
     > <img src="uicomp_extobj_fields.png" alt="fields values" width="50%">
 
-2. **Save** your object and click **Create resources**:
+2. **Save** your object and click **Create resources**:  
     <img src="uicomp_createresources.png" alt="create resources" width="65%">
     - This creates the default [resources](/lesson/docs/platform/userinterface/resources) for your external object:
         - **HTML** in which you'll define your object's content structure.
         - **STYLES** that is your object's stylesheet.
-        - **CLASS** where the component's behaviour will happen.<br>
+        - **CLASS** where the component's behaviour will happen.  
         <img src="uicomp_resources.png" alt="resources list" width="65%">
     - How to work with those is explored in the [implementation](#how-to-implement) section of this lesson.
 
@@ -33,7 +33,7 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - At the bottom of your *object's form*, click the tab-item **Permissions**, and click **Create**.
     <img src="uicomp_permissions.png" alt="permissions list" width="65%">
     - In the *Create Permission* form, select the **Primary group** you want your object to be associated to, and select the **Group permissions** to select the specific rights for your object.
-    > Example values:<br>
+    > Example values:  
     > <img src="uicomp_createpermission.png" alt="create permission" width="50%">
 
     > ***Note:*** By default, trying to put your object in any interface will result in a `External Object __ not granted` text message.
@@ -44,11 +44,11 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - Click **Edit View** in the headbar of the form.
     - You are now in the **Template Editor**, move your mouse around and click on the **+** button at any position.
     <img src="uicomp_templateeditor_add.png" alt="add element" width="50%">
-    - In the popup menu, select **Sub-View** or **Extern**.<br>
+    - In the popup menu, select **Sub-View** or **Extern**.  
     <img src="uicomp_templateeditor_type.png" alt="new element's type" width="15%">
     - On the **Type** field, select **External Page**. 
     - Set the **Source** to **External Object** and the **External Page** to your component's name.
-    > Example values:<br>
+    > Example values:  
     > <img src="uicomp_modal_form.png" alt="modal menu values" width="15%">
 
 5. Click **Save** in the modal's footer, **Save** in the template editor, and **Save** in the view's form. Then **Clear your cache** and by visiting your view, you should see your component.
@@ -79,7 +79,7 @@ By default your component is just of Java class `com.simplicite.webapp.web.Respo
 2. You will be redirected to the code editor with the basic java setup for your component's own class.
     - Yet you can click **Save** and **Close** to come back to the component's form.
 
-3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.<br>
+3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.  
 <img src="uicomp_sourcecode_field.png" alt="java code field" width="50%">
 
 ### HTML content
@@ -95,7 +95,7 @@ At creation the script looks like:
 
 With the `id` tag being the raw **Code** of your external object.
 
-> **NB:** you can remove the div if you prefer, but then you have to reference your object's html using `const $content = this.ctn` in the **CLASS** resource file, and then add elements using methods like `$content.html()`.<br>
+> **NB:** you can remove the div if you prefer, but then you have to reference your object's html using `const $content = this.ctn` in the **CLASS** resource file, and then add elements using methods like `$content.html()`.  
 > Such workflow will refer directly to the default container div your external object is created within.
 
 There are several keypoints to understand and keep in mind while developing in this file:

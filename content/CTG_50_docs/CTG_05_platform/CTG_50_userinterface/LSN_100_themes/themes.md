@@ -14,15 +14,15 @@ The tool is composed of 3 parts, each representing a core feature:
 - **(1) Editing Area:** in which you can see the live-result of your theme.
     - It is organized in tabs that regroups elements that have similar styles, or that exists in similar zones of your interfaces.
     - By clicking on any element that is customizable from the tool, you'll have its attribute displayed in the *Theme Palette*.
-    - Hovering on specific elements will display their DOM-location in the *Class Path*, only if they are a part of a class that has global styles.<br>
+    - Hovering on specific elements will display their DOM-location in the *Class Path*, only if they are a part of a class that has global styles.  
     <img src="themes_preview_area.png" alt="editor preview area" width="65%">  
 
 - **(2) Theme Palette:** where you will make all of your changes through color pickers and sliders, triggering the live-preview on the *Editing Area*.
     - It is organized by groups of styles, either that appears in same configurations, or that are appart of the same element.
-    - The *Buttons* are the only elements that you can't style here, you can go to *Editing Area > Buttons* in order to specify their styles.<br>
+    - The *Buttons* are the only elements that you can't style here, you can go to *Editing Area > Buttons* in order to specify their styles.  
     <img src="themes_preview_palette.png" alt="editor palette" width="65%">  
 
-- **(3) Class path:** which displays the currently hovered element's path through the DOM, allowing you to know what is the element's *html class* and where it is located in the DOM.<br>
+- **(3) Class path:** which displays the currently hovered element's path through the DOM, allowing you to know what is the element's *html class* and where it is located in the DOM.  
     <img src="themes_preview_classpath.png" alt="editor classpath" width="65%">  
 
 ## Creating a Theme 
@@ -35,7 +35,7 @@ Start by creating the theme object by going to *User Interface > Themes* and cli
     - Enter a valid and unique **Name** for your theme
     - Select the **Module Name** to associate your theme to.
     - Choose your **Base theme**, which will define the base values for your elements, within the list; *Default*, *Light*, *Dark*. Those are gonna be mostly override by your future choices.
-    > Example values:<br>
+    > Example values:  
     > <img src="themes_form.png" alt="TrnTheme values" width="50%">
 
     - Scroll down and select the **HTML editor theme** style, which is recommended to match your *Base theme*.
@@ -43,11 +43,11 @@ Start by creating the theme object by going to *User Interface > Themes* and cli
 
 2. *Save* your object.
 
-3. Click on **Preview** to open the *Theme Editor*<br>
+3. Click on **Preview** to open the *Theme Editor*  
     <img src="themes_form_ter.png" alt="form preview" width="65%">  
     - Here you can freely define styles for elements that you wish to customize.
     - Click **Compile** to make sure your modifications appear in the live preview.
-    - Click **Save** to apply the changes to your theme object.<br>
+    - Click **Save** to apply the changes to your theme object.  
     <img src="themes_preview.png" alt="theme editor actions" width="50%">  
 
 4. *(optional)* If you have more specific styles in mind, you can then add them through the *addons.less* stylesheet.
@@ -63,10 +63,10 @@ Once that you created your theme, you can use it on any **View** that is of type
 
 1. Open your view's form at *User Interface > Views > Home page*.
 
-2. Go to the *Home page* tab-item.<br>
+2. Go to the *Home page* tab-item.  
 <img src="themes_view_tab.png" alt="view form" width="50%">  
 
-3. Through the field *Theme Name*, select the theme you want to apply.<br>
+3. Through the field *Theme Name*, select the theme you want to apply.  
 <img src="themes_view_fields.png" alt="theme name" width="50%">  
 
 4. **Save** & **Clear your cache**. When connecting back to your session and opening the targeted *Home Page* you'll see the applied theme.
