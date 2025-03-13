@@ -103,7 +103,7 @@ There are several keypoints to understand and keep in mind while developing in t
 - The *html* is **not** linked to its script with the ```<script>``` tag, meaning you can't instantiate or call functions from the static content (the one written in the **HTML**).
 
 <details>
-<summary><b><i>DemoWelcomeCard</b> code example</i></summary>
+<summary><b>DemoWelcomeCard</b> code example</summary>
 
 ```html
 <div id="demowelcomecard">
@@ -131,7 +131,7 @@ There are several keypoints to understand and keep in mind while developing in t
 - You can use existing styles by simply adding specific *class* to your elements, but make sure you don't embed some unwanted features with it.
 
 <details>
-<summary><b><i>DemoWelcomeCard</b> code example<i></summary>
+<summary><b>DemoWelcomeCard</b> code example</summary>
 
 ```css
 #demowelcomecard {
@@ -435,7 +435,7 @@ public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
 </details>
 
 <details>
-<summary><b><i>DemoWelcomeCard</b> code example<i></summary>
+<summary><b>DemoWelcomeCard</b> code example</summary>
 
 ```javascript
 Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.ExternalObject {
