@@ -19,26 +19,26 @@ The creation process is similar to the one for any *External Object*:
     - **UI Widget** should be set as **No**
     - Ensure you assign the right **Module Name** for your object.
     > Example values:  
-    > <image src="webpage_createform.png" alt="web page creation form" width="75%"/>
+    > <img src="webpage_createform.png" alt="web page creation form" width="75%"/>
 
 3. Click **Save**.
 
   
-<image src="webpage_createresource.png" alt="creating resources" width="65%"/>
+<img src="webpage_createresource.png" alt="creating resources" width="65%"/>
 
 4. From the updated object's form, click **Create Resources** to create the web [Resources](/lesson/docs/platform/userinterface/resources).
     - Ensure **CLASS** **HTML** and **STYLES** well appear in the *Resources* tab.
     > Created Resources:  
-    > <image src="webpage_resources.png" alt="web resources" width="75%"/>
+    > <img src="webpage_resources.png" alt="web resources" width="75%"/>
 
   
-<image src="webpage_editcode.png" alt="java code creation" width="65%"/>
+<img src="webpage_editcode.png" alt="java code creation" width="65%"/>
 
 5. Finally, click **Edit Code** to create the custom *Java class* code for your object.
     - You should see the **Class** field empty.
     - **Source Code** field should have the `<your-object-code>.java` file referenced.
     > Result Form:  
-    > <image src="webpage_javasource.png" alt="custom java class" width="65%"/>
+    > <img src="webpage_javasource.png" alt="custom java class" width="65%"/>
 
   
 The code for your webpage shall look like this by default:
