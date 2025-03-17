@@ -14,9 +14,8 @@ In this section, we will walk through the process of creating a custom webpage *
 <div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="myexternalpage-home.png" width="75%"/>
 </div>
-<!-- ![](myexternalpage-home.png) -->
 
-The presented web-pages are an "in-between" the complete external pages created using the **NPM Library** explained [here](https://docs.simplicite.io/lesson/docs/front/javascript-dev), and the *UI Component* that you can create as shown in [this lesson](https://docs.simplicite.io/lesson/docs/front/javascript-dev). Although such objects will be rendered at the `"/ext/"` of your Simplicité's instance URL (`https://<name>.demo.simplicite.io`), but still you can decide either to set this page public or private, thus requesting or not for credentials' validation before accessing it at the given URL.
+The presented web-pages are an "in-between" the complete external pages created using the **NPM Library** explained [here](/lesson/docs/front/javascript-dev), and the *UI Component* that you can create as shown in [this lesson](/lesson/docs/front/javascript-dev). Although such objects will be rendered at the `"/ext/"` of your Simplicité's instance URL (`https://<name>.demo.simplicite.io`), but still you can decide either to set this page public or private, thus requesting or not for credentials' validation before accessing it at the given URL.
 
 ## Object Creation
 
@@ -209,7 +208,7 @@ When developing the **Client-Side** script using the *namespace pattern* (as dem
 
 #### Accessing Business Objects
 
-Accessing Simplicité’s **Business Objects** follows the same approach outlined in the [UI Component](/) and [JS Development](/) lessons. Below is an example demonstrating how to *query* and *manipulate* Business Objects using  `$app.getBusinessObject()` and `BusinessObject.search()` methods:
+Accessing Simplicité’s **Business Objects** follows the same approach outlined in the [UI Component](/lesson/docs/front/ui-component) and [JS Development](/lesson/docs/front/javascript-dev) lessons. Below is an example demonstrating how to *query* and *manipulate* Business Objects using  `$app.getBusinessObject()` and `BusinessObject.search()` methods:
 
 ```javascript
 let app = new Simplicite.Ajax(params.root, "uipublic"); // params.root or ""
@@ -283,7 +282,6 @@ The accessible fields are the ones declared and visible in the *Business Object 
 <div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="demoproduct-field-list.png" width="75%"/>
 </div>
-<!-- ![](demoproduct-field-list.png) -->
 
 #### Creating Business Objects
 
@@ -448,8 +446,6 @@ This approach ensures that your asynchronous operations are handled cleanly, red
 <img src="myexternalobject-products.png" width="50%"/>
 <img src="myexternalobject-suppliers.png" width="50%"/>
 </div>
-<!-- ![](myexternalobject-products.png)
-![](myexternalobject-suppliers.png) -->
 
 <details>
 <summary>Java server-side Code</summary>
@@ -1178,7 +1174,6 @@ All code snippets and examples are derived from an external page we created as a
 <div style="display:flex; flex-direction:row; width:100%; justify-content:center;">
 <img src="customvue-page.png" width="75%" />
 </div>
-<!-- ![](customvue-page.png) -->
 
 #### Server-Side 
 
@@ -1275,7 +1270,7 @@ It’s also possible to include other tools, as long as they don’t override th
 | Moment®       | `appendMoment()`       | Moment [documentation](https://momentjs.com/docs/) |
 | FullCalendar® | `appendFullCalendar()` | Full Calendar [documentation](https://fullcalendar.io/docs) |
 
-> ***Note:*** For any other frameworks you can refer to the second method **Building Project** seen in the next section. Or directly using the Simplicité NPM library, explored in [this lesson](https://docs.simplicite.io/lesson/docs/front/javascript-dev).
+> ***Note:*** For any other frameworks you can refer to the second method **Building Project** seen in the next section. Or directly using the Simplicité NPM library, explored in [this lesson](/lesson/docs/front/javascript-dev).
 
 #### Client-Side (setup)
 

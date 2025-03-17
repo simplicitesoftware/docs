@@ -17,7 +17,7 @@ The need for custom widgets typically arises when existing Simplicité component
 
 ### Example: Welcome Card
 
-![](welcome-card-result.png)
+<img src="welcome-card-result.png" width="75%"/>
 
 It is a *highly customizable* element that can be styled to align with the platform's visual identity, offering users an engaging entry point. Depending on the context, its design can include specific elements to match your graphic identity, or interactive icons to reflect the application's tone or purpose.
 
@@ -40,7 +40,6 @@ Another important step is to grant your widget the rights of the module and view
 <div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="welcome-card-permissions.png" width="75%"/>
 </div>
-<!-- ![](welcome-card-permissions.png) -->
 
 ### Creating Resources
 
@@ -52,7 +51,7 @@ Then use the *Create Resources* action button, and click *Yes*. By doing so, you
 
 - **CLASS**; the *Javascript* script that will be useful for the next sections. 
 
-![](welcome-card-resources.png)
+<img src="welcome-card-resources.png" width="75%"/>
 
 > ***Note:*** The ressources are organized as any web element, in order to be easily integrated and created by designers and frontend developers.
 
@@ -307,7 +306,6 @@ And the final step to access your different objects from here is to know how the
 <div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="demo-prd-fields-list.png" width="75%"/>
 </div>
-<!-- ![](demo-prd-fields-list.png) -->
 
 Now here is how we implemented a simple product fetching & display function within the **CustomWelcomeCard** External Oject using the previously explained methods, so inside the `BusinessObject.search(function(){ ... })` call we can use the following code snippet:
 
@@ -368,7 +366,6 @@ $("#demowelcomecard-productlist").attr("hidden", "true"); // hiding by default
 <div style="padding:32px 0; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="welcome-product-cards.png" width="75%"/>
 </div>
-<!-- ![](welcome-product-cards.png) -->
 
 Additionaly we create the corresponding styles for the product card we are dynamically adding:
 
