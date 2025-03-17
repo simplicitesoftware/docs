@@ -1,6 +1,10 @@
 External Custom Web Pages
 =========================
 
+<div class="warning">
+    This lesson is a part of the <b>Frontend Development</b> category, which is meant to guide you through the frontend development within Simplicité. Thus it might be a bit longer and more verbosed than other lessons you will find in the <b>Simplicité Configuration Object</b> category.
+</div>
+
 This document explains how to use Simplicité's **External Objects** to create web pages that operate independently from the Simplicité application interface. Thus, these objects are rendered as custom web pages rather than being embedded within Simplicité's standard UI.
 
 # Native webpages

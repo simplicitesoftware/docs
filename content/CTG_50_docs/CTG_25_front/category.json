@@ -1,7 +1,7 @@
 {
     "ANY": {
-        "description": "",
-        "title": "Frontend Dev"
+        "description": "Frontend Development",
+        "title": "Frontend Development"
     },
-    "published": false
+    "published": true
 }

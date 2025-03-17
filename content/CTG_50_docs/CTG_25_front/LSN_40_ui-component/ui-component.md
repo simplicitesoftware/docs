@@ -1,6 +1,10 @@
 UI Component
 ============
 
+<div class="warning">
+    This lesson is a part of the <b>Frontend Development</b> category, which is meant to guide you through the frontend development within Simplicité. Thus it might be a bit longer and more verbosed than other lessons you will find in the <b>Simplicité Configuration Object</b> category.
+</div>
+
 This document outlines the process of using **External Objects** to design and implement custom widgets from scratch. It breaks down the important steps to create interactive objects to thoroughly address the *creation*, *integration* and the *implementation* processes.
 
 Following this, it will explore how to make these widgets dynamic by incorporating *interactive behaviors*, and seamless communication with Simplicité's backend and features.

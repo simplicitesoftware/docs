@@ -1,6 +1,10 @@
 Complementary Theme Styles
 ==========================
 
+<div class="warning">
+    This lesson is a part of the <b>Frontend Development</b> category, which is meant to guide you through the frontend development within Simplicité. Thus it might be a bit longer and more verbosed than other lessons you will find in the <b>Simplicité Configuration Object</b> category.
+</div>
+
 This document outlines how to enhance and refine your custom or the pre-existing themes using the *addon.less* file.
 
 The *addon.less* file enables you to override or fine-tune the styles defined in the foundational files, *constants.less* and *theme_gen.css*. By leveraging this approach, you can create more dynamic and cohesive designs while maintaining flexibility and ease of management.

@@ -1,6 +1,10 @@
 Theme Editor: Presentation and Overview
 ======================================
 
+<div class="warning">
+    This lesson is a part of the <b>Frontend Development</b> category, which is meant to guide you through the frontend development within Simplicité. Thus it might be a bit longer and more verbosed than other lessons you will find in the <b>Simplicité Configuration Object</b> category.
+</div>
+
 This document introduces Simplicité’s **Theme Editor**, a tool designed for *customizing the visual identity of your instance*, whether for the designer interface or the user interface. The Theme Editor provides the *flexibility* to align your instance’s appearance with personal preferences, organizational branding guidelines, or specific design requirements.
 
 <img src="simplicite-mazette-form.png" width="75%"/>

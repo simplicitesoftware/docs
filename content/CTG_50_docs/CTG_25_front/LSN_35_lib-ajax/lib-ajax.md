@@ -1,6 +1,10 @@
 Ajax Library
 ============
 
+<div class="warning">
+    This lesson is a part of the <b>Frontend Development</b> category, which is meant to guide you through the frontend development within Simplicité. Thus it might be a bit longer and more verbosed than other lessons you will find in the <b>Simplicité Configuration Object</b> category.
+</div>
+
 This document provides an overview of the Ajax Library, detailing its core methods and functions, while also explaining how the Simplicité solution is structured and operates within the Model-View-Controller (MVC) architecture.
 
 # Overview
