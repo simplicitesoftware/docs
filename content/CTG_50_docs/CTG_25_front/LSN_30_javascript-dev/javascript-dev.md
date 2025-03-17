@@ -88,20 +88,19 @@ The first step to create your custom front with the NPM Simplicite library is th
 
 Once the basic setup for your Simplicité-powered project is installed, the next step is to *structure it* like any standard web project using **Node.js**. This typically results in the following file structure:
 
-<br>
-CustomNativeFront/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;public/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css<br>
-&nbsp;&nbsp;&nbsp;&nbsp;views/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html<br>
-&nbsp;&nbsp;&nbsp;&nbsp;app.js<br>
-&nbsp;&nbsp;&nbsp;&nbsp;package.json<br>
-<br><br>
+CustomNativeFront/  
+&nbsp;&nbsp;&nbsp;&nbsp;public/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style.css  
+&nbsp;&nbsp;&nbsp;&nbsp;views/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html  
+&nbsp;&nbsp;&nbsp;&nbsp;app.js  
+&nbsp;&nbsp;&nbsp;&nbsp;package.json  
+  
 
 - Place all *dynamically accessed* resources, such as stylesheets and scripts for specific pages, in the **public** folder (for now, this may only include `index.html`).
 - Store all your `.html` files representing *individual pages* in the **views** folder.
 - Your main javascript code (for project's setting up at least) will be written in the `app.js` file.
-<br>
+  
 > ***Note:*** Properly setting up and understanding why your project directory is organized this way is important to later properly implement your javascript code and ensure consistency throughout your project if you want to scale it.
 
 ### Javascript Code

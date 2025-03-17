@@ -181,7 +181,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Contents           | Padding Y              | [0;300]: defines the padding-top & padding-bottom of all elements displayed in different containers (texts, sub-panels, ...), thus modifying container's height.       |
 | Background         | Color                  | Any: defines the color of your whole background, noticeable mainly on the `WORK` part of the UI.                                                                       |
 
-<br><br>
+    
 
 **Main**: configures the permanent UI elements, including the header, footer, and navigation breadcrumb.
 
@@ -204,7 +204,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Footer Bar            | Text Color             | Any: defines the colors of the texts composing your footer section (links in it).                                                                                      |
 | Footer Bar            | Border Color           | Any: defines the colors & display of the `border-top` for your whole footer, can be hidden by unticking the value.                                                     |
 
-<br><br>
+    
 
 **Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
 <div width="100%" style="display:flex; justify-content:center;">
@@ -226,7 +226,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Status Menu          | Background Color       | Any: will define the **inactive** background color for the status items held in the sub-menus.                                                                           |
 | Status Menu          | Text Color             | Any: will define the **inactive** textcolor for the status items held in the sub-menus.                                                                                  |
 
-<br><br>
+    
 
 **Panel**: focuses on the overarching style of *top-level Panels*, which can be previewed in the ***Panels*** section of the Preview. 
 
@@ -248,7 +248,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your panel, excluding for the ones of buttons.                                                                                           |
 | Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                 |
 
-<br><br>
 
 **Sub-panel**: similar to *Panels* but specific to nested panels embedded within higher-level panels.
 
@@ -270,7 +269,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Sub-Panel Footer       | Text Color             | Any: defines the color of all texts within the footer of your sub-panel, excluding for the ones of buttons.                                                                                            |
 | Sub-Panel Footer       | Bottom Border          | Any: defines the color of the footer's `top-border`, if you want to hide the border then simply untick the value.                                                                                      |
 
-<br><br>
+
 
 **Tabs**: controls the style of Tabs, which organize information into sections within the same placeholder. Tabs often appear alongside Sub-Panels.
 
@@ -296,7 +295,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Tabs Content       | Border Color           | Any: defines the color of the border of the whole content part, untick to hide.                                                                                                |
 | Tabs Content       | Shadow                 | [0;100]: defines the `box-shadow` style for the tab-content (not nav-links!), with the following range; 0 ~ `none`, 50 ~ `solid .125rem .125rem 1rem #e0e0e0`, 100 ~ `solid .125rem .125rem 2rem #e0e0e0` |
 
-<br><br>
+
 
 **Field**: configures styles for displayed fields within Sub-Panels and Tabs.
 
@@ -321,7 +320,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 > ***Note:*** Input fields provided by the Bootstrap library are not directly customizable but adapt to the selected base theme. Use the `addon.less` file for advanced overrides.
 
-<br><br>
+
 
 **List**: provides extensive customization options for one of Simplicité’s most critical UI components. Careful styling ensures both functionality and aesthetics.
 
@@ -352,7 +351,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Table Footer       | Text Color             | Any: defines `color`, the color of any text within the table footer only (mostly results). |
 | Table Footer       | Top Border Color       | Any: Any: defines the top `border-top-color` of table's footer, no values (empty) defines `none` or `transparent`. |
 
-<br><br>
+
 
 **Dialog**: syles `modal` dialogs that appear over the UI (with a `z-index = 1055`). These overlays dim the rest of the interface for focus and clarity.
 
@@ -373,7 +372,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 | Footer             | Text Color             | Any: defines the `color` of all text within the `modal-footer` part of dialog item only. |
 | Footer             | Top Border Color       | Any: defines the `border-top-color` for the `modal-footer` dialog item part, no values (empty) sets `border-top: none`. | 
 
-<br><br>
+    
 
 ### DOM Path Viewer
 

@@ -463,7 +463,7 @@ Additionaly we create the corresponding styles for the product card we are dynam
 }
 ```
 </details>
-<br><br>
+    
 > ***Note:*** The way to input HTML from javascript is your choice, here we did it this way to ease the understanding from an external perspective.
 
 ### Displaying Content
