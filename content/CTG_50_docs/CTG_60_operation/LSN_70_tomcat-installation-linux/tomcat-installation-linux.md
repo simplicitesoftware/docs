@@ -111,9 +111,9 @@ Connect this account:
 ### Tomcat
 
 Clone the **preconfigured** Tomcat package (which is just an out of the box Tomcat package with administration webapps removed, with some settings fine-tuned and with some additional jars in the `lib` folder) with appropriate credentials:
-
-	git clone https://<username>[:<password>]@platform.git.simplicite.io/tomcat.git
-
+```shell
+git clone https://<username>[:<password>]@platform.git.simplicite.io/tomcat.git
+```
 Make sure the `tomcat/temp` folder is present and writeable, this is **mandatory** for images thumbnails generation.
 
 Then, make sure the `tomcat/logs` folder is present and writeable, this is **mandatory** for logging.

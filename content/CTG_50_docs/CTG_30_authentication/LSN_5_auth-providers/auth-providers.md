@@ -52,8 +52,8 @@ of the provider's settings in the JSON (including, from v5.3.39, PEM certificate
 
 |                                          | Setting specification                                           | Example                   |
 |------------------------------------------|-----------------------------------------------------------------|---------------------------|
-| In `AUTH_PROVIDERS` as JSON              | <setting (lowercase)>                                           | `"client_id"`             |
-| ⚠️ Deprecated ⚠️ As individual sys param   | <type (uppercase)>_<setting (uppercase)> <provider (lowercase)> | `OAUTH2_CLIENT_ID google` |
+| In `AUTH_PROVIDERS` as JSON              | `<setting (lowercase)>`                                          | `"client_id"`             |
+| ⚠️ Deprecated ⚠️ As individual sys param   | `<type (uppercase)>_<setting (uppercase)> <provider (lowercase)>` | `OAUTH2_CLIENT_ID google` |
 
 ### Common settings
 
@@ -91,7 +91,7 @@ To investigate authentication issues you can **temporarly** activate the `DAUTHC
 <details>
 <summary>Click to open</summary>
 
-![dauthcs001.png](dauthcs001.pn)
+![dauthcs001.png](dauthcs001.png)
 
 > Before Simplicité v6, this menu item used to be in the "Operation" domain, in the extended view.
 

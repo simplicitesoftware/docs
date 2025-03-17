@@ -23,13 +23,13 @@ The calls examples are given using the `curl` command line tool
 > In versions 4.0+ a technical session is used to avoid taking care of the session cookie.
 
 For an application named `myapp`, the base URL of the SOAP services is:
-
-	http[s]://<host[:<port>]>/myappws/soap
-
+```
+http[s]://<host[:<port>]>/myappws/soap
+```
 As of version 3.0 MAINTENANCE 20, the API endpoint is also available in the main webapp `/myapp` (this allows to avoid deploying the webservice gateway webapp `/myappws`):_
-
-	http[s]://<host[:<port>]>/myapp/api/soap
-
+```
+http[s]://<host[:<port>]>/myapp/api/soap
+```
 if you are using this API endpoint please refer to [this document](/lesson/docs/integration/services-auth) for details on the authentication mechanisms.
 
 It will be noted `<base URL>` in the rest of the document.
@@ -47,23 +47,23 @@ The pool size can be adjusted/limied using the `WEBSERVICES_OBJECTPOOL_MAXPEROBJ
 <h2 id="businessobjectservices">Business object services</h2>
 
 The URL of the SOAP services endpoint for the `SystemParam` business object is:
-
+```
 	<base URL>?object=SystemParam
-
+```
 It will be noted `<object endpoint URL>` in the rest of this section.
 
 ### WSDL contract
 
 The WSDL for the `SystemParam`object can be displayed using the `wsdl`parameter to the object base URL:
-
+```
 	curl -u <login>[:<password>] "<object endpoint URL>&wsdl=true"
-
+```
 ### Example service call
 
 For instance to do a simple search on the `SystemParam` business object, you can call:
-
+```
 	curl -u <login>[:<password>] -X POST -H "Content-Type: text/xml" [-H "SOAPAction: search"] -d @request.xml "<object endpoint URL>"
-
+```
 > **Note**: the `SOAPAction` header is not mandatory (but this is part of the SOAP protocol, no harm adding it).
 
 Where `request.xml` has the following content:

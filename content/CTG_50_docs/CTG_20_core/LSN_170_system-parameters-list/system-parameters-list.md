@@ -81,7 +81,7 @@ Allows ADMIN to change API Page theme.
 
 **Description**
 
-Max pool size of Asynchronous actions (not used when <=0)
+Max pool size of Asynchronous actions (not used when `<=0`)
 
 ### `AUDIT_DESIGN`
 
@@ -106,11 +106,11 @@ Enable to audit the runtime.
 ### `AUTH_PROVIDERS`
 
 **Default value**
-
+```json
 	[
 		{ "name": "simplicite", "type": "internal" }
 	]
-
+```
 **Description**
 
 Authentication providers (as JSON array).
@@ -123,7 +123,7 @@ Example:
 	{ "name": "google", "type": "oauth2", "label": "Sign in with Google OAuth2 IdP", "sync": false, "client_id": "<client ID>", "client_secret": "<client secret>" },
 	{ "name": "google", "type": "saml", "label": "Sign in with Google SAML IdP", "sync": false }, // other SAML parameters are in SAML_* system parameters
 	{ "name": "microsoft", "type": "oauth2", "sync": false, "client_id": "<client ID>", "client_secret": "<client secret>" },
-	{ "name": "ldap", "type": "ldap", "sync": false } // LDAP settings are in LDAP_AUTH_CONFIG system parameter
+	{ "name": "ldap", "type": "ldap", "sync": false }// LDAP settings are in LDAP_AUTH_CONFIG system parameter
 ]
 ```
 
@@ -161,9 +161,9 @@ Bottom margin size width (in pixels), this parameter is used by HTML5 layout onl
 ### `BPMALERT_FROM`
 
 **Default value**
-
+```
 	"Simplicité" <noreply@simplicite.fr>
-
+```
 **Description**
 
 Default "from" for alerts, "default" means using mail service default
@@ -458,14 +458,14 @@ Domain relaxing (useful when integrating other applications from same domain wit
 
 **Description**
 
-EAI (I/O) user and password. Syntax: - code = EAI <login> - value = <login>:<password>
+EAI (I/O) user and password. Syntax: - code = `EAI <login>` - value = `<login>:<password>`
 
 ### `EMAIL_DEFAULT_SENDER`
 
 **Default value**
-
+```
 	"Simplicité(R)" <designer@simplicite.fr>
-
+```
 **Description**
 
 Default email sender
@@ -1130,9 +1130,9 @@ Yes/No Show the object filter in panels
 ### `PASSWORD_VALIDATION_REGEXP`
 
 **Default value**
-
+```
 	^((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}|.{20,})$
-
+```
 **Description**
 
 Password validation regular expression
@@ -1160,9 +1160,9 @@ Popup default margin.
 ### `POWERED_BY`
 
 **Default value**
-
+```
 	<a href="http://www.simplicitesoftware.com" target="_blank"><img src="../images/image/poweredby.png"></a>
-
+```
 **Description**
 
 Powered by credits to display on UIs (HTML syntax can be used).
@@ -1467,7 +1467,7 @@ Share parameters of social objects:
 
 - exclude: optional list of objects to exclude (even if they are social)
 - include: optional list of objects to include (even if they are not social)
-- list of providers {name, url, optional icon} with substitute tokens: URL, TITLE, TEXT, IMAGE, ROOT
+- list of providers `{name, url, optional icon}` with substitute tokens: URL, TITLE, TEXT, IMAGE, ROOT
 
 ### `SRC_DIR`
 
@@ -2046,9 +2046,9 @@ User token URL parameter name
 ### `VERSION`
 
 **Default value**
-
+```
 	<current major platform version, e.g. 5>
-
+```
 **Description**
 
 Version to display on UIs (HTML syntax can be used).

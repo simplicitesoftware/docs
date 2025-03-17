@@ -133,10 +133,10 @@ Clear the platform's cache and log in using *usertest*
 			<img src="success-amount.png" alt="amount" width="50%"/>
 		</li>
 		<li>
-			<p>When clicking on "Increase stock" on a Product, upon confirmation, it's stock is incremented by 10<p>
+			<p>When clicking on "Increase stock" on a Product, upon confirmation, it's stock is incremented by 10</p>
 		</li>
 		<li>
-			<p>When an Order is Validated the quantity is deducted from the Product's stock<p>
+			<p>When an Order is Validated the quantity is deducted from the Product's stock</p>
 		</li>
 	</ul>
 </div>

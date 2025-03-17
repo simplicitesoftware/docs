@@ -157,9 +157,9 @@ To restore the application, the database dump and the archive must be restored i
 All technical components may need to be monitored (especially Tomcat and the database engine) using any convenient tool.
 
 Application-level tools are available (from the UI with an operator profile or from command line) to do basic technical and applicative monitoring. Typically the health check or ping page/service can be called and parsed on a regular basis:
-
-	curl [-b cookies.txt -c cookies.txt] "<base URL>/<health[?format=json]|ping>"
-
+```shell
+curl [-b cookies.txt -c cookies.txt] "<base URL>/<health[?format=json]|ping>"
+```
 > **Note**: the `-b` and `-c` argument are used to reuse the same Tomcat session if possible, especially for version 3.x
 
 The typical output for the ping is:

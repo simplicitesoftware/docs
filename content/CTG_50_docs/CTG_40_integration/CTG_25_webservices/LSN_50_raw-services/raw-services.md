@@ -23,12 +23,13 @@ The calls examples are given using the `curl` command line tool
 > In versions 4.0+ a technical session is used to avoid taking care of the session cookie.
 
 For an application named `myapp`, the base URL of the raw data services endpoint is:
-
-	http[s]://<host[:<port>]>/myappws/raw
-
+```
+http[s]://<host[:<port>]>/myappws/raw
+```
 As of version 3.0 MAINTENANCE 20, the API endpoint is also available in the main webapp `/myapp` (this allows to avoid deploying the webservice gateway webapp `/myappws`):
-
-	http[s]://<host[:<port>]>/myapp/api/raw
+```
+http[s]://<host[:<port>]>/myapp/api/raw
+```
 
 if you are using this API endpoint please refer to [this document](/lesson/docs/integration/services-auth) for details on the authentication mechanisms.
 
@@ -52,17 +53,17 @@ The object raw data service returns the rows of a business object as a plain HTM
 and the field labels are returned in the user's language.
 
 To get data from the `SystemParam` business object the call is:
-
+```shell
 	curl -u <login>[:<password>] "<base URL>/data?object=SystemParam"
-
+```
 ### List of values service
 
 The list of values raw data service returns the code and values of a list of values as a plain HTML table. The values are returned using the user's language.
 
 To get data from the `LANG` list of values the call is:
-
+```shell
 	curl -u <login>[:<password>] "<base URL>/data?lov=LANG"
-
+```
 <h3 id="excel">Usage in Microsoft Excel&reg;</h3>
 
 Typical usage of raw data services is to configure traditional external datasources in Microsoft Excel&reg;.

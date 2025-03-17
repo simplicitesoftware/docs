@@ -52,9 +52,9 @@ Check and/or change the deployment parameters in the `manifest.yml` file (e.g. t
 Create a blank Simplicit&eacute;&reg; instance using the following command
 (the instance name is free but must be a URL-friendly string, e.g. `my_simplicite-123`,
 you can deploy several instances on your Bluemix account, each one needs a unique instance name):
-
-	cf push <instance name>
-
+```
+cf push <instance name>
+```
 Once deployed the instance UI will be available on `http://<instance name>.mybluemix.net`.
 This URL is noted `<instance base URL>` in the commands below.
 
@@ -67,23 +67,23 @@ Optionally, the demo application configuration package and the associated test d
 These packages are available [here](../../modules).
 
 Import the demo application configuration on the instance using the following commands:
-
-	curl -u designer:designer --form service=zipimport --form  url=https://www.simplicite.io/resources/modules/demo-app.zip <instance base URL>/io
-
+```shell
+curl -u designer:designer --form service=zipimport --form  url=https://www.simplicite.io/resources/modules/demo-app.zip <instance base URL>/io
+```
 Then clear the cache using the following command:
-
-	curl -u designer:designer --form service=clearcache <instance base URL>/io
-
+```shell
+curl -u designer:designer --form service=clearcache <instance base URL>/io
+```
 Then load demo app data using the following command:
-
-	curl -u designer:designer --form service=zipimport --form  url=https://www.simplicite.io/resources/modules/demo-data.zip <instance base URL>/io
-	
+```shell
+curl -u designer:designer --form service=zipimport --form  url=https://www.simplicite.io/resources/modules/demo-data.zip <instance base URL>/io
+```
 ### Unprovision the instance
 
 delete the instance using the following command:
-
-	cf delete <instance name>
-
+```
+cf delete <instance name>
+```
 Pivotal
 -------
 

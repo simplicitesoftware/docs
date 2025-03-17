@@ -108,7 +108,7 @@ Explanation of others data in a "Select single" type:
 
 - Constraint | Mandatory | false. If we want to force the user to select at least one value must be “true”
 - Field.row_id: contains the list of row_id that have been selected by the user.
-- Filter.<objfield>. This allows you to filter a displayed selection list
+- Filter.`<objfield>`. This allows you to filter a displayed selection list
 - Search.Spec: Allows to add a SQL filter to the list
 
 Specific data for "Service call" activity: 

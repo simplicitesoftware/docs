@@ -6,13 +6,13 @@ This document applies **only** to the API endpoint.
 > **Note**: This document does not apply to legacy webservices endpoint (that uses authentication methods configured at the server configuration level) nor to the I/O and Git endpoints.
 
 For an application named `myapp` the base URL of the API endpoint, noted `<base URL>` in the rest of the document, is:
-
-	http[s]://<host[:<port>]>/myapp/api
-
+```
+http[s]://<host[:<port>]>/myapp/api
+```
 For a root deployment this base URL is:
-
-	http[s]://<host[:<port>]>/api
-
+```
+http[s]://<host[:<port>]>/api
+```
 The calls examples are given using the `curl` command line tool (that can easily be transposed to any other HTTP client tool or API).
 
 > **Note**: in version 3.x adding `-b cookies.txt -c cookies.txt` as arguments of the `curl` calls is **required**
@@ -22,9 +22,9 @@ The calls examples are given using the `curl` command line tool (that can easily
 <h2 id="login">Login</h2>
 
 A first call to the login service is needed to get an access token:
-
+```
 	<base URL>/login[<optional parameter(s)>]
-
+```
 The default response is the access token as plain text.
 
 If the optional parameter `redirect_uri=<redirect URI>` is set, the access token `<token>` is added to this URI as the `access_token` GET parameter
@@ -62,17 +62,17 @@ In any cases the access token`<token>` is to be used for subsequent calls (see b
 The credentials (login and password) can be passed either:
 
 As a HTTP basic authentication header (the `curl` call below uses the standard header but the custom header can also be used):
-
+```
 	curl -u <login>[:<password>] "<base URL>/login"
-
+```
 Or as plain URL parameters of a GET request (not recommended):
-
+```
 	curl "<base URL>/login?username=<login>&password=<password>"
-
+```
 Or as plain URL parameters of a POST request (not recommended):
-
+```
 	curl --form "username=<login>" --form "password=<password>" "<base URL>/login"
-
+```
 As this login service is only dedicated to webservices, no interactive login/password entry mechanisms is available.
 
 > **Note**: If the credentials are incomplete or not accepted for any reason the response will be an HTTP code `401`.
@@ -80,9 +80,9 @@ As this login service is only dedicated to webservices, no interactive login/pas
 <h2 id="call">Use access token in service calls</h2>
 
 All subsequent calls **must** pass the access token in the custom `X-Simplicite-Authorization` header:
-
+```
 	curl -H "X-Simplicite-Authorization: Bearer <token>" "<base URL>/..."
-
+```
 > **Note 1**: After the server session times out the response will be an HTTP code `401`.
 
 > **Note 2**: If for som odd reason you can't set the `X-Simplicite-Authorization` header you have two other options:
@@ -96,9 +96,10 @@ All subsequent calls **must** pass the access token in the custom `X-Simplicite-
 <h2 id="logout">Logout</h2>
 
 To explicitly log out (before the server session times out) the logout service can be called:
-
+```
 	<base URL>/logout
-
+```
 A typical call is:
-
+```
 	curl  -H "X-Simplicite-Authorization: Bearer <token>" "<base URL>/logout"
+```

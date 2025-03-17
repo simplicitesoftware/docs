@@ -111,12 +111,12 @@ Options can be changed in :
 | socialShare                  | Sharing options                                                         | SOCIAL_SHARE parameter                     |
 | useCopyLink                  | Allows to copy deeplink to objects                                      | true                                       |
 | useUndoRedo                  | Allows undo/redo: true, false or "keys" for CTRL-Y/Z only               | true                                       |
-| shortcuts                    | true/false or list of shortcuts {name, label, url, target, icon}        | true                                       |
-| slideNav                     | Slide screen on push/pull navigation ?                                  | true                                       |
+| shortcuts                    | true/false or list of shortcuts `{name, label, url, target, icon}`        | true                                       |
+| slideNav                     | Slide screen on push/pull navigation ?                                  	| true                                       |
 | tinymceOptions               | tinymce default options                                                 |                                            |
 | ajaxSetup                    | Ajax global options                                                     | see below                                  |
 | scope                        | Multi-apps options                                                      | see below                                  |
-| exports                      | Export default options { CSV, XLS, PDF, ARC, XML, ZIP }                 | see below                                  |
+| exports                      | Export default options `{ CSV, XLS, PDF, ARC, XML, ZIP }`                 | see below                                  |
 | list                         | Object list default options                                             | see below                                  |
 | form                         | Object form default options                                             | see below                                  |
 | search                       | Object search default options                                           | see below                                  |
@@ -128,14 +128,14 @@ Options can be changed in :
 | Name                         | Description                                                             | Default value                              |
 |------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
 | crossDomain                  | Use CORS HTTP access ?                                                  | true                                       |
-| xhrFields                    | Force some xhr values                                                   | { withCredentials: true }                  |
+| xhrFields                    | Force some xhr values                                                   | `{ withCredentials: true }`                  |
 
 
 ### Simplicite.UI.Globals.scope
 
 | Name                         | Description                                                             | Default value                              |
 |------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
-| enabled                      | true/false or array of authorized scopes {home, url, icon, label, help} | true                                       |
+| enabled                      | true/false or array of authorized scopes `{home, url, icon, label, help}`| true                                       |
 | backend                      | allows to return to backend ?                                           | true                                       |
 
 
@@ -143,12 +143,12 @@ Options can be changed in :
 
 | Name                         | Description                                                             | Default value                              |
 |------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
-| CVS                          | CVS export options                                                      | { enabled:true, sep:';' }                  |
-| XLS                          | Excel export options                                                    | { enabled:true, formats: { poi: "Excel", html: "HTML" }} |
-| PDF                          | PDF export options                                                      | { enabled:true }                           |
-| ARC                          | Archive export options                                                  | { enabled:true }                           |
-| XML                          | Simplicite XML export options                                           | { enabled:true, inline:true, timestamp:false } |
-| ZIP                          | Simplicite ZIP export options                                           | { enabled:true }                           |
+| CVS                          | CVS export options                                                      | `{ enabled:true, sep:';' }`                  |
+| XLS                          | Excel export options                                                    | `{ enabled:true, formats: { poi: "Excel", html: "HTML" }}` |
+| PDF                          | PDF export options                                                      | `{ enabled:true }`                           |
+| ARC                          | Archive export options                                                  | `{ enabled:true }`                           |
+| XML                          | Simplicite XML export options                                           | `{ enabled:true, inline:true, timestamp:false }` |
+| ZIP                          | Simplicite ZIP export options                                           | `{ enabled:true }`                           |
 
 ### Simplicite.UI.Globals.list
 
@@ -180,7 +180,7 @@ Options can be changed in :
 | showIndex                    | show the fulltext search                                                | metadata.indexable                         |
 | indexRequest                 | current index search request                                            |                                            |
 | oncreate                     | create handler, null or false: no creation                              | bind create action if granted              |
-| actions                      | arrays { list, listPlus, row, rowPlus } of actions {name, label, confirm, callback, showLabel, ...}<br />null:no action | metadata.actions |
+| actions                      | arrays `{ list, listPlus, row, rowPlus }` of actions `{name, label, confirm, callback, showLabel, ...}`<br />null:no action | metadata.actions |
 | floating                     | ensure some actions to stay visible during vertical scrolling           | true                                       |
 | sticky                       | ensure table header to stay visible during vertical scrolling (V5)      | true                                       |
 | onopen\(ctn,obj,rowId\)      | handler when record is opened/clicked                                   | engine.openObject                          |
@@ -194,13 +194,13 @@ Options can be changed in :
 | rowOpenDocs                  | add links to open documents and images                                  | true                                       |
 | isExtended                   | show/hide extended fields on list, except creation                      | false                                      |
 | msg                          | array of messages to display on list                                    |                                            |
-| msgRow                       | array of row messages {rowId:[msg]} to display per rowId                |                                            |
+| msgRow                       | array of row messages `{rowId:[msg]}` to display per rowId                |                                            |
 | help                         | contextual help                                                         |                                            |
 | nav                          | optional navigation 'new' or 'add'                                      |                                            |
 | showNav                      | displays the navigation bar                                             | true                                       |
 | showTotals                   | displays the total row if any                                           | true                                       |
 | context                      | list context LIST, PANEL, UPDATE                                        | Simplicite.CONTEXT_LIST                    |
-| inst                         | optional instance name                                                  | the\_ajax\_<name>                          |
+| inst                         | optional instance name                                                  | `the\_ajax\_<name>`                          |
 | parent                       | optional parent object for panel                                        |                                            |
 | view                         | optional view container { name, item, home }                            |                                            |
 | edit                         | edit list current mode = 'newline' or 'rows'                            |                                            |
@@ -280,8 +280,8 @@ _nota_
 | actionAutoSave               | auto-save form on custom action                                         | true                                       |
 | onhelp\(ctn,obj\)            | handler to display the long help                                        | engine.displayHelp                         |
 | onsocial\(ctn,obj\)          | handler to display the social posts                                     | engine.displaySocial                       |
-| actions                      | { form, formPlus } arrays of actions {name, label, confirm, callback...}<br />null:no action | metadata.actions      |
-| transitions                  | arrays of transition actions {name, label, confirm, callback...}<br />null: no transition    |                       |
+| actions                      | `{ form, formPlus }` arrays of actions `{name, label, confirm, callback...}`<br />null:no action | metadata.actions      |
+| transitions                  | arrays of transition actions `{name, label, confirm, callback...}`<br />null: no transition    |                       |
 | floating                     | ensure some actions to stay visible during vertical scrolling           | true                                       |
 | readonly                     | read only applies on fields<br />use onsave/onclose/actions/transitions to disable buttons  |                        |
 | isExtended                   | show/Hide extended fields on form                                       | false                                      |
@@ -296,10 +296,10 @@ _nota_
 | createLinks                  | allows references creation                                              | true                                       |
 | formTab                      | selected tab index per tab area                                         |                                            |
 | viewTab                      | selected view                                                           | metadata.defaultView                       |
-| inst                         | optional instance name                                                  | the\_ajax\_<name>                          |
+| inst                         | optional instance name                                                  | `the\_ajax\_<name>`                          |
 | copy                         | gets the item for copy                                                  | false                                      |
 | workflow                     | displays the form within a workflow                                     | false                                      |
-| parent                       | optional parent object { name, inst, field, rowId }                     |                                            |
+| parent                       | optional parent object `{ name, inst, field, rowId }`                     |                                            |
 | constraints                  | applies object constraints                                              | true                                       |
 | areaColumn                   | default columns per area without UI template                            | 2                                          |
 | template                     | form template                                                           | see below                                  |
@@ -340,13 +340,13 @@ _nota_
 | EXTERN    | `<div class="extern" data-extern="extobjname"/>`				|
 | ACTION    | `<div class="action" data-action="name"/>`					|
 | FIELD     | `<div class="field" data-field="fullinput"></div>`			|
-| LABEL     | `<div|span class="field" data-field="fullinput" data-display="label"/>`	|
-| VALUE     | `<div|span class="field" data-field="fullinput" data-display="value"/>`	|
+| LABEL     | `<div\|span class="field" data-field="fullinput" data-display="label"/>`	|
+| VALUE     | `<div\|span class="field" data-field="fullinput" data-display="value"/>`	|
 | INPUT     | `<div class="field" data-field="fullinput" data-display="input"/>`			|
 | IMAGE     | `<div class="field" data-field="fullinput" data-display="image"/>`			|
 | DOC       | `<div class="field" data-field="fullinput" data-display="preview"/>`		|
-| TEXT      | `<span|div|h1... class="text" data-text="code"/>`			|
-| BUTTON    | `<button|div class="btn" data-obj="" data-rowid=""/>`		|
+| TEXT      | `<span\|div\|h1... class="text" data-text="code"/>`			|
+| BUTTON    | `<button\|div class="btn" data-obj="" data-rowid=""/>`		|
 
 ### Simplicite.UI.Globals.search
 
@@ -376,7 +376,7 @@ _nota_
 |------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
 | beforeload\(ctn,obj\)        | optional trigger before loading the summary                             |                                            |
 | onload\(ctn,obj\)            | optional trigger when summary is displayed                              |                                            |
-| actions                      | { row, rowPlus } of actions {name, label, confirm, callback...}<br />null: no action | from metadata                 |
+| actions                      | `{ row, rowPlus }` of actions `{name, label, confirm, callback...}`<br />null: no action | from metadata                 |
 | icon                         | show the object icon                                                    | true                                       |
 | image                        | show the object first image                                             | true                                       |
 | fields                       | list of fields, null: no field                                          | visible on list and not empty              |
@@ -411,9 +411,9 @@ _nota_
 | Type      | Element                                                 |
 |-----------|---------------------------------------------------------|
 | ACTION    | `<div class="action" data-action="name"/>`              |
-| FIELD     | `<span|div|img class="field" data-field="fullinput"/>`  |
-| TEXT      | `<span|div class="text" data-text="code"/>`             |
-| BUTTON    | `<button|div class="btn" data-obj="" data-rowid=""/>`   |
+| FIELD     | `<span\|div\|img class="field" data-field="fullinput"/>`  |
+| TEXT      | `<span\|div class="text" data-text="code"/>`             |
+| BUTTON    | `<button\|div class="btn" data-obj="" data-rowid=""/>`   |
 
 
 ### Simplicite.UI.Globals.agenda
@@ -529,7 +529,7 @@ A specific component can implement some of then to add dynamic behaviors.
 | js-content-load              | ui.content.load                     | a common content is loaded (form, list...)   |                                                  |
 | js-content-unload            | ui.content.unload                   | a common content is unloaded                 |                                                  |
 | js-reload                    | ui.reload                           | the navigation reloads the work area         |                                                  |
-| js-notify                    | ui.notify                           | one object has been updated in the work area | \{ type:create\|update\|delete, object, rowId, item \} |
+| js-notify                    | ui.notify                           | one object has been updated in the work area | `{type:create\|update\|delete, object, rowId, item}` |
 | js-resizable                 | ui.resize                           | the screen size has changed                  | width, height, reload                            |
 | js-zoom                      | ui.zoom                             | the screen zoom factor                       | percent factor                                   |
 | js-searchable                | ui.search.filters                   | the object filters have changed              | filters, object                                  |

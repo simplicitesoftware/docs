@@ -209,7 +209,7 @@ When developing the **Client-Side** script using the *namespace pattern* (as dem
 
 #### Accessing Business Objects
 
-Accessing Simplicité’s **Business Objects** follows the same approach outlined in the [UI Component]() and [JS Development]() lessons. Below is an example demonstrating how to *query* and *manipulate* Business Objects using  `$app.getBusinessObject()` and `BusinessObject.search()` methods:
+Accessing Simplicité’s **Business Objects** follows the same approach outlined in the [UI Component](/) and [JS Development](/) lessons. Below is an example demonstrating how to *query* and *manipulate* Business Objects using  `$app.getBusinessObject()` and `BusinessObject.search()` methods:
 
 ```javascript
 let app = new Simplicite.Ajax(params.root, "uipublic"); // params.root or ""

@@ -108,18 +108,16 @@ AppLog.error(e,getGrant());   // Error level message
 AppLog.fatal(e,getGrant());   // Fatal level message
 ```
 
+<details>
+<summary>Rhino JavaScript equivalent</summary>  
 
 ```javascript
 console.debug("Hello world !");   // Debug level message
-<details>
-<summary>Rhino JavaScript equivalent</summary>
-
 console.info("Hello world !");    // Info level message
 console.warning("Hello world !"); // Warning level message
 console.error("Hello world !");   // Error level message
 console.fatal("Hello world !");   // Fatal level message
 ```
-
 </details>  
 
 It is also possible to link a message to an explicit log code:
@@ -127,7 +125,7 @@ It is also possible to link a message to an explicit log code:
 #### Java
 
 ```java
-AppLog.log("MYLOGCODE_001","Hello world !" ,getGrant());
+AppLog.log("MYLOGCODE_001","Hello world !",getGrant());
 ```
 <details>
 <summary>Rhino JavaScript equivalent</summary>

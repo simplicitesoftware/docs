@@ -66,7 +66,7 @@ See [this document](/lesson/docs/authentication/tomcat-multi-auth-providers) for
 > nor the `AUTH_PROVIDERS` system parameter, but instead a `OAUTH2_PROVIDER` system parameter
 > must be configured with the name of your unique provider
 
-If needed, the logout URL to configure in your OAuth2/OpenIDConnect IdP for your instance is `<base URL>/logout
+If needed, the logout URL to configure in your OAuth2/OpenIDConnect IdP for your instance is `<base URL>/logout`
 or `<base URL>/logoutconfirm` (for displaying just a logout confirmation page).
 
 <h2 id="openidconnect">Generic OpenIDConnect provider settings</h2>

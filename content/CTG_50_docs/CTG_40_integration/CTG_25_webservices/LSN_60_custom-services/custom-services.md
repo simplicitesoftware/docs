@@ -23,13 +23,13 @@ The calls examples are given using the `curl` command line tool
 > In versions 4.0+ a technical session is used to avoid taking care of the session cookie.
 
 For an application deployed on `myapp` webapp root, the base URL of the custom services is:
-
-	http[s]://<host[:<port>]>/myapp/api/ext
-
-For an application deployed on the default webapp root, the base URL of the custom services is:
-
-	http[s]://<host[:<port>]>/api/ext
-
+```
+http[s]://<host[:<port>]>/myapp/api/ext
+```
+For an application deployed on the default webapp root, the base URL of the custom services is:  
+```
+http[s]://<host[:<port>]>/api/ext
+```
 It will be noted `<base URL>` in the rest of the document.
 
 > **Warning**: In production the services endpoint's URL should be restricted only to allowed origins e.g. using URL filtering based on request's origin IP address or similar approaches.
@@ -86,9 +86,9 @@ public class MyServiceV1 extends com.simplicite.webapp.services.RESTServiceExter
 <h2 id="calling">Service call</h2>
 
 Then the service could be called (using `POST` method in this example) like this:
-
+```shell
 	curl <credentials> -X POST -H "Content-type:application/json" -d @req.json "<base URL>/MyServiceV1"
-
+```
 Where, for instance if `req.json` is:
 
 ```json

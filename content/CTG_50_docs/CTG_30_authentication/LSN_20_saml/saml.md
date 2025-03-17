@@ -85,11 +85,11 @@ Depending on the SSO strategies others configurations are possible :
 | System parameter           | Value                                                        | Description                                                                                   |
 |----------------------------|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | SAML_ASSERTIONS_ENCRYPTED  | true/false                                                   | Indicates a requirement for the Assertions received by this SP to be encrypted                |
-| SAML_ASSERTIONS_SIGNED     | true/false                                                   | Indicates a requirement for the <saml:Assertion> elements received by this SP to be signed.   |
-| SAML_AUTHNREQUEST_SIGNED   | true/false                                                   | Indicates whether the <samlp:AuthnRequest> messages sent by this SP will be signed.           |
+| SAML_ASSERTIONS_SIGNED     | true/false                                                   | Indicates a requirement for the `<saml:Assertion>` elements received by this SP to be signed.   |
+| SAML_AUTHNREQUEST_SIGNED   | true/false                                                   | Indicates whether the `<samlp:AuthnRequest>` messages sent by this SP will be signed.           |
 | SAML_IDP_SLO_URL           | Logout IDP URL                                               | SLO endpoint info of the IdP.  URL Location of the IdP where the SP will send the SLO Request |
-| SAML_LOGOUTREQUEST_SIGNED  | true/false                                                   | Indicates whether the <samlp:logoutRequest> messages sent by this SP will be signed.          |
-| SAML_LOGOUTRESPONSE_SIGNED | true/false                                                   | Indicates whether the <samlp:logoutResponse> messages sent by this SP will be signed.         |
+| SAML_LOGOUTREQUEST_SIGNED  | true/false                                                   | Indicates whether the `<samlp:logoutRequest>` messages sent by this SP will be signed.          |
+| SAML_LOGOUTRESPONSE_SIGNED | true/false                                                   | Indicates whether the `<samlp:logoutResponse>` messages sent by this SP will be signed.         |
 | SAML_SP_CERTIFICATE        | -----BEGIN CERTIFICATE-----(...)-----END CERTIFICATE         | Certificate of the SP                                                                         |
 | SAML_SP_PRIVATEKEY         | -----BEGIN RSA PRIVATE KEY-----(...)-----END RSA PRIVATE KEY | Private key of the SP.                                                                        |
 | SAML_USERINFO_MAPPINGS     | JSON data                                                    | User info fields mappings for synchronization (firstname, lastname, email and phone)          |

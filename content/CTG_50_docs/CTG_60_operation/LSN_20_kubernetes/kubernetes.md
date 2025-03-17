@@ -18,9 +18,9 @@ Verify the configuration:
 	kubectl config get-contexts
 
 If you have several clusters:
-
+```
 	kubectl config use-context <cluster name>
-
+```
 Verify the cluster:
 
 	kubectl cluster-info
@@ -31,17 +31,17 @@ Verify the cluster:
 The Simplicit&eacute;&reg; images needs appropriate credentials on DockerHub.
 
 First sign in to DockerHub with your DockerHub account:
-
+```
 	docker login
-
+```
 Then create a secret from the created `$HOME/.docker/config.json` file by:
-
+```
 	kubectl create secret generic regcred --from-file=.dockerconfigjson=$HOME/.docker/config.json --type=kubernetes.io/dockerconfigjson
-
+```
 Alternatively you can create the secret directly (without signin in to DockerHub) by:
-
+```
 	kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=<your username> --docker-password=<your password> --docker-email=<your email address>
-
+```
 <h2 id="sandbox">Basic Simplicit&eacute;&reg; sandbox example using Kompose&reg;</h2>
 
 For this basic example we will be using the [Kompose tool](https:installation.md) tool.
@@ -82,16 +82,16 @@ In the `simplicite-deployment.yaml` add:
 At the same level as the `containers` statement.
 
 Deploy to cluster:
-
+```
 	kubectl apply -f simplicite-deployment.yaml -f simplicite-service.yaml
-
+```
 > **Note**: A simple `kompose up` does not work because of DockerHub credentials that needs to be added manually.
 > This may change in the future...
 
 Get the service information:
-
+```
 	kubectl get service simplicite
-
+```
 Which produces:
 
 ```plaintext
@@ -347,9 +347,9 @@ Kubernetes dashboard
 If you have configured the Kubernetes Dashboard you can access it like this:
 
 Genereate an access token:
-
-	kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
-
+```shell
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+```
 Start proxy to expose the dashboard on `http://localhost:8001`.
 
 	kubectl proxy

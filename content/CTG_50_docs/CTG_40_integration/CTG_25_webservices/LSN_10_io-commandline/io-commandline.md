@@ -43,9 +43,9 @@ Imports <span id="imports"></span>
 ----------------------------------
 
 To import a file `<file>` the command is:
-
-	curl <credentials> --form service=<import command> --form file=@<file> [<extra parameters>] <I/O URL>
-
+```shell
+curl <credentials> --form service=<import command> --form file=@<file> [<extra parameters>] <I/O URL>
+```
 Where `<import command>` is one of :
 
 - `xmlimport` : import a **standard XML** file (no extra parameter required)
@@ -69,9 +69,9 @@ Exports <span id="exports"></span>
 ----------------------------------
 
 To export data in a file `<file>` the command is:
-
+```shell
 	curl <credentials> --form service=<export command> -o <file> [<extra parameters>] <I/O URL>
-
+```
 Where `<export command>` is one of :
 
 - `xmlexport`: export an object data to a **standard XML** file with `<extra parameters>` = `--form object=<object name>`
@@ -96,24 +96,24 @@ Git <span id="git"></span>
 --------------------------
 
 As of **version 3.2**, to do a Git commit on a module, the command is:
-
+```
 	curl <credentials> --form service=modulecommit --form module=<module name> --form message="<commit message>" <I/O URL>
-
+```
 Others <span id="others"></span>
 --------------------------------
 
 ### Clear cache <span id="clearcache"></span>
 
 To flush server-side cache, the command is:
-
+```
 	curl <credentials> --form service=clearcache <I/O URL>
-
+```
 ### Purge tasks <span id="purge"></span>
 
 Various purge tasks can be processed using following commands:
-
+```
 	curl <credentials> --form service=<purge command> <I/O URL>
-
+```
 Where `<purge command>` is one of:
 
 - `purgelogs` : purge logs
@@ -131,35 +131,35 @@ As of version 5.2 for `purgelogs`, `purgejobs`and `purgesuversions` an additonal
 ### Indexation <span id="indexation"></span>
 
 To force indexation to be (re)built, the command is:
-
+```
 	curl <credentials> --form service=buildindex <I/O URL>
-
+```
 ### Unit tests <span id="unittests"></span>
 
 To run a **business object**'s unit tests, the command is:
-
+```
 	curl <credentials> --form service=unittests --form object=<business object name> <I/O URL>
-
+```
 To run an **external object**'s unit tests, the command is:
-
+```
 	curl <credentials> --form service=unittests --form extobject=<external object name> <I/O URL>
-
+```
 To run a **business process**'s unit tests, the command is:
-
+```
 	curl <credentials> --form service=unittests --form process=<business process name> <I/O URL>
-
+```
 As of **version 5.1**, to run all tests from a **test shared code**, the command is:
-
+```
 	curl <credentials> --form service=unittests --form test=<test shared code name> <I/O URL>
-
+```
 As of **version 5.3**, to run all unit tests shared codes of a **module**, the command is:
-
+```
 	curl <credentials> --form service=unittests --form module=<module name> <I/O URL>
-
+```
 As of **version 5.3**, the importspec syntax can also be used, the command is:
-
+```
 	curl <credentials> --form service=unittests --form file=@<file> <I/O URL>
-
+```
 Where the content of `<file>` is a JSON importspec (or its YAML equivalent) like:
 
 ```json
@@ -179,5 +179,6 @@ Where the content of `<file>` is a JSON importspec (or its YAML equivalent) like
 ### Logs <span id="logs"></span>
 
 To retreive the server logs, the command is:
-
+```
 	curl <credentials> --form service=logs <I/O URL>
+```

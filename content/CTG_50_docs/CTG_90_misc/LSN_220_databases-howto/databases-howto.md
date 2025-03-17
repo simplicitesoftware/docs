@@ -13,13 +13,13 @@ With MySQL version 5.x / MariaDB, you **must** use a 5.x JDBC Driver.
 Some MySQL 5.x / MariaDB servers must be accessed over SSL, in such a case some additional arguments are needed:
 
 Connecting from the command line:
-
-	mysql --protocol=tcp --ssl-mode=REQUIRED --host=<host> --port=<port> --database=<database> --user=<username> --password=<password> [--default-character-set=utf8]
-
+```
+mysql --protocol=tcp --ssl-mode=REQUIRED --host=<host> --port=<port> --database=<database> --user=<username> --password=<password> [--default-character-set=utf8]
+```
 JDBC URL:
-
-	jdbc:mysql://<username>:<password>@<host>:<port>/<database>?autoReconnect=true&verifyServerCertificate=false&useSSL=true&requireSSL=true[&useUnicode=yes&characterEncoding=utf8&characterResultSets=utf8]
-
+```
+jdbc:mysql://<username>:<password>@<host>:<port>/<database>?autoReconnect=true&verifyServerCertificate=false&useSSL=true&requireSSL=true[&useUnicode=yes&characterEncoding=utf8&characterResultSets=utf8]
+```
 ### Maximum packet size
 
 You need to check and increase if needed the `max_allowed_packet` settings to be compliant with your requirement, a good minmal value is `16M`.
@@ -96,9 +96,9 @@ See [this document](https://www.postgresql.org/docs/9.6/static/functions-matchin
 PostgreSQL 9.6+'s extension module `postgres_fdw` allows you to link a remote database into a local database.
 
 To do so, connect to the local database as the `postgres` super administrator:
-
+```
 	sudo su - postgres -c "psql -d <local database name>"
-
+```
 Then issue the following commands:
 
 ```plaintext
@@ -115,9 +115,9 @@ GRANT <ALL PRIVILEGES|SELECT> ON ALL TABLES IN SCHEMA <arbitrary local schema na
 Use `ALL PRIVILEGES` for read+write access, `SELECT` for read-ony access.
 
 Then after connecting as local user to local database:
-
+```
 	PGPASSWORD=<local password> psql -h <local host> -p <local port> -U <local username> -d <local database>
-
+```
 you can access remote tables like this `select * from <arbitrary local schema name>.<remote table name>;`
 
 > **Note**: you can only import some of the remote schema's tables by appending `LIMIT (<remote table name 1>, <remote table name 2>, ...)`

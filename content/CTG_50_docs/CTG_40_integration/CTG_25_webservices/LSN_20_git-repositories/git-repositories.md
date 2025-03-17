@@ -29,9 +29,9 @@ using the dedicated action on the _Module_ object:
 ![Commit module to Git repository](git-repositories-commitmodule.png)
 
 Then you can clone the module's repository by:
-
+```shell
 	git clone http(s)://<host name>[/<app context root>]/git/<module name>
-
+```
 The credentials you have to use in this case are the same as the one you can use for the I/O interface.
 
 <h2 id="import">Import</h2>

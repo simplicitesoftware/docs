@@ -19,24 +19,13 @@ You should connect as the `designer` super-user (*or any user that has rights on
 Check the you are on the **“Simplicité Administrator”** scope
 > Sometimes, **if the licence is expired, the scope selector might not be accessible!!!** In this case, the trick is to use the adress bar to change scope, by adding `/ui?scope=Home` to your app’s URL.
 
-<details>
-<summary>See image</summary>
-
-![Scope](scope.png)
-
-</details>
-
-
 ### 3) Access the **Licence Key** Object
 
 - Go to Operations > License key
 
-![key](key.jpg)
-
 ### 4) Delete old key
 
 - delete the old key (see image in #3)
-
 
 Using a generic service
 -----------------------

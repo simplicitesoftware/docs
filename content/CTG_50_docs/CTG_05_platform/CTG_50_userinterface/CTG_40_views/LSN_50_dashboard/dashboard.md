@@ -34,7 +34,7 @@ You have differents choices :
      Choose one and place it.   
    <img src="dashboard5.png" alt="dashboard widget" width="50%"/>
    - Filter : allows to add a search bar (new view item) with optional time period and fields.
-      - The item triggers a new event with user's filters { fromDate, toDate, fields... }.  
+      - The item triggers a new event with user's filters `{ fromDate, toDate, fields..}`.  
       - The filters are applied to lists, charts, and pivot tables (having a date/period or matching filtered fields).  
         You can add filters on object attributes to this period filter bar by clicking on Add Filter.       
     <img src="dashboard8.png" alt="dashboard widget" width="50%"/>  
@@ -58,12 +58,12 @@ Several additional options are available for this right:
 - Empty item : ability to add a field area containing a list of options (text, login, date, predefined search, etc.)  
 - List : Preset search
 - Filter : allows to add a search bar (new view item) with optional time period and fields.
-    - The item triggers a new event with user's filters { fromDate, toDate, fields... }.  
+    - The item triggers a new event with user's filters (fromDate, toDate, fields...)  
     - The filters are applied to lists, charts, and pivot tables (having a date/period or matching filtered fields).  
     - External objects must implement a new handler when they are concerned by filters.  
     - A new front-end helper is available to apply view's filters to a business object: `obj.applyFilters(filters)`.    
 For example:
-```javascript
+```javascript 
 $("#myWidget").addClass("js-view-filters").on("ui.view.filters", (e,filters) => {
 	e.stopPropagation();
 	// Apply the filters to widget components

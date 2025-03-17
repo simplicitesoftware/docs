@@ -32,9 +32,9 @@ Tomcat
 ------
 
 Clone the preconfigured Tomcat package (which is just an out of the box Tomcat package with administration webapps removed, with some settings fine-tuned and with some additional jars in the `lib` folder) with appropriate credentials:
-
-	git clone https://<username>[:<password>]@platform.git.simplicite.io/tomcat.git
-
+```shell
+git clone https://<username>[:<password>]@platform.git.simplicite.io/tomcat.git
+```
 Make sure the `tomcat\temp` folder is present and writeable, this is **mandatory** for images thumbnails generation.
 
 Then, make sure the `tomcat\logs` folder is present and writeable, this is **mandatory** for logging.
@@ -46,11 +46,11 @@ To start with, just change the plain HTTP Tomcat connector port number in `conf/
 These cases requires additional installation/preraration/configuration steps that are not described here).
 
 Install Tomcat as a service:
-
+```
 	cd tomcat\bin
 	.\service.bat install
 	.\tomcat9.exe //US//Tomcat9 ++JvmOptions -server;-Dserver.vendor=tomcat;-Dserver.version=9;-Dfile.encoding=UTF-8;-Dgit.basedir=C:\Users\Administrator\git;-Dplatform.autoupgrade=true --JvmMs 256 --JvmMx 1024 --Startup auto
-
+```
 Note that the `C:\Users\Administrator` base folder, and the above `256` / `1024` Mb values for allocated memory are just given as examples.
 Adjust these to match your configuration.
 
@@ -62,9 +62,9 @@ Simplicité
 ----------
 
 Clone the Simplicité webapp instance template of your target platform version:
-
+```
 	git clone https://<username>[:<password>]@platform.git.simplicite.io/template-<version>.git
-
+```
 Where `<version>` is one of the available versions, e.g. `4.0`
 
 > **Note**: as of version 4.0 there are several branches on the instance template,

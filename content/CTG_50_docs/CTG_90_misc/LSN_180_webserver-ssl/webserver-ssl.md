@@ -28,7 +28,7 @@ Signed by CA:
 Or self-signed: 
 
 	openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
-
+	
 You can use this procedure to create either single host or wildcard certificate.
 
 > **Note**: It is also possible to create a certificate for **both** host and wilcard by appending an appropriate "SAN" (`subjectAltName`) configuration to your `openssl.cnf` file, see [this document](http://wiki.cacert.org/FAQ/subjectAltName))
@@ -120,9 +120,9 @@ Install the **CertBot** tool:
 	yum install certbot
 
 Generate initial certficates:
-
-	sudo certbot certonly --webroot -w <document root, e.g. /var/www/html> -d <server name, e.g. www.example.com>
-
+```shell
+sudo certbot certonly --webroot -w <document root, e.g. /var/www/html> -d <server name, e.g. www.example.com>
+```
 > **Note**: the CertBot tool needs to have **HTTP** access to the `/.well-known/` URI where the validation files are generated
 
 The certificates are generated in `/etc/letsencrypt/live/<server name>/` they need to be configured

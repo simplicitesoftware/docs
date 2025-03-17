@@ -62,13 +62,13 @@ character_set_server=utf8
 > **Note**: when changing these values a database service restart is needed
 
 This can also be set at the database level by:
-
-	CREATE DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
-
+```sql
+CREATE DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
+```
 This can be also done after creation by:
-
-	ALTER DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
-
+```sql
+ALTER DATABASE <database name> DEFAULT CHARACTER SET utf8 [DEFAULT COLLATE utf8_unicode_ci];
+```
 In both case defining an explicit collation is not mandatory (the value above is the default value for `uft8` chraracter set).
 
 > **Note 1**: for using modern characters such as emoticons, you must use `utf8mb4` character set instead of `uft8`
@@ -92,19 +92,19 @@ For Tomcat, this results in a datasource descriptor similar to this one:
 ```
 
 To check current charset and collation of existing tables you can use:
-
+```
 	SHOW TABLE STATUS LIKE '<table name>';
-
+```
 To convert existing tables to UTF-8 you can use:
-
+```
 	ALTER TABLE <table name> CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-
+```
 ### PostgreSQL
 
 The database **must** be created with UTF-8 encoding:
-
+```
 	create database simplicite encoding 'UTF8' lc_ctype 'en_US.UTF-8' lc_collate 'en_US.UTF-8' template <an UTF-8 database template name>;
-
+```
 > **Note**: if you have created a database using another encoding you must drop it and do it again
 
 No additional configuration is then need at the datasource descriptor level.
@@ -151,7 +151,7 @@ Others
 ------
 
 If you need to convert a text file from `ISO-8859-1` to `UTF-8` you can, for instance, use the Linux `iconv` command line tool:
-
+```
 	iconv -f ISO-8859-1 -t UTF-8 iso.txt > utf.txt
-
+```
 Most modern text editors also provide features to convert files from one encoding to another.

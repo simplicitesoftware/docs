@@ -30,15 +30,15 @@ The calls examples are given using the `curl` command line tool
 > In versions 4.0+ a technical session is used to avoid taking care of the session cookie.
 
 For an application named `myapp`, the base URL of the REST services is:
-
-	http[s]://<host[:<port>]>/myappws/rest
-
+```
+http[s]://<host[:<port>]>/myappws/rest
+```
 _NB3: As of **version 3.1**, the output format URL element has been removed, in previous versions an additional `/json` needs to be appended to above base URL._
 
 _NB4: As of **version 3.0**, the API endpoint is also available in the main webapp `/myapp` (this allows to avoid deploying the webservice gateway webapp `/myappws`):_
-
-	http[s]://<host[:<port>]>/myapp/api/rest
-
+```
+http[s]://<host[:<port>]>/myapp/api/rest
+```
 _if you are using this API endpoint please refer to [this document](/lesson/docs/integration/services-auth) for details on the authentication mechanisms._
 
 It will be noted `<base URL>` in the rest of the document.
@@ -61,9 +61,9 @@ The pool size can be adjusted/limied using the `WEBSERVICES_OBJECTPOOL_MAXPEROBJ
 <h2 id="appinfo">Application info</h2>
 
 Calling `<base URL>` returns information on application and user:
-
+```
 	curl <credentials> "<base URL>"
-
+```
 As of version **3.1** appending `?session=true` to this URL only returns minimalistic information on the server session.
 For instance, calling this basic session information is an efficient way to keep the session alive with a minimal system consumption.
 
@@ -81,9 +81,9 @@ To create a new system parameter `TEST` with value `foo`, the required JSON data
 In the example this JSON data is stored in a `test.json` file.
 
 The **create** call in REST uses the HTTP `POST` method.
-
+```
 	curl <credentials> -X POST -H "Content-type:application/json" -d @test.json "<base URL>/SystemParam/[0]"
-
+```
 _NB1: the `-H "Content-type:application/json"` is **mandatory** for the JSON data of the posted body to be taken into account._
 
 _NB2: The `0` at the end of the URL is optional._
@@ -109,9 +109,9 @@ Note the `row_id` field value returned (noted `<row ID>` in the example) that wi
 Once you know the row ID of a record you can get it (go to "Search" paragraph for search principles based on other fields than the row ID).
 
 The **get** call in REST uses the HTTP `GET` method.
-
+```
 	curl <credentials> "<base URL>/SystemParam/<row ID>"
-
+```
 The response is the same as the one you got from creation call:
 
 ```json
@@ -143,9 +143,9 @@ Lets say you want to change the system parameter value to `bar`, the required JS
 ```
 
 The **update** call in REST uses the HTTP `PUT` method (or, alternatively, `POST` method with the URL parameter `_method=PUT` if your URL client does not implement `PUT` method).
-
+```
 	curl <credentials> -X PUT -H "Content-type:application/json" -d @test.json "<base URL>/SystemParam/<row ID>"
-
+```
 > **Note**: Same NBs as for creation.
 
 The response is the same as the one you got from creation and get calls, except that the value has changed:
@@ -167,9 +167,9 @@ The response is the same as the one you got from creation and get calls, except 
 Once you know the row ID of a record you can delete it.
 
 The **delete** call in REST uses the HTTP `DELETE` method (or, alternatively, `POST` method with the URL parameter `_method=DELETE` if your URL client does not implement `DELETE` method).
-
+```
 	curl <credentials> -X DELETE "<base URL>/SystemParam/<row ID>"
-
+```
 The response only indicates the row ID that has been deleted:
 
 ```json
@@ -183,9 +183,9 @@ The response only indicates the row ID that has been deleted:
 Search is as get but without a row ID.
 
 The **search** call in REST uses the HTTP `GET` method with optional URL-encoded parameters (`%25` being the URL-encoded wildcard for "any string"):
-
+```
 	curl <credentials> "<base URL>/SystemParam/?sys_code=TES%25"
-
+```
 The response is an array of matching records (in the example only one matches):
 
 ```json
@@ -209,9 +209,9 @@ As of **version 3.2**, if you just want to count records you need to append `_co
 As of **version 4.0**, if you want to paginate the search results you need to append `_page=<number of page, starting with 0>` (the number of page  being given by the above count request)
 
 As of **version 3.1**, it is possible to do search on the object index (if the considered object is indexed).
-
+```
 	curl <credentials> "<base URL>/<indexed object name>/?_indexsearch=<index search request>"
-
+```
 The result provides an array of matching indexed records (each of them including the standard data record):
 
 ```json
@@ -234,41 +234,41 @@ The options described above applies for this search also.
 <h2 id="metadata">Meta-data</h2>
 
 You can get the business object meta-data with a get call with the optional URL parameter `_metadata`:
-
+```
 	curl <credentials> "<base URL>/SystemParam/?_metadata=true"
-
+```
 An optional `_metadacontext` allows to specify object context.
 
 <h2 id="action">Run custom action</h2>
 
 You can run a custom action on the business object with a get call with the optional URL parameter `_action`:
-
+```
 	curl <credentials> "<base URL>/SystemParam/[<row ID>]?_action=<action name>"
-
+```
 or (as of version 5.1):
-
+```
 	curl <credentials> "<base URL>/SystemParam/[<row ID>]/action:<action name>"
-
+```
 The row ID is to be set for record level custom actions. On global custom actions the search capabilities applies.
 
 <h2 id="publication">Apply publication template</h2>
 
 You can apply a publication template on the business object with a get call with the optional URL parameter `_printtemplate`:
-
+```
 	curl <credentials> "<base URL>/SystemParam/[<row ID>]?_printtemplate=<print template name>"
-
+```
 or (as of version 5.1):
-
+```
 	curl <credentials> "<base URL>/SystemParam/[<row ID>]/publication:<print template name>"
-
+```
 The row ID is to be set for record level publication templates. On global publication templates the search capabilities applies.
 
 <h2 id="pivottable">Get pivot table data</h2>
 
 You can get a pivot table result on the business object with a get call with the optional URL parameter `_crosstab`:
-
+```
 	curl <credentials> "<base URL>/SystemParam/?_crosstab=<pivot table name>"
-
+```
 The search capabilities applies.
 
 <h2 id="doc">Service documentation</h2>
@@ -286,7 +286,7 @@ API tester page
 ---------------
 
 A web page is available to build and test requests to these generic REST API:
-
+```
 	http[s]://<host[:<port>]>/myapp/api/tester
-
+```
 > **Note**: This page can be inhibited in production by using the `USE_API_TESTER` system parameter to `no`.
