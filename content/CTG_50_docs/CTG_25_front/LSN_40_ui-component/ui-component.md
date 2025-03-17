@@ -29,17 +29,13 @@ The creation process is quite straightforward, as it is a specific type of **Ext
 
 ### External Object Creation
 
-<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="welcome-card-object-form.png" width="75%"/>
-</div>
 
 Start by creating an **External Object**, and make sure it is of nature *UI page or component*, and of class `com.simplicite.webapp.web.widgets.ResponsiveExternalObject`. Also make sure that the *UI widget* field is set to *Yes*.
 
 Another important step is to grant your widget the rights of the module and view you want to embed it in. This way you won't have troubles integrating it to your application. To do so navigate to your object's tab, in the *Permissions* section, and add all the ones you need.
 
-<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="welcome-card-permissions.png" width="75%"/>
-</div>
 
 ### Creating Resources
 
@@ -303,9 +299,7 @@ And the final step to access your different objects from here is to know how the
 
 > ***Note:*** If you want to access this without having to think of the possible names you had, or if you are unsure about your fields, you can chekc them from a *designer* scope, by going to **Business Objects > Your Object"* and then in the bottom tabs, select *Object Fields* to have the list of all fields and the possible links (example below).
 
-<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="demo-prd-fields-list.png" width="75%"/>
-</div>
 
 Now here is how we implemented a simple product fetching & display function within the **CustomWelcomeCard** External Oject using the previously explained methods, so inside the `BusinessObject.search(function(){ ... })` call we can use the following code snippet:
 
