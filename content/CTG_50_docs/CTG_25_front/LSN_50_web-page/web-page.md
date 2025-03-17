@@ -442,10 +442,8 @@ This approach ensures that your asynchronous operations are handled cleanly, red
 
 ## Final Result
 
-<div style="display:flex; flex-direction:row; justify-content:center; width:100%; gap:16px;">
 <img src="myexternalobject-products.png" width="50%"/>
 <img src="myexternalobject-suppliers.png" width="50%"/>
-</div>
 
 <details>
 <summary>Java server-side Code</summary>
@@ -1171,9 +1169,7 @@ In order to build custom webpages using the **Vue.js** web framework, you have t
 The main specificities are to be considered when setting up your *server-side* code first, indeed you have to specify that you are gonna use **Vue.js** components in the rest of your resource files using the `BootstrapWebPage.appendVue()` function.
 
 All code snippets and examples are derived from an external page we created as a hands-on demonstration. The complete code for this page can be found at the end of the document.
-<div style="display:flex; flex-direction:row; width:100%; justify-content:center;">
 <img src="customvue-page.png" width="75%" />
-</div>
 
 #### Server-Side 
 

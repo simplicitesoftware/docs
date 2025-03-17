@@ -188,13 +188,9 @@ div.card-body { //panel body containing the list element
 
 > ***Note:*** For our specific style needs, our primary goal was to target the headers of each element. Understanding the organization and hierarchy of different components is essential to ensure precision in applying styles. Targeting incorrect elements or misunderstanding their structure may lead to unintended styling across various UI components.
 
-<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="element-focus.png" width="75%"/>
-</div>
 
-<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="browser-inspector.png" width="75%"/>
-</div>
 
 ## 2. Identifying the context
 
@@ -254,9 +250,7 @@ div.container-table > table {
 
 Now to see if your new styles has been applied, make sure to apply your theme to the wanted *Home Page* view in the *User Interface > Views > Home Pages*:
 
-<div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="view-apply-theme.png" width="75%"/>
-</div>
 
 Then make sure to clear your cache to update the styles, and you should see the result !
 

@@ -44,10 +44,8 @@ This tool enables you to *manage and customize* the overall design of your insta
 <details>
 <summary>"Mazette" Themes Overview</summary>
 
-<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
 <img src="theme-mazettelight-overview.png" width="50%"/>
 <img src="theme-mazettedark-overview.png" width="50%"/>
-</div>
 </details>
 
 ## Theme Creation
@@ -156,13 +154,11 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Base**: defines fundamental styles such as the main background color, global font, and shared spacing parameters, ensuring consistency across all elements.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-base.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Theme              | Base Theme             | { Light, Dark, Default }: defines the base constants and variables on which your whole theme will be based on                                                          |
+| Theme              | Base Theme             | `{ Light, Dark, Default }`: defines the base constants and variables on which your whole theme will be based on                                                          |
 | Theme              | 'Compact'              | Yes/No: defines wether the space on screen is spread or restrained.                                                                                                    |
 | Font               | Font Family            | Name of a Google Font or another font resource. Applied to all texts.                                                                                                  |
 | Font & Icons       | Size                   | [50;200]: defines the base size of these elements throughout the UI.                                                                                                   |
@@ -174,9 +170,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Main**: configures the permanent UI elements, including the header, footer, and navigation breadcrumb.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-main.png"/>
-</div>
 
 | Element               | Style Value            | Value Range / Description                                                                                                                                              |
 |-----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -195,9 +189,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
     
 
 **Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-menu.png"/>
-</div>
 
 | Element              | Style Value            | Value Range / Description                                                                                                                                              |
 |----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -217,9 +209,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Panel**: focuses on the overarching style of *top-level Panels*, which can be previewed in the ***Panels*** section of the Preview. 
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-panel.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                                         |
 |--------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -237,9 +227,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Sub-panel**: similar to *Panels* but specific to nested panels embedded within higher-level panels.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-subpanel.png"/>
-</div>
 
 | Element                | Style Value            | Value Range / Description                                                                                                                                                                              |
 |------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -258,9 +246,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Tabs**: controls the style of Tabs, which organize information into sections within the same placeholder. Tabs often appear alongside Sub-Panels.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-tabs.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                      |
 |--------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -283,9 +269,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Field**: configures styles for displayed fields within Sub-Panels and Tabs.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-field.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -307,9 +291,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **List**: provides extensive customization options for one of Simplicité’s most critical UI components. Careful styling ensures both functionality and aesthetics.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-list.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -337,9 +319,7 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 **Dialog**: syles `modal` dialogs that appear over the UI (with a `z-index = 1055`). These overlays dim the rest of the interface for focus and clarity.
 
-<div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-dialog.png"/>
-</div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
 |--------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
