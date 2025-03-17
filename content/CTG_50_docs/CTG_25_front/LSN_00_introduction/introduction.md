@@ -20,7 +20,6 @@ The use of such features can be encountered due to various needs, or specific us
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="identity-guidelines.png" width="75%"/>
-<!-- ![](identity-guidelines.png) -->
 </div>
 
 When integrating a Simplicité's instance into an existing system with a *distinct identity*, or specific *design guidelines*, you have the possibility to customize and align your instance's UI to those in order to ensure ease of use and familiarity for end-users.
@@ -31,14 +30,12 @@ These customizations can extend to the layout and organization of your Simplicit
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="dsfr-simplicite.png" width="75%"/>
-<!-- ![](dsfr-simplicite.png) -->
 </div>
 
 ### Client-oriented interfaces
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="client-oriented-webpage.png" width="75%"/>
-<!-- ![](client-oriented-webpage.png) -->
 </div>
 
 If your solution is *client-oriented*, you may benefit from creating a *custom front-end* that is tailored to meet the specific needs of your end-users and possible customers. For example you can want your client to be immersed in a specific environment if you wanna apply some specific marketing strategies or user-oriented designs. The idea is that Simplicité will allow you to customize the fronts of your applications, and even take them outside of the solutions if you don't want to mix anything together. 
@@ -50,8 +47,6 @@ There are numerous possibilities, but a common example is the one of having prod
 <div width="100%" style="display:flex; flex-direction: row; gap: 8px; padding-bottom:32px;">
 <img src="order-internal-page.png" width="50%"/>
 <img src="order-external-page.png" width="50%"/>
-<!-- ![](order-internal-page.png)
-![](order-external-page.png) -->
 </div>
 
 ### Use of specific web technologies
@@ -63,8 +58,6 @@ If your teams or organization are committed to a specific technical solution (we
 <div width="100%" style="display:flex; flex-direction: row; gap: 8px; padding-bottom:32px;">
 <img src="vue-webpage.png" width="50%"/>
 <img src="mustache-webpage.png" width="50%"/>
-<!-- ![](vue-webpage.png)
-![](mustache-webpage.png) -->
 </div>
 
 ## Disposition
@@ -75,7 +68,6 @@ In order to properly manipulate and customize your Simplicité applications, it 
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="disposition-schema.png" width="50%"/>
-<!-- ![](disposition-schema.png) -->
 </div>
 
 * **HEADER -** remains visible and accessible whatever you are displaying, usually contains a set of necessary shortcuts and features that you want to access anytime such as:
@@ -96,12 +88,12 @@ In order to properly manipulate and customize your Simplicité applications, it 
 This part of the documentation follows the following organization and flow:
 
 0) This introduction document.
-1) Presentation of the [Theme Editor](https://docs.simplicite.io/lesson/docs/front/theme) tool, allowing you to customize the themes and styles of you applications, all within Simplicité's solution.
-2) Overview of the [complementary tool](https://docs.simplicite.io/lesson/docs/front/styles) for theming, allowing you to add even more precise customizations to your applications.
-3) Guide through the [javascript development](https://docs.simplicite.io/lesson/docs/front/javascript-dev) in Simplicité, both outside with the *NPM Library* and inside with the *External Objects*.
-4) Breakdown of the [Ajax Library](https://docs.simplicite.io/lesson/docs/front/lib-ajax) that is useful for javascript development as it presents the core functions and methods to navigate and manipulate Simplicité's concepts and objects.
-5) An understanding of how to create [Custom UI Components](https://docs.simplicite.io/lesson/docs/front/ui-components), breaking down the processes and techniques to do so using Simplicité's  *External Objects* and some *Web Development*.
-6) An extension of *UI Components* to now make those objects outside of Simplicité, creating [external webpages](https://docs.simplicite.io/lesson/docs/front/web-page) that communicates with Simplicité's backend and allow for even more customized fronts.
+1) Presentation of the [Theme Editor](/lesson/docs/front/theme) tool, allowing you to customize the themes and styles of you applications, all within Simplicité's solution.
+2) Overview of the [complementary tool](/lesson/docs/front/styles) for theming, allowing you to add even more precise customizations to your applications.
+3) Guide through the [javascript development](/lesson/docs/front/javascript-dev) in Simplicité, both outside with the *NPM Library* and inside with the *External Objects*.
+4) Breakdown of the [Ajax Library](/lesson/docs/front/lib-ajax) that is useful for javascript development as it presents the core functions and methods to navigate and manipulate Simplicité's concepts and objects.
+5) An understanding of how to create [Custom UI Components](/lesson/docs/front/ui-components), breaking down the processes and techniques to do so using Simplicité's  *External Objects* and some *Web Development*.
+6) An extension of *UI Components* to now make those objects outside of Simplicité, creating [external webpages](/lesson/docs/front/web-page) that communicates with Simplicité's backend and allow for even more customized fronts.
 
 Still it is roughly organized in 2 parts, presenting first the basic and very accessible customizations, then delving into more tech aspects of customizations and adressing to web and frontend developpers. All documents are overall independent from each others if your need is only one specific concept, but it is also possible to read them in the right order and get a progressive understanding of how to customize and adapt your Simplicité applications.
 
@@ -109,18 +101,18 @@ Still it is roughly organized in 2 parts, presenting first the basic and very ac
 
 Don't hesitate to also check on other lessons that are relevant for the presented concepts and features,: 
 
-* [*External Objects (Tutorial)*](https://docs.simplicite.io/lesson/tutorial/development/external-object)  
-* [*Responsive UI (Documentation)*](https://docs.simplicite.io/lesson/docs/ui/responsive)  
-* [*Custom UI disposition (Documentation)*](https://docs.simplicite.io/lesson/docs/core/disposition-code-examples)  
-* [*Core Javascript (Documentation)*](https://docs.simplicite.io/lesson/docs/core/javascript-code-examples)  
-* [*Interface tool `$ui` (Documentation)*](https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples)  
-* [*Custom Services through External Objects (Documentation)*](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
-* [*Ajax API (Documentation)*](https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api)  
-* [*External Objects (Tutorial)*](https://docs.simplicite.io/lesson/tutorial/development/external-object)  
-* [*Responsive UI (Documentation)*](https://docs.simplicite.io/lesson/docs/ui/responsive)  
-* [*Custom UI disposition (Documentation)*](https://docs.simplicite.io/lesson/docs/core/disposition-code-examples)  
-* [*Core Javascript (Documentation)*](https://docs.simplicite.io/lesson/docs/core/javascript-code-examples)  
-* [*Interface tool `$ui` (Documentation)*](https://docs.simplicite.io/lesson/docs/core/ui-tools-code-examples)  
-* [*Custom Services through External Objects (Documentation)*](https://docs.simplicite.io/lesson/docs/integration/webservices/custom-services)  
-* [*Ajax API (Documentation)*](https://docs.simplicite.io/lesson/docs/integration/librairies/ajax-api)  
+* [*External Objects (Tutorial)*](/lesson/tutorial/development/external-object)  
+* [*Responsive UI (Documentation)*](/lesson/docs/ui/responsive)  
+* [*Custom UI disposition (Documentation)*](/lesson/docs/core/disposition-code-examples)  
+* [*Core Javascript (Documentation)*](/lesson/docs/core/javascript-code-examples)  
+* [*Interface tool `$ui` (Documentation)*](/lesson/docs/core/ui-tools-code-examples)  
+* [*Custom Services through External Objects (Documentation)*](/lesson/docs/integration/webservices/custom-services)  
+* [*Ajax API (Documentation)*](/lesson/docs/integration/librairies/ajax-api)  
+* [*External Objects (Tutorial)*](/lesson/tutorial/development/external-object)  
+* [*Responsive UI (Documentation)*](/lesson/docs/ui/responsive)  
+* [*Custom UI disposition (Documentation)*](/lesson/docs/core/disposition-code-examples)  
+* [*Core Javascript (Documentation)*](/lesson/docs/core/javascript-code-examples)  
+* [*Interface tool `$ui` (Documentation)*](/lesson/docs/core/ui-tools-code-examples)  
+* [*Custom Services through External Objects (Documentation)*](/lesson/docs/integration/webservices/custom-services)  
+* [*Ajax API (Documentation)*](/lesson/docs/integration/librairies/ajax-api)  
 * [*Simplicité NPM Javascript API Doc*](https://simplicitesoftware.github.io/javascript-api/)

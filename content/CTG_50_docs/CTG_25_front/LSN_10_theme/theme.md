@@ -8,7 +8,6 @@ Theme Editor: Presentation and Overview
 This document introduces Simplicité’s **Theme Editor**, a tool designed for *customizing the visual identity of your instance*, whether for the designer interface or the user interface. The Theme Editor provides the *flexibility* to align your instance’s appearance with personal preferences, organizational branding guidelines, or specific design requirements.
 
 <img src="simplicite-mazette-form.png" width="75%"/>
-<!-- ![](simplicite-mazette-form.png) -->
 
 Through this document, we will provide an understanding of how the tool works, its *key features*, and the *extensive customization* options available. We’ll explore how you can leverage it to enhance both *functionality* and *aesthetics*, ensuring an optimized and cohesive user experience.
 
@@ -17,7 +16,6 @@ Through this document, we will provide an understanding of how the tool works, i
 The Theme Editor is accessible from the themes list located under **User Interface > Themes** To begin using it, select an existing theme and click the **Preview** button.
 
 <img src="theme-editor-overview.png" width="75%"/>
-<!-- ![](theme-editor-overview.png) -->
 
 This tool enables you to *manage and customize* the overall design of your instance with a *global scope*, offering complete control over the styles of **every UI element**. Whether you aim to create a dark, light, or specialized theme, the **Theme Editor** allows you to apply consistent design elements across your platform.
 
@@ -27,21 +25,18 @@ This tool enables you to *manage and customize* the overall design of your insta
 <details>
 <summary>ThemeAdmin Overview</summary>
 <img src="theme-admin-overview.png" width="75%"/>
-<!-- ![](theme-admin-overview.png) -->
 </details>
 
 *ThemeDesign*: built from the `Light Base`, this theme mirrors the *ThemeAdmin* in functionality but caters to those who prefer a *lighter mode*.
 <details>
 <summary>ThemeDesign Overview</summary>
 <img src="theme-design-overview.png" width="75%"/>
-<!-- ![](theme-design-overview.png) -->
 </details>
 
 *ThemeEtat*: designed following the *DSFR* (French government) *design norms*. It adheres to strict rules of **contrast**, **spacing**, and **accessibility** to meet public sector guidelines.
 <details>
 <summary>ThemeEtat Overview</summary>
 <img src="theme-etat-overview.png" width="75%"/>
-<!-- ![](theme-etat-overview.png) -->
 </details>
 
 > ***Coming Soon:*** Two new themes (Dark & Light) aligned with Simplicité’s brand new look and identity !
@@ -52,8 +47,6 @@ This tool enables you to *manage and customize* the overall design of your insta
 <div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
 <img src="theme-mazettelight-overview.png" width="50%"/>
 <img src="theme-mazettedark-overview.png" width="50%"/>
-<!-- ![](theme-mazettelight-overview.png)
-![](theme-mazettedark-overview.png) -->
 </div>
 </details>
 
@@ -74,14 +67,13 @@ Creating a theme begins with clicking the **Create** button from the **User Inte
 After creating and saving your themes, the styles are compiled, and you can see that files were added to your theme object, they serve to apply your styles through all selected interfaces, there are 3 of them:
 
 1) `constants.less`: this file is the result of what you applied in the *Theme Editor*, it basically contains all the values you defined as *less constants*.
-2) `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in [this lesson](https://docs.simplicite.io/lessons/docs/front/styles)).
+2) `addons.less`: allows you to either override the existing styles, or to add new ones if wanted (further developed in [this lesson](lessons/docs/front/styles)).
 3) `themeName_gen.css`: contains all the compiled styles from both `constants` and `addons` less files. It is the final results of all the theming work done before.
 
 ## Organization
 
 The **Theme Editor** interface is divided into *three main sections*, each providing a key functionality. Understanding how these sections work is essential for effectively using the tool:
 
-<!-- ![](theme-editor-parts.png) -->
 <img src="theme-editor-parts.png" width="75%"/>
 
 1) **Interface Preview:** A live preview of your theme in action, helping you visualize changes in real-time.
@@ -98,7 +90,6 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 <details>
 <summary>Home Preview</summary>
 <img src="theme-editor-preview-home.png" width="75%"/>
-<!-- ![](theme-editor-preview-home.png) -->
 </details>
 
 **Buttons**: a unique tab that gives access to customization for button elements and their style options. It showcases all button types available in Simplicité, allowing you to customize the following properties: `background-color`, `text-color` or `icon-color`, `border-radius`, and `border-width` for each of the predefined button types:
@@ -111,7 +102,6 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 <details>
 <summary>Buttons Preview</summary>
 <img src="theme-editor-preview-buttons.png" width="75%"/>
-<!-- ![](theme-editor-preview-buttons.png) -->
 </details>
 
 **Panels**: focuses on the structural elements that form Simplicité’s interface:
@@ -122,7 +112,6 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 <details>
 <summary>Panels Preview</summary>
 <img src="theme-editor-preview-panels.png" width="75%"/>
-<!-- ![](theme-editor-preview-panels.png) -->
 </details>
 
 **Form**: showcases essential UI components that combine *Panels*, *Sub-Panels*, and Tabs to organize fields and inputs.
@@ -132,7 +121,6 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 <details>
 <summary>Form Preview</summary>
 <img src="theme-editor-preview-form.png" width="75%"/>
-<!-- ![](theme-editor-preview-form.png) -->
 </details>
 
 > ***Note:*** Other input types, such as *radio buttons*, *dropdown menus*, are not directly customizable within the Theme Editor but inherit styles from the selected base theme. 
@@ -142,14 +130,12 @@ The **Preview** section of the **Theme Editor** provides a *live visualization* 
 <details>
 <summary>List Preview</summary>
 <img src="theme-editor-preview-list.png" width="75%"/>
-<!-- ![](theme-editor-preview-list.png) -->
 </details>
 
 **Dialog**: represents pop-up interfaces used for confirmations, alerts, or additional inputs. Styled similarly to Panels and Sub-Panels, Dialogs are designed for clear and concise communication with easily accessible actions.
 <details>
 <summary>Dialog Preview</summary>
 <img src="theme-editor-preview-dialog.png" width="75%"/>
-<!-- ![](theme-editor-preview-dialog.png) -->
 </details>
 
 **Addons**: supports the customization of more advanced or precise customizations. Those being defined in the `addon.less` file, ensure that additional functionalities align visually with the core theme.
@@ -172,7 +158,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-base.png"/>
-<!-- ![](theme-editor-style-base.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
@@ -191,7 +176,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-main.png"/>
-<!-- ![](theme-editor-style-main.png) -->
 </div>
 
 | Element               | Style Value            | Value Range / Description                                                                                                                                              |
@@ -213,7 +197,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 **Menu**: allows you to style the main menu (typically located on the left), including states for embedded, active, and hovered items.
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-menu.png"/>
-<!-- ![](theme-editor-style-menu.png) -->
 </div>
 
 | Element              | Style Value            | Value Range / Description                                                                                                                                              |
@@ -236,7 +219,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-panel.png"/>
-<!-- ![](theme-editor-style-panel.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                                         |
@@ -257,7 +239,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-subpanel.png"/>
-<!-- ![](theme-editor-style-subpanel.png) -->
 </div>
 
 | Element                | Style Value            | Value Range / Description                                                                                                                                                                              |
@@ -279,7 +260,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-tabs.png"/>
-<!-- ![](theme-editor-style-tabs.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                                      |
@@ -305,7 +285,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-field.png"/>
-<!-- ![](theme-editor-style-field.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
@@ -330,7 +309,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-list.png"/>
-<!-- ![](theme-editor-style-list.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |
@@ -361,7 +339,6 @@ Here is a detailled list of the menu's sub-section and the specific elements the
 
 <div width="100%" style="display:flex; justify-content:center;">
 <img src="theme-editor-style-dialog.png"/>
-<!-- ![](theme-editor-style-dialog.png) -->
 </div>
 
 | Element            | Style Value            | Value Range / Description                                                                                                                                              |

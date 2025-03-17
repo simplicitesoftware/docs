@@ -190,12 +190,10 @@ div.card-body { //panel body containing the list element
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="element-focus.png" width="75%"/>
-<!-- ![](element-focus.png) -->
 </div>
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="browser-inspector.png" width="75%"/>
-<!-- ![](browser-inspector.png) -->
 </div>
 
 ## 2. Identifying the context
@@ -258,7 +256,6 @@ Now to see if your new styles has been applied, make sure to apply your theme to
 
 <div width="100%" style="display:flex; justify-content:center; padding-bottom:32px">
 <img src="view-apply-theme.png" width="75%"/>
-<!-- ![](view-apply-theme.png) -->
 </div>
 
 Then make sure to clear your cache to update the styles, and you should see the result !
