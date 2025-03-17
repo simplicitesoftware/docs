@@ -363,9 +363,7 @@ for (let i=0; i<product.count; i++)
 $("#demowelcomecard-productlist").attr("hidden", "true"); // hiding by default
 ```
 
-<div style="padding:32px 0; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="welcome-product-cards.png" width="75%"/>
-</div>
 
 Additionaly we create the corresponding styles for the product card we are dynamically adding:
 
