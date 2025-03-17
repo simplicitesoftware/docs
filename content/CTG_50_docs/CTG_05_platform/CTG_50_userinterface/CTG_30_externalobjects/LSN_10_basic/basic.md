@@ -115,3 +115,13 @@ The **Basic** nature refers direcly to the mother class `com.simplicite.util.Ext
 | Class | Extended class for the Java code, here `com.simplicite.webapp.web.ResponsiveExternalObject` |
 | Icon | External Object's logo |
 | UI Widget | Indicates if this element shall be considered as a *Widget* or not. |
+
+## Read More
+
+**Tips & Advices**
+- [Javascript Development](/lesson/docs/front/javascript-dev).
+- [Ajax Library](/lesson/docs/front/lib-ajax).
+
+**Details & Specificities**
+- [Web Pages](/lesson/docs/front/web-page) with "Basic" Nature.
+- [Code examples](/lesson/docs/front/ui-component) for *"UI component"* (walkthrough).
