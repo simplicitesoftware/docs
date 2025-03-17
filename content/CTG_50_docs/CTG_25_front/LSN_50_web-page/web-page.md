@@ -11,9 +11,7 @@ This document explains how to use Simplicité's **External Objects** to create w
 
 In this section, we will walk through the process of creating a custom webpage *from scratch*. This page will serve as a custom front-end that communicates with *Simplicité's back-office*. As an illustrative example, we will recreate and analyze the **DemoWebPage** (refer to the screenshots below). This demo page acts as a basic yet fully functional, allowing clients to view the product catalog and place orders, but also access all suppliers' informations and some resources for Simplicité's solution :
 
-<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="myexternalpage-home.png" width="75%"/>
-</div>
 
 The presented web-pages are an "in-between" the complete external pages created using the **NPM Library** explained [here](/lesson/docs/front/javascript-dev), and the *UI Component* that you can create as shown in [this lesson](/lesson/docs/front/javascript-dev). Although such objects will be rendered at the `"/ext/"` of your Simplicité's instance URL (`https://<name>.demo.simplicite.io`), but still you can decide either to set this page public or private, thus requesting or not for credentials' validation before accessing it at the given URL.
 
@@ -279,9 +277,7 @@ row_id: "1"
 
 The accessible fields are the ones declared and visible in the *Business Object > Object Fields* list, accessible within the Simplicité UI:
 
-<div style="padding-bottom:32px; display:flex; flex-direction:row; justify-content:center; align-items: center; width: 100%;">
 <img src="demoproduct-field-list.png" width="75%"/>
-</div>
 
 #### Creating Business Objects
 
