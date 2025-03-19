@@ -30,7 +30,7 @@ A **Permission** is a Configuration Object in the metamodel that allows controll
 | **Target Object** | The target object for which the permission is set |
 | **Visible** | Visible Property being overridden (e.g., visibility) |
 | **Updatable** | Updatable overridden property |
-| **Property** | Property overriden |
+| **Property** | Property overridden |
 | **Primary Group** | Group to which the permission applies |
 | **Group permissions** | Others Groups to which the permission applies |
 | **Module** | The module to which the Permission belongs |
