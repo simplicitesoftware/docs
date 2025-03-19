@@ -4,7 +4,7 @@
 
 ## What is a Hook ?
 
-In Simplicité, Hooks allow you to extend the default behavior of business objects by overriding key lifecycle methods in Java or JavaScript, enabling advanced custom logic and processing... [Learn more](/lesson/docs/core/objects/businessobject-code-hooks)
+In Simplicité, Hooks allow you to extend the default behavior of business objects by overriding key lifecycle methods in Java or JavaScript, enabling advanced custom logic and processing... [Learn more](/lesson//core/objects/businessobject-code-hooks)
 
 ## Adding business rules to the Order Business object 
 
@@ -19,7 +19,7 @@ To add this business rule, override the `postValidate` hook by following the ste
 2. Click **Edit code**, select **Java** and click **Confirm**  
 	<img src="edit-code.png" alt="edit-code" width="50%"/>	
 3. Override the `postValidate` method with the following implementation :
-	> The `postValidate` hook is called after the platform's `validate()` and is used to to add validation rules. For more information, see [Hooks](/lesson/docs/core/objects/businessobject-code-hooks#prepostvalidatehooks)
+	> The `postValidate` hook is called after the platform's `validate()` and is used to to add validation rules. For more information, see [Hooks](/lesson//core/objects/businessobject-code-hooks#prepostvalidatehooks)
 ```java 
 @Override
 public List<String> postValidate() {

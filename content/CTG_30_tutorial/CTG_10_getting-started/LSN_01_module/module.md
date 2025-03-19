@@ -2,7 +2,7 @@
 
 ## What is a Module ?
 
-A module in Simplicité is the fundamental unit that encapsulates all configuration objects of an application, serving as its exportable configuration package... [Learn more](/lesson/docs/platform/project/module)
+A module in Simplicité is the fundamental unit that encapsulates all configuration objects of an application, serving as its exportable configuration package... [Learn more](/lesson//platform/project/module)
 
 ## Creating a Module
 
@@ -22,13 +22,13 @@ To create a module, follow the steps below :
 4. Fill in the Group fields like so :
     - Name : **TRN_SUPERADMIN** *(if you entered a prefix in the previous step, the platform will suggest a group name that respects the conventions)*  
         <img src="group.png" alt="group" width="50%"/>
-    > For more information about Groups, see the [Groups](/lesson/docs/platform/usersrights/groups) section. 
+    > For more information about Groups, see the [Groups](/lesson//platform/usersrights/groups) section. 
 
 5. Click **Next**
 6. Fill in the Domain (in Simplicité, a Domain is a menu) fields like so :
     - Name : **TrnDomain**  
         <img src="domain.png" alt="domain" width="50%"/>
-    > For more information about Domains, see the [Domain](/lesson/docs/platform/businessobjects/domains) section. 
+    > For more information about Domains, see the [Domain](/lesson//platform/businessobjects/domains) section. 
 7. Click **Next**
 8. Fill in the Translations (Menu display label) for your Domain :
     - English : **My App**  
@@ -40,7 +40,7 @@ To create a module, follow the steps below :
 11. Click **Next**
 12. Fill in the View field like so :
     - Icon : click the magnifying glass and pick an icon
-    > For more information about Views, see the [View](/lesson/docs/platform/userinterface/views/home-page) section.
+    > For more information about Views, see the [View](/lesson//platform/userinterface/views/home-page) section.
 13. Click **Next**
 
 <div class="success">

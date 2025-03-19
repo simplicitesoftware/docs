@@ -4,7 +4,7 @@
 
 ## What is a Dataset ?
 
-A dataset is a structured collection of data used for testing or transferring information between instances. Unlike technical exports, which may create inconsistencies, a dataset export ensures data integrity by using functional keys instead of technical IDs... [Learn more](/lesson/docs/platform/project/datasets)
+A dataset is a structured collection of data used for testing or transferring information between instances. Unlike technical exports, which may create inconsistencies, a dataset export ensures data integrity by using functional keys instead of technical IDs... [Learn more](/lesson//platform/project/datasets)
 
 ## Configuring an "export order" for the objects
 

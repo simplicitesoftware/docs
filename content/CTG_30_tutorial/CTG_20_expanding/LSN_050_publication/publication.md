@@ -4,7 +4,7 @@
 
 ## What is a Publication ?
 
-In Simplicité, publications allow you to generate custom exports. Whether using template files, expressions, or Java methods, publications offer flexible ways to produce structured documents and reports... [Learn more](/lesson/docs/platform/userinterface/objectsrendering/publications)
+In Simplicité, publications allow you to generate custom exports. Whether using template files, expressions, or Java methods, publications offer flexible ways to produce structured documents and reports... [Learn more](/lesson//platform/userinterface/objectsrendering/publications)
 
 
 ## Exporting in Excel the list of a Supplier's Products

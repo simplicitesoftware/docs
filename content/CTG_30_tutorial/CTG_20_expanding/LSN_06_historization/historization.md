@@ -4,7 +4,7 @@
 
 ## What is a Change Log ?
 
-A Change Log allows to monitor all of the changes done to a record... [Learn more](/lesson/docs/platform/operation/sessions/change-log)
+A Change Log allows to monitor all of the changes done to a record... [Learn more](/lesson//platform/operation/sessions/change-log)
 
 ## Adding a Change Log to the Order Business Object
 
@@ -24,7 +24,7 @@ To grant the RedoLog object to the TRN_SUPERADMIN Group, follow the steps below 
     <img src="module-filter.png" alt="module-filter" width="50%"/>
 2. Click **Show all**  
     <img src="show-all.png" alt="show-all" width="25%"/>
-    > For more information about module filters, see [Module filters](/lesson/docs/platform/project/module#module-filtering--default-module)
+    > For more information about module filters, see [Module filters](/lesson//platform/project/module#module-filtering--default-module)
 3. In the **Business objects > Business objects** menu, open **RedoLog**  
     <img src="redolog-list.png" alt="redolog-list" width="50%"/>
 4. Open the **RedoLog-R** Function in the Functions list linked to the RedoLog object  

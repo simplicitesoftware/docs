@@ -4,7 +4,7 @@
 
 ## What is a State model ?
 
-A state model defines the different statuses a business object can have and controls how it transitions between them. It enables filtered views, enforces permissions on state changes, and automates actions triggered by transitions. Setting up a state model ensures a structured workflow for business objects... [Learn more](/lesson/docs/platform/businessprocess/state)
+A state model defines the different statuses a business object can have and controls how it transitions between them. It enables filtered views, enforces permissions on state changes, and automates actions triggered by transitions. Setting up a state model ensures a structured workflow for business objects... [Learn more](/lesson//platform/businessprocess/state)
 
 ## Creating a State model for the Order Business object
 
