@@ -4,7 +4,7 @@
 
 ## What is a Link ?
 
-A Link in Simplicité represents a relationship between Business objects. It is defined physically by a foreign key in the database and configured using an Object field... [Learn more](/lesson//platform/businessobjects/links)
+A Link in Simplicité represents a relationship between Business objects. It is defined physically by a foreign key in the database and configured using an Object field... [Learn more](/lesson/docs/platform/businessobjects/links)
 
 ## Creating a Link between Supplier and Product
 
@@ -15,16 +15,16 @@ To create a link between the **Supplier** Business object and the **Product** Bu
     <img src="edit-form.png" alt="edit-form" width="10%"/>
 4. Hover over the **Field Area** and click on the `+`  
     <img src="field-area.png" alt="field-area" width="50%"/>
-    > For more information about Field Areas, see [Field Area](/lesson//platform/userinterface/templating/fields-areas)  
+    > For more information about Field Areas, see [Field Area](/lesson/docs/platform/userinterface/templating/fields-areas)  
 5. Click **Business Object**
 6. In the search box, enter **TrnSupplier**  
     <img src="search-supplier.png" alt="search" width="25%"/>
 7. Check **Functional key ?** and **Required ?** 
-    > For more information about Functional keys, see [Functional key](/lesson//platform/businessobjects/fields#functional-key)
+    > For more information about Functional keys, see [Functional key](/lesson/docs/platform/businessobjects/fields#functional-key)
 8. Click **Save**
 
 The **Supplier Code** Joined field is added to the template.
-    > For more information about Joined field, see [Joined field](/lesson//platform/businessobjects/fields#joined-fields)
+    > For more information about Joined field, see [Joined field](/lesson/docs/platform/businessobjects/fields#joined-fields)
 
 ## Creating a Link between Product and Order
 

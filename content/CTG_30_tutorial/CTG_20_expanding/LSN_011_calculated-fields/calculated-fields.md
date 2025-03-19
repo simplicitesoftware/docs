@@ -4,7 +4,7 @@
 
 ## What is a Calculated field ?
 
-A Calculated field, is a Field for which it's value is automatically calculated by the platform...[Learn more](/lesson//platform/businessobjects/fields#calculated-fields)
+A Calculated field, is a Field for which it's value is automatically calculated by the platform...[Learn more](/lesson/docs/platform/businessobjects/fields#calculated-fields)
 
 ## Adding a "Total" Calculated field to the Order Business object
 

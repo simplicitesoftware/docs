@@ -4,7 +4,7 @@
 
 ## What is a Constraint ?
 
-In Simplicité, constraints allow to enforce business rules by dynamically controlling object properties, visibility, and behavior, while ensuring secure backend validation... [Learn more](/lesson//platform/businessobjects/constraints)
+In Simplicité, constraints allow to enforce business rules by dynamically controlling object properties, visibility, and behavior, while ensuring secure backend validation... [Learn more](/lesson/docs/platform/businessobjects/constraints)
 
 ## Adding a Constraint to the Order Business Object
 

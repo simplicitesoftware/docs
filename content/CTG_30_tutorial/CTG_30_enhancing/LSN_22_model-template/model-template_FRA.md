@@ -13,7 +13,7 @@ Pour information, les liens virtuels peuvent aussi s'afficher.
 
 Le modèle métier utilise une instance particulière de l'objet.
 
-La liste des hooks est décrite [ici](/lesson//core/modeler-code-hooks).
+La liste des hooks est décrite [ici](/lesson/docs/core/modeler-code-hooks).
 
 
 
