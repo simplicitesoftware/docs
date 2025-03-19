@@ -29,7 +29,7 @@ To grant the RedoLog object to the TRN_SUPERADMIN Group, follow the steps below 
     <img src="redolog-list.png" alt="redolog-list" width="50%"/>
 4. Open the **RedoLog-R** Function in the Functions list linked to the RedoLog object  
     <img src="redolog-form.png" alt="redolog-form" width="50%"/>
-5. Click **Asoociate Groups** in the Grant list linked to the Function object  
+5. Click **Associate Groups** in the Grant list linked to the Function object  
     <img src="function-form.png" alt="function-form" width="50%"/>
 6. Search "TRN_*" in the **Name** column, check **TRN_SUPERADMIN** and click **Apply the selection**  
     <img src="select-group.png" alt="select-group" width="50%"/>

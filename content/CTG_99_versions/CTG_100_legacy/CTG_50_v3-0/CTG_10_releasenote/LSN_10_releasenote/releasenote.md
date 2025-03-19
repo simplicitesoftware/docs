@@ -828,7 +828,7 @@ Some new third party JavaScript libs have been included by default:
 
 ### Included Ajax JavaScript lib ###
 
-Simplicit&eacute;&reg; Ajax libs are included by default in `<application>/scripts/ajax`.
+Simplicité Ajax libs are included by default in `<application>/scripts/ajax`.
 
 These libs are fully Ajax libs that are supposed to be used for Ajax based UI components 
 uch as specific pages (e.g. as external objects) or fully specific front UIs. This libs corresponds

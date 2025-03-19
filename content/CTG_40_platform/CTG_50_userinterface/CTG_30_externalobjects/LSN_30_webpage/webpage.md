@@ -83,7 +83,7 @@ Using *Web Page* external objects, you have two logics to implement:
 1. **Client-Side logic:** using the created web-resources, implement your object as you would for any native web-page.
     - **HTML:** holds the content of your page, embedded in a `<div id="bs-main" class="container">...</div>`, and accessible from scripts by `const $content = this.ctn;`.
     - **STYLES:** where you define the stylesheet declaring all styles for your component. Using either CSS or LESS syntax.
-    - **CLASS:** the javascript file where you declare all of your component's behaviour and interactions, within the `async render(){ ... }` method. Which you can refine or extend by using server-side logic by calling `this.server()` that references a custom method in the *Java Code*.
+    - **CLASS:** the javascript file where you declare all of your component's behavior and interactions, within the `async render(){ ... }` method. Which you can refine or extend by using server-side logic by calling `this.server()` that references a custom method in the *Java Code*.
 
 2. **Server-Side logic:** here is defined your object's instantiation and global setup, in a class extending `com.simplicite.webapp.web.WebPageExternalObject`.
     - Most of it is declared within the `public Object displayBody(Parameters params){ ... }`.

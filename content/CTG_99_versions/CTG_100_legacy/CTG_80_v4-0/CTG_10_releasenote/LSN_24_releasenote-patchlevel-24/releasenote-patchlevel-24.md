@@ -54,7 +54,7 @@ Both versions V3 and V4 are included in the platform:
   (note that you should avoid any hard-coded URLs anyway).
 - Refactored throws clauses. For code quality reasons the too generic `throws Exception` clauses of some Simplicit&eacute; public APIs have been
   replaced by throws clauses using sub classes of `Exception` (e.g.`PlatformException` or `IOException`).
-  In some particular cases Java compiler may complain about unconsistent throws clauses on your overriden methods.
+  In some particular cases Java compiler may complain about unconsistent throws clauses on your overridden methods.
 
 <h2 id="changes">Core changes</h2>
 

@@ -17,7 +17,7 @@ To add a Publication to TrnSupplier, follow the steps below :
 3. Fill in the Publication information like so : 
 	- Code : **TrnSupPublication**
 	- Usage : **On object only**
-	- Visiblity : **Visible**
+	- Visibility : **Visible**
 	- Translation : **Test Excel Publication**
 	- Output file name : **Export-[VALUE:trnSupName]**
 	- Forced MIME type : **Microsoft Excel**

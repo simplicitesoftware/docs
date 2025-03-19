@@ -71,7 +71,7 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 
 | Label | Type | Logical name | Physical name | Functional Key | Required |
 | ----- | ---- | ------------ | ------------- | -------------- | -------- |
-| **Number** | Integer | trnOrdNumer | trn_ord_number | yes | yes |
+| **Number** | Integer | trnOrdNumber | trn_ord_number | yes | yes |
 | **Quantity** | Short text | trnOrdQuantity | trn_ord_quantity | no | yes |
 | **Date** | Date | trnOrdDate | trn_ord_date | no | no |
 

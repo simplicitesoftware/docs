@@ -57,7 +57,7 @@ As a *Static Web Page* isn't interacting with Simplicité's API or backend, you 
 ```
 
 **CLASS:**
-- Javascript where you declare all of your component's behaviour and interactions.
+- Javascript where you declare all of your component's behavior and interactions.
 - Most happens in the `async render(){ ... }` method.
 - Access your *html* using `const $content = this.ctn;` and then `$content.html(...)`.
 > You can also use more classic ways to access your elements like `document.getElementById()` or `$(<element-identifier>)`. Ensure your *HTML* content matches the logic you are using !

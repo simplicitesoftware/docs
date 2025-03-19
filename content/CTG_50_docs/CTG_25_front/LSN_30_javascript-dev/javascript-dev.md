@@ -387,7 +387,7 @@ The main utility for javascript development within Simplicité is the implementa
 
 The javascript development will happen within the *SCRIPT* resource of your *External Object*, and will allow you to do two things:
 
-1) **Customized Behaviours:** first, you are gonna be able to apply custom behaviors and interactions for your custom object
+1) **Customized behaviors:** first, you are gonna be able to apply custom behaviors and interactions for your custom object
 2) **Communicate with Simplicité:** then, you will be able to make your widget even more interactive by allowing it to discuss in various ways 
 
 In this case, you can declare all your javascript code within the *SCRIPT* resource, make sure that you respect common rules and methodologies, so define your methods thoughfully, don't make redundant code, don't hesitate to document your code and make reusable functions in case you need it.

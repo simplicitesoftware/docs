@@ -319,7 +319,7 @@ When implementing similar code, understanding the core mechanics is crucial. Her
 
 * `BusinessObject.getForCreate( function(){...} )`: this method *initializes* the default `BusinessObject.item`, preparing it for creation. Equivalent `getFor*()` methods exist for other actions, such as *Copy*, *Create*, and *Update*. These methods guide the preparation phase by ensuring the object is *properly instantiated* before any operation begins.
 
-* `BusinessObject.item`: this property serves as the *primary container* for any **Business Object**. It can either hold an *active instance* of the object or act as a *temporary placeholder* for upcoming actions like *creation*, *copying*, or *updating*. `BusinessObject.item` simplifies the creation management by maintaining a clear and accessible state of the object during the entire process (and still after if not overriden).
+* `BusinessObject.item`: this property serves as the *primary container* for any **Business Object**. It can either hold an *active instance* of the object or act as a *temporary placeholder* for upcoming actions like *creation*, *copying*, or *updating*. `BusinessObject.item` simplifies the creation management by maintaining a clear and accessible state of the object during the entire process (and still after if not overridden).
 
 * `BusinessObject.create()`: this method *finalizes* the creation process by *generating and loading* the object. By default, it operates on the existing `BusinessObject.item` without requiring additional arguments. The standard approach involves instantiating the object via `getForCreate()` and subsequently invoking `create()`, ensuring a *straightforward* and *efficient* creation process.
 

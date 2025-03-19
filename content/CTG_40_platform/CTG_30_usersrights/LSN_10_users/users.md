@@ -31,7 +31,7 @@ A user can be:
 | Date format | Override the date format for the user |
 | Number format | Override the number format for the user |
 | Time zone | Override system timezone for user |
-| Home page | User's home page (overriden by the active scope) |
+| Home page | User's home page (overridden by the active scope) |
 | Menu visible | Display / Hide menu for the user |
 | Default opened domain | Default menu opened after connecting |
 | Authentication | See [internal authentication](/lesson/docs/authentication/internal-auth) |
@@ -39,7 +39,7 @@ A user can be:
 ## Configuration objects linked to a User
 
 - [Dashboards](/lesson/docs/platform/userinterface/views/dashboard) : List of Dashboards created by the user
-- [Responsibilites](/lesson/docs/platform/usersrights/responsibilities) : List of a user's Responsiblities
+- [Responsibilities](/lesson/docs/platform/usersrights/responsibilities) : List of a user's Responsibilities
 
 ## Learn more
 

@@ -17,7 +17,7 @@ You should connect as the `designer` super-user (*or any user that has rights on
 ### 2) Use the right scope 
 
 Check the you are on the **“Simplicité Administrator”** scope
-> Sometimes, **if the licence is expired, the scope selector might not be accessible!!!** In this case, the trick is to use the adress bar to change scope, by adding `/ui?scope=Home` to your app’s URL.
+> Sometimes, **if the licence is expired, the scope selector might not be accessible!!!** In this case, the trick is to use the address bar to change scope, by adding `/ui?scope=Home` to your app’s URL.
 
 ### 3) Access the **Licence Key** Object
 

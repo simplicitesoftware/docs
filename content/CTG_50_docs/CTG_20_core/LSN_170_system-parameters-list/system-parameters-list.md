@@ -1035,7 +1035,7 @@ yes/no to trace the warning level.
 Mail service configuration.
 The JSON key-values pairs are directly used as properties to instantiate the mail session.
 
-> Note: `mail.from` are car be overriden by `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` (for state transition). Both these system parameters are **deprecated** in 6.2.
+> Note: `mail.from` are car be overridden by `EMAIL_DEFAULT_SENDER` and `BPMALERT_FROM` (for state transition). Both these system parameters are **deprecated** in 6.2.
 
 ### `MAX_SESSIONS_USER`
 
@@ -1408,7 +1408,7 @@ yes/no Flag to show the indexed search box
 
 **Description**
 
-Slack service configuration (to be overriden as a disposition parameter)
+Slack service configuration (to be overridden as a disposition parameter)
 
 ### `SMS_SERVICE`
 

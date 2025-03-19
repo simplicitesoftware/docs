@@ -67,7 +67,7 @@ The Form search facilitated finding a particular attribute in a big form, highli
 
 ## Customizing results
 
-To customize results and modify the object search behaviour object by object, you can use the dedicated object hooks, `preSearch` and `postSearch`.
+To customize results and modify the object search behavior object by object, you can use the dedicated object hooks, `preSearch` and `postSearch`.
 
 ## Searching in...
 

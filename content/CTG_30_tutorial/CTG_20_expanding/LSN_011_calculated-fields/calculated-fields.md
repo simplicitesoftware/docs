@@ -36,7 +36,7 @@ Start by adding the **Product price** field in the [previously](/lesson/tutorial
     > This opens the Field's definition
 4. On the Field's form, click **More**  
     <img src="more.png" alt="more" width="50%"/>
-5. In the **Expresison** tab fill in **Calculated expression** so :
+5. In the **Expression** tab fill in **Calculated expression** so :
     - `[VALUE:trnPrdPrice]*[VALUE:trnOrdQuantity]`  
 <img src="calculated.png" alt="calculated" width="50%"/>
 6. Click **Save**

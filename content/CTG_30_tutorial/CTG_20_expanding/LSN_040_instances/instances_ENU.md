@@ -3,7 +3,7 @@ Instances and object cache
 
 In order to manipulate business objects correctly via the Java API, it is necessary to understand the notion of object instance, and by extension to have a schematic idea of how the caching system works in Simplicité. It also helps to understand what the different cache flush actions are and when they are needed.
 
-To determine the behaviour of an object, unlike a traditional Java application where all the behaviour is coded and compiled in bytecode, Simplicité interprets the configuration that is stored in a database. The construction of an object (object load) involves complex mechanisms: inheritance, recursion, attribute definitions, numerous SQL calls, templates, etc. Since objects are stable in production, Simplicité builds them only once and stores the result of this construction in the core cache (=server cache). **The core cache therefore stores in memory the definition part of the object (fields, template, table name), it is a snapshot version of the configuration.**
+To determine the behavior of an object, unlike a traditional Java application where all the behavior is coded and compiled in bytecode, Simplicité interprets the configuration that is stored in a database. The construction of an object (object load) involves complex mechanisms: inheritance, recursion, attribute definitions, numerous SQL calls, templates, etc. Since objects are stable in production, Simplicité builds them only once and stores the result of this construction in the core cache (=server cache). **The core cache therefore stores in memory the definition part of the object (fields, template, table name), it is a snapshot version of the configuration.**
 
 Each time a user manipulates an object, he will need to instantiate it, and load the necessary information into it, in the same way that a java class is loaded with specific data. To do this, a clone of the object loaded in the core cache is positioned in the user's session, this is called an instance of the object. The instance is persistent in the user's session, which is why, for example, if you do a search on an object, navigate elsewhere in the application and return to the list, the search is still active. **The session therefore stores instances of the object's definition, cloned, and the dynamic part of the object (data, search, current parameters, etc.).**
 
@@ -28,7 +28,7 @@ There are many instance names used by the platform, we won't list them all, but 
 
 Therefore, when using an instance in scripts, it should be kept in mind:
 - that it may be necessary to flush loaded filters and values (via `ObjectDB.resetFilters()` and `ObjectDB.resetValues()`)
-- to avoid concurrent use of the same instance by several threads, it is essential to use a synchronisation block (see commented example below)
+- to avoid concurrent use of the same instance by several threads, it is essential to use a synchronization block (see commented example below)
 
 ```java
 // loading a temporary instance

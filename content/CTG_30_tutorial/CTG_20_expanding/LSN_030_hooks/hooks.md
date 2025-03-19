@@ -51,7 +51,7 @@ public List<String> postValidate() {
 	}
 	// Check : quantity > stock
 	if (getField("trnOrdQuantity").getInt(0) > getField("trnPrdStock").getInt(0)) {
-		msgs.add(Message.formatError("Insufficent stock", null, "trnOrdQuantity"));
+		msgs.add(Message.formatError("Insufficient stock", null, "trnOrdQuantity"));
 	}
 	return msgs;
 }

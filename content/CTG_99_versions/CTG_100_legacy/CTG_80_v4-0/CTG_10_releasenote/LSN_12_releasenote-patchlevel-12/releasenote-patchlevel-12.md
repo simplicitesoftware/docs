@@ -17,7 +17,7 @@ UI changes
 
 - The modeler has been refactored to display diagram in SVG
 	- HTML5/Canvas model will be still supported/maintained but no more features will be added
-	- SVG is really more simple and useful to add specific behaviours on templates/DOM elements
+	- SVG is really more simple and useful to add specific behaviors on templates/DOM elements
 	- it supports common DOM events, CSS syntax, faster serialization, parsing thru jQuery...
 	- with new functions to create specific shapes or rendering
 

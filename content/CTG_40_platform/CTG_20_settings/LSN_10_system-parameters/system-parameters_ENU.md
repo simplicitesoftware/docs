@@ -27,7 +27,7 @@ System Parameters help centralize configuration, making it easier to maintain an
 | **Parameter code** | Unique identifier for the System Parameter |
 | **Description** | A brief explanation of the parameter's purpose |
 | **Value** | The stored value of the parameter (string, number, json, etc.) |
-| **Overriden value** | Defines whether the parameter applies system-wide or a specific value |
+| **Overridden value** | Defines whether the parameter applies system-wide or a specific value |
 | **Type** | Type of the system parameter |
 | **Module** | The module to which the parameter belongs |
 

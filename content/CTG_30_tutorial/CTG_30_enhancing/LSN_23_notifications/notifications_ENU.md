@@ -14,7 +14,7 @@ They :
 - can be sent :
     - through multiple broadcast channels 
     - to multiple recipients
-- its content is defined by language and can be overriden for a particular channel and/or recipient. 
+- its content is defined by language and can be overridden for a particular channel and/or recipient. 
 
 Recipients can be concerned by all of the notification's channels or be set up individually for a more precise configuration per recipient. 
 

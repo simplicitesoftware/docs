@@ -12,7 +12,7 @@ Simplicité is configured via **configuration objects** that provide the descrip
 
 ### Creation 
 
-> If you are creating your first Module use the [Module creation assitant](/lesson/tutorial/getting-started/module)
+> If you are creating your first Module use the [Module creation assistant](/lesson/tutorial/getting-started/module)
 
 To create a Module, follow the steps below :
 1. Click **Create** in Project > Module
@@ -27,7 +27,7 @@ To create a Module, follow the steps below :
 | Import module | Import module stored in the **File** field or defined in **Settings** field |
 | Documentation | Generate PDF module documentation |
 | Git repository | Open GIT view |
-| Export data | Genereate Dataset |
+| Export data | Generate Dataset |
 | Export to XML | Generate Module XML file and store in **File** |
 | Export to JSON | Generate Module JSON file and store in **File** |
 | Export ZIP (XML) | Generate a ZIP archive containing Module XML file and store in **File** |

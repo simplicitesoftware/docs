@@ -37,7 +37,7 @@ the user session (i.e. not the dynamic ones that may be updated in other hooks)
 For instance it can be used to:
 
 - Add a filtering search spec based on the user's rights
-- Change default field behaviour (visibility, updatability, ...) depending on user's rights or depending on the instance
+- Change default field behavior (visibility, updatability, ...) depending on user's rights or depending on the instance
   name (e.g. the instance used by webservices - name is prefixed by `api_` - may hide or make non updatable one field
   which is visible or updatble to UI users)
 

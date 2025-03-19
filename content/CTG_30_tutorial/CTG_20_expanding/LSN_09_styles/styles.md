@@ -30,7 +30,7 @@ To create a Theme and add it to the App, follow the steps below :
 
 To add an icon to a Supplier Business object, follow the steps below :
 
-1. In the **Buiness objects > Business objects** menu, open **TrnSupplier**
+1. In the **Business objects > Business objects** menu, open **TrnSupplier**
 2. Click the *magnifying glass* on the **Icon code** field to select an icon  
     <img src="icon-pick.png" alt="icon-pick" width="50%"/>
 3. Click **Save**
