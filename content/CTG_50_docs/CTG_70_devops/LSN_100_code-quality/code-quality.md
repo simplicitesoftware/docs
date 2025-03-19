@@ -65,7 +65,7 @@ is structured as an Apache Maven&reg; project which is directly managed by Sonar
 
 You need to have [Apache Maven&reg;](https://maven.apache.org) installed.
 
-You may also want to set this [_Simplicite way_ profile](sonarqube-profile-java.xml) as default Java profile in SonarQube to avoid useless issues in the context of a Simplicité module.
+You may also want to set the _Simplicite way_ profile as default Java profile in SonarQube to avoid useless issues in the context of a Simplicité module.
 
 ### Usage
 

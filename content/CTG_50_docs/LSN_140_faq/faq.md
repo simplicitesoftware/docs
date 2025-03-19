@@ -8,21 +8,21 @@ General/installation/operation
 
 Please refer to the [compatibily tables](/lesson/docs/compatibility).
 
-For details on some specific installation/operation requirements, please refer to the miscellaneous documentations on [this page](./).
+For details on some specific installation/operation requirements, please refer to the miscellaneous documentation.
 
 Versions
 --------
 
 > What is the current maintenance status of version `x.y`?
 
-Please check [this document](/lesson/docs/versions) and the latest release notes of considered version (links available on [this page](../)).
+Please check [this document](/lesson/docs/versions) and the latest release notes of considered version.
 
 Usage
 -----
 
 > Where can I find general usage documentation for the generic web UI?
 
-You can find such information the the [UI documentation](./04-ui/).
+You can find such information the the UI documentation.
 
 Design
 ------
@@ -31,7 +31,7 @@ Design
 
 > Where to starts with to build my first business application?
 
-A good start is the [training website](https://training.simplicite.io) and then you can dig deeper in the [documentation](./).
+A good start is the [Getting started](/lesson/tutorial/getting-started),
 
 ### Business objects
 

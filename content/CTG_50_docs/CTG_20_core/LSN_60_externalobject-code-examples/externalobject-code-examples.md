@@ -489,7 +489,7 @@ MyExtObj.display = function(params) {
 </details>
 
 The above example uses the `Simplicite.Gmap` wrapper but the Google Maps&reg; API can also be directly used
-(check the [Google Maps&reg; API documentation](...) for details on usage).
+(check the [Google Maps&reg; API documentation](https://developers.google.com/maps) for details on usage).
 
 ### TinyMCE&reg; HTML editor
 
