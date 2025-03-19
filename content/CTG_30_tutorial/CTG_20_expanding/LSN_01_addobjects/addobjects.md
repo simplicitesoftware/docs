@@ -90,5 +90,3 @@ Follow the steps in [Getting started : Create field](/lesson/tutorial/getting-st
 | **Website** | URL | trnSupWebsite | trn_sup_website | no | no |
 
 <img src="supplier-fields.png" alt="supplier-fields" width="50%"/>
-
-[Next step : Creating links between the Business objects](/lesson/tutorial/expanding/relations)

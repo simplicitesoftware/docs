@@ -37,5 +37,3 @@ To create a field, follow the steps below :
     <p>The <b>trnSupName</b> Field has been added to the <b>TrnSupplier</b> Business object and the template has a <b>Name</b> input visible on it</p>
     <img src="success.png" alt="success" width="50%"/>
 </div>
-
-[Next step : Create a User](/lesson/tutorial/getting-started/user)

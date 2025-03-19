@@ -99,8 +99,6 @@ To do so, follow the steps below :
     <img src="designer-success.png" alt="designer-success" width="50%"/>
 </div>
 
-[Next step : Add objects](/lesson/tutorial/expanding/addobjects)
-
 ***
 
 

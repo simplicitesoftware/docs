@@ -38,5 +38,3 @@ To create a Business object, follow the steps below :
 	<p>The <b>TrnSupplier</b> Object is created and opened.</p>
 	<img src="success.png" alt="success" width="50%"/>
 </div>
-
-[Next step : Create a Field](/lesson/tutorial/getting-started/attribute)

@@ -202,7 +202,7 @@ Options can be changed in :
 | context                      | list context LIST, PANEL, UPDATE                                        | Simplicite.CONTEXT_LIST                    |
 | inst                         | optional instance name                                                  | `the\_ajax\_<name>`                          |
 | parent                       | optional parent object for panel                                        |                                            |
-| view                         | optional view container { name, item, home }                            |                                            |
+| view                         | optional view container `{ name, item, home }`                            |                                            |
 | edit                         | edit list current mode = 'newline' or 'rows'                            |                                            |
 | listEdit                     | allows to edit cells ?                                                  | from metadata                              |
 | addEdit                      | allows to add row on list ?                                             | from metadata                              |

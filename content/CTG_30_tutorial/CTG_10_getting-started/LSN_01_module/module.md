@@ -47,5 +47,3 @@ To create a module, follow the steps below :
     <p>The <b>Training</b> Module is created and opened.</p>
     <img src="success.png" alt="success" width="50%"/>
 </div>
-
-[Next step : Create a Business object](/lesson/tutorial/getting-started/object)
