@@ -4,7 +4,7 @@
 
 ## What is a User ?
 
-Users belong to Groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](/lesson/docs/platform/usersrights/users)
+Users belong to Groups, and each user-group relationship is defined by a Responsibility. Groups are granted to Business object CRUD functions, in turn granting a User to a Business Object... [Learn more](/lesson/platform/usersrights/users)
 
 ## Creating a User
 
@@ -20,7 +20,7 @@ To create a test user, follow the steps below :
 5. Click **Next**
 6. Create a Responsibility, click **Next**  
     <img src="resp.png" alt="resp" width="50%"/>
-    > For more information about Domains, see the [Responsibility](/lesson/docs/platform/usersrights/responsibilities) section. 
+    > For more information about Domains, see the [Responsibility](/lesson/platform/usersrights/responsibilities) section. 
 7. Choose a new group :
     - For now, select **no**
 8. Click **Next**
@@ -47,7 +47,7 @@ To connect to the application with **usertest**, follow the steps below :
         - Click **Clear all sessions and all server caches**  
         <img src="clear-cache.png" alt="clear-cache" width="50%"/>
     - Via the keyboard shortcut : [ <kbd>Alt</kbd>+<kbd>C</kbd>+<kbd>C</kbd> ]
-    > For more information about the cache, see the [Platform cache](/lesson/docs/core/objects/platform-cache) section. 
+    > For more information about the cache, see the [Platform cache](/lesson/core/objects/platform-cache) section. 
 
 4. Log-in using **usertest** :
     - Login : **usertest**
@@ -104,7 +104,7 @@ To do so, follow the steps below :
 
 Troubleshooting
 ---------------------------
-> These steps must be done using the **designer** user with **no active module filter**, see [Module filter](/lesson/docs/platform/project/module#module-filtering)
+> These steps must be done using the **designer** user with **no active module filter**, see [Module filter](/lesson/platform/project/module#module-filtering)
 - <span class="error">Authentication error</span> when logging in, check that : 
     - **usertest** is active
     - password is reset

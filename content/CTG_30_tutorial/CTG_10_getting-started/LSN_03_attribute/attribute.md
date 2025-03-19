@@ -4,7 +4,7 @@
 
 ## What is a Field ?
 
-In Simplicité, fields are configurable attributes of business objects (mandatory, type, etc.). They have a logical name (used in code) and a physical name (for database columns). When linked to an object, it creates a database column and allows parameter overrides... [Learn more](/lesson/docs/platform/businessobjects/fields)
+In Simplicité, fields are configurable attributes of business objects (mandatory, type, etc.). They have a logical name (used in code) and a physical name (for database columns). When linked to an object, it creates a database column and allows parameter overrides... [Learn more](/lesson/platform/businessobjects/fields)
 
 ## Creating a Field
 
@@ -12,11 +12,11 @@ To create a field, follow the steps below :
 
 1. Click **Edit form** on the Business object's form (this will open the **template editor**)  
     <img src="edit-form.png" alt="field-area" width="50%"/>
-	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/docs/platform/businessobjects/business-objects#creation-assistant-via-the-modeler)
+	> The template editor is also available via the Modeler, for more information see the [Accessing the template editor via the Modeler](/lesson/platform/businessobjects/business-objects#creation-assistant-via-the-modeler)
 2. Select the first **Template**    
     <img src="template.png" alt="template" width="25%"/>
 3. Hover over the empty **Field Area** and click on the `+`
-    > For more information about Field Areas, see [Field Area](/lesson/docs/platform/userinterface/templating/fields-areas)
+    > For more information about Field Areas, see [Field Area](/lesson/platform/userinterface/templating/fields-areas)
 
     <img src="field-area.png" alt="field-area" width="50%"/>
     

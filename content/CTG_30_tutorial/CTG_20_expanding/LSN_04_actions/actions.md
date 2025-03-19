@@ -4,7 +4,7 @@
 
 ## What is an Action ?
 
-Actions in Simplicité allow users to interact with business objects. While some actions are built into the platform (e.g., create, edit, bulk update), custom actions can be added for specific business needs. Actions can be executed on the front end or the back end... [Learn more](/lesson/docs/platform/businessobjects/actions)
+Actions in Simplicité allow users to interact with business objects. While some actions are built into the platform (e.g., create, edit, bulk update), custom actions can be added for specific business needs. Actions can be executed on the front end or the back end... [Learn more](/lesson/platform/businessobjects/actions)
 
 ## Creating a front-end Action for the Product Business object
 
@@ -23,7 +23,7 @@ To create an Action for the Product Business object, follow the steps below :
 5. Fill in the Function information like so :
     - Function : **TRN_PRD_INCREASE_STOCK_A**
     - Object : **TrnProduct**  
-    > For more information about Functions, see [Functions](/lesson/docs/platform/usersrights/functions)
+    > For more information about Functions, see [Functions](/lesson/platform/usersrights/functions)
 6. Click **Save**
 7. In the **Grant** panel linked to the **Function**, click **Associate Groups**  
     <img src="create-grant.png" alt="create" width="50%"/>
