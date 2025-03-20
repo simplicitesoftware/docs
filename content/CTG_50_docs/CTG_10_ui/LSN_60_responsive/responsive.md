@@ -3,7 +3,8 @@ Responsive UI
 
 This document explains the UI engine for responsive usage (applicable to version 4.0 and above).
 
-<h2 id="conception">Conception</h2>
+Conception
+----------
 
 The responsive UI is based on the disposition `responsive` with a simple startup and site parts configured as disposition resources:
 
@@ -68,18 +69,20 @@ The controller provides the business logic between the model and the view:
 All the rendering will be made by the browser in one-page based on JQuery and Bootstrap.
 Most functions have been implemented on responsive UI, other functions are only wrapped in an iframe with the backend rendering (i.e. crosstab, script editor).
 
-<h2 id="libs">External libs</h2>
+External libs
+-------------
 
 This engine integrates some popular third party libraries:
 
 - JQuery
 - Bootstrap
 - Ace editor for code edit
-- TinyMCE for rich text edit 
+- TinyMCE for rich text edit
 - ChartJS for charting
 - Etc.
 
-<h2 id="globals">Global properties</h2>
+Global properties
+-----------------
 
 `Simplicite.UI.Globals` contains all the default options that will be used by each object.
 Each UI object gets a copy in `obj.locals.ui` to override the default behaviors.
@@ -475,7 +478,8 @@ _nota_
 </div>
 ```
 
-<h2 id="devices">Devices</h2>
+Devices
+-------
 
 ### Desktop
 
@@ -494,7 +498,7 @@ Default behaviors on large desktop :
 * Search form can be docked beside the list or under the columns
 * Object form uses the UI template if defined, otherwise it converts only the back-end AREAs into simple interface (panel+tabs)
 * State models are displayed in trays with drag&drop abilities
-* Object history can be displayed in 4 charts: 
+* Object history can be displayed in 4 charts:
 	* count per status
 	* duration per state
 	* count per period and per status
@@ -519,9 +523,10 @@ Almost similar as desktop, except :
 * Search are available in dialog box only
 * Most actions are deported in "plus" button
 
-<h2 id="global-events">Global events</h2>
+Global events
+-------------
 
-Some common events are triggered by the UI to predefined classes. 
+Some common events are triggered by the UI to predefined classes.
 A specific component can implement some of then to add dynamic behaviors.
 
 | Class name                   | Trigger name                        | Occurs when                                  | Arguments                                        |
@@ -587,14 +592,14 @@ $(myDiv).addClass("js-ctrl-s").on("ui.key.ctrls", function(e) {
 $(myDiv).attr("data-event-close", "mycanclose").on("mycanclose", function(e, cbk) {
 	if (/* can close... */)
 		cbk(); // ok this div can close
-	else 
+	else
 		// Stay here with message
 		$ui.alert("Do something before close");
 });
 ```
 
-
-<h2 id="hooks">Client side hooks</h2>
+Client side hooks
+-----------------
 
 The UI engine is a singleton named `$ui`.
 
@@ -612,7 +617,7 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 (function(ui,$) {
 	// Bind ui.loaded = engine is loaded (before home page)
 	$(document).on("ui.loaded", function() {
-		// customize UI here	
+		// customize UI here
 		// UI options = Globals merged with disposition script
 		var opt = ui.options;
 		// Disable links on forms
@@ -620,7 +625,7 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 		// Export to Excel with POI only
 		opt.exports.XLS.formats = { poi: "Excel" };
 	});
-	
+
 	// Bind ui.ready = UI is ready (after home page)
 	$(document).on("ui.ready", function() {
 		// Remove some Admin menu to GUEST users
@@ -628,7 +633,7 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 			$(".main-menu [data-obj='myAdminObject']").remove();
 		// Customize footer infos...
 	});
-	
+
 	// Bind ui.beforeunload to document = UI and Ajax are still available
 	$(document).on("ui.beforeunload", function() {
 		// window will be unloaded
@@ -636,9 +641,9 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 		ui.alert({
 			title: app.T("INFO"),
 			content: "bye " + ui.grant.getFullName()
-		});		
+		});
 	});
-	
+
 	// Bind ui.unload to document = last call
 	$(document).on("ui.unload", function() {
 		// window is unloaded
@@ -648,7 +653,7 @@ or the disposition `SCRIPT` to override properties or functions, for example:
 
 <h3 id="business-objects-hooks">Business object hooks</h3>
 
-To add specific behaviors, the designer must add a JS resource 
+To add specific behaviors, the designer must add a JS resource
 - From version 6.0: named `CLASS` to override the default implementation
 - or named `SCRIPT` to register the object in the global `Simplicite.UI.hooks`.
 
@@ -671,7 +676,7 @@ The hook will be called once by each object instance (the_ajax, panel_ajax...).
 				console.log("myObject hook loading...");
 				// object UI parameters = clone of the globals properties
 				var p = o.locals.ui;
-				
+
 				// When object form is loaded in the container ctn
 				p.form.onload = function(ctn, obj, params) {
 					// Alert on big amount
@@ -709,7 +714,7 @@ The hook will be called once by each object instance (the_ajax, panel_ajax...).
 						f.ui.visible(v ? Simplicite.VIS_HIDDEN: Simplicite.VIS_BOTH);
 						f.ui.updatable(f.required && v=="123");
 					});
-				};		
+				};
 			}
 		}
 		catch(e) {
@@ -1103,7 +1108,7 @@ onUnloadTimesheet(ctn, obj, ts) {
 #### Example: Set image to field
 
 ```javascript
-/** 
+/**
  * Sample method to change the image
  * @param data Base64 encoded image "data:image/png;base64,..."
  * @function
@@ -1176,7 +1181,8 @@ Result:
 ![](panel_ct.png)
 
 
-<h2 id="styles">Styles</h2>
+Styles
+------
 
 * Global CSS can be changed in the Disposition `STYLES`
 * or create a CSS resource named STYLES per object and add specific styles
@@ -1200,7 +1206,8 @@ For example:
 }
 ```
 
-<h2 id="stand-alone">Stand-alone usage</h2>
+Stand-alone usage
+-----------------
 
 The engine can be loaded in a stand-alone page:
 
@@ -1221,7 +1228,7 @@ Example:
 	<title>Simplicite custom web front-end demo</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<script type="text/javascript" src="http(s)://<base URL>/scripts/jquery/jquery.js"></script>	
+	<script type="text/javascript" src="http(s)://<base URL>/scripts/jquery/jquery.js"></script>
 	<script type="text/javascript" src="http(s)://<base URL>/scripts/ui/ui-bundle.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="scripts.js"></script>
 </head>
@@ -1295,7 +1302,7 @@ Script:
 		}
 		else $ui.alert("Please enter your client code.")
 	}
-	
+
 	// Order button callback
 	function order(a, prd, id) {
 		if (!client) {
@@ -1373,7 +1380,7 @@ Script:
 	function init() {
 		// Additive styles
 		$('head').append('<link rel="stylesheet" href="css/styles.min.css" type="text/css"/>');
-		
+
 		// Login
 		$(".btn-login").click(login);
 		$(".input-login").keyup(function(e) {
@@ -1382,7 +1389,7 @@ Script:
 		// Menu
 		$(".menu-orders > a").click(myOrders);
 		$(".menu-catalog > a").click(catalog).click();
-		
+
 		// Show UI
 		$(".main").fadeIn();
 	}
@@ -1408,11 +1415,13 @@ _Form_
 
 ![Demo order form](uidemo3.png)
 
-<h2 id="jsdoc">JSDoc for responsive UI</h2>
+JSDoc for responsive UI
+-----------------------
 
 The JSDoc is available [here](https://platform.simplicite.io/current/jsdoc/)
 
-<h2 id="third-party">Examples of third party client-side APIs integration</h2>
+Examples of third party client-side APIs integration
+----------------------------------------------------
 
 <h3 id="third-party-googlemaps-autocomplete">Google Maps autocomplete API</h3>
 
@@ -1495,118 +1504,3 @@ var MyObject = (function(ui) {
 	};
 })(window.$ui);
 ```
-
-<h2 id="external-object">Example of responsive external object</h2>
-
-![Demo external object](extobj.png)
-
-### External object configuration
-
-- Create as usual an external object named `MyExternalPage` 
-- Granted to ADMIN and accessible thru Menu
-- Attach 2 resources: 
-	- `SCRIPT` as JavaScript 
-	- `STYLES` as CSS
-
-### Server side code
-
-This code is executed on server-side to send the required resources to UI
-
-```java
-package com.simplicite.extobjects.Application;
-
-import java.util.*;
-import com.simplicite.util.*;
-import com.simplicite.util.tools.*;
-
-/**
- * External object MyExternalPage
- */
-public class MyExternalPage extends ExternalObject {
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * Display method
-	 * @param params Request parameters
-	 */
-	@Override
-	public Object display(Parameters params)
-	{
-		// No header or legacy stuff
-		setDecoration(false);
-		// Send page for responsive UI ?
-		if (getGrant().isResponsive())
-		{
-			// Add the STYLES resource attached to MyExternalPage definition
-			appendCSSInclude(HTMLTool.getResourceCSSURL(this, "STYLES"));
-			// Add the SCRIPT resource attached to MyExternalPage definition
-			appendJSInclude(HTMLTool.getResourceJSURL(this, "SCRIPT"));
-			// Run the client-side JavaScript statement that will be run by the UI
-			return sendJavaScript("MyExternalPage.render(ctn);");
-		}
-		else return "Unsupported in legacy version";
-	}
-}
-```
-
-> **Note**: This code is written in Java but it can be easily transposed to Rhino script.
-
-### JavaScript resource
-
-The external object's `SCRIPT` resource contains the client-side JavaScript
-(it is loaded by the UI before running the statement returned by the server-side `display` method above).
-It displays a title and the lists of users and groups in 2 bootstrap columns.
-
-```javascript
-var MyExternalPage = (function() {
-	// render the gadget in container ctn
-	function render(ctn) {
-		var app = $ui.getAjax(), // Ajax services
-			view = $ui.view,     // view controller
-			tools = view.tools,  // bootstrap tools
-			users = $('<div/>'), // container of users
-			groups = $('<div/>'),// container of groups
-			row = tools.row([
-				tools.col("md-6", users),
-				tools.col("md-6", groups)
-			]),
-			title = $('<h1 class="myexternalpage"/>')
-				.append(view.icon('far/user'))
-				.append($('<span/>').text(app.T("MY_TITLE")));
-	
-		// Load the lists
-		$ui.displayList(users, "User");
-		$ui.displayList(groups, "Group");
-	
-		// Replace container content
-		view.getContent(ctn)
-			.html(title)
-			.append(row);
-	}
-
-	return { render: render };
-})();
-```
-
-> **Note**: Make sure - as in the exemple above - to isolate your JavaScript code in a dedicated namespace
-> (e.g. the same name as the external object name), as a matter of fact the responsive UI is one-page
-> so any JavaScript name **must be unique** application-wide
-
-### Styles resource
-
-Put your specific styles in the external object's `STYLES` resource, for example:
-
-```css
-.myexternalpage {
-	padding: 15px;
-	background: #337ab7;
-	color: #fff;
-}
-.myexternalpage span {
-	margin-left: 10px;
-}
-```
-
-> **Note**: Make sure - as in the exemple above - to give a unique name to your CSS classes for instance with a dedicated name prefix
-> (e.g. the lowercase version of the external object name),
-> as a matter of fact the responsive UI is one-page so any CSS class name **must be unique** application-wide
