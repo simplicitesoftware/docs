@@ -5,16 +5,16 @@ Versioning
 
 | **Version** | **Maintenance State**      | **Support type** | **Release date**                            | **Maintenance end date**                    | **Docker images tags**              | **Template branch** |
 |-------------|----------------------------|------------------|---------------------------------------------|---------------------------------------------|-------------------------------------|---------------------|
-| `6.3`       | ⚠️ Alpha                    | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`                   | `6.3[-light]`       |
+| `6.3`       | 🚧 Alpha                   | Not applicable   | *<abbr title="To Be Determined">TBD</abbr>* | *<abbr title="To Be Determined">TBD</abbr>* | `6-alpha[-light]`                   | `6.3[-light]`       |
 | `6.2`       | ✅ **Current release**     | Current          | Feb 10th, 2025                              | *<abbr title="To Be Determined">TBD</abbr>* | `6[-light]`, `6.2[-light]`, `6.2.x` | `6.2[-light]`       |
-| `6.1`       | ☑️ Maintained               | Short term (STS) | July 10th, 2024                             | May 11th, 2025                              | `6.1[-light]`, `6.1.x`              | `6.1[-light]`       |
-| `6.0`       | ❌ Expired!                | Short term (STS) | January 31st, 2024                          | October 31th, 2024                          | `6.0[-light]`, `6.0.x`              | `6.0[-light]`       |
-| `5.3`       | ☑️ Maintained               | Long-term (LTS)  | April 24th, 2023                            | January 31st, 2027                          | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`       |
-| `5.2`       | ❌ Expired!                | Short term (STS) | April 20th, 2022                            | September 30th, 2023                        | `5.2[-light]`, `5.2.x`              | `5.2[-light]`       |
-| `5.1`       | ❌ Expired!                | Short term (STS) | September 1st, 2021                         | October 31st, 2022                          | `5.1[-light]`, `5.1.x`              | `5.1[-light]`       |
-| `5.0`       | ❌ Expired!                | Short term (STS) | January 11th, 2021                          | September 30th, 2021                        | `5.0[-light]`, `5.0.x`              | `5.0[-light]`       |
-| `4.0`       | ❌ Expired!                | Long-term (LTS)  | 2018                                        | January 15th, 2024                          | `4[-light]`, `4.0[-light]`          | `4.0[-light]`       |
-| `3.x`       | ❌ Expired!                | Long-term (LTS)  | 2014 (for 3.0)                              | July 3rd, 2020                              | `3.x`                               | `3.x`               |
+| `6.1`       | ❌ Maintained              | Short term (STS) | July 10th, 2024                             | May 11th, 2025                              | `6.1[-light]`, `6.1.x`              | `6.1[-light]`       |
+| `6.0`       | ⛔ Expired!                | Short term (STS) | January 31st, 2024                          | October 31th, 2024                          | `6.0[-light]`, `6.0.x`              | `6.0[-light]`       |
+| `5.3`       | ❌ Maintained              | Long-term (LTS)  | April 24th, 2023                            | January 31st, 2027                          | `5[-light]`, `5.3[-light]`, `5.3.x` | `5.3[-light]`       |
+| `5.2`       | ⛔ Expired!                | Short term (STS) | April 20th, 2022                            | September 30th, 2023                        | `5.2[-light]`, `5.2.x`              | `5.2[-light]`       |
+| `5.1`       | ⛔ Expired!                | Short term (STS) | September 1st, 2021                         | October 31st, 2022                          | `5.1[-light]`, `5.1.x`              | `5.1[-light]`       |
+| `5.0`       | ⛔ Expired!                | Short term (STS) | January 11th, 2021                          | September 30th, 2021                        | `5.0[-light]`, `5.0.x`              | `5.0[-light]`       |
+| `4.0`       | ⛔ Expired!                | Long-term (LTS)  | 2018                                        | January 15th, 2024                          | `4[-light]`, `4.0[-light]`          | `4.0[-light]`       |
+| `3.x`       | ⛔ Expired!                | Long-term (LTS)  | 2014 (for 3.0)                              | July 3rd, 2020                              | `3.x`                               | `3.x`               |
 
 Some interchangeable terms:
 - **Current release**: release, latest version, latest stable
@@ -30,7 +30,7 @@ The [compatibility page](/lesson/docs/compatibility) maintains a list of compati
 
 ### Versioning strategy
 
-Simplicité follows a flavour of **semantic versioning**. 
+Simplicité follows a flavour of **semantic versioning**.
 
 A `major.minor.revision` (eg. `6.1.21`) numbering system is used where:
 - the `major` number is incremented for **new features whith major breaking changes**
@@ -45,8 +45,8 @@ Unreleased (alpha and beta) version's numbers can be subject to change if a majo
 1. When a new minor version is released, the last minor version (n-1) gets a **Standard maintenance period (>= 3 months)**
 2. When a new major version is released, the last minor version (n-1) gets a **Long Term Support (LTS) maintenance period (>= 3 years)**
 3. Thus, some parameters of version `n` are definitively fixed once version `n+1` is released:
-    - **support type**: if `n+1` becomes major, then `n` becomes LTS. 
-    - **maintenance end date**: depends on the release date of `n+1` and if it falls under the major/minor category 
+    - **support type**: if `n+1` becomes major, then `n` becomes LTS.
+    - **maintenance end date**: depends on the release date of `n+1` and if it falls under the major/minor category
 
 **NB:** Major breaking changes are anticipated way ahead on the roadmap, so when a new major version in the workings it is announced with plenty of time ahead.
 
@@ -56,7 +56,7 @@ Unreleased (alpha and beta) version's numbers can be subject to change if a majo
 
 ## Upgrade requirements
 
-Maintainers of a Simplicité application have the duty of keeping the platform up-to-date which is **at the very least on the last revision of a maintained version**. 
+Maintainers of a Simplicité application have the duty of keeping the platform up-to-date which is **at the very least on the last revision of a maintained version**.
 
 Not upgrading the platform is associated to numerous risks:
 - Security: due to known CVEs (bugs) on the platform or any of its dependencies
