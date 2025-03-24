@@ -49,7 +49,6 @@ For this basic example we will be using the [Kompose tool](https:installation.md
 Provided the following Docker compose file `docker-compose.yml`:
 
 ```yaml
-version: "3"
 services:
   simplicite:
     image: registry.simplicite.io/platform:latest

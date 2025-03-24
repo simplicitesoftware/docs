@@ -171,7 +171,7 @@ sudo systemctl status docker
 ```
 
 > **Note**:
-> By default Docker is allowed to change the firewall rules to open exposed ports. 
+> By default Docker is allowed to change the firewall rules to open exposed ports.
 > To disable this default behavior you need to edit `/usr/lib/systemd/system/docker.service` cartridge file
 > and add `--iptables=false` (or similar if using `nftables`) to the `ExecStart` command.
 
@@ -221,7 +221,6 @@ Create a folder for your instance (e.g. `myinstance`), all following files must 
 <h3 id="hsqldb">Embedded HSQL database (1 container)</h3>
 
 ```yaml
-version: "3"
 services:
   simplicite:
     image: registry.simplicite.io/platform:<tag>
@@ -245,7 +244,6 @@ volumes:
 <h3 id="mysql">MySQL database (2 containers)</h3>
 
 ```yaml
-version: "3"
 services:
   db:
     image: mysql:latest
@@ -293,7 +291,6 @@ volumes:
 <h3 id="postgresql">PostgreSQL database (2 containers)</h3>
 
 ```yaml
-version: "3"
 services:
   db:
     image: postgres:latest
@@ -477,14 +474,14 @@ In all cases you **should** configure GZIP compression. Depending on your deploy
 
 Websockets-based features (such as pushing servers logs to the browser's console) can be totally **inhibited** using the `WEBSOCKETS=false`.
 This may be required on some networks (e.g. with old proxies) where websockets are filtered or forced closed after a given timeout.
- 
+
 <h3 id="compiler">Java compiler</h3>
 
 The Java compiler can be totally **inhibited** using the `COMPILER=false`.
 This may be required in some particular cases (e.g. security reasons).
 
 Note that this means that any Java compiled class must be provided otherwise, e.g. by mounting/copying externally built JARs in the `WEB-INF/lib` of the webapp.
- 
+
 <h3 id="selfsigned-certificate">Generate a self-signed certificate</h3>
 
 You can generate them as a **self-signed** certficate with the following commands:
