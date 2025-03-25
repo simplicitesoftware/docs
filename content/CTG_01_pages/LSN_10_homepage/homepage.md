@@ -8,18 +8,32 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
 	}
-	#homepage .grid-col-img{
+	#homepage .grid-col-img {
 		text-align: center;
 	}
-	#homepage .grid-col-img svg{
+	#homepage .grid-col-img svg {
 		max-width: 20rem;
 		max-height: 20rem;
 	}
-	#homepage p, #homepage ul{
+	#homepage p, #homepage ul {
 		margin-bottom: 0.5rem;
+	}
+	#homepage .deprecation {
+		display: none; /* temporary */
+		padding: 1.5rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		color: #721c24;
+		background-color: #f8d7da;
+		border: solid .0125rem #f5c6cb;
 	}
 </style>
 <div id="homepage">
+	<div class="deprecation">
+		<h1>WARNING: This is the old Simplicité platform documentation!</h1>
+		<p>A <strong>brand new documentation</strong> is now available at <a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></p>
+		<p>We strongly recommend that you use this new documenation as this old one is not updated anymore (and will be shut down very soon)<p>
+	</div>
 	<div class="grid">
 		<div class="grid-col">
 			<h2 id="what-youll-find-here">What you'll find here</h2>
