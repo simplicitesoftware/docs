@@ -35,8 +35,8 @@
 <div id="homepage">
 	<div class="deprecation">
 		<h1>WARNING: This is the old Simplicité platform documentation!</h1>
-		<p>A <strong>brand new documentation</strong> is now available at:<p>
-		<h2><a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></h2>
+		<h2>A <strong>brand new documentation</strong> is now available at:
+		<br/><a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></h3>
 		<p>We strongly recommend that you use the above new documetation as this old one is not updated anymore (and will be shut down very soon).<p>
 	</div>
 	<div class="grid">
