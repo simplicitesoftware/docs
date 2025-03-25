@@ -21,12 +21,15 @@
 	#homepage .deprecation {
 		display: none; /* temporary */
 		padding: 1.5rem;
-		margin-top: 1rem;
 		margin-bottom: 1rem;
 		color: #721c24;
 		background-color: #f8d7da;
 		border: solid .0125rem #f5c6cb;
 		text-align: center;
+	}
+	#homepage .deprecation h2 {
+		margin: 0.75rem;
+		padding: 0;
 	}
 </style>
 <div id="homepage">
@@ -34,7 +37,7 @@
 		<h1>WARNING: This is the old Simplicité platform documentation!</h1>
 		<p>A <strong>brand new documentation</strong> is now available at:<p>
 		<h2><a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></h2>
-		<p>We strongly recommend that you use this new documenation as this old one is not updated anymore (and will be shut down very soon)<p>
+		<p>We strongly recommend that you use the above new documetation as this old one is not updated anymore (and will be shut down very soon).<p>
 	</div>
 	<div class="grid">
 		<div class="grid-col">
