@@ -26,12 +26,14 @@
 		color: #721c24;
 		background-color: #f8d7da;
 		border: solid .0125rem #f5c6cb;
+		text-align: center;
 	}
 </style>
 <div id="homepage">
 	<div class="deprecation">
 		<h1>WARNING: This is the old Simplicité platform documentation!</h1>
-		<p>A <strong>brand new documentation</strong> is now available at <a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></p>
+		<p>A <strong>brand new documentation</strong> is now available at:<p>
+		<h2><a href="https://documentation.simplicite.io">https://documentation.simplicite.io</a></h2>
 		<p>We strongly recommend that you use this new documenation as this old one is not updated anymore (and will be shut down very soon)<p>
 	</div>
 	<div class="grid">
