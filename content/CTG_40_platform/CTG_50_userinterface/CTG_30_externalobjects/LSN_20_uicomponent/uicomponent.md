@@ -17,15 +17,15 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - **UI Widget** tells if your external object shall be considered as a *widget* or not, declaring wether or not it can be used in [dashboard](/lesson/docs/platform/userinterface/views/dashboard).
     > In **both** case, the component is usable in **any editable view**, the only difference is its possible including in dashboards.
 
-    > Example values:  
+    > Example values:
     > <img src="uicomp_extobj_fields.png" alt="fields values" width="50%">
 
-2. **Save** your object and click **Create resources**:  
+2. **Save** your object and click **Create resources**:
     <img src="uicomp_createresources.png" alt="create resources" width="65%">
     - This creates the default [resources](/lesson/docs/platform/userinterface/resources) for your external object:
         - **HTML** in which you'll define your object's content structure.
         - **STYLES** that is your object's stylesheet.
-        - **CLASS** where the component's behavior will happen.  
+        - **CLASS** where the component's behavior will happen.
         <img src="uicomp_resources.png" alt="resources list" width="65%">
     - How to work with those is explored in the [implementation](#how-to-implement) section of this lesson.
 
@@ -33,7 +33,7 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - At the bottom of your *object's form*, click the tab-item **Permissions**, and click **Create**.
     <img src="uicomp_permissions.png" alt="permissions list" width="65%">
     - In the *Create Permission* form, select the **Primary group** you want your object to be associated to, and select the **Group permissions** to select the specific rights for your object.
-    > Example values:  
+    > Example values:
     > <img src="uicomp_createpermission.png" alt="create permission" width="50%">
 
     > ***Note:*** By default, trying to put your object in any interface will result in a `External Object __ not granted` text message.
@@ -44,11 +44,11 @@ Similarly to creating any type of *External Object*, go to *User Interface > Ext
     - Click **Edit View** in the headbar of the form.
     - You are now in the **Template Editor**, move your mouse around and click on the **+** button at any position.
     <img src="uicomp_templateeditor_add.png" alt="add element" width="50%">
-    - In the popup menu, select **Sub-View** or **Extern**.  
+    - In the popup menu, select **Sub-View** or **Extern**.
     <img src="uicomp_templateeditor_type.png" alt="new element's type" width="15%">
-    - On the **Type** field, select **External Page**. 
+    - On the **Type** field, select **External Page**.
     - Set the **Source** to **External Object** and the **External Page** to your component's name.
-    > Example values:  
+    > Example values:
     > <img src="uicomp_modal_form.png" alt="modal menu values" width="15%">
 
 5. Click **Save** in the modal's footer, **Save** in the template editor, and **Save** in the view's form. Then **Clear your cache** and by visiting your view, you should see your component.
@@ -59,7 +59,7 @@ To actually implement *custom behaviors* and specific *interactions* for your co
 
 There are 2 different categories for your external object's implementation:
 
-1. The *setup* & *instantiation* that is done using a *Java Script* 
+1. The *setup* & *instantiation* that is done using a *Java Script*
     - `com.simplicite.webapp.web.ResponsiveExternalObject` by default
     - Can be overridden by a java code extending `ResponsiveExternalObject` or at least `ExternalObject` (the main parent class).
 
@@ -79,7 +79,7 @@ By default your component is just of Java class `com.simplicite.webapp.web.Respo
 2. You will be redirected to the code editor with the basic java setup for your component's own class.
     - Yet you can click **Save** and **Close** to come back to the component's form.
 
-3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.  
+3. Now instead of `com.simplicite.webapp.web.ResponsiveExternalObject` in the **Class** field, you have `<your-object-code>.java` in the **Source code** field.
 <img src="uicomp_sourcecode_field.png" alt="java code field" width="50%">
 
 ### HTML content
@@ -95,7 +95,7 @@ At creation the script looks like:
 
 With the `id` tag being the raw **Code** of your external object.
 
-> **NB:** you can remove the div if you prefer, but then you have to reference your object's html using `const $content = this.ctn` in the **CLASS** resource file, and then add elements using methods like `$content.html()`.  
+> **NB:** you can remove the div if you prefer, but then you have to reference your object's html using `const $content = this.ctn` in the **CLASS** resource file, and then add elements using methods like `$content.html()`.
 > Such workflow will refer directly to the default container div your external object is created within.
 
 There are several keypoints to understand and keep in mind while developing in this file:
@@ -146,7 +146,7 @@ There are several keypoints to understand and keep in mind while developing in t
     gap: 4px;
     width: 100%;
 
-    & h1 { 
+    & h1 {
         font-size: 32px;
         font-weight: 600;
     }
@@ -355,15 +355,15 @@ The key concepts and understanding that you need are:
 - You can work with Simplicité's API and core library using several entry points such as `$ui`, `$app` or `$grant` (documented in the [Ajax library](https://platform.simplicite.io/6.2/jsdoc/global.html)).
 - You can manipulate most of the *BusinessObjects* and elements through the `BusinessObject.search( function() {...} )` method.
 
-You may need to implement some behaviors and features specifically on the *server-side* (though in the java code). Such workflow is required when you don't want to share informations with the front (public) or you just want the calculations to be done by the backend. 
+You may need to implement some behaviors and features specifically on the *server-side* (though in the java code). Such workflow is required when you don't want to share informations with the front (public) or you just want the calculations to be done by the backend.
 
-1. **Javascript:** make a call to the [service](https://platform.simplicite.io/6.2/jsdoc/Simplicite.UI.ExternalObject.html#service) hook, and pass the informations and data you need as arguments.
+1. **Javascript:** make a call to the [service](https://platform.simplicite.io/current/jsdoc/Simplicite.UI.ExternalObject.html#service) hook, and pass the informations and data you need as arguments.
 ```javascript
 const res = await this.service(data, 'json');
 console.log(res.result);
 ```
 
-2. **Java:** declare the logic for your object's [service](https://platform.simplicite.io/6.2/javadoc/com/simplicite/webapp/web/ResponsiveExternalObject.html#service(com.simplicite.util.tools.Parameters)) hook:
+2. **Java:** declare the logic for your object's [service](https://platform.simplicite.io/current/javadoc/com/simplicite/webapp/web/ResponsiveExternalObject.html#service(com.simplicite.util.tools.Parameters)) hook:
 ```java
 public class _ extends com.simplicite.webapp.web.ResponsiveExternalObject {
     // ...
@@ -445,7 +445,7 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
         let product = app.getBusinessObject("DemoProduct");
         let user = app.getBusinessObject("User");
         let login = $ui.getGrant().login;
-        
+
 
         $("#demowelcomecard-header")
             .append($('<h1>').text("Welcome to Simplicité's Demo !"))
@@ -460,7 +460,7 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
             .append($('<button/>').text("See my Infos").attr("id","user-infos").addClass("demowelcomecard-btn").on("click", () => {
             	user.search( function(){
 					const usr = user.list.find(u => u.usr_login === login);
-					
+
 					if (usr && usr.row_id) {
 						$ui.displayForm(null, "User", usr.row_id, {
 							nav: "add",
@@ -471,13 +471,13 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 					}
 		        }, null, {});
             } ));
-		
+
         product.search(function() {
             for (let i=0; i<product.count; i++)
             {
                 const prd = product.list[i];
                 const imageSource = `data:${prd.demoPrdPicture.mime};base64,${prd.demoPrdPicture.content}`;
-                
+
                 let productDiv = $('<div>').addClass("demowelcomecard-product-card").on("click", () => {
                 	// triggers an error but still saves & runs ...
                 	$ui.displayForm(null, "DemoProduct", prd.row_id, {
@@ -485,35 +485,35 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 						target: "work"
 					});
                 });
-   
+
                 let cardLeft = $('<div>').addClass("dwc-product-card-left");
-                
+
                 let cardLeftHeader = $('<div>').addClass("dwc-product-card-left-header");
                 let cardLeftHeaderTitle = $('<span>').addClass("dwc-product-card-left-header-title").text(prd.demoPrdName);
                 let cardLeftHeaderSubtitle = $('<span>').addClass("dwc-product-card-left-header-subtitle").text(prd.demoPrdSupId__demoSupName+" - "+prd.demoPrdType);
-                
+
                 cardLeftHeader
                 	.append(cardLeftHeaderTitle)
                 	.append(cardLeftHeaderSubtitle);
-                
+
                 let cardLeftFooter = $('<div>').addClass("dwc-product-card-left-footer");
                 let cardLeftFooterStock = $('<span>').addClass("dwc-product-card-left-footer-stock").text(prd.demoPrdStock+" left in stock.");
                 let cardLeftFooterPrice = $('<span>').addClass("dwc-product-card-left-footer-price").text(prd.demoPrdUnitPrice+"€");
-                
+
                 cardLeftFooter
                 	.append(cardLeftFooterStock)
                 	.append(cardLeftFooterPrice);
-                
+
                 cardLeft
                 	.append(cardLeftHeader)
                 	.append(cardLeftFooter);
-                
+
                 let cardRight = $('<div>').addClass("demowelcomecard-product-card-right");
-                
+
                 let cardRightImage = $('<img/>').addClass("dwc-product-card-right-image").attr("src", imageSource).attr("alt", prd.demoPrdName);
                 let cardRightText = $('<span>').addClass("dwc-product-card-right-description").text('"'+prd.demoPrdDescription+'"');
-                
-                
+
+
                 cardRight
                 	.append(cardRightImage)
                 	.append(cardRightText);
@@ -521,12 +521,12 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
                 productDiv
                 	.append(cardLeft)
                 	.append(cardRight);
-                
+
                 $("#demowelcomecard-productlist").append(productDiv);
             }
-            
+
             $("#demowelcomecard-productlist").attr("hidden", "true"); // hiding by default
-            
+
         }, null, { inlineDocs: true });
 	}
 };
@@ -535,7 +535,7 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 
 ## Configuration
 
-| Field | Description | 
+| Field | Description |
 | ----- | ----------- |
 | Code | External Object's unique identifier |
 | Nature | Type of the External Object, here **UI page or component** |
@@ -548,8 +548,8 @@ Simplicite.UI.ExternalObjects.DemoWelcomeCard = class extends Simplicite.UI.Exte
 
 - [Widgets](/lesson/docs/misc/widgets) already implemented within Simplicité's **Demo** module.
 - [Code Examples](/lesson/docs/core/externalobject-code-examples)
-- [JSDoc](https://platform.simplicite.io/6.2/jsdoc/)
-- [Javadoc](https://platform.simplicite.io/6.2/javadoc/)
+- [JSDoc](https://platform.simplicite.io/current/jsdoc/)
+- [Javadoc](https://platform.simplicite.io/current/javadoc/)
 
 **JS Dev**
 - [Javascript Development](/lesson/docs/front/javascript-dev).
