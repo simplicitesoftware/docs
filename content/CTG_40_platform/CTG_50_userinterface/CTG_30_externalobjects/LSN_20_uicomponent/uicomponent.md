@@ -337,7 +337,7 @@ There are several keypoints to understand and keep in mind while developing in t
 
 ### JS behavior
 
-In the **CLASS** resource, you will write the JS script for your component's behavior. Here you will have the possibility to use both the [JSDoc](https://platform.simplicite.io/6.2/jsdoc/) for frontend operations direclty in the **CLASS** resource's script, and to make few calls to the *Java* code of your component to add custom server-side operations.
+In the **CLASS** resource, you will write the JS script for your component's behavior. Here you will have the possibility to use both the [JSDoc](https://platform.simplicite.io/current/jsdoc/) for frontend operations direclty in the **CLASS** resource's script, and to make few calls to the *Java* code of your component to add custom server-side operations.
 
 > By default the only call from **CLASS** to **Java** is through `render()` that allows for your component's correct display and instantiation. But later on we'll see another method that allow for more custom calls: `service()`.
 
@@ -352,7 +352,7 @@ Simplicite.UI.ExternalObjects.TestWebPage = class extends Simplicite.UI.External
 
 The key concepts and understanding that you need are:
 - Every instantiation has to be within the ```async render(){ ... }```
-- You can work with Simplicité's API and core library using several entry points such as `$ui`, `$app` or `$grant` (documented in the [Ajax library](https://platform.simplicite.io/6.2/jsdoc/global.html)).
+- You can work with Simplicité's API and core library using several entry points such as `$ui`, `$app` or `$grant` (documented in the [Ajax library](https://platform.simplicite.io/current/jsdoc/global.html)).
 - You can manipulate most of the *BusinessObjects* and elements through the `BusinessObject.search( function() {...} )` method.
 
 You may need to implement some behaviors and features specifically on the *server-side* (though in the java code). Such workflow is required when you don't want to share informations with the front (public) or you just want the calculations to be done by the backend.

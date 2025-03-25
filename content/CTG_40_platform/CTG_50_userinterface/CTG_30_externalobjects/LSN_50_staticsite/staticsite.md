@@ -30,7 +30,7 @@ The creation process is similar to the one for any *External Object*:
 
 ## Usage
 
-As a *Static Web Page* isn't interacting with Simplicité's API or backend, you only have the 3 resources to worry about. For the development specific to Simplicité refer to the [JSdoc](https://platform.simplicite.io/6.2/jsdoc/global.html).
+As a *Static Web Page* isn't interacting with Simplicité's API or backend, you only have the 3 resources to worry about. For the development specific to Simplicité refer to the [JSdoc](https://platform.simplicite.io/current/jsdoc/global.html).
 
 > Specific use case and code examples can be found in the following lessons: [WebPage](/lesson/docs/platform/userinterface/externalobjects/webpage), [UI Component](/lesson/docs/platform/userinterface/externalobjects/uicomponent), [External Objects](/lesson/docs/platform/userinterface/externalobjects/basic).
 
@@ -76,5 +76,5 @@ Simplicite.UI.ExternalObjects.TrnStaticPage = class extends Simplicite.UI.Extern
 
 ## Read More
 
-- [JSDoc](https://platform.simplicite.io/6.2/jsdoc/global.html)
+- [JSDoc](https://platform.simplicite.io/current/jsdoc/global.html)
 - [StaticSiteExternalObject](https://platform.simplicite.io/current/javadoc/com/simplicite/webapp/web/StaticSiteExternalObject.html) (javadoc)
