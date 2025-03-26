@@ -19,7 +19,6 @@
 		margin-bottom: 0.5rem;
 	}
 	#homepage .deprecation {
-		display: none; /* temporary */
 		padding: 1.5rem;
 		margin-bottom: 1rem;
 		color: #721c24;
