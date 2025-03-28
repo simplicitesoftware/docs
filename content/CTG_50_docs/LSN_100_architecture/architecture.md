@@ -1,1 +1,4 @@
-Moved [on the new documentation](https://documentation.simplicite.io/documentation/architecture)
+Arhcitecture
+============
+
+Moved to [the new documentation](https://documentation.simplicite.io/documentation/architecture)

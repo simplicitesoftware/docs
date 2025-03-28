@@ -1,1 +1,4 @@
-Moved [on the new documentation](https://documentation.simplicite.io/versions/versioning/)
+Versioning
+==========
+
+Moved to [the new documentation](https://documentation.simplicite.io/versions/versioning/)

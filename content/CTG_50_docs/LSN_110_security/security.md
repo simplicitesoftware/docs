@@ -1,1 +1,4 @@
-Moved [on the new documentation](https://documentation.simplicite.io/documentation/security)
+Security guidelines
+===================
+
+Moved to [the new documentation](https://documentation.simplicite.io/documentation/security)
